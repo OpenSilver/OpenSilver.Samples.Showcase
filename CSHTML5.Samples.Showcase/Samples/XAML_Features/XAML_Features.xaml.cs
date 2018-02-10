@@ -13,9 +13,9 @@ using Windows.UI.Xaml.Navigation;
 
 namespace CSHTML5.Samples.Showcase
 {
-    public partial class Xaml_Features : UserControl
+    public partial class XAML_Features : UserControl
     {
-        public Xaml_Features()
+        public XAML_Features()
         {
             this.InitializeComponent();
         }

@@ -17,19 +17,19 @@ namespace CSHTML5.Samples.Showcase
 
         void ButtonXamlControls_Click(object sender, RoutedEventArgs e)
         {
-            Uri uri = new Uri("/Xaml Controls/Xaml_Controls", UriKind.Relative);
+            Uri uri = new Uri("/XAML_Controls/XAML_Controls", UriKind.Relative);
             PageContainer.Source = uri;
         }
 
         void ButtonXamlFeatures_Click(object sender, RoutedEventArgs e)
         {
-            Uri uri = new Uri("/Xaml Features/Xaml_Features", UriKind.Relative);
+            Uri uri = new Uri("/XAML_Features/XAML_Features", UriKind.Relative);
             PageContainer.Source = uri;
         }
 
         void ButtonNetFramework_Click(object sender, RoutedEventArgs e)
         {
-            Uri uri = new Uri("/Net Framework/Net_Framework", UriKind.Relative);
+            Uri uri = new Uri("/Net_Framework/Net_Framework", UriKind.Relative);
             PageContainer.Source = uri;
         }
 
@@ -41,7 +41,7 @@ namespace CSHTML5.Samples.Showcase
 
         void ButtonInterop_Click(object sender, RoutedEventArgs e)
         {
-            Uri uri = new Uri("/Interop Samples/Interop_Samples", UriKind.Relative);
+            Uri uri = new Uri("/Interop_Samples/Interop_Samples", UriKind.Relative);
             PageContainer.Source = uri;
         }
 
