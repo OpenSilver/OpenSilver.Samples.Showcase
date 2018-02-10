@@ -1,0 +1,48 @@
+﻿<UserControl
+    x:Class="CSHTML5.Samples.Showcase.Xaml_Controls"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CSHTML5.Samples.Showcase">
+    <StackPanel>
+        <TextBlock Text="Panels" Style="{StaticResource PageHeader_Style}"/>
+        <local:MasonryPanel Margin="0,10,0,0">
+            <local:Grid_Demo HorizontalAlignment="Center"/>
+            <local:StackPanel_Demo HorizontalAlignment="Center"/>
+            <local:DockPanel_Demo HorizontalAlignment="Center"/>
+            <local:WrapPanel_Demo HorizontalAlignment="Center"/>
+        </local:MasonryPanel>
+        <TextBlock Text="Controls" Style="{StaticResource PageHeader_Style}"/>
+        <local:MasonryPanel Margin="0,10,0,0">
+            <local:Button_Demo HorizontalAlignment="Center"/>
+            <local:NumericUpDown_Demo HorizontalAlignment="Center"/>
+            <local:Canvas_Demo HorizontalAlignment="Center"/>
+            <local:Border_Demo HorizontalAlignment="Center"/>
+            <local:ToggleButton_Demo HorizontalAlignment="Center"/>
+            <local:TextBlock_Demo HorizontalAlignment="Center"/>
+            <local:ComboBox_Demo HorizontalAlignment="Center"/>
+            <local:Image_Demo HorizontalAlignment="Center"/>
+            <local:GridSplitter_Demo HorizontalAlignment="Center"/>
+            <local:AutoCompleteBox_Demo HorizontalAlignment="Center"/>
+            <local:ContextMenu_Demo HorizontalAlignment="Center"/>
+            <local:CheckBox_Demo HorizontalAlignment="Center"/>
+            <local:Path_Demo HorizontalAlignment="Center"/>
+            <local:RepeatButton_Demo HorizontalAlignment="Center"/>
+            <local:TextBox_Demo HorizontalAlignment="Center"/>
+            <local:ScrollViewer_Demo HorizontalAlignment="Center"/>
+            <local:ListBox_Demo HorizontalAlignment="Center"/>
+            <local:PasswordBox_Demo HorizontalAlignment="Center"/>
+            <local:Popup_Demo HorizontalAlignment="Center"/>
+            <local:DataGrid_Demo HorizontalAlignment="Center"/>
+            <local:HtmlPresenter_Demo HorizontalAlignment="Center"/>
+            <local:ContextMenu_MenuItem_Demo HorizontalAlignment="Center"/>
+            <local:ChildWindow_Demo HorizontalAlignment="Center"/>
+            <local:ToolTip_Demo HorizontalAlignment="Center"/>
+            <local:ScrollBar_Demo HorizontalAlignment="Center"/>
+            <local:Thumb_Demo HorizontalAlignment="Center"/>
+            <local:TabControl_Demo HorizontalAlignment="Center"/>
+            <local:Expander_Demo HorizontalAlignment="Center"/>
+            <local:Viewbox_Demo HorizontalAlignment="Center"/>
+        </local:MasonryPanel>
+    </StackPanel>
+    
+</UserControl>

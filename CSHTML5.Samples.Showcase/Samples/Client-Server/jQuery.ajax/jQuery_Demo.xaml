@@ -1,0 +1,18 @@
+﻿<UserControl
+    x:Class="CSHTML5.Samples.Showcase.jQuery_Demo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CSHTML5.Samples.Showcase">
+    <ContentControl Style="{StaticResource Card_Style}" Height="140" Width="220">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl Content="jQuery" Foreground="#ff42f4a1" Background="#FFB390CA" Style="{StaticResource HeaderControl_Style}"/>
+            <Button Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"  Content="Click Me!" Click="Button_Click"/>
+            <!--<Button Grid.Row="2" Content="MORE DEMOS..." Click="ButtonViewMore_Click" Background="#FCAB54" Style="{StaticResource ButtonViewMore_Style}"/>-->
+        </Grid>
+    </ContentControl>
+</UserControl>

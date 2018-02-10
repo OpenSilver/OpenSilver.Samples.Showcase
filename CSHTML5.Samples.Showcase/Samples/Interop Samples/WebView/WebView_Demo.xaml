@@ -1,0 +1,18 @@
+﻿<UserControl
+    x:Class="CSHTML5.Samples.Showcase.WebView_Demo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CSHTML5.Samples.Showcase">
+    <ContentControl Style="{StaticResource Card_Style}" Height="140" Width="220">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl Content="WebView" Foreground="#FF69C8FF" Background="#FFA1C3D7" Style="{StaticResource HeaderControl_Style}"/>
+          
+            <!--<Button Grid.Row="2" Content="MORE DEMOS..." Click="ButtonViewMore_Click" Background="#FCAB54" Style="{StaticResource ButtonViewMore_Style}"/>-->
+        </Grid>
+    </ContentControl>
+</UserControl>

@@ -5,8 +5,34 @@
     xmlns:local="using:CSHTML5.Samples.Showcase"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="#FFF0F0F0"
     mc:Ignorable="d">
-    <Canvas>
-        <TextBlock Text="Hello World!" x:Name="TextBlock1" Canvas.Left="20" Canvas.Top="30"/>
-    </Canvas>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Name="LeftColumn" Width="180"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="0" Background="#FF6C6C6C">
+            <StackPanel Margin="0,20,0,0">
+                <Button Content="Panels &amp; Controls" Click="ButtonXamlControls_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="18"/>
+                <Button Content="XAML Features" Click="ButtonXamlFeatures_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="18"/>
+                <Button Content=".NET Framework" Click="ButtonNetFramework_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="18"/>
+                <Button Content="Client/Server" Click="ButtonClientServer_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="18"/>
+                <Button Content="Interop" Click="ButtonInterop_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="18"/>
+                <Button Content="Extensions" Click="ButtonExtensions_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="18"/>
+                <Button Content="Performance" Click="ButtonPerformance_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="18"/>
+            </StackPanel>
+        </Border>
+        <ScrollViewer Grid.Column="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible">
+            <Frame x:Name="PageContainer" JournalOwnership="Automatic" Margin="20,0,0,27">
+                <Frame.UriMapper>
+                    <UriMapper>
+                        <UriMapping
+                            Uri="/{pathToPageExcludingExtension}"
+                            MappedUri="/Samples/{pathToPageExcludingExtension}.xaml"/>
+                    </UriMapper>
+                </Frame.UriMapper>
+            </Frame>
+        </ScrollViewer>
+    </Grid>
 </Page>

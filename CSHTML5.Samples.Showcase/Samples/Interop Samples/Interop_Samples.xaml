@@ -1,0 +1,15 @@
+﻿<UserControl
+    x:Class="CSHTML5.Samples.Showcase.Interop_Samples"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CSHTML5.Samples.Showcase">
+    <StackPanel>
+        <TextBlock Text="Interop" Style="{StaticResource PageHeader_Style}"/>
+        <local:MasonryPanel Margin="0,10,0,0">
+            <local:ExecuteJavascript_Demo HorizontalAlignment="Center"/>
+            <local:Interop_HtmlPresenter_Demo HorizontalAlignment="Center"/>
+            <local:GetDiv_Demo HorizontalAlignment="Center"/>
+            <local:WebView_Demo HorizontalAlignment="Center"/>
+        </local:MasonryPanel>
+    </StackPanel>
+</UserControl>

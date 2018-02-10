@@ -1,0 +1,12 @@
+﻿<UserControl
+    x:Class="CSHTML5.Samples.Showcase.Performance"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CSHTML5.Samples.Showcase">
+    <StackPanel>
+        <TextBlock Text="Performance" Style="{StaticResource PageHeader_Style}"/>
+        <local:MasonryPanel Margin="0,10,0,0">
+            <local:HtmlCanvas_Demo HorizontalAlignment="Center"/>
+        </local:MasonryPanel>
+    </StackPanel>
+</UserControl>

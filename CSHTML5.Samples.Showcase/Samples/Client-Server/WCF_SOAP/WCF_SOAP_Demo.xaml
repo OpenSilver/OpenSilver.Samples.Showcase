@@ -1,0 +1,44 @@
+﻿<UserControl
+    x:Class="CSHTML5.Samples.Showcase.WCF_SOAP_Demo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CSHTML5.Samples.Showcase">
+    <ContentControl Style="{StaticResource Card_Style}" Height="820" Width="330">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl Content="WCF SOAP" Foreground="#FFBDE567" Background="#FFB9CD89" Style="{StaticResource HeaderControl_Style}"/>
+            <StackPanel Orientation="Vertical" Grid.Row="1">
+                <Border Background="Yellow" Margin="0,10,0,0" HorizontalAlignment="Left">
+                    <TextBlock Text="Note: The features on this page require the Professional Edition of C#/XAML for HTML5. For more information, please visit http://www.cshtml5.com" Margin="10" TextWrapping="Wrap" Width="240" FontSize="12" HorizontalAlignment="Left"/>
+                </Border>
+                <TextBlock Text="SOAP Web Services" Margin="0,50,0,0" FontSize="26" Foreground="#FF414141"/>
+                <TextBlock Text="C#/XAML for HTML5 supports the &quot;Add Service Reference&quot; feature of Visual Studio that enables to easily communicate with SOAP web services. Some of the advantages of REST include string typing, due to the fact that the proxies for the web methods are automatically generated and the objects are automatically serialized/deserialized." Foreground="#FF808080" Margin="0,10,0,0" TextWrapping="Wrap" Width="280" FontSize="12" HorizontalAlignment="Left"/>
+                <TextBlock Text="Please read the WCF Limitations and Tutorials at the following page:" Foreground="#FF808080" Margin="0,10,0,0" TextWrapping="Wrap" Width="280" FontSize="12" HorizontalAlignment="Left"/>
+                <TextBlock Text="http://cshtml5.com/links/wcf-limitations-and-tutorials.aspx" Foreground="#FF808080" Margin="0,10,0,0" TextWrapping="Wrap" Width="280" FontSize="12" HorizontalAlignment="Left"/>
+                <TextBlock Text="The sample below shows an online To-Do application based on SOAP web services (WCF Service Application):" Foreground="#FF808080" Margin="0,10,0,0" TextWrapping="Wrap" Width="280" FontSize="12" HorizontalAlignment="Left"/>
+                <TextBlock Text="CREATE A NEW TO-DO:" Margin="0,20,0,0" Foreground="Black" HorizontalAlignment="Left"/>
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                    <TextBox x:Name="SoapToDoTextBox" Width="200" Text="Enter your To-Do here" Foreground="Black" Background="#FFEEEEEE"/>
+                    <Button Content="Create" Click="ButtonAddSoapToDo_Click" Foreground="White" Background="#FFE44D26" Margin="5,0,0,0"/>
+                </StackPanel>
+                <TextBlock Text="LIST OF TODO's:" Margin="0,20,0,0" Foreground="Black" HorizontalAlignment="Left"/>
+                <ItemsControl x:Name="SoapToDosItemsControl" HorizontalAlignment="Left">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                <TextBlock Text="{Binding Description}" Foreground="Black"/>
+                                <Button Content="Delete" Click="ButtonDeleteSoapToDo_Click" Foreground="White" Background="#FFE44D26" Margin="5,0,0,0"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+                <Button Content="Refresh the list" Foreground="White" Background="#FFE44D26" Click="ButtonRefreshSoapToDos_Click" HorizontalAlignment="Left" Margin="0,10,0,0"/>
+            </StackPanel>
+            <!--<Button Grid.Row="2" Content="MORE DEMOS..." Click="ButtonViewMore_Click" Background="#FCAB54" Style="{StaticResource ButtonViewMore_Style}"/>-->
+        </Grid>
+    </ContentControl>
+</UserControl>

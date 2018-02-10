@@ -1,0 +1,41 @@
+﻿<UserControl
+    x:Class="CSHTML5.Samples.Showcase.JSON_Serializer_Demo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CSHTML5.Samples.Showcase">
+    <ContentControl Style="{StaticResource Card_Style}" Height="220" Width="330">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl Content="JSON Serializer" Foreground="#FF3ED4B2" Background="#FF8FCBBE" Style="{StaticResource HeaderControl_Style}"/>
+            
+            <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,20,0,0">
+
+                <Button Grid.Row="1" Click="Button_Click_StronglyTypedDeserialization" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock TextAlignment="Center">Strongly-typed<LineBreak/>Deserialization</TextBlock>
+                </Button>
+                <Button Grid.Row="1" Click="Button_Click_Serialization" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,0,0,0">
+                    <TextBlock TextAlignment="Center">Serialization</TextBlock>
+                </Button>
+                <Button Grid.Row="1" Click="Button_Click_DynamicDeserialization" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,0,0,0">
+                    <TextBlock TextAlignment="Center">Dynamic<LineBreak/>Deserialization</TextBlock>
+                </Button>
+
+            </StackPanel>
+
+            <Border Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                <Border Grid.Row="1" CornerRadius="15" Background="#ff96e8d5" Padding="10" 
+                        Width="150" Height="80">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <TextBlock x:Name="TextContent" TextAlignment="Center" Text="(empty)"/>
+                    </ScrollViewer>
+                </Border>
+            </Border>
+
+            <!--<Button Grid.Row="2" Content="MORE DEMOS..." Click="ButtonViewMore_Click" Background="#FCAB54" Style="{StaticResource ButtonViewMore_Style}"/>-->
+        </Grid>
+    </ContentControl>
+</UserControl>

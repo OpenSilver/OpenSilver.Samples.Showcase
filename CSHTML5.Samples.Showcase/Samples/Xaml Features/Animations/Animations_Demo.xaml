@@ -1,0 +1,87 @@
+﻿<UserControl
+    x:Class="CSHTML5.Samples.Showcase.Animations_Demo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CSHTML5.Samples.Showcase">
+    <ContentControl Style="{StaticResource Card_Style}" Height="140" Width="380">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl Content="Animations" Foreground="#FFFF799C" Background="#FFC69EA9" Style="{StaticResource HeaderControl_Style}"/>
+            <Canvas Grid.Row="1" x:Name="CanvasForAnimationsDemo" Width="350" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Canvas.Resources>
+                    <Storyboard x:Key="AnimationToOpen">
+                        <DoubleAnimation Duration="0:0:1" To="70" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="Item1">
+                            <DoubleAnimation.EasingFunction>
+                                <QuarticEase EasingMode="EaseOut"/>
+                            </DoubleAnimation.EasingFunction>
+                        </DoubleAnimation>
+                        <DoubleAnimation Duration="0:0:1" To="140" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="Item2">
+                            <DoubleAnimation.EasingFunction>
+                                <QuarticEase EasingMode="EaseOut"/>
+                            </DoubleAnimation.EasingFunction>
+                        </DoubleAnimation>
+                        <DoubleAnimation Duration="0:0:1" To="210" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="Item3">
+                            <DoubleAnimation.EasingFunction>
+                                <QuarticEase EasingMode="EaseOut"/>
+                            </DoubleAnimation.EasingFunction>
+                        </DoubleAnimation>
+                        <DoubleAnimation Duration="0:0:1" To="280" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="Item4">
+                            <DoubleAnimation.EasingFunction>
+                                <QuarticEase EasingMode="EaseOut"/>
+                            </DoubleAnimation.EasingFunction>
+                        </DoubleAnimation>
+                    </Storyboard>
+                    <Storyboard x:Key="AnimationToClose">
+                        <DoubleAnimation Duration="0:0:1" To="0" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="Item1">
+                            <DoubleAnimation.EasingFunction>
+                                <QuarticEase EasingMode="EaseOut"/>
+                            </DoubleAnimation.EasingFunction>
+                        </DoubleAnimation>
+                        <DoubleAnimation Duration="0:0:1" To="0" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="Item2">
+                            <DoubleAnimation.EasingFunction>
+                                <QuarticEase EasingMode="EaseOut"/>
+                            </DoubleAnimation.EasingFunction>
+                        </DoubleAnimation>
+                        <DoubleAnimation Duration="0:0:1" To="0" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="Item3">
+                            <DoubleAnimation.EasingFunction>
+                                <QuarticEase EasingMode="EaseOut"/>
+                            </DoubleAnimation.EasingFunction>
+                        </DoubleAnimation>
+                        <DoubleAnimation Duration="0:0:1" To="0" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="Item4">
+                            <DoubleAnimation.EasingFunction>
+                                <QuarticEase EasingMode="EaseOut"/>
+                            </DoubleAnimation.EasingFunction>
+                        </DoubleAnimation>
+                    </Storyboard>
+                </Canvas.Resources>
+                <Button x:Name="Item1" Content="Item1" Width="70" Height="50" Foreground="White" Background="#FFE44D26" RenderTransformOrigin="0.5,0.5">
+                    <Button.RenderTransform>
+                        <CompositeTransform/>
+                    </Button.RenderTransform>
+                </Button>
+                <Button x:Name="Item2" Content="Item2" Width="70" Height="50" Foreground="White" Background="#FFE44D26" RenderTransformOrigin="0.5,0.5">
+                    <Button.RenderTransform>
+                        <CompositeTransform/>
+                    </Button.RenderTransform>
+                </Button>
+                <Button x:Name="Item3" Content="Item3" Width="70" Height="50" Foreground="White" Background="#FFE44D26" RenderTransformOrigin="0.5,0.5">
+                    <Button.RenderTransform>
+                        <CompositeTransform/>
+                    </Button.RenderTransform>
+                </Button>
+                <Button x:Name="Item4" Content="Item4" Width="70" Height="50" Foreground="White" Background="#FFE44D26" RenderTransformOrigin="0.5,0.5">
+                    <Button.RenderTransform>
+                        <CompositeTransform/>
+                    </Button.RenderTransform>
+                </Button>
+                <Button x:Name="ButtonToStartAnimationClose" Content="Close" Visibility="Collapsed" Width="70" Height="50" Click="ButtonToStartAnimationClose_Click" Foreground="White" Background="#FFE44D26" />
+                <Button x:Name="ButtonToStartAnimationOpen" Content="Start" Width="70" Height="50" Click="ButtonToStartAnimationOpen_Click" Foreground="White" Background="#FFE44D26" />
+            </Canvas>
+            <!--<Button Grid.Row="2" Content="MORE DEMOS..." Click="ButtonViewMore_Click" Background="#FCAB54" Style="{StaticResource ButtonViewMore_Style}"/>-->
+        </Grid>
+    </ContentControl>
+</UserControl>

@@ -1,0 +1,30 @@
+﻿<UserControl
+    x:Class="CSHTML5.Samples.Showcase.Canvas_Demo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CSHTML5.Samples.Showcase">
+    <ContentControl Style="{StaticResource Card_Style}" Height="300" Width="260">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl Content="Canvas" Foreground="#FF66CC66" Background="#FFC6DC9C" Style="{StaticResource HeaderControl_Style}"/>
+            <!--<StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Canvas Height="108" Width="218" HorizontalAlignment="Left" Margin="0,15,0,0">
+                    <Rectangle Fill="#FF9BFF91" Height="57" Canvas.Left="40" Width="178" Stroke="#FF66CC66" StrokeThickness="3"/>
+                    <Ellipse Fill="#FF879DFF" Height="91" Canvas.Top="17" Width="169" Stroke="#FF1A75ff" StrokeThickness="3" Canvas.Left="3"/>
+                    <Line Stroke="#FFFF471a" X1="10" Y1="25" X2="140" Y2="65" StrokeThickness="3" />
+                </Canvas>
+            </StackPanel>-->
+            <TextBlock Grid.Row="1" Text="On a Canvas, items are positioned based on their (Left,Top) coordinates. The size of the items is not related to the size of the canvas." Foreground="#FF808080" Margin="0,10,0,0" TextWrapping="Wrap" Width="220" FontSize="12" HorizontalAlignment="Center"/>
+            <Canvas Grid.Row="1" Background="#FFEED6ED" Width="220" Height="187" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                <Border Canvas.Left="20" Canvas.Top="20" Width="123" Height="49" Background="#FFB9E58D"/>
+                <Border Canvas.Left="111" Canvas.Top="47" Width="88" Height="105" Background="#FF22E695"/>
+                <Border Canvas.Left="54" Canvas.Top="100" Width="83" Height="68" Background="#FF22E6DF"/>
+            </Canvas>
+            <!--<Button Grid.Row="2" Content="MORE DEMOS..." Click="ButtonViewMore_Click" Background="#FCAB54" Style="{StaticResource ButtonViewMore_Style}"/>-->
+        </Grid>
+    </ContentControl>
+</UserControl>
