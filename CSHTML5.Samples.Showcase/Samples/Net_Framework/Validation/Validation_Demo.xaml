@@ -3,7 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:CSHTML5.Samples.Showcase">
-    <ContentControl Style="{StaticResource Card_Style}" Height="140" Width="220">
+    <ContentControl Style="{StaticResource Card_Style}" Height="170" Width="220">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -11,7 +11,20 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="Validation" Foreground="#FFB3CE00" Background="#FFB2BD69" Style="{StaticResource HeaderControl_Style}"/>
-            <!--<Button Grid.Row="2" Content="MORE DEMOS..." Click="ButtonViewMore_Click" Background="#FCAB54" Style="{StaticResource ButtonViewMore_Style}"/>-->
+            <Border Grid.Row="1" x:Name="ValidationBorder" Background="LightGray" BorderBrush="Gray" BorderThickness="2" Margin="10" Padding="5">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Name: "/>
+                        <TextBox x:Name="NameTextBoxForValidation" Text="{Binding Name, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" BindingValidationError="ValidationBorder_BindingValidationError" HorizontalAlignment="Left"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Age: "/>
+                        <TextBox x:Name="AgeTextBoxForValidation" Text="{Binding Age, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" BindingValidationError="ValidationBorder_BindingValidationError" HorizontalAlignment="Left"/>
+                    </StackPanel>
+                    <Button x:Name="MyButtonForValidation" Content="OK" Background="#ffcce6ff" Click="MyButtonForValidation_Click"/>
+                </StackPanel>
+            </Border>
+            <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FFB3CE00" Style="{StaticResource ButtonViewSource_Style}"/>
         </Grid>
     </ContentControl>
 </UserControl>

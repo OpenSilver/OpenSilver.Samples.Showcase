@@ -213,6 +213,7 @@
     <Compile Include="Samples\Net_Framework\RESX\RESX_Demo_More.xaml.cs">
       <DependentUpon>RESX_Demo_More.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Samples\Net_Framework\Validation\Person.cs" />
     <Compile Include="Samples\Net_Framework\Validation\Validation_Demo.xaml.cs">
       <DependentUpon>Validation_Demo.xaml</DependentUpon>
     </Compile>
