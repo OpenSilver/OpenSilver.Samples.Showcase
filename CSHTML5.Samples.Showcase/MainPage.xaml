@@ -8,31 +8,49 @@
     Background="#FFF0F0F0"
     mc:Ignorable="d">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition x:Name="LeftColumn" Width="180"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <Border Grid.Column="0" Background="#FF6C6C6C">
-            <StackPanel Margin="0,20,0,0">
-                <Button Content="Panels &amp; Controls" Click="ButtonXamlControls_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="18"/>
-                <Button Content="XAML Features" Click="ButtonXamlFeatures_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="18"/>
-                <Button Content=".NET Framework" Click="ButtonNetFramework_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="18"/>
-                <Button Content="Client/Server" Click="ButtonClientServer_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="18"/>
-                <Button Content="Interop" Click="ButtonInterop_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="18"/>
-                <Button Content="Extensions" Click="ButtonExtensions_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="18"/>
-                <Button Content="Performance" Click="ButtonPerformance_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="18"/>
-            </StackPanel>
-        </Border>
-        <ScrollViewer Grid.Column="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible">
-            <Frame x:Name="PageContainer" JournalOwnership="Automatic" Margin="20,0,0,27">
-                <Frame.UriMapper>
-                    <UriMapper>
-                        <UriMapping
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Border x:Name="MenuBorder" Canvas.ZIndex="1" Background="#FF6C6C6C" Width="180" HorizontalAlignment="Left">
+                <Border.RenderTransform>
+                    <TranslateTransform/>
+                </Border.RenderTransform>
+                <StackPanel Margin="0,20,0,0">
+                    <Button Content="Panels &amp; Controls" Click="ButtonXamlControls_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="18"/>
+                    <Button Content="XAML Features" Click="ButtonXamlFeatures_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="18"/>
+                    <Button Content=".NET Framework" Click="ButtonNetFramework_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="18"/>
+                    <Button Content="Client/Server" Click="ButtonClientServer_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="18"/>
+                    <Button Content="Interop" Click="ButtonInterop_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="18"/>
+                    <Button Content="Extensions" Click="ButtonExtensions_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="18"/>
+                    <Button Content="Performance" Click="ButtonPerformance_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="18"/>
+                </StackPanel>
+            </Border>
+            <Border x:Name="ButtonToHideOrShowMenu" Canvas.ZIndex="2" Padding="2" Visibility="Collapsed" Background="#FF6C6C6C" BorderThickness="2" BorderBrush="White" CornerRadius="5" Width="50" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left">
+                <Border.RenderTransform>
+                    <TranslateTransform/>
+                </Border.RenderTransform>
+                <Button Content="-" FontSize="18" Click="ButtonHideOrShowMenu_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            </Border>
+            <ScrollViewer x:Name="ScrollViewer1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible">
+                <Frame x:Name="PageContainer" JournalOwnership="Automatic" Margin="0,0,0,27">
+                    <Frame.UriMapper>
+                        <UriMapper>
+                            <UriMapping
                             Uri="/{pathToPageExcludingExtension}"
                             MappedUri="/Samples/{pathToPageExcludingExtension}.xaml"/>
-                    </UriMapper>
-                </Frame.UriMapper>
-            </Frame>
-        </ScrollViewer>
+                        </UriMapper>
+                    </Frame.UriMapper>
+                    <Border.RenderTransform>
+                        <TranslateTransform/>
+                    </Border.RenderTransform>
+                </Frame>
+            </ScrollViewer>
+        </Grid>
+        <Border x:Name="LoadingMessage" Visibility="Collapsed" Background="#44FFFFFF" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Border Background="#88000000" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="26,20" CornerRadius="20">
+                <TextBlock Text="Loading, please wait..." Foreground="White" FontSize="22"/>
+            </Border>
+        </Border>
     </Grid>
 </Page>

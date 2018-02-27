@@ -24,5 +24,28 @@ namespace CSHTML5.Samples.Showcase
         {
             MessageBox.Show(e.Text);
         }
+
+        private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
+        {
+            ViewSourceButtonHelper.ViewSource(new List<ViewSourceButtonInfo>()
+            {
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "File_Open_Demo.xaml",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Net_Framework/File_Open/File_Open_Demo.xaml"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "File_Open_Demo.xaml.cs",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Net_Framework/File_Open/File_Open_Demo.xaml.cs"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "FileOpenDialog.cs",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Net_Framework/File_Open/FileOpenDialog.cs"
+                }
+            });
+        }
+
     }
 }

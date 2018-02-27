@@ -4,7 +4,7 @@
     xmlns:extensions="using:CSHTML5.Extensions.FileOpenDialog"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:CSHTML5.Samples.Showcase">
-    <ContentControl Style="{StaticResource Card_Style}" Height="140" Width="220">
+    <ContentControl Style="{StaticResource Card_Style}" Width="245">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -12,10 +12,10 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="Open a File" Foreground="#FFEDD955" Background="#FFCFC687" Style="{StaticResource HeaderControl_Style}"/>
-            <Canvas Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" >
+            <Canvas Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Height="20">
                 <extensions:ControlForDisplayingTheFileOpenDialog FileOpened="OnFileOpened" Filter="*.txt,*.csv" ResultKind="Text"/>
             </Canvas>
-            <!--<Button Grid.Row="2" Content="MORE DEMOS..." Click="ButtonViewMore_Click" Background="#FCAB54" Style="{StaticResource ButtonViewMore_Style}"/>-->
+            <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FFEDD955" Style="{StaticResource ButtonViewSource_Style}"/>
         </Grid>
     </ContentControl>
 </UserControl>

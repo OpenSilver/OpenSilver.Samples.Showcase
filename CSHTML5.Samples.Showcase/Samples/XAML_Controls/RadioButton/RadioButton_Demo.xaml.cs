@@ -20,14 +20,27 @@ namespace CSHTML5.Samples.Showcase
             this.InitializeComponent();
         }
 
-        private void ButtonViewMore_Click(object sender, RoutedEventArgs e)
-        {
-            ChildWindowHelper.ShowChildWindow(new Button_Demo_More());
-        }
-
         void RadioButton_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show(RadioButton1.IsChecked == true ? "Option 1 selected" : "Option 2 selected");
         }
+
+        private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
+        {
+            ViewSourceButtonHelper.ViewSource(new List<ViewSourceButtonInfo>()
+            {
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "RadioButton_Demo.xaml",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Controls/RadioButton/RadioButton_Demo.xaml"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "RadioButton_Demo.xaml.cs",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Controls/RadioButton/RadioButton_Demo.xaml.cs"
+                }
+            });
+        }
+
     }
 }

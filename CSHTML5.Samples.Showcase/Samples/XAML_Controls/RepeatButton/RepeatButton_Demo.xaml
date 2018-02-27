@@ -3,7 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:CSHTML5.Samples.Showcase">
-    <ContentControl Style="{StaticResource Card_Style}" Height="300" Width="300">
+    <ContentControl Style="{StaticResource Card_Style}" Width="180">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -13,11 +13,11 @@
             <ContentControl Content="RepeatButton" Foreground="#FF69C8FF" Background="#FFA1C3D7" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,30,0,0">
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left">
-                    <RepeatButton Width="95" Height="30" Content="Translate"  Click="ButtonTranslate_Click"/>
-                    <RepeatButton Width="95" Height="30" Content="Rotate"  Click="ButtonRotate_Click" Margin="10,0,0,0"/>
+                    <RepeatButton Width="65" Height="30" Content="Translate"  Click="ButtonTranslate_Click"/>
+                    <RepeatButton Width="65" Height="30" Content="Rotate"  Click="ButtonRotate_Click" Margin="10,0,0,0"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,20,0,0">
-                    <Canvas Width="200" Height="200" Background="#DDDDDD" VerticalAlignment="Center" HorizontalAlignment="Left">
+                    <Canvas Width="140" Height="200" Background="#DDDDDD" VerticalAlignment="Center" HorizontalAlignment="Left">
                         <Button x:Name="TestTransformBorder" Canvas.ZIndex="10"  Width="30" Height="30" Background="#FF6666ff" Click="TransformButton_Click"/>
                         <Rectangle Width="30" Height="30" Fill="#ffff4d4d">
                             <Rectangle.RenderTransform>
@@ -27,7 +27,7 @@
                     </Canvas>
                 </StackPanel>
             </StackPanel>
-            <!--<Button Grid.Row="2" Content="MORE DEMOS..." Click="ButtonViewMore_Click" Background="#FCAB54" Style="{StaticResource ButtonViewMore_Style}"/>-->
+            <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FF69C8FF" Style="{StaticResource ButtonViewSource_Style}"/>
         </Grid>
     </ContentControl>
 </UserControl>

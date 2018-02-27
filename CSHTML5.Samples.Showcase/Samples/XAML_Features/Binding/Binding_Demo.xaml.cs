@@ -76,5 +76,22 @@ namespace CSHTML5.Samples.Showcase
             _listOfContacts.Add(new Person() { FirstName = FirstNameTextBox.Text, LastName = LastNameTextBox.Text });
         }*/
 
+        private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
+        {
+            ViewSourceButtonHelper.ViewSource(new List<ViewSourceButtonInfo>()
+            {
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "Binding_Demo.xaml",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Features/Binding/Binding_Demo.xaml"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "Binding_Demo.xaml.cs",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Features/Binding/Binding_Demo.xaml.cs"
+                }
+            });
+        }
+
     }
 }

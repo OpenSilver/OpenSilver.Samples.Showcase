@@ -48,5 +48,23 @@ namespace CSHTML5.Samples.Showcase
             Canvas.SetZIndex(YellowRectangle, 2);
         }
 
+        private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
+        {
+            ViewSourceButtonHelper.ViewSource(new List<ViewSourceButtonInfo>()
+            {
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "FindElementsInHostCoordinates_Demo.xaml",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Features/FindElementsInHostCoordinates/FindElementsInHostCoordinates_Demo.xaml"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "FindElementsInHostCoordinates_Demo.xaml.cs",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Features/FindElementsInHostCoordinates/FindElementsInHostCoordinates_Demo.xaml.cs"
+                }
+            });
+        }
+
+
     }
 }

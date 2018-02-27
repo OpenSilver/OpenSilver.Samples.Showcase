@@ -5,7 +5,7 @@
     xmlns:local="using:CSHTML5.Samples.Showcase">
     <StackPanel>
         <TextBlock Text="Client / Server" Style="{StaticResource PageHeader_Style}"/>
-        <local:MasonryPanel Margin="0,10,0,0">
+        <local:MasonryPanel Style="{StaticResource Panel_Style}">
             <local:WCF_SOAP_Demo HorizontalAlignment="Center"/>
             <local:REST_WebClient_Demo HorizontalAlignment="Center"/>
             <local:SignalR_Demo HorizontalAlignment="Center"/>

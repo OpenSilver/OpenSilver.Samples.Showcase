@@ -51,5 +51,23 @@ namespace CSHTML5.Samples.Showcase
             brush.Color = Color.FromArgb((byte)r.Next(255), (byte)r.Next(255), (byte)r.Next(255), (byte)r.Next(255));
             TestTransformBorder.Background = brush;
         }
+
+        private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
+        {
+            ViewSourceButtonHelper.ViewSource(new List<ViewSourceButtonInfo>()
+            {
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "RepeatButton_Demo.xaml",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Controls/RepeatButton/RepeatButton_Demo.xaml"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "RepeatButton_Demo.xaml.cs",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Controls/RepeatButton/RepeatButton_Demo.xaml.cs"
+                }
+            });
+        }
+
     }
 }

@@ -41,5 +41,33 @@ namespace CSHTML5.Samples.Showcase
                 this.TextBlockForTestingChildWindow.Text = "Login canceled.";
             }
         }
+
+        private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
+        {
+            ViewSourceButtonHelper.ViewSource(new List<ViewSourceButtonInfo>()
+            {
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "ChildWindow_Demo.xaml",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Controls/ChildWindow/ChildWindow_Demo.xaml"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "ChildWindow_Demo.xaml.cs",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Controls/ChildWindow/ChildWindow_Demo.xaml.cs"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "LoginWindow.xaml",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Controls/ChildWindow/LoginWindow.xaml"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "DefaultChildWindowStyle.xaml",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Controls/ChildWindow/Styles/DefaultChildWindowStyle.xaml"
+                }
+            });
+        }
+
     }
 }

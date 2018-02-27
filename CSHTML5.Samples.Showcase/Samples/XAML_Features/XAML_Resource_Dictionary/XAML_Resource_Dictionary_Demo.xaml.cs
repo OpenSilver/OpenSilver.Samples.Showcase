@@ -19,5 +19,23 @@ namespace CSHTML5.Samples.Showcase
         {
             this.InitializeComponent();
         }
+
+        private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
+        {
+            ViewSourceButtonHelper.ViewSource(new List<ViewSourceButtonInfo>()
+            {
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "XAML_Resource_Dictionary_Demo.xaml",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Features/XAML_Resource_Dictionary/XAML_Resource_Dictionary_Demo.xaml"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "XAML_Resource_Dictionary_Demo.xaml.cs",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Features/XAML_Resource_Dictionary/XAML_Resource_Dictionary_Demo.xaml.cs"
+                }
+            });
+        }
+
     }
 }

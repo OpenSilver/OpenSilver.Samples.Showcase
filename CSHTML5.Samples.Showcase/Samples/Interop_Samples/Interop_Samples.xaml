@@ -5,11 +5,11 @@
     xmlns:local="using:CSHTML5.Samples.Showcase">
     <StackPanel>
         <TextBlock Text="Interop" Style="{StaticResource PageHeader_Style}"/>
-        <local:MasonryPanel Margin="0,10,0,0">
+        <local:MasonryPanel Style="{StaticResource Panel_Style}">
             <local:ExecuteJavascript_Demo HorizontalAlignment="Center"/>
-            <local:Interop_HtmlPresenter_Demo HorizontalAlignment="Center"/>
             <local:GetDiv_Demo HorizontalAlignment="Center"/>
             <local:WebView_Demo HorizontalAlignment="Center"/>
+            <local:Interop_HtmlPresenter_Demo HorizontalAlignment="Center"/>
         </local:MasonryPanel>
     </StackPanel>
 </UserControl>

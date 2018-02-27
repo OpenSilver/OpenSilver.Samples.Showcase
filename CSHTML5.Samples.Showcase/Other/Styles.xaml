@@ -17,17 +17,20 @@
         <Setter Property="TextWrapping" Value="Wrap"/>
         <Setter Property="Foreground" Value="#FF808080"/>
     </Style>
+    <Style x:Key="Panel_Style" TargetType="Panel">
+        <Setter Property="Margin" Value="0,30,0,0"/>
+    </Style>
     <Style x:Key="Card_Style" TargetType="ContentControl">
         <Style.Setters>
-            <Setter Property="Margin" Value="7,5,7,5"/>
+            <Setter Property="Margin" Value="22,22,7,5"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ContentControl">
                         <Border Background="White" CornerRadius="4">
-                            <!--<Border.Effect>
-                                <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="10" Opacity="0.3" />
-                            </Border.Effect>-->
-                            <ContentPresenter Margin="16,8,16,8"/>
+                            <Border.Effect>
+                                <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="10" Opacity="0.1" />
+                            </Border.Effect>
+                            <ContentPresenter Margin="8,8,8,8"/>
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>
@@ -41,7 +44,7 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="ContentControl">
                         <Border Background="{TemplateBinding Foreground}"
-                                Margin="-24,-16,0,0"
+                                Margin="-24,-16,-10,0"
                                 Padding="12,2,12,4"
                                 CornerRadius="2"
                                 HorizontalAlignment="Left"
@@ -59,6 +62,106 @@
                 </Setter.Value>
             </Setter>
         </Style.Setters>
+    </Style>
+    <Style x:Key="ButtonViewSource_Style" TargetType="Button">
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="Background" Value="#FFE2E2E2"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Margin" Value="10,15,4,2"/>
+        <Setter Property="Padding" Value="12,4,12,4"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="OuterBorder"
+                            CornerRadius="10"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup Name="CommonStates">
+                                <VisualState Name="Normal">
+                                </VisualState>
+                                <VisualState Name="PointerOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="InnerBorder">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="#11000000"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="MainTextBlock">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="White"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState Name="Pressed">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="InnerBorder">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="#22000000"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="MainTextBlock">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="White"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="InnerBorder">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="#33FFFFFF"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="MainTextBlock">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="White"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="InnerBorder"
+                                CornerRadius="10"
+                                Background="{TemplateBinding Foreground}">
+                            <TextBlock x:Name="MainTextBlock" Text="{TemplateBinding Content}" Foreground="{TemplateBinding Background}" Margin="{TemplateBinding Padding}" TextDecorations="Underline" FontWeight="Bold"/>
+                            <!--<ContentPresenter x:Name="ContentPresenter"
+                                                ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                Content="{TemplateBinding Content}"
+                                                Margin="{TemplateBinding Padding}"
+                                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>-->
+                        </Border>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ViewSourceChildWindow_Style" TargetType="ChildWindow">
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalAlignment" Value="Stretch"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ChildWindow">
+                    <Grid x:Name="Root">
+                        <Grid x:Name="Overlay" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0" Background="#33000000" Opacity="1" />
+                        <Grid x:Name="ContentRoot" HorizontalAlignment="Center" VerticalAlignment="Center" Height="500" Width="640">
+                            <Border CornerRadius="16" Background="White">
+                                <Border.Effect>
+                                    <DropShadowEffect ShadowDepth="1" Color="Black" BlurRadius="16" Opacity="0.3" />
+                                </Border.Effect>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Button x:Name="CloseButton" Content="X" FontSize="18" FontWeight="Bold" Foreground="Gray" Background="{x:Null}" HorizontalAlignment="Right" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="8,2,8,2" Margin="5" />
+                                    <ContentPresenter x:Name="ContentPresenter" Grid.Row="1" Content="{TemplateBinding Content}" Margin="20,0,20,20"/>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
     <Style x:Key="ButtonViewMore_Style" TargetType="Button">
         <Setter Property="HorizontalAlignment" Value="Center"/>

@@ -66,9 +66,12 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Other\ChildWindowHelper.cs" />
+    <Compile Include="Other\ControlToDisplayCodeHostedOnGitHub.cs" />
     <Compile Include="Other\KilometersToMilesConverter.cs" />
     <Compile Include="Other\MasonryPanel.cs" />
     <Compile Include="Other\Planet.cs" />
+    <Compile Include="Other\ViewSourceButtonHelper.cs" />
+    <Compile Include="Other\ViewSourceButtonInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Samples\Client-Server\Client_Server.xaml.cs">
       <DependentUpon>Client_Server.xaml</DependentUpon>
@@ -147,11 +150,23 @@
     <Compile Include="Samples\Interop_Samples\WebView\WebView_Demo_More.xaml.cs">
       <DependentUpon>WebView_Demo_More.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Samples\Net_Framework\AsyncAwait\AsyncAwait_Demo.xaml.cs">
+      <DependentUpon>AsyncAwait_Demo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\Net_Framework\AsyncAwait\AsyncAwait_Demo_More.xaml.cs">
+      <DependentUpon>AsyncAwait_Demo_More.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Samples\Net_Framework\Clipboard_SetText\Clipboard_SetText_Demo.xaml.cs">
       <DependentUpon>Clipboard_SetText_Demo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\Net_Framework\Clipboard_SetText\Clipboard_SetText_Demo_More.xaml.cs">
       <DependentUpon>Clipboard_SetText_Demo_More.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\Net_Framework\Console\Console_Demo.xaml.cs">
+      <DependentUpon>Console_Demo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\Net_Framework\Console\Console_Demo_More.xaml.cs">
+      <DependentUpon>Console_Demo_More.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\Net_Framework\DataContractSerializer\DataContractSerializer_Demo.xaml.cs">
       <DependentUpon>DataContractSerializer_Demo.xaml</DependentUpon>
@@ -179,11 +194,29 @@
     <Compile Include="Samples\Net_Framework\File_Save\File_Save_Demo_More.xaml.cs">
       <DependentUpon>File_Save_Demo_More.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Samples\Net_Framework\GetRessourceStream\GetRessourceStream_Demo.xaml.cs">
+      <DependentUpon>GetRessourceStream_Demo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\Net_Framework\GetRessourceStream\GetRessourceStream_Demo_More.xaml.cs">
+      <DependentUpon>GetRessourceStream_Demo_More.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Samples\Net_Framework\HtmlPage\HtmlPage_Demo.xaml.cs">
       <DependentUpon>HtmlPage_Demo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\Net_Framework\HtmlPage\HtmlPage_Demo_More.xaml.cs">
       <DependentUpon>HtmlPage_Demo_More.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\Net_Framework\IsolatedStorageFile\IsolatedStorageFile_Demo.xaml.cs">
+      <DependentUpon>IsolatedStorageFile_Demo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\Net_Framework\IsolatedStorageFile\IsolatedStorageFile_Demo_More.xaml.cs">
+      <DependentUpon>IsolatedStorageFile_Demo_More.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\Net_Framework\IsolatedStorageSettings\IsolatedStorageSettings _Demo.xaml.cs">
+      <DependentUpon>IsolatedStorageSettings _Demo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\Net_Framework\IsolatedStorageSettings\IsolatedStorageSettings _Demo_More.xaml.cs">
+      <DependentUpon>IsolatedStorageSettings _Demo_More.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\Net_Framework\JSON_Serializer\JsonConvert.cs" />
     <Compile Include="Samples\Net_Framework\JSON_Serializer\JSON_Serializer_Demo.xaml.cs">
@@ -198,6 +231,12 @@
     <Compile Include="Samples\Net_Framework\Keyboard\Keyboard_Demo_More.xaml.cs">
       <DependentUpon>Keyboard_Demo_More.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Samples\Net_Framework\Linq\Linq_Demo.xaml.cs">
+      <DependentUpon>Linq_Demo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\Net_Framework\Linq\Linq_Demo_More.xaml.cs">
+      <DependentUpon>Linq_Demo_More.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Samples\Net_Framework\Net_Framework.xaml.cs">
       <DependentUpon>Net_Framework.xaml</DependentUpon>
     </Compile>
@@ -206,6 +245,12 @@
     </Compile>
     <Compile Include="Samples\Net_Framework\Printing\Printing_Demo_More.xaml.cs">
       <DependentUpon>Printing_Demo_More.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\Net_Framework\Regex\Regex_Demo.xaml.cs">
+      <DependentUpon>Regex_Demo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\Net_Framework\Regex\Regex_Demo_More.xaml.cs">
+      <DependentUpon>Regex_Demo_More.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\Net_Framework\RESX\RESX_Demo.xaml.cs">
       <DependentUpon>RESX_Demo.xaml</DependentUpon>
@@ -312,6 +357,12 @@
     <Compile Include="Samples\XAML_Controls\Expander\Expander_Demo_More.xaml.cs">
       <DependentUpon>Expander_Demo_More.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Samples\XAML_Controls\Frame\Frame_Demo.xaml.cs">
+      <DependentUpon>Frame_Demo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\XAML_Controls\Frame\Frame_Demo_More.xaml.cs">
+      <DependentUpon>Frame_Demo_More.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Samples\XAML_Controls\GridSplitter\GridSplitter_Demo.xaml.cs">
       <DependentUpon>GridSplitter_Demo.xaml</DependentUpon>
     </Compile>
@@ -330,6 +381,12 @@
     <Compile Include="Samples\XAML_Controls\HtmlPresenter\HtmlPresenter_Demo_More.xaml.cs">
       <DependentUpon>HtmlPresenter_Demo_More.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Samples\XAML_Controls\HyperlinkButton\HyperlinkButton.xaml.cs">
+      <DependentUpon>HyperlinkButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\XAML_Controls\HyperlinkButton\HyperlinkButton_Demo_More.xaml.cs">
+      <DependentUpon>HyperlinkButton_Demo_More.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Samples\XAML_Controls\Image\Image_Demo.xaml.cs">
       <DependentUpon>Image_Demo.xaml</DependentUpon>
     </Compile>
@@ -341,6 +398,12 @@
     </Compile>
     <Compile Include="Samples\XAML_Controls\ListBox\ListBox_Demo_More.xaml.cs">
       <DependentUpon>ListBox_Demo_More.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\XAML_Controls\MediaElement\MediaElement_Demo.xaml.cs">
+      <DependentUpon>MediaElement_Demo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\XAML_Controls\MediaElement\MediaElement_Demo_More.xaml.cs">
+      <DependentUpon>MediaElement_Demo_More.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\XAML_Controls\NumericUpDown\NumericUpDown_Demo.xaml.cs">
       <DependentUpon>NumericUpDown_Demo.xaml</DependentUpon>
@@ -465,6 +528,12 @@
     <Compile Include="Samples\XAML_Features\ClipToBounds\ClipToBounds_Demo_More.xaml.cs">
       <DependentUpon>ClipToBounds_Demo_More.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Samples\XAML_Features\Commanding\Commanding_Demo.xaml.cs">
+      <DependentUpon>Commanding_Demo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\XAML_Features\Commanding\Commanding_Demo_More.xaml.cs">
+      <DependentUpon>Commanding_Demo_More.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Samples\XAML_Features\DependencyProperties\DependencyProperties_Demo.xaml.cs">
       <DependentUpon>DependencyProperties_Demo.xaml</DependentUpon>
     </Compile>
@@ -495,6 +564,12 @@
     <Compile Include="Samples\XAML_Features\Gradients\Gradients_Demo_More.xaml.cs">
       <DependentUpon>Gradients_Demo_More.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Samples\XAML_Features\MarkupExtensions\MarkupExtensions_Demo.xaml.cs">
+      <DependentUpon>MarkupExtensions_Demo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\XAML_Features\MarkupExtensions\MarkupExtensions_Demo_More.xaml.cs">
+      <DependentUpon>MarkupExtensions_Demo_More.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Samples\XAML_Features\RenderTransforms\RenderTransforms_Demo.xaml.cs">
       <DependentUpon>RenderTransforms_Demo.xaml</DependentUpon>
     </Compile>
@@ -506,6 +581,12 @@
     </Compile>
     <Compile Include="Samples\XAML_Features\TransformToVisual\TransformToVisual_Demo_More.xaml.cs">
       <DependentUpon>TransformToVisual_Demo_More.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\XAML_Features\UriMapper\UriMapper_Demo.xaml.cs">
+      <DependentUpon>UriMapper_Demo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\XAML_Features\UriMapper\UriMapper_Demo_More.xaml.cs">
+      <DependentUpon>UriMapper_Demo_More.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\XAML_Features\VisualTreeHelper\VisualTreeHelper_Demo.xaml.cs">
       <DependentUpon>VisualTreeHelper_Demo.xaml</DependentUpon>
@@ -548,6 +629,8 @@
     <Content Include="Other\Planets\Saturn.png" />
     <Content Include="Other\Planets\Uranus.png" />
     <Content Include="Other\Planets\Venus.png" />
+    <Content Include="Other\SampleAudio.mp3" />
+    <Content Include="Other\SampleVideo.mp4" />
     <Content Include="Other\smallBall.png" />
     <None Include="Service References\ServiceReference1\CSHTML5.Samples.Showcase.ServiceReference1.AddOrUpdateToDoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -697,11 +780,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Samples\Net_Framework\AsyncAwait\AsyncAwait_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\Net_Framework\AsyncAwait\AsyncAwait_Demo_More.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Samples\Net_Framework\Clipboard_SetText\Clipboard_SetText_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Samples\Net_Framework\Clipboard_SetText\Clipboard_SetText_Demo_More.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\Net_Framework\Console\Console_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\Net_Framework\Console\Console_Demo_More.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -737,11 +836,35 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Samples\Net_Framework\GetRessourceStream\GetRessourceStream_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\Net_Framework\GetRessourceStream\GetRessourceStream_Demo_More.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Samples\Net_Framework\HtmlPage\HtmlPage_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Samples\Net_Framework\HtmlPage\HtmlPage_Demo_More.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\Net_Framework\IsolatedStorageFile\IsolatedStorageFile_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\Net_Framework\IsolatedStorageFile\IsolatedStorageFile_Demo_More.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\Net_Framework\IsolatedStorageSettings\IsolatedStorageSettings _Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\Net_Framework\IsolatedStorageSettings\IsolatedStorageSettings _Demo_More.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -761,6 +884,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Samples\Net_Framework\Linq\Linq_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\Net_Framework\Linq\Linq_Demo_More.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Samples\Net_Framework\Net_Framework.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -770,6 +901,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Samples\Net_Framework\Printing\Printing_Demo_More.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\Net_Framework\Regex\Regex_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\Net_Framework\Regex\Regex_Demo_More.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -817,7 +956,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Samples\XAML_Controls\AutoCompleteBox\Styles\INTERNAL_DefaultAutoCompleteBoxStyle.xaml">
+    <Page Include="Samples\XAML_Controls\AutoCompleteBox\Styles\DefaultAutoCompleteBoxStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -933,6 +1072,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Samples\XAML_Controls\Frame\Frame_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\XAML_Controls\Frame\Frame_Demo_More.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Samples\XAML_Controls\GridSplitter\GridSplitter_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -961,6 +1108,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Samples\XAML_Controls\HyperlinkButton\HyperlinkButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\XAML_Controls\HyperlinkButton\HyperlinkButton_Demo_More.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Samples\XAML_Controls\Image\Image_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -974,6 +1129,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Samples\XAML_Controls\ListBox\ListBox_Demo_More.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\XAML_Controls\MediaElement\MediaElement_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\XAML_Controls\MediaElement\MediaElement_Demo_More.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -1173,6 +1336,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Samples\XAML_Features\Commanding\Commanding_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\XAML_Features\Commanding\Commanding_Demo_More.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Samples\XAML_Features\DependencyProperties\DependencyProperties_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1213,6 +1384,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Samples\XAML_Features\MarkupExtensions\MarkupExtensions_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\XAML_Features\MarkupExtensions\MarkupExtensions_Demo_More.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Samples\XAML_Features\RenderTransforms\RenderTransforms_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1226,6 +1405,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Samples\XAML_Features\TransformToVisual\TransformToVisual_Demo_More.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\XAML_Features\UriMapper\UriMapper_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\XAML_Features\UriMapper\UriMapper_Demo_More.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

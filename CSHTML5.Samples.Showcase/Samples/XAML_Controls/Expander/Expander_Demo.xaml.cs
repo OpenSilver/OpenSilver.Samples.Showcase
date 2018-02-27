@@ -20,9 +20,27 @@ namespace CSHTML5.Samples.Showcase
             this.InitializeComponent();
         }
 
-        private void ButtonViewMore_Click(object sender, RoutedEventArgs e)
+        private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
         {
-            ChildWindowHelper.ShowChildWindow(new Expander_Demo_More());
+            ViewSourceButtonHelper.ViewSource(new List<ViewSourceButtonInfo>()
+            {
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "Expander_Demo.xaml",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Controls/Expander/Expander_Demo.xaml"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "Expander_Demo.xaml.cs",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Controls/Expander/Expander_Demo.xaml.cs"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "DefaultExpanderStyle.xaml",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Controls/Expander/Styles/DefaultExpanderStyle.xaml"
+                }
+            });
         }
+
     }
 }

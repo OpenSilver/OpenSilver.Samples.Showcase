@@ -21,6 +21,7 @@ namespace CSHTML5.Samples.Showcase
         public Validation_Demo()
         {
             this.InitializeComponent();
+            ValidationBorder.DataContext = new Person();
         }
 
         private void ValidationBorder_BindingValidationError(object sender, ValidationErrorEventArgs e)

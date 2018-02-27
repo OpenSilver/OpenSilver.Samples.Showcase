@@ -18,6 +18,7 @@ namespace CSHTML5.Samples.Showcase
     {
         int _lastTickCount = 0;
         private readonly int[] SpriteCount = new int[] { 5, 10, 25, 50, 100, 250, 500, 1000, 2500, 5000, 10000, 25000, 50000, 100000, 250000, 500000, 1000000 };
+        bool _loaded = false;
 
         // Define variables to calculate the average "Frames Per Second":
         int _counterToCalculateAverageFPS = 0;
@@ -28,10 +29,11 @@ namespace CSHTML5.Samples.Showcase
         {
             this.InitializeComponent();
 
-            this.Loaded += MainPage_Loaded;
+            this.Loaded += HtmlCanvas_Demo_Loaded;
+            this.Unloaded += HtmlCanvas_Demo_Unloaded;
         }
 
-        private void MainPage_Loaded(object sender, RoutedEventArgs e)
+        private void HtmlCanvas_Demo_Loaded(object sender, RoutedEventArgs e)
         {
             if (!CSHTML5.Interop.IsRunningInTheSimulator)
             {
@@ -40,13 +42,19 @@ namespace CSHTML5.Samples.Showcase
 
                 // Start the main drawing loop:
                 _lastTickCount = Environment.TickCount;
+                _loaded = true;
                 MainLoop();
             }
             else
             {
                 this.Visibility = Visibility.Collapsed;
-                MessageBox.Show("This demo is too slow to run in the Simulator. Please run in the browser instead.");
+                MessageBox.Show("The Simulator is too slow to run this demo. Please run the demo in the browser instead.");
             }
+        }
+
+        void HtmlCanvas_Demo_Unloaded(object sender, RoutedEventArgs e)
+        {
+            _loaded = false; // This results in the main loop exiting.
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -134,7 +142,13 @@ namespace CSHTML5.Samples.Showcase
             HtmlCanvas1.Draw();
 
             // Re-enter this same method after a "Do Events":
-            Dispatcher.BeginInvoke(MainLoop);
+            Dispatcher.BeginInvoke((Action)(() =>
+            {
+                if (_loaded) // Continue only if the control has not been unloaded in the meantime.
+                {
+                    MainLoop();
+                }
+            }));
 
             // Calculate the average "Frames Per Second":
             _counterToCalculateAverageFPS++;
@@ -151,5 +165,28 @@ namespace CSHTML5.Samples.Showcase
                 _tickCountToCalculateAverageFPS = tickCountToCalculateAverageFPS;
             }
         }
+
+        private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
+        {
+            ViewSourceButtonHelper.ViewSource(new List<ViewSourceButtonInfo>()
+            {
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "HtmlCanvas_Demo.xaml",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Performance/HtmlCanvas/HtmlCanvas_Demo.xaml"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "HtmlCanvas_Demo.xaml.cs",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Performance/HtmlCanvas/HtmlCanvas_Demo.xaml.cs"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "MainSprite.cs",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Performance/HtmlCanvas/MainSprite.cs"
+                }
+            });
+        }
+
     }
 }

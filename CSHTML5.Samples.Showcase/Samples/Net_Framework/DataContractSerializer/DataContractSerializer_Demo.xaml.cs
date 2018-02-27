@@ -38,9 +38,13 @@ namespace CSHTML5.Samples.Showcase
         [DataContract]
         public class ClassToSerialize
         {
+            [DataMember]
             public string TextField { get; set; }
+            [DataMember]
             public DateTime DateField { get; set; }
+            [DataMember]
             public Guid GuidField { get; set; }
+            [DataMember]
             public bool BooleanField { get; set; }
         }
 
@@ -58,7 +62,25 @@ namespace CSHTML5.Samples.Showcase
             ClassToSerialize deserializedObject = (ClassToSerialize)dataContractSerializer.DeserializeFromString(xml);
 
             // Display the result of the deserialization:
-            SerializationDestinationPanel.DataContext = _classToSerialize;
+            SerializationDestinationPanel.DataContext = deserializedObject;
         }
+
+        private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
+        {
+            ViewSourceButtonHelper.ViewSource(new List<ViewSourceButtonInfo>()
+            {
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "DataContractSerializer_Demo.xaml",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Net_Framework/DataContractSerializer/DataContractSerializer_Demo.xaml"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "DataContractSerializer_Demo.xaml.cs",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Net_Framework/DataContractSerializer/DataContractSerializer_Demo.xaml.cs"
+                }
+            });
+        }
+
     }
 }
