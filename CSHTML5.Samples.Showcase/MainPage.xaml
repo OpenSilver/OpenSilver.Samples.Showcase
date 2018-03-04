@@ -34,7 +34,7 @@
                 <Border.RenderTransform>
                     <TranslateTransform/>
                 </Border.RenderTransform>
-                <Button Content="-" FontSize="18" Click="ButtonHideOrShowMenu_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                <Button Content="-" FontSize="18" Click="ButtonToHideOrShowMenu_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
             </Border>
             <ScrollViewer x:Name="ScrollViewer1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible">
                 <Frame x:Name="PageContainer" JournalOwnership="Automatic" Margin="0,0,0,27">
