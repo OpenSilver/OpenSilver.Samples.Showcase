@@ -13,9 +13,12 @@ namespace CSHTML5.Samples.Showcase
         public MainPage()
         {
             this.InitializeComponent();
+            MainPage.Current = this;
             this.Loaded += MainPage_Loaded;
             Window.Current.SizeChanged += Window_SizeChanged;
         }
+
+        public static MainPage Current { get; private set; }
 
         void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
@@ -83,6 +86,37 @@ namespace CSHTML5.Samples.Showcase
                 }));
         }
 
+        #region Show/hide source code
+
+        public void ViewSourceCode(UIElement controlThatDisplaysTheSourceCode)
+        {
+            // Open the Source Code Pane, which is the place where the source code will be displayed:
+            if (SourceCodePane.Visibility == Visibility.Collapsed)
+            {
+                RowThatContainsThePage.Height = new GridLength(0.5d, GridUnitType.Star);
+                RowThatContainsTheGridSplitter.Height = new GridLength(5d);
+                RowThatContainsTheSourceCodePane.Height = new GridLength(0.5d, GridUnitType.Star);
+                GridSplitter1.ResizeDirection = GridSplitter.GridResizeDirection.Rows;
+                GridSplitter1.Visibility = Visibility.Visible;
+                SourceCodePane.Visibility = Visibility.Visible;
+            }
+
+            // Display the source code:
+            PlaceWhereSourceCodeWillBeDisplayed.Child = controlThatDisplaysTheSourceCode;
+        }
+
+        private void ButtonToCloseSourceCode_Click(object sender, RoutedEventArgs e)
+        {
+            // Close the Source Code Pane, which is the place where the source code is displayed:
+            PlaceWhereSourceCodeWillBeDisplayed.Child = null;
+            GridSplitter1.Visibility = Visibility.Collapsed;
+            SourceCodePane.Visibility = Visibility.Collapsed;
+            RowThatContainsThePage.Height = new GridLength(1d, GridUnitType.Star);
+            RowThatContainsTheGridSplitter.Height = new GridLength(0d);
+            RowThatContainsTheSourceCodePane.Height = new GridLength(0d);
+        }
+
+        #endregion
 
         #region states management
         //this region contains all that we use to make the menu on the left disappears when the screen is too small.

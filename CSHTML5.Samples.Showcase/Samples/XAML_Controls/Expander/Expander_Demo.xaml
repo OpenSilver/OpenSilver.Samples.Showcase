@@ -11,10 +11,11 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="Expander" Foreground="#FCAB54" Background="#FFCCA376" Style="{StaticResource HeaderControl_Style}"/>
-            <Expander Grid.Row="1" Header="Click to Expand/Collapse" Margin="0,30,0,0" VerticalAlignment="Top" HorizontalAlignment="Center">
+            <TextBlock Grid.Row="1" Text="(Demo under construction)" Foreground="DarkGray" FontSize="12" Margin="0,25,0,20" HorizontalAlignment="Center"/>
+            <!--<Expander Grid.Row="1" Header="Click to Expand/Collapse" Margin="0,30,0,0" VerticalAlignment="Top" HorizontalAlignment="Center">
                 <TextBlock Text="This is the content of the Expander" Margin="30,20,20,20" TextWrapping="Wrap" TextAlignment="Center"/>
             </Expander>
-            <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FCAB54" Style="{StaticResource ButtonViewSource_Style}"/>
+            <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FCAB54" Style="{StaticResource ButtonViewSource_Style}"/>-->
         </Grid>
     </ContentControl>
 </UserControl>

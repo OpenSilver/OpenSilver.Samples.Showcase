@@ -29,13 +29,7 @@ namespace CSHTML5.Samples.Showcase
 
                 ((TabItem)tabControl.Items[0]).IsSelected = true;
 
-                var childWindow = new ChildWindow()
-                {
-                    Content = tabControl,
-                    Style = (Style)App.Current.Resources["ViewSourceChildWindow_Style"]
-                };
-
-                childWindow.Show();
+                MainPage.Current.ViewSourceCode(tabControl);
             }
         }
     }

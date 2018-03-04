@@ -121,6 +121,7 @@
                         </VisualStateManager.VisualStateGroups>
                         <Border x:Name="InnerBorder"
                                 CornerRadius="10"
+                                Margin="-1"
                                 Background="{TemplateBinding Foreground}">
                             <TextBlock x:Name="MainTextBlock" Text="{TemplateBinding Content}" Foreground="{TemplateBinding Background}" Margin="{TemplateBinding Padding}" TextDecorations="Underline" FontWeight="Bold"/>
                             <!--<ContentPresenter x:Name="ContentPresenter"
