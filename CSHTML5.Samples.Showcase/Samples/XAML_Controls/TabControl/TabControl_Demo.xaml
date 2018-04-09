@@ -11,7 +11,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="TabControl" Foreground="#FF3ED4B2" Background="#FF8FCBBE" Style="{StaticResource HeaderControl_Style}"/>
-            <TabControl Grid.Row="1" x:Name="MyTabControl" Margin="0,10,0,5" HorizontalAlignment="Left" Width="140">
+            <TabControl Grid.Row="1" x:Name="MyTabControl" HorizontalAlignment="Center" Width="140">
                 <TabItem Header="Tab 1" IsSelected="True">
                     <TextBlock Text="Content of Tab 1" Margin="20"/>
                 </TabItem>

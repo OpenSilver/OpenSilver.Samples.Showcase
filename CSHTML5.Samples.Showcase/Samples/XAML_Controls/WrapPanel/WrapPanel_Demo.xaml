@@ -11,7 +11,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="WrapPanel" Foreground="#FFBDE567" Background="#FFB9CD89" Style="{StaticResource HeaderControl_Style}"/>
-            <WrapPanel Grid.Row="1" Background="#FFEEEEEE" Width="100" Height="100" Margin="0,15,0,0">
+            <WrapPanel Grid.Row="1" Background="#FFEEEEEE" Width="100" Height="100">
                 <Border Width="20" Height="20" Background="#FFB9E58D" Margin="5"/>
                 <Border Width="30" Height="20" Background="#FFB9E58D" Margin="5"/>
                 <Border Width="20" Height="20" Background="#FFB9E58D" Margin="5"/>

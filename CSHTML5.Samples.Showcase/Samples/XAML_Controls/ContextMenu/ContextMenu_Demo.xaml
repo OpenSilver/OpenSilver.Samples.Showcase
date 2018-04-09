@@ -11,7 +11,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="ContextMenu" Foreground="#FFFF65A3" Background="#FFC997AC" Style="{StaticResource HeaderControl_Style}"/>
-            <Border Grid.Row="1" Padding="10" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,15,0,0">
+            <Border Grid.Row="1" Padding="10" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Border.ContextMenu>
                     <ContextMenu>
                         <MenuItem Content="Menu Item 1" Click="MenuItem1_Click"/>

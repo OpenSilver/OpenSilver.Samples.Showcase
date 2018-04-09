@@ -11,7 +11,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="TextBlock" Foreground="#FF3ED4B2" Background="#FF8FCBBE" Style="{StaticResource HeaderControl_Style}"/>
-            <TextBlock Grid.Row="1" Text="Use a TextBlock to display some text." Foreground="#FF2DBF9E" FontSize="18" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,15,0,0"/>
+            <TextBlock Grid.Row="1" Text="Use a TextBlock to display some text." Foreground="#FF2DBF9E" FontSize="18" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FF3ED4B2" Style="{StaticResource ButtonViewSource_Style}"/>
         </Grid>
     </ContentControl>

@@ -11,7 +11,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="CheckBox" Foreground="#FFD59851" Background="#FFBFA383" Style="{StaticResource HeaderControl_Style}"/>
-            <CheckBox Grid.Row="1" Content="Check me!" FontSize="16" Foreground="#FFBC7D3A" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,15,0,0"/>
+            <CheckBox Grid.Row="1" Content="Check me!" FontSize="14" Foreground="#FFBC7D3A" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FFD59851" Style="{StaticResource ButtonViewSource_Style}"/>
         </Grid>
     </ContentControl>

@@ -3,7 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:CSHTML5.Samples.Showcase">
-    <ContentControl Style="{StaticResource Card_Style}" Height="235" Width="290">
+    <ContentControl Style="{StaticResource Card_Style}" Width="245">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -11,20 +11,14 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="FindElementsIn-HostCoordinates" Foreground="#FFBDE567" Background="#FFB9CD89" Style="{StaticResource HeaderControl_Style}"/>
-            <!--<Canvas Grid.Row="1">
-                <Canvas Height="108" Width="218" HorizontalAlignment="Left" Margin="0,15,0,0">
-                    <Rectangle Name="Rectangle" Fill="#FF9BFF91" Height="63" Canvas.Left="40" Width="178" Stroke="#FF66CC66" StrokeThickness="3"/>
-                    <Ellipse Name="Ellipse" Fill="#FF879DFF" Height="91" Canvas.Top="17" Width="169" Stroke="#FF1A75ff" StrokeThickness="3" Canvas.Left="3"/>
-                    <Line Name="Line" Stroke="#FFFF471a" X1="10" Y1="25" X2="210" Y2="85" StrokeThickness="3" />
+            <StackPanel Grid.Row="1">
+                <TextBlock Text="Click on a rectangle to bring it to the front:" Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left"/>
+                <Canvas Margin="0,20,0,0" x:Name="CanvasParent" Height="120">
+                    <Border x:Name="BlueRectangle" BorderBrush="#ffa8afae" BorderThickness="0.75" Canvas.Left="50" Height="75" Width="50" Background="#FF25FFD0"/>
+                    <Border x:Name="GreenRectangle" BorderBrush="#ffa8afae" BorderThickness="0.75" Canvas.Left="90" Canvas.Top="20" Height="75" Width="95" Background="#FFA0EA58"/>
+                    <Border x:Name="YellowRectangle" BorderBrush="#ffa8afae" BorderThickness="0.75" Canvas.Left="70" Canvas.Top="60"  Height="55" Width="65" Background="#FFE5FA41"/>
                 </Canvas>
-            </Canvas>-->
-            <Canvas Grid.Row="1" Margin="0,20,0,0" x:Name="CanvasParent">
-
-                <Border x:Name="BlueRectangle" BorderBrush="#ffa8afae" BorderThickness="0.75" Canvas.Left="50" Height="75" Width="50" Background="#FF25FFD0"/>
-                <Border x:Name="GreenRectangle" BorderBrush="#ffa8afae" BorderThickness="0.75" Canvas.Left="90" Canvas.Top="20" Height="75" Width="95" Background="#FFA0EA58"/>
-                <Border x:Name="YellowRectangle" BorderBrush="#ffa8afae" BorderThickness="0.75" Canvas.Left="70" Canvas.Top="60"  Height="55" Width="65" Background="#FFE5FA41"/>
-
-            </Canvas>
+            </StackPanel>
             <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FFBDE567" Style="{StaticResource ButtonViewSource_Style}"/>
         </Grid>
     </ContentControl>

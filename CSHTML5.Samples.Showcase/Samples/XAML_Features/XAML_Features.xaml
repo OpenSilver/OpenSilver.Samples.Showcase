@@ -8,13 +8,15 @@
         <local:MasonryPanel Style="{StaticResource Panel_Style}">
             <local:RenderTransforms_Demo HorizontalAlignment="Center"/>
             <local:Drag_And_Drop_Demo HorizontalAlignment="Center"/>
-            <local:Binding_Demo HorizontalAlignment="Center"/>
+            <local:Binding1_Demo HorizontalAlignment="Center"/>
+            <local:Binding2_Demo HorizontalAlignment="Center"/>
             <!--<local:ClickCount_RightTapped_Demo HorizontalAlignment="Center"/>-->
             <local:Gradients_Demo HorizontalAlignment="Center"/>
             <local:Animations_Demo HorizontalAlignment="Center"/>
             <local:DropShadowEffect_Demo HorizontalAlignment="Center"/>
             <local:Window_SizeChanged_Demo HorizontalAlignment="Center"/>
             <local:FindElementsInHostCoordinates_Demo HorizontalAlignment="Center"/>
+            <local:ClipToBounds_Demo HorizontalAlignment="Center"/>
             <local:Commanding_Demo HorizontalAlignment="Center"/>
             <local:XAML_Resource_Dictionary_Demo HorizontalAlignment="Center"/>
             <local:DependencyProperties_Demo HorizontalAlignment="Center"/>

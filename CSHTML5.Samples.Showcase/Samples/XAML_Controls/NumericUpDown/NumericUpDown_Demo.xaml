@@ -11,7 +11,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="NumericUpDown" Foreground="#FF3ADE8F" Background="#75B595" Style="{StaticResource HeaderControl_Style}"/>
-            <NumericUpDown Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="130" Minimum="0" Maximum="100" Margin="0,15,0,0"/>
+            <NumericUpDown Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="130" Minimum="0" Maximum="100" />
             <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FF3ADE8F" Style="{StaticResource ButtonViewSource_Style}"/>
         </Grid>
     </ContentControl>

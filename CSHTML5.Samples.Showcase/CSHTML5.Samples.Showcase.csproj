@@ -519,11 +519,17 @@
     <Compile Include="Samples\XAML_Features\Animations\Animations_Demo_More.xaml.cs">
       <DependentUpon>Animations_Demo_More.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Samples\XAML_Features\Binding\Binding_Demo.xaml.cs">
-      <DependentUpon>Binding_Demo.xaml</DependentUpon>
+    <Compile Include="Samples\XAML_Features\Binding2\Binding2_Demo.xaml.cs">
+      <DependentUpon>Binding2_Demo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Samples\XAML_Features\Binding\Binding_Demo_More.xaml.cs">
-      <DependentUpon>Binding_Demo_More.xaml</DependentUpon>
+    <Compile Include="Samples\XAML_Features\Binding2\Binding2_Demo_More.xaml.cs">
+      <DependentUpon>Binding2_Demo_More.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\XAML_Features\Binding1\Binding1_Demo.xaml.cs">
+      <DependentUpon>Binding1_Demo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\XAML_Features\Binding1\Binding1_Demo_More.xaml.cs">
+      <DependentUpon>Binding1_Demo_More.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\XAML_Features\ClipToBounds\ClipToBounds_Demo.xaml.cs">
       <DependentUpon>ClipToBounds_Demo.xaml</DependentUpon>
@@ -1332,11 +1338,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Samples\XAML_Features\Binding\Binding_Demo.xaml">
+    <Page Include="Samples\XAML_Features\Binding2\Binding2_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Samples\XAML_Features\Binding\Binding_Demo_More.xaml">
+    <Page Include="Samples\XAML_Features\Binding2\Binding2_Demo_More.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\XAML_Features\Binding1\Binding1_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\XAML_Features\Binding1\Binding1_Demo_More.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

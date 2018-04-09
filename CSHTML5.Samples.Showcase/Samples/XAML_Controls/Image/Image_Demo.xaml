@@ -11,7 +11,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="Image" Foreground="#FF8D73FF" Background="#FF9B8FD1" Style="{StaticResource HeaderControl_Style}"/>
-            <Image Grid.Row="1" Source="ms-appx:/Other/Logo.png" Width="52" Height="60" Stretch="None" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,15,0,0"/>
+            <Image Grid.Row="1" Source="ms-appx:/Other/Logo.png" Width="52" Height="60" Stretch="None" HorizontalAlignment="Center" VerticalAlignment="Center" />
             <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FF8D73FF" Style="{StaticResource ButtonViewSource_Style}"/>
         </Grid>
     </ContentControl>

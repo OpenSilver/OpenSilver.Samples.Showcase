@@ -11,11 +11,11 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="DockPanel" Foreground="#FFD66DED" Background="#FFBA8AC6" Style="{StaticResource HeaderControl_Style}"/>
-            <DockPanel Grid.Row="1" Width="150" Height="150"  Background="#DDDDDD" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0">
+            <DockPanel Grid.Row="1" Width="150" Height="100"  Background="#DDDDDD" HorizontalAlignment="Center" VerticalAlignment="Top">
                 <Border DockPanel.Dock="Left" Width="50" Background="#FF6666ff" CornerRadius="2" Margin="2"/>
-                <Border DockPanel.Dock="Top" Height="50" Background="#ffff4d4d" CornerRadius="2" Margin="2"/>
+                <Border DockPanel.Dock="Top" Height="20" Background="#ffff4d4d" CornerRadius="2" Margin="2"/>
                 <Border DockPanel.Dock="Right" Width="50" Background="#ff4dff4d" CornerRadius="2" Margin="2"/>
-                <Border DockPanel.Dock="Bottom" Height="50" Background="#ffffb84d" CornerRadius="2" Margin="2"/>
+                <Border DockPanel.Dock="Bottom" Height="20" Background="#ffffb84d" CornerRadius="2" Margin="2"/>
                 <Border DockPanel.Dock="Left" Width="50" Background="#FFD66DED" CornerRadius="2" Margin="2"/>
                 <Border Background="Pink" CornerRadius="2" Margin="2"/>
             </DockPanel>

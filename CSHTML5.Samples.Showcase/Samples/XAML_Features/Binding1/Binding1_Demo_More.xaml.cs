@@ -13,9 +13,9 @@ using Windows.UI.Xaml.Navigation;
 
 namespace CSHTML5.Samples.Showcase
 {
-    public partial class Binding_Demo_More : UserControl
+    public partial class Binding1_Demo_More : UserControl
     {
-        public Binding_Demo_More()
+        public Binding1_Demo_More()
         {
             this.InitializeComponent();
         }

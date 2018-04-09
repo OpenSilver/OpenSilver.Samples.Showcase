@@ -11,7 +11,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="ToggleButton" Foreground="#FF7EE476" Background="#FFA9D4A4" Style="{StaticResource HeaderControl_Style}"/>
-            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,30,0,15">
+            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,15,0,15">
                 <ToggleButton Content="One" Margin="5,0,0,0" Background="#FFc1f3be" Padding="4,4,4,4"/>
                 <ToggleButton Content="Two" Margin="5,0,0,0" Background="#FFc1f3be" Padding="4,4,4,4"/>
                 <ToggleButton Content="Three" Margin="5,0,0,0" Background="#FFc1f3be" Padding="4,4,4,4"/>

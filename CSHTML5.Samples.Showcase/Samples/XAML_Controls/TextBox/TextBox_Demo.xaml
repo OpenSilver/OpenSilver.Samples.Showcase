@@ -11,7 +11,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="TextBox" Foreground="#FF3ED49A" Background="#FF92BEAC" Style="{StaticResource HeaderControl_Style}"/>
-            <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,15,0,0">
+            <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <TextBox x:Name="TextBoxName" Text="Type your name here" Width="120" Foreground="Gray" Background="White"/>
                 <Button Margin="0,10,0,0" Foreground="White" Background="#FF92BEAC" Click="OKButton_Click" HorizontalAlignment="Center">
                     <Border>

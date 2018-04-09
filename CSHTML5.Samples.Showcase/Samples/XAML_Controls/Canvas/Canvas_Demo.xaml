@@ -11,18 +11,10 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="Canvas" Foreground="#FF66CC66" Background="#FFC6DC9C" Style="{StaticResource HeaderControl_Style}"/>
-            <!--<StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Canvas Height="108" Width="218" HorizontalAlignment="Left" Margin="0,15,0,0">
-                    <Rectangle Fill="#FF9BFF91" Height="57" Canvas.Left="40" Width="178" Stroke="#FF66CC66" StrokeThickness="3"/>
-                    <Ellipse Fill="#FF879DFF" Height="91" Canvas.Top="17" Width="169" Stroke="#FF1A75ff" StrokeThickness="3" Canvas.Left="3"/>
-                    <Line Stroke="#FFFF471a" X1="10" Y1="25" X2="140" Y2="65" StrokeThickness="3" />
-                </Canvas>
-            </StackPanel>-->
-            <!--<TextBlock Grid.Row="1" Text="On a Canvas, items are positioned based on their (Left,Top) coordinates. The size of the items is not related to the size of the canvas." Foreground="#FF808080" Margin="0,10,0,0" TextWrapping="Wrap" Width="220" FontSize="12" HorizontalAlignment="Center"/>-->
-            <Canvas Grid.Row="1" Background="#FFEEEEEE" Width="150" Height="150" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,15,0,0">
-                <Border Canvas.Left="20" Canvas.Top="20" Width="90" Height="49" Background="#FFB9E58D"/>
-                <Border Canvas.Left="60" Canvas.Top="47" Width="70" Height="70" Background="#FF22E695"/>
-                <Border Canvas.Left="34" Canvas.Top="100" Width="53" Height="40" Background="#FF22E6DF"/>
+            <Canvas Grid.Row="1" Background="#FFEEEEEE" Width="150" Height="100" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                <Border Canvas.Left="20" Canvas.Top="10" Width="60" Height="49" Background="#FFB9E58D"/>
+                <Border Canvas.Left="60" Canvas.Top="27" Width="70" Height="50" Background="#FF22E695"/>
+                <Border Canvas.Left="44" Canvas.Top="70" Width="43" Height="20" Background="#FF22E6DF"/>
             </Canvas>
             <Button Grid.Row="2" Content="VIEW SOURCE..." Margin="0,10,0,0" Click="ButtonViewSource_Click" Background="#FF66CC66" Style="{StaticResource ButtonViewSource_Style}"/>
         </Grid>

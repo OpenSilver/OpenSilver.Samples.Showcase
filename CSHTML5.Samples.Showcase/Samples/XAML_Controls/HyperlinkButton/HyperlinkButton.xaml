@@ -11,7 +11,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="HyperlinkButton" Foreground="#FF6F98FF" Background="#FF93A5D1" Style="{StaticResource HeaderControl_Style}"/>
-            <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,0" >
+            <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <TextBlock Text="You can visit the homepage&#x0a; by clicking" TextAlignment="Center"/>
                 <HyperlinkButton Content="here" NavigateUri="http://www.cshtml5.com" Foreground="#FFE44D26" Margin="5,0,0,0" HorizontalAlignment="Center"/>
             </StackPanel>

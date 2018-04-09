@@ -13,7 +13,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="ToolTip" Foreground="#FFA2E567" Background="#FFBEDCA4" Style="{StaticResource HeaderControl_Style}"/>
-            <Button Grid.Row="1" Content="Button with text ToolTip inline" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0" Padding="7"
+            <Button Grid.Row="1" Content="Button with text ToolTip inline" HorizontalAlignment="Center" VerticalAlignment="Top" Padding="7"
                     ToolTipService.ToolTip="This is the ToolTip" />
             <Button Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,0" Padding="7">
                 <ToolTipService.ToolTip>

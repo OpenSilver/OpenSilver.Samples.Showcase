@@ -11,8 +11,8 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="Border" Foreground="#FF13D7E3" Background="#FF91C3C5" Style="{StaticResource HeaderControl_Style}"/>
-            <Border Grid.Row="1" CornerRadius="10" Padding="20" Background="#FFDDDDDD" HorizontalAlignment="Left" Margin="0,15,0,0">
-                <TextBlock Text="Unlike a Rectangle, a Border can contain a child element (such as this text)." Foreground="#FF404040" Width="100" TextWrapping="Wrap"/>
+            <Border Grid.Row="1" CornerRadius="10" Padding="16" Background="#FF13D7E3" HorizontalAlignment="Center">
+                <TextBlock Text="Unlike a Rectangle, a Border can contain a child element (such as this text)." Foreground="White" FontWeight="Bold" FontSize="12" Width="120" TextWrapping="Wrap"/>
             </Border>
             <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FF13D7E3" Style="{StaticResource ButtonViewSource_Style}"/>
         </Grid>
