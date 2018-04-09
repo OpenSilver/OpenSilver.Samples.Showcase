@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Windows.Browser;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
@@ -22,6 +23,9 @@ namespace CSHTML5.Samples.Showcase
 
         void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
+            if (!HtmlPage.Document.DocumentUri.OriginalString.Contains("Welcome"))
+                NavigateToPage("/Welcome");
+
             UpdateMenuDispositionBasedOnDisplaySize();
         }
 
@@ -62,8 +66,6 @@ namespace CSHTML5.Samples.Showcase
 
         void NavigateToPage(string targetUri)
         {
-            _isSourceSet = true;
-
             //Hide the menu:
             if (_currentState == CurrentState.SmallResolution_ShowMenu)
                 GoToState(CurrentState.SmallResolution_HideMenu);
@@ -124,12 +126,12 @@ namespace CSHTML5.Samples.Showcase
 
         enum CurrentState
         {
+            Unset, // Initial value
             LargeResolution_SeeBothMenuAndPage, // This corresponds to tablets and other devices with high resolution. In this case we see both the menu and the page.
             SmallResolution_ShowMenu, // This corresponds to smartphones and other devices with low resolution. In this case we see the menu.
             SmallResolution_HideMenu // This corresponds to smartphones and other devices with low resolution. In this case we do not see the menu.
         }
 
-        bool _isSourceSet = false;
         CurrentState _currentState;
 
         void GoToState(CurrentState newState)
@@ -195,21 +197,15 @@ namespace CSHTML5.Samples.Showcase
             //Rect windowBounds = Window.Current.Bounds;
             //double displayWidth = windowBounds.Width;
 
-            if (!_isSourceSet)
+            double actualWidth = this.ActualWidth;
+            if (!double.IsNaN(actualWidth) && actualWidth > 560d)
             {
-                GoToState(CurrentState.SmallResolution_ShowMenu); // When the application starts, we want to display the menu.
+                GoToState(CurrentState.LargeResolution_SeeBothMenuAndPage);
             }
-            else
+            else if (_currentState == CurrentState.LargeResolution_SeeBothMenuAndPage
+                || _currentState == CurrentState.Unset)
             {
-                double actualWidth = this.ActualWidth;
-                if (!double.IsNaN(actualWidth) && actualWidth > 560d)
-                {
-                    GoToState(CurrentState.LargeResolution_SeeBothMenuAndPage);
-                }
-                else if (_currentState == CurrentState.LargeResolution_SeeBothMenuAndPage)
-                {
-                    GoToState(CurrentState.SmallResolution_HideMenu);
-                }
+                GoToState(CurrentState.SmallResolution_HideMenu);
             }
         }
 

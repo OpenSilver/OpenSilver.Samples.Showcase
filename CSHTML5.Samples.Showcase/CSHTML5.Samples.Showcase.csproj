@@ -510,6 +510,9 @@
     <Compile Include="Samples\XAML_Controls\Xaml_Controls.xaml.cs">
       <DependentUpon>Xaml_Controls.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Samples\Welcome.xaml.cs">
+      <DependentUpon>Welcome.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Samples\XAML_Features\Animations\Animations_Demo.xaml.cs">
       <DependentUpon>Animations_Demo.xaml</DependentUpon>
     </Compile>
@@ -1314,6 +1317,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Samples\XAML_Controls\Xaml_Controls.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\Welcome.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

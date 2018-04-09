@@ -4,16 +4,16 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:CSHTML5.Samples.Showcase">
     <StackPanel>
-        <TextBlock Text="Panels" Style="{StaticResource PageHeader_Style}"/>
+        <TextBlock Text="Panels &amp; Controls" Style="{StaticResource PageHeader_Style}"/>
         <local:MasonryPanel Style="{StaticResource Panel_Style}">
             <local:Grid_Demo HorizontalAlignment="Center"/>
             <local:StackPanel_Demo HorizontalAlignment="Center"/>
             <local:DockPanel_Demo HorizontalAlignment="Center"/>
             <local:WrapPanel_Demo HorizontalAlignment="Center"/>
             <local:Canvas_Demo HorizontalAlignment="Center"/>
-        </local:MasonryPanel>
+        <!--</local:MasonryPanel>
         <TextBlock Text="Controls" Style="{StaticResource PageHeader_Style}"/>
-        <local:MasonryPanel Style="{StaticResource Panel_Style}">
+        <local:MasonryPanel Style="{StaticResource Panel_Style}">-->
             <local:Button_Demo HorizontalAlignment="Center"/>
             <local:TextBox_Demo HorizontalAlignment="Center"/>
             <local:CheckBox_Demo HorizontalAlignment="Center"/>
