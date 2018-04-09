@@ -519,6 +519,12 @@
     <Compile Include="Samples\XAML_Features\Animations\Animations_Demo_More.xaml.cs">
       <DependentUpon>Animations_Demo_More.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Samples\XAML_Features\Binding3\Binding3_Demo.xaml.cs">
+      <DependentUpon>Binding3_Demo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\XAML_Features\Binding3\Binding3_Demo_More.xaml.cs">
+      <DependentUpon>Binding3_Demo_More.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Samples\XAML_Features\Binding2\Binding2_Demo.xaml.cs">
       <DependentUpon>Binding2_Demo.xaml</DependentUpon>
     </Compile>
@@ -1335,6 +1341,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Samples\XAML_Features\Animations\Animations_Demo_More.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\XAML_Features\Binding3\Binding3_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\XAML_Features\Binding3\Binding3_Demo_More.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

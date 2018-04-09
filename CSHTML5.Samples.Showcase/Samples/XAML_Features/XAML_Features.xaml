@@ -10,6 +10,7 @@
             <local:Drag_And_Drop_Demo HorizontalAlignment="Center"/>
             <local:Binding1_Demo HorizontalAlignment="Center"/>
             <local:Binding2_Demo HorizontalAlignment="Center"/>
+            <local:Binding3_Demo HorizontalAlignment="Center"/>
             <!--<local:ClickCount_RightTapped_Demo HorizontalAlignment="Center"/>-->
             <local:Gradients_Demo HorizontalAlignment="Center"/>
             <local:Animations_Demo HorizontalAlignment="Center"/>

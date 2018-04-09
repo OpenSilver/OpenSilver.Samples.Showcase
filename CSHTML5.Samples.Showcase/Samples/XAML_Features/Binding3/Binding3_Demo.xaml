@@ -1,0 +1,45 @@
+﻿<UserControl
+    x:Class="CSHTML5.Samples.Showcase.Binding3_Demo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CSHTML5.Samples.Showcase">
+    <ContentControl Style="{StaticResource Card_Style}" Width="245">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl Content="Binding (3 of 3)" Foreground="#FFF78069" Background="#FFDCA59C" Style="{StaticResource HeaderControl_Style}"/>
+            <ScrollViewer Grid.Row="1" Height="300" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                        <TextBlock Width="80" Text="FIRST NAME" Foreground="Black"/>
+                        <Rectangle Width="1" Height="20" Fill="Gray" VerticalAlignment="Center"/>
+                        <TextBlock Width="80" Text="LAST NAME" Margin="5,0,0,0" Foreground="Black"/>
+                    </StackPanel>
+                    <Rectangle Height="1" Width="180" Fill="Gray" HorizontalAlignment="Left"/>
+                    <ItemsControl x:Name="ItemsControl1" Width="120" HorizontalAlignment="Left">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                    <TextBlock Width="80" Text="{Binding FirstName}" Foreground="Black"/>
+                                    <Rectangle Width="1" Height="20" Fill="Gray" VerticalAlignment="Center"/>
+                                    <TextBlock Width="80" Text="{Binding LastName}" Margin="5,0,0,0" Foreground="Black"/>
+                                    <Button Content="Delete" Click="ButtonDelete_Click" Foreground="White" Background="#FFE44D26"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                        <TextBox x:Name="FirstNameTextBox" Width="80" Text="First Name" Foreground="Black" Background="#FFEEEEEE"/>
+                        <TextBox x:Name="LastNameTextBox" Width="80" Text="Last Name" Foreground="Black" Background="#FFEEEEEE"/>
+                        <Button Content="Add" Click="ButtonAdd_Click" Foreground="White" Background="#FFE44D26"/>
+                    </StackPanel>
+                    <TextBlock Text="The list above is made using an ItemsControl that has an ObservableCollection&lt;Person&gt; in its ItemsSource. The Delete button is inside the ItemTemplate of the ItemsControl." Foreground="#FF808080" Margin="0,20,0,0" TextWrapping="Wrap" Width="220" FontSize="12" HorizontalAlignment="Left"/>
+                </StackPanel>
+            </ScrollViewer>
+            <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FFF78069" Style="{StaticResource ButtonViewSource_Style}"/>
+        </Grid>
+    </ContentControl>
+</UserControl>

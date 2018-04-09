@@ -10,7 +10,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="Binding (2 of 2)" Foreground="#FFF78069" Background="#FFDCA59C" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="Binding (2 of 3)" Foreground="#FFF78069" Background="#FFDCA59C" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center">
                 <TextBlock Text="TwoWay binding, IValueConverter, and ElementName:" FontSize="16" Foreground="#FF414141" TextWrapping="Wrap" HorizontalAlignment="Left"/>
                 <TextBlock Text="Below is a two-way conversion sample between kilometers and miles, implemented using an IValueConverter." Foreground="#FF808080" Margin="0,10,0,0" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left"/>
