@@ -5,7 +5,7 @@
     <Style x:Key="PageHeader_Style" TargetType="TextBlock">
         <Setter Property="FontSize" Value="28"/>
         <Setter Property="TextWrapping" Value="Wrap"/>
-        <Setter Property="Margin" Value="10,20,10,0"/>
+        <Setter Property="Margin" Value="14,20,10,0"/>
         <Setter Property="Foreground" Value="Gray"/>
     </Style>
     <Style x:Key="CardHeader_Style" TargetType="TextBlock">
@@ -44,7 +44,7 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="ContentControl">
                         <Border Background="{TemplateBinding Foreground}"
-                                Margin="-24,-16,-10,0"
+                                Margin="-16,-16,-10,0"
                                 Padding="12,2,12,4"
                                 CornerRadius="2"
                                 HorizontalAlignment="Left"

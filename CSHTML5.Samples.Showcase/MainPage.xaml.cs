@@ -140,6 +140,7 @@ namespace CSHTML5.Samples.Showcase
                 {
                     // Hide the button to hide/show the menu:
                     ButtonToHideOrShowMenu.Visibility = Visibility.Collapsed;
+                    PageContainer.Margin = new Thickness(0, 0, 0, 30);
 
                     // Set the translation of the frame to 0:
                     ((TranslateTransform)PageContainer.RenderTransform).X = 0;
@@ -158,6 +159,7 @@ namespace CSHTML5.Samples.Showcase
 
                     // Show the button to hide/show the menu:
                     ButtonToHideOrShowMenu.Visibility = Visibility.Visible;
+                    PageContainer.Margin = new Thickness(0, 50, 0, 30);
 
                     Thickness margin = PageContainer.Margin;
                     margin.Left = 0;

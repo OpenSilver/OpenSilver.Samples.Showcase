@@ -30,14 +30,16 @@
                     </StackPanel>
                 </ScrollViewer>
             </Border>
-            <Border x:Name="ButtonToHideOrShowMenu" Canvas.ZIndex="2" Padding="2" Visibility="Collapsed" Background="#FF6C6C6C" BorderThickness="2" BorderBrush="White" CornerRadius="5" Width="50" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <Border x:Name="ButtonToHideOrShowMenu" Canvas.ZIndex="2" Padding="2" Visibility="Collapsed" Width="50" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left">
                 <Border.RenderTransform>
                     <TranslateTransform/>
                 </Border.RenderTransform>
-                <Button Content="-" FontSize="18" Click="ButtonToHideOrShowMenu_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                <Button Click="ButtonToHideOrShowMenu_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" Padding="0">
+                    <Image Source="other/MenuIcon.png" Width="50" Height="50" Stretch="Fill"/>
+                </Button>
             </Border>
             <ScrollViewer x:Name="ScrollViewer1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible">
-                <Frame x:Name="PageContainer" JournalOwnership="Automatic" Margin="0,0,0,27">
+                <Frame x:Name="PageContainer" JournalOwnership="Automatic" Margin="0,0,0,30">
                     <Frame.UriMapper>
                         <UriMapper>
                             <UriMapping
