@@ -23,8 +23,11 @@ namespace CSHTML5.Samples.Showcase
 
         void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            if (!HtmlPage.Document.DocumentUri.OriginalString.Contains("Welcome"))
+            // Navigate to the "Welcome" page by default:
+            if (!HtmlPage.Document.DocumentUri.OriginalString.Contains("#"))
+            {
                 NavigateToPage("/Welcome");
+            }
 
             UpdateMenuDispositionBasedOnDisplaySize();
         }
