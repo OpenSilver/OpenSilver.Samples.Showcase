@@ -45,6 +45,11 @@ namespace CSHTML5.Samples.Showcase
                 {
                     TabHeader = "Linq_Demo.xaml.cs",
                     FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Net_Framework/Linq/Linq_Demo.xaml.cs"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "Planet.cs",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Other/Planet.cs"
                 }
             });
         }

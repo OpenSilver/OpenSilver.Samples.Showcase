@@ -40,6 +40,11 @@ namespace CSHTML5.Samples.Showcase
                 {
                     TabHeader = "DefaultComboBoxStyle.xaml",
                     FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Controls/ComboBox/Styles/DefaultComboBoxStyle.xaml"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "Planet.cs",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Other/Planet.cs"
                 }
             });
         }

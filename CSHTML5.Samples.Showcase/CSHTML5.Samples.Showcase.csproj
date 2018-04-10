@@ -67,7 +67,7 @@
     </Compile>
     <Compile Include="Other\ChildWindowHelper.cs" />
     <Compile Include="Other\ControlToDisplayCodeHostedOnGitHub.cs" />
-    <Compile Include="Other\KilometersToMilesConverter.cs" />
+    <Compile Include="Samples\XAML_Features\Binding2\KilometersToMilesConverter.cs" />
     <Compile Include="Other\MasonryPanel.cs" />
     <Compile Include="Other\Planet.cs" />
     <Compile Include="Other\ViewSourceButtonHelper.cs" />
