@@ -24,13 +24,18 @@
                 </Border.Effect>
                 <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
                     <StackPanel Margin="0,20,0,0">
-                        <Button Content="Panels &amp; Controls" Click="ButtonXamlControls_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="16"/>
-                        <Button Content="XAML Features" Click="ButtonXamlFeatures_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="16"/>
-                        <Button Content=".NET Framework" Click="ButtonNetFramework_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="16"/>
-                        <Button Content="Client / Server" Click="ButtonClientServer_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="16"/>
-                        <Button Content="Interop" Click="ButtonInterop_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="16"/>
-                        <Button Content="Third-Party" Click="ButtonThirdParty_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="16"/>
-                        <Button Content="Performance" Click="ButtonPerformance_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="16"/>
+                        <StackPanel Orientation="Horizontal" Margin="5">
+                            <Image Source="Other/Logo.png" Width="52" Height="60" Stretch="Fill" VerticalAlignment="Center"/>
+                            <TextBlock FontFamily="Segoe UI" TextAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Center" Foreground="#FF00C6D2" FontSize="18">CSHTML5<LineBreak/>Showcase</TextBlock>
+                        </StackPanel>
+                        <Button Content="Panels &amp; Controls" Click="ButtonXamlControls_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="16" Margin="0,10,0,0"/>
+                        <Button Content="XAML Features" Click="ButtonXamlFeatures_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="16" Margin="0,3,0,0"/>
+                        <Button Content=".NET Framework" Click="ButtonNetFramework_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="16" Margin="0,3,0,0"/>
+                        <Button Content="Client / Server" Click="ButtonClientServer_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="16" Margin="0,3,0,0"/>
+                        <Button Content="Interop" Click="ButtonInterop_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="16" Margin="0,3,0,0"/>
+                        <Button Content="Third-Party" Click="ButtonThirdParty_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="16" Margin="0,3,0,0"/>
+                        <Button Content="Performance" Click="ButtonPerformance_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="16" Margin="0,3,0,0"/>
+                        <Button Content="Home" Click="ButtonHome_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="16" Margin="0,3,0,0"/>
                     </StackPanel>
                 </ScrollViewer>
             </Border>

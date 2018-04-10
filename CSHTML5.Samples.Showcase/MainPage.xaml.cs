@@ -67,6 +67,11 @@ namespace CSHTML5.Samples.Showcase
             NavigateToPage("/Performance/Performance");
         }
 
+        void ButtonHome_Click(object sender, RoutedEventArgs e)
+        {
+            NavigateToPage("/Welcome");
+        }
+
         void NavigateToPage(string targetUri)
         {
             //Hide the menu:
