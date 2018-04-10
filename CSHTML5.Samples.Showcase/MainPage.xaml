@@ -14,7 +14,7 @@
             <RowDefinition x:Name="RowThatContainsTheSourceCodePane" Height="0"/>
         </Grid.RowDefinitions>
         <Grid ClipToBounds="True">
-            <Border x:Name="MenuBorder" Canvas.ZIndex="1" Background="#FF6C6C6C" Width="180" HorizontalAlignment="Left">
+            <Border x:Name="MenuBorder" Canvas.ZIndex="1" Background="#FF4A4A4A" Width="180" HorizontalAlignment="Left">
                 <Border.RenderTransform>
                     <TranslateTransform/>
                 </Border.RenderTransform>
