@@ -16,7 +16,6 @@ namespace CSHTML5.Samples.Showcase
 {
     public partial class JSON_Serializer_Demo : UserControl
     {
-        private bool _serialized;
         private string _json;
         private Product _product;
 
@@ -51,7 +50,7 @@ namespace CSHTML5.Samples.Showcase
             string indentedJson = _json.Replace(",", ",\n");
 
             // Display the result:
-            TextContent.Text = indentedJson;
+            MessageBox.Show(indentedJson);
 
             /*
             // Expected Result:
@@ -103,6 +102,7 @@ namespace CSHTML5.Samples.Showcase
         }
         */
 
+        /*
         private async void Button_Click_DynamicDeserialization(object sender, RoutedEventArgs e)
         {
             if (!string.IsNullOrEmpty(_json))
@@ -122,6 +122,7 @@ namespace CSHTML5.Samples.Showcase
                 MessageBox.Show("Please click on the Serialize button first.");
             }
         }
+        */
 
         public class Product
         {

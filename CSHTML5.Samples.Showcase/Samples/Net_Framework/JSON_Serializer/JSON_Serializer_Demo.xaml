@@ -18,14 +18,9 @@
                 <!--<Button Click="Button_Click_StronglyTypedDeserialization" Margin="0,5,0,0" HorizontalAlignment="Center">
                     <TextBlock TextAlignment="Center" FontSize="14">Deserialize<LineBreak/>(strongly-typed)</TextBlock>
                 </Button>-->
-                <Button Click="Button_Click_DynamicDeserialization" Margin="0,5,0,0" HorizontalAlignment="Center">
+                <!--<Button Click="Button_Click_DynamicDeserialization" Margin="0,5,0,0" HorizontalAlignment="Center">
                     <TextBlock TextAlignment="Center" FontSize="14">Deserialize<LineBreak/>(dynamic)</TextBlock>
-                </Button>
-                <Border BorderThickness="1" BorderBrush="Gray" Margin="0,10,0,0" HorizontalAlignment="Center">
-                    <ScrollViewer Width="200" Height="100" VerticalScrollBarVisibility="Visible">
-                        <TextBlock x:Name="TextContent" TextAlignment="Center" TextWrapping="Wrap" Text="(empty)"/>
-                    </ScrollViewer>
-                </Border>
+                </Button>-->
             </StackPanel>
             <Button Grid.Row="2" Content="VIEW SOURCE..." Margin="0,15,0,0"  Click="ButtonViewSource_Click" Background="#FF3ED4B2" Style="{StaticResource ButtonViewSource_Style}"/>
         </Grid>
