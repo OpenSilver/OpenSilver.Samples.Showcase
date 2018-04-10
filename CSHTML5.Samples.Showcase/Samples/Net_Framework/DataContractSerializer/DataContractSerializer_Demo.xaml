@@ -10,13 +10,13 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="DataContract-Serializer" Foreground="#FFF79B69" Background="#FFD3A287" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="DataContractSerializer" Foreground="#FFF79B69" Background="#FFD3A287" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1" HorizontalAlignment="Center">
                 <StackPanel x:Name="SerializationSourcePanel" Margin="10,0,0,0">
-                    <TextBlock Text="Sample Serializable Class:"/>
+                    <TextBlock Text="Sample serializable class:"/>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text=" - Text field: "/>
-                        <TextBox Text="{Binding TextField, Mode=TwoWay}" TextWrapping="Wrap"  Margin="5,0,0,0"/>
+                        <TextBox Text="{Binding TextField, Mode=TwoWay}" TextWrapping="Wrap" Margin="5,0,0,0" Width="60"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text=" - Date field: "/>

@@ -3,44 +3,43 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:CSHTML5.Samples.Showcase">
-    <ContentControl Style="{StaticResource Card_Style}" Height="630" Width="800">
+    <ContentControl Style="{StaticResource Card_Style}" Width="320">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="HtmlCanvas" Foreground="#FFFF799C" Background="#FFC69EA9" Style="{StaticResource HeaderControl_Style}"/>
-
-            <Grid Grid.Row="1" Margin="0,10,0,0" Background="White">
-                <native:HtmlCanvas Name="HtmlCanvas1" xmlns:native="using:CSHTML5.Native.Html.Controls"/>
-                <Border Background="#FFAA0000" HorizontalAlignment="Right" VerticalAlignment="Top" Padding="10,8" CornerRadius="4" Margin="20">
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Frames per second:" Foreground="#FFFFBBBB"/>
-                        <TextBlock x:Name="FramesPerSecondTextBlock" Text="..." Foreground="#FFFFBBBB" Margin="8,0,0,0"/>
-                    </StackPanel>
-                </Border>
-                <ComboBox x:Name="ComboBoxToChooseNumberOfSprites" Width="100" Margin="10" SelectionChanged="ComboBox_SelectionChanged" HorizontalAlignment="Left" VerticalAlignment="Top">
-                    <ComboBoxItem>5 sprites</ComboBoxItem>
-                    <ComboBoxItem>10 sprites</ComboBoxItem>
-                    <ComboBoxItem>25 sprites</ComboBoxItem>
-                    <ComboBoxItem>50 sprites</ComboBoxItem>
-                    <ComboBoxItem>100 sprites</ComboBoxItem>
-                    <ComboBoxItem>250 sprites</ComboBoxItem>
-                    <ComboBoxItem>500 sprites</ComboBoxItem>
-                    <ComboBoxItem>1000 sprites</ComboBoxItem>
-                    <ComboBoxItem>2500 sprites</ComboBoxItem>
-                    <ComboBoxItem>5000 sprites</ComboBoxItem>
-                    <ComboBoxItem>10000 sprites</ComboBoxItem>
-                    <ComboBoxItem>25000 sprites</ComboBoxItem>
-                    <ComboBoxItem>50000 sprites</ComboBoxItem>
-                    <ComboBoxItem>100000 sprites</ComboBoxItem>
-                    <ComboBoxItem>250000 sprites</ComboBoxItem>
-                    <ComboBoxItem>500000 sprites</ComboBoxItem>
-                    <ComboBoxItem>1000000 sprites</ComboBoxItem>
-                </ComboBox>
-            </Grid>
-            <Button Grid.Row="2" Content="VIEW SOURCE..." Margin="0,20,0,0"  Click="ButtonViewSource_Click" Background="#FFFF799C" Style="{StaticResource ButtonViewSource_Style}"/>
+            <ContentControl Content="HtmlCanvas" Foreground="#FFDB375E" Background="#FFC69EA9" Style="{StaticResource HeaderControl_Style}"/>
+            <StackPanel Grid.Row="1">
+                <TextBlock Text="The HtmlCanvas control lets you display multiple elements in a single HTML 'canvas' control for highest performance. No layout calculations are done. You can read the documentation at:" Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left"/>
+                <HyperlinkButton Foreground="#FFDB375E" Margin="0,10,0,0" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" NavigateUri="http://cshtml5.com/links/how-to-use-the-html5-canvas.aspx">
+                    <TextBlock Text="http://cshtml5.com/links/how-to-use-the-html5-canvas.aspx" TextWrapping="Wrap"/>
+                </HyperlinkButton>
+                <Grid Margin="0,10,0,0" Background="White" Height="320">
+                    <native:HtmlCanvas Name="HtmlCanvas1" xmlns:native="using:CSHTML5.Native.Html.Controls"/>
+                    <Border Background="#FFDB375E" HorizontalAlignment="Right" VerticalAlignment="Top" Padding="10,8" CornerRadius="4" Margin="20">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Frames per second:" Foreground="#FFFFBBBB"/>
+                            <TextBlock x:Name="FramesPerSecondTextBlock" Text="..." Foreground="#FFFFBBBB" Margin="8,0,0,0"/>
+                        </StackPanel>
+                    </Border>
+                    <ComboBox x:Name="ComboBoxToChooseNumberOfSprites" Width="100" Margin="10" SelectionChanged="ComboBox_SelectionChanged" HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <ComboBoxItem>5 sprites</ComboBoxItem>
+                        <ComboBoxItem>10 sprites</ComboBoxItem>
+                        <ComboBoxItem>25 sprites</ComboBoxItem>
+                        <ComboBoxItem>50 sprites</ComboBoxItem>
+                        <ComboBoxItem>100 sprites</ComboBoxItem>
+                        <ComboBoxItem>250 sprites</ComboBoxItem>
+                        <ComboBoxItem>500 sprites</ComboBoxItem>
+                        <ComboBoxItem>1000 sprites</ComboBoxItem>
+                        <ComboBoxItem>2500 sprites</ComboBoxItem>
+                        <ComboBoxItem>5000 sprites</ComboBoxItem>
+                        <ComboBoxItem>10000 sprites</ComboBoxItem>
+                    </ComboBox>
+                </Grid>
+                <Button Grid.Row="2" Content="VIEW SOURCE..." Margin="0,20,0,0"  Click="ButtonViewSource_Click" Background="#FFDB375E" Style="{StaticResource ButtonViewSource_Style}"/>
+            </StackPanel>
         </Grid>
     </ContentControl>
 </UserControl>

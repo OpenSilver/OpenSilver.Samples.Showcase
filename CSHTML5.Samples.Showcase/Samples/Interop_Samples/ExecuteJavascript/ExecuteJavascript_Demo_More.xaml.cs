@@ -13,9 +13,9 @@ using Windows.UI.Xaml.Navigation;
 
 namespace CSHTML5.Samples.Showcase
 {
-    public partial class ExecuteJavascript_Demo_More : UserControl
+    public partial class ExecuteJavaScript_Demo_More : UserControl
     {
-        public ExecuteJavascript_Demo_More()
+        public ExecuteJavaScript_Demo_More()
         {
             this.InitializeComponent();
         }

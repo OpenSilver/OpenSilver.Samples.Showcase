@@ -17,7 +17,7 @@ namespace CSHTML5.Samples.Showcase
     public partial class HtmlCanvas_Demo : UserControl
     {
         int _lastTickCount = 0;
-        private readonly int[] SpriteCount = new int[] { 5, 10, 25, 50, 100, 250, 500, 1000, 2500, 5000, 10000, 25000, 50000, 100000, 250000, 500000, 1000000 };
+        private readonly int[] SpriteCount = new int[] { 5, 10, 25, 50, 100, 250, 500, 1000, 2500, 5000, 10000 };
         bool _loaded = false;
 
         // Define variables to calculate the average "Frames Per Second":

@@ -4,23 +4,26 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:CSHTML5.Samples.Showcase"
     xmlns:controlns="using:TestNumericTextBox">
-    <ContentControl Style="{StaticResource Card_Style}" Height="170" Width="342">
+    <ContentControl Style="{StaticResource Card_Style}" Width="245">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="Interop HtmlPresenter" Foreground="#FFF78069" Background="#FF8FCBBE" Style="{StaticResource HeaderControl_Style}"/>
-            <Border Margin="0,25,0,0" Grid.Row="1" Padding="10" BorderThickness="1" BorderBrush="Gray" Background="LightGray" HorizontalAlignment="Left" VerticalAlignment="Top">
-                <StackPanel>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                        <TextBlock Text="Enter a number:" VerticalAlignment="Center"/>
-                        <controlns:NumericTextBox x:Name="NumericTextBox1" Value="100" Margin="10,0,0,0" Width="200" VerticalAlignment="Center"/>
-                    </StackPanel>
-                    <Button Content="Click me" Click="Button_Click" Margin="0,10,0,0" HorizontalAlignment="Left"/>
+            <ContentControl Content="HtmlPresenter" Foreground="#FFF78069" Background="#FF8FCBBE" Style="{StaticResource HeaderControl_Style}"/>
+            <StackPanel Grid.Row="1">
+                <TextBlock Text="The HtmlPresenter control lets you display HTML and CSS from within your XAML. You can read the documentation at:" Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left"/>
+                <HyperlinkButton Foreground="#FFF78069" Margin="0,10,0,0" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" NavigateUri="http://cshtml5.com/links/how-to-use-the-htmlpresenter.aspx">
+                    <TextBlock Text="http://cshtml5.com/links/how-to-use-the-htmlpresenter.aspx" TextWrapping="Wrap"/>
+                </HyperlinkButton>
+                <TextBlock Text="The following example shows how to use the HtmlPresenter to implement a Numeric TextBox using &lt;input type='number'&gt; HTML tag." Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left" Margin="0,10,0,0"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,10,0,0">
+                    <TextBlock Text="Enter a number:" VerticalAlignment="Center"/>
+                    <controlns:NumericTextBox x:Name="NumericTextBox1" Value="100" Margin="10,0,0,0" Width="100" VerticalAlignment="Center"/>
                 </StackPanel>
-            </Border>
+                <Button Content="Then Click Here" Click="ButtonClickHere_Click" Margin="0,10,0,0" HorizontalAlignment="Center"/>
+            </StackPanel>
             <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FFF78069" Style="{StaticResource ButtonViewSource_Style}"/>
         </Grid>
     </ContentControl>

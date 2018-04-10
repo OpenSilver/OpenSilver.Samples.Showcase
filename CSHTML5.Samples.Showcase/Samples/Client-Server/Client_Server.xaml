@@ -11,7 +11,7 @@
             <local:SignalR_Demo HorizontalAlignment="Center"/>
             <local:WebSockets_Demo HorizontalAlignment="Center"/>
             <local:JSONP_Demo HorizontalAlignment="Center"/>
-            <local:jQuery_Demo HorizontalAlignment="Center"/>
+            <local:jQueryAjax_Demo HorizontalAlignment="Center"/>
         </local:MasonryPanel>
     </StackPanel>
 </UserControl>

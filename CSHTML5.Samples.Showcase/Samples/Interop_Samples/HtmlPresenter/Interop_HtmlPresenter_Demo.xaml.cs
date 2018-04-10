@@ -20,7 +20,7 @@ namespace CSHTML5.Samples.Showcase
             this.InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ButtonClickHere_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("The value is: " + NumericTextBox1.Value.ToString());
         }

@@ -77,11 +77,11 @@
       <DependentUpon>Client_Server.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\Client-Server\jQuery.ajax\jQueryAjaxHelper.cs" />
-    <Compile Include="Samples\Client-Server\jQuery.ajax\jQuery_Demo.xaml.cs">
-      <DependentUpon>jQuery_Demo.xaml</DependentUpon>
+    <Compile Include="Samples\Client-Server\jQuery.ajax\jQueryAjax_Demo.xaml.cs">
+      <DependentUpon>jQueryAjax_Demo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Samples\Client-Server\jQuery.ajax\JSONP_Demo_More.xaml.cs">
-      <DependentUpon>JSONP_Demo_More.xaml</DependentUpon>
+    <Compile Include="Samples\Client-Server\jQuery.ajax\jQueryAjax_Demo_More.xaml.cs">
+      <DependentUpon>jQueryAjax_Demo_More.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\Client-Server\JSONP\JSONP_Demo.xaml.cs">
       <DependentUpon>JSONP_Demo.xaml</DependentUpon>
@@ -122,11 +122,11 @@
     <Compile Include="Samples\Extensions\Plotly_Charts\Plotly_Charts_Demo_More.xaml.cs">
       <DependentUpon>Plotly_Charts_Demo_More.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Samples\Interop_Samples\ExecuteJavascript\ExecuteJavascript_Demo.xaml.cs">
-      <DependentUpon>ExecuteJavascript_Demo.xaml</DependentUpon>
+    <Compile Include="Samples\Interop_Samples\ExecuteJavascript\ExecuteJavaScript_Demo.xaml.cs">
+      <DependentUpon>ExecuteJavaScript_Demo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Samples\Interop_Samples\ExecuteJavascript\ExecuteJavascript_Demo_More.xaml.cs">
-      <DependentUpon>ExecuteJavascript_Demo_More.xaml</DependentUpon>
+    <Compile Include="Samples\Interop_Samples\ExecuteJavascript\ExecuteJavaScript_Demo_More.xaml.cs">
+      <DependentUpon>ExecuteJavaScript_Demo_More.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\Interop_Samples\GetDiv\GetDiv_Demo.xaml.cs">
       <DependentUpon>GetDiv_Demo.xaml</DependentUpon>
@@ -700,11 +700,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Samples\Client-Server\jQuery.ajax\jQuery_Demo.xaml">
+    <Page Include="Samples\Client-Server\jQuery.ajax\jQueryAjax_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Samples\Client-Server\jQuery.ajax\JSONP_Demo_More.xaml">
+    <Page Include="Samples\Client-Server\jQuery.ajax\jQueryAjax_Demo_More.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -760,11 +760,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Samples\Interop_Samples\ExecuteJavascript\ExecuteJavascript_Demo.xaml">
+    <Page Include="Samples\Interop_Samples\ExecuteJavascript\ExecuteJavaScript_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Samples\Interop_Samples\ExecuteJavascript\ExecuteJavascript_Demo_More.xaml">
+    <Page Include="Samples\Interop_Samples\ExecuteJavascript\ExecuteJavaScript_Demo_More.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

@@ -13,9 +13,9 @@ using Windows.UI.Xaml.Navigation;
 
 namespace CSHTML5.Samples.Showcase
 {
-    public partial class jQuery_Demo : UserControl
+    public partial class jQueryAjax_Demo : UserControl
     {
-        public jQuery_Demo()
+        public jQueryAjax_Demo()
         {
             this.InitializeComponent();
         }
@@ -43,13 +43,13 @@ namespace CSHTML5.Samples.Showcase
             {
                 new ViewSourceButtonInfo()
                 {
-                    TabHeader = "jQuery_Demo.xaml",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Client-Server/jQuery.ajax/jQuery_Demo.xaml"
+                    TabHeader = "jQueryAjax_Demo.xaml",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Client-Server/jQuery.ajax/jQueryAjax_Demo.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
-                    TabHeader = "jQuery_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Client-Server/jQuery.ajax/jQuery_Demo.xaml.cs"
+                    TabHeader = "jQueryAjax_Demo.xaml.cs",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Client-Server/jQuery.ajax/jQueryAjax_Demo.xaml.cs"
                 },
                 new ViewSourceButtonInfo()
                 {

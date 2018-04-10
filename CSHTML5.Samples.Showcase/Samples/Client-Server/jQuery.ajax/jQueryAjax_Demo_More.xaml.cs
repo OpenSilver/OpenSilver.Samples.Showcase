@@ -13,9 +13,9 @@ using Windows.UI.Xaml.Navigation;
 
 namespace CSHTML5.Samples.Showcase
 {
-    public partial class jQuery_Demo_More : UserControl
+    public partial class jQueryAjax_Demo_More : UserControl
     {
-        public jQuery_Demo_More()
+        public jQueryAjax_Demo_More()
         {
             this.InitializeComponent();
         }

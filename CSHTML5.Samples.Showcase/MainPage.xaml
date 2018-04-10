@@ -27,7 +27,7 @@
                         <Button Content="Panels &amp; Controls" Click="ButtonXamlControls_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="16"/>
                         <Button Content="XAML Features" Click="ButtonXamlFeatures_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="16"/>
                         <Button Content=".NET Framework" Click="ButtonNetFramework_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="16"/>
-                        <Button Content="Client/Server" Click="ButtonClientServer_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="16"/>
+                        <Button Content="Client / Server" Click="ButtonClientServer_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="16"/>
                         <Button Content="Interop" Click="ButtonInterop_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="16"/>
                         <Button Content="Extensions" Click="ButtonExtensions_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="16"/>
                         <Button Content="Performance" Click="ButtonPerformance_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="16"/>
