@@ -9,9 +9,9 @@ using System.Windows;
 //------------------------------------
 // This extension adds JSON serialization/deserialization support to C#/XAML for HTML5 (www.cshtml5.com)
 //
-// It requires Beta 8.2 or newer.
+// It requires v1.0 Beta 8.2 or newer.
 //
-// This project is licensed under The open-source MIT license:
+// This extension is licensed under the open-source MIT license:
 // https://opensource.org/licenses/MIT
 //
 // Copyright 2017 Userware / CSHTML5

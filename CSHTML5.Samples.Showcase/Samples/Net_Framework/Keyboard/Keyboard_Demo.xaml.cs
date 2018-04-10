@@ -23,7 +23,7 @@ namespace CSHTML5.Samples.Showcase
         private void TextBoxInput_KeyDown(object sender, KeyRoutedEventArgs e)
         {
             if (e.Key == Windows.System.VirtualKey.Enter)
-                MessageBox.Show(TextBoxInput.Text);
+                MessageBox.Show("You pressed Enter!" + Environment.NewLine + Environment.NewLine + "This is the text that you entered: " + TextBoxInput.Text);
         }
 
         private void ButtonViewSource_Click(object sender, RoutedEventArgs e)

@@ -3,9 +3,10 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:CSHTML5.Samples.Showcase">
     <Style x:Key="PageHeader_Style" TargetType="TextBlock">
-        <Setter Property="FontSize" Value="28"/>
+        <Setter Property="FontSize" Value="36"/>
         <Setter Property="TextWrapping" Value="Wrap"/>
-        <Setter Property="Margin" Value="14,20,10,0"/>
+        <Setter Property="FontFamily" Value="Segoe UI Light"/>
+        <Setter Property="Margin" Value="21,20,10,0"/>
         <Setter Property="Foreground" Value="Gray"/>
     </Style>
     <Style x:Key="CardHeader_Style" TargetType="TextBlock">
@@ -18,7 +19,7 @@
         <Setter Property="Foreground" Value="#FF808080"/>
     </Style>
     <Style x:Key="Panel_Style" TargetType="Panel">
-        <Setter Property="Margin" Value="0,30,0,0"/>
+        <Setter Property="Margin" Value="0,16,0,0"/>
     </Style>
     <Style x:Key="Card_Style" TargetType="ContentControl">
         <Style.Setters>
@@ -26,7 +27,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ContentControl">
-                        <Border Background="White" CornerRadius="4">
+                        <Border Background="White" CornerRadius="6">
                             <Border.Effect>
                                 <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="10" Opacity="0.1" />
                             </Border.Effect>

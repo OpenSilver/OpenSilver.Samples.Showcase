@@ -1,5 +1,4 @@
 ﻿using CSHTML5.Extensions.FileSystem;
-using CSHTML5.Samples.Showcase.Samples.Net_Framework.Validation;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -28,15 +27,15 @@ namespace CSHTML5.Samples.Showcase
         {
             if (Validation.GetHasError(NameTextBoxForValidation) || Validation.GetHasError(AgeTextBoxForValidation))
             {
-                (MyButtonForValidation).IsEnabled = false;
+                ButtonOK.IsEnabled = false;
             }
             else
             {
-                (MyButtonForValidation).IsEnabled = true;
+                ButtonOK.IsEnabled = true;
             }
         }
 
-        private void MyButtonForValidation_Click(object sender, RoutedEventArgs e)
+        private void ButtonOK_Click(object sender, RoutedEventArgs e)
         {
             Person person = (Person)((Button)sender).DataContext;
             string str = "Name: \"" + person.Name + "\"" + Environment.NewLine + "Age: " + person.Age + ".";

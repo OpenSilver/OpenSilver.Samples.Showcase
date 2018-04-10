@@ -11,12 +11,9 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="DataContract-Serializer" Foreground="#FFF79B69" Background="#FFD3A287" Style="{StaticResource HeaderControl_Style}"/>
-            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,50,0,0">
-                <TextBlock Text="The &quot;XmlSerializer&quot; class lets you serialize/deserialize C# types. You must add the [DataContract] attribute to the types that you wish to serialize or deserialize." Foreground="#FF808080" Margin="0,10,0,0" TextWrapping="Wrap" Width="220" FontSize="12" HorizontalAlignment="Left"/>
-                <TextBlock Text="Please read the current limitations and tutorials at the following URL: http://www.cshtml5.com/links/xml-serializer-limitations-and-tutorials.aspx" Foreground="#FF808080" Margin="0,10,0,0" TextWrapping="Wrap" Width="220" FontSize="12" HorizontalAlignment="Left"/>
-                <TextBlock Text="Example:" Foreground="#FF808080" Margin="0,10,0,0" TextWrapping="Wrap" Width="220" FontSize="12" HorizontalAlignment="Left"/>
-                <StackPanel x:Name="SerializationSourcePanel" Orientation="Vertical" Margin="10,10,0,0">
-                    <TextBlock Text="Sample Serializable Class "/>
+            <StackPanel Grid.Row="1" HorizontalAlignment="Center">
+                <StackPanel x:Name="SerializationSourcePanel" Margin="10,0,0,0">
+                    <TextBlock Text="Sample Serializable Class:"/>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text=" - Text field: "/>
                         <TextBox Text="{Binding TextField, Mode=TwoWay}" TextWrapping="Wrap"  Margin="5,0,0,0"/>
@@ -34,11 +31,11 @@
                         <TextBlock Text="{Binding BooleanField}" Margin="5,0,0,0"/>
                     </StackPanel>
                 </StackPanel>
-                <Button Margin="0,10,0,0" Foreground="White" Background="#FFE44D26" HorizontalAlignment="Left" Click="ButtonSerializeDeserialize_Click">
+                <Button Margin="0,10,0,0" Foreground="White" Background="#FFF79B69" FontSize="14" HorizontalAlignment="Left" Click="ButtonSerializeDeserialize_Click">
                     <TextBlock Text="Click to serialize what's above and deserialize it below" TextWrapping="Wrap" Width="150"/>
                 </Button>
                 <StackPanel x:Name="SerializationDestinationPanel" Orientation="Vertical" Margin="10,10,0,0">
-                    <TextBlock Text="Sample Serializable Class "/>
+                    <TextBlock Text="Result of the deserialization:"/>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text=" - Text field: "/>
                         <TextBlock Text="{Binding TextField}" TextWrapping="Wrap" Margin="5,0,0,0"/>

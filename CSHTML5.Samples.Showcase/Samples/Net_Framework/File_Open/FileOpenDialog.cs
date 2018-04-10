@@ -11,7 +11,7 @@ using Windows.UI.Xaml.Controls;
 //------------------------------------
 // This is an extension for C#/XAML for HTML5 (www.cshtml5.com)
 //
-// It requires Beta 7.2 or newer.
+// It requires v1.0 Beta 7.2 or newer.
 //
 // It adds the ability to let the user pick a file using the
 // "Open File..." dialog of the browser.
@@ -23,9 +23,7 @@ using Windows.UI.Xaml.Controls;
 // The extension works by adding an <input type='file'> tag to the
 // HTML DOM, which will cause the "Open file..." dialog to appear,
 // and by listening to its "change" event in order to get a reference
-// to the selected file. it returns a JavaScript blob. If the file
-// is a plain text file, it will also return a string with the text
-// content of the file.
+// to the selected file.
 //
 // This extension is licensed under the open-source MIT license:
 // https://opensource.org/licenses/MIT

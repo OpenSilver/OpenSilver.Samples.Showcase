@@ -11,16 +11,14 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="Regex" Foreground="#ffff6699" Background="#FFBEDCA4" Style="{StaticResource HeaderControl_Style}"/>
-            <StackPanel Orientation="Vertical" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <TextBox x:Name="TextBoxRegexReplaceDemo" Text="The solar eclipse of 05/29/1919 was used to verify general relativity. The longest total eclipse was on 06/20/1955 and lasted 7 minutes." Width="200" TextWrapping="Wrap" FontSize="12" AcceptsReturn="True"/>
-                <Button Content="Click to replace dates format" Background="#FFE44D26" Foreground="White" Margin="0,5,0,0" Click="ButtonReplaceDates_Click"/>
-                <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
-                    <TextBlock Text="Ouput string:" FontSize="12"/>
+            <StackPanel Grid.Row="1">
+                <Button Content="Click to Replace Dates" Click="ButtonReplaceDates_Click" FontSize="14" HorizontalAlignment="Center"/>
+                <TextBlock Text="INPUT STRING:" Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left" Margin="0,10,0,0"/>
+                <TextBox x:Name="TextBoxRegexReplaceDemo" Text="The solar eclipse of 05/29/1919 was used to verify general relativity. The longest total eclipse was on 06/20/1955 and lasted 7 minutes." TextWrapping="Wrap" FontSize="12" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Height="80"/>
+                <TextBlock Text="OUTPUT STRING:" Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left" Margin="0,6,0,0"/>
+                <Border BorderThickness="1" BorderBrush="Gray" Height="80" ClipToBounds="True">
                     <TextBlock x:Name="TextBlockOutputOfRegexReplaceDemo" Text="" TextWrapping="Wrap" FontSize="12" Margin="5,0,0,0"/>
-                </StackPanel>
-
-
-
+                </Border>
             </StackPanel>
             <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#ffff6699" Style="{StaticResource ButtonViewSource_Style}"/>
         </Grid>

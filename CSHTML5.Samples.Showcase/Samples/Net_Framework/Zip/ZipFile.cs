@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 //------------------------------------
 // This is an extension for C#/XAML for HTML5 (www.cshtml5.com)
 //
-// It requires Beta 7.2 or newer.
+// It requires v1.0 Beta 7.2 or newer.
 //
 // It adds the ability to create ZIP files and to read ZIP files.
 // It attempts to mimic the API of Ionic.Zip (DotNetZip) so as to

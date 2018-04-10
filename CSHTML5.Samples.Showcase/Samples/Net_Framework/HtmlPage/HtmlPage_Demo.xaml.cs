@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Windows.Browser;
 using Windows.Foundation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -20,9 +21,9 @@ namespace CSHTML5.Samples.Showcase
             this.InitializeComponent();
         }
 
-        void GetCurrentURL(object sender, RoutedEventArgs e)
+        void ButtonGetCurrentURL_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Not Implemented");
+            MessageBox.Show("The current URL is: " + HtmlPage.Document.DocumentUri.OriginalString);
         }
 
         private void ButtonViewSource_Click(object sender, RoutedEventArgs e)

@@ -14,7 +14,6 @@
             <local:Zip_Demo HorizontalAlignment="Center"/>
             <local:HtmlPage_Demo HorizontalAlignment="Center"/>
             <local:Keyboard_Demo HorizontalAlignment="Center"/>
-            <local:Validation_Demo HorizontalAlignment="Center"/>
             <local:IsolatedStorageFile_Demo HorizontalAlignment="Center"/>
             <local:IsolatedStorageSettings_Demo HorizontalAlignment="Center"/>
             <local:Linq_Demo HorizontalAlignment="Center"/>

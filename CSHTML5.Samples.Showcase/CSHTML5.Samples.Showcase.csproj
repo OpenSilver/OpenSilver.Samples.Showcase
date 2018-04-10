@@ -258,11 +258,11 @@
     <Compile Include="Samples\Net_Framework\RESX\RESX_Demo_More.xaml.cs">
       <DependentUpon>RESX_Demo_More.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Samples\Net_Framework\Validation\Person.cs" />
-    <Compile Include="Samples\Net_Framework\Validation\Validation_Demo.xaml.cs">
+    <Compile Include="Samples\XAML_Features\Validation\Person.cs" />
+    <Compile Include="Samples\XAML_Features\Validation\Validation_Demo.xaml.cs">
       <DependentUpon>Validation_Demo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Samples\Net_Framework\Validation\Validation_Demo_More.xaml.cs">
+    <Compile Include="Samples\XAML_Features\Validation\Validation_Demo_More.xaml.cs">
       <DependentUpon>Validation_Demo_More.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\Net_Framework\Zip\ZipFile.cs" />
@@ -936,11 +936,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Samples\Net_Framework\Validation\Validation_Demo.xaml">
+    <Page Include="Samples\XAML_Features\Validation\Validation_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Samples\Net_Framework\Validation\Validation_Demo_More.xaml">
+    <Page Include="Samples\XAML_Features\Validation\Validation_Demo_More.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

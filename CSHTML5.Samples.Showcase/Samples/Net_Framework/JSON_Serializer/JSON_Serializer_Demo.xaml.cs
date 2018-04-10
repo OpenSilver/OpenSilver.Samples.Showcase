@@ -24,65 +24,37 @@ namespace CSHTML5.Samples.Showcase
         {
             this.InitializeComponent();
 
-            this.Loaded += MainPage_Loaded;
+            _product = new Product()
+            {
+                Name = "TestProduct",
+                ProductType = ProductType.B2C,
+                Price = 12.50,
+                Count = 341,
+                IsAvailable = true,
+                Sizes = new string[] { "Small", "Medium", "Large" },
+                Features = new List<Feature>()
+                {
+                    new Feature() { Name = "TestFeature1" },
+                    new Feature() { Name = "TestFeature2" },
+                    new Feature() { Name = "TestFeature3" }
+                },
+                ReleaseDate = DateTime.Now
+            };
         }
 
-        #region Tests Class & Methods
-
-        public class Product
-        {
-            public string Name { get; set; }
-            public ProductType ProductType { get; set; }
-            public double Price { get; set; }
-            public int Count { get; set; }
-            public bool IsAvailable { get; set; }
-            public string[] Sizes { get; set; }
-            public List<Feature> Features { get; set; }
-            public DateTime ReleaseDate { get; set; }
-        }
-
-        public class Feature
-        {
-            public string Name { get; set; }
-        }
-
-        public enum ProductType
-        {
-            B2B, B2C
-        }
-
-        #endregion
-
-        #region Events
-
-        //----------------------------------
-        // Deserialization (strongly-typed):
-        //----------------------------------
-        private async void Button_Click_StronglyTypedDeserialization(object sender, RoutedEventArgs e)
-        {
-            Product deserializedProduct = await JsonConvert.DeserializeObject<Product>(_json);
-
-            MessageBox.Show("Name of the second feature: " + deserializedProduct.Features[1].Name);
-            MessageBox.Show("Name of the third available size: " + deserializedProduct.Sizes[2]);
-            MessageBox.Show("Release date: " + deserializedProduct.ReleaseDate.ToString());
-
-            TextContent.Text = _json;
-
-            // Result: "Name of the second feature: TestFeature2"
-            // Result: "Name of the third available size: Large"
-        }
-
-        //---------------
-        // Serialization:
-        //---------------
         private void Button_Click_Serialization(object sender, RoutedEventArgs e)
         {
+            // Serialize:
             _json = JsonConvert.SerializeObject(_product);
 
-            TextContent.Text = CodeIndentationAfterComas(_json);
+            // Indent:
+            string indentedJson = _json.Replace(",", ",\n");
 
-            // Result:
+            // Display the result:
+            TextContent.Text = indentedJson;
+
             /*
+            // Expected Result:
             {  
                "Name":"TestProduct",
                "ProductType":"B2C",
@@ -107,58 +79,69 @@ namespace CSHTML5.Samples.Showcase
                ],
                "ReleaseDate":"2017-04-10T16:26:41.754Z"
             }
-             */
+            */
         }
 
-        //---------------------------
-        // Deserialization (dynamic):
-        //---------------------------
+        private async void Button_Click_StronglyTypedDeserialization(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(_json))
+            {
+                Product deserializedProduct = await JsonConvert.DeserializeObject<Product>(_json);
+
+                MessageBox.Show("Name of the second feature: " + deserializedProduct.Features[1].Name);
+                MessageBox.Show("Name of the third available size: " + deserializedProduct.Sizes[2]);
+                MessageBox.Show("Release date: " + deserializedProduct.ReleaseDate.ToString());
+
+                // Expected Result: "Name of the second feature: TestFeature2"
+                // Expected Result: "Name of the third available size: Large"
+            }
+            else
+            {
+                MessageBox.Show("Please click on the Serialize button first.");
+            }
+        }
+
         private async void Button_Click_DynamicDeserialization(object sender, RoutedEventArgs e)
         {
-            IJsonType deserializedObject = await JsonConvert.DeserializeObject(_json);
-
-            MessageBox.Show("Product name: " + deserializedObject["Name"].Value.ToString());
-            MessageBox.Show("Name of the second feature: " + deserializedObject["Features"][1]["Name"].Value.ToString());
-            MessageBox.Show("Name of the third available size: " + deserializedObject["Sizes"][2].Value.ToString());
-
-            TextContent.Text = _json;
-
-            // Result: "Product name: TestProduct"
-            // Result: "Name of the second feature: TestFeature2"
-            // Result: "Name of the third available size: Large"
-
-        }
-
-        void MainPage_Loaded(object sender, RoutedEventArgs e)
-        {
-            _product = new Product()
+            if (!string.IsNullOrEmpty(_json))
             {
-                Name = "TestProduct",
-                ProductType = ProductType.B2C,
-                Price = 12.50,
-                Count = 341,
-                IsAvailable = true,
-                Sizes = new string[] { "Small", "Medium", "Large" },
-                Features = new List<Feature>()
-                {
-                    new Feature() { Name = "TestFeature1" },
-                    new Feature() { Name = "TestFeature2" },
-                    new Feature() { Name = "TestFeature3" }
-                },
-                ReleaseDate = DateTime.Now
-            };
+                IJsonType deserializedObject = await JsonConvert.DeserializeObject(_json);
+
+                MessageBox.Show("Product name: " + deserializedObject["Name"].Value.ToString());
+                MessageBox.Show("Name of the second feature: " + deserializedObject["Features"][1]["Name"].Value.ToString());
+                MessageBox.Show("Name of the third available size: " + deserializedObject["Sizes"][2].Value.ToString());
+
+                // Expected Result: "Product name: TestProduct"
+                // Expected Result: "Name of the second feature: TestFeature2"
+                // Expected Result: "Name of the third available size: Large"
+            }
+            else
+            {
+                MessageBox.Show("Please click on the Serialize button first.");
+            }
         }
 
-        #endregion
-
-        #region Utilities
-
-        private string CodeIndentationAfterComas(string text)
+        public class Product
         {
-            return text.Replace(",", ",\n");
+            public string Name { get; set; }
+            public ProductType ProductType { get; set; }
+            public double Price { get; set; }
+            public int Count { get; set; }
+            public bool IsAvailable { get; set; }
+            public string[] Sizes { get; set; }
+            public List<Feature> Features { get; set; }
+            public DateTime ReleaseDate { get; set; }
         }
 
-        #endregion
+        public class Feature
+        {
+            public string Name { get; set; }
+        }
+
+        public enum ProductType
+        {
+            B2B, B2C
+        }
 
         private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
         {

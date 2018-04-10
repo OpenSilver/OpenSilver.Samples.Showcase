@@ -22,22 +22,24 @@ namespace CSHTML5.Samples.Showcase
             this.InitializeComponent();
         }
 
-        async void OnFileOpened(object sender, CSHTML5.Extensions.FileOpenDialog.FileOpenedEventArgs e)
+        private async void ButtonGenerateZip_Click(object sender, RoutedEventArgs e)
         {
-            /*
-            var javaScriptBlob = e.JavaScriptBlob;
-            ZipFile zipFile = await ZipFile.Read(javaScriptBlob);
-            ZipEntry entry = zipFile["MyTestFileInsideTheZIP.txt"];
-            string content = entry.ExtractToString();
-            MessageBox.Show(content);*/
-
             using (ZipFile zipFile = new ZipFile())
             {
-                await zipFile.AddFile("file_compressed.txt", e.Text);
+                await zipFile.AddFile("SampleText.txt", "Hello World!");
                 var jsBlob = await zipFile.SaveToJavaScriptBlob();
                 await FileSaver.SaveJavaScriptBlobToFile(jsBlob, "MyTestFile.zip");
             }
         }
+
+        //async void OnFileOpened(object sender, CSHTML5.Extensions.FileOpenDialog.FileOpenedEventArgs e)
+        //{
+        //    var javaScriptBlob = e.JavaScriptBlob;
+        //    ZipFile zipFile = await ZipFile.Read(javaScriptBlob);
+        //    ZipEntry entry = zipFile["MyTestFileInsideTheZIP.txt"];
+        //    string content = entry.ExtractToString();
+        //    MessageBox.Show(content);
+        //}
 
         private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
         {

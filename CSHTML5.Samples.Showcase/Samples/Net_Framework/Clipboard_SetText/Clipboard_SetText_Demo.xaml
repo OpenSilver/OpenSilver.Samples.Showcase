@@ -10,8 +10,9 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="SetText on Clipboard" Foreground="#FFFF7C79" Background="#FFC78F8F" Style="{StaticResource HeaderControl_Style}"/>
-            <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FFFF7C79" Style="{StaticResource ButtonViewSource_Style}"/>
+            <ContentControl Content="Set Clipboard Text" Foreground="#FFFF7C79" Background="#FFC78F8F" Style="{StaticResource HeaderControl_Style}"/>
+            <TextBlock Grid.Row="1" Text="(Demo under construction)" Foreground="DarkGray" FontSize="12" Margin="0,25,0,20" HorizontalAlignment="Center"/>
+            <!--<Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FFFF7C79" Style="{StaticResource ButtonViewSource_Style}"/>-->
         </Grid>
     </ContentControl>
 </UserControl>

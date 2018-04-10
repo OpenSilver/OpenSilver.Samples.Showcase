@@ -24,7 +24,7 @@ namespace CSHTML5.Samples.Showcase
 
         async void ButtonSave_Click(object sender, RoutedEventArgs e)
         {
-            await FileSaver.SaveTextToFile("MyTestFile.txt", "Hello World");
+            await FileSaver.SaveTextToFile("Hello World!", "MyTestFile.txt");
         }
 
         private void ButtonViewSource_Click(object sender, RoutedEventArgs e)

@@ -11,14 +11,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="Linq" Foreground="#6699ff" Background="#FFBEDCA4" Style="{StaticResource HeaderControl_Style}"/>
-            <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-
-
-                <!--<TextBlock Text="The following Linq methods are supported: Any, AsEnumerable, Cast, Contains, Count, ElementAt, ElementAtOrDefault, Empty, First, FirstOrDefault, OfType, OrderBy, OrderByDescending, Range, Select, SelectMany, Sum, ToArray, ToList, and Where." Foreground="#FF808080" Margin="0,10,0,0" TextWrapping="Wrap" Width="220" FontSize="12"/>-->
-                <Button Content="Click to test a Linq query" Margin="20,10,20,0" Foreground="White" Background="#FFE44D26" Click="ButtonToDemonstrateLinq_Click"/>
-
-
-            </StackPanel>
+            <Button Grid.Row="1" Content="Click to Test Linq" Click="ButtonToDemonstrateLinq_Click" FontSize="14" HorizontalAlignment="Center"/>
             <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#6699ff" Style="{StaticResource ButtonViewSource_Style}"/>
         </Grid>
     </ContentControl>

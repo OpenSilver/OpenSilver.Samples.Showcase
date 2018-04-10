@@ -11,7 +11,6 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="Printing" Foreground="#FF69C8FF" Background="#FFA1C3D7" Style="{StaticResource HeaderControl_Style}"/>
-
             <StackPanel Background="White" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,0">
                 <Button Content="Click to print the invoice below" Click="ButtonPrint_Click" HorizontalAlignment="Left" Margin="5,0,0,20" Background="Red" Foreground="White" FontWeight="Bold"/>
                 <Border Width="400" Height="600" BorderThickness="3" BorderBrush="Black">

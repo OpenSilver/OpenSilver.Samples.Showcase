@@ -10,17 +10,12 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="AsyncAwait" Foreground="#ffffad33" Background="#ffcc7a00" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="AsyncAwait" Foreground="#FFFFAD33" Background="#FFCC7A00" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
-
-
-                <TextBlock x:Name="TaskBasedCounterTextBlock" Margin="10,10,0,0" FontSize="26" Foreground="#FFE44D26" VerticalAlignment="Top" Visibility="Collapsed"/>
-                <Button Content="Start the task-based countdown sample" Margin="0,10,0,0" Foreground="White" Background="#FFE44D26" HorizontalAlignment="Left" Click="ButtonToDemonstrateAsyncAwait_Click"/>
-                <TextBlock Text="Note: more async/await demos can be found in the WCF section." Foreground="#FF808080" Margin="0,10,0,0" TextWrapping="Wrap" Width="220" FontSize="12" TextAlignment="Center"/>
-
-
+                <TextBlock x:Name="TaskBasedCounterTextBlock" Margin="10,10,0,0" FontSize="26" Foreground="#FFFFAD33" VerticalAlignment="Top" Visibility="Collapsed"/>
+                <Button Content="Start Task-Based Countdown" Margin="0,10,0,0" HorizontalAlignment="Center" FontSize="14" Click="ButtonToDemonstrateAsyncAwait_Click"/>
             </StackPanel>
-            <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#ffffad33" Style="{StaticResource ButtonViewSource_Style}"/>
+            <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FFFFAD33" Style="{StaticResource ButtonViewSource_Style}"/>
         </Grid>
     </ContentControl>
 </UserControl>

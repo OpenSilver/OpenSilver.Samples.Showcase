@@ -11,17 +11,17 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="Validation" Foreground="#FFB3CE00" Background="#FFB2BD69" Style="{StaticResource HeaderControl_Style}"/>
-            <Border Grid.Row="1" x:Name="ValidationBorder" Background="LightGray" BorderBrush="Gray" BorderThickness="2" Margin="10" Padding="5">
-                <StackPanel Orientation="Vertical">
+            <Border Grid.Row="1" x:Name="ValidationBorder">
+                <StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Name: "/>
-                        <TextBox x:Name="NameTextBoxForValidation" Text="{Binding Name, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" BindingValidationError="ValidationBorder_BindingValidationError" HorizontalAlignment="Left"/>
+                        <TextBox x:Name="NameTextBoxForValidation" Text="{Binding Name, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" BindingValidationError="ValidationBorder_BindingValidationError" HorizontalAlignment="Left" Width="130"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                         <TextBlock Text="Age: "/>
-                        <TextBox x:Name="AgeTextBoxForValidation" Text="{Binding Age, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" BindingValidationError="ValidationBorder_BindingValidationError" HorizontalAlignment="Left"/>
+                        <TextBox x:Name="AgeTextBoxForValidation" Text="{Binding Age, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" BindingValidationError="ValidationBorder_BindingValidationError" HorizontalAlignment="Left" Width="50"/>
                     </StackPanel>
-                    <Button x:Name="MyButtonForValidation" Content="OK" Background="#ffcce6ff" Click="MyButtonForValidation_Click"/>
+                    <Button x:Name="ButtonOK" Content="OK" Click="ButtonOK_Click" Margin="0,10,0,0" Width="100" HorizontalAlignment="Center"/>
                 </StackPanel>
             </Border>
             <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FFB3CE00" Style="{StaticResource ButtonViewSource_Style}"/>

@@ -11,7 +11,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="Save a File" Foreground="#FFB3CE00" Background="#FFB2BD69" Style="{StaticResource HeaderControl_Style}"/>
-            <Button Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Click me to Save a File !" Click="ButtonSave_Click"/>
+            <Button Grid.Row="1" FontSize="14" HorizontalAlignment="Center" Content="Click to Save a File" Click="ButtonSave_Click"/>
             <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FFB3CE00" Style="{StaticResource ButtonViewSource_Style}"/>
         </Grid>
     </ContentControl>

@@ -18,6 +18,7 @@
             <local:Window_SizeChanged_Demo HorizontalAlignment="Center"/>
             <local:FindElementsInHostCoordinates_Demo HorizontalAlignment="Center"/>
             <local:ClipToBounds_Demo HorizontalAlignment="Center"/>
+            <local:Validation_Demo HorizontalAlignment="Center"/>
             <local:Commanding_Demo HorizontalAlignment="Center"/>
             <local:XAML_Resource_Dictionary_Demo HorizontalAlignment="Center"/>
             <local:DependencyProperties_Demo HorizontalAlignment="Center"/>

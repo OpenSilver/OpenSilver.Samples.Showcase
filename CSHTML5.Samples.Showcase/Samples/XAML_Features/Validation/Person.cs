@@ -14,13 +14,12 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-namespace CSHTML5.Samples.Showcase.Samples.Net_Framework.Validation
+namespace CSHTML5.Samples.Showcase
 {
     //Validation:
     public class Person : INotifyPropertyChanged
     {
         private string _name;
-
         public string Name
         {
             get { return _name; }
