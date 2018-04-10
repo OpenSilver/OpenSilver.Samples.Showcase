@@ -65,13 +65,13 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Other\ChildWindowHelper.cs" />
-    <Compile Include="Other\ControlToDisplayCodeHostedOnGitHub.cs" />
+    <Compile Include="Other\Internals\ChildWindowHelper.cs" />
+    <Compile Include="Other\Internals\ControlToDisplayCodeHostedOnGitHub.cs" />
     <Compile Include="Samples\XAML_Features\Binding2\KilometersToMilesConverter.cs" />
-    <Compile Include="Other\MasonryPanel.cs" />
+    <Compile Include="Other\Internals\MasonryPanel.cs" />
     <Compile Include="Other\Planet.cs" />
-    <Compile Include="Other\ViewSourceButtonHelper.cs" />
-    <Compile Include="Other\ViewSourceButtonInfo.cs" />
+    <Compile Include="Other\Internals\ViewSourceButtonHelper.cs" />
+    <Compile Include="Other\Internals\ViewSourceButtonInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Samples\Client-Server\Client_Server.xaml.cs">
       <DependentUpon>Client_Server.xaml</DependentUpon>
