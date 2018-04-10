@@ -10,7 +10,7 @@ namespace TestNumericTextBox
 
         public NumericTextBox()
         {
-            this.Html = @"<input type=""number"" pattern=""[0-9]*"">";
+            this.Html = @"<input type=""number"" pattern=""[0-9]*"" style=""width:100%;height:100%"">";
 
             this.Loaded += NumericTextBox_Loaded;
         }

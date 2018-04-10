@@ -14,7 +14,7 @@
             <StackPanel Orientation="Vertical" Grid.Row="1">
                 <TextBlock Text="You can use the &quot;Add Service Reference&quot; feature of Visual Studio to communicate with SOAP web services. Please read the WCF Limitations and Tutorials at the following page at:" Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left"/>
                 <HyperlinkButton Foreground="#FF96C335" Margin="0,10,0,0" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" NavigateUri="http://cshtml5.com/links/wcf-limitations-and-tutorials.aspx">
-                    <TextBlock Text="http://cshtml5.com/links/wcf-limitations-and-tutorials.aspx" TextWrapping="Wrap"/>
+                    <TextBlock Text="http://cshtml5.com/links/wcf-limitations-and-tutorials.aspx" TextWrapping="Wrap" Cursor="Hand"/>
                 </HyperlinkButton>
                 <TextBlock Text="SOAP DEMO - CREATE A NEW TO-DO:" Margin="0,20,0,0" Foreground="Black" HorizontalAlignment="Left"/>
                 <StackPanel Orientation="Horizontal" Margin="0,10,0,0">

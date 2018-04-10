@@ -5,9 +5,11 @@
     xmlns:local="using:CSHTML5.Samples.Showcase">
     <StackPanel>
         <TextBlock Text="Welcome!" Style="{StaticResource PageHeader_Style}"/>
-        <TextBlock Text="Welcome to the CSHTML5 Showcase." FontSize="16" Foreground="#FF333333" TextWrapping="Wrap" Margin="14,10,0,0"/>
-        <TextBlock Text="This app was written in standard C# and XAML, and compiled with CSHTML5." FontSize="16" Foreground="#FF333333" TextWrapping="Wrap" Margin="14,10,0,0"/>
-        <TextBlock Text="The source code of this app is available at:" FontSize="16" Foreground="#FF333333" TextWrapping="Wrap" Margin="14,10,0,0"/>
-        <HyperlinkButton Content="https://github.com/cshtml5/CSHTML5.Samples.Showcase" FontSize="16" Foreground="Blue" Margin="14,10,0,0" Cursor="Hand" NavigateUri="https://github.com/cshtml5/CSHTML5.Samples.Showcase" HorizontalAlignment="Left"/>
+        <TextBlock Text="This app was written in standard C# and XAML, and compiled with CSHTML5." FontSize="16" Foreground="#FF333333" TextWrapping="Wrap" Margin="22,10,0,0"/>
+        <TextBlock Text="The source code of this app is available at:" FontSize="16" Foreground="#FF333333" TextWrapping="Wrap" Margin="22,10,0,0"/>
+        <HyperlinkButton FontSize="16" Foreground="Blue" Margin="22,10,0,0" NavigateUri="https://github.com/cshtml5/CSHTML5.Samples.Showcase" Cursor="Hand" HorizontalAlignment="Left">
+            <TextBlock Text="https://github.com/cshtml5/CSHTML5.Samples.Showcase" TextWrapping="Wrap"/>
+        </HyperlinkButton>
+        <TextBlock Text="Use the menu on the left to navigate from page to page." FontSize="16" Foreground="#FF333333" TextWrapping="Wrap" Margin="22,10,0,0"/>
     </StackPanel>
 </UserControl>
