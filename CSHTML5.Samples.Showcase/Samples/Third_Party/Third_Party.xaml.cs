@@ -13,9 +13,9 @@ using Windows.UI.Xaml.Navigation;
 
 namespace CSHTML5.Samples.Showcase
 {
-    public partial class Extensions : UserControl
+    public partial class Third_Party : UserControl
     {
-        public Extensions()
+        public Third_Party()
         {
             this.InitializeComponent();
         }

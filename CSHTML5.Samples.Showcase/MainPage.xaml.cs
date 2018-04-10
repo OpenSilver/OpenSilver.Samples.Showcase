@@ -57,9 +57,9 @@ namespace CSHTML5.Samples.Showcase
             NavigateToPage("/Interop_Samples/Interop_Samples");
         }
 
-        void ButtonExtensions_Click(object sender, RoutedEventArgs e)
+        void ButtonThirdParty_Click(object sender, RoutedEventArgs e)
         {
-            NavigateToPage("/Extensions/Extensions");
+            NavigateToPage("/Third_Party/Third_Party");
         }
 
         void ButtonPerformance_Click(object sender, RoutedEventArgs e)

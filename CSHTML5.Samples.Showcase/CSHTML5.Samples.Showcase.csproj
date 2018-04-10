@@ -113,13 +113,13 @@
     <Compile Include="Samples\Client-Server\WebSockets\WebSockets_Demo_More.xaml.cs">
       <DependentUpon>WebSockets_Demo_More.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Samples\Extensions\Extensions.xaml.cs">
-      <DependentUpon>Extensions.xaml</DependentUpon>
+    <Compile Include="Samples\Third_Party\Third_Party.xaml.cs">
+      <DependentUpon>Third_Party.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Samples\Extensions\Plotly_Charts\Plotly_Charts_Demo.xaml.cs">
+    <Compile Include="Samples\Third_Party\Plotly_Charts\Plotly_Charts_Demo.xaml.cs">
       <DependentUpon>Plotly_Charts_Demo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Samples\Extensions\Plotly_Charts\Plotly_Charts_Demo_More.xaml.cs">
+    <Compile Include="Samples\Third_Party\Plotly_Charts\Plotly_Charts_Demo_More.xaml.cs">
       <DependentUpon>Plotly_Charts_Demo_More.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\Interop_Samples\ExecuteJavascript\ExecuteJavaScript_Demo.xaml.cs">
@@ -748,15 +748,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Samples\Extensions\Extensions.xaml">
+    <Page Include="Samples\Third_Party\Third_Party.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Samples\Extensions\Plotly_Charts\Plotly_Charts_Demo.xaml">
+    <Page Include="Samples\Third_Party\Plotly_Charts\Plotly_Charts_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Samples\Extensions\Plotly_Charts\Plotly_Charts_Demo_More.xaml">
+    <Page Include="Samples\Third_Party\Plotly_Charts\Plotly_Charts_Demo_More.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
