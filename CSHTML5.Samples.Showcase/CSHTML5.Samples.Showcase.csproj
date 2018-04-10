@@ -648,6 +648,7 @@
     <Content Include="Other\SampleAudio.mp3" />
     <Content Include="Other\SampleVideo.mp4" />
     <Content Include="Other\smallBall.png" />
+    <Content Include="Other\SplashScreen1.png" />
     <None Include="Service References\ServiceReference1\CSHTML5.Samples.Showcase.ServiceReference1.AddOrUpdateToDoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
