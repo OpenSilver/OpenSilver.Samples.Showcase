@@ -7,10 +7,8 @@
         <TextBlock Text=".NET Framework" Style="{StaticResource PageHeader_Style}"/>
         <local:MasonryPanel Style="{StaticResource Panel_Style}">
             <local:DispatcherTimer_Demo HorizontalAlignment="Center"/>
-            <local:RESX_Demo HorizontalAlignment="Center"/>
             <local:File_Open_Demo HorizontalAlignment="Center"/>
             <local:File_Save_Demo HorizontalAlignment="Center"/>
-            <local:Clipboard_SetText_Demo HorizontalAlignment="Center"/>
             <local:Zip_Demo HorizontalAlignment="Center"/>
             <local:HtmlPage_Demo HorizontalAlignment="Center"/>
             <local:Keyboard_Demo HorizontalAlignment="Center"/>
@@ -18,11 +16,13 @@
             <local:IsolatedStorageSettings_Demo HorizontalAlignment="Center"/>
             <local:Linq_Demo HorizontalAlignment="Center"/>
             <local:AsyncAwait_Demo HorizontalAlignment="Center"/>
-            <local:Console_Demo HorizontalAlignment="Center"/>
-            <local:GetRessourceStream_Demo HorizontalAlignment="Center"/>
             <local:Regex_Demo HorizontalAlignment="Center"/>
             <local:JSON_Serializer_Demo HorizontalAlignment="Center"/>
             <local:DataContractSerializer_Demo HorizontalAlignment="Center"/>
+            <local:Console_Demo HorizontalAlignment="Center"/>
+            <local:GetRessourceStream_Demo HorizontalAlignment="Center"/>
+            <local:RESX_Demo HorizontalAlignment="Center"/>
+            <local:Clipboard_SetText_Demo HorizontalAlignment="Center"/>
             <local:Printing_Demo HorizontalAlignment="Center"/>
         </local:MasonryPanel>
     </StackPanel>

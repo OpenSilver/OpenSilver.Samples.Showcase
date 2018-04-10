@@ -15,11 +15,11 @@
                 <StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Name: "/>
-                        <TextBox x:Name="NameTextBoxForValidation" Text="{Binding Name, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" BindingValidationError="ValidationBorder_BindingValidationError" HorizontalAlignment="Left" Width="130"/>
+                        <TextBox x:Name="NameTextBoxForValidation" Text="{Binding Name, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" BindingValidationError="ValidationBorder_BindingValidationError" HorizontalAlignment="Left" Width="130" Margin="4,0,0,0"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                         <TextBlock Text="Age: "/>
-                        <TextBox x:Name="AgeTextBoxForValidation" Text="{Binding Age, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" BindingValidationError="ValidationBorder_BindingValidationError" HorizontalAlignment="Left" Width="50"/>
+                        <TextBox x:Name="AgeTextBoxForValidation" Text="{Binding Age, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" BindingValidationError="ValidationBorder_BindingValidationError" HorizontalAlignment="Left" Width="50" Margin="4,0,0,0"/>
                     </StackPanel>
                     <Button x:Name="ButtonOK" Content="OK" Click="ButtonOK_Click" Margin="0,10,0,0" Width="100" HorizontalAlignment="Center"/>
                 </StackPanel>

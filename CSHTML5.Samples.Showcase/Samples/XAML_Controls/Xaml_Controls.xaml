@@ -11,9 +11,6 @@
             <local:DockPanel_Demo HorizontalAlignment="Center"/>
             <local:WrapPanel_Demo HorizontalAlignment="Center"/>
             <local:Canvas_Demo HorizontalAlignment="Center"/>
-        <!--</local:MasonryPanel>
-        <TextBlock Text="Controls" Style="{StaticResource PageHeader_Style}"/>
-        <local:MasonryPanel Style="{StaticResource Panel_Style}">-->
             <local:Button_Demo HorizontalAlignment="Center"/>
             <local:TextBox_Demo HorizontalAlignment="Center"/>
             <local:CheckBox_Demo HorizontalAlignment="Center"/>
@@ -37,7 +34,6 @@
             <local:ContextMenu_Demo HorizontalAlignment="Center"/>
             <local:Image_Demo HorizontalAlignment="Center"/>
             <local:MediaElement_Demo HorizontalAlignment="Center"/>
-            
             <local:AutoCompleteBox_Demo HorizontalAlignment="Center"/>
             <local:Popup_Demo HorizontalAlignment="Center"/>
             <local:DataGrid_Demo HorizontalAlignment="Center"/>
