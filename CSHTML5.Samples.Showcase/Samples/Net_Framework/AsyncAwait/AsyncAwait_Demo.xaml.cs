@@ -37,6 +37,7 @@ namespace CSHTML5.Samples.Showcase
             TaskBasedCounterTextBlock.Text = "1 second left";
             await Task.Delay(1000);
             TaskBasedCounterTextBlock.Text = "Done!";
+            TaskBasedCounterTextBlock.Visibility = Visibility.Collapsed;
             button.Visibility = Visibility.Visible;
         }
 

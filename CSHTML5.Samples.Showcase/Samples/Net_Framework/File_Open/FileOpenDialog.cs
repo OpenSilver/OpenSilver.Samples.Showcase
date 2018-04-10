@@ -98,18 +98,14 @@ namespace CSHTML5.Extensions.FileOpenDialog
                       //if (file.type == 'text/plain')
                       callback(result);
                     };
-                    var resultKind = $3;
+                    var resultKind = $2;
                     if (resultKind == 'DataURL') {
                       reader.readAsDataURL(file);
                     }
                     else {
                       reader.readAsText(file);
                     }
-                    var isRunningInTheSimulator = $2;
-                    if (isRunningInTheSimulator) {
-                        alert(""The file open dialog is not supported in the Simulator. Please test in the browser instead."");
-                    }
-                });", inputElement, onFileOpened, CSHTML5.Interop.IsRunningInTheSimulator, resultKindStr);
+                });", inputElement, onFileOpened, resultKindStr);
         }
 
         void SetFilter(string filter)
