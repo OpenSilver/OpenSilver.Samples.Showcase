@@ -122,10 +122,10 @@
     <Compile Include="Samples\Third_Party\Plotly_Charts\Plotly_Charts_Demo_More.xaml.cs">
       <DependentUpon>Plotly_Charts_Demo_More.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Samples\Interop_Samples\ExecuteJavascript\ExecuteJavaScript_Demo.xaml.cs">
+    <Compile Include="Samples\Interop_Samples\ExecuteJavaScript\ExecuteJavaScript_Demo.xaml.cs">
       <DependentUpon>ExecuteJavaScript_Demo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Samples\Interop_Samples\ExecuteJavascript\ExecuteJavaScript_Demo_More.xaml.cs">
+    <Compile Include="Samples\Interop_Samples\ExecuteJavaScript\ExecuteJavaScript_Demo_More.xaml.cs">
       <DependentUpon>ExecuteJavaScript_Demo_More.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\Interop_Samples\GetDiv\GetDiv_Demo.xaml.cs">
@@ -761,11 +761,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Samples\Interop_Samples\ExecuteJavascript\ExecuteJavaScript_Demo.xaml">
+    <Page Include="Samples\Interop_Samples\ExecuteJavaScript\ExecuteJavaScript_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Samples\Interop_Samples\ExecuteJavascript\ExecuteJavaScript_Demo_More.xaml">
+    <Page Include="Samples\Interop_Samples\ExecuteJavaScript\ExecuteJavaScript_Demo_More.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

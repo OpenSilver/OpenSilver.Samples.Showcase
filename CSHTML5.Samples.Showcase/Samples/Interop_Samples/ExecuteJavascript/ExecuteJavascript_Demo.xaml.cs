@@ -13,14 +13,14 @@ using Windows.UI.Xaml.Navigation;
 
 namespace CSHTML5.Samples.Showcase
 {
-    public partial class ExecuteJavascript_Demo : UserControl
+    public partial class ExecuteJavaScript_Demo : UserControl
     {
-        public ExecuteJavascript_Demo()
+        public ExecuteJavaScript_Demo()
         {
             this.InitializeComponent();
         }
 
-        void SendJavascriptMessage(object sender, RoutedEventArgs e)
+        void SendJavaScriptMessage(object sender, RoutedEventArgs e)
         {
             Interop.ExecuteJavaScript("alert($0);", TextBoxInput.Text);
         }
@@ -31,13 +31,13 @@ namespace CSHTML5.Samples.Showcase
             {
                 new ViewSourceButtonInfo()
                 {
-                    TabHeader = "Execute_Javascript_Demo.xaml",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Interop_Samples/Execute_Javascript/Execute_Javascript_Demo.xaml"
+                    TabHeader = "ExecuteJavaScript_Demo.xaml",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Interop_Samples/ExecuteJavaScript/ExecuteJavaScript_Demo.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
-                    TabHeader = "Execute_Javascript_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Interop_Samples/Execute_Javascript/Execute_Javascript_Demo.xaml.cs"
+                    TabHeader = "ExecuteJavaScript_Demo.xaml.cs",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Interop_Samples/ExecuteJavaScript/ExecuteJavaScript_Demo.xaml.cs"
                 }
             });
         }
