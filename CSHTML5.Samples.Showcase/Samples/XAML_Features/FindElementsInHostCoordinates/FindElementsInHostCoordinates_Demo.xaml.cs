@@ -20,6 +20,7 @@ namespace CSHTML5.Samples.Showcase
         public FindElementsInHostCoordinates_Demo()
         {
             this.InitializeComponent();
+
             InitAllZIndex();
             _highestZIndex = 2;
 
@@ -28,15 +29,17 @@ namespace CSHTML5.Samples.Showcase
 
         void FindElementsInHostCoordinates_Demo_PointerPressed(object sender, PointerRoutedEventArgs e)
         {
-            Point currentPoint = e.GetCurrentPoint(null).Position; //get aboslute coordinate of the point
+            // Get the absolute coordinates of the pointer:
+            Point currentPoint = e.GetCurrentPoint(null).Position;
 
-            var uiElement = VisualTreeHelper.FindElementsInHostCoordinates(currentPoint, CanvasParent).ToList<UIElement>()[0]; //we get the element that has been clicked on
+            // Find the element that is under the pointer:
+            var uiElement = VisualTreeHelper.FindElementsInHostCoordinates(currentPoint, CanvasParent).FirstOrDefault();
 
-            //We clicked in a border
+            // Bring the clicked element to the front:
             if (uiElement is Border)
             {
-                Canvas.SetZIndex(uiElement, _highestZIndex + 1); //set that border to the front
-                ++_highestZIndex;
+                _highestZIndex++;
+                Canvas.SetZIndex(uiElement, _highestZIndex);
             }
         }
         
