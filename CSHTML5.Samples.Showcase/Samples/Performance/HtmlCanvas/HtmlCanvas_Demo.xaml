@@ -34,8 +34,6 @@
                         <ComboBoxItem>500 sprites</ComboBoxItem>
                         <ComboBoxItem>1000 sprites</ComboBoxItem>
                         <ComboBoxItem>2500 sprites</ComboBoxItem>
-                        <ComboBoxItem>5000 sprites</ComboBoxItem>
-                        <ComboBoxItem>10000 sprites</ComboBoxItem>
                     </ComboBox>
                 </Grid>
                 <Button Grid.Row="2" Content="VIEW SOURCE..." Margin="0,20,0,0"  Click="ButtonViewSource_Click" Background="#FFDB375E" Style="{StaticResource ButtonViewSource_Style}"/>
