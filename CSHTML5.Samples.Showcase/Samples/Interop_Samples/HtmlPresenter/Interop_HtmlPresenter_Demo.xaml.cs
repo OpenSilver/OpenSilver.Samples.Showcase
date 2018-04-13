@@ -38,6 +38,11 @@ namespace CSHTML5.Samples.Showcase
                 {
                     TabHeader = "Interop_HtmlPresenter_Demo.xaml.cs",
                     FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Interop_Samples/HtmlPresenter/Interop_HtmlPresenter_Demo.xaml.cs"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "NumericTextBox.cs",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Interop_Samples/HtmlPresenter/NumericTextBox.cs"
                 }
             });
         }
