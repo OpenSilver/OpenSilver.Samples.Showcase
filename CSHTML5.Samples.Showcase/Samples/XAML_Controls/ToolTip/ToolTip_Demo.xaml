@@ -10,7 +10,6 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="ToolTip" Foreground="#FFA2E567" Background="#FFBEDCA4" Style="{StaticResource HeaderControl_Style}"/>
             <Button Grid.Row="1" Content="Button with text ToolTip inline" HorizontalAlignment="Center" VerticalAlignment="Top" Padding="7"
@@ -23,7 +22,7 @@
                     <TextBlock Text="Button with image ToolTip as direct child" TextWrapping="Wrap" TextAlignment="Center"/>
                 </Button.Content>
             </Button>
-            <Button Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,10,0,0" Padding="7" >
+            <!--<Button Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,10,0,0" Padding="7" >
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <Image Source="ms-appx:/Images/Other.png" Width="100" Height="100" Stretch="Fill"/>
@@ -32,8 +31,8 @@
                 <Button.Content>
                     <TextBlock Text="Button with image ToolTip normal" TextWrapping="Wrap" TextAlignment="Center"/>
                 </Button.Content>
-            </Button>
-            <Button Grid.Row="4" Content="VIEW SOURCE..." Margin="0,10,0,0"  Click="ButtonViewSource_Click" Background="#FCAB54" Style="{StaticResource ButtonViewSource_Style}"/>
+            </Button>-->
+            <Button Grid.Row="3" Content="VIEW SOURCE..." Margin="0,10,0,0"  Click="ButtonViewSource_Click" Background="#FCAB54" Style="{StaticResource ButtonViewSource_Style}"/>
         </Grid>
     </ContentControl>
 </UserControl>
