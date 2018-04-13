@@ -14,8 +14,8 @@
             <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <StackPanel Orientation="Vertical">
                     <ComboBox x:Name="MyComboBoxForICommand" SelectionChanged="MyComboBoxForICommand_SelectionChanged"/>
-                    <Button Content="Test ICommand out of Button!" Click="ButtonTestICommand_Click" Margin="0,5,0,0" HorizontalAlignment="Center"/>
-                    <TextBox x:Name="MessageTextTextBox"  Text="Some text!" Margin="0,5,0,0"/>
+                    <Button Content="Test ICommand of Button" Click="ButtonTestICommand_Click" Margin="0,5,0,0" HorizontalAlignment="Center"/>
+                    <TextBox x:Name="MessageTextTextBox"  Text="Some text" Margin="0,5,0,0"/>
                     <ComboBox x:Name="MyComboBoxForCommandTest" SelectionChanged="ComboBoxForCommandTest_SelectionChanged" Margin="0,5,0,0"/>
                     <Button x:Name="MyButtonForTestCommand" Content="Test command" CommandParameter="{Binding ElementName=MessageTextTextBox, Path=Text}" Margin="0,5,0,0" HorizontalAlignment="Center"/>
                     <TextBlock x:Name="MessageTextBlock" Text="This TextBlock will contain the message." Margin="0,5,0,0"/>
