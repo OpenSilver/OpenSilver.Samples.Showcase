@@ -67,6 +67,9 @@
     </Compile>
     <Compile Include="Other\Internals\ChildWindowHelper.cs" />
     <Compile Include="Other\Internals\ControlToDisplayCodeHostedOnGitHub.cs" />
+    <Compile Include="Samples\Net_Framework\Printing\Invoice.xaml.cs">
+      <DependentUpon>Invoice.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Samples\XAML_Features\Binding2\KilometersToMilesConverter.cs" />
     <Compile Include="Other\Internals\MasonryPanel.cs" />
     <Compile Include="Other\Planet.cs" />
@@ -749,6 +752,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Content Include="Samples\Net_Framework\Printing\Invoice.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Content>
     <Page Include="Samples\Third_Party\Third_Party.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

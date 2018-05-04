@@ -22,7 +22,8 @@ namespace CSHTML5.Samples.Showcase
 
         private void ButtonPrint_Click(object sender, RoutedEventArgs e)
         {
-            CSHTML5.Native.Html.Printing.PrintManager.Print(InvoiceToPrint);
+            var invoiceToPrint = new Invoice();
+            CSHTML5.Native.Html.Printing.PrintManager.Print(invoiceToPrint);
         }
 
         private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
@@ -38,6 +39,11 @@ namespace CSHTML5.Samples.Showcase
                 {
                     TabHeader = "Printing_Demo.xaml.cs",
                     FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Net_Framework/Printing/Printing_Demo.xaml.cs"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "Invoice.xaml",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Net_Framework/Printing/Invoice.xaml"
                 }
             });
         }
