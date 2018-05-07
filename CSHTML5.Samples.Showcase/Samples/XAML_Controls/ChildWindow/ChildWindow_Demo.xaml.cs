@@ -63,6 +63,11 @@ namespace CSHTML5.Samples.Showcase
                 },
                 new ViewSourceButtonInfo()
                 {
+                    TabHeader = "LoginWindow.xaml.cs",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Controls/ChildWindow/LoginWindow.xaml.cs"
+                },
+                new ViewSourceButtonInfo()
+                {
                     TabHeader = "DefaultChildWindowStyle.xaml",
                     FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Controls/ChildWindow/Styles/DefaultChildWindowStyle.xaml"
                 }
