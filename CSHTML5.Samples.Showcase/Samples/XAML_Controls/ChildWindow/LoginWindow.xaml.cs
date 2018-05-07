@@ -23,7 +23,7 @@ namespace PreviewOnWinRT
 
         private void LoginWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (this.DialogResult == true && (this.nameBox.Text == string.Empty || this.passwordBox.Password == string.Empty))
+            if (this.DialogResult.HasValue && this.DialogResult.Value == true && (this.nameBox.Text == string.Empty || this.passwordBox.Password == string.Empty))
             {
                 e.Cancel = true;
                 ChildWindow cw = new ChildWindow();

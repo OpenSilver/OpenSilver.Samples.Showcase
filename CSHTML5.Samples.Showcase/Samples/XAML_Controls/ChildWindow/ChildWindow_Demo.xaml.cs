@@ -32,13 +32,13 @@ namespace CSHTML5.Samples.Showcase
         void loginWnd_Closed(object sender, EventArgs e)
         {
             LoginWindow lw = (LoginWindow)sender;
-            if (lw.DialogResult == true && lw.NameBox.Text != string.Empty)
+            if (lw.DialogResult.HasValue && lw.DialogResult.Value == true && lw.NameBox.Text != string.Empty)
             {
                 this.TextBlockForTestingChildWindow.Text = "Hello " + lw.NameBox.Text;
             }
-            else if (lw.DialogResult == false)
+            else
             {
-                this.TextBlockForTestingChildWindow.Text = "Login canceled.";
+                this.TextBlockForTestingChildWindow.Text = "Login cancelled.";
             }
         }
 
