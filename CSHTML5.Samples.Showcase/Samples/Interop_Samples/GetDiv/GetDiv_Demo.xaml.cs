@@ -23,7 +23,9 @@ namespace CSHTML5.Samples.Showcase
         private void ButtonSetCSS_Click(object sender, RoutedEventArgs e)
         {
             var div = Interop.GetDiv(this);
+
             Interop.ExecuteJavaScript("$0.style.textDecoration = 'line-through'", div);
+            
             // Note: refer to the documentation at: http://cshtml5.com/links/how-to-call-javascript.aspx
         }
 
@@ -38,7 +40,7 @@ namespace CSHTML5.Samples.Showcase
                 },
                 new ViewSourceButtonInfo()
                 {
-                    TabHeader = "Execute_Javascript_Demo.xaml.cs",
+                    TabHeader = "GetDiv_Demo.xaml.cs",
                     FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Interop_Samples/GetDiv/GetDiv_Demo.xaml.cs"
                 }
             });
