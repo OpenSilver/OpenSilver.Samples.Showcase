@@ -468,10 +468,10 @@
     <Compile Include="Samples\XAML_Controls\TabControl\TabControl_Demo_More.xaml.cs">
       <DependentUpon>TabControl_Demo_More.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Samples\XAML_Controls\Textblock\TextBlock_Demo.xaml.cs">
+    <Compile Include="Samples\XAML_Controls\TextBlock\TextBlock_Demo.xaml.cs">
       <DependentUpon>TextBlock_Demo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Samples\XAML_Controls\Textblock\TextBlock_Demo_More.xaml.cs">
+    <Compile Include="Samples\XAML_Controls\TextBlock\TextBlock_Demo_More.xaml.cs">
       <DependentUpon>TextBlock_Demo_More.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\XAML_Controls\TextBox\TextBox_Demo.xaml.cs">
@@ -1264,11 +1264,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Samples\XAML_Controls\Textblock\TextBlock_Demo.xaml">
+    <Page Include="Samples\XAML_Controls\TextBlock\TextBlock_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Samples\XAML_Controls\Textblock\TextBlock_Demo_More.xaml">
+    <Page Include="Samples\XAML_Controls\TextBlock\TextBlock_Demo_More.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
