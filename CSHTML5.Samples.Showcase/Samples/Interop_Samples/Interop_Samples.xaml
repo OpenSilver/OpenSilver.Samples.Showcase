@@ -8,8 +8,8 @@
         <local:MasonryPanel Style="{StaticResource Panel_Style}">
             <local:ExecuteJavaScript_Demo HorizontalAlignment="Center"/>
             <local:Interop_HtmlPresenter_Demo HorizontalAlignment="Center"/>
-            <local:GetDiv_Demo HorizontalAlignment="Center"/>
             <local:WebView_Demo HorizontalAlignment="Center"/>
+            <local:GetDiv_Demo HorizontalAlignment="Center"/>
         </local:MasonryPanel>
     </StackPanel>
 </UserControl>
