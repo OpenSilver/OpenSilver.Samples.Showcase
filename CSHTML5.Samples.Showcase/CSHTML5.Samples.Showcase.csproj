@@ -67,7 +67,7 @@
     </Compile>
     <Compile Include="Other\Internals\ChildWindowHelper.cs" />
     <Compile Include="Other\Internals\ControlToDisplayCodeHostedOnGitHub.cs" />
-    <Compile Include="Samples\Client-Server\WebSockets\WebSocket.cs" />
+    <Compile Include="Samples\Client_Server\WebSockets\WebSocket.cs" />
     <Compile Include="Samples\Net_Framework\Printing\Invoice.xaml.cs">
       <DependentUpon>Invoice.xaml</DependentUpon>
     </Compile>
@@ -77,44 +77,44 @@
     <Compile Include="Other\Internals\ViewSourceButtonHelper.cs" />
     <Compile Include="Other\Internals\ViewSourceButtonInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Samples\Client-Server\Client_Server.xaml.cs">
+    <Compile Include="Samples\Client_Server\Client_Server.xaml.cs">
       <DependentUpon>Client_Server.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Samples\Client-Server\jQuery.ajax\jQueryAjaxHelper.cs" />
-    <Compile Include="Samples\Client-Server\jQuery.ajax\jQueryAjax_Demo.xaml.cs">
+    <Compile Include="Samples\Client_Server\jQuery.ajax\jQueryAjaxHelper.cs" />
+    <Compile Include="Samples\Client_Server\jQuery.ajax\jQueryAjax_Demo.xaml.cs">
       <DependentUpon>jQueryAjax_Demo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Samples\Client-Server\jQuery.ajax\jQueryAjax_Demo_More.xaml.cs">
+    <Compile Include="Samples\Client_Server\jQuery.ajax\jQueryAjax_Demo_More.xaml.cs">
       <DependentUpon>jQueryAjax_Demo_More.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Samples\Client-Server\JSONP\JSONP_Demo.xaml.cs">
+    <Compile Include="Samples\Client_Server\JSONP\JSONP_Demo.xaml.cs">
       <DependentUpon>JSONP_Demo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Samples\Client-Server\JSONP\JSONP_Demo_More.xaml.cs">
+    <Compile Include="Samples\Client_Server\JSONP\JSONP_Demo_More.xaml.cs">
       <DependentUpon>JSONP_Demo_More.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Samples\Client-Server\REST_WebClient\REST_WebClient_Demo.xaml.cs">
+    <Compile Include="Samples\Client_Server\REST_WebClient\REST_WebClient_Demo.xaml.cs">
       <DependentUpon>REST_WebClient_Demo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Samples\Client-Server\REST_WebClient\REST_WebClient_Demo_More.xaml.cs">
+    <Compile Include="Samples\Client_Server\REST_WebClient\REST_WebClient_Demo_More.xaml.cs">
       <DependentUpon>REST_WebClient_Demo_More.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Samples\Client-Server\SignalR\SignalR_Demo.xaml.cs">
+    <Compile Include="Samples\Client_Server\SignalR\SignalR_Demo.xaml.cs">
       <DependentUpon>SignalR_Demo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Samples\Client-Server\SignalR\SignalR_Demo_More.xaml.cs">
+    <Compile Include="Samples\Client_Server\SignalR\SignalR_Demo_More.xaml.cs">
       <DependentUpon>SignalR_Demo_More.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Samples\Client-Server\WCF_SOAP\WCF_SOAP_Demo.xaml.cs">
+    <Compile Include="Samples\Client_Server\WCF_SOAP\WCF_SOAP_Demo.xaml.cs">
       <DependentUpon>WCF_SOAP_Demo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Samples\Client-Server\WCF_SOAP\WCF_SOAP_Demo_More.xaml.cs">
+    <Compile Include="Samples\Client_Server\WCF_SOAP\WCF_SOAP_Demo_More.xaml.cs">
       <DependentUpon>WCF_SOAP_Demo_More.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Samples\Client-Server\WebSockets\WebSockets_Demo.xaml.cs">
+    <Compile Include="Samples\Client_Server\WebSockets\WebSockets_Demo.xaml.cs">
       <DependentUpon>WebSockets_Demo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Samples\Client-Server\WebSockets\WebSockets_Demo_More.xaml.cs">
+    <Compile Include="Samples\Client_Server\WebSockets\WebSockets_Demo_More.xaml.cs">
       <DependentUpon>WebSockets_Demo_More.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\Third_Party\Third_Party.xaml.cs">
@@ -701,55 +701,55 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Samples\Client-Server\Client_Server.xaml">
+    <Page Include="Samples\Client_Server\Client_Server.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Samples\Client-Server\jQuery.ajax\jQueryAjax_Demo.xaml">
+    <Page Include="Samples\Client_Server\jQuery.ajax\jQueryAjax_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Samples\Client-Server\jQuery.ajax\jQueryAjax_Demo_More.xaml">
+    <Page Include="Samples\Client_Server\jQuery.ajax\jQueryAjax_Demo_More.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Samples\Client-Server\JSONP\JSONP_Demo.xaml">
+    <Page Include="Samples\Client_Server\JSONP\JSONP_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Samples\Client-Server\JSONP\JSONP_Demo_More.xaml">
+    <Page Include="Samples\Client_Server\JSONP\JSONP_Demo_More.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Samples\Client-Server\REST_WebClient\REST_WebClient_Demo.xaml">
+    <Page Include="Samples\Client_Server\REST_WebClient\REST_WebClient_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Samples\Client-Server\REST_WebClient\REST_WebClient_Demo_More.xaml">
+    <Page Include="Samples\Client_Server\REST_WebClient\REST_WebClient_Demo_More.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Samples\Client-Server\SignalR\SignalR_Demo.xaml">
+    <Page Include="Samples\Client_Server\SignalR\SignalR_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Samples\Client-Server\SignalR\SignalR_Demo_More.xaml">
+    <Page Include="Samples\Client_Server\SignalR\SignalR_Demo_More.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Samples\Client-Server\WCF_SOAP\WCF_SOAP_Demo.xaml">
+    <Page Include="Samples\Client_Server\WCF_SOAP\WCF_SOAP_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Samples\Client-Server\WCF_SOAP\WCF_SOAP_Demo_More.xaml">
+    <Page Include="Samples\Client_Server\WCF_SOAP\WCF_SOAP_Demo_More.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Samples\Client-Server\WebSockets\WebSockets_Demo.xaml">
+    <Page Include="Samples\Client_Server\WebSockets\WebSockets_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Samples\Client-Server\WebSockets\WebSockets_Demo_More.xaml">
+    <Page Include="Samples\Client_Server\WebSockets\WebSockets_Demo_More.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

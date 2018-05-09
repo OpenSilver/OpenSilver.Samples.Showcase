@@ -52,8 +52,11 @@
                     <Frame.UriMapper>
                         <UriMapper>
                             <UriMapping
-                            Uri="/{pathToPageExcludingExtension}"
-                            MappedUri="/Samples/{pathToPageExcludingExtension}.xaml"/>
+                                Uri="/Welcome"
+                                MappedUri="/Samples/Welcome.xaml"/>
+                            <UriMapping
+                                Uri="/{page_name}"
+                                MappedUri="/Samples/{page_name}/{page_name}.xaml"/>
                         </UriMapper>
                     </Frame.UriMapper>
                     <Frame.RenderTransform>

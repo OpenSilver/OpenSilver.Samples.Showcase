@@ -34,37 +34,37 @@ namespace CSHTML5.Samples.Showcase
 
         void ButtonXamlControls_Click(object sender, RoutedEventArgs e)
         {
-            NavigateToPage("/XAML_Controls/XAML_Controls");
+            NavigateToPage("/XAML_Controls");
         }
 
         void ButtonXamlFeatures_Click(object sender, RoutedEventArgs e)
         {
-            NavigateToPage("/XAML_Features/XAML_Features");
+            NavigateToPage("/XAML_Features");
         }
 
         void ButtonNetFramework_Click(object sender, RoutedEventArgs e)
         {
-            NavigateToPage("/Net_Framework/Net_Framework");
+            NavigateToPage("/Net_Framework");
         }
 
         void ButtonClientServer_Click(object sender, RoutedEventArgs e)
         {
-            NavigateToPage("/Client-Server/Client_Server");
+            NavigateToPage("/Client_Server");
         }
 
         void ButtonInterop_Click(object sender, RoutedEventArgs e)
         {
-            NavigateToPage("/Interop_Samples/Interop_Samples");
+            NavigateToPage("/Interop_Samples");
         }
 
         void ButtonThirdParty_Click(object sender, RoutedEventArgs e)
         {
-            NavigateToPage("/Third_Party/Third_Party");
+            NavigateToPage("/Third_Party");
         }
 
         void ButtonPerformance_Click(object sender, RoutedEventArgs e)
         {
-            NavigateToPage("/Performance/Performance");
+            NavigateToPage("/Performance");
         }
 
         void ButtonHome_Click(object sender, RoutedEventArgs e)

@@ -13,9 +13,9 @@ using Windows.UI.Xaml.Navigation;
 
 namespace CSHTML5.Samples.Showcase
 {
-    public partial class SignalR_Demo : UserControl
+    public partial class JSONP_Demo : UserControl
     {
-        public SignalR_Demo()
+        public JSONP_Demo()
         {
             this.InitializeComponent();
         }
@@ -26,13 +26,13 @@ namespace CSHTML5.Samples.Showcase
             {
                 new ViewSourceButtonInfo()
                 {
-                    TabHeader = "SignalR_Demo.xaml",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Client-Server/SignalR/SignalR_Demo.xaml"
+                    TabHeader = "JSONP_Demo.xaml",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Client_Server/JSONP/JSONP_Demo.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
-                    TabHeader = "SignalR_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Client-Server/SignalR/SignalR_Demo.xaml.cs"
+                    TabHeader = "JSONP_Demo.xaml.cs",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Client_Server/JSONP.ajax/JSONP_Demo.xaml.cs"
                 }
             });
         }
