@@ -41,7 +41,7 @@ namespace CSHTML5.Samples.Showcase
                 },
                 new ViewSourceButtonInfo()
                 {
-                    TabHeader = "DefaultTabControlStyle.xaml",
+                    TabHeader = "DefaultTabItemStyle.xaml",
                     FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Controls/TabControl/Styles/DefaultTabItemStyle.xaml"
                 }
             });
