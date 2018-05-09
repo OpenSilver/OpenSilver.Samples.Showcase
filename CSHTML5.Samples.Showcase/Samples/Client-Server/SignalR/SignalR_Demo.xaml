@@ -11,7 +11,14 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="SignalR" Foreground="#FF3ED49A" Background="#FF92BEAC" Style="{StaticResource HeaderControl_Style}"/>
-            <TextBlock Grid.Row="1" Text="(Demo under construction)" Foreground="DarkGray" FontSize="12" Margin="0,25,0,20" HorizontalAlignment="Center"/>
+            <StackPanel Grid.Row="1" Orientation="Vertical" Margin="0,0,0,10">
+                <TextBlock Text="The SignalR extension and demo can be found at:" Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left"/>
+                <HyperlinkButton Foreground="#FF3ED49A" Margin="0,10,0,0" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" NavigateUri="https://github.com/cshtml5/CSHTML5.Extensions.SignalR/">
+                    <TextBlock Cursor="Hand" TextWrapping="Wrap">
+                         <Run Text="https://github.com/cshtml5"/><LineBreak/><Run Text="/CSHTML5.Extensions.SignalR/"/>
+                    </TextBlock>
+                </HyperlinkButton>
+            </StackPanel>
             <!--<Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FF3ED49A" Style="{StaticResource ButtonViewSource_Style}"/>-->
         </Grid>
     </ContentControl>
