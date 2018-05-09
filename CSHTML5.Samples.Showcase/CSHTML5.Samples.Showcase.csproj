@@ -67,6 +67,7 @@
     </Compile>
     <Compile Include="Other\Internals\ChildWindowHelper.cs" />
     <Compile Include="Other\Internals\ControlToDisplayCodeHostedOnGitHub.cs" />
+    <Compile Include="Samples\Client-Server\WebSockets\WebSocket.cs" />
     <Compile Include="Samples\Net_Framework\Printing\Invoice.xaml.cs">
       <DependentUpon>Invoice.xaml</DependentUpon>
     </Compile>
