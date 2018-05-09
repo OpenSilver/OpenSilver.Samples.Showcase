@@ -10,9 +10,15 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="jQuery.ajax" Foreground="#ff42f4a1" Background="#FFB390CA" Style="{StaticResource HeaderControl_Style}"/>
-            <!--<Button Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"  Content="Click Me!" Click="Button_Click"/>-->
-            <TextBlock Grid.Row="1" Text="(Demo under construction)" Foreground="DarkGray" FontSize="12" Margin="0,25,0,20" HorizontalAlignment="Center"/>
+            <ContentControl Content="jQuery.ajax" Foreground="#FFF76969" Background="#FFE7BBBB" Style="{StaticResource HeaderControl_Style}"/>
+            <StackPanel Grid.Row="1" Orientation="Vertical" Margin="0,0,0,10">
+                <TextBlock Text="The jQuery.ajax sample can be found at:" Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left"/>
+                <HyperlinkButton Foreground="#FFF76969" Margin="0,10,0,0" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" NavigateUri="http://forums.cshtml5.com/viewtopic.php?f=7&amp;t=7900">
+                    <TextBlock Cursor="Hand" TextWrapping="Wrap">
+                         <Run Text="http://forums.cshtml5.com/viewtopic"/><LineBreak/><Run Text=".php?f=7&amp;t=7900"/>
+                    </TextBlock>
+                </HyperlinkButton>
+            </StackPanel>
             <!--<Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#ff42f4a1" Style="{StaticResource ButtonViewSource_Style}"/>-->
         </Grid>
     </ContentControl>
