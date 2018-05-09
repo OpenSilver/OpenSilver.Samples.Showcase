@@ -20,6 +20,13 @@ namespace CSHTML5.Samples.Showcase
             this.InitializeComponent();
         }
 
+        private void ButtonSetCSS_Click(object sender, RoutedEventArgs e)
+        {
+            var div = Interop.GetDiv(this);
+            Interop.ExecuteJavaScript("$0.style.textDecoration = 'line-through'", div);
+            // Note: refer to the documentation at: http://cshtml5.com/links/how-to-call-javascript.aspx
+        }
+
         private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
         {
             ViewSourceButtonHelper.ViewSource(new List<ViewSourceButtonInfo>()
