@@ -10,7 +10,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="Dependency-Properties" Foreground="#FFF9D567" Background="#FFC5B58B" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="DependencyProperties" Foreground="#FFF9D567" Background="#FFC5B58B" Style="{StaticResource HeaderControl_Style}"/>
             <TextBlock Grid.Row="1" Text="(Demo under construction)" Foreground="DarkGray" FontSize="12" Margin="0,25,0,20" HorizontalAlignment="Center"/>
             <!--<Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FFF9D567" Style="{StaticResource ButtonViewSource_Style}"/>-->
         </Grid>
