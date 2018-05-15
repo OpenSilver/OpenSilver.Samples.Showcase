@@ -13,7 +13,7 @@
             </Grid.RowDefinitions>
             <ContentControl Content="Plotly Charts" Foreground="#FFFF7989" Background="#FFC8929A" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Orientation="Vertical" Grid.Row="1">
-                <TextBlock x:Name="LoadingPleaseWaitMessage" Text="Loading Plotly library, please wait..." Foreground="#FFFF7989" FontSize="18" TextWrapping="Wrap" Margin="0,0,0,10" HorizontalAlignment="Center" Visibility="Collapsed"/>
+                <TextBlock x:Name="LoadingPleaseWaitMessage" Text="Loading Plotly library, please wait..." Foreground="#FFFF7989" FontSize="18" TextWrapping="Wrap" Margin="16,0,0,10" Visibility="Collapsed"/>
                 <plotly:ChartControl x:Name="ChartControl1" Width="320" Height="320" Background="White"/>
                 <plotly:ChartControl x:Name="ChartControl2" Width="320" Height="320" Background="White"/>
                 <plotly:ChartControl x:Name="ChartControl3" Width="320" Height="320" Background="White"/>
