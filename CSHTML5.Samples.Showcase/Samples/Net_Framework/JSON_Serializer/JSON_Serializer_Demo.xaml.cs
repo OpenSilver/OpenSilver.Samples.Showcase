@@ -81,7 +81,6 @@ namespace CSHTML5.Samples.Showcase
             */
         }
 
-        /*
         private async void Button_Click_StronglyTypedDeserialization(object sender, RoutedEventArgs e)
         {
             if (!string.IsNullOrEmpty(_json))
@@ -100,9 +99,7 @@ namespace CSHTML5.Samples.Showcase
                 MessageBox.Show("Please click on the Serialize button first.");
             }
         }
-        */
 
-        /*
         private async void Button_Click_DynamicDeserialization(object sender, RoutedEventArgs e)
         {
             if (!string.IsNullOrEmpty(_json))
@@ -122,7 +119,6 @@ namespace CSHTML5.Samples.Showcase
                 MessageBox.Show("Please click on the Serialize button first.");
             }
         }
-        */
 
         public class Product
         {
