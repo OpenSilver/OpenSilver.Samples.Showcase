@@ -71,6 +71,20 @@
     <Compile Include="Samples\Net_Framework\Printing\Invoice.xaml.cs">
       <DependentUpon>Invoice.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Annotation.cs" />
+    <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Axis.cs" />
+    <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\BarMode.cs" />
+    <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\ChartControl.cs" />
+    <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Data.cs" />
+    <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Domain.cs" />
+    <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Font.cs" />
+    <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Layout.cs" />
+    <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Legend.cs" />
+    <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Line.cs" />
+    <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Marker.cs" />
+    <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Trace.cs" />
+    <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\TraceMode.cs" />
+    <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\TraceType.cs" />
     <Compile Include="Samples\XAML_Features\Binding2\KilometersToMilesConverter.cs" />
     <Compile Include="Other\Internals\MasonryPanel.cs" />
     <Compile Include="Other\Planet.cs" />
@@ -653,6 +667,8 @@
     <Content Include="Other\SampleVideo.mp4" />
     <Content Include="Other\smallBall.png" />
     <Content Include="Other\SplashScreen1.png" />
+    <Content Include="Samples\Third_Party\Plotly_Charts\ChartControl\plotly.min.js" />
+    <Content Include="Samples\Third_Party\Plotly_Charts\ChartControl\typedarray.js" />
     <None Include="Service References\ServiceReference1\CSHTML5.Samples.Showcase.ServiceReference1.AddOrUpdateToDoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
