@@ -260,4 +260,79 @@
         <Setter Property="HorizontalScrollBarVisibility" Value="Disabled"/>
         <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
     </Style>
+    <Style x:Key="MainMenuExpander_Style" TargetType="Expander">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Expander">
+                    <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="3">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="Disabled"/>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused"/>
+                                <VisualState x:Name="Unfocused"/>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="ExpansionStates">
+                                <VisualState x:Name="Collapsed"/>
+                                <VisualState x:Name="Expanded">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="ExpandSite" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <StackPanel>
+                            <ToggleButton x:Name="ExpanderButton"
+                                                Padding="{TemplateBinding Padding}"
+                                                Margin="1"
+                                                Content="{TemplateBinding Header}"
+                                                ContentTemplate="{TemplateBinding HeaderTemplate}"
+                                                Foreground="{TemplateBinding Foreground}"
+                                                FontSize="{TemplateBinding FontSize}"
+                                                Cursor="Hand">
+                                <ToggleButton.Template>
+                                    <ControlTemplate TargetType="ToggleButton">
+                                        <Border Padding="{TemplateBinding Padding}">
+                                            <VisualStateManager.VisualStateGroups>
+                                                <VisualStateGroup x:Name="CommonStates">
+                                                    <VisualState x:Name="Normal"/>
+                                                    <VisualState x:Name="Checked">
+                                                        <Storyboard>
+                                                            <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="arrow" Storyboard.TargetProperty="Data">
+                                                                <DiscreteObjectKeyFrame KeyTime="0" Value="M 1,1.5 L 4.5,5 L 8,1.5"/>
+                                                            </ObjectAnimationUsingKeyFrames>
+                                                        </Storyboard>
+                                                    </VisualState>
+                                                </VisualStateGroup>
+                                                <VisualStateGroup x:Name="FocusStates">
+                                                    <VisualState x:Name="Focused"/>
+                                                    <VisualState x:Name="Unfocused"/>
+                                                </VisualStateGroup>
+                                            </VisualStateManager.VisualStateGroups>
+                                            <StackPanel Orientation="Horizontal" Margin="5,0,0,0" >
+                                                <Path x:Name="arrow" Visibility="Visible" Stroke="#FFBBBBBB" Width="7" Height="7" Margin="0,0,3,0" StrokeThickness="3" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="Fill" Data="M 2,1 L 5.5,4.5 L 2,8"/>
+                                                <TextBlock x:Name="header" Margin="4,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{TemplateBinding Content}" Foreground="{TemplateBinding Foreground}" FontSize="{TemplateBinding FontSize}"/>
+                                            </StackPanel>
+                                        </Border>
+                                    </ControlTemplate>
+                                </ToggleButton.Template>
+                            </ToggleButton>
+                            <ContentControl x:Name="ExpandSite"
+                                                Visibility="Collapsed" 
+                                                Margin="{TemplateBinding Padding}"
+                                                Content="{TemplateBinding Content}"
+                                                ContentTemplate="{TemplateBinding ContentTemplate}" />
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>

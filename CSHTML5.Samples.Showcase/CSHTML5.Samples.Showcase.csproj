@@ -53,6 +53,9 @@
     <Reference Include="CSharpXamlForHtml5.System.Xml.dll">
       <HintPath>$(MSBuildProgramFiles32)\MSBuild\CSharpXamlForHtml5\AssembliesToReference\CSharpXamlForHtml5.System.Xml.dll.dll</HintPath>
     </Reference>
+    <Reference Include="CSHTML5.Extensions.Syncfusion.EssentialJS1.Spreadsheet">
+      <HintPath>..\..\..\..\..\..\..\..\DotNetForHtml5\DotNetForHtml5\CSHTML5.Extensions.Syncfusion.EssentialJS1.Spreadsheet\bin\Debug\CSHTML5.Extensions.Syncfusion.EssentialJS1.Spreadsheet.dll</HintPath>
+    </Reference>
     <Reference Include="JSIL.Meta">
       <HintPath>$(MSBuildProgramFiles32)\MSBuild\CSharpXamlForHtml5\AssembliesToReference\JSIL.Meta.dll</HintPath>
     </Reference>
@@ -85,6 +88,10 @@
     <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Trace.cs" />
     <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\TraceMode.cs" />
     <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\TraceType.cs" />
+    <Compile Include="Samples\Third_Party\Syncfusion_EssentialJS1\Spreadsheet\Spreadsheet_Demo.xaml.cs">
+      <DependentUpon>Spreadsheet_Demo.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Samples\XAML_Features\Binding2\KilometersToMilesConverter.cs" />
     <Compile Include="Other\Internals\MasonryPanel.cs" />
     <Compile Include="Other\Planet.cs" />
@@ -130,9 +137,6 @@
     </Compile>
     <Compile Include="Samples\Client_Server\WebSockets\WebSockets_Demo_More.xaml.cs">
       <DependentUpon>WebSockets_Demo_More.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Samples\Third_Party\Third_Party.xaml.cs">
-      <DependentUpon>Third_Party.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\Third_Party\Plotly_Charts\Plotly_Charts_Demo.xaml.cs">
       <DependentUpon>Plotly_Charts_Demo.xaml</DependentUpon>
@@ -669,6 +673,10 @@
     <Content Include="Other\SplashScreen1.png" />
     <Content Include="Samples\Third_Party\Plotly_Charts\ChartControl\plotly.min.js" />
     <Content Include="Samples\Third_Party\Plotly_Charts\ChartControl\typedarray.js" />
+    <Content Include="Samples\Third_Party\Syncfusion_EssentialJS1\Spreadsheet\Spreadsheet_Demo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Content>
     <None Include="Service References\ServiceReference1\CSHTML5.Samples.Showcase.ServiceReference1.AddOrUpdateToDoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -711,7 +719,10 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ServiceReference1\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Samples\Third_Party\Telerik_KendoUI\" />
+    <Folder Include="Samples\Third_Party\Telerik_TelerikUI\" />
+  </ItemGroup>
   <ItemGroup>
     <Page Include="Other\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -773,10 +784,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Content>
-    <Page Include="Samples\Third_Party\Third_Party.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Samples\Third_Party\Plotly_Charts\Plotly_Charts_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
