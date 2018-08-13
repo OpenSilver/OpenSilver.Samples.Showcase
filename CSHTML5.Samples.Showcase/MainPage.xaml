@@ -40,6 +40,9 @@
                                 <Expander Header="Syncfusion Essential JS 1" FontSize="13" Foreground="#FFBBBBBB" Margin="4,5,0,0" Style="{StaticResource MainMenuExpander_Style}">
                                     <Button Content="Spreadsheet" Click="ButtonSyncfusionEssentialJS1Spreadsheet_Click" Background="{x:Null}" Foreground="#FFBBBBBB" HorizontalContentAlignment="Left" FontSize="13" Margin="20,3,0,0"/>
                                 </Expander>
+                                <Expander Header="Telerik Kendo UI" FontSize="13" Foreground="#FFBBBBBB" Margin="4,5,0,0" Style="{StaticResource MainMenuExpander_Style}">
+                                    <Button Content="Grid" Click="ButtonTelerikKendoUIGrid_Click" Background="{x:Null}" Foreground="#FFBBBBBB" HorizontalContentAlignment="Left" FontSize="13" Margin="20,3,0,0"/>
+                                </Expander>
                             </StackPanel>
                         </Expander>
                         <Button Content="Home" Click="ButtonHome_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="16" Margin="0,3,0,0" Padding="20,3,3,3"/>

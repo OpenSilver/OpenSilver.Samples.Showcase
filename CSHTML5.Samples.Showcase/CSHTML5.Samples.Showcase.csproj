@@ -56,6 +56,9 @@
     <Reference Include="CSHTML5.Extensions.Syncfusion.EssentialJS1.Spreadsheet">
       <HintPath>..\..\..\..\..\..\..\..\DotNetForHtml5\DotNetForHtml5\CSHTML5.Extensions.Syncfusion.EssentialJS1.Spreadsheet\bin\Debug\CSHTML5.Extensions.Syncfusion.EssentialJS1.Spreadsheet.dll</HintPath>
     </Reference>
+    <Reference Include="CSHTML5.Extensions.Telerik.KendoUI.Grid">
+      <HintPath>..\..\..\..\..\..\..\..\DotNetForHtml5\DotNetForHtml5\CSHTML5.Extensions.Telerik.KendoUI.Grid\bin\Debug\CSHTML5.Extensions.Telerik.KendoUI.Grid.dll</HintPath>
+    </Reference>
     <Reference Include="JSIL.Meta">
       <HintPath>$(MSBuildProgramFiles32)\MSBuild\CSharpXamlForHtml5\AssembliesToReference\JSIL.Meta.dll</HintPath>
     </Reference>
@@ -91,6 +94,9 @@
     <Compile Include="Samples\Third_Party\Syncfusion_EssentialJS1\Spreadsheet\Spreadsheet_Demo.xaml.cs">
       <DependentUpon>Spreadsheet_Demo.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Samples\Third_Party\Telerik_KendoUI\Grid\Grid_Demo.xaml.cs">
+      <DependentUpon>Grid_Demo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\XAML_Features\Binding2\KilometersToMilesConverter.cs" />
     <Compile Include="Other\Internals\MasonryPanel.cs" />
@@ -673,10 +679,6 @@
     <Content Include="Other\SplashScreen1.png" />
     <Content Include="Samples\Third_Party\Plotly_Charts\ChartControl\plotly.min.js" />
     <Content Include="Samples\Third_Party\Plotly_Charts\ChartControl\typedarray.js" />
-    <Content Include="Samples\Third_Party\Syncfusion_EssentialJS1\Spreadsheet\Spreadsheet_Demo.xaml">
-      <SubType>Designer</SubType>
-      <Generator>XamlIntelliSenseFileGenerator</Generator>
-    </Content>
     <None Include="Service References\ServiceReference1\CSHTML5.Samples.Showcase.ServiceReference1.AddOrUpdateToDoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -720,7 +722,6 @@
     <WCFMetadataStorage Include="Service References\ServiceReference1\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Samples\Third_Party\Telerik_KendoUI\" />
     <Folder Include="Samples\Third_Party\Telerik_TelerikUI\" />
   </ItemGroup>
   <ItemGroup>
@@ -968,6 +969,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Content Include="Samples\Third_Party\Syncfusion_EssentialJS1\Spreadsheet\Spreadsheet_Demo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Content>
+    <Content Include="Samples\Third_Party\Telerik_KendoUI\Grid\Grid_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
     <Page Include="Samples\XAML_Features\Validation\Validation_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1516,6 +1525,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Samples\Third_Party\Telerik_KendoUI\Grid\Model.d.ts" />
   </ItemGroup>
   <Import Project="$(MSBuildProgramFiles32)\MSBuild\CSharpXamlForHtml5\InternalStuff\Targets\CSharpXamlForHtml5.Build.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
