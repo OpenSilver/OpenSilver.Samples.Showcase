@@ -53,6 +53,9 @@
     <Reference Include="CSharpXamlForHtml5.System.Xml.dll">
       <HintPath>$(MSBuildProgramFiles32)\MSBuild\CSharpXamlForHtml5\AssembliesToReference\CSharpXamlForHtml5.System.Xml.dll.dll</HintPath>
     </Reference>
+    <Reference Include="CSHTML5.Extensions.Common">
+      <HintPath>..\..\..\..\..\..\..\..\DotNetForHtml5\DotNetForHtml5\CSHTML5.Extensions.Common\bin\Debug\CSHTML5.Extensions.Common.dll</HintPath>
+    </Reference>
     <Reference Include="CSHTML5.Extensions.Syncfusion.EssentialJS1.Spreadsheet">
       <HintPath>..\..\..\..\..\..\..\..\DotNetForHtml5\DotNetForHtml5\CSHTML5.Extensions.Syncfusion.EssentialJS1.Spreadsheet\bin\Debug\CSHTML5.Extensions.Syncfusion.EssentialJS1.Spreadsheet.dll</HintPath>
     </Reference>

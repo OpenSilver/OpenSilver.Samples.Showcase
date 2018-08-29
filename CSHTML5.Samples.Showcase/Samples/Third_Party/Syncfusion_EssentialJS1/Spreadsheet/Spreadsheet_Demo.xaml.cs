@@ -8,22 +8,22 @@ namespace CSHTML5.Samples.Showcase.Samples.Third_Party.Syncfusion_EssentialJS1.S
     {
         public Spreadsheet_Demo()
         {
-            this.InitializeComponent();
+            InitializeComponent();
 
-            this.Loaded += Spreadsheet_Demo_Loaded;
+            Loaded += Spreadsheet_Demo_Loaded;
         }
 
         private async void Spreadsheet_Demo_Loaded(object sender, RoutedEventArgs e)
         {
             //------------
-            // Wait until Spreadsheet's underlying JS object has been loaded:
+            // Wait until Spreadsheet's underlying JS instance has been loaded
             //------------
             LoadingPleaseWaitMessage.Visibility = Visibility.Visible;
-            await Spreadsheet.ExcelObjLoaded;
+            await Spreadsheet.JSInstanceLoaded;
             LoadingPleaseWaitMessage.Visibility = Visibility.Collapsed;
         }
 
-            private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
+        private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
         {
             ViewSourceButtonHelper.ViewSource(new List<ViewSourceButtonInfo>()
             {

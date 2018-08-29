@@ -3,7 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:CSHTML5.Samples.Showcase"
-    xmlns:kendo_ui="clr-namespace:CSHTML5.Extensions.Telerik.KendoUI;assembly=CSHTML5.Extensions.Telerik.KendoUI.Grid">
+    xmlns:kendo_ui="clr-namespace:kendo_ui.kendo.ui;assembly=CSHTML5.Extensions.Telerik.KendoUI.Grid">
     <StackPanel>
         <TextBlock Text="Telerik Kendo UI" Style="{StaticResource PageHeader_Style}"/>
         <local:MasonryPanel Style="{StaticResource Panel_Style}">
@@ -16,8 +16,12 @@
                     </Grid.RowDefinitions>
                     <ContentControl Content="Grid" Foreground="#FF37B24F" Background="#FFC8929A" Style="{StaticResource HeaderControl_Style}"/>
                     <StackPanel Orientation="Vertical" Grid.Row="1">
+                        <StackPanel.DataContext>
+                            <local:Planet/>
+                        </StackPanel.DataContext>
                         <TextBlock x:Name="LoadingPleaseWaitMessage" Text="Loading Telerik Kendo UI library, please wait..." Foreground="#FF37B24F" FontSize="18" TextWrapping="Wrap" Margin="16,0,0,10" Visibility="Collapsed"/>
-                        <kendo_ui:Grid x:Name="Grid" Height="300" Margin="0 0 0 20"/>
+                        <kendo_ui:Grid x:Name="Grid" Height="300" Margin="0 0 0 20" ItemsSource="{Binding Path=Planets, Mode=TwoWay}"/>
+                        <DataGrid Width="600" Margin="0 0 0 20" ItemsSource="{Binding Path=Planets}"/>
                         <TextBlock Text="The Kendo UI Grid control can be found at:" Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left" Margin="0,4,0,0"/>
                         <HyperlinkButton Foreground="#FF37B24F" Margin="0,10,0,20" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" NavigateUri="https://github.com/cshtml5/CSHTML5.Extensions.Telerik.KendoUI.Grid">
                             <TextBlock Cursor="Hand" TextWrapping="Wrap" Text="https://github.com/cshtml5/CSHTML5.Extensions.Telerik.KendoUI.Grid"/>
