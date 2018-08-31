@@ -1,6 +1,6 @@
 ﻿using CSHTML5.Extensions.Common;
-using kendo_ui.kendo.data;
-using kendo_ui.kendo.ui;
+using kendo_ui_grid.kendo.data;
+using kendo_ui_grid.kendo.ui;
 using Samples.Third_Party.Telerik_KendoUI.Grid.Model;
 using System.Collections.Generic;
 using TypeScriptDefinitionsSupport;
@@ -26,6 +26,7 @@ namespace CSHTML5.Samples.Showcase.Samples.Third_Party.Telerik_KendoUI.Grid
             LoadingPleaseWaitMessage.Visibility = Visibility.Visible;
             await Grid.JSInstanceLoaded;
             LoadingPleaseWaitMessage.Visibility = Visibility.Collapsed;
+            Grid.Visibility = Visibility.Visible;
 
             Grid.setOptions(new GridOptions()
             {

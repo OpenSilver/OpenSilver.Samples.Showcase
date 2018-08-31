@@ -71,9 +71,15 @@ namespace CSHTML5.Samples.Showcase
         {
             NavigateToPage("/Third_Party/Syncfusion_EssentialJS1/Spreadsheet/Spreadsheet_Demo");
         }
+
         void ButtonTelerikKendoUIGrid_Click(object sender, RoutedEventArgs e)
         {
             NavigateToPage("/Third_Party/Telerik_KendoUI/Grid/Grid_Demo");
+        }
+
+        void ButtonTelerikKendoUIEditor_Click(object sender, RoutedEventArgs e)
+        {
+            NavigateToPage("/Third_Party/Telerik_KendoUI/Editor/Editor_Demo");
         }
 
         void ButtonHome_Click(object sender, RoutedEventArgs e)

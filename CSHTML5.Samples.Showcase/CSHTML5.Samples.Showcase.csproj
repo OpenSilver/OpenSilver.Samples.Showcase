@@ -53,14 +53,25 @@
     <Reference Include="CSharpXamlForHtml5.System.Xml.dll">
       <HintPath>$(MSBuildProgramFiles32)\MSBuild\CSharpXamlForHtml5\AssembliesToReference\CSharpXamlForHtml5.System.Xml.dll.dll</HintPath>
     </Reference>
-    <Reference Include="CSHTML5.Extensions.Common">
-      <HintPath>..\..\..\..\..\..\..\..\DotNetForHtml5\DotNetForHtml5\CSHTML5.Extensions.Common\bin\Debug\CSHTML5.Extensions.Common.dll</HintPath>
+    <Reference Include="CSHTML5.Extensions.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\DotNetForHtml5\DotNetForHtml5\CSHTML5.Extensions.Common\bin\Debug\CSHTML5.Extensions.Common.dll</HintPath>
     </Reference>
-    <Reference Include="CSHTML5.Extensions.Syncfusion.EssentialJS1.Spreadsheet">
-      <HintPath>..\..\..\..\..\..\..\..\DotNetForHtml5\DotNetForHtml5\CSHTML5.Extensions.Syncfusion.EssentialJS1.Spreadsheet\bin\Debug\CSHTML5.Extensions.Syncfusion.EssentialJS1.Spreadsheet.dll</HintPath>
+    <Reference Include="CSHTML5.Extensions.Syncfusion.EssentialJS1.Spreadsheet, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\DotNetForHtml5\DotNetForHtml5\CSHTML5.Extensions.Syncfusion.EssentialJS1.Spreadsheet\bin\Debug\CSHTML5.Extensions.Syncfusion.EssentialJS1.Spreadsheet.dll</HintPath>
     </Reference>
-    <Reference Include="CSHTML5.Extensions.Telerik.KendoUI.Grid">
-      <HintPath>..\..\..\..\..\..\..\..\DotNetForHtml5\DotNetForHtml5\CSHTML5.Extensions.Telerik.KendoUI.Grid\bin\Debug\CSHTML5.Extensions.Telerik.KendoUI.Grid.dll</HintPath>
+    <Reference Include="CSHTML5.Extensions.Telerik.KendoUI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\DotNetForHtml5\DotNetForHtml5\CSHTML5.Extensions.Telerik.KendoUI\bin\Debug\CSHTML5.Extensions.Telerik.KendoUI.dll</HintPath>
+    </Reference>
+    <Reference Include="CSHTML5.Extensions.Telerik.KendoUI.Editor, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\DotNetForHtml5\DotNetForHtml5\CSHTML5.Extensions.Telerik.KendoUI.Editor\bin\Debug\CSHTML5.Extensions.Telerik.KendoUI.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="CSHTML5.Extensions.Telerik.KendoUI.Grid, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\DotNetForHtml5\DotNetForHtml5\CSHTML5.Extensions.Telerik.KendoUI.Grid\bin\Debug\CSHTML5.Extensions.Telerik.KendoUI.Grid.dll</HintPath>
     </Reference>
     <Reference Include="JSIL.Meta">
       <HintPath>$(MSBuildProgramFiles32)\MSBuild\CSharpXamlForHtml5\AssembliesToReference\JSIL.Meta.dll</HintPath>
@@ -97,6 +108,9 @@
     <Compile Include="Samples\Third_Party\Syncfusion_EssentialJS1\Spreadsheet\Spreadsheet_Demo.xaml.cs">
       <DependentUpon>Spreadsheet_Demo.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Samples\Third_Party\Telerik_KendoUI\Editor\Editor_Demo.xaml.cs">
+      <DependentUpon>Editor_Demo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\Third_Party\Telerik_KendoUI\Grid\Grid_Demo.xaml.cs">
       <DependentUpon>Grid_Demo.xaml</DependentUpon>
@@ -977,6 +991,10 @@
       <Generator>XamlIntelliSenseFileGenerator</Generator>
     </Content>
     <Content Include="Samples\Third_Party\Telerik_KendoUI\Grid\Grid_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Samples\Third_Party\Telerik_KendoUI\Editor\Editor_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Content>
