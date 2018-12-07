@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -10,7 +11,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using CSHTML5.Extensions.Json;
+
 
 namespace CSHTML5.Samples.Showcase
 {

@@ -1,24 +1,30 @@
-﻿using System;
+﻿#define BRIDGE
+
+using CSHTML5;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Threading.Tasks;
-using System.Windows;
 
 
 //------------------------------------
-// This extension adds JSON serialization/deserialization support to C#/XAML for HTML5 (www.cshtml5.com)
+// This extension adds JSON serialization/deserialization
+// support to C#/XAML for HTML5 (www.cshtml5.com)
 //
-// It requires v1.0 Beta 8.2 or newer.
+// It is a CSHTML5-compatible version of Newtonsoft JsonConvert,
+// optimized for running in the browser by taking advantage
+// of the JavaScript built-in methods for serialization
+// and deserialization.
 //
-// This extension is licensed under the open-source MIT license:
+// This project is licensed under The open-source MIT license:
 // https://opensource.org/licenses/MIT
 //
-// Copyright 2017 Userware / CSHTML5
+// Copyright 2018 Userware / CSHTML5
 //------------------------------------
 
 
-namespace CSHTML5.Extensions.Json
+namespace Newtonsoft.Json
 {
     public static class JsonConvert
     {
@@ -32,7 +38,7 @@ namespace CSHTML5.Extensions.Json
         }
 
         public static async Task<T> DeserializeObject<T>(string json, bool ignoreErrors = false)
-            where T : class, new()
+        //where T : class, new()
         {
             var javaScriptObject = Interop.ExecuteJavaScript("JSON.parse($0)", json);
             var cSharpNestedDictionariesAndLists = await ConvertJavaScriptObjectToCSharpNestedDictionariesAndLists(javaScriptObject, ignoreErrors);
@@ -52,7 +58,7 @@ namespace CSHTML5.Extensions.Json
         #region Private Methods
         static object ConvertCSharpObjectToJavaScriptObject(object cSharpObject, bool ignoreErrors)
         {
-            if (cSharpObject is Enum || cSharpObject is Guid)
+            if (cSharpObject is Enum || cSharpObject is Guid || cSharpObject is long)
             {
                 return cSharpObject.ToString();
             }
@@ -68,10 +74,20 @@ namespace CSHTML5.Extensions.Json
                 string json = Convert.ToString(Interop.ExecuteJavaScript("$0.toJSON()", jsDate));
                 return json;
             }
-            else if (cSharpObject is string || (cSharpObject != null && cSharpObject.GetType().IsValueType))
+            else if (cSharpObject is string
+#if !BRIDGE
+ || (cSharpObject != null && cSharpObject.GetType().IsValueType)
+#endif
+)
             {
                 return cSharpObject;
             }
+#if BRIDGE
+            else if (cSharpObject != null && cSharpObject.GetType().IsValueType)
+            {
+                return Interop.ExecuteJavaScript("$0.v", cSharpObject);
+            } 
+#endif
             else if (cSharpObject is IEnumerable && !(cSharpObject is string))
             {
                 //----------------
@@ -240,6 +256,8 @@ namespace CSHTML5.Extensions.Json
 
                         // We need to convert the value to the appropriate type because JSON does not contain type information. For example, it could be an "double" that we need to set as an "int".
                         var convertedValue = Convert.ChangeType(value, resultType);
+                        if (resultType == typeof(long))
+                            convertedValue = Convert.ToInt64(value);
                         return convertedValue;
                     }
                     else
@@ -270,19 +288,34 @@ namespace CSHTML5.Extensions.Json
                     // Get the type of the array items:
                     Type itemsType = resultType.GetElementType();
 
-                    // Create a new ArrayList that we will then convert to an array:
-                    var arrayList = new ArrayList();
+                    // Create a new list that we will then convert to an array:
+#if BRIDGE
+                    var list = new List<object>();
+#else
+                    var list = new ArrayList();
+#endif
 
                     // Add the items to the ArrayList:
                     foreach (var item in (IEnumerable)cSharpNestedDictionariesAndLists)
                     {
                         //********** RECURSION **********
                         var recursionResult = ConvertCSharpNestedDictionariesAndListsToCSharpObject(itemsType, item, ignoreErrors);
-                        arrayList.Add(recursionResult);
+                        list.Add(recursionResult);
                     }
 
-                    // Convert the ArrayList to the expected array type:
-                    result = arrayList.ToArray(itemsType);
+                    // Convert the list to the expected array type:
+#if BRIDGE
+                    Array array = Array.CreateInstance(itemsType, list.Count);
+                    int i = 0;
+                    foreach(object element in list)
+                    {
+                        array.SetValue(element, i);
+                        ++i;
+                    }
+                    result = array;
+#else
+                    result = list.ToArray(itemsType);
+#endif
                 }
                 else if (resultType.IsGenericType
                     && (genericArguments = resultType.GetGenericArguments()).Length > 0
@@ -296,10 +329,15 @@ namespace CSHTML5.Extensions.Json
                     Type itemsType = genericArguments[0];
 
                     // Create a temporary List<T> in order to add items to it. Later we will convert it to the final type if needed.
+#if BRIDGE
+                    
+                    var list = Activator.CreateInstance(typeof(List<>).MakeGenericType(new Type[] { itemsType }));
+#else
                     var list = typeof(JsonConvert)
                         .GetMethod("CreateNewInstanceOfGenericList", BindingFlags.NonPublic | BindingFlags.Static)
                         .MakeGenericMethod(itemsType)
                         .Invoke(null, new object[] { });
+#endif
 
                     // Note: in the code above, we call the method "CreateNewInstanceOfGenericList" instead of
                     // calling "var list = Activator.CreateInstance(typeof(List<>).MakeGenericType(itemsType))"
@@ -336,7 +374,7 @@ namespace CSHTML5.Extensions.Json
                         // Otherwise, attempt to create a new instance of the result type while passing the items as first argument of the constructor (this works for example with ObservableCollection<T> and other common collections):
                         try
                         {
-                            result = Activator.CreateInstance(resultType, args: new object[] { list });
+                            result = Activator.CreateInstance(resultType, new object[] { list });
                         }
                         catch
                         {
@@ -715,6 +753,45 @@ namespace CSHTML5.Extensions.Json
             get
             {
                 return null;
+            }
+        }
+    }
+
+    public enum Required
+    {
+        Default,
+        AllowNull,
+        Always,
+        DisallowNull
+    }
+
+    public enum NullValueHandling
+    {
+        Include,
+        Ignore
+    }
+
+    /// <summary>
+    /// Maps a JSON property to a .NET member or constructor parameter.
+    /// </summary>
+    public class JsonProperty : Attribute
+    {
+        public JsonProperty(string name)
+        {
+        }
+
+        public Required Required { get; set; }
+        public NullValueHandling NullValueHandling { get; set; }
+
+        public static bool AreNullableStructsEqual(object struct1, object struct2)
+        {
+            if (struct1 != null)
+            {
+                return struct1.Equals(struct2);
+            }
+            else
+            {
+                return struct2 == null;
             }
         }
     }

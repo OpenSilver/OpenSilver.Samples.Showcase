@@ -16,6 +16,8 @@
     <StartAction>Program</StartAction>
     <StartProgram>$(MSBuildProgramFiles32)\MSBuild\CSharpXamlForHtml5\InternalStuff\Simulator\CSharpXamlForHtml5.Simulator.exe</StartProgram>
     <StartArguments>"CSHTML5.Samples.Showcase.dll"</StartArguments>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -25,6 +27,7 @@
     <DefineConstants>DEBUG;TRACE;CSHARP_XAML_FOR_HTML5;CSHTML5</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -35,28 +38,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CSharpXamlForHtml5">
-      <HintPath>$(MSBuildProgramFiles32)\MSBuild\CSharpXamlForHtml5\AssembliesToReference\CSharpXamlForHtml5.dll</HintPath>
+    <Reference Include="Bridge, Version=17.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CSHTML5.2.0.0-alpha9-017\lib\net40\Bridge.dll</HintPath>
     </Reference>
-    <Reference Include="CSharpXamlForHtml5.System.dll">
-      <HintPath>$(MSBuildProgramFiles32)\MSBuild\CSharpXamlForHtml5\AssembliesToReference\CSharpXamlForHtml5.System.dll.dll</HintPath>
+    <Reference Include="CSHTML5, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CSHTML5.2.0.0-alpha9-017\lib\net40\CSHTML5.dll</HintPath>
     </Reference>
-    <Reference Include="CSharpXamlForHtml5.System.Runtime.Serialization.dll">
-      <HintPath>$(MSBuildProgramFiles32)\MSBuild\CSharpXamlForHtml5\AssembliesToReference\CSharpXamlForHtml5.System.Runtime.Serialization.dll.dll</HintPath>
+    <Reference Include="CSHTML5.Stubs, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CSHTML5.2.0.0-alpha9-017\lib\net40\CSHTML5.Stubs.dll</HintPath>
     </Reference>
-    <Reference Include="CSharpXamlForHtml5.System.ServiceModel.dll">
-      <HintPath>$(MSBuildProgramFiles32)\MSBuild\CSharpXamlForHtml5\AssembliesToReference\CSharpXamlForHtml5.System.ServiceModel.dll.dll</HintPath>
-    </Reference>
-    <Reference Include="CSharpXamlForHtml5.System.Xaml.dll">
-      <HintPath>$(MSBuildProgramFiles32)\MSBuild\CSharpXamlForHtml5\AssembliesToReference\CSharpXamlForHtml5.System.Xaml.dll.dll</HintPath>
-    </Reference>
-    <Reference Include="CSharpXamlForHtml5.System.Xml.dll">
-      <HintPath>$(MSBuildProgramFiles32)\MSBuild\CSharpXamlForHtml5\AssembliesToReference\CSharpXamlForHtml5.System.Xml.dll.dll</HintPath>
-    </Reference>
-    <Reference Include="JSIL.Meta">
-      <HintPath>$(MSBuildProgramFiles32)\MSBuild\CSharpXamlForHtml5\AssembliesToReference\JSIL.Meta.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -669,6 +659,8 @@
     <Content Include="Other\SplashScreen1.png" />
     <Content Include="Samples\Third_Party\Plotly_Charts\ChartControl\plotly.min.js" />
     <Content Include="Samples\Third_Party\Plotly_Charts\ChartControl\typedarray.js" />
+    <None Include="bridge.json" />
+    <None Include="packages.config" />
     <None Include="Service References\ServiceReference1\CSHTML5.Samples.Showcase.ServiceReference1.AddOrUpdateToDoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -1510,7 +1502,13 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
-  <Import Project="$(MSBuildProgramFiles32)\MSBuild\CSharpXamlForHtml5\InternalStuff\Targets\CSharpXamlForHtml5.Build.targets" />
+  <Import Project="..\packages\CSHTML5.2.0.0-alpha9-017\build\CSHTML5.targets" Condition="Exists('..\packages\CSHTML5.2.0.0-alpha9-017\build\CSHTML5.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\CSHTML5.2.0.0-alpha9-017\build\CSHTML5.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CSHTML5.2.0.0-alpha9-017\build\CSHTML5.targets'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

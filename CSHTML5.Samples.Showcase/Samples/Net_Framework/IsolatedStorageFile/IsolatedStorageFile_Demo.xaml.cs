@@ -99,10 +99,9 @@ namespace CSHTML5.Samples.Showcase
             return false;
         }
 
-        [JSIL.Meta.JSReplacement(@"window.IE_VERSION && document.location.protocol === ""file:""")]
         bool IsRunningFromLocalFileSystemOnInternetExplorer()
         {
-            return false;
+            return Convert.ToBoolean(Interop.ExecuteJavaScript(@"window.IE_VERSION && document.location.protocol === ""file:"""));
         }
 
         private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
