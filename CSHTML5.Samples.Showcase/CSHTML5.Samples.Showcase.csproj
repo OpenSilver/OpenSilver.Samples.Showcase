@@ -57,6 +57,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\DotNetForHtml5\DotNetForHtml5\CSHTML5.Extensions.Common\bin\Debug\CSHTML5.Extensions.Common.dll</HintPath>
     </Reference>
+    <Reference Include="CSHTML5.Extensions.Syncfusion.EssentialJS1.RichTextEditor">
+      <HintPath>C:\DotNetForHtml5\DotNetForHtml5\CSHTML5.Extensions.Syncfusion.EssentialJS1.RichTextEditor\bin\Debug\CSHTML5.Extensions.Syncfusion.EssentialJS1.RichTextEditor.dll</HintPath>
+    </Reference>
     <Reference Include="CSHTML5.Extensions.Syncfusion.EssentialJS1.Spreadsheet, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\DotNetForHtml5\DotNetForHtml5\CSHTML5.Extensions.Syncfusion.EssentialJS1.Spreadsheet\bin\Debug\CSHTML5.Extensions.Syncfusion.EssentialJS1.Spreadsheet.dll</HintPath>
@@ -105,6 +108,9 @@
     <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Trace.cs" />
     <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\TraceMode.cs" />
     <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\TraceType.cs" />
+    <Compile Include="Samples\Third_Party\Syncfusion_EssentialJS1\RichTextEditor\RichTextEditor_Demo.xaml.cs">
+      <DependentUpon>RichTextEditor_Demo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Samples\Third_Party\Syncfusion_EssentialJS1\Spreadsheet\Spreadsheet_Demo.xaml.cs">
       <DependentUpon>Spreadsheet_Demo.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -995,6 +1001,10 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Samples\Third_Party\Telerik_KendoUI\Editor\Editor_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Samples\Third_Party\Syncfusion_EssentialJS1\RichTextEditor\RichTextEditor_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Content>
