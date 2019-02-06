@@ -22,7 +22,7 @@ namespace CSHTML5.Samples.Showcase
 
         private void ButtonNavigate_Click(object sender, RoutedEventArgs e)
         {
-            WebView1.Navigate(new Uri(TextBoxWithURL.Text));
+            //WebView1.Navigate(new Uri(TextBoxWithURL.Text));
         }
 
         private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
