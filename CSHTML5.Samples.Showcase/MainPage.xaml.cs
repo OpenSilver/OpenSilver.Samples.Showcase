@@ -57,14 +57,34 @@ namespace CSHTML5.Samples.Showcase
             NavigateToPage("/Interop_Samples");
         }
 
-        void ButtonThirdParty_Click(object sender, RoutedEventArgs e)
-        {
-            NavigateToPage("/Third_Party");
-        }
-
         void ButtonPerformance_Click(object sender, RoutedEventArgs e)
         {
             NavigateToPage("/Performance");
+        }
+
+        void ButtonPlotlyCharts_Click(object sender, RoutedEventArgs e)
+        {
+            NavigateToPage("/Third_Party/Plotly_Charts/Plotly_Charts_Demo");
+        }
+
+        void ButtonSyncfusionEssentialJS1Spreadsheet_Click(object sender, RoutedEventArgs e)
+        {
+            NavigateToPage("/Third_Party/Syncfusion_EssentialJS1/Spreadsheet/Spreadsheet_Demo");
+        }
+
+        void ButtonSyncfusionEssentialJS1RichTextEditor_Click(object sender, RoutedEventArgs e)
+        {
+            NavigateToPage("/Third_Party/Syncfusion_EssentialJS1/RichTextEditor/RichTextEditor_Demo");
+        }
+
+        void ButtonTelerikKendoUIGrid_Click(object sender, RoutedEventArgs e)
+        {
+            NavigateToPage("/Third_Party/Telerik_KendoUI/Grid/Grid_Demo");
+        }
+
+        void ButtonTelerikKendoUIEditor_Click(object sender, RoutedEventArgs e)
+        {
+            NavigateToPage("/Third_Party/Telerik_KendoUI/Editor/Editor_Demo");
         }
 
         void ButtonHome_Click(object sender, RoutedEventArgs e)

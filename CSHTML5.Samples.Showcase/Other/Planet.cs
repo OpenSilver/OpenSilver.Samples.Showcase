@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace CSHTML5.Samples.Showcase
 {
@@ -12,16 +9,53 @@ namespace CSHTML5.Samples.Showcase
         Rock, Gas
     }
 
-    public class Planet
+    public class Planet : INotifyPropertyChanged
     {
-        public string Name { get; set; }
-        public int Radius { get; set; }
-        public PlanetStructure Structure { get; set; }
-        public bool Bright { get; set; }
-        public string RotationPeriod { get; set; }
-        public string OrbitalPeriod { get; set; }
-        public string ImagePath { get; set; }
+        string _name;
+        int _radius;
+        PlanetStructure _structure;
+        bool _bright;
+        string _rotationPeriod;
+        string _orbitalPeriod;
+        string _imagePath;
 
+        public string Name
+        {
+            get { return _name; }
+            set { _name = value; OnPropertyChanged(); }
+        }
+        public int Radius
+        {
+            get { return _radius; }
+            set { _radius = value; OnPropertyChanged(); }
+        }
+        public PlanetStructure Structure
+        {
+            get { return _structure; }
+            set { _structure = value; OnPropertyChanged(); }
+        }
+        public bool Bright
+        {
+            get { return _bright; }
+            set { _bright = value; OnPropertyChanged(); }
+        }
+        public string RotationPeriod
+        {
+            get { return _rotationPeriod; }
+            set { _rotationPeriod = value; OnPropertyChanged(); }
+        }
+        public string OrbitalPeriod
+        {
+            get { return _orbitalPeriod; }
+            set { _orbitalPeriod = value; OnPropertyChanged(); }
+        }
+        public string ImagePath
+        {
+            get { return _imagePath; }
+            set { _imagePath = value; OnPropertyChanged(); }
+        }
+
+        public static ObservableCollection<Planet> Planets { get; set; } = GetListOfPlanets();
 
         public static ObservableCollection<Planet> GetListOfPlanets()
         {
@@ -36,6 +70,13 @@ namespace CSHTML5.Samples.Showcase
                 new Planet() { Name = "Uranus", Structure = PlanetStructure.Gas, Bright=false, Radius = 25600, RotationPeriod = "1 day, 17 hrs", OrbitalPeriod = "84 years", ImagePath = "ms-appx:/Other/Planets/Uranus.png" },
                 new Planet() { Name = "Neptune", Structure = PlanetStructure.Gas, Bright=false, Radius = 24800, RotationPeriod = "1 day, 16 hrs", OrbitalPeriod = "165 years", ImagePath = "ms-appx:/Other/Planets/Neptune.png" },
             };
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        void OnPropertyChanged([CallerMemberName]string caller = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(caller));
         }
     }
 }

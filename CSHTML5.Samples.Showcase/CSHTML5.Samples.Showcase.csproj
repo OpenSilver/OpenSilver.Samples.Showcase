@@ -16,8 +16,6 @@
     <StartAction>Program</StartAction>
     <StartProgram>$(MSBuildProgramFiles32)\MSBuild\CSharpXamlForHtml5\InternalStuff\Simulator\CSharpXamlForHtml5.Simulator.exe</StartProgram>
     <StartArguments>"CSHTML5.Samples.Showcase.dll"</StartArguments>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -27,7 +25,6 @@
     <DefineConstants>DEBUG;TRACE;CSHARP_XAML_FOR_HTML5;CSHTML5</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <NoStdLib>true</NoStdLib>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -38,15 +35,51 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bridge, Version=17.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CSHTML5.2.0.0-alpha9-017\lib\net40\Bridge.dll</HintPath>
+    <Reference Include="CSharpXamlForHtml5">
+      <HintPath>$(MSBuildProgramFiles32)\MSBuild\CSharpXamlForHtml5\AssembliesToReference\CSharpXamlForHtml5.dll</HintPath>
     </Reference>
-    <Reference Include="CSHTML5, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CSHTML5.2.0.0-alpha9-017\lib\net40\CSHTML5.dll</HintPath>
+    <Reference Include="CSharpXamlForHtml5.System.dll">
+      <HintPath>$(MSBuildProgramFiles32)\MSBuild\CSharpXamlForHtml5\AssembliesToReference\CSharpXamlForHtml5.System.dll.dll</HintPath>
     </Reference>
-    <Reference Include="CSHTML5.Stubs, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CSHTML5.2.0.0-alpha9-017\lib\net40\CSHTML5.Stubs.dll</HintPath>
+    <Reference Include="CSharpXamlForHtml5.System.Runtime.Serialization.dll">
+      <HintPath>$(MSBuildProgramFiles32)\MSBuild\CSharpXamlForHtml5\AssembliesToReference\CSharpXamlForHtml5.System.Runtime.Serialization.dll.dll</HintPath>
     </Reference>
+    <Reference Include="CSharpXamlForHtml5.System.ServiceModel.dll">
+      <HintPath>$(MSBuildProgramFiles32)\MSBuild\CSharpXamlForHtml5\AssembliesToReference\CSharpXamlForHtml5.System.ServiceModel.dll.dll</HintPath>
+    </Reference>
+    <Reference Include="CSharpXamlForHtml5.System.Xaml.dll">
+      <HintPath>$(MSBuildProgramFiles32)\MSBuild\CSharpXamlForHtml5\AssembliesToReference\CSharpXamlForHtml5.System.Xaml.dll.dll</HintPath>
+    </Reference>
+    <Reference Include="CSharpXamlForHtml5.System.Xml.dll">
+      <HintPath>$(MSBuildProgramFiles32)\MSBuild\CSharpXamlForHtml5\AssembliesToReference\CSharpXamlForHtml5.System.Xml.dll.dll</HintPath>
+    </Reference>
+    <Reference Include="CSHTML5.Extensions.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\DotNetForHtml5\DotNetForHtml5\CSHTML5.Extensions.Common\bin\Debug\CSHTML5.Extensions.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="CSHTML5.Extensions.Syncfusion.EssentialJS1.RichTextEditor">
+      <HintPath>C:\DotNetForHtml5\DotNetForHtml5\CSHTML5.Extensions.Syncfusion.EssentialJS1.RichTextEditor\bin\Debug\CSHTML5.Extensions.Syncfusion.EssentialJS1.RichTextEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="CSHTML5.Extensions.Syncfusion.EssentialJS1.Spreadsheet, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\DotNetForHtml5\DotNetForHtml5\CSHTML5.Extensions.Syncfusion.EssentialJS1.Spreadsheet\bin\Debug\CSHTML5.Extensions.Syncfusion.EssentialJS1.Spreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="CSHTML5.Extensions.Telerik.KendoUI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\DotNetForHtml5\DotNetForHtml5\CSHTML5.Extensions.Telerik.KendoUI\bin\Debug\CSHTML5.Extensions.Telerik.KendoUI.dll</HintPath>
+    </Reference>
+    <Reference Include="CSHTML5.Extensions.Telerik.KendoUI.Editor, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\DotNetForHtml5\DotNetForHtml5\CSHTML5.Extensions.Telerik.KendoUI.Editor\bin\Debug\CSHTML5.Extensions.Telerik.KendoUI.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="CSHTML5.Extensions.Telerik.KendoUI.Grid, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\DotNetForHtml5\DotNetForHtml5\CSHTML5.Extensions.Telerik.KendoUI.Grid\bin\Debug\CSHTML5.Extensions.Telerik.KendoUI.Grid.dll</HintPath>
+    </Reference>
+    <Reference Include="JSIL.Meta">
+      <HintPath>$(MSBuildProgramFiles32)\MSBuild\CSharpXamlForHtml5\AssembliesToReference\JSIL.Meta.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -75,6 +108,19 @@
     <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Trace.cs" />
     <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\TraceMode.cs" />
     <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\TraceType.cs" />
+    <Compile Include="Samples\Third_Party\Syncfusion_EssentialJS1\RichTextEditor\RichTextEditor_Demo.xaml.cs">
+      <DependentUpon>RichTextEditor_Demo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\Third_Party\Syncfusion_EssentialJS1\Spreadsheet\Spreadsheet_Demo.xaml.cs">
+      <DependentUpon>Spreadsheet_Demo.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Samples\Third_Party\Telerik_KendoUI\Editor\Editor_Demo.xaml.cs">
+      <DependentUpon>Editor_Demo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\Third_Party\Telerik_KendoUI\Grid\Grid_Demo.xaml.cs">
+      <DependentUpon>Grid_Demo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Samples\XAML_Features\Binding2\KilometersToMilesConverter.cs" />
     <Compile Include="Other\Internals\MasonryPanel.cs" />
     <Compile Include="Other\Planet.cs" />
@@ -120,9 +166,6 @@
     </Compile>
     <Compile Include="Samples\Client_Server\WebSockets\WebSockets_Demo_More.xaml.cs">
       <DependentUpon>WebSockets_Demo_More.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Samples\Third_Party\Third_Party.xaml.cs">
-      <DependentUpon>Third_Party.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\Third_Party\Plotly_Charts\Plotly_Charts_Demo.xaml.cs">
       <DependentUpon>Plotly_Charts_Demo.xaml</DependentUpon>
@@ -659,8 +702,6 @@
     <Content Include="Other\SplashScreen1.png" />
     <Content Include="Samples\Third_Party\Plotly_Charts\ChartControl\plotly.min.js" />
     <Content Include="Samples\Third_Party\Plotly_Charts\ChartControl\typedarray.js" />
-    <None Include="bridge.json" />
-    <None Include="packages.config" />
     <None Include="Service References\ServiceReference1\CSHTML5.Samples.Showcase.ServiceReference1.AddOrUpdateToDoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -703,7 +744,9 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ServiceReference1\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Samples\Third_Party\Telerik_TelerikUI\" />
+  </ItemGroup>
   <ItemGroup>
     <Page Include="Other\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -765,10 +808,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Content>
-    <Page Include="Samples\Third_Party\Third_Party.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Samples\Third_Party\Plotly_Charts\Plotly_Charts_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -953,6 +992,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Content Include="Samples\Third_Party\Syncfusion_EssentialJS1\Spreadsheet\Spreadsheet_Demo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Content>
+    <Content Include="Samples\Third_Party\Telerik_KendoUI\Grid\Grid_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Samples\Third_Party\Telerik_KendoUI\Editor\Editor_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Samples\Third_Party\Syncfusion_EssentialJS1\RichTextEditor\RichTextEditor_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
     <Page Include="Samples\XAML_Features\Validation\Validation_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1502,13 +1557,10 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
-  <Import Project="..\packages\CSHTML5.2.0.0-alpha9-017\build\CSHTML5.targets" Condition="Exists('..\packages\CSHTML5.2.0.0-alpha9-017\build\CSHTML5.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\CSHTML5.2.0.0-alpha9-017\build\CSHTML5.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CSHTML5.2.0.0-alpha9-017\build\CSHTML5.targets'))" />
-  </Target>
+  <ItemGroup>
+    <TypeScriptCompile Include="Samples\Third_Party\Telerik_KendoUI\Grid\Model.d.ts" />
+  </ItemGroup>
+  <Import Project="$(MSBuildProgramFiles32)\MSBuild\CSharpXamlForHtml5\InternalStuff\Targets\CSharpXamlForHtml5.Build.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
