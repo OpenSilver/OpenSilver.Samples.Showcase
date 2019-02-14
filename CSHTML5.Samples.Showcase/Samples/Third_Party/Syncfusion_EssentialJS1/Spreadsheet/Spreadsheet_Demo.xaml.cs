@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media;
 
 namespace CSHTML5.Samples.Showcase.Samples.Third_Party.Syncfusion_EssentialJS1.Spreadsheet
 {
@@ -9,6 +11,10 @@ namespace CSHTML5.Samples.Showcase.Samples.Third_Party.Syncfusion_EssentialJS1.S
         public Spreadsheet_Demo()
         {
             InitializeComponent();
+
+            //Note: Below is an example of setting the location for the required scripts and css for the Syncfusion EssentialJS1 Spreadsheet control. See the tutorial at http://cshtml5.com for more information.
+            //ej_spreadsheet.ej.Spreadsheet.Configuration.LocationOfEjSpreadsheetJS = "ms-appx:///CSHTML5.Samples.Showcase/Third_Party_Resources/Syncfusion_EssentialJS1/scripts/ej.spreadsheet.min.js";
+            //ej_spreadsheet.ej.Spreadsheet.Configuration.LocationOfEjWebAllCss = "ms-appx:///CSHTML5.Samples.Showcase/Third_Party_Resources/Syncfusion_EssentialJS1/themes/default-theme/ej.web.all.min.css";
 
             Loaded += Spreadsheet_Demo_Loaded;
         }
@@ -19,8 +25,16 @@ namespace CSHTML5.Samples.Showcase.Samples.Third_Party.Syncfusion_EssentialJS1.S
             // Wait until Spreadsheet's underlying JS instance has been loaded
             //------------
             LoadingPleaseWaitMessage.Visibility = Visibility.Visible;
-            await Spreadsheet.JSInstanceLoaded;
-            LoadingPleaseWaitMessage.Visibility = Visibility.Collapsed;
+            bool result = await Spreadsheet.JSInstanceLoaded;
+            if (result)
+            {
+                LoadingPleaseWaitMessage.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                LoadingPleaseWaitMessage.Foreground = new SolidColorBrush(Colors.Red);
+                LoadingPleaseWaitMessage.Text = "Syncfusion Spreadsheet control libraries locations not set. Please set them.";
+            }
         }
 
         private void ButtonViewSource_Click(object sender, RoutedEventArgs e)

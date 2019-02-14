@@ -1,11 +1,12 @@
-﻿using CSHTML5.Extensions.Common;
+﻿using CSHTML5.Wrappers.KendoUI.Common;
 using kendo_ui_grid.kendo.data;
 using kendo_ui_grid.kendo.ui;
-using Samples.Third_Party.Telerik_KendoUI.Grid.Model;
 using System.Collections.Generic;
 using TypeScriptDefinitionsSupport;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media;
 
 namespace CSHTML5.Samples.Showcase.Samples.Third_Party.Telerik_KendoUI.Grid
 {
@@ -13,7 +14,18 @@ namespace CSHTML5.Samples.Showcase.Samples.Third_Party.Telerik_KendoUI.Grid
     {
         public Grid_Demo()
         {
+            
             InitializeComponent();
+
+            //Note: Below is an example of setting the location for the required scripts and css for the KendoUI Grid control. See the tutorial at http://cshtml5.com for more information.
+            //kendo_ui_grid.kendo.ui.Grid.Configuration.LocationOfKendoAllJS = "ms-appx:///CSHTML5.Samples.Showcase/Third_Party_Resources/Telerik_KendoUI/scripts/kendo.all.min.js";
+
+            //kendo_ui_grid.kendo.ui.Grid.Configuration.LocationOfKendoCommonMaterialCSS = "ms-appx:///CSHTML5.Samples.Showcase/Third_Party_Resources/Telerik_KendoUI/styles/kendo.common-material.min.css";
+            //kendo_ui_grid.kendo.ui.Grid.Configuration.LocationOfKendoMaterialCSS = "ms-appx:///CSHTML5.Samples.Showcase/Third_Party_Resources/Telerik_KendoUI/styles/kendo.material.min.css";
+            //kendo_ui_grid.kendo.ui.Grid.Configuration.LocationOfKendoMaterialMobileCSS = "ms-appx:///CSHTML5.Samples.Showcase/Third_Party_Resources/Telerik_KendoUI/styles/kendo.material.mobile.min.css";
+            //kendo_ui_grid.kendo.ui.Grid.Configuration.LocationOfKendoRTLCSS = "ms-appx:///CSHTML5.Samples.Showcase/Third_Party_Resources/Telerik_KendoUI/styles/kendo.rtl.min.css";
+
+
 
             Loaded += Grid_Demo_Loaded;
         }
@@ -24,94 +36,29 @@ namespace CSHTML5.Samples.Showcase.Samples.Third_Party.Telerik_KendoUI.Grid
             // Wait until Grid's underlying JS instance has been loaded
             //------------
             LoadingPleaseWaitMessage.Visibility = Visibility.Visible;
-            await Grid.JSInstanceLoaded;
-            LoadingPleaseWaitMessage.Visibility = Visibility.Collapsed;
-            Grid.Visibility = Visibility.Visible;
-
-            Grid.setOptions(new GridOptions()
+            bool result = await Grid.JSInstanceLoaded;
+            if (!result)
             {
-                pageable = new GridPageable()
+                LoadingPleaseWaitMessage.Foreground = new SolidColorBrush(Colors.Red);
+                LoadingPleaseWaitMessage.Text = "Kendo Grid control libraries locations not set. Please set them.";
+            }
+            else
+            {
+                LoadingPleaseWaitMessage.Visibility = Visibility.Collapsed;
+                Grid.Visibility = Visibility.Visible;
+
+                Grid.setOptions(new GridOptions()
                 {
-                    refresh = true,
-                    pageSizes = true,
-                    buttonCount = 5
-                },
-                editable = true
-            });
-            Grid.dataSource.pageSize(4);
-
-            //Grid.ItemsSource = new List<Contact>()
-            //{
-            //    new Contact()
-            //    {
-            //        ContactName = "John Doe",
-            //        ContactTitle = "Developer",
-            //        CompanyName = "Userware",
-            //        Country = "FR"
-            //    },
-            //    new Contact()
-            //    {
-            //        ContactName = "Jane Wize",
-            //        ContactTitle = "Accountant",
-            //        CompanyName = "Mobicom",
-            //        Country = "US"
-            //    }
-            //};
-
-            //var options = Grid.getOptions();
-            //options.columns = new JSArray<GridColumn>()
-            //{
-            //    new GridColumn()
-            //    {
-            //        field = "ContactName",
-            //        title = "Contact Name",
-            //        width = 150
-            //    },
-            //    new GridColumn()
-            //    {
-            //        field = "ContactTitle",
-            //        title = "Contact Title",
-            //    },
-            //    new GridColumn()
-            //    {
-            //        field = "CompanyName",
-            //        title = "Company Name"
-            //    },
-            //    new GridColumn()
-            //    {
-            //        field = "Country",
-            //        width = 150
-            //    }
-            //};
-            //Grid.setOptions(options);
-            //Grid.setDataSource(new DataSource(new DataSourceOptions()
-            //{
-            //    //data = new JSArray<Contact>()
-            //    //{
-            //    //    new Contact()
-            //    //    {
-            //    //        ContactName = "John Doe",
-            //    //        ContactTitle = "Developer",
-            //    //        CompanyName = "Userware",
-            //    //        Country = "FR"
-            //    //    },
-            //    //    new Contact()
-            //    //    {
-            //    //        ContactName = "Jane Wize",
-            //    //        ContactTitle = "Accountant",
-            //    //        CompanyName = "Mobicom",
-            //    //        Country = "US"
-            //    //    }
-            //    //}
-            //    type = "odata",
-            //    transport = new DataSourceTransport()
-            //    {
-            //        read = new DataSourceTransportRead()
-            //        {
-            //            url = new JSObject("http://demos.telerik.com/kendo-ui/service/Northwind.svc/Customers")
-            //        }
-            //    }
-            //}));
+                    pageable = new GridPageable()
+                    {
+                        refresh = true,
+                        pageSizes = true,
+                        buttonCount = 5
+                    },
+                    editable = true
+                });
+                Grid.dataSource.pageSize(4);
+            }
         }
 
         private void ButtonViewSource_Click(object sender, RoutedEventArgs e)

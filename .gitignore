@@ -240,3 +240,5 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/CSHTML5.Samples.Showcase/Third_Party_Resources/Telerik_KendoUI
+/CSHTML5.Samples.Showcase/Third_Party_Resources/Syncfusion_EssentialJS1

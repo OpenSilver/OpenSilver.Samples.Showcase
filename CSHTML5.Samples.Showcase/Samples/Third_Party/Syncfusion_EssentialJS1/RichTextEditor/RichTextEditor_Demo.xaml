@@ -3,7 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:CSHTML5.Samples.Showcase"
-    xmlns:ej="clr-namespace:ej_rte.ej;assembly=CSHTML5.Extensions.Syncfusion.EssentialJS1.RichTextEditor">
+    xmlns:ej="clr-namespace:ej_rte.ej;assembly=CSHTML5.Wrappers.Syncfusion.EssentialJS1.RichTextEditor">
     <StackPanel>
         <TextBlock Text="Syncfusion Essential JS 1" Style="{StaticResource PageHeader_Style}"/>
         <local:MasonryPanel Style="{StaticResource Panel_Style}">

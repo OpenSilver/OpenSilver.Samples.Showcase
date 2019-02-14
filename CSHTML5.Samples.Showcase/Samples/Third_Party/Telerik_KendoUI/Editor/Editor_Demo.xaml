@@ -3,7 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:CSHTML5.Samples.Showcase"
-    xmlns:kendo_ui="clr-namespace:kendo_ui_editor.kendo.ui;assembly=CSHTML5.Extensions.Telerik.KendoUI.Editor">
+    xmlns:kendo_ui="clr-namespace:kendo_ui_editor.kendo.ui;assembly=CSHTML5.Wrappers.KendoUI.Editor">
     <StackPanel>
         <TextBlock Text="Telerik Kendo UI" Style="{StaticResource PageHeader_Style}"/>
         <local:MasonryPanel Style="{StaticResource Panel_Style}">

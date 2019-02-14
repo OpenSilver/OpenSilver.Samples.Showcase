@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media;
 
 namespace CSHTML5.Samples.Showcase.Samples.Third_Party.Syncfusion_EssentialJS1.RichTextEditor
 {
@@ -9,6 +11,10 @@ namespace CSHTML5.Samples.Showcase.Samples.Third_Party.Syncfusion_EssentialJS1.R
         public RichTextEditor_Demo()
         {
             InitializeComponent();
+
+            //Note: Below is an example of setting the location for the required scripts and css for the Syncfusion EssentialJS1 RichTextEditor control. See the tutorial at http://cshtml5.com for more information.
+            //ej_rte.ej.RTE.Configuration.LocationOfEjRTEJS = "ms-appx:///CSHTML5.Samples.Showcase/Third_Party_Resources/Syncfusion_EssentialJS1/scripts/ej.rte.min.js";
+            //ej_rte.ej.RTE.Configuration.LocationOfEjWebAllCss = "ms-appx:///CSHTML5.Samples.Showcase/Third_Party_Resources/Syncfusion_EssentialJS1/themes/default-theme/ej.web.all.min.css";
 
             Loaded += RichTextEditor_Demo_Loaded;
         }
@@ -19,8 +25,16 @@ namespace CSHTML5.Samples.Showcase.Samples.Third_Party.Syncfusion_EssentialJS1.R
             // Wait until RichTextEditor's underlying JS instance has been loaded
             //------------
             LoadingPleaseWaitMessage.Visibility = Visibility.Visible;
-            await RTE.JSInstanceLoaded;
-            LoadingPleaseWaitMessage.Visibility = Visibility.Collapsed;
+            bool result = await RTE.JSInstanceLoaded;
+            if (result)
+            {
+                LoadingPleaseWaitMessage.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                LoadingPleaseWaitMessage.Foreground = new SolidColorBrush(Colors.Red);
+                LoadingPleaseWaitMessage.Text = "Syncfusion RichTextEditor control libraries locations not set. Please set them.";
+            }
         }
 
         private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
