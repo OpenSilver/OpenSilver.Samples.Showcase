@@ -22,37 +22,37 @@ namespace CSHTML5.Samples.Showcase
         public string Name
         {
             get { return _name; }
-            set { _name = value; OnPropertyChanged(); }
+            set { _name = value; OnPropertyChanged("Name"); }
         }
         public int Radius
         {
             get { return _radius; }
-            set { _radius = value; OnPropertyChanged(); }
+            set { _radius = value; OnPropertyChanged("Radius"); }
         }
         public PlanetStructure Structure
         {
             get { return _structure; }
-            set { _structure = value; OnPropertyChanged(); }
+            set { _structure = value; OnPropertyChanged("Structure"); }
         }
         public bool Bright
         {
             get { return _bright; }
-            set { _bright = value; OnPropertyChanged(); }
+            set { _bright = value; OnPropertyChanged("Bright"); }
         }
         public string RotationPeriod
         {
             get { return _rotationPeriod; }
-            set { _rotationPeriod = value; OnPropertyChanged(); }
+            set { _rotationPeriod = value; OnPropertyChanged("RotationPeriod"); }
         }
         public string OrbitalPeriod
         {
             get { return _orbitalPeriod; }
-            set { _orbitalPeriod = value; OnPropertyChanged(); }
+            set { _orbitalPeriod = value; OnPropertyChanged("OrbitalPeriod"); }
         }
         public string ImagePath
         {
             get { return _imagePath; }
-            set { _imagePath = value; OnPropertyChanged(); }
+            set { _imagePath = value; OnPropertyChanged("ImagePath"); }
         }
 
         public static ObservableCollection<Planet> Planets { get; set; } = GetListOfPlanets();
