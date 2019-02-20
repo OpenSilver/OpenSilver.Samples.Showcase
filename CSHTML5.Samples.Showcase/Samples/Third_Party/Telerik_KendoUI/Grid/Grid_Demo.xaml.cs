@@ -39,8 +39,8 @@ namespace CSHTML5.Samples.Showcase.Samples.Third_Party.Telerik_KendoUI.Grid
             bool result = await Grid.JSInstanceLoaded;
             if (!result)
             {
-                LoadingPleaseWaitMessage.Foreground = new SolidColorBrush(Colors.Red);
-                LoadingPleaseWaitMessage.Text = "Kendo Grid control libraries locations not set. Please set them.";
+                Grid.Visibility = Visibility.Visible;
+                LoadingPleaseWaitMessage.Visibility = Visibility.Collapsed;
             }
             else
             {

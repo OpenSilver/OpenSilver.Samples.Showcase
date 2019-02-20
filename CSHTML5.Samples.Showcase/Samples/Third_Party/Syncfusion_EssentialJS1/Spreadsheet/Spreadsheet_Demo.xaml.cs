@@ -32,8 +32,7 @@ namespace CSHTML5.Samples.Showcase.Samples.Third_Party.Syncfusion_EssentialJS1.S
             }
             else
             {
-                LoadingPleaseWaitMessage.Foreground = new SolidColorBrush(Colors.Red);
-                LoadingPleaseWaitMessage.Text = "Syncfusion Spreadsheet control libraries locations not set. Please set them.";
+                LoadingPleaseWaitMessage.Visibility = Visibility.Collapsed;
             }
         }
 

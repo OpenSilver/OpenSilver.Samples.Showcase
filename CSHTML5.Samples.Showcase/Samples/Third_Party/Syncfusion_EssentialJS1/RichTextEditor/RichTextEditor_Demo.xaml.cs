@@ -32,8 +32,7 @@ namespace CSHTML5.Samples.Showcase.Samples.Third_Party.Syncfusion_EssentialJS1.R
             }
             else
             {
-                LoadingPleaseWaitMessage.Foreground = new SolidColorBrush(Colors.Red);
-                LoadingPleaseWaitMessage.Text = "Syncfusion RichTextEditor control libraries locations not set. Please set them.";
+                LoadingPleaseWaitMessage.Visibility = Visibility.Collapsed;
             }
         }
 

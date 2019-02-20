@@ -51,8 +51,9 @@ namespace CSHTML5.Samples.Showcase.Samples.Third_Party.Telerik_KendoUI.Editor
             }
             else
             {
-                LoadingPleaseWaitMessage.Foreground = new SolidColorBrush(Colors.Red);
-                LoadingPleaseWaitMessage.Text = "Kendo Editor control libraries locations not set. Please set them.";
+                EditorDemo.Visibility = Visibility.Visible;
+                LoadingPleaseWaitMessage.Visibility = Visibility.Collapsed;
+                ButtonExportToPDF.Visibility = Visibility.Collapsed;
             }
             
         }
