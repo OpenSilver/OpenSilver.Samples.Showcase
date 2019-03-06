@@ -21,7 +21,7 @@ namespace TestPerformance
             //this.FillColor = Color.FromArgb((byte)rand.Next(256), (byte)rand.Next(256), (byte)rand.Next(256), (byte)rand.Next(256));
 
             // Set the size:
-            this.Width = 38d + Math.Log10(index) * 8d;
+            this.Width = 38d + Math.Log10(index + 1) * 8d;
             this.Height = 30d;
 
             // Add the small logo:
