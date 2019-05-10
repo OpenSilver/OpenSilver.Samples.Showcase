@@ -649,7 +649,9 @@
     <Content Include="Samples\Third_Party\Plotly_Charts\ChartControl\plotly.min.js" />
     <Content Include="Samples\Third_Party\Plotly_Charts\ChartControl\typedarray.js" />
     <None Include="bridge.json" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\ServiceReference1\CSHTML5.Samples.Showcase.ServiceReference1.AddOrUpdateToDoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -1491,25 +1493,25 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Bridge, Version=17.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CSHTML5.2.0.0-alpha17-030\lib\net40\Bridge.dll</HintPath>
+    <Reference Include="Bridge, Version=17.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CSHTML5.2.0.0-alpha29-044\lib\net40\Bridge.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CSHTML5, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CSHTML5.2.0.0-alpha17-030\lib\net40\CSHTML5.dll</HintPath>
+      <HintPath>..\packages\CSHTML5.2.0.0-alpha29-044\lib\net40\CSHTML5.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CSHTML5.Stubs, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CSHTML5.2.0.0-alpha17-030\lib\net40\CSHTML5.Stubs.dll</HintPath>
+      <HintPath>..\packages\CSHTML5.2.0.0-alpha29-044\lib\net40\CSHTML5.Stubs.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
-  <Import Project="..\packages\CSHTML5.2.0.0-alpha17-030\build\CSHTML5.targets" Condition="Exists('..\packages\CSHTML5.2.0.0-alpha17-030\build\CSHTML5.targets')" />
+  <Import Project="..\packages\CSHTML5.2.0.0-alpha29-044\build\CSHTML5.targets" Condition="Exists('..\packages\CSHTML5.2.0.0-alpha29-044\build\CSHTML5.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\CSHTML5.2.0.0-alpha17-030\build\CSHTML5.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CSHTML5.2.0.0-alpha17-030\build\CSHTML5.targets'))" />
+    <Error Condition="!Exists('..\packages\CSHTML5.2.0.0-alpha29-044\build\CSHTML5.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CSHTML5.2.0.0-alpha29-044\build\CSHTML5.targets'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
