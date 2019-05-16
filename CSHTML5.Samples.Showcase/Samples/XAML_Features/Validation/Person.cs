@@ -34,7 +34,7 @@ namespace CSHTML5.Samples.Showcase
             }
         }
 
-        private int _age;
+        private int _age = 1;
         public int Age
         {
             get { return _age; }
