@@ -25,6 +25,8 @@ namespace CSHTML5.Samples.Showcase
 
         private void ValidationBorder_BindingValidationError(object sender, ValidationErrorEventArgs e)
         {
+            // Disable the "OK" button if there are validation errors. This method is called when validation
+            // errors appear or disappear.
             if (Validation.GetHasError(NameTextBoxForValidation) || Validation.GetHasError(AgeTextBoxForValidation))
             {
                 ButtonOK.IsEnabled = false;
@@ -37,9 +39,24 @@ namespace CSHTML5.Samples.Showcase
 
         private void ButtonOK_Click(object sender, RoutedEventArgs e)
         {
-            Person person = (Person)((Button)sender).DataContext;
-            string str = "Name: \"" + person.Name + "\"" + Environment.NewLine + "Age: " + person.Age + ".";
-            MessageBox.Show(str);
+            // Force refresh validation of the "Name" field because the initial value of "Name" in the
+            // ViewModel is String.Empty, and the validation process only happens when the user types
+            // text inside the TextBox (note: this is the same behavior as in WPF and Silverlight):
+            BindingExpression binding = NameTextBoxForValidation.GetBindingExpression(TextBox.TextProperty);
+            binding.UpdateSource();
+
+            // If there are no validation errors, display a message:
+            if (!Validation.GetHasError(NameTextBoxForValidation)
+                && !Validation.GetHasError(AgeTextBoxForValidation))
+            {
+                Person person = (Person)((Button)sender).DataContext;
+                string str = "Name: \"" + person.Name + "\"" + Environment.NewLine + "Age: " + person.Age + ".";
+                MessageBox.Show(str);
+            }
+            else
+            {
+                MessageBox.Show("Please fix the validation errors.");
+            }
         }
 
         private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
