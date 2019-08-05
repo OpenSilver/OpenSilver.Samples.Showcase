@@ -32,10 +32,17 @@ namespace CSHTML5.Samples.Showcase
 
         async Task RefreshSoapToDos()
         {
-            Service1Client soapClient = new Service1Client();
-            var result = await soapClient.GetToDosAsync(_ownerId);
-            ToDoItem[] todos = result.Body.GetToDosResult;
-            SoapToDosItemsControl.ItemsSource = todos;
+            try
+            {
+                Service1Client soapClient = new Service1Client();
+                var result = await soapClient.GetToDosAsync(_ownerId);
+                ToDoItem[] todos = result.Body.GetToDosResult;
+                SoapToDosItemsControl.ItemsSource = todos;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex.ToString());
+            }
         }
 
         async void ButtonRefreshSoapToDos_Click(object sender, RoutedEventArgs e)
@@ -56,18 +63,26 @@ namespace CSHTML5.Samples.Showcase
             button.Content = "Please wait...";
             button.IsEnabled = false;
 
-            ToDoItem todo = new ToDoItem()
+            try
             {
-                Description = SoapToDoTextBox.Text,
-                Id = Guid.NewGuid(),
-                OwnerId = _ownerId
-            };
+                ToDoItem todo = new ToDoItem()
+                {
+                    Description = SoapToDoTextBox.Text,
+                    Id = Guid.NewGuid(),
+                    OwnerId = _ownerId
+                };
 
-            Service1Client soapClient = new Service1Client();
+                Service1Client soapClient = new Service1Client();
 
-            await soapClient.AddOrUpdateToDoAsync(todo);
+                await soapClient.AddOrUpdateToDoAsync(todo);
 
-            await RefreshSoapToDos();
+                await RefreshSoapToDos();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex.ToString());
+            }
 
             button.IsEnabled = true;
             button.Content = "Create";
