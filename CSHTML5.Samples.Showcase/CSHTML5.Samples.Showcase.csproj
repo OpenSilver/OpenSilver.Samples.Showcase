@@ -39,15 +39,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bridge, Version=17.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CSHTML5.2.0.0-alpha41-056\lib\net40\Bridge.dll</HintPath>
+      <HintPath>..\packages\CSHTML5.2.0.0-alpha43-061\lib\net40\Bridge.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CSHTML5, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CSHTML5.2.0.0-alpha41-056\lib\net40\CSHTML5.dll</HintPath>
+      <HintPath>..\packages\CSHTML5.2.0.0-alpha43-061\lib\net40\CSHTML5.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CSHTML5.Stubs, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CSHTML5.2.0.0-alpha41-056\lib\net40\CSHTML5.Stubs.dll</HintPath>
+      <HintPath>..\packages\CSHTML5.2.0.0-alpha43-061\lib\net40\CSHTML5.Stubs.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CSHTML5.Wrappers.KendoUI.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -696,6 +696,24 @@
     <Content Include="Other\SplashScreen1.png" />
     <Content Include="Samples\Third_Party\Plotly_Charts\ChartControl\plotly.min.js" />
     <Content Include="Samples\Third_Party\Plotly_Charts\ChartControl\typedarray.js" />
+    <Content Include="Third_Party_Resources\Syncfusion_EssentialJS1\scripts\ej.rte.min.js" />
+    <Content Include="Third_Party_Resources\Syncfusion_EssentialJS1\scripts\ej.spreadsheet.min.js" />
+    <Content Include="Third_Party_Resources\Syncfusion_EssentialJS1\themes\common-images\lighttheme\colorpicker_light.png" />
+    <Content Include="Third_Party_Resources\Syncfusion_EssentialJS1\themes\common-images\spreadsheet\blank.png" />
+    <Content Include="Third_Party_Resources\Syncfusion_EssentialJS1\themes\common-images\spreadsheet\down_arrow_light.cur" />
+    <Content Include="Third_Party_Resources\Syncfusion_EssentialJS1\themes\common-images\spreadsheet\right_arrow_light.cur" />
+    <Content Include="Third_Party_Resources\Syncfusion_EssentialJS1\themes\default-theme\ej.theme.min.css" />
+    <Content Include="Third_Party_Resources\Syncfusion_EssentialJS1\themes\default-theme\ej.web.all.min.css" />
+    <Content Include="Third_Party_Resources\Syncfusion_EssentialJS1\themes\default-theme\images\ajax-loader.gif" />
+    <Content Include="Third_Party_Resources\Syncfusion_EssentialJS1\themes\default-theme\images\waitingpopup.gif" />
+    <Content Include="Third_Party_Resources\Syncfusion_EssentialJS1\themes\ej.widgets.core.min.css" />
+    <Content Include="Third_Party_Resources\Telerik_KendoUI\scripts\kendo.all.min.js" />
+    <Content Include="Third_Party_Resources\Telerik_KendoUI\styles\kendo.common-material.min.css" />
+    <Content Include="Third_Party_Resources\Telerik_KendoUI\styles\kendo.material.min.css" />
+    <Content Include="Third_Party_Resources\Telerik_KendoUI\styles\kendo.material.mobile.min.css" />
+    <Content Include="Third_Party_Resources\Telerik_KendoUI\styles\kendo.rtl.min.css" />
+    <Content Include="Third_Party_Resources\Telerik_KendoUI\styles\Material\loading-image.gif" />
+    <Content Include="Third_Party_Resources\Telerik_KendoUI\styles\Material\sprite.png" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -722,6 +740,11 @@
     <None Include="Service References\ServiceReference1\Service11.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Third_Party_Resources\Syncfusion_EssentialJS1\themes\common-images\ejicons.woff" />
+    <Content Include="Third_Party_Resources\Syncfusion_EssentialJS1\themes\common-images\spreadsheet\ejxlicons.ttf" />
+    <Content Include="Third_Party_Resources\Syncfusion_EssentialJS1\themes\common-images\spreadsheet\ejxlicons.woff" />
+    <None Include="Third_Party_Resources\Telerik_KendoUI\styles\images\kendoui.ttf" />
+    <None Include="Third_Party_Resources\Telerik_KendoUI\styles\images\kendoui.woff" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="MainPage.xaml">
@@ -745,7 +768,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Samples\Third_Party\Telerik_TelerikUI\" />
-    <Folder Include="Third_Party_Resources\" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="Other\Styles.xaml">
@@ -1557,12 +1579,12 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
-  <Import Project="..\packages\CSHTML5.2.0.0-alpha41-056\build\CSHTML5.targets" Condition="Exists('..\packages\CSHTML5.2.0.0-alpha41-056\build\CSHTML5.targets')" />
+  <Import Project="..\packages\CSHTML5.2.0.0-alpha43-061\build\CSHTML5.targets" Condition="Exists('..\packages\CSHTML5.2.0.0-alpha43-061\build\CSHTML5.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\CSHTML5.2.0.0-alpha41-056\build\CSHTML5.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CSHTML5.2.0.0-alpha41-056\build\CSHTML5.targets'))" />
+    <Error Condition="!Exists('..\packages\CSHTML5.2.0.0-alpha43-061\build\CSHTML5.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CSHTML5.2.0.0-alpha43-061\build\CSHTML5.targets'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
