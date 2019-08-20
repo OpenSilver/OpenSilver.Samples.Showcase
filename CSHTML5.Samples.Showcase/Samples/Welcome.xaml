@@ -14,7 +14,6 @@
             <HyperlinkButton FontSize="16" Foreground="Blue" Margin="22,10,0,0" NavigateUri="https://github.com/cshtml5/CSHTML5.Samples.Showcase" Cursor="Hand" HorizontalAlignment="Left">
                 <TextBlock Text="https://github.com/cshtml5/CSHTML5.Samples.Showcase" TextWrapping="Wrap"/>
             </HyperlinkButton>
-            <TextBlock Text="Please expect major performance improvements in 2018." FontSize="12" Foreground="#FF666666" TextWrapping="Wrap" Margin="22,16,0,0" FontStyle="Italic"/>
             <TextBlock Text="TIP: Use the menu on the left to navigate from page to page." FontSize="12" Foreground="#FF666666" TextWrapping="Wrap" Margin="22,8,0,0" FontStyle="Italic"/>
         </StackPanel>
     </Border>
