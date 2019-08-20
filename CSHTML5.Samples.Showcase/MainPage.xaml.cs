@@ -98,22 +98,12 @@ namespace CSHTML5.Samples.Showcase
             if (_currentState == CurrentState.SmallResolution_ShowMenu)
                 GoToState(CurrentState.SmallResolution_HideMenu);
 
-            // Display the "Loading..." text:
-            LoadingMessage.Visibility = Visibility.Visible;
+            // Navigate to the target page:
+            Uri uri = new Uri(targetUri, UriKind.Relative);
+            PageContainer.Source = uri;
 
-            // We use the Dispatcher to give enough time to the browser to refresh and show the "Loading..." text:
-            Dispatcher.BeginInvoke((Action)(() =>
-            {
-                // Navigate to the target page:
-                Uri uri = new Uri(targetUri, UriKind.Relative);
-                PageContainer.Source = uri;
-
-                // Scroll to top:
-                ScrollViewer1.ScrollToVerticalOffset(0d);
-
-                // Hide the "Loading..." text:
-                LoadingMessage.Visibility = Visibility.Collapsed;
-            }));
+            // Scroll to top:
+            ScrollViewer1.ScrollToVerticalOffset(0d);
         }
 
         #region Show/hide source code
