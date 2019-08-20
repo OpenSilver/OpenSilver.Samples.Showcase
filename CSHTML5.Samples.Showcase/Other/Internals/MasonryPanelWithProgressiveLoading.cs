@@ -12,71 +12,21 @@ namespace CSHTML5.Samples.Showcase
     /// This class organizes its children in such a way that it takes the smallest space possible.
     /// It is based on the Masonry layout (see: http://jsfiddle.net/WH8tW/7/).
     /// </summary>
-    public class MasonryPanel : Panel
+    public class MasonryPanelWithProgressiveLoading : Panel
     {
         object _wall = null;
 
         /// <summary>
         /// Initializes a new instance of MasonryPanel class.
         /// </summary>
-        public MasonryPanel() : base()
+        public MasonryPanelWithProgressiveLoading() : base()
         {
             base.INTERNAL_EnableProgressiveLoading = true;
-            Loaded += MasonryPanel_Loaded;
-        }
-
-        /// <summary>
-        /// This method prepares the inner div of this class so that it uses Masonry.
-        /// </summary>
-        void MasonryPanel_Loaded(object sender, Windows.UI.Xaml.RoutedEventArgs e)
-        {
-//            object thisDiv = CSHTML5.Interop.GetDiv(this);
-//            _wall = CSHTML5.Interop.ExecuteJavaScript(@"(function() { //we make this a function so that we can get a return type
-//var thisInnerDiv = $0.children[0]; //this is the div that will contain all the children.
-////make sure the children all have an auto height to make sure masonry works properly:
-//for (var i = 0; i < thisInnerDiv.children.length; i++) { 
-//    thisInnerDiv.children[i].style.height = 'auto';
-//}
-//var wall = new Masonry(thisInnerDiv, {
-//    isFitWidth: true
-//});
-//return wall;
-//}())
-//", thisDiv);
-//UpdateMasonryPanel();
         }
 
         void UpdateMasonryPanel()
         {
             object thisDiv = CSHTML5.Interop.GetDiv(this);
-
-            //            //if (_wall == null)
-            //            //{
-            //                _wall = CSHTML5.Interop.ExecuteJavaScript(@"
-            //(function() { //we make this a function so that we can get a return type
-            //    var thisInnerDiv = $0.children[0]; //this is the div that contains all the children.
-            //    var wall = new Masonry(thisInnerDiv, {
-            //        isFitWidth: true
-            //    });
-            //    return wall;
-            //}())
-            //", thisDiv);
-            //            //}
-
-            //            CSHTML5.Interop.ExecuteJavaScript(@"
-            //(function() {
-            //    var thisInnerDiv = $0.children[0]; //this is the div that contains all the children.
-
-            //    // Make sure the children all have an auto height to make sure masonry works properly:
-            //    for (var i = 0; i < thisInnerDiv.children.length; i++) { 
-            //        thisInnerDiv.children[i].style.height = 'auto';
-            //    }
-
-            //    // Update the Masonry layout:
-            //    $1.reload()
-            //}())", thisDiv, _wall);
-
-
 
             _wall = CSHTML5.Interop.ExecuteJavaScript(@"
 (function() { //we make this a function so that we can get a return type
@@ -97,13 +47,12 @@ namespace CSHTML5.Samples.Showcase
     return wall;
 }())
 ", thisDiv);
-
         }
 
         /// <summary>
         /// This static constructor initializes the Masonry layout.
         /// </summary>
-        static MasonryPanel()
+        static MasonryPanelWithProgressiveLoading()
         {
             CSHTML5.Interop.ExecuteJavaScript(@"/**
  * Vanilla Masonry v1.0.6

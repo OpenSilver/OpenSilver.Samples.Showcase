@@ -84,6 +84,7 @@
     </Compile>
     <Compile Include="Other\Internals\ChildWindowHelper.cs" />
     <Compile Include="Other\Internals\ControlToDisplayCodeHostedOnGitHub.cs" />
+    <Compile Include="Other\Internals\MasonryPanelWithProgressiveLoading.cs" />
     <Compile Include="Samples\Client_Server\WebSockets\WebSocket.cs" />
     <Compile Include="Samples\Net_Framework\Printing\Invoice.xaml.cs">
       <DependentUpon>Invoice.xaml</DependentUpon>

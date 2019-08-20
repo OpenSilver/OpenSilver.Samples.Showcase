@@ -5,7 +5,7 @@
     xmlns:local="using:CSHTML5.Samples.Showcase">
     <StackPanel>
         <TextBlock Text=".NET Framework" Style="{StaticResource PageHeader_Style}"/>
-        <local:MasonryPanel Style="{StaticResource Panel_Style}">
+        <local:MasonryPanelWithProgressiveLoading Style="{StaticResource Panel_Style}">
             <local:DispatcherTimer_Demo HorizontalAlignment="Center"/>
             <local:File_Open_Demo HorizontalAlignment="Center"/>
             <local:File_Save_Demo HorizontalAlignment="Center"/>
@@ -24,6 +24,6 @@
             <local:RESX_Demo HorizontalAlignment="Center"/>
             <local:Clipboard_SetText_Demo HorizontalAlignment="Center"/>
             <local:Printing_Demo HorizontalAlignment="Center"/>
-        </local:MasonryPanel>
+        </local:MasonryPanelWithProgressiveLoading>
     </StackPanel>
 </UserControl>

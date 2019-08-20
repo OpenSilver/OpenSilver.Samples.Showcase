@@ -5,7 +5,7 @@
     xmlns:local="using:CSHTML5.Samples.Showcase">
     <StackPanel>
         <TextBlock Text="XAML Features" Style="{StaticResource PageHeader_Style}"/>
-        <local:MasonryPanel Style="{StaticResource Panel_Style}">
+        <local:MasonryPanelWithProgressiveLoading Style="{StaticResource Panel_Style}">
             <local:RenderTransforms_Demo HorizontalAlignment="Center"/>
             <local:Drag_And_Drop_Demo HorizontalAlignment="Center"/>
             <local:Binding1_Demo HorizontalAlignment="Center"/>
@@ -25,6 +25,6 @@
             <local:VisualTreeHelper_Demo HorizontalAlignment="Center"/>
             <local:MarkupExtensions_Demo HorizontalAlignment="Center"/>
             <local:UriMapper_Demo HorizontalAlignment="Center"/>
-        </local:MasonryPanel>
+        </local:MasonryPanelWithProgressiveLoading>
     </StackPanel>
 </UserControl>

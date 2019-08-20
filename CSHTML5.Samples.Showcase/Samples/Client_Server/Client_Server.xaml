@@ -5,13 +5,13 @@
     xmlns:local="using:CSHTML5.Samples.Showcase">
     <StackPanel>
         <TextBlock Text="Client / Server" Style="{StaticResource PageHeader_Style}"/>
-        <local:MasonryPanel Style="{StaticResource Panel_Style}">
+        <local:MasonryPanelWithProgressiveLoading Style="{StaticResource Panel_Style}">
             <local:WCF_SOAP_Demo HorizontalAlignment="Center"/>
             <local:REST_WebClient_Demo HorizontalAlignment="Center"/>
             <local:SignalR_Demo HorizontalAlignment="Center"/>
             <local:WebSockets_Demo HorizontalAlignment="Center"/>
             <local:JSONP_Demo HorizontalAlignment="Center"/>
             <local:jQueryAjax_Demo HorizontalAlignment="Center"/>
-        </local:MasonryPanel>
+        </local:MasonryPanelWithProgressiveLoading>
     </StackPanel>
 </UserControl>

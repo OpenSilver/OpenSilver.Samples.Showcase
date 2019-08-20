@@ -5,7 +5,7 @@
     xmlns:local="using:CSHTML5.Samples.Showcase">
     <StackPanel>
         <TextBlock Text="Panels &amp; Controls" Style="{StaticResource PageHeader_Style}"/>
-        <local:MasonryPanel Style="{StaticResource Panel_Style}">
+        <local:MasonryPanelWithProgressiveLoading Style="{StaticResource Panel_Style}">
             <local:Grid_Demo HorizontalAlignment="Center"/>
             <local:StackPanel_Demo HorizontalAlignment="Center"/>
             <local:DockPanel_Demo HorizontalAlignment="Center"/>
@@ -42,7 +42,7 @@
             <local:Thumb_Demo HorizontalAlignment="Center"/>
             <local:Viewbox_Demo HorizontalAlignment="Center"/>
             <local:Frame_Demo HorizontalAlignment="Center"/>
-        </local:MasonryPanel>
+        </local:MasonryPanelWithProgressiveLoading>
     </StackPanel>
     
 </UserControl>
