@@ -51,16 +51,13 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="CSHTML5.Wrappers.KendoUI.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CSHTML5.Wrappers.KendoUI.Common.1.0.0-alpha01-001\lib\net40\CSHTML5.Wrappers.KendoUI.Common.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\CSHTML5.Wrappers.KendoUI.Common.1.0.0-alpha01-004\lib\net40\CSHTML5.Wrappers.KendoUI.Common.dll</HintPath>
     </Reference>
     <Reference Include="CSHTML5.Wrappers.KendoUI.Editor, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CSHTML5.Wrappers.KendoUI.Editor.1.0.0-alpha01-001\lib\net40\CSHTML5.Wrappers.KendoUI.Editor.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\CSHTML5.Wrappers.KendoUI.Editor.1.0.0-alpha01-004\lib\net40\CSHTML5.Wrappers.KendoUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="CSHTML5.Wrappers.KendoUI.Grid, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CSHTML5.Wrappers.KendoUI.Grid.1.0.0-alpha01-001\lib\net40\CSHTML5.Wrappers.KendoUI.Grid.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\CSHTML5.Wrappers.KendoUI.Grid.1.0.0-alpha01-004\lib\net40\CSHTML5.Wrappers.KendoUI.Grid.dll</HintPath>
     </Reference>
     <Reference Include="CSHTML5.Wrappers.Syncfusion.EssentialJS1.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\CSHTML5.Wrappers.Syncfusion.EssentialJS1.Common.1.0.0-alpha01-001\lib\net40\CSHTML5.Wrappers.Syncfusion.EssentialJS1.Common.dll</HintPath>
@@ -741,11 +738,11 @@
     <None Include="Service References\ServiceReference1\Service11.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Third_Party_Resources\Syncfusion_EssentialJS1\themes\common-images\ejicons.woff" />
+    <Content Include="Third_Party_Resources\Syncfusion_EssentialJS1\themes\common-images\ejicons.woff" />
     <Content Include="Third_Party_Resources\Syncfusion_EssentialJS1\themes\common-images\spreadsheet\ejxlicons.ttf" />
     <Content Include="Third_Party_Resources\Syncfusion_EssentialJS1\themes\common-images\spreadsheet\ejxlicons.woff" />
-    <None Include="Third_Party_Resources\Telerik_KendoUI\styles\images\kendoui.ttf" />
-    <None Include="Third_Party_Resources\Telerik_KendoUI\styles\images\kendoui.woff" />
+    <Content Include="Third_Party_Resources\Telerik_KendoUI\styles\images\kendoui.ttf" />
+    <Content Include="Third_Party_Resources\Telerik_KendoUI\styles\images\kendoui.woff" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="MainPage.xaml">
