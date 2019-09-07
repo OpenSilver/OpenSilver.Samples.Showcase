@@ -13,8 +13,8 @@ namespace CSHTML5.Samples.Showcase.Samples.Third_Party.Syncfusion_EssentialJS1.R
             InitializeComponent();
 
             //Note: Below is an example of setting the location for the required scripts and css for the Syncfusion EssentialJS1 RichTextEditor control. See the tutorial at http://cshtml5.com for more information.
-            //ej_rte.ej.RTE.Configuration.LocationOfEjRTEJS = "ms-appx:///CSHTML5.Samples.Showcase/Third_Party_Resources/Syncfusion_EssentialJS1/scripts/ej.rte.min.js";
-            //ej_rte.ej.RTE.Configuration.LocationOfEjWebAllCss = "ms-appx:///CSHTML5.Samples.Showcase/Third_Party_Resources/Syncfusion_EssentialJS1/themes/default-theme/ej.web.all.min.css";
+            ej_rte.ej.RTE.Configuration.LocationOfEjRTEJS = "ms-appx:///CSHTML5.Samples.Showcase/Third_Party_Resources/Syncfusion_EssentialJS1/scripts/ej.rte.min.js";
+            ej_rte.ej.RTE.Configuration.LocationOfEjWebAllCss = "ms-appx:///CSHTML5.Samples.Showcase/Third_Party_Resources/Syncfusion_EssentialJS1/themes/default-theme/ej.web.all.min.css";
 
             Loaded += RichTextEditor_Demo_Loaded;
         }

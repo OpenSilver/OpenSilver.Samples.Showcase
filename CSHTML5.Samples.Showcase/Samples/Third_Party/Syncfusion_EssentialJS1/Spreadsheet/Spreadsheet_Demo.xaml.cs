@@ -13,8 +13,8 @@ namespace CSHTML5.Samples.Showcase.Samples.Third_Party.Syncfusion_EssentialJS1.S
             InitializeComponent();
 
             //Note: Below is an example of setting the location for the required scripts and css for the Syncfusion EssentialJS1 Spreadsheet control. See the tutorial at http://cshtml5.com for more information.
-            //ej_spreadsheet.ej.Spreadsheet.Configuration.LocationOfEjSpreadsheetJS = "ms-appx:///CSHTML5.Samples.Showcase/Third_Party_Resources/Syncfusion_EssentialJS1/scripts/ej.spreadsheet.min.js";
-            //ej_spreadsheet.ej.Spreadsheet.Configuration.LocationOfEjWebAllCss = "ms-appx:///CSHTML5.Samples.Showcase/Third_Party_Resources/Syncfusion_EssentialJS1/themes/default-theme/ej.web.all.min.css";
+            ej_spreadsheet.ej.Spreadsheet.Configuration.LocationOfEjSpreadsheetJS = "ms-appx:///CSHTML5.Samples.Showcase/Third_Party_Resources/Syncfusion_EssentialJS1/scripts/ej.spreadsheet.min.js";
+            ej_spreadsheet.ej.Spreadsheet.Configuration.LocationOfEjWebAllCss = "ms-appx:///CSHTML5.Samples.Showcase/Third_Party_Resources/Syncfusion_EssentialJS1/themes/default-theme/ej.web.all.min.css";
 
             Loaded += Spreadsheet_Demo_Loaded;
         }
