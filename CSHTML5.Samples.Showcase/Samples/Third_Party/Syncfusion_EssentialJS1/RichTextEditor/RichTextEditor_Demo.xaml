@@ -6,26 +6,26 @@
     xmlns:ej="clr-namespace:ej_rte.ej;assembly=CSHTML5.Wrappers.Syncfusion.EssentialJS1.RichTextEditor">
     <StackPanel>
         <TextBlock Text="Syncfusion Essential JS 1" Style="{StaticResource PageHeader_Style}"/>
-        <local:MasonryPanel Style="{StaticResource Panel_Style}">
-            <ContentControl Style="{StaticResource Card_Style}" Width="500">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
-                    <ContentControl Content="RichTextEditor" Foreground="#FF296293" Background="#FFC8929A" Style="{StaticResource HeaderControl_Style}"/>
-                    <StackPanel Orientation="Vertical" Grid.Row="1">
-                        <TextBlock x:Name="LoadingPleaseWaitMessage" Text="Loading Syncfusion Essential JS 1 library, please wait..." Foreground="#FF296293" FontSize="18" TextWrapping="Wrap" Margin="16,0,0,10" Visibility="Collapsed"/>
-                        <ej:RTE x:Name="RTE" Width="450" Margin="0 0 0 20"/>
-                        <TextBlock Text="The Essential JavaScript RichTextEditor control can be found at:" Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left" Margin="0,4,0,0"/>
-                        <HyperlinkButton Foreground="#FF296293" Margin="0,10,0,20" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" NavigateUri="https://github.com/cshtml5/CSHTML5.Extensions.Syncfusion.EssentialJS1.RichTextEditor">
-                            <TextBlock Cursor="Hand" TextWrapping="Wrap" Text="https://github.com/cshtml5/CSHTML5.Extensions.Syncfusion.EssentialJS1.RichTextEditor"/>
-                        </HyperlinkButton>
-                    </StackPanel>
-                    <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FF296293" Style="{StaticResource ButtonViewSource_Style}"/>
-                </Grid>
-            </ContentControl>
-        </local:MasonryPanel>
+        <ContentControl Style="{StaticResource Card_Style}" Width="800">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <ContentControl Content="RichTextEditor" Foreground="#FF296293" Background="#FFC8929A" Style="{StaticResource HeaderControl_Style}"/>
+                <StackPanel Orientation="Vertical" Grid.Row="1">
+                    <TextBlock Text="This is a wrapper around the JavaScript-based Syncfusion Essential JS 1 library. The wrapper lets you use the JavaScript-based library as if it was a C#/XAML-based library." Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left" Margin="0,4,0,0"/>
+                    <TextBlock Text="NOTE: you will need a license for 'Essential JS 1' from Syncfusion in order to use this feature in your project." Foreground="#FF222222" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left" Margin="0,4,0,0"/>
+                    <TextBlock x:Name="LoadingPleaseWaitMessage" Text="Loading Syncfusion Essential JS 1 library, please wait..." Foreground="#FF296293" FontSize="18" TextWrapping="Wrap" Margin="16,20,0,10" Visibility="Collapsed"/>
+                    <ej:RTE x:Name="RTE" Width="450" Margin="0 40 0 20"/>
+                    <TextBlock Text="The Essential JavaScript RichTextEditor control can be found at:" Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left" Margin="0,4,0,0"/>
+                    <HyperlinkButton Foreground="#FF296293" Margin="0,10,0,20" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" NavigateUri="https://github.com/cshtml5/CSHTML5.Wrappers.Syncfusion.EssentialJS1">
+                        <TextBlock Cursor="Hand" TextWrapping="Wrap" Text="https://github.com/cshtml5/CSHTML5.Wrappers.Syncfusion.EssentialJS1"/>
+                    </HyperlinkButton>
+                </StackPanel>
+                <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FF296293" Style="{StaticResource ButtonViewSource_Style}"/>
+            </Grid>
+        </ContentControl>
     </StackPanel>
 </Page>
