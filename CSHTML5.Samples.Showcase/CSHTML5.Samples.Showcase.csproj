@@ -113,6 +113,12 @@
     <Compile Include="Samples\Third_Party\Telerik_KendoUI\Grid\Grid_Demo.xaml.cs">
       <DependentUpon>Grid_Demo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Samples\XAML_Controls\Slider\Slider_Demo.xaml.cs">
+      <DependentUpon>Slider_Demo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\XAML_Controls\Slider\Slider_Demo_More.xaml.cs">
+      <DependentUpon>Slider_Demo_More.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Samples\XAML_Features\Binding2\KilometersToMilesConverter.cs" />
     <Compile Include="Other\Internals\MasonryPanel.cs" />
     <Compile Include="Other\Planet.cs" />
@@ -1027,6 +1033,14 @@
     <Content Include="Samples\Third_Party\Syncfusion_EssentialJS1\RichTextEditor\RichTextEditor_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Samples\XAML_Controls\Slider\Slider_Demo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Content>
+    <Content Include="Samples\XAML_Controls\Slider\Slider_Demo_More.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Content>
     <Page Include="Samples\XAML_Features\Validation\Validation_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>

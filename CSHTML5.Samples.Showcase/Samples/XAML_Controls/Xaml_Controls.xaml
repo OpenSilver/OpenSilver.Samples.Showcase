@@ -25,6 +25,7 @@
             <local:RepeatButton_Demo HorizontalAlignment="Center"/>
             <local:GridSplitter_Demo HorizontalAlignment="Center"/>
             <local:ListBox_Demo HorizontalAlignment="Center"/>
+            <local:Slider_Demo HorizontalAlignment="Center"/>
             <local:TabControl_Demo HorizontalAlignment="Center"/>
             <local:ChildWindow_Demo HorizontalAlignment="Center"/>
             <local:ContextMenu_MenuItem_Demo HorizontalAlignment="Center"/>
