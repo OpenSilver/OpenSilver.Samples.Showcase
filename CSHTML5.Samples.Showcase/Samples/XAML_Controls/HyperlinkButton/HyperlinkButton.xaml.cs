@@ -26,13 +26,13 @@ namespace CSHTML5.Samples.Showcase
             {
                 new ViewSourceButtonInfo()
                 {
-                    TabHeader = "HyperlinkButton_Demo.xaml",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Controls/HyperlinkButton/HyperlinkButton_Demo.xaml"
+                    TabHeader = "HyperlinkButton.xaml",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Controls/HyperlinkButton/HyperlinkButton.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
-                    TabHeader = "HyperlinkButton_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Controls/HyperlinkButton/HyperlinkButton_Demo.xaml.cs"
+                    TabHeader = "HyperlinkButton.xaml.cs",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Controls/HyperlinkButton/HyperlinkButton.xaml.cs"
                 }
             });
         }
