@@ -32,7 +32,7 @@ namespace CSHTML5.Extensions.Plotly
 
             Interop.ExecuteJavaScript("$0['width'] = $1;",
                 jsLine,
-                this.Width);
+                InteropHelper.Unbox(this.Width));
 
             return jsLine;
         }

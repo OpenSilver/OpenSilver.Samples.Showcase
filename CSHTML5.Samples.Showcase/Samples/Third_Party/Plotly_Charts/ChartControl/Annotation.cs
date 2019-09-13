@@ -33,14 +33,14 @@ namespace CSHTML5.Extensions.Plotly
             {
                 Interop.ExecuteJavaScript("$0['x'] = $1;",
                     jsAnnotation,
-                    this.X);
+                    InteropHelper.Unbox(this.X));
             }
 
             if (this.Y != null)
             {
                 Interop.ExecuteJavaScript("$0['y'] = $1;",
                     jsAnnotation,
-                    this.Y);
+                    InteropHelper.Unbox(this.Y));
             }
 
             if (!string.IsNullOrEmpty(this.Text))
@@ -66,7 +66,7 @@ namespace CSHTML5.Extensions.Plotly
 
             Interop.ExecuteJavaScript("$0['showarrow'] = $1;",
                 jsAnnotation,
-                this.ShowArrow);
+                InteropHelper.Unbox(this.ShowArrow));
 
             if (this.Font != null)
             {

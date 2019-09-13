@@ -38,15 +38,15 @@ namespace CSHTML5.Extensions.Plotly
 
             Interop.ExecuteJavaScript("$0['tickangle'] = $1;",
                 jsAxis,
-                this.Tickangle);
+                InteropHelper.Unbox(this.Tickangle));
 
             Interop.ExecuteJavaScript("$0['zeroline'] = $1;",
                 jsAxis,
-                this.ZeroLine);
+                InteropHelper.Unbox(this.ZeroLine));
 
             Interop.ExecuteJavaScript("$0['grigwidth'] = $1;",
                 jsAxis,
-                this.GrigWidth);
+                InteropHelper.Unbox(this.GrigWidth));
 
             if (this.TickFont != null)
             {

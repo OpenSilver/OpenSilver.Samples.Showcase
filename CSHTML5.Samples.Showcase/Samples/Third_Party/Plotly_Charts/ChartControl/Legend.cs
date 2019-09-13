@@ -29,10 +29,10 @@ namespace CSHTML5.Extensions.Plotly
 
             Interop.ExecuteJavaScript("$0['x'] = $1;",
                 jsLegend,
-                this.X);
+                InteropHelper.Unbox(this.X));
             Interop.ExecuteJavaScript("$0['y'] = $1;",
                 jsLegend,
-                this.Y);
+                InteropHelper.Unbox(this.Y));
 
             if (!string.IsNullOrEmpty(this.BgColor))
             {

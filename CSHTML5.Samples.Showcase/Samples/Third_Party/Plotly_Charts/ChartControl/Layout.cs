@@ -29,7 +29,7 @@ namespace CSHTML5.Extensions.Plotly
 
         public Font Font { get; set; }
 
-        public double BarGap { get; set; }
+        public double BarGap { get; set; } //Not used?
 
         public Legend Legend { get; set; }
 
@@ -95,7 +95,7 @@ namespace CSHTML5.Extensions.Plotly
 
             Interop.ExecuteJavaScript("$0['showlegend'] = $1;",
                 jsLayout,
-                this.ShowLegend);
+                InteropHelper.Unbox(this.ShowLegend));
 
             if (this.Legend != null)
             {
@@ -106,7 +106,7 @@ namespace CSHTML5.Extensions.Plotly
 
             Interop.ExecuteJavaScript("$0['bargroupgap'] = $1;",
                 jsLayout,
-                this.BarGroupGap);
+                InteropHelper.Unbox(this.BarGroupGap));
 
             if (!string.IsNullOrEmpty(this.PaperBgColor))
             {
@@ -124,10 +124,10 @@ namespace CSHTML5.Extensions.Plotly
 
             Interop.ExecuteJavaScript("$0['width'] = $1",
                 jsLayout,
-                this.Width);
+                InteropHelper.Unbox(this.Width));
             Interop.ExecuteJavaScript("$0['height'] = $1",
                 jsLayout,
-                this.Height);
+                InteropHelper.Unbox(this.Height));
 
             return jsLayout;
         }

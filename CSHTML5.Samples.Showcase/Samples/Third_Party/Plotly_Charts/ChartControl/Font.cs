@@ -35,7 +35,7 @@ namespace CSHTML5.Extensions.Plotly
 
             Interop.ExecuteJavaScript("$0['size'] = $1;",
                 jsFont,
-                this.Size);
+                InteropHelper.Unbox(this.Size));
 
             if (!string.IsNullOrEmpty(this.Color))
             {

@@ -24,7 +24,7 @@ namespace CSHTML5.Extensions.Plotly
                 {
                     Interop.ExecuteJavaScript("$0.push($1);",
                         jsX,
-                        d);
+                        InteropHelper.Unbox(d));
                 }
                 Interop.ExecuteJavaScript("$0['x'] = $1;",
                     jsDomain,
@@ -39,7 +39,7 @@ namespace CSHTML5.Extensions.Plotly
                 {
                     Interop.ExecuteJavaScript("$0.push($1);",
                         jsY,
-                        d);
+                        InteropHelper.Unbox(d));
                 }
                 Interop.ExecuteJavaScript("$0['y'] = $1;",
                     jsDomain,

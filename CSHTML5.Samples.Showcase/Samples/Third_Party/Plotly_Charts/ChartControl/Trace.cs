@@ -48,13 +48,13 @@ namespace CSHTML5.Extensions.Plotly
             var jsX = Interop.ExecuteJavaScript("[]");
             foreach (var xPoint in this.X)
             {
-                Interop.ExecuteJavaScript("$0.push($1)", jsX, xPoint);
+                Interop.ExecuteJavaScript("$0.push($1)", jsX, InteropHelper.Unbox(xPoint));
             }
 
             var jsY = Interop.ExecuteJavaScript("[]");
             foreach (var yPoint in this.Y)
             {
-                Interop.ExecuteJavaScript("$0.push($1)", jsY, yPoint);
+                Interop.ExecuteJavaScript("$0.push($1)", jsY, InteropHelper.Unbox(yPoint));
             }
 
             var jsText = Interop.ExecuteJavaScript("[]");
@@ -108,7 +108,7 @@ namespace CSHTML5.Extensions.Plotly
 
                 foreach (object Val in this.Values)
                 {
-                    Interop.ExecuteJavaScript("$0.push($1);", jsValues, Val);
+                    Interop.ExecuteJavaScript("$0.push($1);", jsValues, InteropHelper.Unbox(Val));
                 }
 
                 Interop.ExecuteJavaScript("$0['values'] = $1;",
@@ -155,7 +155,7 @@ namespace CSHTML5.Extensions.Plotly
 
             Interop.ExecuteJavaScript("$0['hole'] = $1;",
                 jsTrace,
-                this.Hole);
+                InteropHelper.Unbox(this.Hole));
 
             if (!string.IsNullOrEmpty(this.TextPosition))
             {

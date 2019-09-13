@@ -30,7 +30,7 @@ namespace CSHTML5.Extensions.Plotly
                       $0['size'] = $1;
                 ",
                  jsMarker,
-                 this.Size);
+                 InteropHelper.Unbox(this.Size));
 
             if (this.Color is string && !string.IsNullOrEmpty((string)this.Color))
             {
@@ -52,7 +52,7 @@ namespace CSHTML5.Extensions.Plotly
 
             Interop.ExecuteJavaScript("$0['opacity'] = $1;",
                 jsMarker,
-                this.Opacity);
+                InteropHelper.Unbox(this.Opacity));
 
             if (this.Line != null)
             {

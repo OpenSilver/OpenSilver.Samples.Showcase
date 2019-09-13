@@ -93,6 +93,7 @@
     <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Data.cs" />
     <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Domain.cs" />
     <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Font.cs" />
+    <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\InteropHelper.cs" />
     <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Layout.cs" />
     <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Legend.cs" />
     <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Line.cs" />
