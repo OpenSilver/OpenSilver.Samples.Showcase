@@ -22,6 +22,7 @@
             <local:Commanding_Demo HorizontalAlignment="Center"/>
             <local:XAML_Resource_Dictionary_Demo HorizontalAlignment="Center"/>
             <local:DependencyProperties_Demo HorizontalAlignment="Center"/>
+            <local:AttachedProperties_Demo HorizontalAlignment="Center"/>
             <local:VisualTreeHelper_Demo HorizontalAlignment="Center"/>
             <local:MarkupExtensions_Demo HorizontalAlignment="Center"/>
             <local:UriMapper_Demo HorizontalAlignment="Center"/>

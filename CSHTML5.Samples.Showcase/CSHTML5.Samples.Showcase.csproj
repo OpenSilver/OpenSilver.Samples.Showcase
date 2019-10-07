@@ -83,6 +83,10 @@
     <Compile Include="Other\Internals\ControlToDisplayCodeHostedOnGitHub.cs" />
     <Compile Include="Other\Internals\MasonryPanelWithProgressiveLoading.cs" />
     <Compile Include="Samples\Client_Server\WebSockets\WebSocket.cs" />
+    <Compile Include="Samples\Interop_Samples\MethodToUpdateDom\MethodToUpdateDom_Demo.xaml.cs">
+      <DependentUpon>MethodToUpdateDom_Demo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\Interop_Samples\MethodToUpdateDom\AttachedPropertiesWithMethodToUpdateDom.cs" />
     <Compile Include="Samples\Net_Framework\Printing\Invoice.xaml.cs">
       <DependentUpon>Invoice.xaml</DependentUpon>
     </Compile>
@@ -120,6 +124,7 @@
     <Compile Include="Samples\XAML_Controls\Slider\Slider_Demo_More.xaml.cs">
       <DependentUpon>Slider_Demo_More.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Samples\XAML_Features\AttachedProperties\SampleAttachedProperties.cs" />
     <Compile Include="Samples\XAML_Features\Binding2\KilometersToMilesConverter.cs" />
     <Compile Include="Other\Internals\MasonryPanel.cs" />
     <Compile Include="Other\Planet.cs" />
@@ -307,6 +312,9 @@
     </Compile>
     <Compile Include="Samples\Net_Framework\RESX\RESX_Demo_More.xaml.cs">
       <DependentUpon>RESX_Demo_More.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\XAML_Features\AttachedProperties\AttachedProperties_Demo.xaml.cs">
+      <DependentUpon>AttachedProperties_Demo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\XAML_Features\Validation\Person.cs" />
     <Compile Include="Samples\XAML_Features\Validation\Validation_Demo.xaml.cs">
@@ -813,6 +821,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Content>
+    <Page Include="Samples\Interop_Samples\MethodToUpdateDom\MethodToUpdateDom_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Samples\Third_Party\Plotly_Charts\Plotly_Charts_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1021,6 +1033,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Content>
+    <Page Include="Samples\XAML_Features\AttachedProperties\AttachedProperties_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Samples\XAML_Features\Validation\Validation_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

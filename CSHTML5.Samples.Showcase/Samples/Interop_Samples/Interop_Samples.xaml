@@ -10,6 +10,7 @@
             <local:Interop_HtmlPresenter_Demo HorizontalAlignment="Center"/>
             <local:WebView_Demo HorizontalAlignment="Center"/>
             <local:GetDiv_Demo HorizontalAlignment="Center"/>
+            <local:MethodToUpdateDom_Demo HorizontalAlignment="Center"/>
         </local:MasonryPanelWithProgressiveLoading>
     </StackPanel>
 </UserControl>
