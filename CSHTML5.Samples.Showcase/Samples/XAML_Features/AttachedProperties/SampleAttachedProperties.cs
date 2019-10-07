@@ -26,7 +26,7 @@ namespace CSHTML5.Samples.Showcase
                 ownerType: typeof(SampleAttachedProperties),
                 typeMetadata: new PropertyMetadata(defaultValue: null)
                 {
-                    MethodToUpdateDom = AriaLabel_UpdateDom
+                    MethodToUpdateDom = AriaLabel_MethodToUpdateDom
                 });
 
         /// <summary>
@@ -34,7 +34,7 @@ namespace CSHTML5.Samples.Showcase
         /// </summary>
         /// <param name="d">The dependency object to which the property is attached</param>
         /// <param name="newValue">The new value of the attached property</param>
-        public static void AriaLabel_UpdateDom(DependencyObject d, object newValue)
+        public static void AriaLabel_MethodToUpdateDom(DependencyObject d, object newValue)
         {
             if (d is FrameworkElement)
             {
