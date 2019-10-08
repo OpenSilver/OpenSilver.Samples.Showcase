@@ -1,0 +1,113 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Styles_Kit_Showcase.MaterialDesign_Styles_Kit">
+
+    <!--<ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="MaterialDesign_Styles_Kit/MaterialDesign_CommonResources.xaml"/>
+    </ResourceDictionary.MergedDictionaries>-->
+    <!--Requires MaterialDesign_CommonResources-->
+
+    <!--TabControl-->
+    <Style x:Key="MaterialDesign_TabControl_Style" TargetType="TabControl">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TabControl">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="Disabled"/>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Grid x:Name="TemplateTop" Visibility="Collapsed">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TabPanel x:Name="TabPanelTop"/>
+                            <Border BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    Background="{TemplateBinding Background}"
+                                    MinWidth="10"
+                                    MinHeight="10"
+                                    Grid.Row="1">
+                                <ContentPresenter x:Name="ContentTop"
+                                                  Cursor="{TemplateBinding Cursor}"
+                                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                  Margin="{TemplateBinding Padding}"
+                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            </Border>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--TabItem-->
+    <Style x:Key="MaterialDesign_TabItem_Style" TargetType="TabItem">
+        <Setter Property="Background" Value="#FFF9F9F9"/>
+        <Setter Property="Foreground" Value="{StaticResource MaterialDesign_DefaultAccentColor}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Padding" Value="14,4,14,0"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+        <Setter Property="MinWidth" Value="5"/>
+        <Setter Property="MinHeight" Value="5"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TabItem">
+                    <Grid x:Name="Root">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="MouseOver"/>
+                                <VisualState x:Name="Disabled"/>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="SelectionStates">
+                                <VisualState x:Name="Unselected"/>
+                                <VisualState x:Name="Selected"/>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="TemplateTopSelected" Visibility="Collapsed">
+                            <Grid
+                                  HorizontalAlignment="Stretch">
+                                <Border Background="{TemplateBinding Foreground}" Height="5" VerticalAlignment="Bottom" HorizontalAlignment="Stretch"/>
+                                <Border HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                        Margin="{TemplateBinding Padding}">
+                                    <ContentControl x:Name="HeaderTopSelected"
+                                                Margin="0,0,0,14"
+                                                Foreground="{TemplateBinding Foreground}"
+                                                FontSize="{TemplateBinding FontSize}"
+                                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                </Border>
+                            </Grid>
+                        </Border>
+                        <Border x:Name="TemplateTopUnselected" Visibility="Collapsed" Background="Transparent">
+                            <Grid Margin="{TemplateBinding Padding}">
+                                <Border Background="Transparent" Height="5" VerticalAlignment="Bottom"/>
+                                <ContentControl x:Name="HeaderTopUnselected"
+                                                Opacity="0.3"
+                                                Margin="0,0,0,14"
+                                                Foreground="Black"
+                                                FontSize="{TemplateBinding FontSize}"
+                                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

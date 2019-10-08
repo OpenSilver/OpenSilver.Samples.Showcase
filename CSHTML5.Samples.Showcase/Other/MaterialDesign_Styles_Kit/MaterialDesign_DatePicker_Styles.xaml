@@ -1,0 +1,50 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Styles_Kit_Showcase.MaterialDesign_Styles_Kit">
+
+    <!--<ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="MaterialDesign_Styles_Kit/MaterialDesign_CommonResources.xaml"/>
+        <ResourceDictionary Source="MaterialDesign_Styles_Kit/MaterialDesign_TextBox_Styles.xaml"/>
+    </ResourceDictionary.MergedDictionaries>-->
+    <!--Requires MaterialDesign_CommonResources-->
+    <!--Requires MaterialDesign_TextBox_Styles-->
+
+    <!--DatePicker-->
+    <Style x:Key="MaterialDesign_DatePicker_Style" TargetType="DatePicker">
+        <Setter Property="BorderBrush" Value="Gray"/>
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Foreground" Value="{StaticResource MaterialDesign_DefaultAccentColor}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="DatePicker">
+                    <Grid x:Name="Root" Background="{TemplateBinding Background}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox x:Name="TextBox"
+                                 Grid.Column="0"
+                                 Style="{StaticResource MaterialDesign_TextBox_Style}"
+                                 Background="White"
+                                 BorderThickness="0" />
+                        <Button x:Name="Button"
+                                Grid.Column="1"
+                                Width="30"
+                                Foreground="{TemplateBinding Foreground}"
+                                Background="{TemplateBinding Background}"
+                                BorderThickness="0">
+                            <Path Data="M 0,1 L7,1 7,0 8,0 7,1 12,1 12,0 13,0 13,1 20,1 20,19 19,20 1,20 0,19 0,1 M 1,5 19,5 19,19 1,19 1,5 M 4,8 L 16,8 M 4,11 L 16,11 M 4,14 L 16,14"
+                                  Fill="{TemplateBinding Foreground}"
+                                  Stroke="{TemplateBinding Foreground}"
+                                  Width="20"
+                                  Height="20"/>
+                        </Button>
+                        <Popup x:Name="Popup" VerticalAlignment="Bottom"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -82,11 +82,20 @@
     <Compile Include="Other\Internals\ChildWindowHelper.cs" />
     <Compile Include="Other\Internals\ControlToDisplayCodeHostedOnGitHub.cs" />
     <Compile Include="Other\Internals\MasonryPanelWithProgressiveLoading.cs" />
+    <Compile Include="Other\MaterialDesign_Styles_Kit\AccentColorConverter.cs" />
+    <Compile Include="Other\MaterialDesign_Styles_Kit\DoubleToCornerRadiusConverter.cs" />
+    <Compile Include="Other\MaterialDesign_Styles_Kit\TextToPlaceholderTextVisibilityConverter.cs" />
     <Compile Include="Samples\Client_Server\WebSockets\WebSocket.cs" />
     <Compile Include="Samples\Interop_Samples\MethodToUpdateDom\MethodToUpdateDom_Demo.xaml.cs">
       <DependentUpon>MethodToUpdateDom_Demo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\Interop_Samples\MethodToUpdateDom\AttachedPropertiesWithMethodToUpdateDom.cs" />
+    <Compile Include="Samples\Material_Design\SampleMaterialChildWindow.xaml.cs">
+      <DependentUpon>SampleMaterialChildWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\Material_Design\Material_Design.xaml.cs">
+      <DependentUpon>Material_Design.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Samples\Net_Framework\Printing\Invoice.xaml.cs">
       <DependentUpon>Invoice.xaml</DependentUpon>
     </Compile>
@@ -761,6 +770,66 @@
     <Folder Include="Third_Party_Resources\" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_Button_Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_Card_Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_CheckBox_Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_ChildWindow_Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_ComboBox_Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_CommonResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_ContextMenu_Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_DataGrid_Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_DatePicker_Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_Expander_Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_PasswordBox_Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_Popup_Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_RadioButton_Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_TabControl_Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_TextBox_Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Other\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -822,6 +891,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Content>
     <Page Include="Samples\Interop_Samples\MethodToUpdateDom\MethodToUpdateDom_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\Material_Design\SampleMaterialChildWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\Material_Design\Material_Design.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

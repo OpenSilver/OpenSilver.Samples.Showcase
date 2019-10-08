@@ -62,6 +62,11 @@ namespace CSHTML5.Samples.Showcase
             NavigateToPage("/Performance");
         }
 
+        void ButtonMaterialDesign_Click(object sender, RoutedEventArgs e)
+        {
+            NavigateToPage("/Material_Design");
+        }
+
         void ButtonPlotlyCharts_Click(object sender, RoutedEventArgs e)
         {
             NavigateToPage("/Third_Party/Plotly_Charts/Plotly_Charts_Demo");

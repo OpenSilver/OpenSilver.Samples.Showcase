@@ -1,0 +1,22 @@
+﻿<ChildWindow x:Class="CSHTML5.Samples.Showcase.SampleMaterialChildWindow"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           Width="400"
+           Title="The ChildWindow"
+           Style="{StaticResource MaterialDesign_ChildWindow_Style}" 
+           xmlns:local="using:CSHTML5.Samples.Showcase">
+    <StackPanel Orientation="Vertical">
+        <ContentControl Style="{StaticResource MaterialDesign_CardBody_Style}">
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Data to Export"/>
+                <ComboBox Style="{StaticResource MaterialDesign_ComboBox_Style}" UseNativeComboBox="False" ItemsSource="{Binding}" Width="150" Height="30" Margin="0,5,5,5"/>
+            </StackPanel>
+        </ContentControl>
+        <ContentControl Style="{StaticResource MaterialDesign_CardFooter_Style}">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                <Button Style="{StaticResource MaterialDesign_ColoredButton_Style}" Content="Add these questions" Margin="5,0,20,0" FontWeight="Normal" Click="ButtonOK_Click"/>
+                <Button Style="{StaticResource MaterialDesign_Button_Style}" Content="Cancel" FontWeight="Normal" Click="ButtonCancel_Click"/>
+            </StackPanel>
+        </ContentControl>
+    </StackPanel>
+</ChildWindow>
