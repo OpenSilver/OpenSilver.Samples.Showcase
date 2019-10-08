@@ -22,7 +22,7 @@
                     <Border.Effect>
                         <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="10" Opacity="0.3" />
                     </Border.Effect>
-                    <!--<WebView x:Name="WebView1" HorizontalAlignment="Center"/>-->
+                    <WebView x:Name="WebView1" HorizontalAlignment="Center"/>
                 </Border>
             </StackPanel>
             <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FF69C8FF" Style="{StaticResource ButtonViewSource_Style}"/>
