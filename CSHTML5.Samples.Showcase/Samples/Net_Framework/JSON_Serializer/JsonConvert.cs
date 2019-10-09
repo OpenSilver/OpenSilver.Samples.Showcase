@@ -330,7 +330,6 @@ namespace Newtonsoft.Json
 
                     // Create a temporary List<T> in order to add items to it. Later we will convert it to the final type if needed.
 #if BRIDGE
-
                     var typeOfList = typeof(List<>);
                     var list = Activator.CreateInstance(typeOfList.MakeGenericType(new Type[] { itemsType }));
                     //var list = Activator.CreateInstance(typeof(List<>).MakeGenericType(new Type[] { itemsType })); //Note: For some reason, this doesn't work in a single line in the Simulator for the Bridge Version (V2) so we have to do as above.
@@ -700,10 +699,6 @@ namespace Newtonsoft.Json
         {
             get
             {
-                //Note for commit: base[key] called this same method instead of calling this[string key] from the Dictionary<string, object> class.
-                //      I am assuming that Bridge did not consider this method as the implementation of this[string key] from IJsonType but as
-                //      a method that hid the "this[string key]" from Dictionary<,> (because of the "new" ?).
-                //      I could not reproduce this issue in a separate project so this is just an assumption.
                 var obj = base[key];
                 if (obj is JsonObject || obj is JsonArray || obj is JsonValue)
                     return obj as IJsonType;
