@@ -696,10 +696,14 @@ namespace Newtonsoft.Json
 
     public class JsonObject : Dictionary<string, object>, IJsonType
     {
-        public new IJsonType this[string key]
+        IJsonType IJsonType.this[string key]
         {
             get
             {
+                //Note for commit: base[key] called this same method instead of calling this[string key] from the Dictionary<string, object> class.
+                //      I am assuming that Bridge did not consider this method as the implementation of this[string key] from IJsonType but as
+                //      a method that hid the "this[string key]" from Dictionary<,> (because of the "new" ?).
+                //      I could not reproduce this issue in a separate project so this is just an assumption.
                 var obj = base[key];
                 if (obj is JsonObject || obj is JsonArray || obj is JsonValue)
                     return obj as IJsonType;
