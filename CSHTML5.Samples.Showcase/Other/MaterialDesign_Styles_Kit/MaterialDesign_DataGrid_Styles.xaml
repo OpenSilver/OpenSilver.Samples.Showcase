@@ -30,7 +30,7 @@
         <Setter Property="Foreground" Value="Black"/>
         <Setter Property="FontSize" Value="12"/>
         <Setter Property="AutoGenerateColumns" Value="False"/>
-        <Setter Property="UnselectedItemAlternateBackground" Value="White"/>
+        <Setter Property="AlternatingRowBackground" Value="White"/>
         <Setter Property="HorizontalGridLinesBrush" Value="LightGray"/>
         <Setter Property="VerticalCellPadding" Value="1"/>
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
