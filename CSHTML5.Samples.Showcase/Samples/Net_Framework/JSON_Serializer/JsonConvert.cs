@@ -85,7 +85,7 @@ namespace Newtonsoft.Json
 #if BRIDGE
             else if (cSharpObject != null && cSharpObject.GetType().IsValueType)
             {
-                return Interop.ExecuteJavaScript("$0.v", cSharpObject);
+                return Interop.ExecuteJavaScript("$0", Interop.Unbox(cSharpObject)); //todo: merge this and the "if (cShrapObject is string)" above.
             } 
 #endif
             else if (cSharpObject is IEnumerable && !(cSharpObject is string))
@@ -330,8 +330,10 @@ namespace Newtonsoft.Json
 
                     // Create a temporary List<T> in order to add items to it. Later we will convert it to the final type if needed.
 #if BRIDGE
-                    
-                    var list = Activator.CreateInstance(typeof(List<>).MakeGenericType(new Type[] { itemsType }));
+
+                    var typeOfList = typeof(List<>);
+                    var list = Activator.CreateInstance(typeOfList.MakeGenericType(new Type[] { itemsType }));
+                    //var list = Activator.CreateInstance(typeof(List<>).MakeGenericType(new Type[] { itemsType })); //Note: For some reason, this doesn't work in a single line in the Simulator for the Bridge Version (V2) so we have to do as above.
 #else
                     var list = typeof(JsonConvert)
                         .GetMethod("CreateNewInstanceOfGenericList", BindingFlags.NonPublic | BindingFlags.Static)
