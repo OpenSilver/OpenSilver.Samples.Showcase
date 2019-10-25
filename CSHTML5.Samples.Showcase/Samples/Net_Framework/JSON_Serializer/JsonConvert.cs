@@ -85,7 +85,7 @@ namespace Newtonsoft.Json
 #if BRIDGE
             else if (cSharpObject != null && cSharpObject.GetType().IsValueType)
             {
-                return Interop.ExecuteJavaScript("$0", Interop.Unbox(cSharpObject)); //todo: merge this and the "if (cShrapObject is string)" above.
+                return Interop.ExecuteJavaScript("$0", InteropHelper.Unbox(cSharpObject)); //todo: merge this and the "if (cShrapObject is string)" above.
             } 
 #endif
             else if (cSharpObject is IEnumerable && !(cSharpObject is string))

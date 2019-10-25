@@ -96,6 +96,7 @@
     <Compile Include="Samples\Material_Design\Material_Design.xaml.cs">
       <DependentUpon>Material_Design.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Samples\Net_Framework\JSON_Serializer\InteropHelper.cs" />
     <Compile Include="Samples\Net_Framework\Printing\Invoice.xaml.cs">
       <DependentUpon>Invoice.xaml</DependentUpon>
     </Compile>
