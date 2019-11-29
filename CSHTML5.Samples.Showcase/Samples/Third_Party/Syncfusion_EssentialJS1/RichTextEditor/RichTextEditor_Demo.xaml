@@ -6,7 +6,7 @@
     xmlns:ej="clr-namespace:ej_rte.ej;assembly=CSHTML5.Wrappers.Syncfusion.EssentialJS1.RichTextEditor">
     <StackPanel>
         <TextBlock Text="Syncfusion Essential JS 1" Style="{StaticResource PageHeader_Style}"/>
-        <ContentControl Style="{StaticResource Card_Style}" Width="800">
+        <ContentControl Style="{StaticResource Card_Style}" Width="800" HorizontalAlignment="Left">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
