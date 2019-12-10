@@ -34,7 +34,14 @@
                         <Button Content="Client / Server" Click="ButtonClientServer_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="16" Margin="0,3,0,0" Padding="20,3,3,3"/>
                         <Button Content="Interop" Click="ButtonInterop_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="16" Margin="0,3,0,0" Padding="20,3,3,3"/>
                         <Button Content="Performance" Click="ButtonPerformance_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="16" Margin="0,3,0,0" Padding="20,3,3,3"/>
-                        <Button Content="Material Design" Click="ButtonMaterialDesign_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="16" Margin="0,3,0,0" Padding="20,3,3,3"/>
+                        <Button Click="ButtonMaterialDesign_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="16" Margin="0,3,0,0" Padding="20,3,3,3">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Material Design" VerticalAlignment="Center"/>
+                                <Border Background="#FF800000" CornerRadius="4" Padding="2" Margin="5,0,0,0" VerticalAlignment="Center">
+                                    <TextBlock Text="NEW!" Foreground="White" FontSize="10" FontWeight="Bold"/>
+                                </Border>
+                            </StackPanel>
+                        </Button>
                         <Expander Header="Third-Party" Foreground="#FFDDDDDD" FontSize="16" Margin="0,3,0,0" Style="{StaticResource MainMenuExpander_Style}">
                             <StackPanel Margin="0,0,0,0">
                                 <Button Content="Plotly.js" Click="ButtonPlotlyCharts_Click" Background="{x:Null}" Foreground="#FFBBBBBB" HorizontalContentAlignment="Left" FontSize="13" Margin="4,5,0,0" Padding="20,3,3,3"/>
