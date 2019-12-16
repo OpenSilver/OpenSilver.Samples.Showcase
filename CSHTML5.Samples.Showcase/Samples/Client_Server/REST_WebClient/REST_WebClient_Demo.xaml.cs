@@ -70,6 +70,40 @@ namespace CSHTML5.Samples.Showcase
             button.Content = "Create";
         }
 
+        async void ButtonUpdateRestToDo_Click(object sender, RoutedEventArgs e)
+        {
+            var button = (Button)sender;
+            ToDoItem todo = ((ToDoItem)button.DataContext);
+
+            // Verify that the new description of the To-Do is different from the previous description:
+            string previousDescription = todo.Description;
+            string newDescription = RestToDoTextBox.Text.Replace("\"", "'");
+            if (newDescription == previousDescription)
+            {
+                MessageBox.Show("To update the To-Do, please enter a different text in the field above, and then click the 'Update' button.");
+                return;
+            }
+
+            button.Content = "Please wait...";
+            button.IsEnabled = false;
+
+            try
+            {
+                string data = string.Format(@"{{""OwnerId"": ""{0}"",""Id"": ""{1}"",""Description"": ""{2}""}}", _ownerId, todo.Id, RestToDoTextBox.Text.Replace("\"", "'"));
+                var webClient = new WebClient();
+                string response = await webClient.UploadStringTaskAsync("http://cshtml5-rest-sample.azurewebsites.net/api/Todo/" + todo.Id.ToString(), "PUT", data);
+
+                await RefreshRestToDos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex.ToString());
+            }
+
+            button.IsEnabled = true;
+            button.Content = "Update";
+        }
+
         async void ButtonDeleteRestToDo_Click(object sender, RoutedEventArgs e)
         {
             var button = (Button)sender;
