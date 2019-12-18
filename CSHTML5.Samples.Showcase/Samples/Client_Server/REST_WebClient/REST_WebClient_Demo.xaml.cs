@@ -131,6 +131,8 @@ namespace CSHTML5.Samples.Showcase
             {
                 string data = string.Format(@"{{""OwnerId"": ""{0}"",""Id"": ""{1}"",""Description"": ""{2}""}}", _ownerId, todo.Id, RestToDoTextBox.Text.Replace("\"", "'"));
                 var webClient = new WebClient();
+                webClient.Headers[HttpRequestHeader.ContentType] = "application/json";
+                webClient.Encoding = Encoding.UTF8;
                 string response = await webClient.UploadStringTaskAsync("http://cshtml5-rest-sample.azurewebsites.net/api/Todo/" + todo.Id.ToString(), "PUT", data);
 
                 await RefreshRestToDos();
