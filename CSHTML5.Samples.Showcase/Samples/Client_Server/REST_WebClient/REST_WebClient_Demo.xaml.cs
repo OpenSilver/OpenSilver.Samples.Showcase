@@ -25,6 +25,9 @@ namespace CSHTML5.Samples.Showcase
         public REST_WebClient_Demo()
         {
             this.InitializeComponent();
+
+            // The "Owner ID" ensures that every person that uses the Showcase App has its own list of To-Do's:
+            _ownerId = Guid.NewGuid();
         }
 
         async Task RefreshRestToDos()
@@ -89,8 +92,11 @@ namespace CSHTML5.Samples.Showcase
 
             try
             {
+                todo = new ToDoItem();
                 string data = string.Format(@"{{""OwnerId"": ""{0}"",""Id"": ""{1}"",""Description"": ""{2}""}}", _ownerId, todo.Id, RestToDoTextBox.Text.Replace("\"", "'"));
                 var webClient = new WebClient();
+                webClient.Headers[HttpRequestHeader.ContentType] = "application/json";
+                webClient.Encoding = Encoding.UTF8;
                 string response = await webClient.UploadStringTaskAsync("http://cshtml5-rest-sample.azurewebsites.net/api/Todo/" + todo.Id.ToString(), "PUT", data);
 
                 await RefreshRestToDos();
