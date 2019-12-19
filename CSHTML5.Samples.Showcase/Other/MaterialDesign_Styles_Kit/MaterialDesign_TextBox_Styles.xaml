@@ -37,19 +37,24 @@
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 CornerRadius="2"
                                 Padding="12,7">
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="auto"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <ContentPresenter Grid.Column="0" Content="{TemplateBinding Tag}" Padding="2"/>
-                                <TextBlock Grid.Column="1" Text="{TemplateBinding PlaceholderText}"
+                            <StackPanel Orientation="Horizontal" Background="Transparent">
+                                <StackPanel.Effect>
+                                    <DropShadowEffect x:Name="DropShadowEffect" Color="Gray" Opacity="0.4" BlurRadius="-5" Direction="-30" ShadowDepth="0"/>
+                                </StackPanel.Effect>
+                                <ContentPresenter Content="{TemplateBinding Tag}"/>
+                                <Grid Margin="{TemplateBinding Padding}"
+                                      HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                                    
+                                    <ContentPresenter x:Name="ContentElement"
+                                                Background="{TemplateBinding Background}"
+                                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                <TextBlock Text="{TemplateBinding PlaceholderText}"
                                            Foreground="DarkGray"
                                            Visibility="{TemplateBinding Text, Converter={StaticResource TextToPlaceholderTextVisibilityConverter}}"/>
-                                <ContentPresenter Grid.Column="1" x:Name="ContentElement"
-                                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                                  VerticalAlignment="Center"/>
-                            </Grid>
+                                </Grid>
+                            </StackPanel>
                         </Border>
                     </Border>
                 </ControlTemplate>

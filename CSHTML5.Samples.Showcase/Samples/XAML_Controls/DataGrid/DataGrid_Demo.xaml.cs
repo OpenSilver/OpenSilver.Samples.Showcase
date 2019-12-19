@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using Windows.Foundation;
@@ -16,13 +15,16 @@ namespace CSHTML5.Samples.Showcase
 {
     public partial class DataGrid_Demo : UserControl
     {
-
         public DataGrid_Demo()
         {
             this.InitializeComponent();
 
-            // Populate the data grid with the list of planets:
-            DataGrid1.ItemsSource = Planet.GetListOfPlanets();
+            // Populate the data grids with the list of planets
+            //DataGrid1.ItemsSource = Planet.GetListOfPlanets();
+            //DataGrid2.ItemsSource = Planet.GetListOfPlanets();
+
+            
+
         }
 
         private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
@@ -42,18 +44,5 @@ namespace CSHTML5.Samples.Showcase
             });
         }
 
-        private void ButtonDisplayContextMenu_Click(object sender, RoutedEventArgs e)
-        {
-            Button button = (Button)sender;
-            button.ContextMenu.IsOpen = true;
-        }
-
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Button b = (Button)sender;
-            object content = b.Content;
-            object tag = b.Tag;
-        }
     }
 }
