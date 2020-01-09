@@ -20,11 +20,6 @@ namespace CSHTML5.Samples.Showcase
             this.InitializeComponent();
         }
 
-        private void ButtonViewMore_Click(object sender, RoutedEventArgs e)
-        {
-            ChildWindowHelper.ShowChildWindow(new Button_Demo_More());
-        }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("You clicked the button!");
