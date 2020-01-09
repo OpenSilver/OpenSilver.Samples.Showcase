@@ -5,7 +5,7 @@
     xmlns:local="using:CSHTML5.Samples.Showcase">
     <StackPanel Margin="0,0,0,40">
         <TextBlock Text="Material Design" Style="{StaticResource PageHeader_Style}"/>
-        <StackPanel Margin="24,0,10,0">
+        <StackPanel Margin="24,0,10,0" INTERNAL_EnableProgressiveLoading="True">
             <TextBlock Margin="0,30,0,0" Text="To use the Material Design styles in your application, start by copying to your project the XAML files located in the &quot;MaterialDesign_Styles_Kit&quot; folder of this Showcase application. You can also find them on GitHub at:" FontSize="12" TextWrapping="Wrap" Foreground="Gray"/>
             <HyperlinkButton FontSize="12" Foreground="Blue" NavigateUri="https://github.com/cshtml5/CSHTML5.Samples.Showcase/tree/master/CSHTML5.Samples.Showcase/Other/MaterialDesign_Styles_Kit" Cursor="Hand" HorizontalAlignment="Left">
                 <TextBlock Text="https://github.com/cshtml5/CSHTML5.Samples.Showcase/tree/master/CSHTML5.Samples.Showcase/Other/MaterialDesign_Styles_Kit" TextWrapping="Wrap"/>

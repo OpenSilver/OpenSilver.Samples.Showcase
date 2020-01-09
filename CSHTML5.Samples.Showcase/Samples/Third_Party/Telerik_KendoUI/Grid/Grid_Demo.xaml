@@ -6,7 +6,7 @@
     xmlns:kendo_ui="clr-namespace:kendo_ui_grid.kendo.ui;assembly=CSHTML5.Wrappers.KendoUI.Grid">
     <StackPanel>
         <TextBlock Text="Telerik Kendo UI" Style="{StaticResource PageHeader_Style}"/>
-        <ContentControl Style="{StaticResource Card_Style}" Width="600">
+        <ContentControl Style="{StaticResource Card_Style}" Width="600" HorizontalAlignment="Left">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>

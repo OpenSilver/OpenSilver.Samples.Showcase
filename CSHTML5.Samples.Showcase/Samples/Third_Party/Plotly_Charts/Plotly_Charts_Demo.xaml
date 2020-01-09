@@ -6,7 +6,7 @@
     xmlns:plotly="using:CSHTML5.Extensions.Plotly">
     <StackPanel>
         <TextBlock Text="Plotly.js" Style="{StaticResource PageHeader_Style}"/>
-        <ContentControl Style="{StaticResource Card_Style}" Width="340">
+        <ContentControl Style="{StaticResource Card_Style}" Width="340" HorizontalAlignment="Left">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>

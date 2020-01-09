@@ -26,6 +26,7 @@
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                                     <TextBlock Text="{Binding Description}" Foreground="Black"/>
                                     <Button Content="Delete" Click="ButtonDeleteRestToDo_Click" Foreground="White" Background="#FF42AEE6" Margin="5,0,0,0"/>
+                                    <Button Content="Update" Click="ButtonUpdateRestToDo_Click" Foreground="White" Background="#FF42AEE6" Margin="5,0,0,0"/>
                                 </StackPanel>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>

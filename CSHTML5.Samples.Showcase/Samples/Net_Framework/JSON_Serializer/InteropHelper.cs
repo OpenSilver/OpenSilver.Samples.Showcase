@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CSHTML5.Extensions.Plotly
+namespace Newtonsoft.Json
 {
     public static class InteropHelper
     {

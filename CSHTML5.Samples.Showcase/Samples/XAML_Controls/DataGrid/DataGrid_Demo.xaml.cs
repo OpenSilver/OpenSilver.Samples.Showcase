@@ -19,12 +19,8 @@ namespace CSHTML5.Samples.Showcase
         {
             this.InitializeComponent();
 
-            // Populate the data grids with the list of planets
-            //DataGrid1.ItemsSource = Planet.GetListOfPlanets();
-            //DataGrid2.ItemsSource = Planet.GetListOfPlanets();
-
-            
-
+            // Populate the data grid with the list of planets:
+            DataGrid1.ItemsSource = Planet.GetListOfPlanets();
         }
 
         private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
@@ -43,6 +39,5 @@ namespace CSHTML5.Samples.Showcase
                 }
             });
         }
-
     }
 }
