@@ -3,8 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+#if SLMIGRATION
+using System.Windows;
+using System.Windows.Controls;
+#else
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+#endif
 
 namespace CSHTML5.Samples.Showcase
 {
@@ -28,7 +33,11 @@ namespace CSHTML5.Samples.Showcase
         /// <summary>
         /// This method prepares the inner div of this class so that it uses Masonry.
         /// </summary>
+#if SLMIGRATION
+        void MasonryPanel_Loaded(object sender, RoutedEventArgs e)
+#else
         void MasonryPanel_Loaded(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+#endif
         {
             //            object thisDiv = CSHTML5.Interop.GetDiv(this);
             //            _wall = CSHTML5.Interop.ExecuteJavaScript(@"(function() { //we make this a function so that we can get a return type

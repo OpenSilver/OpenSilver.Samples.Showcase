@@ -1,4 +1,6 @@
-﻿using CSHTML5.Samples.Showcase.ServiceReference1;
+﻿#if !OPENSILVER
+using CSHTML5.Samples.Showcase.ServiceReference1;
+#endif
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,10 +13,14 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Xml;
 using System.Xml.Serialization;
+#if SLMIGRATION
+using System.Windows.Controls;
+#else
 using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
+#endif
 
 namespace CSHTML5.Samples.Showcase
 {
@@ -40,9 +46,11 @@ namespace CSHTML5.Samples.Showcase
 
                 string response = await webClient.DownloadStringTaskAsync("http://cshtml5-rest-sample.azurewebsites.net/api/Todo?OwnerId=" + _ownerId.ToString());
 
+#if !OPENSILVER
                 var dataContractSerializer = new DataContractSerializer(typeof(List<ToDoItem>));
                 List<ToDoItem> toDoItems = (List<ToDoItem>)dataContractSerializer.DeserializeFromString(response);
                 RestToDosItemsControl.ItemsSource = toDoItems;
+#endif
             }
             catch (Exception ex)
             {
@@ -64,6 +72,7 @@ namespace CSHTML5.Samples.Showcase
 
         async void ButtonAddRestToDo_Click(object sender, RoutedEventArgs e)
         {
+#if !OPENSILVER
             var button = (Button)sender;
             button.Content = "Please wait...";
             button.IsEnabled = false;
@@ -85,10 +94,12 @@ namespace CSHTML5.Samples.Showcase
 
             button.IsEnabled = true;
             button.Content = "Create";
+#endif
         }
 
         async void ButtonDeleteRestToDo_Click(object sender, RoutedEventArgs e)
         {
+#if !OPENSILVER
             var button = (Button)sender;
             button.Content = "Please wait...";
             button.IsEnabled = false;
@@ -108,10 +119,12 @@ namespace CSHTML5.Samples.Showcase
 
             button.IsEnabled = true;
             button.Content = "Delete";
+#endif
         }
 
         async void ButtonUpdateRestToDo_Click(object sender, RoutedEventArgs e)
         {
+#if !OPENSILVER
             var button = (Button)sender;
             ToDoItem todo = ((ToDoItem)button.DataContext);
 
@@ -144,6 +157,7 @@ namespace CSHTML5.Samples.Showcase
 
             button.IsEnabled = true;
             button.Content = "Update";
+#endif
         }
 
         private void ButtonViewSource_Click(object sender, RoutedEventArgs e)

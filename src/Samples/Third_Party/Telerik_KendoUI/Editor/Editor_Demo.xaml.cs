@@ -1,11 +1,18 @@
-﻿using CSHTML5.Wrappers.KendoUI.Common;
-using kendo_ui_editor.kendo.ui;
+﻿#if !OPENSILVER
+using CSHTML5.Wrappers.KendoUI.Common;
+using kendo_ui_editor.kendo.ui; 
+#endif
 using System.Collections.Generic;
 using TypeScriptDefinitionsSupport;
+#if SLMIGRATION
+using System.Windows;
+using System.Windows.Controls;
+#else
 using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
+#endif
 
 namespace CSHTML5.Samples.Showcase.Samples.Third_Party.Telerik_KendoUI.Editor
 {
@@ -15,6 +22,7 @@ namespace CSHTML5.Samples.Showcase.Samples.Third_Party.Telerik_KendoUI.Editor
         {
             InitializeComponent();
 
+#if !OPENSILVER
             //Note: Below is an example of setting the location for the required scripts and css for the KendoUI Editor control. See the tutorial at http://cshtml5.com for more information.
             kendo_ui_editor.kendo.ui.Editor.Configuration.LocationOfKendoAllJS = "ms-appx:///CSHTML5.Samples.Showcase/Third_Party_Resources/Telerik_KendoUI/scripts/kendo.all.min.js";
             kendo_ui_editor.kendo.ui.Editor.Configuration.LocationOfKendoCommonMaterialCSS = "ms-appx:///CSHTML5.Samples.Showcase/Third_Party_Resources/Telerik_KendoUI/styles/kendo.common-material.min.css";
@@ -23,8 +31,10 @@ namespace CSHTML5.Samples.Showcase.Samples.Third_Party.Telerik_KendoUI.Editor
             kendo_ui_editor.kendo.ui.Editor.Configuration.LocationOfKendoRTLCSS = "ms-appx:///CSHTML5.Samples.Showcase/Third_Party_Resources/Telerik_KendoUI/styles/kendo.rtl.min.css";
 
             Loaded += Editor_Demo_Loaded;
+#endif
         }
 
+#if !OPENSILVER
         private async void Editor_Demo_Loaded(object sender, RoutedEventArgs e)
         {
             //------------
@@ -56,6 +66,7 @@ namespace CSHTML5.Samples.Showcase.Samples.Third_Party.Telerik_KendoUI.Editor
             }
             
         }
+#endif
 
         private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
         {
@@ -74,9 +85,11 @@ namespace CSHTML5.Samples.Showcase.Samples.Third_Party.Telerik_KendoUI.Editor
             });
         }
 
+#if !OPENSILVER
         private void ButtonExportToPDF_Click(object sender, RoutedEventArgs e)
         {
             Editor.saveAsPDF();
-        }
+        } 
+#endif
     }
 }

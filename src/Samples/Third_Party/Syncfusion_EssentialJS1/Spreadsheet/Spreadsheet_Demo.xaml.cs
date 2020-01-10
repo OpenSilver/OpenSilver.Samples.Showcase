@@ -1,8 +1,13 @@
 ﻿using System.Collections.Generic;
+#if SLMIGRATION
+using System.Windows;
+using System.Windows.Controls;
+#else
 using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
+#endif
 
 namespace CSHTML5.Samples.Showcase.Samples.Third_Party.Syncfusion_EssentialJS1.Spreadsheet
 {

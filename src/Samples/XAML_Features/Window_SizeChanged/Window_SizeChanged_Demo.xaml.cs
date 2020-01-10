@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+#if SLMIGRATION
+using System.Windows;
+using System.Windows.Controls;
+#else
 using Windows.Foundation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -10,6 +14,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+#endif
 
 namespace CSHTML5.Samples.Showcase
 {
@@ -40,8 +45,13 @@ namespace CSHTML5.Samples.Showcase
         }
         #endregion
 
-        void Current_SizeChanged(object sender, Windows.UI.Core.WindowSizeChangedEventArgs e)
+#if SLMIGRATION
+        void Current_SizeChanged(object sender, WindowSizeChangedEventArgs e)
+#else
+        void Current_SizeChanged(object sender, Windows.UI.Core.WindowSizeChangedEventArgs e) 
+#endif
         {
+
             TextBlockValueX.Text = (double.IsNaN(e.Size.Width) ? "NaN" : e.Size.Width.ToString());
             TextBlockValueY.Text = (double.IsNaN(e.Size.Height) ? "NaN" : e.Size.Height.ToString());
         }

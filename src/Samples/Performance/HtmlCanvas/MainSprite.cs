@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CSHTML5.Native.Html.Controls;
+#if !SLMIGRATION
 using Windows.UI;
+#endif
 
 namespace TestPerformance
 {

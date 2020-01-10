@@ -1,13 +1,25 @@
 ﻿using System;
+#if SLMIGRATION
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Media;
+using System.Globalization;
+#else
 using Windows.UI;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Media;
+#endif
 
 namespace MaterialDesign_Styles_Kit
 {
     public class AccentColorConverter : IValueConverter
     {
+#if SLMIGRATION
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+#else
         public object Convert(object value, Type targetType, object parameter, string language)
+#endif
         {
             if (value is SolidColorBrush)
             {
@@ -21,7 +33,11 @@ namespace MaterialDesign_Styles_Kit
             return value;
         }
 
+#if SLMIGRATION
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+#else
         public object ConvertBack(object value, Type targetType, object parameter, string language)
+#endif
         {
             throw new NotImplementedException();
         }

@@ -3,9 +3,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Browser;
+#if SLMIGRATION
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
+#else
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
+#endif
 
 namespace CSHTML5.Samples.Showcase
 {
@@ -111,7 +117,7 @@ namespace CSHTML5.Samples.Showcase
             ScrollViewer1.ScrollToVerticalOffset(0d);
         }
 
-        #region Show/hide source code
+#region Show/hide source code
 
         public void ViewSourceCode(UIElement controlThatDisplaysTheSourceCode)
         {
@@ -141,9 +147,9 @@ namespace CSHTML5.Samples.Showcase
             RowThatContainsTheSourceCodePane.Height = new GridLength(0d);
         }
 
-        #endregion
+#endregion
 
-        #region States management
+#region States management
 
         //This region contains all that we use to make the menu on the left disappear when the screen is too small.
 
@@ -209,7 +215,11 @@ namespace CSHTML5.Samples.Showcase
             }
         }
 
+#if SLMIGRATION
+        private void Window_SizeChanged(object sender, WindowSizeChangedEventArgs e)
+#else
         private void Window_SizeChanged(object sender, Windows.UI.Core.WindowSizeChangedEventArgs e)
+#endif
         {
             UpdateMenuDispositionBasedOnDisplaySize();
         }
@@ -248,6 +258,6 @@ namespace CSHTML5.Samples.Showcase
             }
         }
 
-        #endregion
+#endregion
     }
 }

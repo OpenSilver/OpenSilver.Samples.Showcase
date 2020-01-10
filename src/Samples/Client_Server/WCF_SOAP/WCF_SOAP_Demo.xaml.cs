@@ -1,4 +1,6 @@
-﻿using CSHTML5.Samples.Showcase.ServiceReference1;
+﻿#if !OPENSILVER
+using CSHTML5.Samples.Showcase.ServiceReference1; 
+#endif
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,10 +13,14 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Xml;
 using System.Xml.Serialization;
+#if SLMIGRATION
+using System.Windows.Controls;
+#else
 using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
+#endif
 
 namespace CSHTML5.Samples.Showcase
 {
@@ -32,6 +38,7 @@ namespace CSHTML5.Samples.Showcase
 
         async Task RefreshSoapToDos()
         {
+#if !OPENSILVER
             try
             {
                 Service1Client soapClient = new Service1Client();
@@ -43,6 +50,7 @@ namespace CSHTML5.Samples.Showcase
             {
                 MessageBox.Show("ERROR: " + ex.ToString());
             }
+#endif
         }
 
         async void ButtonRefreshSoapToDos_Click(object sender, RoutedEventArgs e)
@@ -59,6 +67,7 @@ namespace CSHTML5.Samples.Showcase
 
         async void ButtonAddSoapToDo_Click(object sender, RoutedEventArgs e)
         {
+#if !OPENSILVER
             var button = (Button)sender;
             button.Content = "Please wait...";
             button.IsEnabled = false;
@@ -86,10 +95,12 @@ namespace CSHTML5.Samples.Showcase
 
             button.IsEnabled = true;
             button.Content = "Create";
+#endif
         }
 
         async void ButtonDeleteSoapToDo_Click(object sender, RoutedEventArgs e)
         {
+#if !OPENSILVER
             var button = (Button)sender;
             button.Content = "Please wait...";
             button.IsEnabled = false;
@@ -112,6 +123,7 @@ namespace CSHTML5.Samples.Showcase
 
             button.IsEnabled = true;
             button.Content = "Delete";
+#endif
         }
 
         private void ButtonViewSource_Click(object sender, RoutedEventArgs e)

@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+#if SLMIGRATION
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
+#else
 using Windows.Foundation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -10,6 +15,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+#endif
 
 namespace CSHTML5.Samples.Showcase
 {
@@ -24,10 +30,18 @@ namespace CSHTML5.Samples.Showcase
             InitAllZIndex();
             _highestZIndex = 2;
 
-            this.PointerPressed += FindElementsInHostCoordinates_Demo_PointerPressed;
+#if SLMIGRATION
+            this.MouseLeftButtonDown += FindElementsInHostCoordinates_Demo_PointerPressed;
+#else
+            this.PointerPressed += FindElementsInHostCoordinates_Demo_PointerPressed; 
+#endif
         }
 
-        void FindElementsInHostCoordinates_Demo_PointerPressed(object sender, PointerRoutedEventArgs e)
+#if SLMIGRATION
+        void FindElementsInHostCoordinates_Demo_PointerPressed(object sender, MouseButtonEventArgs e)
+#else
+        void FindElementsInHostCoordinates_Demo_PointerPressed(object sender, PointerRoutedEventArgs e) 
+#endif
         {
             // Get the absolute coordinates of the pointer:
             Point currentPoint = e.GetCurrentPoint(null).Position;

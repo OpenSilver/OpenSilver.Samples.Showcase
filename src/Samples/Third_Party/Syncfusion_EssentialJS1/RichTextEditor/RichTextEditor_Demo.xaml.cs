@@ -1,8 +1,13 @@
 ﻿using System.Collections.Generic;
+#if SLMIGRATION
+using System.Windows;
+using System.Windows.Controls;
+#else
 using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
+#endif
 
 namespace CSHTML5.Samples.Showcase.Samples.Third_Party.Syncfusion_EssentialJS1.RichTextEditor
 {
@@ -13,12 +18,15 @@ namespace CSHTML5.Samples.Showcase.Samples.Third_Party.Syncfusion_EssentialJS1.R
             InitializeComponent();
 
             //Note: Below is an example of setting the location for the required scripts and css for the Syncfusion EssentialJS1 RichTextEditor control. See the tutorial at http://cshtml5.com for more information.
+#if !OPENSILVER
             ej_rte.ej.RTE.Configuration.LocationOfEjRTEJS = "ms-appx:///CSHTML5.Samples.Showcase/Third_Party_Resources/Syncfusion_EssentialJS1/scripts/ej.rte.min.js";
             ej_rte.ej.RTE.Configuration.LocationOfEjWebAllCss = "ms-appx:///CSHTML5.Samples.Showcase/Third_Party_Resources/Syncfusion_EssentialJS1/themes/default-theme/ej.web.all.min.css";
 
             Loaded += RichTextEditor_Demo_Loaded;
+#endif
         }
 
+#if !OPENSILVER
         private async void RichTextEditor_Demo_Loaded(object sender, RoutedEventArgs e)
         {
             //------------
@@ -35,6 +43,7 @@ namespace CSHTML5.Samples.Showcase.Samples.Third_Party.Syncfusion_EssentialJS1.R
                 LoadingPleaseWaitMessage.Visibility = Visibility.Collapsed;
             }
         }
+#endif
 
         private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
         {

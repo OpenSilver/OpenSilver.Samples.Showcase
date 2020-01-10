@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Windows;
+#if !SLMIGRATION
 using Windows.UI.Xaml;
+#endif
 
 //------------------------------------
 // This is an extension for C#/XAML for HTML5 (www.cshtml5.com)

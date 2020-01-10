@@ -1,12 +1,19 @@
-﻿using CSHTML5.Wrappers.KendoUI.Common;
+﻿#if !OPENSILVER
+using CSHTML5.Wrappers.KendoUI.Common;
 using kendo_ui_grid.kendo.data;
 using kendo_ui_grid.kendo.ui;
+#endif
 using System.Collections.Generic;
 using TypeScriptDefinitionsSupport;
+#if SLMIGRATION
+using System.Windows;
+using System.Windows.Controls;
+#else
 using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
+#endif
 
 namespace CSHTML5.Samples.Showcase.Samples.Third_Party.Telerik_KendoUI.Grid
 {
@@ -14,7 +21,8 @@ namespace CSHTML5.Samples.Showcase.Samples.Third_Party.Telerik_KendoUI.Grid
     {
         public Grid_Demo()
         {
-            
+
+#if !OPENSILVER
             InitializeComponent();
 
             //Note: Below is an example of setting the location for the required scripts and css for the KendoUI Grid control. See the tutorial at http://cshtml5.com for more information.
@@ -27,8 +35,10 @@ namespace CSHTML5.Samples.Showcase.Samples.Third_Party.Telerik_KendoUI.Grid
 
 
             Loaded += Grid_Demo_Loaded;
+#endif
         }
 
+#if !OPENSILVER
         private async void Grid_Demo_Loaded(object sender, RoutedEventArgs e)
         {
             //------------
@@ -58,9 +68,10 @@ namespace CSHTML5.Samples.Showcase.Samples.Third_Party.Telerik_KendoUI.Grid
                 });
                 Grid.dataSource.pageSize(4);
             }
-        }
+    }
+#endif
 
-        private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
+    private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
         {
             ViewSourceButtonHelper.ViewSource(new List<ViewSourceButtonInfo>()
             {
