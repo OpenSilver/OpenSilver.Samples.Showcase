@@ -1,0 +1,71 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <Configurations>Debug;Release;</Configurations>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;CSHTML5BLAZOR</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;CSHARP_XAML_FOR_HTML5;CSHTML5BLAZOR</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+  </PropertyGroup>
+
+  <!-- Blazor Part -->
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RazorLangVersion>3.0</RazorLangVersion>
+  </PropertyGroup>
+
+  <!-- Cshtml5 Part -->
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A0EA0E2B-0E48-4CC6-8B71-1C048D02D3A9}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OpenSilver.Samples.Showcase.Browser</RootNamespace>
+    <AssemblyName>OpenSilver.Samples.Showcase.Browser</AssemblyName>
+    <!--<TargetFrameworkVersion>v2.0</TargetFrameworkVersion>-->
+    <FileAlignment>512</FileAlignment>
+    <IsCSharpXamlForHtml5>true</IsCSharpXamlForHtml5>
+    <CSharpXamlForHtml5OutputType>Application</CSharpXamlForHtml5OutputType>
+    <IsCshtml5>true</IsCshtml5>
+    <Cshtml5OutputType>Application</Cshtml5OutputType>
+    <StartAction>Program</StartAction>
+    <StartProgram>
+    </StartProgram>
+    <StartArguments>"OpenSilver.dll"</StartArguments>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="OpenSilver" Version="2.0.0-alpha49-068" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\src\OpenSilver.Samples.Showcase.csproj" />
+  </ItemGroup>
+</Project>
