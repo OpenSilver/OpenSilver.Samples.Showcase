@@ -6,6 +6,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 #else
 using Windows.Foundation;
 using Windows.UI.Xaml;
@@ -39,12 +40,16 @@ namespace CSHTML5.Samples.Showcase
 
 #if SLMIGRATION
         void FindElementsInHostCoordinates_Demo_PointerPressed(object sender, MouseButtonEventArgs e)
+        {
+            // Get the absolute coordinates of the pointer:
+            Point currentPoint = e.GetPosition(null);
+
 #else
         void FindElementsInHostCoordinates_Demo_PointerPressed(object sender, PointerRoutedEventArgs e) 
-#endif
         {
             // Get the absolute coordinates of the pointer:
             Point currentPoint = e.GetCurrentPoint(null).Position;
+#endif
 
             // Find the element that is under the pointer:
             var uiElement = VisualTreeHelper.FindElementsInHostCoordinates(currentPoint, CanvasParent).FirstOrDefault();

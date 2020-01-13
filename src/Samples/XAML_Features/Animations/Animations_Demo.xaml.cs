@@ -5,6 +5,7 @@ using System.Linq;
 #if SLMIGRATION
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Animation;
 #else
 using Windows.Foundation;
 using Windows.UI.Xaml;

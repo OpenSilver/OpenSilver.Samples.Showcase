@@ -31,7 +31,11 @@ namespace CSHTML5.Samples.Showcase
 
         void DisplayHtmlString(string htmlString)
         {
-            var webView = new WebView();
+#if SLMIGRATION
+            var webView = new WebBrowser();
+#else
+            var webView = new WebView(); 
+#endif
             webView.NavigateToString(htmlString);
             this.Content = webView;
             _displayedHtmlString = htmlString;

@@ -14,7 +14,7 @@ namespace OpenSilver.Samples.Showcase.Browser
             host.Dispose();
             Application.RunApplication(() =>
             {
-                var app = new OpenSilver.Samples.Showcase.App();
+                var app = new CSHTML5.Samples.Showcase.App();
             });
         }
 
