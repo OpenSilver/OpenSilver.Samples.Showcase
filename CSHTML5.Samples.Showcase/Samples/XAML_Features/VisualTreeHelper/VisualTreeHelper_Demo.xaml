@@ -11,8 +11,11 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="VisualTreeHelper" Foreground="#FF69C8FF" Background="#FFA1C3D7" Style="{StaticResource HeaderControl_Style}"/>
-            <TextBlock Grid.Row="1" Text="(Demo under construction)" Foreground="DarkGray" FontSize="12" Margin="0,25,0,20" HorizontalAlignment="Center"/>
-            <!--<Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FF69C8FF" Style="{StaticResource ButtonViewSource_Style}"/>-->
+            <StackPanel Grid.Row="1">
+                <TextBlock Text="The visual Tree of this exemple contains thefollowing elements : "  Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left"/>
+                <Button Content="Show Visual Tree" Click="RevealTree_Click" Margin="0,10,0,0"/>
+            </StackPanel>
+            <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FF69C8FF" Style="{StaticResource ButtonViewSource_Style}" Margin="0,10,0,0"/>
         </Grid>
     </ContentControl>
 </UserControl>
