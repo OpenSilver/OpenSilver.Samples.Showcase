@@ -11,8 +11,10 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="ClipToBounds" Foreground="#FFFFA443" Background="#FFCB9E73" Style="{StaticResource HeaderControl_Style}"/>
-            <TextBlock Grid.Row="1" Text="(Demo under construction)" Foreground="DarkGray" FontSize="12" Margin="0,25,0,20" HorizontalAlignment="Center"/>
-            <!--<Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FFFFA443" Style="{StaticResource ButtonViewSource_Style}"/>-->
+            <Border Width="100" Height="80" ClipToBounds="True" Background="white" BorderThickness="2" BorderBrush="LightGray" HorizontalAlignment="Center" Margin="0,30,0,0">
+                <Ellipse Fill="#FFFFA443" Height="120" Width="150" Stroke="#FFFFFFFF" StrokeThickness="2"/>
+            </Border>
+            <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FFFFA443" Style="{StaticResource ButtonViewSource_Style}"/>
         </Grid>
     </ContentControl>
 </UserControl>
