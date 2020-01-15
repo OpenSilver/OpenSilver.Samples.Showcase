@@ -26,13 +26,13 @@ namespace CSHTML5.Samples.Showcase
             {
                 new ViewSourceButtonInfo()
                 {
-                    TabHeader = "UriMapper_Demo.xaml",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Features/UriMapper/UriMapper_Demo.xaml"
+                    TabHeader = "MainPage.xaml",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/MainPage.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
-                    TabHeader = "UriMapper_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Features/UriMapper/UriMapper_Demo.xaml.cs"
+                    TabHeader = "MainPage.xaml.cs",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/MainPage.xaml.cs"
                 }
             });
         }
