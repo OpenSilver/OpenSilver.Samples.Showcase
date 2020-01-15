@@ -11,18 +11,33 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="Gradients" Foreground="#FF7EE476" Background="#FFA9D4A4" Style="{StaticResource HeaderControl_Style}"/>
-            <Border Grid.Row="1" Height="70" Width="120" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Border.Background>
-                    <LinearGradientBrush EndPoint="0.931,1.069" StartPoint="0.117,-0.271">
-                        <GradientStop Color="Red" Offset="0"/>
-                        <GradientStop Color="#FFFFF800" Offset="0.175"/>
-                        <GradientStop Color="#FF43FF00" Offset="0.35"/>
-                        <GradientStop Color="#FF03FFDD" Offset="0.525"/>
-                        <GradientStop Color="#FF003AFF" Offset="0.7"/>
-                        <GradientStop Color="#FFE600FF" Offset="0.875"/>
-                    </LinearGradientBrush>
-                </Border.Background>
+          <StackPanel Grid.Row="1">
+            <Border Height="70" Width="120" VerticalAlignment="Center" HorizontalAlignment="Center">
+              <Border.Background>
+                <LinearGradientBrush EndPoint="0.931,1.069" StartPoint="0.117,-0.271">
+                  <GradientStop Color="Red" Offset="0"/>
+                  <GradientStop Color="#FFFFF800" Offset="0.175"/>
+                  <GradientStop Color="#FF43FF00" Offset="0.35"/>
+                  <GradientStop Color="#FF03FFDD" Offset="0.525"/>
+                  <GradientStop Color="#FF003AFF" Offset="0.7"/>
+                  <GradientStop Color="#FFE600FF" Offset="0.875"/>
+                </LinearGradientBrush>
+              </Border.Background>
             </Border>
+
+            <Ellipse Height="100" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,20,0,0">
+              <Ellipse.Fill>
+                <RadialGradientBrush>
+                  <GradientStop Color="Red" Offset="0"/>
+                  <GradientStop Color="#FFFFF800" Offset="0.175"/>
+                  <GradientStop Color="#FF43FF00" Offset="0.35"/>
+                  <GradientStop Color="#FF03FFDD" Offset="0.525"/>
+                  <GradientStop Color="#FF003AFF" Offset="0.7"/>
+                  <GradientStop Color="#FFE600FF" Offset="0.875"/>
+                </RadialGradientBrush>
+              </Ellipse.Fill>
+            </Ellipse>
+          </StackPanel>
             <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FF7EE476" Style="{StaticResource ButtonViewSource_Style}"/>
         </Grid>
     </ContentControl>
