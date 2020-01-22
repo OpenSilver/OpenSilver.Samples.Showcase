@@ -128,9 +128,6 @@
     <Compile Include="Samples\Third_Party\Telerik_KendoUI\Grid\Grid_Demo.xaml.cs">
       <DependentUpon>Grid_Demo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Samples\XAML_Controls\Label\Label_Demo.xaml.cs">
-      <DependentUpon>Label_Demo.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Samples\XAML_Controls\DateAndTimePicker\DateAndTimePicker_Demo.xaml.cs">
       <DependentUpon>DateAndTimePicker_Demo.xaml</DependentUpon>
     </Compile>
