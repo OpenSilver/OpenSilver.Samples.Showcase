@@ -128,6 +128,15 @@
     <Compile Include="Samples\Third_Party\Telerik_KendoUI\Grid\Grid_Demo.xaml.cs">
       <DependentUpon>Grid_Demo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Samples\XAML_Controls\Label\Label_Demo.xaml.cs">
+      <DependentUpon>Label_Demo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\XAML_Controls\DateAndTimePicker\DateAndTimePicker_Demo.xaml.cs">
+      <DependentUpon>DateAndTimePicker_Demo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\XAML_Controls\Shapes\Shapes_Demo.xaml.cs">
+      <DependentUpon>Shapes_Demo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Samples\XAML_Controls\Slider\Slider_Demo.xaml.cs">
       <DependentUpon>Slider_Demo.xaml</DependentUpon>
     </Compile>
@@ -1111,6 +1120,22 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Content>
+    <Page Include="Samples\XAML_Controls\Label\Label_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\XAML_Controls\Label\Styles\DefaultButtonStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\XAML_Controls\DateAndTimePicker\DateAndTimePicker_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\XAML_Controls\Shapes\Shapes_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Samples\XAML_Features\AttachedProperties\AttachedProperties_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

@@ -44,6 +44,7 @@
       <local:Viewbox_Demo HorizontalAlignment="Center"/>
       <local:Frame_Demo HorizontalAlignment="Center"/>
       <local:Shapes_Demo HorizontalAlignment="Center"/>
+      <local:DateAndTimePicker_Demo HorizontalAlignment="Center"/>
     </local:MasonryPanelWithProgressiveLoading>
   </StackPanel>
 
