@@ -15,6 +15,7 @@
       <local:TextBox_Demo HorizontalAlignment="Center"/>
       <local:CheckBox_Demo HorizontalAlignment="Center"/>
       <local:TextBlock_Demo HorizontalAlignment="Center"/>
+      <local:Label_Demo HorizontalAlignment="Center" />
       <local:Path_Demo HorizontalAlignment="Center"/>
       <local:Border_Demo HorizontalAlignment="Center"/>
       <local:ScrollViewer_Demo HorizontalAlignment="Center"/>
