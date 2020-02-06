@@ -11,18 +11,10 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="ScrollViewer" Foreground="#FF13D7E3" Background="#FF91C3C5" Style="{StaticResource HeaderControl_Style}"/>
-            <!--<ScrollViewer Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalScrollBarVisibility="Visible" Height="150">
-                <TextBlock FontSize="12" TextWrapping="Wrap">
-                    The first civilization known to have a functional theory of the planets were the Babylonians, who lived in Mesopotamia in the first and second millennia BC. The oldest surviving planetary astronomical text is the Babylonian Venus tablet of Ammisaduqa, a 7th-century BC copy of a list of observations of the motions of the planet Venus, that probably dates as early as the second millennium BC.<LineBreak /><LineBreak />
-                    The MUL.APIN is a pair of cuneiform tablets dating from the 7th century BC that lays out the motions of the Sun, Moon, and planets over the course of the year. <LineBreak /><LineBreak />
-                    The Babylonian astrologers also laid the foundations of what would eventually become Western astrology. The Enuma anu enlil, written during the Neo-Assyrian period in the 7th century BC, comprises a list of omens and their relationships with various celestial phenomena including the motions of the planets.<LineBreak /><LineBreak />
-                    Venus, Mercury, and the outer planets Mars, Jupiter, and Saturn were all identified by Babylonian astronomers.<LineBreak /><LineBreak />
-                    These would remain the only known planets until the invention of the telescope in early modern times.<LineBreak /><LineBreak /><LineBreak />
-                    Sources : en.wikipedia.org/wiki/Planet, Babylon
-                </TextBlock>
-            </ScrollViewer>-->
-            <TextBlock Grid.Row="1" Text="(Demo under construction)" Foreground="DarkGray" FontSize="12" Margin="0,25,0,20" HorizontalAlignment="Center"/>
-            <!--<Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FF13D7E3" Style="{StaticResource ButtonViewSource_Style}"/>-->
+            <ScrollViewer Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible" Height="120" >
+                <Image Source="ms-appx:/Other/Planets/Earth.png" Width="170" Height="170"/>
+            </ScrollViewer>
+            <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FF13D7E3" Style="{StaticResource ButtonViewSource_Style}"/>
         </Grid>
     </ContentControl>
 </UserControl>

@@ -1,21 +1,20 @@
 ﻿<UserControl
     x:Class="CSHTML5.Samples.Showcase.Expander_Demo"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:CSHTML5.Samples.Showcase">
-    <ContentControl Style="{StaticResource Card_Style}" Width="180">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <ContentControl Content="Expander" Foreground="#FCAB54" Background="#FFCCA376" Style="{StaticResource HeaderControl_Style}"/>
-            <TextBlock Grid.Row="1" Text="(Demo under construction)" Foreground="DarkGray" FontSize="12" Margin="0,25,0,20" HorizontalAlignment="Center"/>
-            <!--<Expander Grid.Row="1" Header="Click to Expand/Collapse" Margin="0,30,0,0" VerticalAlignment="Top" HorizontalAlignment="Center">
-                <TextBlock Text="This is the content of the Expander" Margin="30,20,20,20" TextWrapping="Wrap" TextAlignment="Center"/>
-            </Expander>
-            <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FCAB54" Style="{StaticResource ButtonViewSource_Style}"/>-->
-        </Grid>
-    </ContentControl>
+  <ContentControl Style="{StaticResource Card_Style}" Width="180"   Height="180">
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      <ContentControl Content="Expander" Foreground="#FCAB54" Background="#FFCCA376" Style="{StaticResource HeaderControl_Style}"/>
+      <Expander Grid.Row="1" Header="Click to Expand/Collapse" Margin="0,30,0,0" VerticalAlignment="Top" HorizontalAlignment="Center">
+        <TextBlock Text="This is the content of the Expander" Margin="30,20,20,0" TextWrapping="Wrap" TextAlignment="Center"/>
+      </Expander>
+      <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FCAB54" Style="{StaticResource ButtonViewSource_Style}"/>
+    </Grid>
+  </ContentControl>
 </UserControl>

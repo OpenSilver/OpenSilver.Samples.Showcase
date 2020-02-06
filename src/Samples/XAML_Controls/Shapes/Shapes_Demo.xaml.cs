@@ -2,10 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-#if SLMIGRATION
-using System.Windows;
-using System.Windows.Controls;
-#else
 using Windows.Foundation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -14,13 +10,12 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-#endif
 
 namespace CSHTML5.Samples.Showcase
 {
-    public partial class UriMapper_Demo : UserControl
+    public partial class Shapes_Demo : UserControl
     {
-        public UriMapper_Demo()
+        public Shapes_Demo()
         {
             this.InitializeComponent();
         }
@@ -31,13 +26,13 @@ namespace CSHTML5.Samples.Showcase
             {
                 new ViewSourceButtonInfo()
                 {
-                    TabHeader = "MainPage.xaml",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/MainPage.xaml"
+                    TabHeader = "Shapes_Demo.xaml",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Controls/Shapes/Shapes_Demo.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
-                    TabHeader = "MainPage.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/MainPage.xaml.cs"
+                    TabHeader = "Shapes_Demo.xaml.cs",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Controls/Shapes/Shapes_Demo.xaml.cs"
                 }
             });
         }

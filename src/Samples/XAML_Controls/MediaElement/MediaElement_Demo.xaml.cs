@@ -42,24 +42,24 @@ namespace CSHTML5.Samples.Showcase
             });
         }
 
-        //void ButtonToPlayAudio_Click(object sender, RoutedEventArgs e)
-        //{
-        //    MediaElementForAudio.Play();
-        //}
+        void ButtonToPlayAudio_Click(object sender, RoutedEventArgs e)
+        {
+            MediaElementForAudio.Play();
+        }
 
-        //void ButtonToPauseAudio_Click(object sender, RoutedEventArgs e)
-        //{
-        //    MediaElementForAudio.Pause();
-        //}
+        void ButtonToPauseAudio_Click(object sender, RoutedEventArgs e)
+        {
+            MediaElementForAudio.Pause();
+        }
 
-        //void ButtonToPlayVideo_Click(object sender, RoutedEventArgs e)
-        //{
-        //    MediaElementForVideo.Play();
-        //}
+        void ButtonToPlayVideo_Click(object sender, RoutedEventArgs e)
+        {
+            MediaElementForVideo.Play();
+        }
 
-        //void ButtonToPauseVideo_Click(object sender, RoutedEventArgs e)
-        //{
-        //    MediaElementForVideo.Pause();
-        //}
+        void ButtonToPauseVideo_Click(object sender, RoutedEventArgs e)
+        {
+            MediaElementForVideo.Pause();
+        }
     }
 }

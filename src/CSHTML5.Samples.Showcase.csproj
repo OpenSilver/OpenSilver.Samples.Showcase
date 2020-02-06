@@ -96,6 +96,9 @@
     <Compile Include="Samples\Material_Design\Material_Design.xaml.cs">
       <DependentUpon>Material_Design.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Samples\Net_Framework\FullScreen\FullScreen_Demo.xaml.cs">
+      <DependentUpon>FullScreen_Demo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Samples\Net_Framework\JSON_Serializer\InteropHelper.cs" />
     <Compile Include="Samples\Net_Framework\Printing\Invoice.xaml.cs">
       <DependentUpon>Invoice.xaml</DependentUpon>
@@ -127,6 +130,15 @@
     </Compile>
     <Compile Include="Samples\Third_Party\Telerik_KendoUI\Grid\Grid_Demo.xaml.cs">
       <DependentUpon>Grid_Demo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\XAML_Controls\DateAndTimePicker\DateAndTimePicker_Demo.xaml.cs">
+      <DependentUpon>DateAndTimePicker_Demo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\XAML_Controls\Label\Label_Demo.xaml.cs">
+      <DependentUpon>Label_Demo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\XAML_Controls\Shapes\Shapes_Demo.xaml.cs">
+      <DependentUpon>Shapes_Demo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\XAML_Controls\Slider\Slider_Demo.xaml.cs">
       <DependentUpon>Slider_Demo.xaml</DependentUpon>
@@ -453,6 +465,7 @@
     <Content Include="Other\Planets\Uranus.png" />
     <Content Include="Other\Planets\Venus.png" />
     <Content Include="Other\SampleAudio.mp3" />
+    <Content Include="Other\SampleText.txt" />
     <Content Include="Other\SampleVideo.mp4" />
     <Content Include="Other\smallBall.png" />
     <Content Include="Other\SplashScreen1.png" />
@@ -618,6 +631,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Samples\Net_Framework\FullScreen\FullScreen_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Samples\Third_Party\Plotly_Charts\Plotly_Charts_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -734,6 +751,22 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Content>
+    <Page Include="Samples\XAML_Controls\Label\Label_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\XAML_Controls\Label\Styles\DefaultButtonStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\XAML_Controls\DateAndTimePicker\DateAndTimePicker_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\XAML_Controls\Shapes\Shapes_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Samples\XAML_Features\AttachedProperties\AttachedProperties_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
