@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 #if SLMIGRATION
 using System.Windows;
 using System.Windows.Controls;
@@ -23,6 +24,39 @@ namespace CSHTML5.Samples.Showcase
         public VisualTreeHelper_Demo()
         {
             this.InitializeComponent();
+        }
+
+        private void RevealTree_Click(object sender, RoutedEventArgs e)
+        {
+            string finalVisualTree = GetVisualTree(this);
+            MessageBox.Show(finalVisualTree);
+        }
+
+        public static string GetVisualTree(DependencyObject parent)
+        {
+            StringBuilder visualTreeStringBuilder = new StringBuilder("Visual Tree : " + Environment.NewLine + Environment.NewLine);
+            GetChildren(parent, visualTreeStringBuilder);
+            return visualTreeStringBuilder.ToString();
+        }
+
+        private static void GetChildren(DependencyObject parent, StringBuilder visualTreeStringBuilder, int indentation = 0)
+        {
+            int childrenCount = VisualTreeHelper.GetChildrenCount(parent);
+
+            if (childrenCount > 0)
+            {
+                for (int i = 0; i < childrenCount; i++)
+                {
+                    for (int e = 0; e < indentation; e++)
+                    {
+                        visualTreeStringBuilder.Append("    ");
+                    }
+
+                    var currentChild = VisualTreeHelper.GetChild(parent, i);
+                    visualTreeStringBuilder.AppendLine(currentChild.ToString());
+                    GetChildren(currentChild, visualTreeStringBuilder, indentation + 1);
+                }
+            }
         }
 
         private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
