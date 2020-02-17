@@ -1,5 +1,7 @@
-﻿#if !OPENSILVER
-using CSHTML5.Samples.Showcase.ServiceReference1; 
+﻿#if OPENSILVER
+using ServiceReference1;
+#else
+using CSHTML5.Samples.Showcase.ServiceReference1;
 #endif
 using System;
 using System.Collections.Generic;
@@ -38,11 +40,15 @@ namespace CSHTML5.Samples.Showcase
 
         async Task RefreshSoapToDos()
         {
-#if !OPENSILVER
             try
             {
+#if OPENSILVER
+                Service1Client soapClient = new Service1Client(Service1Client.EndpointConfiguration.BasicHttpBinding_IService1);
+                var result = await soapClient.GetToDosAsync(_ownerId.ToString());
+#else
                 Service1Client soapClient = new Service1Client();
                 var result = await soapClient.GetToDosAsync(_ownerId);
+#endif
                 ToDoItem[] todos = result.Body.GetToDosResult;
                 SoapToDosItemsControl.ItemsSource = todos;
             }
@@ -50,7 +56,6 @@ namespace CSHTML5.Samples.Showcase
             {
                 MessageBox.Show("ERROR: " + ex.ToString());
             }
-#endif
         }
 
         async void ButtonRefreshSoapToDos_Click(object sender, RoutedEventArgs e)
@@ -67,7 +72,6 @@ namespace CSHTML5.Samples.Showcase
 
         async void ButtonAddSoapToDo_Click(object sender, RoutedEventArgs e)
         {
-#if !OPENSILVER
             var button = (Button)sender;
             button.Content = "Please wait...";
             button.IsEnabled = false;
@@ -77,11 +81,19 @@ namespace CSHTML5.Samples.Showcase
                 ToDoItem todo = new ToDoItem()
                 {
                     Description = SoapToDoTextBox.Text,
+#if OPENSILVER
+                    Id = Guid.NewGuid().ToString(),
+                    OwnerId = _ownerId.ToString()
+#else
                     Id = Guid.NewGuid(),
                     OwnerId = _ownerId
+#endif
                 };
-
+#if OPENSILVER
+                Service1Client soapClient = new Service1Client(Service1Client.EndpointConfiguration.BasicHttpBinding_IService1);
+#else
                 Service1Client soapClient = new Service1Client();
+#endif
 
                 await soapClient.AddOrUpdateToDoAsync(todo);
 
@@ -95,12 +107,10 @@ namespace CSHTML5.Samples.Showcase
 
             button.IsEnabled = true;
             button.Content = "Create";
-#endif
         }
 
         async void ButtonDeleteSoapToDo_Click(object sender, RoutedEventArgs e)
         {
-#if !OPENSILVER
             var button = (Button)sender;
             button.Content = "Please wait...";
             button.IsEnabled = false;
@@ -109,7 +119,11 @@ namespace CSHTML5.Samples.Showcase
             {
                 ToDoItem todo = (ToDoItem)((Button)sender).DataContext;
 
+#if OPENSILVER
+                Service1Client soapClient = new Service1Client(Service1Client.EndpointConfiguration.BasicHttpBinding_IService1);
+#else
                 Service1Client soapClient = new Service1Client();
+#endif
 
                 await soapClient.DeleteToDoAsync(todo);
 
@@ -123,7 +137,6 @@ namespace CSHTML5.Samples.Showcase
 
             button.IsEnabled = true;
             button.Content = "Delete";
-#endif
         }
 
         private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
@@ -133,12 +146,12 @@ namespace CSHTML5.Samples.Showcase
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "WCF_SOAP_Demo.xaml",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Client_Server/WCF_SOAP/WCF_SOAP_Demo.xaml"
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/Client_Server/WCF_SOAP/WCF_SOAP_Demo.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "WCF_SOAP_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Client_Server/WCF_SOAP/WCF_SOAP_Demo.xaml.cs"
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/Client_Server/WCF_SOAP/WCF_SOAP_Demo.xaml.cs"
                 }
             });
         }
