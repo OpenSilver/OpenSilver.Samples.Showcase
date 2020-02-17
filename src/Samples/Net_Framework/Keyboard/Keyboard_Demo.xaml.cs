@@ -45,12 +45,12 @@ namespace CSHTML5.Samples.Showcase
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "Keyboard_Demo.xaml",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Net_Framework/Keyboard/Keyboard_Demo.xaml"
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/Net_Framework/Keyboard/Keyboard_Demo.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "Keyboard_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Net_Framework/Keyboard/Keyboard_Demo.xaml.cs"
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/Net_Framework/Keyboard/Keyboard_Demo.xaml.cs"
                 }
             });
         }

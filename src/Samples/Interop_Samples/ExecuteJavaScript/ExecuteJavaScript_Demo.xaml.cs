@@ -37,12 +37,12 @@ namespace CSHTML5.Samples.Showcase
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "ExecuteJavaScript_Demo.xaml",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Interop_Samples/ExecuteJavaScript/ExecuteJavaScript_Demo.xaml"
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/Interop_Samples/ExecuteJavaScript/ExecuteJavaScript_Demo.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "ExecuteJavaScript_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Interop_Samples/ExecuteJavaScript/ExecuteJavaScript_Demo.xaml.cs"
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/Interop_Samples/ExecuteJavaScript/ExecuteJavaScript_Demo.xaml.cs"
                 }
             });
         }

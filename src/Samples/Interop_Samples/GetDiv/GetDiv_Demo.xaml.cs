@@ -41,12 +41,12 @@ namespace CSHTML5.Samples.Showcase
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "GetDiv_Demo.xaml",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Interop_Samples/GetDiv/GetDiv_Demo.xaml"
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/Interop_Samples/GetDiv/GetDiv_Demo.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "GetDiv_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Interop_Samples/GetDiv/GetDiv_Demo.xaml.cs"
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/Interop_Samples/GetDiv/GetDiv_Demo.xaml.cs"
                 }
             });
         }

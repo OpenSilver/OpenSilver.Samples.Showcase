@@ -32,17 +32,17 @@ namespace CSHTML5.Samples.Showcase
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "Path_Demo.xaml",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Controls/Path/Path_Demo.xaml"
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/XAML_Controls/Path/Path_Demo.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "Path_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Controls/Path/Path_Demo.xaml.cs"
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/XAML_Controls/Path/Path_Demo.xaml.cs"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "DefaultPathStyle.xaml",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Controls/Path/Styles/DefaultPathStyle.xaml"
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/XAML_Controls/Path/Styles/DefaultPathStyle.xaml"
                 }
             });
         }

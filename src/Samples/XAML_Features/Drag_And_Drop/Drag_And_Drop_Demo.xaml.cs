@@ -111,12 +111,12 @@ namespace CSHTML5.Samples.Showcase
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "Drag_And_Drop_Demo.xaml",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Features/Drag_And_Drop/Drag_And_Drop_Demo.xaml"
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/XAML_Features/Drag_And_Drop/Drag_And_Drop_Demo.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "Drag_And_Drop_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Features/Drag_And_Drop/Drag_And_Drop_Demo.xaml.cs"
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/XAML_Features/Drag_And_Drop/Drag_And_Drop_Demo.xaml.cs"
                 }
             });
         }

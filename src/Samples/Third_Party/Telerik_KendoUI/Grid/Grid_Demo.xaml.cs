@@ -78,12 +78,12 @@ namespace CSHTML5.Samples.Showcase.Samples.Third_Party.Telerik_KendoUI.Grid
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "Grid_Demo.xaml",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Third_Party/Telerik_KendoUI/Grid/Grid_Demo.xaml"
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/Third_Party/Telerik_KendoUI/Grid/Grid_Demo.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "Grid_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Third_Party/Telerik_KendoUI/Grid/Grid_Demo.xaml.cs"
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/Third_Party/Telerik_KendoUI/Grid/Grid_Demo.xaml.cs"
                 }
             });
         }

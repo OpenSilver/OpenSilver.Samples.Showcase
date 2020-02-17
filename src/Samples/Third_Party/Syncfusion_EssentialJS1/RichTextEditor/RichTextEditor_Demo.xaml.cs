@@ -52,12 +52,12 @@ namespace CSHTML5.Samples.Showcase.Samples.Third_Party.Syncfusion_EssentialJS1.R
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "RichTextEditor_Demo.xaml",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Third_Party/Syncfusion_EssentialJS1/RichTextEditor/RichTextEditor_Demo.xaml"
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/Third_Party/Syncfusion_EssentialJS1/RichTextEditor/RichTextEditor_Demo.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "RichTextEditor_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Third_Party/Syncfusion_EssentialJS1/RichTextEditor/RichTextEditor_Demo.xaml.cs"
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/Third_Party/Syncfusion_EssentialJS1/RichTextEditor/RichTextEditor_Demo.xaml.cs"
                 }
             });
         }

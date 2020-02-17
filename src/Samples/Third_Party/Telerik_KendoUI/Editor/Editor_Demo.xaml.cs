@@ -75,12 +75,12 @@ namespace CSHTML5.Samples.Showcase.Samples.Third_Party.Telerik_KendoUI.Editor
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "Editor_Demo.xaml",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Third_Party/Telerik_KendoUI/Editor/Editor_Demo.xaml"
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/Third_Party/Telerik_KendoUI/Editor/Editor_Demo.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "Editor_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Third_Party/Telerik_KendoUI/Editor/Editor_Demo.xaml.cs"
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/Third_Party/Telerik_KendoUI/Editor/Editor_Demo.xaml.cs"
                 }
             });
         }

@@ -77,12 +77,12 @@ namespace CSHTML5.Samples.Showcase
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "FindElementsInHostCoordinates_Demo.xaml",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Features/FindElementsInHostCoordinates/FindElementsInHostCoordinates_Demo.xaml"
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/XAML_Features/FindElementsInHostCoordinates/FindElementsInHostCoordinates_Demo.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "FindElementsInHostCoordinates_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Features/FindElementsInHostCoordinates/FindElementsInHostCoordinates_Demo.xaml.cs"
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/XAML_Features/FindElementsInHostCoordinates/FindElementsInHostCoordinates_Demo.xaml.cs"
                 }
             });
         }
