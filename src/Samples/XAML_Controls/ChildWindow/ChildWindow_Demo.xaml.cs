@@ -54,27 +54,27 @@ namespace CSHTML5.Samples.Showcase
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "ChildWindow_Demo.xaml",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Controls/ChildWindow/ChildWindow_Demo.xaml"
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/XAML_Controls/ChildWindow/ChildWindow_Demo.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "ChildWindow_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Controls/ChildWindow/ChildWindow_Demo.xaml.cs"
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/XAML_Controls/ChildWindow/ChildWindow_Demo.xaml.cs"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "LoginWindow.xaml",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Controls/ChildWindow/LoginWindow.xaml"
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/XAML_Controls/ChildWindow/LoginWindow.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "LoginWindow.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Controls/ChildWindow/LoginWindow.xaml.cs"
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/XAML_Controls/ChildWindow/LoginWindow.xaml.cs"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "DefaultChildWindowStyle.xaml",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Controls/ChildWindow/Styles/DefaultChildWindowStyle.xaml"
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/XAML_Controls/ChildWindow/Styles/DefaultChildWindowStyle.xaml"
                 }
             });
         }

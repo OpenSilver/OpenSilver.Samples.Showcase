@@ -48,12 +48,12 @@ namespace CSHTML5.Samples.Showcase.Samples.Third_Party.Syncfusion_EssentialJS1.S
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "Spreadsheet_Demo.xaml",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Third_Party/Syncfusion_EssentialJS1/Spreadsheet/Spreadsheet_Demo.xaml"
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/Third_Party/Syncfusion_EssentialJS1/Spreadsheet/Spreadsheet_Demo.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "Spreadsheet_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Third_Party/Syncfusion_EssentialJS1/Spreadsheet/Spreadsheet_Demo.xaml.cs"
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/Third_Party/Syncfusion_EssentialJS1/Spreadsheet/Spreadsheet_Demo.xaml.cs"
                 }
             });
         }

@@ -32,17 +32,17 @@ namespace CSHTML5.Samples.Showcase
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "AutoCompleteBox_Demo.xaml",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Controls/AutoCompleteBox/AutoCompleteBox_Demo.xaml"
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/XAML_Controls/AutoCompleteBox/AutoCompleteBox_Demo.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "AutoCompleteBox_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Controls/AutoCompleteBox/AutoCompleteBox_Demo.xaml.cs"
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/XAML_Controls/AutoCompleteBox/AutoCompleteBox_Demo.xaml.cs"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "DefaultAutoCompleteBoxStyle.xaml",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/XAML_Controls/AutoCompleteBox/Styles/DefaultAutoCompleteBoxStyle.xaml"
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/XAML_Controls/AutoCompleteBox/Styles/DefaultAutoCompleteBoxStyle.xaml"
                 }
             });
         }

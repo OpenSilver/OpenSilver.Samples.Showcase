@@ -32,12 +32,12 @@ namespace CSHTML5.Samples.Showcase
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "JSONP_Demo.xaml",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Client_Server/JSONP/JSONP_Demo.xaml"
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/Client_Server/JSONP/JSONP_Demo.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "JSONP_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Client_Server/JSONP.ajax/JSONP_Demo.xaml.cs"
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/Client_Server/JSONP.ajax/JSONP_Demo.xaml.cs"
                 }
             });
         }
