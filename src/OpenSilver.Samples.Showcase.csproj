@@ -18,6 +18,7 @@
     <DebugType>full</DebugType>
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
+	
   <ItemGroup>
     <Compile Remove="Samples\Third_Party\Syncfusion_EssentialJS1\**" />
     <Compile Remove="Samples\Third_Party\Telerik_KendoUI\**" />
@@ -89,6 +90,7 @@
     <None Remove="Samples\Net_Framework\DispatcherTimer\DispatcherTimer_Demo.xaml" />
     <None Remove="Samples\Net_Framework\File_Open\File_Open_Demo.xaml" />
     <None Remove="Samples\Net_Framework\File_Save\File_Save_Demo.xaml" />
+    <None Remove="Samples\Net_Framework\FullScreen\FullScreen_Demo.xaml" />
     <None Remove="Samples\Net_Framework\GetRessourceStream\GetRessourceStream_Demo.xaml" />
     <None Remove="Samples\Net_Framework\HtmlPage\HtmlPage_Demo.xaml" />
     <None Remove="Samples\Net_Framework\IsolatedStorageFile\IsolatedStorageFile_Demo.xaml" />
@@ -124,6 +126,7 @@
     <None Remove="Samples\XAML_Controls\ContextMenu_MenuItem\ContextMenu_MenuItem_Demo.xaml" />
     <None Remove="Samples\XAML_Controls\ContextMenu_MenuItem\Styles\DefaultMenuItemStyle.xaml" />
     <None Remove="Samples\XAML_Controls\DataGrid\DataGrid_Demo.xaml" />
+    <None Remove="Samples\XAML_Controls\DateAndTimePicker\DateAndTimePicker_Demo.xaml" />
     <None Remove="Samples\XAML_Controls\DockPanel\DockPanel_Demo.xaml" />
     <None Remove="Samples\XAML_Controls\Expander\Expander_Demo.xaml" />
     <None Remove="Samples\XAML_Controls\Expander\Styles\DefaultExpanderStyle.xaml" />
@@ -134,6 +137,7 @@
     <None Remove="Samples\XAML_Controls\HtmlPresenter\HtmlPresenter_Demo.xaml" />
     <None Remove="Samples\XAML_Controls\HyperlinkButton\HyperlinkButton.xaml" />
     <None Remove="Samples\XAML_Controls\Image\Image_Demo.xaml" />
+    <None Remove="Samples\XAML_Controls\Label\Label_Demo.xaml" />
     <None Remove="Samples\XAML_Controls\ListBox\ListBox_Demo.xaml" />
     <None Remove="Samples\XAML_Controls\MediaElement\MediaElement_Demo.xaml" />
     <None Remove="Samples\XAML_Controls\NumericUpDown\NumericUpDown_Demo.xaml" />
@@ -146,6 +150,7 @@
     <None Remove="Samples\XAML_Controls\ScrollBar\ScrollBar_Demo.xaml" />
     <None Remove="Samples\XAML_Controls\ScrollBar\Styles\DefaultScrollBarStyle.xaml" />
     <None Remove="Samples\XAML_Controls\ScrollViewer\ScrollViewer_Demo.xaml" />
+    <None Remove="Samples\XAML_Controls\Shapes\Shapes_Demo.xaml" />
     <None Remove="Samples\XAML_Controls\Slider\Slider_Demo.xaml" />
     <None Remove="Samples\XAML_Controls\StackPanel\StackPanel_Demo.xaml" />
     <None Remove="Samples\XAML_Controls\TabControl\Styles\DefaultTabControlStyle.xaml" />
@@ -210,7 +215,8 @@
     <Content Include="Samples\XAML_Features\Drag_And_Drop\Drag_And_Drop_Demo_Silverlight.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Content>
-    <PackageReference Include="OpenSilver" Version="2.0.0-alpha49-068" />
+    <PackageReference Include="OpenSilver" Version="1.0.0-alpha-001" Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'"/>
+    <PackageReference Include="OpenSilver.UwpCompatible" Version="1.0.0-alpha-001" Condition="'$(Configuration)|$(Platform)'=='OpenSilver.UwpCompatible|AnyCPU'"/>
     <PackageReference Include="System.ServiceModel.Duplex" Version="4.7.0" />
     <PackageReference Include="System.ServiceModel.Http" Version="4.7.0" />
     <PackageReference Include="System.ServiceModel.NetTcp" Version="4.7.0" />
@@ -330,6 +336,9 @@
     <Page Include="Samples\Net_Framework\File_Save\File_Save_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\Net_Framework\FullScreen\FullScreen_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\Net_Framework\GetRessourceStream\GetRessourceStream_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -435,6 +444,9 @@
     <Page Include="Samples\XAML_Controls\DataGrid\DataGrid_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\XAML_Controls\DateAndTimePicker\DateAndTimePicker_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\XAML_Controls\DockPanel\DockPanel_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -463,6 +475,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Controls\Image\Image_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\XAML_Controls\Label\Label_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Controls\ListBox\ListBox_Demo.xaml">
@@ -499,6 +514,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Controls\ScrollViewer\ScrollViewer_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\XAML_Controls\Shapes\Shapes_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Controls\Slider\Slider_Demo.xaml">

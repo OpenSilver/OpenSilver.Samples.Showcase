@@ -35,7 +35,7 @@
   </PropertyGroup>
 
   <!-- Cshtml5 Part -->
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+	<Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -63,7 +63,8 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="OpenSilver" Version="2.0.0-alpha49-068" />
+	  <PackageReference Include="OpenSilver" Version="1.0.0-alpha-001" Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'"/>
+	  <PackageReference Include="OpenSilver.UwpCompatible" Version="1.0.0-alpha-001" Condition="'$(Configuration)|$(Platform)'=='OpenSilver.UwpCompatible|AnyCPU'"/>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\src\OpenSilver.Samples.Showcase.csproj" />

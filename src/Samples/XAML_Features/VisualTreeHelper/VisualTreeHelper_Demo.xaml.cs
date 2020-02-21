@@ -6,6 +6,7 @@ using System.Text;
 #if SLMIGRATION
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 #else
 using Windows.Foundation;
 using Windows.UI.Xaml;
