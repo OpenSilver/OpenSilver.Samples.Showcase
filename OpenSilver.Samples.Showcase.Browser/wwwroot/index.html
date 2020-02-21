@@ -4,9 +4,21 @@
     <meta charset="utf-8" />
     <title>OpenSilver Showcase</title>
     <base href="/" />
+    <link rel="stylesheet" type="text/css" href="app-cshtml5/libs/loader.css">
+
 </head>
 <body>
-    <app style="position:absolute;">Loading...</app>
+    <app style="position:absolute;width:100%;height:100%;">
+        <div class="loader-wrap">
+            <div class="loader animating" id="loader">
+                <!-- add 'animating' class for animate loader -->
+                <span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+            </div>
+        </div>
+    </app>
     <div id="cshtml5-root" style="position: relative; width: 100%; height: 100%; overflow-x: hidden; overflow-y: hidden"></div>
     <script src="_framework/blazor.webassembly.js"></script>
     <script type="application/javascript" src="app-cshtml5/libs/OpenSilver.js"></script>
