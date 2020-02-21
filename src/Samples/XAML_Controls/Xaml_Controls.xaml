@@ -18,34 +18,34 @@
       <local:Label_Demo HorizontalAlignment="Center" />
       <local:Path_Demo HorizontalAlignment="Center"/>
       <local:Border_Demo HorizontalAlignment="Center"/>
-      <local:ScrollViewer_Demo HorizontalAlignment="Center"/>
+      <local:ScrollViewer_Demo x:Name="ScrollViewerDemo" HorizontalAlignment="Center"/>
       <local:ToolTip_Demo HorizontalAlignment="Center"/>
       <local:HyperlinkButton_Demo HorizontalAlignment="Center"/>
       <local:NumericUpDown_Demo HorizontalAlignment="Center"/>
-      <local:ComboBox_Demo HorizontalAlignment="Center"/>
+      <local:ComboBox_Demo x:Name="ComboBoxDemo" HorizontalAlignment="Center"/>
       <local:RepeatButton_Demo HorizontalAlignment="Center"/>
       <local:GridSplitter_Demo HorizontalAlignment="Center"/>
-      <local:ListBox_Demo HorizontalAlignment="Center"/>
+      <local:ListBox_Demo x:Name="ListBoxDemo" HorizontalAlignment="Center"/>
       <local:Slider_Demo HorizontalAlignment="Center"/>
       <local:TabControl_Demo HorizontalAlignment="Center"/>
       <local:ChildWindow_Demo HorizontalAlignment="Center"/>
-      <local:ContextMenu_MenuItem_Demo HorizontalAlignment="Center"/>
+      <local:ContextMenu_MenuItem_Demo x:Name="MenuItemDemo" HorizontalAlignment="Center"/>
       <local:ToggleButton_Demo HorizontalAlignment="Center"/>
       <local:Expander_Demo HorizontalAlignment="Center"/>
       <local:PasswordBox_Demo HorizontalAlignment="Center"/>
-      <local:ContextMenu_Demo HorizontalAlignment="Center"/>
-      <local:Image_Demo HorizontalAlignment="Center"/>
-      <local:MediaElement_Demo HorizontalAlignment="Center"/>
+      <local:ContextMenu_Demo x:Name="ContextMenuDemo" HorizontalAlignment="Center"/>
+      <local:Image_Demo x:Name="ImageDemo" HorizontalAlignment="Center"/>
+      <local:MediaElement_Demo x:Name="MediaElementDemo" HorizontalAlignment="Center"/>
       <local:AutoCompleteBox_Demo HorizontalAlignment="Center"/>
       <local:Popup_Demo HorizontalAlignment="Center"/>
-      <local:DataGrid_Demo HorizontalAlignment="Center"/>
+      <local:DataGrid_Demo x:Name="DataGridDemo" HorizontalAlignment="Center"/>
       <local:HtmlPresenter_Demo HorizontalAlignment="Center"/>
       <local:ScrollBar_Demo HorizontalAlignment="Center"/>
       <local:Thumb_Demo HorizontalAlignment="Center"/>
       <local:Viewbox_Demo HorizontalAlignment="Center"/>
       <local:Frame_Demo HorizontalAlignment="Center"/>
       <local:Shapes_Demo HorizontalAlignment="Center"/>
-      <local:DateAndTimePicker_Demo HorizontalAlignment="Center"/>
+      <local:DateAndTimePicker_Demo x:Name="DateAndTimePickerDemo" HorizontalAlignment="Center"/>
     </local:MasonryPanelWithProgressiveLoading>
   </StackPanel>
 

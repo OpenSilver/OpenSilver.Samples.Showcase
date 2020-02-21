@@ -7,9 +7,9 @@
     <TextBlock Text=".NET Framework" Style="{StaticResource PageHeader_Style}"/>
     <local:MasonryPanelWithProgressiveLoading Style="{StaticResource Panel_Style}">
       <local:DispatcherTimer_Demo HorizontalAlignment="Center"/>
-      <local:File_Open_Demo HorizontalAlignment="Center"/>
-      <local:File_Save_Demo HorizontalAlignment="Center"/>
-      <local:Zip_Demo HorizontalAlignment="Center"/>
+      <local:File_Open_Demo x:Name="File_OpenDemo" HorizontalAlignment="Center"/>
+      <local:File_Save_Demo x:Name="File_SaveDemo" HorizontalAlignment="Center"/>
+      <local:Zip_Demo x:Name="ZipDemo" HorizontalAlignment="Center"/>
       <local:HtmlPage_Demo HorizontalAlignment="Center"/>
       <local:Keyboard_Demo HorizontalAlignment="Center"/>
       <local:IsolatedStorageFile_Demo HorizontalAlignment="Center"/>
@@ -17,14 +17,14 @@
       <local:Linq_Demo HorizontalAlignment="Center"/>
       <local:AsyncAwait_Demo HorizontalAlignment="Center"/>
       <local:Regex_Demo HorizontalAlignment="Center"/>
-      <local:JSON_Serializer_Demo HorizontalAlignment="Center"/>
+      <local:JSON_Serializer_Demo x:Name="JSON_SerializerDemo" HorizontalAlignment="Center"/>
       <local:DataContractSerializer_Demo HorizontalAlignment="Center"/>
       <local:Console_Demo HorizontalAlignment="Center"/>
-      <local:GetRessourceStream_Demo HorizontalAlignment="Center"/>
+      <local:GetRessourceStream_Demo x:Name="GetRessourceStreamDemo" HorizontalAlignment="Center"/>
       <local:RESX_Demo HorizontalAlignment="Center"/>
       <local:Clipboard_SetText_Demo HorizontalAlignment="Center"/>
       <local:Printing_Demo HorizontalAlignment="Center"/>
-      <local:FullScreen_Demo HorizontalAlignment="Center"/>
+      <local:FullScreen_Demo x:Name="FullScreenDemo" HorizontalAlignment="Center"/>
     </local:MasonryPanelWithProgressiveLoading>
   </StackPanel>
 </UserControl>

@@ -20,9 +20,23 @@ namespace CSHTML5.Samples.Showcase
         public MainPage()
         {
             this.InitializeComponent();
+
+#if OPENSILVER
+            PerformanceButton.Visibility = Visibility.Collapsed;
+            ThirdPartyButton.Visibility = Visibility.Collapsed;
+#endif
+
             MainPage.Current = this;
             this.Loaded += MainPage_Loaded;
             Window.Current.SizeChanged += Window_SizeChanged;
+
+#if OPENSILVER
+            TitleImage.Visibility = Visibility.Collapsed;
+            TitleTextBlock.Text = @"OPENSILVER
+SHOWCASE";
+            TitleTextBlock.TextAlignment = TextAlignment.Center;
+            TitleTextBlock.HorizontalAlignment = HorizontalAlignment.Center;
+#endif
         }
 
         public static MainPage Current { get; private set; }

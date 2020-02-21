@@ -23,6 +23,18 @@ namespace CSHTML5.Samples.Showcase
         public Xaml_Controls()
         {
             this.InitializeComponent();
+
+#if OPENSILVER
+            ScrollViewerDemo.Visibility = Visibility.Collapsed;
+            ComboBoxDemo.Visibility = Visibility.Collapsed;
+            ListBoxDemo.Visibility = Visibility.Collapsed;
+            MenuItemDemo.Visibility = Visibility.Collapsed;
+            ContextMenuDemo.Visibility = Visibility.Collapsed;
+            ImageDemo.Visibility = Visibility.Collapsed;
+            MediaElementDemo.Visibility = Visibility.Collapsed;
+            DataGridDemo.Visibility = Visibility.Collapsed;
+            DateAndTimePickerDemo.Visibility = Visibility.Collapsed;
+#endif
         }
     }
 }

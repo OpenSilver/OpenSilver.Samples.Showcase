@@ -8,7 +8,7 @@
         <local:MasonryPanelWithProgressiveLoading Style="{StaticResource Panel_Style}">
             <local:RenderTransforms_Demo HorizontalAlignment="Center"/>
             <local:Drag_And_Drop_Demo HorizontalAlignment="Center"/>
-            <local:Binding1_Demo HorizontalAlignment="Center"/>
+            <local:Binding1_Demo x:Name="Binding1Demo" HorizontalAlignment="Center"/>
             <local:Binding2_Demo HorizontalAlignment="Center"/>
             <local:Binding3_Demo HorizontalAlignment="Center"/>
             <!--<local:ClickCount_RightTapped_Demo HorizontalAlignment="Center"/>-->

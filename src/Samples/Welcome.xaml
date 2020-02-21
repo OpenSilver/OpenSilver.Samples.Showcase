@@ -9,7 +9,7 @@
         </Border.Effect>
         <StackPanel Margin="0,0,20,20">
             <TextBlock Text="Welcome!" Foreground="#FF2299A1" Style="{StaticResource PageHeader_Style}"/>
-            <TextBlock Text="This app was written in standard C# and XAML, and compiled to HTML5 using CSHTML5." FontSize="16" Foreground="#FF333333" TextWrapping="Wrap" Margin="22,10,0,0"/>
+            <TextBlock x:Name="IntroductionTextBlock" Text="This app was written in standard C# and XAML, and compiled to HTML5 using CSHTML5." FontSize="16" Foreground="#FF333333" TextWrapping="Wrap" Margin="22,10,0,0"/>
             <TextBlock Text="The source code of this app is available at:" FontSize="16" Foreground="#FF333333" TextWrapping="Wrap" Margin="22,10,0,0"/>
             <HyperlinkButton FontSize="16" Foreground="Blue" Margin="22,10,0,0" NavigateUri="https://github.com/cshtml5/CSHTML5.Samples.Showcase" Cursor="Hand" HorizontalAlignment="Left">
                 <TextBlock Text="https://github.com/cshtml5/CSHTML5.Samples.Showcase" TextWrapping="Wrap"/>

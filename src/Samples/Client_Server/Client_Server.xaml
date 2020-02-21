@@ -7,7 +7,7 @@
         <TextBlock Text="Client / Server" Style="{StaticResource PageHeader_Style}"/>
         <local:MasonryPanelWithProgressiveLoading Style="{StaticResource Panel_Style}">
             <local:WCF_SOAP_Demo HorizontalAlignment="Center"/>
-            <local:REST_WebClient_Demo HorizontalAlignment="Center"/>
+            <local:REST_WebClient_Demo x:Name="REST_WebClientDemo" HorizontalAlignment="Center"/>
             <local:SignalR_Demo HorizontalAlignment="Center"/>
             <local:WebSockets_Demo HorizontalAlignment="Center"/>
             <local:JSONP_Demo HorizontalAlignment="Center"/>
