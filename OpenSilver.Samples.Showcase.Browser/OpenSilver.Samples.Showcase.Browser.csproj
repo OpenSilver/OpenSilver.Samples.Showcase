@@ -63,7 +63,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <ItemGroup>
-	  <PackageReference Include="OpenSilver" Version="1.0.0-alpha-001" Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'"/>
+	  <PackageReference Include="OpenSilver" Version="1.0.0-alpha-001"/>
 	  <PackageReference Include="OpenSilver.UwpCompatible" Version="1.0.0-alpha-001" Condition="'$(Configuration)|$(Platform)'=='OpenSilver.UwpCompatible|AnyCPU'"/>
   </ItemGroup>
   <ItemGroup>

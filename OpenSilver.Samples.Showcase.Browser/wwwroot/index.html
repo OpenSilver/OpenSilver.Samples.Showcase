@@ -2,66 +2,13 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>BLAZOR + CSHTML5 + MONO sample application</title>
+    <title>OpenSilver Showcase</title>
     <base href="/" />
-    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/site.css" rel="stylesheet" />
-
-    <link rel="stylesheet" type="text/css" href="app-cshtml5/libs/cshtml5.css" />
-    <script type="application/javascript" src="app-cshtml5/libs/cshtml5.js"></script>
-    <script type="application/javascript" src="app-cshtml5/libs/fastclick.js"></script>
-    <script type="application/javascript" src="app-cshtml5/libs/velocity.js"></script>
-
 </head>
 <body>
-    <app style="position:absolute;">Loading BLAZOR + CSHTML5 + MONO sample application...</app>
+    <app style="position:absolute;">Loading...</app>
     <div id="cshtml5-root" style="position: relative; width: 100%; height: 100%; overflow-x: hidden; overflow-y: hidden"></div>
     <script src="_framework/blazor.webassembly.js"></script>
-    <script type="text/javascript">
-
-        window.onCallBack = {}
-        window.onCallBack.OnCallbackFromJavaScript = function (callbackId, idWhereCallbackArgsAreStored, callbackArgsObject) {
-            //console.log("on callback");
-            var assemblyName = "OpenSilver";
-            var namespace = "CSHTML5.Internal";
-            var type = "OnCallBack";
-            var method = Blazor.platform.findMethod(
-                assemblyName,
-                namespace,
-                type,
-                "OnCallbackFromJavaScript"
-            );
-            //console.log("method found. callbackIdStr: " + callbackId + ". idWhereCallbackArgsAreStored:" + idWhereCallbackArgsAreStored);
-            //console.log("ON CALLBACK FROM JS");
-            Blazor.platform.callMethod(method, null, [
-                Blazor.platform.toDotNetString(callbackId + ""),
-                Blazor.platform.toDotNetString(idWhereCallbackArgsAreStored),
-                Blazor.platform.toDotNetString(""),
-            ]);
-        };
-
-        window.callJS = function (javaScriptToExecute) {
-            //console.log(javaScriptToExecute);
-
-            var result = eval(javaScriptToExecute);
-            //console.log(result);
-            var resultType = typeof result;
-            if (resultType == 'string' || resultType == 'number' || resultType == 'boolean') {
-                //if (typeof result !== 'undefined' && typeof result !== 'function') {
-                //console.log("supported");
-                return result;
-            }
-            else {
-                //console.log("not supported");
-                return result + " [NOT USABLE DIRECTLY IN C#] (" + resultType + ")";
-            }
-        };
-
-        /*
-        Blazor.registerFunction('logJS', function (logText) {
-        console.log(logText);
-        });
-        */
-    </script>
+    <script type="application/javascript" src="app-cshtml5/libs/OpenSilver.js"></script>
 </body>
 </html>

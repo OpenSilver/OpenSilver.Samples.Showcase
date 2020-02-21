@@ -43,7 +43,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\OpenSilver.Samples.Showcase.csproj" />
+    <ProjectReference Include="..\src\OpenSilver.Samples.Showcase.csproj">
+      <Name>OpenSilver.Samples.Showcase</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
