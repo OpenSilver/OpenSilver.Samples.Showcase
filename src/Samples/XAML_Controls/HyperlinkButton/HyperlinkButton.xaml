@@ -13,7 +13,7 @@
             <ContentControl Content="HyperlinkButton" Foreground="#FF6F98FF" Background="#FF93A5D1" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <TextBlock Text="You can visit the homepage&#x0a; by clicking" TextAlignment="Center"/>
-                <HyperlinkButton Content="here" NavigateUri="http://www.cshtml5.com" Foreground="#FFE44D26" Margin="5,0,0,0" HorizontalAlignment="Center" Cursor="Hand"/>
+                <HyperlinkButton x:Name="HyperlinkButtonDemo" Content="here" NavigateUri="http://www.cshtml5.com" Foreground="#FFE44D26" Margin="5,0,0,0" HorizontalAlignment="Center" Cursor="Hand"/>
             </StackPanel>
             <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FF6F98FF" Style="{StaticResource ButtonViewSource_Style}"/>
         </Grid>

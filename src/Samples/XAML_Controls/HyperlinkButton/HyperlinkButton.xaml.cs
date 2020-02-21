@@ -23,6 +23,11 @@ namespace CSHTML5.Samples.Showcase
         public HyperlinkButton_Demo()
         {
             this.InitializeComponent();
+
+#if OPENSILVER
+            HyperlinkButtonDemo.NavigateUri = new Uri("http://www.opensilver.net"); 
+    #endif
+
         }
 
         private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
