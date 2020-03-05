@@ -39,7 +39,7 @@ function CheckBrowserCompatibility() {
         return;
     }
     else if (isSafari) {
-        alert("This website has not been tested on your web browser and it may not finish loading.It has been tested on Chrome, Firefox, and Edge.We are working to extend support to more browsers.Click OK to continue.");
+        alert("This website has not been tested on Safari yet and it may not finish loading. It has been tested on Chrome, Firefox, and Edge. We are working to extend support to more browsers. Click OK to continue.");
         return;
     }
     else {
@@ -48,8 +48,10 @@ function CheckBrowserCompatibility() {
             if (typeof WebAssembly === "object"
                 && typeof WebAssembly.instantiate === "function") {
                 const module = new WebAssembly.Module(Uint8Array.of(0x0, 0x61, 0x73, 0x6d, 0x01, 0x00, 0x00, 0x00));
-                if (module instanceof WebAssembly.Module)
+                if (module instanceof WebAssembly.Module) {
+                    alert("This website has not been tested on your web browser and it may not finish loading. It has been tested on Chrome, Firefox, and Edge. We are working to extend support to more browsers. Click OK to continue.");
                     return;
+                }
             }
         } catch (e) {
         }
