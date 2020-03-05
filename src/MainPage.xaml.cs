@@ -117,6 +117,11 @@ SHOWCASE";
             NavigateToPage("/Welcome");
         }
 
+        void ThirdParty_Click(object sender, RoutedEventArgs e)
+        {
+            NavigateToPage("/Third_Party");
+        }
+
         void NavigateToPage(string targetUri)
         {
             //Hide the menu:

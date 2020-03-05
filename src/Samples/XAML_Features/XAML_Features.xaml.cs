@@ -23,7 +23,6 @@ namespace CSHTML5.Samples.Showcase
         public Xaml_Features()
         {
             this.InitializeComponent();
-
 #if OPENSILVER
             Binding1Demo.Visibility = Visibility.Collapsed;
 #endif
