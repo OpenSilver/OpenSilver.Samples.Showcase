@@ -1,6 +1,6 @@
 
 
-This is a sample application for CSHTML5 and OpenSilver.
+This is a sample application for OpenSilver and CSHTML5.
 
-**See demo live at:** http://cshtml5.com/links/showcase.aspx
+**See the CSHTML5 version live at:** http://cshtml5.com/links/showcase.aspx
 
