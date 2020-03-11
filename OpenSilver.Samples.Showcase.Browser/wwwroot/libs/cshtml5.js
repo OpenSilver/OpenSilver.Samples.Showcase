@@ -10,56 +10,6 @@
 // CHECK BROWSER COMPATIBILITY
 //------------------------------
 
-function CheckBrowserCompatibility() {
-    // Opera 8.0+
-    var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
-
-    // Firefox 1.0+
-    var isFirefox = typeof InstallTrigger !== 'undefined';
-
-    // Safari 3.0+ "[object HTMLElementConstructor]" 
-    var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
-
-    // Internet Explorer 6-11
-    var isIE = /*@cc_on!@*/false || !!document.documentMode;
-
-    // Edge 20+
-    var isEdge = !isIE && !!window.StyleMedia;
-
-    // Chrome 1 - 80
-    var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
-
-    // Edge (based on chromium) detection
-    var isEdgeChromium = isChrome && (navigator.userAgent.indexOf("Edg") != -1);
-
-    // Blink engine detection
-    var isBlink = (isChrome || isOpera) && !!window.CSS;
-
-    if (isFirefox || isEdge || isEdgeChromium || isChrome) {
-        return;
-    }
-    else if (isSafari) {
-        alert("This website has not been tested on Safari yet and it may not finish loading. It has been tested on Chrome, Firefox, and Edge. We are working to extend support to more browsers. Click OK to continue.");
-        return;
-    }
-    else {
-        // detect if Web Assembly is not Detected
-        try {
-            if (typeof WebAssembly === "object"
-                && typeof WebAssembly.instantiate === "function") {
-                const module = new WebAssembly.Module(Uint8Array.of(0x0, 0x61, 0x73, 0x6d, 0x01, 0x00, 0x00, 0x00));
-                if (module instanceof WebAssembly.Module) {
-                    alert("This website has not been tested on your web browser and it may not finish loading. It has been tested on Chrome, Firefox, and Edge. We are working to extend support to more browsers. Click OK to continue.");
-                    return;
-                }
-            }
-        } catch (e) {
-        }
-        alert("This browser is not supported. Please use a browser that supports WebAssembly, such as Chrome, Firefox, and Edge.");
-        document.body.innerHTML = "Website can't load";
-        return;
-    }
-}
 
 function getInternetExplorerVersion() {
     var rv = false;
@@ -84,13 +34,13 @@ function getInternetExplorerVersion() {
 }
 
 var userAgentLowercase = navigator.userAgent.toLowerCase();
-CheckBrowserCompatibility();
+
 window.IE_VERSION = getInternetExplorerVersion();
 window.ANDROID_VERSION = (userAgentLowercase.indexOf('android') != -1) ? parseInt(userAgentLowercase.split('android')[1]) : false;
 window.FIREFOX_VERSION = ((index = userAgentLowercase.indexOf('firefox')) != -1) ? parseInt(userAgentLowercase.substring(index + 8)) : false;
 
 // Current version does not support IE < 11:
-if (window.IE_VERSION && window.IE_VERSION < 11)
+if (window.IE_VERSION && window.IE_VERSION < 10)
     alert("This version of Internet Explorer is not supported yet. Please use Internet Explorer 10 (or newer), Chrome 35 (or newer), Firefox 27 (or newer), Safari 8 (or newer), Safari Mobile iOS 8 (or newer), Opera 24 (or newer), or Android 4.x Browser (or newer). More browsers will be supported in the future.");
 
 // Current version does not support Android < 4:
@@ -487,10 +437,12 @@ document.getTextLengthIncludingNewLineCompensation = function (instance) {
     }
     var correctionDueToNewLines = text.split("\n").length;
     --correctionDueToNewLines; //for n lines, we have n-1 ""\r\n""
-    if (window.chrome && correctionDueToNewLines != 0) {
+    if(window.chrome && correctionDueToNewLines != 0)
+    {
         --correctionDueToNewLines; //on chrome, we have a \n right at the end for some reason.
     }
-    else if (window.IE_VERSION) {
+    else if (window.IE_VERSION)
+    {
         correctionDueToNewLines *= 2; //IE already has 2 characters for new lines but they are doubled: we have ""\r\n\r\n"" instead of ""\r\n"".
     }
     return text.length + correctionDueToNewLines;
@@ -616,16 +568,16 @@ if (!Array.from) {
 // See license and copyright at the URL above.
 //------------------------------
 
-(function () {
+(function() {
 
     function createShiftArr(step) {
 
         var space = '    ';
-
-        if (isNaN(parseInt(step))) {  // argument is string
+	
+        if ( isNaN(parseInt(step)) ) {  // argument is string
             space = step;
         } else { // argument is integer
-            switch (step) {
+            switch(step) {
                 case 1: space = ' '; break;
                 case 2: space = '  '; break;
                 case 3: space = '   '; break;
@@ -642,24 +594,24 @@ if (!Array.from) {
         }
 
         var shift = ['\n']; // array of shifts
-        for (var ix = 0; ix < 100; ix++) {
-            shift.push(shift[ix] + space);
+        for(var ix=0;ix<100;ix++){
+            shift.push(shift[ix]+space); 
         }
         return shift;
     }
 
-    function vkbeautify() {
+    function vkbeautify(){
         this.step = '    '; // 4 spaces
         this.shift = createShiftArr(this.step);
     }
 
-    vkbeautify.prototype.xml = function (text, step) {
+    vkbeautify.prototype.xml = function(text,step) {
 
-        var ar = text.replace(/>\s*</g, "><")
-            .replace(/</g, "~::~<")
-            .replace(/\s*xmlns:/g, "~::~xmlns:")
-            .replace(/\s*xmlns=/g, "~::~xmlns=")
-            .split('~::~'),
+        var ar = text.replace(/>\s*</g,"><")
+                     .replace(/</g,"~::~<")
+                     .replace(/\s*xmlns:/g,"~::~xmlns:")
+                     .replace(/\s*xmlns=/g,"~::~xmlns=")
+                     .split('~::~'),
             len = ar.length,
             inComment = false,
             deep = 0,
@@ -668,68 +620,68 @@ if (!Array.from) {
             shift = step ? createShiftArr(step) : this.shift,
             withNamespace = 0;
 
-        for (ix = 0; ix < len; ix++) {
+        for(ix=0;ix<len;ix++) {
             // start comment or <![CDATA[...]]> or <!DOCTYPE //
-            if (ar[ix].search(/<!/) > -1) {
-                str += shift[deep] + ar[ix];
-                inComment = true;
+            if(ar[ix].search(/<!/) > -1) { 
+                str += shift[deep]+ar[ix];
+                inComment = true; 
                 // end comment  or <![CDATA[...]]> //
-                if (ar[ix].search(/-->/) > -1 || ar[ix].search(/]>/) > -1 || ar[ix].search(/!DOCTYPE/) > -1) {
-                    inComment = false;
+                if(ar[ix].search(/-->/) > -1 || ar[ix].search(/]>/) > -1 || ar[ix].search(/!DOCTYPE/) > -1 ) {
+                    inComment = false; 
                 }
-            } else
+            } else 
                 // end comment  or <![CDATA[...]]> //
-                if (ar[ix].search(/-->/) > -1 || ar[ix].search(/]>/) > -1) {
+                if(ar[ix].search(/-->/) > -1 || ar[ix].search(/]>/) > -1) {
                     str += ar[ix];
-                    inComment = false;
-                } else
+                    inComment = false; 
+                } else 
                     // <elm></elm> //
-                    if (/^<\w/.exec(ar[ix - 1]) && /^<\/\w/.exec(ar[ix]) &&
+                    if( /^<\w/.exec(ar[ix-1]) && /^<\/\w/.exec(ar[ix]) &&
                         // This comparison will eventually compare an array with a single string item to another string
                         // so we voluntarily use '=='
-                        /^<[\w:\-\.,]+/.exec(ar[ix - 1]) == /^<\/[\w:\-\.,]+/.exec(ar[ix])[0].replace('/', '')) { // jshint ignore:line
+                        /^<[\w:\-\.,]+/.exec(ar[ix-1]) == /^<\/[\w:\-\.,]+/.exec(ar[ix])[0].replace('/','')) { // jshint ignore:line
                         str += ar[ix];
-                        if (!inComment) {
+                        if(!inComment) {
                             deep--;
                         }
                     } else
                         // <elm> //
-                        if (ar[ix].search(/<\w/) > -1 && ar[ix].search(/<\//) === -1 && ar[ix].search(/\/>/) === -1) {
-                            str = !inComment ? str += shift[deep++] + ar[ix] : str += ar[ix];
-                        } else
+                        if(ar[ix].search(/<\w/) > -1 && ar[ix].search(/<\//) === -1 && ar[ix].search(/\/>/) === -1 ) {
+                            str = !inComment ? str += shift[deep++]+ar[ix] : str += ar[ix];
+                        } else 
                             // <elm>...</elm> //
-                            if (ar[ix].search(/<\w/) > -1 && ar[ix].search(/<\//) > -1) {
-                                str = !inComment ? str += shift[deep] + ar[ix] : str += ar[ix];
-                            } else
+                            if(ar[ix].search(/<\w/) > -1 && ar[ix].search(/<\//) > -1) {
+                                str = !inComment ? str += shift[deep]+ar[ix] : str += ar[ix];
+                            } else 
                                 // </elm> //
-                                if (ar[ix].search(/<\//) > -1) {
+                                if(ar[ix].search(/<\//) > -1) { 
                                     --deep;
-                                    str = !inComment && !withNamespace ? str += shift[deep] + ar[ix] : str += ar[ix];
-                                } else
+                                    str = !inComment && !withNamespace? str += shift[deep] + ar[ix] : str += ar[ix];
+                                } else 
                                     // <elm/> //
-                                    if (ar[ix].search(/\/>/) > -1) {
-                                        str = !inComment ? str += shift[deep] + ar[ix] : str += ar[ix];
-                                        if (ar[ix].search(/xmlns\:/) > -1 || ar[ix].search(/xmlns\=/) > -1)
-                                            deep--;
-                                    } else
+                                    if(ar[ix].search(/\/>/) > -1 ) { 
+                                        str = !inComment ? str += shift[deep]+ar[ix] : str += ar[ix];
+                                        if (ar[ix].search(/xmlns\:/) > -1  || ar[ix].search(/xmlns\=/) > -1)
+                                        deep--;
+                                    } else 
                                         // <? xml ... ?> //
-                                        if (ar[ix].search(/<\?/) > -1) {
-                                            str += shift[deep] + ar[ix];
-                                        } else
+                                        if(ar[ix].search(/<\?/) > -1) { 
+                                            str += shift[deep]+ar[ix];
+                                        } else 
                                             // xmlns //
-                                            if (ar[ix].search(/xmlns:/) > -1 || ar[ix].search(/xmlns=/) > -1) {
-                                                str += shift[deep] + ar[ix];
+                                            if( ar[ix].search(/xmlns:/) > -1  || ar[ix].search(/xmlns=/) > -1) {
+                                                str += shift[deep]+ar[ix];
                                                 withNamespace = 2;
-                                            }
-
+                                            } 
+			
                                             else {
                                                 str += ar[ix];
                                             }
-            if (withNamespace)
-                withNamespace--;
+                                            if (withNamespace)
+                                                withNamespace--;
         }
 
-        return (str.charAt(0) === '\n') ? str.slice(1) : str;
+        return  (str.charAt(0) === '\n') ? str.slice(1) : str;
     };
 
     window.vkbeautify = new vkbeautify();
@@ -757,7 +709,7 @@ var jsilConfig = {
     showProgressBar: true,
     localStorage: true,
     manifests: [
-        "index"
+      "index"
     ]
 };
 
