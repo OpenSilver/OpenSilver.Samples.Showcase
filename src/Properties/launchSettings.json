@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "OpenSilver.Samples.Showcase": {
+      "commandName": "Executable",
+      "executablePath": "cmd",
+      "commandLineArgs": "/c start \"\" \"http://www.opensilver.net/permalinks/wrong_startup_project.aspx\""
+    }
+  }
+}
