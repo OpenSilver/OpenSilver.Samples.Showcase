@@ -1,6 +1,9 @@
 ﻿#if !OPENSILVER
 using CSHTML5.Samples.Showcase.ServiceReference1;
+#else
+using ServiceReference1;
 #endif
+
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -50,6 +53,24 @@ namespace CSHTML5.Samples.Showcase
                 var dataContractSerializer = new DataContractSerializer(typeof(List<ToDoItem>));
                 List<ToDoItem> toDoItems = (List<ToDoItem>)dataContractSerializer.DeserializeFromString(response);
                 RestToDosItemsControl.ItemsSource = toDoItems;
+#else
+                var dataContractSerializer = new DataContractSerializer(typeof(List<ToDoItem>), new Type[] { typeof(ToDoItem) });
+                //XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<ToDoItem>), new Type[] { typeof(ToDoItem) });
+                //convert the string into a stream so it can be deserialized:
+                using (var stream = new MemoryStream())
+                {
+                    using (var writer = new StreamWriter(stream))
+                    {
+                        writer.Write(response);
+                        writer.Flush();
+                        stream.Position = 0;
+                        List<ToDoItem> toDoItems = (List<ToDoItem>)dataContractSerializer.ReadObject(stream);
+                        //List<ToDoItem> toDoItems = (List<ToDoItem>)xmlSerializer.Deserialize(stream);
+                       
+
+                        RestToDosItemsControl.ItemsSource = toDoItems;
+                    }
+                }
 #endif
             }
             catch (Exception ex)
@@ -72,7 +93,7 @@ namespace CSHTML5.Samples.Showcase
 
         async void ButtonAddRestToDo_Click(object sender, RoutedEventArgs e)
         {
-#if !OPENSILVER
+//#if !OPENSILVER
             var button = (Button)sender;
             button.Content = "Please wait...";
             button.IsEnabled = false;
@@ -94,7 +115,7 @@ namespace CSHTML5.Samples.Showcase
 
             button.IsEnabled = true;
             button.Content = "Create";
-#endif
+//#endif
         }
 
         async void ButtonDeleteRestToDo_Click(object sender, RoutedEventArgs e)

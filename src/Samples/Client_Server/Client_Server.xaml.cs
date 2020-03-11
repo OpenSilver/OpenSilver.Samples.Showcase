@@ -24,7 +24,7 @@ namespace CSHTML5.Samples.Showcase
             this.InitializeComponent();
 
 #if OPENSILVER
-            REST_WebClientDemo.Visibility = System.Windows.Visibility.Collapsed;
+            //REST_WebClientDemo.Visibility = System.Windows.Visibility.Collapsed;
 #endif
         }
     }
