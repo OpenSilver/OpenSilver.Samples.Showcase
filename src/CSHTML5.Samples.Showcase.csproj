@@ -39,16 +39,22 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bridge, Version=17.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CSHTML5.2.0.0-alpha50-069\lib\net40\Bridge.dll</HintPath>
+      <HintPath>..\packages\CSHTML5.2.0.0-alpha58-078\lib\net40\Bridge.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CSHTML5, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CSHTML5.2.0.0-alpha50-069\lib\net40\CSHTML5.dll</HintPath>
+      <HintPath>..\packages\CSHTML5.2.0.0-alpha58-078\lib\net40\CSHTML5.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CSHTML5.Stubs, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CSHTML5.2.0.0-alpha50-069\lib\net40\CSHTML5.Stubs.dll</HintPath>
+      <HintPath>..\packages\CSHTML5.2.0.0-alpha58-078\lib\net40\CSHTML5.Stubs.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="CSHTML5.Wrappers.DevExtreme.common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CSHTML5.Wrappers.DevExtreme.1.0.0-alpha-001\lib\net40\CSHTML5.Wrappers.DevExtreme.common.dll</HintPath>
+    </Reference>
+    <Reference Include="CSHTML5.Wrappers.DevExtreme.Datagrid, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CSHTML5.Wrappers.DevExtreme.1.0.0-alpha-001\lib\net40\CSHTML5.Wrappers.DevExtreme.Datagrid.dll</HintPath>
     </Reference>
     <Reference Include="CSHTML5.Wrappers.KendoUI.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\CSHTML5.Wrappers.KendoUI.Common.1.0.0-alpha01-004\lib\net40\CSHTML5.Wrappers.KendoUI.Common.dll</HintPath>
@@ -102,6 +108,10 @@
     <Compile Include="Samples\Net_Framework\JSON_Serializer\InteropHelper.cs" />
     <Compile Include="Samples\Net_Framework\Printing\Invoice.xaml.cs">
       <DependentUpon>Invoice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\Third_Party\DevExtreme\DataGrid\Employee.cs" />
+    <Compile Include="Samples\Third_Party\DevExtreme\DataGrid\Datagrid_Demo.xaml.cs">
+      <DependentUpon>Datagrid_Demo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Annotation.cs" />
     <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Axis.cs" />
@@ -471,6 +481,32 @@
     <Content Include="Other\SplashScreen1.png" />
     <Content Include="Samples\Third_Party\Plotly_Charts\ChartControl\plotly.min.js" />
     <Content Include="Samples\Third_Party\Plotly_Charts\ChartControl\typedarray.js" />
+    <Content Include="Third_Party_Resources\DevExtreme\scripts\dx.all.js" />
+    <Content Include="Third_Party_Resources\DevExtreme\scripts\jquery.min.js" />
+    <Content Include="Third_Party_Resources\DevExtreme\styles\dx.common.css" />
+    <Content Include="Third_Party_Resources\DevExtreme\styles\dx.dark.css" />
+    <Content Include="Third_Party_Resources\DevExtreme\styles\dx.light.css" />
+    <Content Include="Third_Party_Resources\DevExtreme\styles\fonts\Roboto-300.ttf" />
+    <Content Include="Third_Party_Resources\DevExtreme\styles\fonts\Roboto-300.woff" />
+    <Content Include="Third_Party_Resources\DevExtreme\styles\fonts\Roboto-300.woff2" />
+    <Content Include="Third_Party_Resources\DevExtreme\styles\fonts\Roboto-400.ttf" />
+    <Content Include="Third_Party_Resources\DevExtreme\styles\fonts\Roboto-400.woff" />
+    <Content Include="Third_Party_Resources\DevExtreme\styles\fonts\Roboto-400.woff2" />
+    <Content Include="Third_Party_Resources\DevExtreme\styles\fonts\Roboto-500.ttf" />
+    <Content Include="Third_Party_Resources\DevExtreme\styles\fonts\Roboto-500.woff" />
+    <Content Include="Third_Party_Resources\DevExtreme\styles\fonts\Roboto-500.woff2" />
+    <Content Include="Third_Party_Resources\DevExtreme\styles\fonts\Roboto-700.ttf" />
+    <Content Include="Third_Party_Resources\DevExtreme\styles\fonts\Roboto-700.woff" />
+    <Content Include="Third_Party_Resources\DevExtreme\styles\fonts\Roboto-700.woff2" />
+    <Content Include="Third_Party_Resources\DevExtreme\styles\icons\dxicons.ttf" />
+    <Content Include="Third_Party_Resources\DevExtreme\styles\icons\dxicons.woff" />
+    <Content Include="Third_Party_Resources\DevExtreme\styles\icons\dxicons.woff2" />
+    <Content Include="Third_Party_Resources\DevExtreme\styles\icons\dxiconsios.ttf" />
+    <Content Include="Third_Party_Resources\DevExtreme\styles\icons\dxiconsios.woff" />
+    <Content Include="Third_Party_Resources\DevExtreme\styles\icons\dxiconsios.woff2" />
+    <Content Include="Third_Party_Resources\DevExtreme\styles\icons\dxiconsmaterial.ttf" />
+    <Content Include="Third_Party_Resources\DevExtreme\styles\icons\dxiconsmaterial.woff" />
+    <Content Include="Third_Party_Resources\DevExtreme\styles\icons\dxiconsmaterial.woff2" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -520,7 +556,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Samples\Third_Party\Telerik_TelerikUI\" />
-    <Folder Include="Third_Party_Resources\" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_Button_Styles.xaml">
@@ -632,6 +667,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Samples\Net_Framework\FullScreen\FullScreen_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\Third_Party\DevExtreme\DataGrid\Datagrid_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -1088,12 +1127,12 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
-  <Import Project="..\packages\CSHTML5.2.0.0-alpha50-069\build\CSHTML5.targets" Condition="Exists('..\packages\CSHTML5.2.0.0-alpha50-069\build\CSHTML5.targets')" />
+  <Import Project="..\packages\CSHTML5.2.0.0-alpha58-078\build\CSHTML5.targets" Condition="Exists('..\packages\CSHTML5.2.0.0-alpha58-078\build\CSHTML5.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\CSHTML5.2.0.0-alpha50-069\build\CSHTML5.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CSHTML5.2.0.0-alpha50-069\build\CSHTML5.targets'))" />
+    <Error Condition="!Exists('..\packages\CSHTML5.2.0.0-alpha58-078\build\CSHTML5.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CSHTML5.2.0.0-alpha58-078\build\CSHTML5.targets'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
