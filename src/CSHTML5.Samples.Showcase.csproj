@@ -481,32 +481,6 @@
     <Content Include="Other\SplashScreen1.png" />
     <Content Include="Samples\Third_Party\Plotly_Charts\ChartControl\plotly.min.js" />
     <Content Include="Samples\Third_Party\Plotly_Charts\ChartControl\typedarray.js" />
-    <Content Include="Third_Party_Resources\DevExtreme\scripts\dx.all.js" />
-    <Content Include="Third_Party_Resources\DevExtreme\scripts\jquery.min.js" />
-    <Content Include="Third_Party_Resources\DevExtreme\styles\dx.common.css" />
-    <Content Include="Third_Party_Resources\DevExtreme\styles\dx.dark.css" />
-    <Content Include="Third_Party_Resources\DevExtreme\styles\dx.light.css" />
-    <Content Include="Third_Party_Resources\DevExtreme\styles\fonts\Roboto-300.ttf" />
-    <Content Include="Third_Party_Resources\DevExtreme\styles\fonts\Roboto-300.woff" />
-    <Content Include="Third_Party_Resources\DevExtreme\styles\fonts\Roboto-300.woff2" />
-    <Content Include="Third_Party_Resources\DevExtreme\styles\fonts\Roboto-400.ttf" />
-    <Content Include="Third_Party_Resources\DevExtreme\styles\fonts\Roboto-400.woff" />
-    <Content Include="Third_Party_Resources\DevExtreme\styles\fonts\Roboto-400.woff2" />
-    <Content Include="Third_Party_Resources\DevExtreme\styles\fonts\Roboto-500.ttf" />
-    <Content Include="Third_Party_Resources\DevExtreme\styles\fonts\Roboto-500.woff" />
-    <Content Include="Third_Party_Resources\DevExtreme\styles\fonts\Roboto-500.woff2" />
-    <Content Include="Third_Party_Resources\DevExtreme\styles\fonts\Roboto-700.ttf" />
-    <Content Include="Third_Party_Resources\DevExtreme\styles\fonts\Roboto-700.woff" />
-    <Content Include="Third_Party_Resources\DevExtreme\styles\fonts\Roboto-700.woff2" />
-    <Content Include="Third_Party_Resources\DevExtreme\styles\icons\dxicons.ttf" />
-    <Content Include="Third_Party_Resources\DevExtreme\styles\icons\dxicons.woff" />
-    <Content Include="Third_Party_Resources\DevExtreme\styles\icons\dxicons.woff2" />
-    <Content Include="Third_Party_Resources\DevExtreme\styles\icons\dxiconsios.ttf" />
-    <Content Include="Third_Party_Resources\DevExtreme\styles\icons\dxiconsios.woff" />
-    <Content Include="Third_Party_Resources\DevExtreme\styles\icons\dxiconsios.woff2" />
-    <Content Include="Third_Party_Resources\DevExtreme\styles\icons\dxiconsmaterial.ttf" />
-    <Content Include="Third_Party_Resources\DevExtreme\styles\icons\dxiconsmaterial.woff" />
-    <Content Include="Third_Party_Resources\DevExtreme\styles\icons\dxiconsmaterial.woff2" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
