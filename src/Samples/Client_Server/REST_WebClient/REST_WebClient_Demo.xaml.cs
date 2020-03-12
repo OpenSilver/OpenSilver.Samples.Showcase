@@ -1,7 +1,7 @@
 ﻿#if !OPENSILVER
 using CSHTML5.Samples.Showcase.ServiceReference1;
 #else
-using ServiceReference1;
+using DotNetForHtml5.Showcase.SampleRestWebService.Models;
 #endif
 
 using System;
@@ -46,16 +46,21 @@ namespace CSHTML5.Samples.Showcase
                 var webClient = new WebClient();
                 webClient.Encoding = Encoding.UTF8;
                 webClient.Headers[HttpRequestHeader.Accept] = "application/xml";
-
-                string response = await webClient.DownloadStringTaskAsync("http://cshtml5-rest-sample.azurewebsites.net/api/Todo?OwnerId=" + _ownerId.ToString());
-
 #if !OPENSILVER
+                string response = await webClient.DownloadStringTaskAsync("http://cshtml5-rest-sample.azurewebsites.net/api/Todo?OwnerId=" + _ownerId.ToString());
                 var dataContractSerializer = new DataContractSerializer(typeof(List<ToDoItem>));
                 List<ToDoItem> toDoItems = (List<ToDoItem>)dataContractSerializer.DeserializeFromString(response);
                 RestToDosItemsControl.ItemsSource = toDoItems;
 #else
+                //Note: it seems WebClient is not supported (despite existing) in Blazor so we use HttpClient instead
+                var httpClient = new System.Net.Http.HttpClient();
+                httpClient.DefaultRequestHeaders.Accept.Clear();
+                httpClient.DefaultRequestHeaders.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/xml"));
+                var responseMessage = await httpClient.GetAsync("http://cshtml5-rest-sample.azurewebsites.net/api/Todo?OwnerId=" + _ownerId.ToString());
+
+                string response = await responseMessage.Content.ReadAsStringAsync();
+
                 var dataContractSerializer = new DataContractSerializer(typeof(List<ToDoItem>), new Type[] { typeof(ToDoItem) });
-                //XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<ToDoItem>), new Type[] { typeof(ToDoItem) });
                 //convert the string into a stream so it can be deserialized:
                 using (var stream = new MemoryStream())
                 {
@@ -65,9 +70,6 @@ namespace CSHTML5.Samples.Showcase
                         writer.Flush();
                         stream.Position = 0;
                         List<ToDoItem> toDoItems = (List<ToDoItem>)dataContractSerializer.ReadObject(stream);
-                        //List<ToDoItem> toDoItems = (List<ToDoItem>)xmlSerializer.Deserialize(stream);
-                       
-
                         RestToDosItemsControl.ItemsSource = toDoItems;
                     }
                 }
@@ -93,7 +95,6 @@ namespace CSHTML5.Samples.Showcase
 
         async void ButtonAddRestToDo_Click(object sender, RoutedEventArgs e)
         {
-//#if !OPENSILVER
             var button = (Button)sender;
             button.Content = "Please wait...";
             button.IsEnabled = false;
@@ -101,11 +102,17 @@ namespace CSHTML5.Samples.Showcase
             try
             {
                 string data = string.Format(@"{{""OwnerId"": ""{0}"",""Id"": ""{1}"",""Description"": ""{2}""}}", _ownerId, Guid.NewGuid(), RestToDoTextBox.Text.Replace("\"", "'"));
+#if !OPENSILVER
                 var webClient = new WebClient();
                 webClient.Headers[HttpRequestHeader.ContentType] = "application/json";
                 webClient.Encoding = Encoding.UTF8;
-                string response = await webClient.UploadStringTaskAsync("http://cshtml5-rest-sample.azurewebsites.net/api/Todo/", "POST", data);
-
+                await webClient.UploadStringTaskAsync("http://cshtml5-rest-sample.azurewebsites.net/api/Todo/", "POST", data);
+#else
+                //Note: it seems WebClient is not supported (despite existing) in Blazor so we use HttpClient instead
+                var httpClient = new System.Net.Http.HttpClient();
+                await httpClient.PostAsync("http://cshtml5-rest-sample.azurewebsites.net/api/Todo/",
+                    new System.Net.Http.StringContent(data,Encoding.UTF8, "application/json"));
+#endif
                 await RefreshRestToDos();
             }
             catch (Exception ex)
@@ -115,12 +122,10 @@ namespace CSHTML5.Samples.Showcase
 
             button.IsEnabled = true;
             button.Content = "Create";
-//#endif
         }
 
         async void ButtonDeleteRestToDo_Click(object sender, RoutedEventArgs e)
         {
-#if !OPENSILVER
             var button = (Button)sender;
             button.Content = "Please wait...";
             button.IsEnabled = false;
@@ -128,8 +133,14 @@ namespace CSHTML5.Samples.Showcase
             try
             {
                 ToDoItem todo = ((ToDoItem)button.DataContext);
+#if !OPENSILVER
                 var webClient = new WebClient();
                 string response = await webClient.UploadStringTaskAsync("http://cshtml5-rest-sample.azurewebsites.net/api/Todo/" + todo.Id.ToString() + "?OwnerId=" + _ownerId.ToString(), "DELETE", "");
+#else
+                //Note: it seems WebClient is not supported (despite existing) in Blazor so we use HttpClient instead
+                var httpClient = new System.Net.Http.HttpClient();
+                await httpClient.DeleteAsync("http://cshtml5-rest-sample.azurewebsites.net/api/Todo/" + todo.Id.ToString() + "?OwnerId=" + _ownerId.ToString());
+#endif
 
                 await RefreshRestToDos();
             }
@@ -140,12 +151,10 @@ namespace CSHTML5.Samples.Showcase
 
             button.IsEnabled = true;
             button.Content = "Delete";
-#endif
         }
 
         async void ButtonUpdateRestToDo_Click(object sender, RoutedEventArgs e)
         {
-#if !OPENSILVER
             var button = (Button)sender;
             ToDoItem todo = ((ToDoItem)button.DataContext);
 
@@ -164,10 +173,17 @@ namespace CSHTML5.Samples.Showcase
             try
             {
                 string data = string.Format(@"{{""OwnerId"": ""{0}"",""Id"": ""{1}"",""Description"": ""{2}""}}", _ownerId, todo.Id, RestToDoTextBox.Text.Replace("\"", "'"));
+#if !OPENSILVER
                 var webClient = new WebClient();
                 webClient.Headers[HttpRequestHeader.ContentType] = "application/json";
                 webClient.Encoding = Encoding.UTF8;
                 string response = await webClient.UploadStringTaskAsync("http://cshtml5-rest-sample.azurewebsites.net/api/Todo/" + todo.Id.ToString(), "PUT", data);
+#else
+                //Note: it seems WebClient is not supported (despite existing) in Blazor so we use HttpClient instead
+                var httpClient = new System.Net.Http.HttpClient();
+                await httpClient.PutAsync("http://cshtml5-rest-sample.azurewebsites.net/api/Todo/" + todo.Id.ToString(), 
+                    new System.Net.Http.StringContent(data, Encoding.UTF8, "application/json"));
+#endif
 
                 await RefreshRestToDos();
             }
@@ -178,7 +194,6 @@ namespace CSHTML5.Samples.Showcase
 
             button.IsEnabled = true;
             button.Content = "Update";
-#endif
         }
 
         private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
@@ -194,6 +209,11 @@ namespace CSHTML5.Samples.Showcase
                 {
                     TabHeader = "REST_WebClient_Demo.xaml.cs",
                     FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/Client_Server/REST_WebClient/REST_WebClient_Demo.xaml.cs"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "REST_ToDoItem.cs",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/Client_Server/REST_WebClient/REST_ToDoItem.cs"
                 }
             });
         }
