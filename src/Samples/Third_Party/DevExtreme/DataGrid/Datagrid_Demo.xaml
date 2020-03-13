@@ -35,8 +35,8 @@
 
 					<StackPanel Margin="0,20,0,0">
 						<Label FontWeight="Bold" FontSize="14" Content="Options:" />
-						<CheckBox Content="Show search panel" FontSize="14" Checked="SearchPanel_Show" Unchecked="SearchPanel_Hide" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-						<CheckBox Content="Allow grouping" FontSize="14" Checked="Grouping_Enable" Unchecked="Grouping_Disable" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+						<CheckBox Content="Show search panel" FontSize="14" IsChecked="True" Checked="SearchPanel_Show" Unchecked="SearchPanel_Hide" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+						<CheckBox Content="Allow grouping" FontSize="14" IsChecked="True" Checked="Grouping_Enable" Unchecked="Grouping_Disable" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 						<CheckBox Content="Allow adding" FontSize="14" IsChecked="True" Checked="Adding_Enable" Unchecked="Adding_Disable" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 						<CheckBox Content="Allow updating" FontSize="14" IsChecked="True" Checked="Updating_Enable" Unchecked="Updating_Disable" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 						<CheckBox Content="Allow deleting" FontSize="14" IsChecked="True" Checked="Deleting_Enable" Unchecked="Deleting_Disable" HorizontalAlignment="Left" VerticalAlignment="Center"/>
