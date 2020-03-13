@@ -50,6 +50,12 @@
       <HintPath>..\packages\CSHTML5.2.0.0-alpha59-079\lib\net40\CSHTML5.Stubs.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="CSHTML5.Wrappers.DevExtreme.common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CSHTML5.Wrappers.DevExtreme.1.0.0-alpha-001\lib\net40\CSHTML5.Wrappers.DevExtreme.common.dll</HintPath>
+    </Reference>
+    <Reference Include="CSHTML5.Wrappers.DevExtreme.Datagrid, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CSHTML5.Wrappers.DevExtreme.1.0.0-alpha-001\lib\net40\CSHTML5.Wrappers.DevExtreme.Datagrid.dll</HintPath>
+    </Reference>
     <Reference Include="CSHTML5.Wrappers.KendoUI.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\CSHTML5.Wrappers.KendoUI.Common.1.0.0-alpha01-004\lib\net40\CSHTML5.Wrappers.KendoUI.Common.dll</HintPath>
     </Reference>
@@ -102,6 +108,10 @@
     <Compile Include="Samples\Net_Framework\JSON_Serializer\InteropHelper.cs" />
     <Compile Include="Samples\Net_Framework\Printing\Invoice.xaml.cs">
       <DependentUpon>Invoice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\Third_Party\DevExtreme\DataGrid\Employee.cs" />
+    <Compile Include="Samples\Third_Party\DevExtreme\DataGrid\DataGrid_Demo.xaml.cs">
+      <DependentUpon>DataGrid_Demo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Annotation.cs" />
     <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Axis.cs" />
@@ -520,7 +530,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Samples\Third_Party\Telerik_TelerikUI\" />
-    <Folder Include="Third_Party_Resources\" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_Button_Styles.xaml">
@@ -632,6 +641,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Samples\Net_Framework\FullScreen\FullScreen_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\Third_Party\DevExtreme\DataGrid\DataGrid_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

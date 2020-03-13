@@ -24,6 +24,7 @@ namespace CSHTML5.Samples.Showcase
 #if OPENSILVER
             PerformanceButton.Visibility = Visibility.Collapsed;
             ThirdPartyButton.Visibility = Visibility.Collapsed;
+            ThirdPartyHomeButton.Visibility = Visibility.Visible;
 #endif
 
             MainPage.Current = this;
@@ -110,6 +111,11 @@ SHOWCASE";
         void ButtonTelerikKendoUIEditor_Click(object sender, RoutedEventArgs e)
         {
             NavigateToPage("/Third_Party/Telerik_KendoUI/Editor/Editor_Demo");
+        }
+
+        void ButtonDevExtremeDataGrid_Click(object sender, RoutedEventArgs e)
+        {
+            NavigateToPage("/Third_Party/DevExtreme/DataGrid/DataGrid_Demo");
         }
 
         void ButtonHome_Click(object sender, RoutedEventArgs e)
