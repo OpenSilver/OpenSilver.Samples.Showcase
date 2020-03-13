@@ -59,7 +59,7 @@
                                 </Expander>
 								<Expander Header="DevExtreme" FontSize="13" Foreground="#FFBBBBBB" Margin="4,5,0,0" Style="{StaticResource MainMenuExpander_Style}">
 									<StackPanel Margin="0,0,0,0">
-										<Button Content="Datagrid" Click="ButtonDevExtremeDatagrid_Click" Background="{x:Null}" Foreground="#FFBBBBBB" HorizontalContentAlignment="Left" FontSize="13" Margin="20,3,0,0"/>
+										<Button Content="DataGrid" Click="ButtonDevExtremeDataGrid_Click" Background="{x:Null}" Foreground="#FFBBBBBB" HorizontalContentAlignment="Left" FontSize="13" Margin="20,3,0,0"/>
 									</StackPanel>
 								</Expander>
 							</StackPanel>

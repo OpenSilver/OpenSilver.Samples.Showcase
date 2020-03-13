@@ -112,9 +112,9 @@ SHOWCASE";
             NavigateToPage("/Third_Party/Telerik_KendoUI/Editor/Editor_Demo");
         }
 
-        void ButtonDevExtremeDatagrid_Click(object sender, RoutedEventArgs e)
+        void ButtonDevExtremeDataGrid_Click(object sender, RoutedEventArgs e)
         {
-            NavigateToPage("/Third_Party/DevExtreme/Datagrid/Datagrid_Demo");
+            NavigateToPage("/Third_Party/DevExtreme/Datagrid/DataGrid_Demo");
         }
 
         void ButtonHome_Click(object sender, RoutedEventArgs e)

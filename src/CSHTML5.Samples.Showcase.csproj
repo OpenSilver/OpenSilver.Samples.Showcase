@@ -110,8 +110,8 @@
       <DependentUpon>Invoice.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\Third_Party\DevExtreme\DataGrid\Employee.cs" />
-    <Compile Include="Samples\Third_Party\DevExtreme\DataGrid\Datagrid_Demo.xaml.cs">
-      <DependentUpon>Datagrid_Demo.xaml</DependentUpon>
+    <Compile Include="Samples\Third_Party\DevExtreme\DataGrid\DataGrid_Demo.xaml.cs">
+      <DependentUpon>DataGrid_Demo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Annotation.cs" />
     <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Axis.cs" />
@@ -644,7 +644,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Samples\Third_Party\DevExtreme\DataGrid\Datagrid_Demo.xaml">
+    <Page Include="Samples\Third_Party\DevExtreme\DataGrid\DataGrid_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
