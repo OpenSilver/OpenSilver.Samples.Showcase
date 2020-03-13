@@ -64,7 +64,7 @@
   </PropertyGroup>
   <ItemGroup>
 	  <PackageReference Include="OpenSilver" Version="1.0.0-alpha-002" />
-	  <PackageReference Include="OpenSilver.UwpCompatible" Version="1.0.0-alpha-001" Condition="'$(Configuration)|$(Platform)'=='OpenSilver.UwpCompatible|AnyCPU'" />
+	  <PackageReference Include="OpenSilver.UwpCompatible" Version="1.0.0-alpha-002" Condition="'$(Configuration)|$(Platform)'=='OpenSilver.UwpCompatible|AnyCPU'" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\src\OpenSilver.Samples.Showcase.csproj" />

@@ -222,7 +222,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Content>
     <PackageReference Include="OpenSilver" Version="1.0.0-alpha-002" />
-    <PackageReference Include="OpenSilver.UwpCompatible" Version="1.0.0-alpha-001" Condition="'$(Configuration)|$(Platform)'=='OpenSilver.UwpCompatible|AnyCPU'" />
+    <PackageReference Include="OpenSilver.UwpCompatible" Version="1.0.0-alpha-002" Condition="'$(Configuration)|$(Platform)'=='OpenSilver.UwpCompatible|AnyCPU'" />
     <PackageReference Include="System.ServiceModel.Duplex" Version="4.7.0" />
     <PackageReference Include="System.ServiceModel.Http" Version="4.7.0" />
     <PackageReference Include="System.ServiceModel.NetTcp" Version="4.7.0" />
