@@ -23,12 +23,15 @@
   </PropertyGroup>
 	
   <ItemGroup>
+    <Compile Remove="Samples\Third_Party\DevExtreme\**" />
     <Compile Remove="Samples\Third_Party\Syncfusion_EssentialJS1\**" />
     <Compile Remove="Samples\Third_Party\Telerik_KendoUI\**" />
     <Compile Remove="Service References\**" />
+    <EmbeddedResource Remove="Samples\Third_Party\DevExtreme\**" />
     <EmbeddedResource Remove="Samples\Third_Party\Syncfusion_EssentialJS1\**" />
     <EmbeddedResource Remove="Samples\Third_Party\Telerik_KendoUI\**" />
     <EmbeddedResource Remove="Service References\**" />
+    <None Remove="Samples\Third_Party\DevExtreme\**" />
     <None Remove="Samples\Third_Party\Syncfusion_EssentialJS1\**" />
     <None Remove="Samples\Third_Party\Telerik_KendoUI\**" />
     <None Remove="Service References\**" />
