@@ -8,25 +8,25 @@
 var link = document.createElement('link');
 link.setAttribute('rel', 'stylesheet');
 link.setAttribute('type', 'text/css');
-link.setAttribute('href', 'app-cshtml5/libs/cshtml5.css');
+link.setAttribute('href', 'libs/cshtml5.css');
 document.getElementsByTagName('head')[0].appendChild(link);
 
 //new Element("script", { src: "cshtml5.js", type: "application/javascript" });
 var cshtml5Script = document.createElement('script');
 cshtml5Script.setAttribute('type', 'application/javascript');
-cshtml5Script.setAttribute('src', 'app-cshtml5/libs/cshtml5.js');
+cshtml5Script.setAttribute('src', 'libs/cshtml5.js');
 document.getElementsByTagName('head')[0].appendChild(cshtml5Script);
 
 //new Element("script", { src: "fastclick.js", type: "application/javascript" });
 var fastclickScript = document.createElement('script');
 fastclickScript.setAttribute('type', 'application/javascript');
-fastclickScript.setAttribute('src', 'app-cshtml5/libs/fastclick.js');
+fastclickScript.setAttribute('src', 'libs/fastclick.js');
 document.getElementsByTagName('head')[0].appendChild(fastclickScript);
 
 //new Element("script", { src: "velocity.js", type: "application/javascript" });
 var velocityScript = document.createElement('script');
 velocityScript.setAttribute('type', 'application/javascript');
-velocityScript.setAttribute('src', 'app-cshtml5/libs/velocity.js');
+velocityScript.setAttribute('src', 'libs/velocity.js');
 document.getElementsByTagName('head')[0].appendChild(velocityScript);
 
 window.onCallBack = {}

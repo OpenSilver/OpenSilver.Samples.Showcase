@@ -4,24 +4,31 @@
     <meta charset="utf-8" />
     <title>OpenSilver Showcase</title>
     <base href="/" />
-    <link rel="stylesheet" type="text/css" href="app-cshtml5/libs/loader.css">
-
+    <link rel="stylesheet" type="text/css" href="libs/loader.css">
 </head>
 <body>
     <app style="position:absolute;width:100%;height:100%;">
         <div class="loader-wrap">
             <div class="loader animating" id="loader">
-                <!-- add 'animating' class for animate loader -->
+                <!-- add 'animating' class to animate the loader -->
                 <span></span><span></span><span></span><span></span>
                 <span></span><span></span><span></span><span></span>
                 <span></span><span></span><span></span><span></span>
                 <span></span><span></span><span></span><span></span>
             </div>
         </div>
-        <div style="position:absolute; width:100%; bottom:10px; text-align:center; font-size:20px; font-family: &quot;Segoe UI&quot;; color: rgb(0, 98, 110); ">First time load takes longer than subsequent ones.</div>
+        <div style="position:absolute; width:100%; bottom:30px; text-align:center; font-size:16px; font-family: &quot;Segoe UI&quot;; color: #000000; line-height: initial; padding-bottom:30px;">
+            <span style="font-size:16px;font-weight:500;line-height:50px;">Welcome to the OpenSilver Technology Preview Showcase!</span>
+            <br />
+            <span style="font-size:16px;">
+                First time load takes longer than subsequent ones.
+                <br />
+                Runtime performance will be 30 to 50 times faster when Ahead-of-Time (AOT) compilation becomes available later in 2020.
+            </span>
+        </div>
     </app>
     <div id="cshtml5-root" style="position: relative; width: 100%; height: 100%; overflow-x: hidden; overflow-y: hidden"></div>
     <script src="_framework/blazor.webassembly.js"></script>
-    <script type="application/javascript" src="app-cshtml5/libs/OpenSilver.js"></script>
+    <script type="application/javascript" src="libs/opensilver_with_browser_check.js"></script>
 </body>
 </html>
