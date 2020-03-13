@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Globalization;
 
 using System.IO;
 using System.Linq;
@@ -37,11 +38,27 @@ namespace CSHTML5.Wrappers.DevExtreme.DataGrid.Examples
 
         private async void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            await DataGrid.JSInstanceLoaded; // Wait until the underlying JS instance of the DevExtreme DataGrid has been loaded
+            SelectionModeSingle.Content = "Single";
+            SelectionModeMultiple.Content = "Multiple";
 
-            SetColumnsData();
+            LoadingPleaseWaitMessage.Visibility = Visibility.Visible;
+            bool result = await DataGrid.JSInstanceLoaded;
+            if (result)
+            {
+                LoadingPleaseWaitMessage.Visibility = Visibility.Collapsed;
+                DataGrid.Visibility = Visibility.Visible;
 
-            SetDataSource();
+                SetColumnsData();
+
+                SetDataSource();
+            }
+            else
+            {
+                DataGrid.Visibility = Visibility.Visible;
+                LoadingPleaseWaitMessage.Visibility = Visibility.Collapsed;
+            }
+            SelectionModeSingle.Content = "Single";
+            SelectionModeMultiple.Content = "Multiple";
         }
 
         private async void MainPage_Unloaded(object sender, RoutedEventArgs e)
@@ -116,28 +133,28 @@ namespace CSHTML5.Wrappers.DevExtreme.DataGrid.Examples
         {
             DataGrid.SearchPanel.visible = true;
 
-            DataGrid.SetSearchPanelData(DataGrid.SearchPanel);
+            DataGrid.SetSearchPanelDataOption(DataGrid.SearchPanel);
         }
 
         void SearchPanel_Hide(object sender, RoutedEventArgs e)
         {
             DataGrid.SearchPanel.visible = false;
 
-            DataGrid.SetSearchPanelData(DataGrid.SearchPanel);
+            DataGrid.SetSearchPanelDataOption(DataGrid.SearchPanel);
         }
 
         void Grouping_Enable(object sender, RoutedEventArgs e)
         {
             DataGrid.GroupPanelData.visible = true;
 
-            DataGrid.SetGroupPanelData(DataGrid.GroupPanelData);
+            DataGrid.SetGroupPanelDataOption(DataGrid.GroupPanelData);
         }
 
         void Grouping_Disable(object sender, RoutedEventArgs e)
         {
             DataGrid.GroupPanelData.visible = false;
 
-            DataGrid.SetGroupPanelData(DataGrid.GroupPanelData);
+            DataGrid.SetGroupPanelDataOption(DataGrid.GroupPanelData);
         }
 
         void ColumnsReordering_Enable(object sender, RoutedEventArgs e)
@@ -187,38 +204,95 @@ namespace CSHTML5.Wrappers.DevExtreme.DataGrid.Examples
         {
             DataGrid.DataGridEditing.allowAdding = true;
             DataGrid.DataGridEditing.allowUpdating = true;
-            DataGrid.SetDataGridEditing(DataGrid.DataGridEditing);
+            DataGrid.SetDataGridEditingOption(DataGrid.DataGridEditing);
         }
 
         void Adding_Disable(object sender, RoutedEventArgs e)
         {
             DataGrid.DataGridEditing.allowAdding = false;
             DataGrid.DataGridEditing.allowUpdating = false;
-            DataGrid.SetDataGridEditing(DataGrid.DataGridEditing);
+            DataGrid.SetDataGridEditingOption(DataGrid.DataGridEditing);
         }
 
         void Updating_Enable(object sender, RoutedEventArgs e)
         {
             DataGrid.DataGridEditing.allowUpdating = true;
-            DataGrid.SetDataGridEditing(DataGrid.DataGridEditing);
+            DataGrid.SetDataGridEditingOption(DataGrid.DataGridEditing);
         }
 
         void Updating_Disable(object sender, RoutedEventArgs e)
         {
             DataGrid.DataGridEditing.allowUpdating = false;
-            DataGrid.SetDataGridEditing(DataGrid.DataGridEditing);
+            DataGrid.SetDataGridEditingOption(DataGrid.DataGridEditing);
         }
 
         void Deleting_Enable(object sender, RoutedEventArgs e)
         {
             DataGrid.DataGridEditing.allowDeleting = true;
-            DataGrid.SetDataGridEditing(DataGrid.DataGridEditing);
+            DataGrid.SetDataGridEditingOption(DataGrid.DataGridEditing);
         }
 
         void Deleting_Disable(object sender, RoutedEventArgs e)
         {
             DataGrid.DataGridEditing.allowDeleting = false;
-            DataGrid.SetDataGridEditing(DataGrid.DataGridEditing);
+            DataGrid.SetDataGridEditingOption(DataGrid.DataGridEditing);
+        }
+
+        void SelectionModeSingle_Checked(object sender, RoutedEventArgs e)
+        {
+            DataGrid.DataGridSelection.mode = "single";
+            DataGrid.SetDataGridSelectionDataOption(DataGrid.DataGridSelection);
+
+            GetSelectedItemButton.Visibility = Visibility.Visible;
+            GetSelectedItemsButton.Visibility = Visibility.Collapsed;
+        }
+
+        void SelectionModeMultiple_Checked(object sender, RoutedEventArgs e)
+        {
+            DataGrid.DataGridSelection.mode = "multiple";
+            DataGrid.SetDataGridSelectionDataOption(DataGrid.DataGridSelection);
+
+            GetSelectedItemButton.Visibility = Visibility.Collapsed;
+            GetSelectedItemsButton.Visibility = Visibility.Visible;
+        }
+
+        void GetSelectedItem_Click(object sender, RoutedEventArgs e)
+        {
+            object selectedItem = DataGrid.SelectedItem;
+
+            if(selectedItem == null)
+                MessageBox.Show("There is no object currently selected");
+
+            else if (selectedItem is IFormattable)
+            {
+                IFormattable selectedItemAsIFormattable = (IFormattable)selectedItem;
+                MessageBox.Show(selectedItemAsIFormattable.ToString("", CultureInfo.CurrentCulture));
+            }
+        }
+
+        void GetSelectedItems_Click(object sender, RoutedEventArgs e)
+        {
+            List<object> selectedItems = DataGrid.SelectedItems;
+
+            if(selectedItems.Count == 0)
+            {
+                MessageBox.Show("There are no objects currently selected");
+                return;
+            }
+
+            string toDisplay = "";
+
+            foreach (object selectedItem in selectedItems)
+            {
+                if (selectedItem is IFormattable)
+                {
+                    IFormattable selectedItemAsIFormattable = (IFormattable)selectedItem;
+                    toDisplay += selectedItemAsIFormattable.ToString("", CultureInfo.CurrentCulture);
+                    toDisplay += "\n";
+                }
+            }
+
+            MessageBox.Show(toDisplay);
         }
     }
 }

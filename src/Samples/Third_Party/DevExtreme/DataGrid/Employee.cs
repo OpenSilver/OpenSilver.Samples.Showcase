@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CSHTML5.Wrappers.DevExtreme.DataGrid.Examples
 {
-	public class Employee : INotifyPropertyChanged
+	public class Employee : INotifyPropertyChanged, IFormattable
 	{
 		public event PropertyChangedEventHandler PropertyChanged;
 
@@ -105,6 +105,11 @@ namespace CSHTML5.Wrappers.DevExtreme.DataGrid.Examples
 			firstName = FirstName;
 			lastName = LastName;
 			hireDate = HireDate;
+		}
+
+		public string ToString(string format, IFormatProvider formatProvider)
+		{
+			return (firstName + " " + lastName);
 		}
 	}
 }

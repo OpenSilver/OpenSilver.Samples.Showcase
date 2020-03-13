@@ -19,7 +19,17 @@
 				</Grid.RowDefinitions>
 				<ContentControl Content="DataGrid" Foreground="#FF37B24F" Background="#FFC8929A" Style="{StaticResource HeaderControl_Style}" Grid.Row="0"/>
 				<StackPanel Orientation="Vertical" Grid.Row="1">
+					<TextBlock x:Name="LoadingPleaseWaitMessage" Text="Loading DevExtreme DataGrid library, please wait..." Foreground="#FF37B24F" FontSize="18" TextWrapping="Wrap" Margin="16,20,0,10" Visibility="Collapsed"/>
+
 					<DataGrid:dxDataGrid x:Name="DataGrid" />
+
+					<StackPanel>
+						<Label FontWeight="Bold" FontSize="14" Content="Selection mode:" />
+						<RadioButton x:Name="SelectionModeSingle" FontSize="14" IsChecked="True" Checked="SelectionModeSingle_Checked"/>
+						<RadioButton x:Name="SelectionModeMultiple" FontSize="14" Checked="SelectionModeMultiple_Checked"/>
+						<Button x:Name="GetSelectedItemButton" Content="Get Selected Item" FontSize="14" Click="GetSelectedItem_Click" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+						<Button x:Name="GetSelectedItemsButton" Content="Get Selected Items" FontSize="14" Click="GetSelectedItems_Click" HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="Collapsed"/>
+					</StackPanel>
 
 					<StackPanel >
 						<Label FontWeight="Bold" FontSize="14" Content="options:" />
