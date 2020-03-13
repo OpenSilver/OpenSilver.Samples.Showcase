@@ -15,7 +15,7 @@
       <RowDefinition x:Name="RowThatContainsTheGridSplitter" Height="0"/>
       <RowDefinition x:Name="RowThatContainsTheSourceCodePane" Height="0"/>
     </Grid.RowDefinitions>
-    <Border Grid.Row="0" Background="red" HorizontalAlignment="Stretch" Padding="10,4,10,4">
+    <Border Grid.Row="0" x:Name="BannerAboutOpenSilverPerformance" Visibility="Collapsed" Background="red" HorizontalAlignment="Stretch" Padding="10,4,10,4">
       <TextBlock  Text="NOTE: Performance will improve by at least 30 times when AOT compilation becomes available later in 2020." Foreground="White" FontSize="16" HorizontalAlignment="Left" TextWrapping="Wrap"/>
     </Border>
     <Grid Grid.Row="1" ClipToBounds="True">
