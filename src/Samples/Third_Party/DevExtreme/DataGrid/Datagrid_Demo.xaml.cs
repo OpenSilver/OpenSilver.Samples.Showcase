@@ -1,23 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System;
 using System.Reflection;
 using System.Collections;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
 
 using System.IO;
 using System.Linq;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
 using CSHTML5.Wrappers.DevExtreme.DataGrid;
 using CSHTML5.Wrappers.DevExtreme.Common;
 using DevExtreme_DataGrid.DevExpress.ui;
 
 using DevExtreme_DataGrid.DevExpress.data;
 using AnonymousTypes;
+
+#if SLMIGRATION
+using System.Windows;
+using System.Windows.Controls;
+#else
+using Windows.Foundation;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+#endif
 
 namespace CSHTML5.Wrappers.DevExtreme.DataGrid.Examples
 {
@@ -26,11 +31,20 @@ namespace CSHTML5.Wrappers.DevExtreme.DataGrid.Examples
         public MainPage()
         {
             this.InitializeComponent();
+#if OPENSILVER
 
+            dxDataGrid.Configuration.LocationOfJquery = "ms-appx:///Third_Party_Resources/DevExtreme/scripts/jquery.min.js";
+            dxDataGrid.Configuration.LocationOfDXAllJS = "ms-appx:///Third_Party_Resources/DevExtreme/scripts/dx.all.js";
+            dxDataGrid.Configuration.LocationOfDXCommonCSS = "ms-appx:///Third_Party_Resources/DevExtreme/styles/dx.common.css";
+            dxDataGrid.Configuration.LocationOfDXThemeCSS = "ms-appx:///Third_Party_Resources/DevExtreme/styles/dx.light.css";
+
+#else
             dxDataGrid.Configuration.LocationOfJquery = "ms-appx:///CSHTML5.Samples.Showcase/Third_Party_Resources/DevExtreme/scripts/jquery.min.js";
             dxDataGrid.Configuration.LocationOfDXAllJS = "ms-appx:///CSHTML5.Samples.Showcase/Third_Party_Resources/DevExtreme/scripts/dx.all.js";
             dxDataGrid.Configuration.LocationOfDXCommonCSS = "ms-appx:///CSHTML5.Samples.Showcase/Third_Party_Resources/DevExtreme/styles/dx.common.css";
             dxDataGrid.Configuration.LocationOfDXThemeCSS = "ms-appx:///CSHTML5.Samples.Showcase/Third_Party_Resources/DevExtreme/styles/dx.light.css";
+#endif
+
             Loaded += MainPage_Loaded;
             Unloaded += MainPage_Unloaded;
             // Enter construction logic here...
@@ -95,7 +109,7 @@ namespace CSHTML5.Wrappers.DevExtreme.DataGrid.Examples
                 allowGrouping = true
             };
 
-			columns.Add(idColumn);
+            columns.Add(idColumn);
 
             dxDataGridColumn firstNameColumn = new dxDataGridColumn();
             firstNameColumn.dataField = "firstName";
@@ -260,7 +274,7 @@ namespace CSHTML5.Wrappers.DevExtreme.DataGrid.Examples
         {
             object selectedItem = DataGrid.SelectedItem;
 
-            if(selectedItem == null)
+            if (selectedItem == null)
                 MessageBox.Show("There is no object currently selected");
 
             else if (selectedItem is IFormattable)
@@ -274,7 +288,7 @@ namespace CSHTML5.Wrappers.DevExtreme.DataGrid.Examples
         {
             List<object> selectedItems = DataGrid.SelectedItems;
 
-            if(selectedItems.Count == 0)
+            if (selectedItems.Count == 0)
             {
                 MessageBox.Show("There are no objects currently selected");
                 return;
@@ -296,3 +310,4 @@ namespace CSHTML5.Wrappers.DevExtreme.DataGrid.Examples
         }
     }
 }
+

@@ -52,20 +52,20 @@
               </Button>-->
             <Expander x:Name="ThirdPartyButton" Header="Third-Party" Foreground="#FFDDDDDD" FontSize="16" Margin="0,3,0,0" Style="{StaticResource MainMenuExpander_Style}">
               <StackPanel Margin="0,0,0,0">
-                <Button Content="Plotly.js" Click="ButtonPlotlyCharts_Click" Background="{x:Null}" Foreground="#FFBBBBBB" HorizontalContentAlignment="Left" FontSize="13" Margin="4,5,0,0" Padding="20,3,3,3"/>
-                <Expander Header="Telerik Kendo UI" FontSize="13" Foreground="#FFBBBBBB" Margin="4,5,0,0" Style="{StaticResource MainMenuExpander_Style}">
+                <Button x:Name="Plotly_Button" Content="Plotly.js" Click="ButtonPlotlyCharts_Click" Background="{x:Null}" Foreground="#FFBBBBBB" HorizontalContentAlignment="Left" FontSize="13" Margin="4,5,0,0" Padding="20,3,3,3"/>
+                <Expander x:Name="Telerik_Kendo_UI_Expander" Header="Telerik Kendo UI" FontSize="13" Foreground="#FFBBBBBB" Margin="4,5,0,0" Style="{StaticResource MainMenuExpander_Style}">
                   <StackPanel Margin="0,0,0,0">
                     <Button Content="Grid" Click="ButtonTelerikKendoUIGrid_Click" Background="{x:Null}" Foreground="#FFBBBBBB" HorizontalContentAlignment="Left" FontSize="13" Margin="20,3,0,0"/>
                     <Button Content="Editor" Click="ButtonTelerikKendoUIEditor_Click" Background="{x:Null}" Foreground="#FFBBBBBB" HorizontalContentAlignment="Left" FontSize="13" Margin="20,3,0,0"/>
                   </StackPanel>
                 </Expander>
-                <Expander Header="Syncfusion Essential JS 1" FontSize="13" Foreground="#FFBBBBBB" Margin="4,5,0,0" Style="{StaticResource MainMenuExpander_Style}">
+                <Expander x:Name="Syncfusion_Expander" Header="Syncfusion Essential JS 1" FontSize="13" Foreground="#FFBBBBBB" Margin="4,5,0,0" Style="{StaticResource MainMenuExpander_Style}">
                   <StackPanel Margin="0,0,0,0">
                     <Button Content="RichTextEditor" Click="ButtonSyncfusionEssentialJS1RichTextEditor_Click" Background="{x:Null}" Foreground="#FFBBBBBB" HorizontalContentAlignment="Left" FontSize="13" Margin="20,3,0,0"/>
                     <Button Content="Spreadsheet" Click="ButtonSyncfusionEssentialJS1Spreadsheet_Click" Background="{x:Null}" Foreground="#FFBBBBBB" HorizontalContentAlignment="Left" FontSize="13" Margin="20,3,0,0"/>
                   </StackPanel>
                 </Expander>
-				<Expander Header="DevExtreme" FontSize="13" Foreground="#FFBBBBBB" Margin="4,5,0,0" Style="{StaticResource MainMenuExpander_Style}">
+				<Expander x:Name="DevExtreme_Expander" Header="DevExtreme" FontSize="13" Foreground="#FFBBBBBB" Margin="4,5,0,0" Style="{StaticResource MainMenuExpander_Style}">
 					<StackPanel Margin="0,0,0,0">
 						<Button Content="DataGrid" Click="ButtonDevExtremeDataGrid_Click" Background="{x:Null}" Foreground="#FFBBBBBB" HorizontalContentAlignment="Left" FontSize="13" Margin="20,3,0,0"/>
 					</StackPanel>

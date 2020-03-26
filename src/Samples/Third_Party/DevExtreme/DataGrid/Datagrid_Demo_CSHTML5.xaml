@@ -5,7 +5,7 @@
     xmlns:local="using:CSHTML5.Wrappers.DevExtreme.DataGrid.Examples"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-	xmlns:DataGrid="clr-namespace:DevExtreme_DataGrid.DevExpress.ui;assembly=DevExtreme.OpenSilver.DataGrid"
+	xmlns:DataGrid="clr-namespace:DevExtreme_DataGrid.DevExpress.ui;assembly=CSHTML5.Wrappers.DevExtreme.DataGrid"
     mc:Ignorable="d">
 
 	<StackPanel>

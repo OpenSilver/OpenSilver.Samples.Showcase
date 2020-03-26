@@ -110,9 +110,7 @@
       <DependentUpon>Invoice.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\Third_Party\DevExtreme\DataGrid\Employee.cs" />
-    <Compile Include="Samples\Third_Party\DevExtreme\DataGrid\DataGrid_Demo.xaml.cs">
-      <DependentUpon>DataGrid_Demo.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="Samples\Third_Party\DevExtreme\DataGrid\DataGrid_Demo.xaml.cs" />
     <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Annotation.cs" />
     <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Axis.cs" />
     <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\BarMode.cs" />
@@ -128,18 +126,23 @@
     <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Trace.cs" />
     <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\TraceMode.cs" />
     <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\TraceType.cs" />
+    <Compile Include="Samples\Third_Party\Plotly_Charts\Plotly_Charts_Demo.xaml.cs">
+      <DependentUpon>Plotly_Charts_Demo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Samples\Third_Party\Syncfusion_EssentialJS1\RichTextEditor\RichTextEditor_Demo.xaml.cs">
       <DependentUpon>RichTextEditor_Demo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\Third_Party\Syncfusion_EssentialJS1\Spreadsheet\Spreadsheet_Demo.xaml.cs">
       <DependentUpon>Spreadsheet_Demo.xaml</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Samples\Third_Party\Telerik_KendoUI\Editor\Editor_Demo.xaml.cs">
       <DependentUpon>Editor_Demo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\Third_Party\Telerik_KendoUI\Grid\Grid_Demo.xaml.cs">
       <DependentUpon>Grid_Demo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\Third_Party\Third_Party.xaml.cs">
+      <DependentUpon>Third_Party.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\XAML_Controls\DateAndTimePicker\DateAndTimePicker_Demo.xaml.cs">
       <DependentUpon>DateAndTimePicker_Demo.xaml</DependentUpon>
@@ -181,9 +184,6 @@
     </Compile>
     <Compile Include="Samples\Client_Server\WebSockets\WebSockets_Demo.xaml.cs">
       <DependentUpon>WebSockets_Demo.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Samples\Third_Party\Plotly_Charts\Plotly_Charts_Demo.xaml.cs">
-      <DependentUpon>Plotly_Charts_Demo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\Interop_Samples\ExecuteJavaScript\ExecuteJavaScript_Demo.xaml.cs">
       <DependentUpon>ExecuteJavaScript_Demo.xaml</DependentUpon>
@@ -528,9 +528,7 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ServiceReference1\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Samples\Third_Party\Telerik_TelerikUI\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_Button_Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -644,14 +642,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Samples\Third_Party\DevExtreme\DataGrid\DataGrid_Demo.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Samples\Third_Party\Plotly_Charts\Plotly_Charts_Demo.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Samples\Interop_Samples\ExecuteJavaScript\ExecuteJavaScript_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -744,26 +734,38 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Content Include="Samples\Third_Party\Syncfusion_EssentialJS1\Spreadsheet\Spreadsheet_Demo.xaml">
-      <SubType>Designer</SubType>
-      <Generator>XamlIntelliSenseFileGenerator</Generator>
-    </Content>
-    <Content Include="Samples\Third_Party\Telerik_KendoUI\Grid\Grid_Demo.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Samples\Third_Party\Telerik_KendoUI\Editor\Editor_Demo.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Samples\Third_Party\Syncfusion_EssentialJS1\RichTextEditor\RichTextEditor_Demo.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="Samples\XAML_Controls\Slider\Slider_Demo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Content>
+    <Page Include="Samples\Third_Party\DevExtreme\DataGrid\Datagrid_Demo_CSHTML5.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\Third_Party\Plotly_Charts\Plotly_Charts_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\Third_Party\Syncfusion_EssentialJS1\RichTextEditor\RichTextEditor_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\Third_Party\Syncfusion_EssentialJS1\Spreadsheet\Spreadsheet_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\Third_Party\Telerik_KendoUI\Editor\Editor_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\Third_Party\Telerik_KendoUI\Grid\Grid_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\Third_Party\Third_Party.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Samples\XAML_Controls\Label\Label_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

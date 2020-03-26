@@ -23,9 +23,14 @@ namespace CSHTML5.Samples.Showcase
 
 #if OPENSILVER
             PerformanceButton.Visibility = Visibility.Collapsed;
-            ThirdPartyButton.Visibility = Visibility.Collapsed;
+            //ThirdPartyButton.Visibility = Visibility.Collapsed;
             ThirdPartyHomeButton.Visibility = Visibility.Visible;
             BannerAboutOpenSilverPerformance.Visibility = Visibility.Visible;
+
+            Plotly_Button.Visibility = Visibility.Collapsed;
+            Telerik_Kendo_UI_Expander.Visibility = Visibility.Collapsed;
+            Syncfusion_Expander.Visibility = Visibility.Collapsed;
+
 #endif
 
             MainPage.Current = this;
@@ -116,7 +121,11 @@ SHOWCASE";
 
         void ButtonDevExtremeDataGrid_Click(object sender, RoutedEventArgs e)
         {
+#if OPENSILVER
             NavigateToPage("/Third_Party/DevExtreme/DataGrid/DataGrid_Demo");
+#else
+            NavigateToPage("/Third_Party/DevExtreme/DataGrid/DataGrid_Demo_CSHTML5");
+#endif
         }
 
         void ButtonHome_Click(object sender, RoutedEventArgs e)

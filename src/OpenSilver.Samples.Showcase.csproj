@@ -23,18 +23,18 @@
   </PropertyGroup>
 	
   <ItemGroup>
-    <Compile Remove="Samples\Third_Party\DevExtreme\**" />
     <Compile Remove="Samples\Third_Party\Syncfusion_EssentialJS1\**" />
     <Compile Remove="Samples\Third_Party\Telerik_KendoUI\**" />
     <Compile Remove="Service References\**" />
-    <EmbeddedResource Remove="Samples\Third_Party\DevExtreme\**" />
+    <Compile Remove="Third_Party_Resources\**" />
     <EmbeddedResource Remove="Samples\Third_Party\Syncfusion_EssentialJS1\**" />
     <EmbeddedResource Remove="Samples\Third_Party\Telerik_KendoUI\**" />
     <EmbeddedResource Remove="Service References\**" />
-    <None Remove="Samples\Third_Party\DevExtreme\**" />
+    <EmbeddedResource Remove="Third_Party_Resources\**" />
     <None Remove="Samples\Third_Party\Syncfusion_EssentialJS1\**" />
     <None Remove="Samples\Third_Party\Telerik_KendoUI\**" />
     <None Remove="Service References\**" />
+    <None Remove="Third_Party_Resources\**" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Properties\AssemblyInfo.cs" />
@@ -112,6 +112,8 @@
     <None Remove="Samples\Net_Framework\Zip\Zip_Demo.xaml" />
     <None Remove="Samples\Performance\HtmlCanvas\HtmlCanvas_Demo.xaml" />
     <None Remove="Samples\Performance\Performance.xaml" />
+    <None Remove="Samples\Third_Party\DevExtreme\DataGrid\Datagrid_Demo.xaml" />
+    <None Remove="Samples\Third_Party\DevExtreme\DataGrid\Datagrid_Demo_CSHTML5.xaml" />
     <None Remove="Samples\Third_Party\Plotly_Charts\Plotly_Charts_Demo.xaml" />
     <None Remove="Samples\Third_Party\Third_Party.xaml" />
     <None Remove="Samples\Welcome.xaml" />
@@ -390,6 +392,9 @@
     <Page Include="Samples\Performance\Performance.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\Third_Party\DevExtreme\DataGrid\Datagrid_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\Third_Party\Plotly_Charts\Plotly_Charts_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -649,7 +654,6 @@
 
   <ItemGroup>
     <Folder Include="Properties\" />
-    <Folder Include="Third_Party_Resources\" />
   </ItemGroup>
 
   <ItemGroup>
