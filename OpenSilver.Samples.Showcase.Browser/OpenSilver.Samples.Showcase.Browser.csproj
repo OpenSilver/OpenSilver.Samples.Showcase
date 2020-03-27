@@ -1,72 +1,84 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
-  
-  <PropertyGroup Label="Globals">
-    <SccProjectName>SAK</SccProjectName>
-    <SccProvider>SAK</SccProvider>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccLocalPath>SAK</SccLocalPath>
-    <Configurations>Debug;Release;</Configurations>
-  </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;CSHTML5BLAZOR</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <NoStdLib>true</NoStdLib>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE;CSHARP_XAML_FOR_HTML5;CSHTML5BLAZOR</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <NoStdLib>true</NoStdLib>
-  </PropertyGroup>
+	<PropertyGroup Label="Globals">
+		<SccProjectName>SAK</SccProjectName>
+		<SccProvider>SAK</SccProvider>
+		<SccAuxPath>SAK</SccAuxPath>
+		<SccLocalPath>SAK</SccLocalPath>
+		<Configurations>SL;SL.Release;SL.WorkInProgress;UWP</Configurations>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+		<NoStdLib>true</NoStdLib>
+	</PropertyGroup>
 
-  <!-- Blazor Part -->
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <RazorLangVersion>3.0</RazorLangVersion>
-  </PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)' == 'SL'">
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<Optimize>false</Optimize>
+		<DefineConstants>DEBUG;TRACE;CSHTML5BLAZOR</DefineConstants>
+	</PropertyGroup>
 
-  <!-- Cshtml5 Part -->
-	<Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A0EA0E2B-0E48-4CC6-8B71-1C048D02D3A9}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>OpenSilver.Samples.Showcase.Browser</RootNamespace>
-    <AssemblyName>OpenSilver.Samples.Showcase.Browser</AssemblyName>
-    <!--<TargetFrameworkVersion>v2.0</TargetFrameworkVersion>-->
-    <FileAlignment>512</FileAlignment>
-    <IsCSharpXamlForHtml5>true</IsCSharpXamlForHtml5>
-    <CSharpXamlForHtml5OutputType>Application</CSharpXamlForHtml5OutputType>
-    <IsCshtml5>true</IsCshtml5>
-    <Cshtml5OutputType>Application</Cshtml5OutputType>
-    <StartAction>Program</StartAction>
-    <StartProgram>
-    </StartProgram>
-    <StartArguments>"OpenSilver.dll"</StartArguments>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
-    <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccProvider>SAK</SccProvider>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-  </PropertyGroup>
-  <ItemGroup>
-	  <PackageReference Include="OpenSilver" Version="1.0.0-alpha-002" />
-	  <PackageReference Include="OpenSilver.UwpCompatible" Version="1.0.0-alpha-002" Condition="'$(Configuration)|$(Platform)'=='OpenSilver.UwpCompatible|AnyCPU'" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\src\OpenSilver.Samples.Showcase.csproj" />
-  </ItemGroup>
+	<PropertyGroup Condition="'$(Configuration)' == 'SL.Release'">
+		<DebugSymbols>false</DebugSymbols>
+		<DebugType>pdbonly</DebugType>
+		<Optimize>true</Optimize>
+		<DefineConstants>TRACE;CSHTML5BLAZOR</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)' == 'SL.WorkInProgress'">
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<Optimize>false</Optimize>
+		<DefineConstants>DEBUG;TRACE;CSHTML5BLAZOR</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)' == 'UWP'">
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<Optimize>false</Optimize>
+		<DefineConstants>DEBUG;TRACE;CSHTML5BLAZOR</DefineConstants>
+	</PropertyGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="OpenSilver" Version="1.0.0-alpha-002" Condition="'$(Configuration)' == 'SL' Or '$(Configuration)' == 'SL.Release'" />
+		<PackageReference Include="OpenSilver.WorkInProgress" Version="1.0.0-alpha-002" Condition="'$(Configuration)' == 'SL.WorkInProgress'" />
+		<PackageReference Include="OpenSilver.UwpCompatible" Version="1.0.0-alpha-002" Condition="'$(Configuration)' == 'UWP'" />
+	</ItemGroup>
+
+	<!-- Blazor Part -->
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<RazorLangVersion>3.0</RazorLangVersion>
+	</PropertyGroup>
+
+	<!-- Cshtml5 Part -->
+	<PropertyGroup>
+		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+		<ProjectGuid>{A0EA0E2B-0E48-4CC6-8B71-1C048D02D3A9}</ProjectGuid>
+		<OutputType>Exe</OutputType>
+		<AppDesignerFolder>Properties</AppDesignerFolder>
+		<RootNamespace>OpenSilver.Samples.Showcase.Browser</RootNamespace>
+		<AssemblyName>OpenSilver.Samples.Showcase.Browser</AssemblyName>
+		<!--<TargetFrameworkVersion>v2.0</TargetFrameworkVersion>-->
+		<FileAlignment>512</FileAlignment>
+		<IsCSharpXamlForHtml5>true</IsCSharpXamlForHtml5>
+		<CSharpXamlForHtml5OutputType>Application</CSharpXamlForHtml5OutputType>
+		<IsCshtml5>true</IsCshtml5>
+		<Cshtml5OutputType>Application</Cshtml5OutputType>
+		<StartAction>Program</StartAction>
+		<StartProgram>
+		</StartProgram>
+		<StartArguments>"OpenSilver.dll"</StartArguments>
+		<NuGetPackageImportStamp>
+		</NuGetPackageImportStamp>
+		<SccProjectName>SAK</SccProjectName>
+		<SccLocalPath>SAK</SccLocalPath>
+		<SccAuxPath>SAK</SccAuxPath>
+		<SccProvider>SAK</SccProvider>
+		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+	</PropertyGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\src\OpenSilver.Samples.Showcase.csproj" />
+	</ItemGroup>
 </Project>
