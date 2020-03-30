@@ -60,9 +60,7 @@
 		<None Remove="Samples\Third_Party\Telerik_KendoUI\**" />
 		<None Remove="Service References\**" />
 	</ItemGroup>
-	<ItemGroup>
-		<Compile Remove="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
+
 	<ItemGroup>
 		<None Remove="app.config" />
 		<None Remove="bridge.json" />
