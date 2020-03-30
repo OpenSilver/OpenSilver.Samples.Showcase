@@ -1,6 +1,10 @@
 ﻿using DotNetForHtml5;
 using Microsoft.AspNetCore.Blazor.Hosting;
+#if SLMIGRATION
 using System.Windows;
+#else
+using Windows.UI.Xaml;
+#endif
 
 namespace OpenSilver.Samples.Showcase.Browser
 {
