@@ -148,6 +148,7 @@ document.onkeyup = function (evt) {
 };
 
 document.jsSimulatorObjectReferences = new Array();
+document.callbackCounterForSimulator = 0;
 
 document.reroute = function reroute(e, elem, shiftKey) {
     shiftKey = shiftKey || false;
