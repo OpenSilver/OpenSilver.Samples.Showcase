@@ -15,21 +15,21 @@
 		<DebugSymbols>true</DebugSymbols>
 		<DebugType>full</DebugType>
 		<Optimize>false</Optimize>
-		<DefineConstants>DEBUG;TRACE;CSHTML5BLAZOR</DefineConstants>
+		<DefineConstants>TRACE;DEBUG;SLMIGRATION;CSHTML5BLAZOR</DefineConstants>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)' == 'SL.Release'">
 		<DebugSymbols>false</DebugSymbols>
 		<DebugType>pdbonly</DebugType>
 		<Optimize>true</Optimize>
-		<DefineConstants>TRACE;CSHTML5BLAZOR</DefineConstants>
+		<DefineConstants>TRACE;SLMIGRATION;CSHTML5BLAZOR</DefineConstants>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)' == 'SL.WorkInProgress'">
 		<DebugSymbols>true</DebugSymbols>
 		<DebugType>full</DebugType>
 		<Optimize>false</Optimize>
-		<DefineConstants>DEBUG;TRACE;CSHTML5BLAZOR</DefineConstants>
+		<DefineConstants>TRACE;DEBUG;SLMIGRATION;CSHTML5BLAZOR</DefineConstants>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)' == 'UWP'">
