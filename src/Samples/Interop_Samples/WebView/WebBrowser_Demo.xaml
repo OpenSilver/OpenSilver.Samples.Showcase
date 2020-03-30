@@ -18,10 +18,11 @@
                     <TextBox x:Name="TextBoxWithURL" Text="http://cshtml5.uservoice.com" Width="150" Foreground="#FF444444" Background="White" Margin="0,14,0,0"/>
                     <Button Content="Navigate" Margin="5,10,0,0" Foreground="White" Background="#FF69C8FF" Click="ButtonNavigate_Click" HorizontalAlignment="Center"/>
                 </StackPanel>
-                <Border Width="200" Height="200" Margin="0,14,0,0">
+                <Border x:Name="WebBrowserContainer" Width="200" Height="200" Margin="0,14,0,0">
                     <Border.Effect>
                         <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="10" Opacity="0.3" />
                     </Border.Effect>
+                    <!-- Note: the WebBrowser control is -->
                     <WebBrowser x:Name="WebView1" HorizontalAlignment="Center"/>
                 </Border>
             </StackPanel>

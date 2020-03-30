@@ -2,13 +2,19 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+#if SLMIGRATION
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
-using System.Windows.Data;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Navigation;
+#else
+using Windows.Foundation;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Primitives;
+using Windows.UI.Xaml.Data;
+using Windows.UI.Xaml.Input;
+using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Navigation;
+#endif
 
 namespace CSHTML5.Samples.Showcase
 {
@@ -30,13 +36,13 @@ namespace CSHTML5.Samples.Showcase
             {
                 new ViewSourceButtonInfo()
                 {
-                    TabHeader = "WebView_Demo.xaml",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Interop_Samples/WebView/WebView_Demo.xaml"
+                    TabHeader = "WebBrowser_Demo.xaml",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Interop_Samples/WebView/WebBrowser_Demo.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
-                    TabHeader = "WebView_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Interop_Samples/WebView/WebView_Demo.xaml.cs"
+                    TabHeader = "WebBrowser_Demo.xaml.cs",
+                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Interop_Samples/WebView/WebBrowser_Demo.xaml.cs"
                 }
             });
         }

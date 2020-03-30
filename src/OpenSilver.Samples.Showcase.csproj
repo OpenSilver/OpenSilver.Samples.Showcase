@@ -62,9 +62,7 @@
 	</ItemGroup>
 	<ItemGroup>
 		<Compile Remove="Properties\AssemblyInfo.cs" />
-		<Compile Remove="Samples\Interop_Samples\WebView\WebView_Demo.xaml.cs" />
-		<Compile Remove="Samples\XAML_Features\Drag_And_Drop\Drag_And_Drop_Demo.xaml.cs" />
-	</ItemGroup>
+  </ItemGroup>
 	<ItemGroup>
 		<None Remove="app.config" />
 		<None Remove="bridge.json" />
@@ -222,7 +220,29 @@
 		<None Remove="Samples\XAML_Features\XAML_Resource_Dictionary\XAML_Resource_Dictionary_Demo.xaml" />
 	</ItemGroup>
 
-	<ItemGroup>
+  <ItemGroup>
+    <Content Include="Samples\XAML_Features\Drag_And_Drop\Drag_And_Drop_Demo_Silverlight.xaml" Condition="'$(Configuration)' != 'UWP'">
+      <Generator>MSBuild:Compile</Generator>
+    </Content>
+    <Compile Remove="Samples\XAML_Features\Drag_And_Drop\Drag_And_Drop_Demo_Silverlight.xaml.cs" Condition="'$(Configuration)' != 'UWP'"/>
+    <Content Include="Samples\XAML_Features\Drag_And_Drop\Drag_And_Drop_Demo.xaml" Condition="'$(Configuration)' == 'UWP'">
+      <Generator>MSBuild:Compile</Generator>
+    </Content>
+    <Compile Remove="Samples\XAML_Features\Drag_And_Drop\Drag_And_Drop_Demo.xaml.cs" Condition="'$(Configuration)' == 'UWP'" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Content Include="Samples\Interop_Samples\WebView\WebBrowser_Demo.xaml" Condition="'$(Configuration)' != 'UWP'">
+			<Generator>MSBuild:Compile</Generator>
+		</Content>
+		<Compile Remove="Samples\Interop_Samples\WebView\WebBrowser_Demo.xaml.cs" Condition="'$(Configuration)' != 'UWP'" />
+		<Content Include="Samples\Interop_Samples\WebView\WebView_Demo.xaml" Condition="'$(Configuration)' == 'UWP'">
+			<Generator>MSBuild:Compile</Generator>
+		</Content>
+		<Compile Remove="Samples\Interop_Samples\WebView\WebView_Demo.xaml.cs" Condition="'$(Configuration)' == 'UWP'" />
+  </ItemGroup>
+
+  <ItemGroup>
 		<Content Include="MainPage.xaml">
 			<SubType>Designer</SubType>
 			<Generator>MSBuild:Compile</Generator>
@@ -239,13 +259,7 @@
 		<Content Include="Other\Planets\Venus.png" />
 		<Content Include="Other\smallBall.png" />
 		<Content Include="Other\SplashScreen1.png" />
-		<Content Include="Samples\Interop_Samples\WebView\WebBrowser_Demo.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</Content>
-		<Content Include="Samples\XAML_Features\Drag_And_Drop\Drag_And_Drop_Demo_Silverlight.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</Content>
-		<Page Include="App.xaml">
+    <Page Include="App.xaml">
 			<Generator>MSBuild:Compile</Generator>
 			<SubType>Designer</SubType>
 		</Page>
