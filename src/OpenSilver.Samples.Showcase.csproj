@@ -60,8 +60,12 @@
 		<None Remove="Samples\Third_Party\Telerik_KendoUI\**" />
 		<None Remove="Service References\**" />
 	</ItemGroup>
+  
+  <ItemGroup>
+    <Compile Remove="Properties\AssemblyInfo.cs" />
+	</ItemGroup>
 
-	<ItemGroup>
+  <ItemGroup>
 		<None Remove="app.config" />
 		<None Remove="bridge.json" />
 		<None Remove="Other\Logo.png" />
@@ -222,7 +226,7 @@
     <Content Include="Samples\XAML_Features\Drag_And_Drop\Drag_And_Drop_Demo_Silverlight.xaml" Condition="'$(Configuration)' != 'UWP'">
       <Generator>MSBuild:Compile</Generator>
     </Content>
-    <Compile Remove="Samples\XAML_Features\Drag_And_Drop\Drag_And_Drop_Demo_Silverlight.xaml.cs" Condition="'$(Configuration)' != 'UWP'"/>
+    <Compile Remove="Samples\XAML_Features\Drag_And_Drop\Drag_And_Drop_Demo_Silverlight.xaml.cs" Condition="'$(Configuration)' != 'UWP'" />
     <Content Include="Samples\XAML_Features\Drag_And_Drop\Drag_And_Drop_Demo.xaml" Condition="'$(Configuration)' == 'UWP'">
       <Generator>MSBuild:Compile</Generator>
     </Content>
