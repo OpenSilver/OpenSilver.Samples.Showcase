@@ -32,15 +32,20 @@ document.getElementsByTagName('head')[0].appendChild(velocityScript);
 window.onCallBack = {}
 window.onCallBack.OnCallbackFromJavaScript = function (callbackId, idWhereCallbackArgsAreStored, callbackArgsObject) {
     //console.log("on callback");
-    var assemblyName = "OpenSilver";
     var namespace = "CSHTML5.Internal";
     var type = "OnCallBack";
-    var method = Blazor.platform.findMethod(
-        assemblyName,
-        namespace,
-        type,
-        "OnCallbackFromJavaScript"
-    );
+    var method = window.onCallbackFromJavaScript;
+    if (!method) {
+        try {
+            var assemblyName = "OpenSilver";
+            method = Blazor.platform.findMethod(assemblyName, namespace, type, "OnCallbackFromJavaScript");
+            window.onCallbackFromJavaScript = method;
+        } catch (e) {
+            var assemblyName = "OpenSilver.UwpCompatible";
+            method = Blazor.platform.findMethod(assemblyName, namespace, type, "OnCallbackFromJavaScript");
+            window.onCallbackFromJavaScript = method;
+        }
+    }
     //console.log("method found. callbackIdStr: " + callbackId + ". idWhereCallbackArgsAreStored:" + idWhereCallbackArgsAreStored);
     //console.log("ON CALLBACK FROM JS");
     Blazor.platform.callMethod(method, null, [
