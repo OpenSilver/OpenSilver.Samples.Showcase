@@ -21,7 +21,7 @@
                 <Setter Property="Template">
                   <Setter.Value>
                     <ControlTemplate TargetType="Label">
-                      <Border CornerRadius="10" Padding="6" BorderThickness="1" Width="75" HorizontalAlignment="Left">
+                      <Border CornerRadius="10" Padding="6" BorderThickness="1" BorderBrush="Black" Width="75" HorizontalAlignment="Left">
                         <TextBlock Text="{TemplateBinding Content}" />
                       </Border>
                     </ControlTemplate>
