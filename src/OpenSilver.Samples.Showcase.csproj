@@ -690,4 +690,10 @@
 		<WCFMetadata Include="Connected Services" />
 	</ItemGroup>
 
+	<!-- Removing bin\$(Configuration) and obj\$(Configuration) -->
+	<Target Name="FullClean" AfterTargets="Clean">
+		<RemoveDir Directories="$(ProjectDir)$(BaseOutputPath)$(Configuration)\" />
+		<RemoveDir Directories="$(ProjectDir)$(BaseIntermediateOutputPath)$(Configuration)\" />
+	</Target>
+	
 </Project>
