@@ -41,7 +41,7 @@
 		<PackageReference Include="System.ServiceModel.Http" Version="4.7.0" />
 		<PackageReference Include="System.ServiceModel.NetTcp" Version="4.7.0" />
 		<PackageReference Include="System.ServiceModel.Security" Version="4.7.0" />
-		<PackageReference Include="OpenSilver" Version="1.0.0-alpha-003" Condition="'$(Configuration)' == 'SL' Or '$(Configuration)' == 'SL.Release'" />
+		<PackageReference Include="OpenSilver" Version="1.0.0-alpha-005" Condition="'$(Configuration)' == 'SL' Or '$(Configuration)' == 'SL.Release'" />
 		<PackageReference Include="OpenSilver.WorkInProgress" Version="1.0.0-alpha-003" Condition="'$(Configuration)' == 'SL.WorkInProgress'" />
 		<PackageReference Include="OpenSilver.UwpCompatible" Version="1.0.0-alpha-003" Condition="'$(Configuration)' == 'UWP'" />
 	</ItemGroup>

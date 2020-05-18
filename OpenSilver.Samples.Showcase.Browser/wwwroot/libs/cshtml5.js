@@ -177,6 +177,82 @@ window.ViewProfilerResults = function () {
     }
 }
 
+//todo: see if this does not break something else that would define String.endsWith in a better way.
+var defineStringEndsWith = function () {
+    if (!String.prototype.endsWith) { //IE doesn't know string.endsWith so we add it:
+        String.prototype.endsWith = function (search, this_len) {
+            if (this_len === undefined || this_len > this.length) {
+                this_len = this.length;
+            }
+            return this.substring(this_len - search.length, this_len) === search;
+        };
+    }
+}
+defineStringEndsWith();
+
+//gets the text inside a textArea as it actually is (domElement.innerText returns an incorrect result).
+getTextAreaInnerText = function (domElement, forceNewLineFirst) {
+    //logic here:   - br prepares a new line and we only add it to the text if there is more to add afterwards.
+    //              - text means text
+    //              - div want their own line so new line before if none, new line after.
+    //                  no new line before if first element, no new line after if last element.
+    var resultString = "";
+    var currentNode = domElement.childNodes[0];
+    while (currentNode != undefined) {
+        if (currentNode.nodeType == Node.TEXT_NODE) {
+            if (currentNode.textContent != "") { //Note: we added this test because IE sometimes adds an empty text node which should not count for anything as far as I know.
+                if (forceNewLineFirst) {
+                    resultString += "\r\n";
+                }
+                var textToAdd = currentNode.textContent;
+                if (textToAdd.endsWith("\n")) {
+                    //We need this because Edge sometimes decides to add the newline '\n' in the Text instead of adding a dom element (when pressing enter at the end of a line?) and
+                    //  when it does this, it adds an additional '\n' because why not... So we remove that additional one.
+                    //Note: It adds a total of one '\n' so if you go to the end of the TextArea and press enter five times, there will be six '\n' in the TextNode.
+                    if (currentNode.nextSibling == undefined) {
+                        //Only if currentNode.nextSibling is undefined, because apparently, it only adds one '\n' too much when it is the last node.
+                        textToAdd = textToAdd.substring(0, textToAdd.length - 1);
+                    }
+                    //We also replace the '\n' with "\r\n":
+                    textToAdd = textToAdd.replace(new RegExp("\n", 'g'), "\r\n");
+                }
+                resultString += textToAdd;
+                forceNewLineFirst = false;
+            }
+        }
+        else {
+            var nodeName = currentNode.nodeName;
+            if (nodeName == "BR") {
+                if (forceNewLineFirst) {
+                    resultString += "\r\n";
+                }
+                forceNewLineFirst = true;
+            }
+            else //we consider it's a <div> or a <p>:
+            {
+                if (forceNewLineFirst) {
+                    resultString += "\r\n";
+                    forceNewLineFirst = false;
+                }
+                if (currentNode.previousSibling != undefined && !resultString.endsWith("\r\n")) {
+                    //The element is not the first in its parent and there is no new line to put it, so we add one:
+                    resultString += "\r\n";
+                }
+
+                resultString += getTextAreaInnerText(currentNode, forceNewLineFirst);
+                if (currentNode.nextSibling != undefined) {
+                    //the element is not the last in its parent and there is no new line to put the following so we add one:
+                    forceNewLineFirst = true;
+                    //resultString += "\r\n";
+                }
+            }
+        }
+        currentNode = currentNode.nextSibling;
+    }
+    return resultString;
+}
+
+
 //this counts the amount of characters before the ones (start and end) defined by the range object.
 // it does so by defining:
 //      -globalIndexes.startIndex and globalIndexes.endIndex: the indexes as in c# of the positions defined by the range

@@ -30,6 +30,11 @@ body {
     -webkit-user-select: text; /* 'none' prevents copy paste. 'text' allows it. */
 }
 
+.ie_set_p_margins_to_zero p {
+    margin-top: 0px; /* This prevents weird additional spaces between lines in multiline TextBoxes in IE. */
+    margin-bottom: 0px; /* This prevents weird additional spaces between lines in multiline TextBoxes in IE. */
+}
+
 #log {
     position: fixed;
     left: 0;

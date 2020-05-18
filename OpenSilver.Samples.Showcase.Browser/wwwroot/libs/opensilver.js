@@ -11,6 +11,13 @@ link.setAttribute('type', 'text/css');
 link.setAttribute('href', 'libs/cshtml5.css');
 document.getElementsByTagName('head')[0].appendChild(link);
 
+//new Element("link",   { rel:"stylesheet", src: "flatpickr.css", type: "text/css" });
+var link = document.createElement('link');
+link.setAttribute('rel', 'stylesheet');
+link.setAttribute('type', 'text/css');
+link.setAttribute('href', 'libs/flatpickr.css');
+document.getElementsByTagName('head')[0].appendChild(link);
+
 //new Element("script", { src: "cshtml5.js", type: "application/javascript" });
 var cshtml5Script = document.createElement('script');
 cshtml5Script.setAttribute('type', 'application/javascript');
@@ -28,6 +35,19 @@ var velocityScript = document.createElement('script');
 velocityScript.setAttribute('type', 'application/javascript');
 velocityScript.setAttribute('src', 'libs/velocity.js');
 document.getElementsByTagName('head')[0].appendChild(velocityScript);
+
+//new Element("script", { src: "flatpickr.js", type: "application/javascript" });
+var velocityScript = document.createElement('script');
+velocityScript.setAttribute('type', 'application/javascript');
+velocityScript.setAttribute('src', 'libs/flatpickr.js');
+document.getElementsByTagName('head')[0].appendChild(velocityScript);
+
+//new Element("script", { src: "ResizeSensor.js", type: "application/javascript" });
+var velocityScript = document.createElement('script');
+velocityScript.setAttribute('type', 'application/javascript');
+velocityScript.setAttribute('src', 'libs/ResizeSensor.js');
+document.getElementsByTagName('head')[0].appendChild(velocityScript);
+
 
 window.onCallBack = {}
 window.onCallBack.OnCallbackFromJavaScript = function (callbackId, idWhereCallbackArgsAreStored, callbackArgsObject) {
