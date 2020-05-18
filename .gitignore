@@ -244,3 +244,4 @@ ModelManifest.xml
 
 src/Third_Party_Resources/
 /OpenSilver.Samples.Showcase.Browser/Properties/PublishProfiles
+/OpenSilver.Samples.Showcase.Browser/wwwroot/resources
