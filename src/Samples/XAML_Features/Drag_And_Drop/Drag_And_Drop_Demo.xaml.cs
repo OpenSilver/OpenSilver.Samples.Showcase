@@ -30,6 +30,11 @@ namespace CSHTML5.Samples.Showcase
         public Drag_And_Drop_Demo()
         {
             this.InitializeComponent();
+
+            // TIP: set "AllowScrollOnTouchMove" to "false" to prevent
+            // the page from scrolling while the user is dragging the
+            // item using a touch screen (default is "true"):
+            ElementToDrag.AllowScrollOnTouchMove = false;
         }
 
 #if SLMIGRATION

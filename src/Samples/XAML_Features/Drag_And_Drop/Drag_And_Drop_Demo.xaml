@@ -16,7 +16,14 @@
                 <TextBlock Text="Note: performance in the browser is better than in the Simulator due to the debugger of the Simulator." Foreground="#FF808080" Margin="0,10,0,0" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left"/>
                 <Border Width="160" Height="100" Background="White" BorderThickness="2" BorderBrush="LightGray" HorizontalAlignment="Center" Margin="0,10,0,0">
                     <Canvas>
-                        <Rectangle Fill="#FFE6E166" Width="50" Height="50" Canvas.Left="10" Canvas.Top="10" Cursor="SizeAll" PointerPressed="DragAndDropItem_PointerPressed" PointerReleased="DragAndDropItem_PointerReleased" PointerMoved="DragAndDropItem_PointerMoved"/>
+                        <Rectangle x:Name="ElementToDrag" Fill="#FFE6E166" Width="50" Height="50" Canvas.Left="10" Canvas.Top="10" Cursor="SizeAll"
+                                   AllowScrollOnTouchMove="False"
+                                   PointerPressed="DragAndDropItem_PointerPressed"
+                                   PointerReleased="DragAndDropItem_PointerReleased"
+                                   PointerMoved="DragAndDropItem_PointerMoved"/>
+                      <!-- TIP: set "AllowScrollOnTouchMove" to "False" to prevent
+                           the page from scrolling while the user is dragging the
+                           item using a touch screen (default is "True") -->
                     </Canvas>
                 </Border>
             </StackPanel>
