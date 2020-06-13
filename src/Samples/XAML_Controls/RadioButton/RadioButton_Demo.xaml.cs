@@ -27,7 +27,10 @@ namespace CSHTML5.Samples.Showcase
 
         void RadioButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(RadioButton1.IsChecked == true ? "Option 1 selected" : "Option 2 selected");
+            Dispatcher.BeginInvoke(() =>
+            {
+                MessageBox.Show(RadioButton1.IsChecked == true ? "Option 1 selected" : "Option 2 selected");
+            });
         }
 
         private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
