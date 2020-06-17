@@ -655,6 +655,10 @@
 		<Compile Include="Samples\XAML_Features\XAML_Resource_Dictionary\XAML_Resource_Dictionary_Demo.xaml.cs" />
 	</ItemGroup>
 
+	<ItemGroup>
+		<Folder Include="Third_Party_Resources\" />
+	</ItemGroup>
+
 	<!-- Removing bin\$(Configuration) and obj\$(Configuration) -->
 	<Target Name="FullClean" AfterTargets="Clean">
 		<RemoveDir Directories="$(ProjectDir)$(BaseOutputPath)$(Configuration)\" />
