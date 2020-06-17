@@ -10,8 +10,12 @@
 
 	<!-- Blazor Part -->
 	<PropertyGroup>
-		<TargetFramework>netstandard2.0</TargetFramework>
 		<RazorLangVersion>3.0</RazorLangVersion>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<OpenSilverVersion>1.0.0-alpha-005</OpenSilverVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)' == 'SL'">
@@ -41,9 +45,9 @@
 		<PackageReference Include="System.ServiceModel.Http" Version="4.7.0" />
 		<PackageReference Include="System.ServiceModel.NetTcp" Version="4.7.0" />
 		<PackageReference Include="System.ServiceModel.Security" Version="4.7.0" />
-		<PackageReference Include="OpenSilver" Version="1.0.0-alpha-005" Condition="'$(Configuration)' == 'SL' Or '$(Configuration)' == 'SL.Release'" />
-		<PackageReference Include="OpenSilver.WorkInProgress" Version="1.0.0-alpha-003" Condition="'$(Configuration)' == 'SL.WorkInProgress'" />
-		<PackageReference Include="OpenSilver.UwpCompatible" Version="1.0.0-alpha-003" Condition="'$(Configuration)' == 'UWP'" />
+		<PackageReference Include="OpenSilver" Version="$(OpenSilverVersion)" Condition="'$(Configuration)' == 'SL' Or '$(Configuration)' == 'SL.Release'" />
+		<PackageReference Include="OpenSilver.WorkInProgress" Version="$(OpenSilverVersion)" Condition="'$(Configuration)' == 'SL.WorkInProgress'" />
+		<PackageReference Include="OpenSilver.UwpCompatible" Version="$(OpenSilverVersion)" Condition="'$(Configuration)' == 'UWP'" />
 	</ItemGroup>
 
 	<ItemGroup>
