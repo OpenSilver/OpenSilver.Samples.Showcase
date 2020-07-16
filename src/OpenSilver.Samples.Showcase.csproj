@@ -586,6 +586,7 @@
 		<Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\TraceMode.cs" />
 		<Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\TraceType.cs" />
 		<Compile Include="Samples\Third_Party\Plotly_Charts\Plotly_Charts_Demo.xaml.cs" />
+		<Compile Include="Samples\Third_Party\Third_Party.xaml.cs" />
 		<Compile Include="Samples\Welcome.xaml.cs" />
 		<Compile Include="Samples\XAML_Controls\AutoCompleteBox\AutoCompleteBox_Demo.xaml.cs" />
 		<Compile Include="Samples\XAML_Controls\Border\Border_Demo.xaml.cs" />
