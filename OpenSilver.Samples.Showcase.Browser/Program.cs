@@ -1,29 +1,33 @@
-﻿using DotNetForHtml5;
-using Microsoft.AspNetCore.Blazor.Hosting;
-#if SLMIGRATION
-using System.Windows;
-#else
-using Windows.UI.Xaml;
-#endif
+﻿using System.Windows;
+using DotNetForHtml5;
+using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace OpenSilver.Samples.Showcase.Browser
 {
     public class Program
+{
+    public async static Task Main(string[] args)
     {
-        public static void Main(string[] args)
-        {
-            Cshtml5Initializer.Initialize();
-            IWebAssemblyHost host = CreateHostBuilder(args).Build();
-            host.Run();
-            host.Dispose();
-            Application.RunApplication(() =>
-            {
-                var app = new CSHTML5.Samples.Showcase.App();
-            });
-        }
+        Cshtml5Initializer.Initialize();
+        var builder = WebAssemblyHostBuilder.CreateDefault(args);
+        builder.RootComponents.Add<App>("app");
 
-        public static IWebAssemblyHostBuilder CreateHostBuilder(string[] args) =>
-            BlazorWebAssemblyHost.CreateDefaultBuilder()
-                .UseBlazorStartup<Startup>();
+        builder.Services.AddTransient(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+
+        var host = builder.Build();
+        await host.RunAsync();
     }
+
+    public static void RunApplication()
+    {
+        Application.RunApplication(() =>
+        {
+            var app = new CSHTML5.Samples.Showcase.App();
+        });
+    }
+}
 }

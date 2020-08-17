@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<!-- Blazor Part -->
 	<PropertyGroup>
@@ -13,8 +13,9 @@
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)' == 'SL'">
-		<DebugType>full</DebugType>
-		<DebugSymbols>true</DebugSymbols>
+    <!--<DebugType>full</DebugType>-->
+    <!--<Optimize>false</Optimize>
+		<DebugSymbols>true</DebugSymbols>-->
 		<DefineConstants>DEBUG;TRACE;SLMIGRATION;OPENSILVER</DefineConstants>
 	</PropertyGroup>
 
@@ -39,7 +40,7 @@
 		<PackageReference Include="System.ServiceModel.Http" Version="4.7.0" />
 		<PackageReference Include="System.ServiceModel.NetTcp" Version="4.7.0" />
 		<PackageReference Include="System.ServiceModel.Security" Version="4.7.0" />
-		<PackageReference Include="OpenSilver" Version="$(OpenSilverVersion)" Condition="'$(Configuration)' == 'SL' Or '$(Configuration)' == 'SL.Release'" />
+		<PackageReference Include="OpenSilver" Version="1.0.0-alpha-007" Condition="'$(Configuration)' == 'SL' Or '$(Configuration)' == 'SL.Release'" />
 		<PackageReference Include="OpenSilver.WorkInProgress" Version="$(OpenSilverVersion)" Condition="'$(Configuration)' == 'SL.WorkInProgress'" />
 		<PackageReference Include="OpenSilver.UwpCompatible" Version="$(OpenSilverVersion)" Condition="'$(Configuration)' == 'UWP'" />
 	</ItemGroup>

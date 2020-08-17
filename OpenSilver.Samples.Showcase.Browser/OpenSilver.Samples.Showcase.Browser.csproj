@@ -9,17 +9,18 @@
 		<ErrorReport>prompt</ErrorReport>
 		<WarningLevel>4</WarningLevel>
 		<NoStdLib>true</NoStdLib>
+    <NoXamlPreprocessor>True</NoXamlPreprocessor>
 	</PropertyGroup>
 	
 	<PropertyGroup>
-		<TargetFramework>netstandard2.0</TargetFramework>
+		<TargetFramework>netstandard2.1</TargetFramework>
 		<OpenSilverVersion>1.0.0-alpha-005</OpenSilverVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)' == 'SL'">
-		<DebugSymbols>true</DebugSymbols>
-		<DebugType>full</DebugType>
-		<Optimize>false</Optimize>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
 		<DefineConstants>TRACE;DEBUG;SLMIGRATION;CSHTML5BLAZOR</DefineConstants>
 	</PropertyGroup>
 
@@ -45,9 +46,12 @@
 	</PropertyGroup>
 	
 	<ItemGroup>
-		<PackageReference Include="OpenSilver" Version="$(OpenSilverVersion)" Condition="'$(Configuration)' == 'SL' Or '$(Configuration)' == 'SL.Release'" />
+		<PackageReference Include="OpenSilver" Version="1.0.0-alpha-007" Condition="'$(Configuration)' == 'SL' Or '$(Configuration)' == 'SL.Release'" />
 		<PackageReference Include="OpenSilver.WorkInProgress" Version="$(OpenSilverVersion)" Condition="'$(Configuration)' == 'SL.WorkInProgress'" />
 		<PackageReference Include="OpenSilver.UwpCompatible" Version="$(OpenSilverVersion)" Condition="'$(Configuration)' == 'UWP'" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="3.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Build" Version="3.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="3.2.0" />
 	</ItemGroup>
 
 	<!-- Blazor Part -->
@@ -91,5 +95,6 @@
 		<RemoveDir Directories="$(ProjectDir)$(BaseOutputPath)$(Configuration)\" />
 		<RemoveDir Directories="$(ProjectDir)$(BaseIntermediateOutputPath)$(Configuration)\" />
 	</Target>
+	<ProjectExtensions><VisualStudio><UserProperties properties_4launchsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 	
 </Project>
