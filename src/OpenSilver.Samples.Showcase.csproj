@@ -8,8 +8,9 @@
 	<PropertyGroup>
 		<Configurations>SL;SL.Release;SL.WorkInProgress;UWP</Configurations>
 		<TargetFramework>netstandard2.0</TargetFramework>
-		<OpenSilverVersion>1.0.0-alpha-006</OpenSilverVersion>
+		<OpenSilverVersion>1.0.0-alpha-007</OpenSilverVersion>
 		<EnableDefaultItems>false</EnableDefaultItems>
+    <IsOpenSilver>true</IsOpenSilver>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)' == 'SL'">

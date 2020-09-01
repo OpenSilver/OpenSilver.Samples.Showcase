@@ -1,8 +1,19 @@
-//******************************************
-//           C#/XAML for HTML5
-//    Copyright 2019 Userware/CSHTML5
-//        http://www.cshtml5.com
-//******************************************
+
+
+/*===================================================================================
+*
+*   Copyright (c) Userware (OpenSilver.net, CSHTML5.com)
+*
+*   This file is part of both the OpenSilver Runtime (https://opensilver.net), which
+*   is licensed under the MIT license (https://opensource.org/licenses/MIT), and the
+*   CSHTML5 Runtime (http://cshtml5.com), which is dual-licensed (MIT + commercial).
+*
+*   As stated in the MIT license, "the above copyright notice and this permission
+*   notice shall be included in all copies or substantial portions of the Software."
+*
+\*====================================================================================*/
+
+
 
 //new Element("link",   { rel:"stylesheet", src: "cshtml5.css", type: "text/css" });
 var link = document.createElement('link');
@@ -31,28 +42,11 @@ document.getElementsByTagName('head')[0].appendChild(velocityScript);
 
 window.onCallBack = {}
 window.onCallBack.OnCallbackFromJavaScript = function (callbackId, idWhereCallbackArgsAreStored, callbackArgsObject) {
-    //console.log("on callback");
-    var namespace = "CSHTML5.Internal";
-    var type = "OnCallBack";
-    var method = window.onCallbackFromJavaScript;
-    if (!method) {
-        try {
-            var assemblyName = "OpenSilver";
-            method = Blazor.platform.findMethod(assemblyName, namespace, type, "OnCallbackFromJavaScript");
-            window.onCallbackFromJavaScript = method;
-        } catch (e) {
-            var assemblyName = "OpenSilver.UwpCompatible";
-            method = Blazor.platform.findMethod(assemblyName, namespace, type, "OnCallbackFromJavaScript");
-            window.onCallbackFromJavaScript = method;
-        }
+    try {
+        DotNet.invokeMethod("OpenSilver", "OnCallbackFromJavaScript", callbackId, idWhereCallbackArgsAreStored, "");
+    } catch (e) {
+        DotNet.invokeMethod("OpenSilver.UWPCompatible", "OnCallbackFromJavaScript", callbackId, idWhereCallbackArgsAreStored, "");
     }
-    //console.log("method found. callbackIdStr: " + callbackId + ". idWhereCallbackArgsAreStored:" + idWhereCallbackArgsAreStored);
-    //console.log("ON CALLBACK FROM JS");
-    Blazor.platform.callMethod(method, null, [
-        Blazor.platform.toDotNetString(callbackId + ""),
-        Blazor.platform.toDotNetString(idWhereCallbackArgsAreStored),
-        Blazor.platform.toDotNetString(""),
-    ]);
 };
 
 window.callJS = function (javaScriptToExecute) {
