@@ -1,0 +1,27 @@
+﻿<UserControl
+    x:Class="CSHTML5.Samples.Showcase.InteractivityTriggers_Demo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:local="using:CSHTML5.Samples.Showcase">
+  <ContentControl Style="{StaticResource Card_Style}" Width="245">
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      <ContentControl Content="Interactivity Triggers" Foreground="#FFF78069" Background="#FFDCA59C" Style="{StaticResource HeaderControl_Style}"/>
+      <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Button x:Name="TestButton" Content="Click me" Width="100" Height="30">
+          <i:Interaction.Triggers>
+            <i:EventTrigger EventName="Click" >
+              <i:InvokeCommandAction DataContext="{Binding ElementName=TestButton, Path=DataContext}" Command="{Binding Path=TestCommand, Mode=OneWay}"/>
+            </i:EventTrigger>
+          </i:Interaction.Triggers>
+        </Button>
+      </StackPanel>
+      <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FFF78069" Style="{StaticResource ButtonViewSource_Style}"/>
+    </Grid>
+  </ContentControl>
+</UserControl>
