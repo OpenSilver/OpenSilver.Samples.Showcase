@@ -16,7 +16,7 @@
         <Button x:Name="TestButton" Content="Click me" Width="100" Height="30">
           <i:Interaction.Triggers>
             <i:EventTrigger EventName="Click" >
-              <i:InvokeCommandAction DataContext="{Binding ElementName=TestButton, Path=DataContext}" Command="{Binding Path=TestCommand, Mode=OneWay}"/>
+              <i:InvokeCommandAction Command="{Binding Path=TestCommand, Mode=OneWay}"/>
             </i:EventTrigger>
           </i:Interaction.Triggers>
         </Button>

@@ -30,6 +30,7 @@
       <local:Slider_Demo HorizontalAlignment="Center"/>
       <local:TabControl_Demo HorizontalAlignment="Center"/>
       <local:ChildWindow_Demo HorizontalAlignment="Center"/>
+      <local:NonModalChildWindow_Demo HorizontalAlignment="Center"/>
       <local:ContextMenu_MenuItem_Demo x:Name="MenuItemDemo" HorizontalAlignment="Center"/>
       <local:ToggleButton_Demo HorizontalAlignment="Center"/>
       <local:Expander_Demo HorizontalAlignment="Center"/>

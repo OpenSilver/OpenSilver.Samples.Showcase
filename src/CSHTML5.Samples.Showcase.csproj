@@ -39,15 +39,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bridge, Version=17.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CSHTML5.2.0.0-alpha69-089\lib\net40\Bridge.dll</HintPath>
+      <HintPath>..\packages\CSHTML5.2.0.0-alpha74-094\lib\net40\Bridge.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CSHTML5, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CSHTML5.2.0.0-alpha69-089\lib\net40\CSHTML5.dll</HintPath>
+      <HintPath>..\packages\CSHTML5.2.0.0-alpha74-094\lib\net40\CSHTML5.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CSHTML5.Stubs, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CSHTML5.2.0.0-alpha69-089\lib\net40\CSHTML5.Stubs.dll</HintPath>
+      <HintPath>..\packages\CSHTML5.2.0.0-alpha74-094\lib\net40\CSHTML5.Stubs.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CSHTML5.Wrappers.DevExtreme.common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -137,6 +137,12 @@
     </Compile>
     <Compile Include="Samples\Third_Party\Telerik_KendoUI\Grid\Grid_Demo.xaml.cs">
       <DependentUpon>Grid_Demo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\XAML_Controls\ChildWindow2\NonModalChildWindow_Demo.xaml.cs">
+      <DependentUpon>NonModalChildWindow_Demo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\XAML_Controls\ChildWindow2\SmallChildWindow.xaml.cs">
+      <DependentUpon>SmallChildWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\XAML_Controls\DateAndTimePicker\DateAndTimePicker_Demo.xaml.cs">
       <DependentUpon>DateAndTimePicker_Demo.xaml</DependentUpon>
@@ -257,6 +263,9 @@
     </Compile>
     <Compile Include="Samples\XAML_Features\AttachedProperties\AttachedProperties_Demo.xaml.cs">
       <DependentUpon>AttachedProperties_Demo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\XAML_Features\InteractivityTriggers\InteractivityTriggers_Demo.xaml.cs">
+      <DependentUpon>InteractivityTriggers_Demo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\XAML_Features\Validation\Person.cs" />
     <Compile Include="Samples\XAML_Features\Validation\Validation_Demo.xaml.cs">
@@ -761,6 +770,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Content>
+    <Page Include="Samples\XAML_Controls\ChildWindow2\NonModalChildWindow_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\XAML_Controls\ChildWindow2\SmallChildWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Samples\XAML_Controls\Label\Label_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -778,6 +795,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Samples\XAML_Features\AttachedProperties\AttachedProperties_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\XAML_Features\InteractivityTriggers\InteractivityTriggers_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -1098,12 +1119,12 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
-  <Import Project="..\packages\CSHTML5.2.0.0-alpha69-089\build\CSHTML5.targets" Condition="Exists('..\packages\CSHTML5.2.0.0-alpha69-089\build\CSHTML5.targets')" />
+  <Import Project="..\packages\CSHTML5.2.0.0-alpha74-094\build\CSHTML5.targets" Condition="Exists('..\packages\CSHTML5.2.0.0-alpha74-094\build\CSHTML5.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\CSHTML5.2.0.0-alpha69-089\build\CSHTML5.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CSHTML5.2.0.0-alpha69-089\build\CSHTML5.targets'))" />
+    <Error Condition="!Exists('..\packages\CSHTML5.2.0.0-alpha74-094\build\CSHTML5.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CSHTML5.2.0.0-alpha74-094\build\CSHTML5.targets'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
