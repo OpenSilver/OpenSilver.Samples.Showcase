@@ -31,14 +31,18 @@ namespace CSHTML5.Samples.Showcase
         {
             SmallChildWindow childWindow = new SmallChildWindow();
             childWindow.Title = "ChildWindow (Modal)" + _n++;
-            childWindow.IsModal = true;
+#if !OPENSILVER
+            childWindow.IsModal = true; 
+#endif
             childWindow.Show();
         }
         private void ButtonTestChildWindow_NonModal_Click(object sender, RoutedEventArgs e)
         {
             SmallChildWindow childWindow = new SmallChildWindow();
             childWindow.Title = "ChildWindow (Non-modal)" + _n++;
-            childWindow.IsModal = false;
+#if !OPENSILVER
+            childWindow.IsModal = false; 
+#endif
             childWindow.Show();
         }
 

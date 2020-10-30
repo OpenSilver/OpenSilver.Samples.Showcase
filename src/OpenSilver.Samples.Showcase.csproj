@@ -291,6 +291,12 @@
 		<Page Include="Samples\XAML_Controls\CheckBox\CheckBox_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
+		<Page Include="Samples\XAML_Controls\ChildWindow2\NonModalChildWindow_Demo.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\ChildWindow2\SmallChildWindow.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</Page>
 		<Page Include="Samples\XAML_Controls\ChildWindow\ChildWindow_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
@@ -597,6 +603,8 @@
 		<Compile Include="Samples\XAML_Controls\Button\Button_Demo.xaml.cs" />
 		<Compile Include="Samples\XAML_Controls\Canvas\Canvas_Demo.xaml.cs" />
 		<Compile Include="Samples\XAML_Controls\CheckBox\CheckBox_Demo.xaml.cs" />
+		<Compile Include="Samples\XAML_Controls\ChildWindow2\NonModalChildWindow_Demo.xaml.cs" />
+		<Compile Include="Samples\XAML_Controls\ChildWindow2\SmallChildWindow.xaml.cs" />
 		<Compile Include="Samples\XAML_Controls\ChildWindow\ChildWindow_Demo.xaml.cs" />
 		<Compile Include="Samples\XAML_Controls\ChildWindow\LoginWindow.xaml.cs" />
 		<Compile Include="Samples\XAML_Controls\ComboBox\ComboBox_Demo.xaml.cs" />
