@@ -3,20 +3,42 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <Style x:Key="ChildWindowStyle" TargetType="ChildWindow">
-        <Setter Property="HorizontalAlignment" Value="Center" />
-        <Setter Property="VerticalAlignment" Value="Center" />
-        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-        <Setter Property="VerticalContentAlignment" Value="Stretch" />
-        <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="BorderBrush" Value="#FFE2E2E2" />
-        <Setter Property="OverlayBrush" Value="#7F000000" />
-        <Setter Property="OverlayOpacity" Value="1" />
+        <Setter Property="HorizontalAlignment"
+                Value="Center" />
+        <Setter Property="VerticalAlignment"
+                Value="Center" />
+        <Setter Property="HorizontalContentAlignment"
+                Value="Stretch" />
+        <Setter Property="VerticalContentAlignment"
+                Value="Stretch" />
+        <Setter Property="BorderThickness"
+                Value="1" />
+        <Setter Property="BorderBrush"
+                Value="#FFE2E2E2" />
+        <Setter Property="OverlayBrush"
+                Value="#7F000000" />
+        <Setter Property="OverlayOpacity"
+                Value="1" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ChildWindow">
                     <Grid x:Name="Root">
-                        <!--<VisualStateManager.VisualStateGroups>
-                                <VisualStateGroup x:Name="WindowStates">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup Name="ModalStates">
+                                <VisualState Name="NotModal">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Overlay" Storyboard.TargetProperty="Background">
+                                            <DiscreteObjectKeyFrame Value="{x:Null}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Overlay" Storyboard.TargetProperty="IsHitTestVisible">
+                                            <DiscreteObjectKeyFrame Value="False"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState Name="Modal">
+                                </VisualState>
+                            </VisualStateGroup>
+                            <!--<VisualStateGroup x:Name="WindowStates">
                                     <VisualState x:Name="Open">
                                         <Storyboard>
                                             <DoubleAnimationUsingKeyFrames BeginTime="0" Storyboard.TargetName="Overlay" Storyboard.TargetProperty="Opacity">
@@ -57,10 +79,20 @@
                                             </DoubleAnimationUsingKeyFrames>
                                         </Storyboard>
                                     </VisualState>
-                                </VisualStateGroup>
-                            </VisualStateManager.VisualStateGroups>-->
-                        <Grid x:Name="Overlay" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0" Background="{TemplateBinding OverlayBrush}" Opacity="{TemplateBinding OverlayOpacity}" />
-                        <Grid x:Name="ContentRoot" HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" RenderTransformOrigin="0.5,0.5" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
+                                </VisualStateGroup>-->
+                        </VisualStateManager.VisualStateGroups>
+                        <Grid x:Name="Overlay"
+                              HorizontalAlignment="Stretch"
+                              VerticalAlignment="Stretch"
+                              Margin="0"
+                              Background="{TemplateBinding OverlayBrush}"
+                              Opacity="{TemplateBinding OverlayOpacity}" />
+                        <Border x:Name="ContentRoot"
+                                HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                                RenderTransformOrigin="0.5,0.5"
+                                Height="{TemplateBinding Height}"
+                                Width="{TemplateBinding Width}">
                             <!--<Grid.RenderTransform>
                                     <TransformGroup>
                                         <ScaleTransform />
@@ -73,28 +105,55 @@
                                 <Border BorderThickness="1" CornerRadius="2.25" BorderBrush="#0F000000" Background="#0F000000" HorizontalAlignment="Stretch" Margin="-2" VerticalAlignment="Stretch" />
                                 <Border BorderThickness="1" CornerRadius="2.5" BorderBrush="#0C000000" Background="#0C000000" HorizontalAlignment="Stretch" Margin="-3" VerticalAlignment="Stretch" />
                                 <Border BorderThickness="1" CornerRadius="2.75" BorderBrush="#0A000000" Background="#0A000000" HorizontalAlignment="Stretch" Margin="-4" VerticalAlignment="Stretch" />-->
-                            <Border Background="#FFF6F6F6" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="2">
+                            <Border x:Name="ContentContainer"
+                                    Background="#FFF6F6F6"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    CornerRadius="2">
                                 <Grid>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto" />
                                         <RowDefinition />
                                     </Grid.RowDefinitions>
-                                    <Border x:Name="Chrome" Width="Auto" BorderBrush="#FFFFFFFF" BorderThickness="0,0,0,1" Background="#FFEEEEEE">
-                                        <Grid Height="Auto" Width="Auto">
+                                    <Border x:Name="Chrome"
+                                            Width="Auto"
+                                            BorderBrush="#FFFFFFFF"
+                                            BorderThickness="0,0,0,1"
+                                            Background="#FFEEEEEE">
+                                        <Grid Height="Auto"
+                                              Width="Auto">
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition />
                                                 <ColumnDefinition Width="30" />
                                             </Grid.ColumnDefinitions>
-                                            <ContentControl Content="{TemplateBinding Title}" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="6,0,6,0" />
-                                            <Button x:Name="CloseButton" Content="X" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="15" Padding="0" />
+                                            <ContentControl Content="{TemplateBinding Title}"
+                                                            FontWeight="Bold"
+                                                            HorizontalAlignment="Stretch"
+                                                            VerticalAlignment="Center"
+                                                            Margin="6,0,6,0" />
+                                            <Button x:Name="CloseButton"
+                                                    Content="X"
+                                                    Grid.Column="1"
+                                                    HorizontalAlignment="Center"
+                                                    VerticalAlignment="Center"
+                                                    HorizontalContentAlignment="Center"
+                                                    VerticalContentAlignment="Center"
+                                                    Width="15"
+                                                    Padding="0" />
                                         </Grid>
                                     </Border>
-                                    <Border Background="{TemplateBinding Background}" Margin="7" Grid.Row="1">
-                                        <ContentPresenter x:Name="ContentPresenter" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                    <Border Background="{TemplateBinding Background}"
+                                            Margin="7"
+                                            Grid.Row="1">
+                                        <ContentPresenter x:Name="ContentPresenter"
+                                                          Content="{TemplateBinding Content}"
+                                                          ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
                                     </Border>
                                 </Grid>
                             </Border>
-                        </Grid>
+                        </Border>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>

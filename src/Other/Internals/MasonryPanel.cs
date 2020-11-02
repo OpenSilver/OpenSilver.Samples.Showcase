@@ -26,7 +26,7 @@ namespace CSHTML5.Samples.Showcase
         /// </summary>
         public MasonryPanel() : base()
         {
-            base.INTERNAL_EnableProgressiveLoading = true;
+            base.EnableProgressiveRendering = true;
             Loaded += MasonryPanel_Loaded;
         }
 
