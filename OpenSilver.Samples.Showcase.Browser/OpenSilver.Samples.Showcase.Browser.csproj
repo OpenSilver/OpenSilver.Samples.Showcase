@@ -15,7 +15,7 @@
 	
 	<PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-		<OpenSilverVersion>1.0.0-alpha-007</OpenSilverVersion>
+		<OpenSilverVersion>1.0.0-alpha-009</OpenSilverVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)' == 'SL'">

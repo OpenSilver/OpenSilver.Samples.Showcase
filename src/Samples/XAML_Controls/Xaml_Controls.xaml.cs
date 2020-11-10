@@ -26,7 +26,7 @@ namespace CSHTML5.Samples.Showcase
 
 #if OPENSILVER
             ScrollViewerDemo.Visibility = Visibility.Collapsed;
-            ComboBoxDemo.Visibility = Visibility.Collapsed;
+            //ComboBoxDemo.Visibility = Visibility.Collapsed;
             ListBoxDemo.Visibility = Visibility.Collapsed;
             MenuItemDemo.Visibility = Visibility.Collapsed;
             ContextMenuDemo.Visibility = Visibility.Collapsed;

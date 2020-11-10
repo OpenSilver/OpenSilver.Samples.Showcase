@@ -24,7 +24,7 @@ namespace CSHTML5.Samples.Showcase
         public Binding2_Demo()
         {
             this.InitializeComponent();
-            Title.Content = "Binding (1 of 2)";
+            Title.Content = "Binding (2 of 3)";
         }
 
         private void ButtonViewSource_Click(object sender, RoutedEventArgs e)

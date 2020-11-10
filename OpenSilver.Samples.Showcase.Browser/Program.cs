@@ -5,6 +5,9 @@ using System.Windows;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using DotNetForHtml5;
+#if !SLMIGRATION
+using Windows.UI.Xaml;
+#endif
 
 namespace OpenSilver.Samples.Showcase.Browser
 {

@@ -27,7 +27,7 @@ namespace CSHTML5.Samples.Showcase
         {
             this.InitializeComponent();
 
-            Title.Content = "Binding (2 of 2)";
+            Title.Content = "Binding (3 of 3)";
 
             _listOfContacts = new ObservableCollection<Person>()
             {
