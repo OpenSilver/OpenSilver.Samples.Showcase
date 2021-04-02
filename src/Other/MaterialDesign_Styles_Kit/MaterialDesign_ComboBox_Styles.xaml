@@ -3,110 +3,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Styles_Kit_Showcase.MaterialDesign_Styles_Kit">
 
-    <!--<ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="MaterialDesign_Styles_Kit/MaterialDesign_CommonResources.xaml"/>
-        <ResourceDictionary Source="MaterialDesign_Styles_Kit/MaterialDesign_Button_Styles.xaml"/>
-    </ResourceDictionary.MergedDictionaries>-->
-    <!--Requires MaterialDesign_CommonResources-->
-    <!--Requires MaterialDesign_Button_Styles-->
-
-    <!--ComboBoxes-->
-    <Style x:Key="MaterialDesign_ComboBox_Style" TargetType="ComboBox">
-        <Setter Property="Background" Value="White"/>
-        <Setter Property="Foreground" Value="{StaticResource MaterialDesign_DefaultAccentColor}"/>
-        <Setter Property="FontSize" Value="16"/>
-        <Setter Property="Padding" Value="10,5,40,5"/>
-        <Setter Property="MinWidth" Value="70"/>
-        <Setter Property="Cursor" Value="Hand"/>
-        <Setter Property="ItemContainerStyle" Value="{StaticResource MaterialDesign_ComboBoxItem_Style}"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="ComboBox">
-                    <StackPanel>
-                        <VisualStateManager.VisualStateGroups>
-                            <VisualStateGroup Name="CommonStates">
-                                <VisualState Name="Normal">
-                                </VisualState>
-                                <VisualState Name="PointerOver">
-                                    <Storyboard>
-                                        <!--<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="OuterContentControl">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{TemplateBinding Foreground, Converter={StaticResource AccentColorConverter}}"/>
-                                        </ObjectAnimationUsingKeyFrames>-->
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" Storyboard.TargetName="DropShadowEffect">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="0.6"/>
-                                        </ObjectAnimationUsingKeyFrames>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BlurRadius" Storyboard.TargetName="DropShadowEffect">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="8"/>
-                                        </ObjectAnimationUsingKeyFrames>
-
-                                    </Storyboard>
-                                </VisualState>
-                                <VisualState Name="Pressed">
-                                </VisualState>
-                                <VisualState Name="Disabled">
-                                    <Storyboard>
-
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="DropDownToggle">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="#FFE0E0E0"/>
-                                        </ObjectAnimationUsingKeyFrames>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="ContentPresenter">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="#FFE0E0E0"/>
-                                        </ObjectAnimationUsingKeyFrames>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="#FFA0A0A0"/>
-                                        </ObjectAnimationUsingKeyFrames>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Stroke" Storyboard.TargetName="arrow">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="#FFA0A0A0"/>
-                                        </ObjectAnimationUsingKeyFrames>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" Storyboard.TargetName="DropShadowEffect">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="0"/>
-                                        </ObjectAnimationUsingKeyFrames>
-                                    </Storyboard>
-                                </VisualState>
-                            </VisualStateGroup>
-                        </VisualStateManager.VisualStateGroups>
-                        <ContentControl x:Name="OuterContentControl"
-                                Background="{TemplateBinding Background}"
-                                BorderBrush="{TemplateBinding BorderBrush}"
-                                BorderThickness="{TemplateBinding BorderThickness}"
-                                Height="{TemplateBinding Height}">
-                            <Border.Effect>
-                                <DropShadowEffect x:Name="DropShadowEffect" Color="Gray" Opacity="0.4" BlurRadius="6" Direction="-30" ShadowDepth="0"/>
-                            </Border.Effect>
-                            <Grid x:Name="Grid" VerticalAlignment="Stretch" Background="{TemplateBinding Background}">
-                                <ToggleButton x:Name="DropDownToggle"
-                                              HorizontalAlignment="Stretch"
-                                              VerticalAlignment="Stretch"
-                                              HorizontalContentAlignment="Right"
-                                              VerticalContentAlignment="Center"
-                                              Background="{TemplateBinding Background}"
-                                              Style="{StaticResource MaterialDesign_InertToggleButton_Style}">
-                                    <Path x:Name="arrow" Visibility="Visible" Stroke="{TemplateBinding Foreground}" Width="13" Height="9" StrokeThickness="2" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None" Data="M 1.5,2.25 L 6.75,7.5 L 12,2.25"/>
-                                </ToggleButton>
-                                <ContentPresenter x:Name="ContentPresenter"
-                                                  Background="{TemplateBinding Background}"
-                                                  IsHitTestVisible="False"
-                                                  Margin="{TemplateBinding Padding}"
-                                                  VerticalAlignment="Center"/>
-                            </Grid>
-                        </ContentControl>
-                        <Popup x:Name="Popup" IsOpen="False">
-                            <Border Background="White" BorderBrush="Black" BorderThickness="1">
-                                <ScrollViewer MaxHeight="{TemplateBinding MaxDropDownHeight}"
-                                              VerticalScrollBarVisibility="Auto"
-                                              HorizontalScrollBarVisibility="Disabled"
-                                              Foreground="{TemplateBinding Foreground}">
-                                    <ItemsPresenter x:Name="ItemsHost"/>
-                                </ScrollViewer>
-                            </Border>
-                        </Popup>
-                    </StackPanel>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-
-    </Style>
-
     <Style x:Key="MaterialDesign_InertToggleButton_Style" TargetType="ToggleButton">
         <Setter Property="Background" Value="#FFE2E2E2"/>
         <Setter Property="Foreground" Value="Black"/>
@@ -220,6 +116,110 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+    </Style>
+
+    <!--<ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="MaterialDesign_Styles_Kit/MaterialDesign_CommonResources.xaml"/>
+        <ResourceDictionary Source="MaterialDesign_Styles_Kit/MaterialDesign_Button_Styles.xaml"/>
+    </ResourceDictionary.MergedDictionaries>-->
+    <!--Requires MaterialDesign_CommonResources-->
+    <!--Requires MaterialDesign_Button_Styles-->
+
+    <!--ComboBoxes-->
+    <Style x:Key="MaterialDesign_ComboBox_Style" TargetType="ComboBox">
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Foreground" Value="{StaticResource MaterialDesign_DefaultAccentColor}"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Padding" Value="10,5,40,5"/>
+        <Setter Property="MinWidth" Value="70"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="ItemContainerStyle" Value="{StaticResource MaterialDesign_ComboBoxItem_Style}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ComboBox">
+                    <StackPanel>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup Name="CommonStates">
+                                <VisualState Name="Normal">
+                                </VisualState>
+                                <VisualState Name="PointerOver">
+                                    <Storyboard>
+                                        <!--<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="OuterContentControl">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{TemplateBinding Foreground, Converter={StaticResource AccentColorConverter}}"/>
+                                        </ObjectAnimationUsingKeyFrames>-->
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" Storyboard.TargetName="DropShadowEffect">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="0.6"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BlurRadius" Storyboard.TargetName="DropShadowEffect">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="8"/>
+                                        </ObjectAnimationUsingKeyFrames>
+
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState Name="Pressed">
+                                </VisualState>
+                                <VisualState Name="Disabled">
+                                    <Storyboard>
+
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="DropDownToggle">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="#FFE0E0E0"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="ContentPresenter">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="#FFE0E0E0"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="#FFA0A0A0"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Stroke" Storyboard.TargetName="arrow">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="#FFA0A0A0"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" Storyboard.TargetName="DropShadowEffect">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="0"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <ContentControl x:Name="OuterContentControl"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Height="{TemplateBinding Height}">
+                            <Border.Effect>
+                                <DropShadowEffect x:Name="DropShadowEffect" Color="Gray" Opacity="0.4" BlurRadius="6" Direction="-30" ShadowDepth="0"/>
+                            </Border.Effect>
+                            <Grid x:Name="Grid" VerticalAlignment="Stretch" Background="{TemplateBinding Background}">
+                                <ToggleButton x:Name="DropDownToggle"
+                                              HorizontalAlignment="Stretch"
+                                              VerticalAlignment="Stretch"
+                                              HorizontalContentAlignment="Right"
+                                              VerticalContentAlignment="Center"
+                                              Background="{TemplateBinding Background}"
+                                              Style="{StaticResource MaterialDesign_InertToggleButton_Style}">
+                                    <Path x:Name="arrow" Visibility="Visible" Stroke="{TemplateBinding Foreground}" Width="13" Height="9" StrokeThickness="2" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None" Data="M 1.5,2.25 L 6.75,7.5 L 12,2.25"/>
+                                </ToggleButton>
+                                <ContentPresenter x:Name="ContentPresenter"
+                                                  Background="{TemplateBinding Background}"
+                                                  IsHitTestVisible="False"
+                                                  Margin="{TemplateBinding Padding}"
+                                                  VerticalAlignment="Center"/>
+                            </Grid>
+                        </ContentControl>
+                        <Popup x:Name="Popup" IsOpen="False">
+                            <Border Background="White" BorderBrush="Black" BorderThickness="1">
+                                <ScrollViewer MaxHeight="{TemplateBinding MaxDropDownHeight}"
+                                              VerticalScrollBarVisibility="Auto"
+                                              HorizontalScrollBarVisibility="Disabled"
+                                              Foreground="{TemplateBinding Foreground}">
+                                    <ItemsPresenter x:Name="ItemsHost"/>
+                                </ScrollViewer>
+                            </Border>
+                        </Popup>
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
     </Style>
 
 </ResourceDictionary>
