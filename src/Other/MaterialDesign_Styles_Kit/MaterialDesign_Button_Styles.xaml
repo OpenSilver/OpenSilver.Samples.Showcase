@@ -405,7 +405,7 @@
                                 Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
-                                CornerRadius="{TemplateBinding ActualHeight, Converter={StaticResource DoubleToCornerRadiusConverter}}">
+                                CornerRadius="{TemplateBinding Height, Converter={StaticResource DoubleToCornerRadiusConverter}}">
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup Name="CommonStates">
                                 <VisualState Name="Normal">
@@ -447,7 +447,7 @@
                         </VisualStateManager.VisualStateGroups>
                         <Border x:Name="InnerBorder"
                                     Background="{TemplateBinding Background}"
-                                CornerRadius="{TemplateBinding ActualHeight, Converter={StaticResource DoubleToCornerRadiusConverter}}"
+                                CornerRadius="{TemplateBinding Height, Converter={StaticResource DoubleToCornerRadiusConverter}}"
                                 >
                             <Border.Effect>
                                 <DropShadowEffect x:Name="DropShadowEffect" Color="Gray" Opacity="0.4" BlurRadius="6" Direction="-30" ShadowDepth="0"/>
