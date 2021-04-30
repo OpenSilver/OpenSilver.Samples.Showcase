@@ -1,13 +1,15 @@
 ﻿@page "/"
 @using DotNetForHtml5;
+@using OpenSilver.Samples.Showcase.Browser.Interop;
 @inject IJSRuntime JSRuntime;
 
-@code{
+@code{ 
     protected override void OnInitialized()
     {
         base.OnInitialized();
-        JavaScriptExecutionHandler javaScriptExecutionHandler = (JavaScriptExecutionHandler)DotNetForHtml5.Core.INTERNAL_Simulator.JavaScriptExecutionHandler;
-        javaScriptExecutionHandler.JSRuntime = JSRuntime;
+
+        Cshtml5Initializer.Initialize(new UnmarshalledJavaScriptExecutionHandler(JSRuntime));
+
         Program.RunApplication();
-    }
+    } 
 }

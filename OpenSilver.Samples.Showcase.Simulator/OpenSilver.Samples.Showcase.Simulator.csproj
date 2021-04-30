@@ -18,8 +18,8 @@
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
-	<StartAction>URL</StartAction>
-	<StartURL>http://www.opensilver.net/permalinks/simulator_not_found.aspx</StartURL>
+    <StartAction>URL</StartAction>
+    <StartURL>http://www.opensilver.net/permalinks/simulator_not_found.aspx</StartURL>
     <StartArguments>"..\..\..\src\bin\$(Configuration)\netstandard2.0\OpenSilver.Samples.Showcase.dll"</StartArguments>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'SL'">
@@ -52,11 +52,9 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-
-	<!-- Removing bin\$(Configuration) and obj\$(Configuration) -->
-	<Target Name="FullClean" AfterTargets="Clean">
-		<RemoveDir Directories="$(ProjectDir)$(BaseOutputPath)$(Configuration)\" />
-		<RemoveDir Directories="$(ProjectDir)$(BaseIntermediateOutputPath)$(Configuration)\" />
-	</Target>
-	
+  <!-- Removing bin\$(Configuration) and obj\$(Configuration) -->
+  <Target Name="FullClean" AfterTargets="Clean">
+    <RemoveDir Directories="$(ProjectDir)$(BaseOutputPath)$(Configuration)\" />
+    <RemoveDir Directories="$(ProjectDir)$(BaseIntermediateOutputPath)$(Configuration)\" />
+  </Target>
 </Project>

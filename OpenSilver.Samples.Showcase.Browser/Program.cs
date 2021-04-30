@@ -15,7 +15,6 @@ namespace OpenSilver.Samples.Showcase.Browser
     {
         public async static Task Main(string[] args)
         {
-            Cshtml5Initializer.Initialize();
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.RootComponents.Add<App>("app");
 
