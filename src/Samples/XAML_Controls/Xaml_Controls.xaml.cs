@@ -32,8 +32,8 @@ namespace CSHTML5.Samples.Showcase
             ContextMenuDemo.Visibility = Visibility.Collapsed;
             ImageDemo.Visibility = Visibility.Collapsed;
             MediaElementDemo.Visibility = Visibility.Collapsed;
-            DataGridDemo.Visibility = Visibility.Collapsed;
-            DateAndTimePickerDemo.Visibility = Visibility.Collapsed;
+            //DataGridDemo.Visibility = Visibility.Collapsed;
+            //DateAndTimePickerDemo.Visibility = Visibility.Collapsed;
             NonModalChildWindow.Visibility = Visibility.Collapsed;
 #endif
         }

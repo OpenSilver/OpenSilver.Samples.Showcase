@@ -33,10 +33,10 @@
                                 <VisualState Name="Pressed">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{TemplateBinding Background, Converter={StaticResource AccentColorConverter}}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Path=Background, Converter={StaticResource AccentColorConverter}, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="CheckBorder">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{TemplateBinding Background, Converter={StaticResource AccentColorConverter} }"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Path=Background, Converter={StaticResource AccentColorConverter}, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderThickness" Storyboard.TargetName="CheckBorder">
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="2"/>
@@ -85,16 +85,16 @@
                                 <VisualState Name="CheckedPressed">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{TemplateBinding Background, Converter={StaticResource AccentColorConverter}}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Path=Background, Converter={StaticResource AccentColorConverter}, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="CheckBorder">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{TemplateBinding Background, Converter={StaticResource AccentColorConverter} }"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Path=Background, Converter={StaticResource AccentColorConverter}, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderThickness" Storyboard.TargetName="CheckBorder">
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="2"/>
                                         </ObjectAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="InnerBorder">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{TemplateBinding Background, Converter={StaticResource AccentColorConverter} }"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Path=Background, Converter={StaticResource AccentColorConverter}, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>

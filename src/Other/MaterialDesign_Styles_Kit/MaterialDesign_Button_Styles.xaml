@@ -35,7 +35,7 @@
                                 <VisualState Name="PointerOver">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="InnerBorder">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{TemplateBinding Background, Converter={StaticResource AccentColorConverter}}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Path=Background, Converter={StaticResource AccentColorConverter}, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" Storyboard.TargetName="DropShadowEffect">
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="0.6"/>
@@ -114,7 +114,7 @@
                                 <VisualState Name="PointerOver">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{TemplateBinding Foreground, Converter={StaticResource AccentColorConverter}}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Path=Foreground, Converter={StaticResource AccentColorConverter}, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Effect.Opacity" Storyboard.TargetName="InnerBorder">
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="0.6"/>
@@ -193,7 +193,7 @@
                                 <VisualState Name="PointerOver">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{TemplateBinding Foreground, Converter={StaticResource AccentColorConverter}}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Path=Foreground, Converter={StaticResource AccentColorConverter}, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -261,7 +261,7 @@
                                 <VisualState Name="PointerOver">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{TemplateBinding Foreground, Converter={StaticResource AccentColorConverter}}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Path=Foreground, Converter={StaticResource AccentColorConverter}, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                         <!--Problem below-->
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="TextDecorations" Storyboard.TargetName="ContentPresenter">
@@ -326,7 +326,7 @@
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 Width="{Binding Path=Width, RelativeSource={RelativeSource Mode=TemplatedParent}}"
-                                CornerRadius="{TemplateBinding Height, Converter={StaticResource DoubleToCornerRadiusConverter}}">
+                                CornerRadius="{Binding Path=Height, Converter={StaticResource DoubleToCornerRadiusConverter}, RelativeSource={RelativeSource Mode=TemplatedParent}}">
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup Name="CommonStates">
                                 <VisualState Name="Normal">
@@ -334,7 +334,7 @@
                                 <VisualState Name="PointerOver">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{TemplateBinding Foreground, Converter={StaticResource AccentColorConverter}}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Path=Foreground, Converter={StaticResource AccentColorConverter}, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" Storyboard.TargetName="DropShadowEffect">
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="0.6"/>
@@ -367,9 +367,8 @@
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                         <Border x:Name="InnerBorder"
-                                    Background="{TemplateBinding Background}"
-                                CornerRadius="{TemplateBinding Height, Converter={StaticResource DoubleToCornerRadiusConverter}}"
-                                >
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="{Binding Path=Height, Converter={StaticResource DoubleToCornerRadiusConverter}, RelativeSource={RelativeSource Mode=TemplatedParent}}">
                             <Border.Effect>
                                 <DropShadowEffect x:Name="DropShadowEffect" Color="Gray" Opacity="0.4" BlurRadius="6" Direction="-30" ShadowDepth="0"/>
                             </Border.Effect>
@@ -402,10 +401,10 @@
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Border x:Name="OuterBorder"
-                                Background="{TemplateBinding Background}"
-                                BorderBrush="{TemplateBinding BorderBrush}"
-                                BorderThickness="{TemplateBinding BorderThickness}"
-                                CornerRadius="{TemplateBinding Height, Converter={StaticResource DoubleToCornerRadiusConverter}}">
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{Binding Path=Height, Converter={StaticResource DoubleToCornerRadiusConverter}, RelativeSource={RelativeSource Mode=TemplatedParent}}">
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup Name="CommonStates">
                                 <VisualState Name="Normal">
@@ -413,7 +412,7 @@
                                 <VisualState Name="PointerOver">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="InnerBorder">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{TemplateBinding Background, Converter={StaticResource AccentColorConverter}}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Path=Background, Converter={StaticResource AccentColorConverter}, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" Storyboard.TargetName="DropShadowEffect">
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="0.6"/>
@@ -446,9 +445,8 @@
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                         <Border x:Name="InnerBorder"
-                                    Background="{TemplateBinding Background}"
-                                CornerRadius="{TemplateBinding Height, Converter={StaticResource DoubleToCornerRadiusConverter}}"
-                                >
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="{Binding Path=Height, Converter={StaticResource DoubleToCornerRadiusConverter}, RelativeSource={RelativeSource Mode=TemplatedParent}}">
                             <Border.Effect>
                                 <DropShadowEffect x:Name="DropShadowEffect" Color="Gray" Opacity="0.4" BlurRadius="6" Direction="-30" ShadowDepth="0"/>
                             </Border.Effect>
@@ -519,7 +517,7 @@
                                 <VisualState Name="Checked">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="InnerBorder">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{TemplateBinding Background, Converter={StaticResource AccentColorConverter}}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Path=Background, Converter={StaticResource AccentColorConverter}, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="White"/>
@@ -529,7 +527,7 @@
                                 <VisualState Name="CheckedPointerOver">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="InnerBorder">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{TemplateBinding Background, Converter={StaticResource AccentColorConverter}}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Path=Background, Converter={StaticResource AccentColorConverter}, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="White"/>
@@ -539,7 +537,7 @@
                                 <VisualState Name="CheckedPressed">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="InnerBorder">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{TemplateBinding Background, Converter={StaticResource AccentColorConverter}}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Path=Background, Converter={StaticResource AccentColorConverter}, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="White"/>
@@ -651,21 +649,21 @@
                                 <VisualState Name="Checked">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{TemplateBinding Foreground, Converter={StaticResource AccentColorConverter}}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Path=Foreground, Converter={StaticResource AccentColorConverter}, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState Name="CheckedPointerOver">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{TemplateBinding Foreground, Converter={StaticResource AccentColorConverter}}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Path=Foreground, Converter={StaticResource AccentColorConverter}, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState Name="CheckedPressed">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{TemplateBinding Foreground, Converter={StaticResource AccentColorConverter}}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Path=Foreground, Converter={StaticResource AccentColorConverter}, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>

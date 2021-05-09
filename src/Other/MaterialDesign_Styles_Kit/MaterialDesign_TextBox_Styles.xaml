@@ -45,7 +45,7 @@
                                 <ContentPresenter Grid.Column="0" Content="{TemplateBinding Tag}" Padding="2"/>
                                 <TextBlock Grid.Column="1" Text="{TemplateBinding PlaceholderText}"
                                            Foreground="DarkGray"
-                                           Visibility="{TemplateBinding Text, Converter={StaticResource TextToPlaceholderTextVisibilityConverter}}"/>
+                                           Visibility="{Binding Path=Text, Converter={StaticResource TextToPlaceholderTextVisibilityConverter}, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
                                 <ContentPresenter Grid.Column="1" x:Name="ContentElement"
                                                   HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                                   VerticalAlignment="Center"/>

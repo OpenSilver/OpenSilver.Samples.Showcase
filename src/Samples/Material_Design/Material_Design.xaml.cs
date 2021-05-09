@@ -26,7 +26,7 @@ namespace CSHTML5.Samples.Showcase
             this.InitializeComponent();
 
 #if OPENSILVER
-            DatePickerDemo.Visibility = Visibility.Collapsed; 
+            //DatePickerDemo.Visibility = Visibility.Collapsed; 
 #endif
 
             ObservableCollection<string> items = new ObservableCollection<string>() { "Item 1", "Item 2", "Item 3" };

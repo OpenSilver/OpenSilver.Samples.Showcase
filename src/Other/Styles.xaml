@@ -51,7 +51,7 @@
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Top">
                             <Border.Effect>
-                                <DropShadowEffect ShadowDepth="3" Color="{TemplateBinding Background}" BlurRadius="10" Opacity="0.3" />
+                                <DropShadowEffect ShadowDepth="3" Color="{Binding Background.Color, RelativeSource={RelativeSource Mode=TemplatedParent}}" BlurRadius="10" Opacity="0.3" />
                             </Border.Effect>
                             <TextBlock Text="{TemplateBinding Content}"
                                        Foreground="White"
