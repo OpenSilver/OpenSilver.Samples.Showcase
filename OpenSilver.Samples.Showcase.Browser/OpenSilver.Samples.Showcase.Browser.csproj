@@ -10,13 +10,13 @@
 		<WarningLevel>4</WarningLevel>
 		<NoStdLib>true</NoStdLib>
     <NoXamlPreprocessor>True</NoXamlPreprocessor>
-    <OpenSilverType>2</OpenSilverType>
+    <OpenSilverType>3</OpenSilverType>
 	</PropertyGroup>
 	
 	<PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-		<OpenSilverVersion>1.0.0-alpha-018</OpenSilverVersion>
-	</PropertyGroup>
+    <OpenSilverVersion>1.0.0-alpha-018</OpenSilverVersion>
+  </PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)' == 'SL'">
 		<DebugSymbols>true</DebugSymbols>
