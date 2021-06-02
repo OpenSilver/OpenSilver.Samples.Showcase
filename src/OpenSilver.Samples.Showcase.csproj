@@ -1,10 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
-	<!-- Blazor Part -->
-	<PropertyGroup>
-		<RazorLangVersion>3.0</RazorLangVersion>
-	</PropertyGroup>
-
 	<PropertyGroup>
 		<Configurations>SL;SL.Release;SL.WorkInProgress;UWP</Configurations>
 		<TargetFramework>netstandard2.0</TargetFramework>

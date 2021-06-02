@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
 	<PropertyGroup Label="Globals">
 		<SccProjectName>SAK</SccProjectName>
@@ -14,7 +14,7 @@
 	</PropertyGroup>
 	
 	<PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <OpenSilverVersion>1.0.0-alpha-018</OpenSilverVersion>
   </PropertyGroup>
 
@@ -50,15 +50,9 @@
 		<PackageReference Include="OpenSilver" Version="$(OpenSilverVersion)" Condition="'$(Configuration)' == 'SL' Or '$(Configuration)' == 'SL.Release'" />
 		<PackageReference Include="OpenSilver.WorkInProgress" Version="$(OpenSilverVersion)" Condition="'$(Configuration)' == 'SL.WorkInProgress'" />
 		<PackageReference Include="OpenSilver.UwpCompatible" Version="$(OpenSilverVersion)" Condition="'$(Configuration)' == 'UWP'" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="3.2.0" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Build" Version="3.2.0" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="3.2.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="5.0.6" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.6" PrivateAssets="all" />
 	</ItemGroup>
-
-	<!-- Blazor Part -->
-	<PropertyGroup>
-		<RazorLangVersion>3.0</RazorLangVersion>
-	</PropertyGroup>
 
 	<!-- Cshtml5 Part -->
 	<PropertyGroup>
