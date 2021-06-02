@@ -16,7 +16,7 @@
       <RowDefinition x:Name="RowThatContainsTheSourceCodePane" Height="0"/>
     </Grid.RowDefinitions>
     <Border Grid.Row="0" x:Name="BannerAboutOpenSilverPerformance" Visibility="Collapsed" Background="red" HorizontalAlignment="Stretch" Padding="10,4,10,4">
-      <TextBlock  Text="NOTE: Performance will improve by at least 30 times when AOT compilation becomes available later in 2020." Foreground="White" FontSize="16" HorizontalAlignment="Left" TextWrapping="Wrap"/>
+      <TextBlock  Text="NOTE: Performance will drastically improve with AOT compilation when .NET 6 becomes available" Foreground="White" FontSize="16" HorizontalAlignment="Left" TextWrapping="Wrap"/>
     </Border>
     <Grid Grid.Row="1" ClipToBounds="True">
       <Border x:Name="MenuBorder" Canvas.ZIndex="1" Background="#FF4A4A4A" Width="180" HorizontalAlignment="Left">
@@ -34,22 +34,14 @@
                 CSHTML5<LineBreak/>Showcase
               </TextBlock>
             </StackPanel>
-            <Button Content="Panels &amp; Controls" Click="ButtonXamlControls_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="16" Margin="0,10,0,0" Padding="20,3,3,3"/>
-            <Button Content="XAML Features" Click="ButtonXamlFeatures_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="16" Margin="0,3,0,0" Padding="20,3,3,3"/>
-            <Button Content=".NET Framework" Click="ButtonNetFramework_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="16" Margin="0,3,0,0" Padding="20,3,3,3"/>
-            <Button Content="Client / Server" Click="ButtonClientServer_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="16" Margin="0,3,0,0" Padding="20,3,3,3"/>
-            <Button Content="Interop" Click="ButtonInterop_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="16" Margin="0,3,0,0" Padding="20,3,3,3"/>
-            <Button x:Name="PerformanceButton" Content="Performance" Click="ButtonPerformance_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="16" Margin="0,3,0,0" Padding="20,3,3,3"/>
-            <Button Content="Material Design" Click="ButtonMaterialDesign_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="16" Margin="0,3,0,0" Padding="20,3,3,3"/>
-            <Button x:Name="ThirdPartyHomeButton" Content="Third-Party" Visibility="Collapsed" Click="ThirdParty_Click"  Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="16" Margin="0,3,0,0" Padding="20,3,3,3"/>
-            <!--<Button Click="ButtonMaterialDesign_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="16" Margin="0,3,0,0" Padding="20,3,3,3">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Material Design" VerticalAlignment="Center"/>
-                <Border Background="#FF800000" CornerRadius="4" Padding="2" Margin="5,0,0,0" VerticalAlignment="Center">
-                    <TextBlock Text="NEW!" Foreground="White" FontSize="10" FontWeight="Bold"/>
-                      </Border>
-                  </StackPanel>
-              </Button>-->
+            <Button Content="Panels &amp; Controls" Click="ButtonXamlControls_Click" HorizontalContentAlignment="Left" FontSize="16" Margin="0,10,0,0" Padding="20,3,3,3"/>
+            <Button Content="XAML Features" Click="ButtonXamlFeatures_Click" HorizontalContentAlignment="Left" FontSize="16" Margin="0,3,0,0" Padding="20,3,3,3"/>
+            <Button Content=".NET Framework" Click="ButtonNetFramework_Click" HorizontalContentAlignment="Left" FontSize="16" Margin="0,3,0,0" Padding="20,3,3,3"/>
+            <Button Content="Client / Server" Click="ButtonClientServer_Click" HorizontalContentAlignment="Left" FontSize="16" Margin="0,3,0,0" Padding="20,3,3,3"/>
+            <Button Content="Interop" Click="ButtonInterop_Click" HorizontalContentAlignment="Left" FontSize="16" Margin="0,3,0,0" Padding="20,3,3,3"/>
+            <Button x:Name="PerformanceButton" Content="Performance" Click="ButtonPerformance_Click" HorizontalContentAlignment="Left" FontSize="16" Margin="0,3,0,0" Padding="20,3,3,3"/>
+            <Button Content="Material Design" Click="ButtonMaterialDesign_Click" HorizontalContentAlignment="Left" FontSize="16" Margin="0,3,0,0" Padding="20,3,3,3"/>
+            <Button x:Name="ThirdPartyHomeButton" Content="Third-Party" Visibility="Collapsed" Click="ThirdParty_Click" HorizontalContentAlignment="Left" FontSize="16" Margin="0,3,0,0" Padding="20,3,3,3"/>
             <Expander x:Name="ThirdPartyButton" Header="Third-Party" Foreground="#FFDDDDDD" FontSize="16" Margin="0,3,0,0" Style="{StaticResource MainMenuExpander_Style}">
               <StackPanel Margin="0,0,0,0">
                 <Button Content="Plotly.js" Click="ButtonPlotlyCharts_Click" Background="{x:Null}" Foreground="#FFBBBBBB" HorizontalContentAlignment="Left" FontSize="13" Margin="4,5,0,0" Padding="20,3,3,3"/>
@@ -72,7 +64,7 @@
 				</Expander>
               </StackPanel>
             </Expander>
-            <Button Content="Home" Click="ButtonHome_Click" Background="{x:Null}" Foreground="#FFDDDDDD" HorizontalContentAlignment="Left" FontSize="16" Margin="0,3,0,0" Padding="20,3,3,3"/>
+            <Button Content="Home" Click="ButtonHome_Click" HorizontalContentAlignment="Left" FontSize="16" Margin="0,3,0,0" Padding="20,3,3,3"/>
           </StackPanel>
         </ScrollViewer>
       </Border>
