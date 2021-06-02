@@ -42,5 +42,14 @@ namespace CSHTML5.Samples.Showcase
             });
         }
 
+        private void OpenPopupButton_Click(object sender, RoutedEventArgs e)
+        {
+            MyPopup.IsOpen = true;
+        }
+
+        private void PopupButtonClose_Click(object sender, RoutedEventArgs e)
+        {
+            MyPopup.IsOpen = false;
+        }
     }
 }
