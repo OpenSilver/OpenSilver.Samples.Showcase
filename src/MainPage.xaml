@@ -77,7 +77,7 @@
         </Button>
       </Border>
       <ScrollViewer Grid.Row="1" x:Name="ScrollViewer1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible">
-        <Frame x:Name="PageContainer" JournalOwnership="Automatic" Margin="5,0,0,30">
+        <Frame x:Name="PageContainer" JournalOwnership="Automatic" Margin="5,0,0,30" HorizontalContentAlignment="Stretch">
           <Frame.UriMapper>
             <UriMapper>
               <UriMapping
