@@ -23,6 +23,8 @@ namespace CSHTML5.Samples.Showcase
         public ScrollBar_Demo()
         {
             this.InitializeComponent();
+
+            TextDisplay.Text = Scrollbar.Value.ToString("0.000");
         }
 
         private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
@@ -45,6 +47,11 @@ namespace CSHTML5.Samples.Showcase
                     FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/XAML_Controls/ScrollBar/Styles/DefaultScrollBarStyle.xaml"
                 }
             });
+        }
+
+        private void ScrollBar_Scroll(object sender, System.Windows.Controls.Primitives.ScrollEventArgs e)
+        {
+            TextDisplay.Text = e.NewValue.ToString("0.000");
         }
 
     }

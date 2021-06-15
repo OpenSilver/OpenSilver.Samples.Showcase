@@ -42,7 +42,7 @@
       <local:Popup_Demo HorizontalAlignment="Center"/>
       <local:DataGrid_Demo x:Name="DataGridDemo" HorizontalAlignment="Center"/>
       <local:HtmlPresenter_Demo HorizontalAlignment="Center"/>
-      <local:ScrollBar_Demo HorizontalAlignment="Center"/>
+      <local:ScrollBar_Demo x:Name="ScrollBarDemo" HorizontalAlignment="Center"/>
       <local:Thumb_Demo HorizontalAlignment="Center"/>
       <local:Viewbox_Demo HorizontalAlignment="Center"/>
       <local:Frame_Demo HorizontalAlignment="Center"/>
