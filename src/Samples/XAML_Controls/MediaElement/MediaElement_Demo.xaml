@@ -12,7 +12,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="MediaElement" Foreground="#FF8D73FF" Background="#FF9B8FD1" Style="{StaticResource HeaderControl_Style}"/>
-            <StackPanel Margin="0,30,0,0">
+            <StackPanel Grid.Row="1">
                 <StackPanel>
                     <TextBlock Text="AUDIO DEMO:" Foreground="#FF8D73FF" Margin="0,10,0,0" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left"/>
                     <MediaElement x:Name="MediaElementForAudio" Source="ms-appx:/Other/SampleAudio.mp3" AutoPlay="False"/>
