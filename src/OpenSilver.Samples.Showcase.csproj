@@ -91,6 +91,8 @@
 		<Content Include="Other\Planets\Uranus.png" />
 		<Content Include="Other\Planets\Venus.png" />
 		<Content Include="Other\smallBall.png" />
+		<Content Include="Other\SampleVideo.mp4" />
+		<Content Include="Other\SampleAudio.mp3" />
 		<Content Include="Other\SplashScreen1.png" />
 		<Content Include="Properties\launchSettings.json" />
 		<Page Include="App.xaml">
