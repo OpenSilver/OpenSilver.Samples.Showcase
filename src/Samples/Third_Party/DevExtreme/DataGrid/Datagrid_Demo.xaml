@@ -2,6 +2,7 @@
     x:Class="CSHTML5.Wrappers.DevExtreme.DataGrid.Examples.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
     xmlns:local="using:CSHTML5.Wrappers.DevExtreme.DataGrid.Examples"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -26,7 +27,7 @@
 					<DataGrid:dxDataGrid x:Name="DataGrid" Margin="0,20,0,0" />
 
 					<StackPanel Margin="0,20,0,0">
-						<Label FontWeight="Bold" FontSize="14" Content="Selection mode:" />
+						<sdk:Label FontWeight="Bold" FontSize="14" Content="Selection mode:" />
 						<RadioButton x:Name="SelectionModeSingle" FontSize="14" IsChecked="True" Checked="SelectionModeSingle_Checked"/>
 						<RadioButton x:Name="SelectionModeMultiple" FontSize="14" Checked="SelectionModeMultiple_Checked"/>
 						<Button x:Name="GetSelectedItemButton" Content="Get Selected Item" Margin="0,5,0,0" FontSize="14" Click="GetSelectedItem_Click" HorizontalAlignment="Left" VerticalAlignment="Center"/>
@@ -34,7 +35,7 @@
 					</StackPanel>
 
 					<StackPanel Margin="0,20,0,0">
-						<Label FontWeight="Bold" FontSize="14" Content="Options:" />
+						<sdk:Label FontWeight="Bold" FontSize="14" Content="Options:" />
 						<CheckBox Content="Show search panel" FontSize="14" IsChecked="True" Checked="SearchPanel_Show" Unchecked="SearchPanel_Hide" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 						<CheckBox Content="Allow grouping" FontSize="14" IsChecked="True" Checked="Grouping_Enable" Unchecked="Grouping_Disable" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 						<CheckBox Content="Allow adding" FontSize="14" IsChecked="True" Checked="Adding_Enable" Unchecked="Adding_Disable" HorizontalAlignment="Left" VerticalAlignment="Center"/>

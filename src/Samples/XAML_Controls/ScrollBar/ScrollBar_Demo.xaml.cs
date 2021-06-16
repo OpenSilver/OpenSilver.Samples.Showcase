@@ -5,6 +5,7 @@ using System.Linq;
 #if SLMIGRATION
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 #else
 using Windows.Foundation;
 using Windows.UI.Xaml;
@@ -49,7 +50,7 @@ namespace CSHTML5.Samples.Showcase
             });
         }
 
-        private void ScrollBar_Scroll(object sender, System.Windows.Controls.Primitives.ScrollEventArgs e)
+        private void ScrollBar_Scroll(object sender, ScrollEventArgs e)
         {
             TextDisplay.Text = e.NewValue.ToString("0.000");
         }
