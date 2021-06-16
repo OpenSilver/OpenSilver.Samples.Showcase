@@ -35,9 +35,9 @@ namespace CSHTML5.Samples.Showcase
             //DataGridDemo.Visibility = Visibility.Collapsed;
             //DateAndTimePickerDemo.Visibility = Visibility.Collapsed;
             NonModalChildWindow.Visibility = Visibility.Collapsed;
+#endif
             ScrollBarDemo.Visibility = Visibility.Collapsed;
             AutoCompleteBoxDemo.Visibility = Visibility.Collapsed;
-#endif
         }
     }
 }
