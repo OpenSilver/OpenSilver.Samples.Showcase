@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenSilver.Samples.Showcase", "src\OpenSilver.Samples.Showcase.csproj", "{6611D950-1488-4943-AF60-AFBFF1496AF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenSilver.Samples.Showcase.Simulator", "OpenSilver.Samples.Showcase.Simulator\OpenSilver.Samples.Showcase.Simulator.csproj", "{403E358D-67E8-452A-81D2-6068884AF49C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenSilver.Samples.Showcase.Simulator", "OpenSilver.Samples.Showcase.Simulator\OpenSilver.Samples.Showcase.Simulator.csproj", "{94E461FF-8810-4E0A-A5CA-FB663681F9F3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenSilver.Samples.Showcase.Browser", "OpenSilver.Samples.Showcase.Browser\OpenSilver.Samples.Showcase.Browser.csproj", "{A0EA0E2B-0E48-4CC6-8B71-1C048D02D3A9}"
 EndProject
@@ -25,14 +25,14 @@ Global
 		{6611D950-1488-4943-AF60-AFBFF1496AF2}.SL|Any CPU.Build.0 = SL|Any CPU
 		{6611D950-1488-4943-AF60-AFBFF1496AF2}.UWP|Any CPU.ActiveCfg = UWP|Any CPU
 		{6611D950-1488-4943-AF60-AFBFF1496AF2}.UWP|Any CPU.Build.0 = UWP|Any CPU
-		{403E358D-67E8-452A-81D2-6068884AF49C}.SL.Release|Any CPU.ActiveCfg = SL.Release|Any CPU
-		{403E358D-67E8-452A-81D2-6068884AF49C}.SL.Release|Any CPU.Build.0 = SL.Release|Any CPU
-		{403E358D-67E8-452A-81D2-6068884AF49C}.SL.WorkInProgress|Any CPU.ActiveCfg = SL.WorkInProgress|Any CPU
-		{403E358D-67E8-452A-81D2-6068884AF49C}.SL.WorkInProgress|Any CPU.Build.0 = SL.WorkInProgress|Any CPU
-		{403E358D-67E8-452A-81D2-6068884AF49C}.SL|Any CPU.ActiveCfg = SL|Any CPU
-		{403E358D-67E8-452A-81D2-6068884AF49C}.SL|Any CPU.Build.0 = SL|Any CPU
-		{403E358D-67E8-452A-81D2-6068884AF49C}.UWP|Any CPU.ActiveCfg = UWP|Any CPU
-		{403E358D-67E8-452A-81D2-6068884AF49C}.UWP|Any CPU.Build.0 = UWP|Any CPU
+		{94E461FF-8810-4E0A-A5CA-FB663681F9F3}.SL.Release|Any CPU.ActiveCfg = SL.Release|Any CPU
+		{94E461FF-8810-4E0A-A5CA-FB663681F9F3}.SL.Release|Any CPU.Build.0 = SL.Release|Any CPU
+		{94E461FF-8810-4E0A-A5CA-FB663681F9F3}.SL.WorkInProgress|Any CPU.ActiveCfg = SL.WorkInProgress|Any CPU
+		{94E461FF-8810-4E0A-A5CA-FB663681F9F3}.SL.WorkInProgress|Any CPU.Build.0 = SL.WorkInProgress|Any CPU
+		{94E461FF-8810-4E0A-A5CA-FB663681F9F3}.SL|Any CPU.ActiveCfg = SL|Any CPU
+		{94E461FF-8810-4E0A-A5CA-FB663681F9F3}.SL|Any CPU.Build.0 = SL|Any CPU
+		{94E461FF-8810-4E0A-A5CA-FB663681F9F3}.UWP|Any CPU.ActiveCfg = UWP|Any CPU
+		{94E461FF-8810-4E0A-A5CA-FB663681F9F3}.UWP|Any CPU.Build.0 = UWP|Any CPU
 		{A0EA0E2B-0E48-4CC6-8B71-1C048D02D3A9}.SL.Release|Any CPU.ActiveCfg = SL.Release|Any CPU
 		{A0EA0E2B-0E48-4CC6-8B71-1C048D02D3A9}.SL.Release|Any CPU.Build.0 = SL.Release|Any CPU
 		{A0EA0E2B-0E48-4CC6-8B71-1C048D02D3A9}.SL.WorkInProgress|Any CPU.ActiveCfg = SL.WorkInProgress|Any CPU

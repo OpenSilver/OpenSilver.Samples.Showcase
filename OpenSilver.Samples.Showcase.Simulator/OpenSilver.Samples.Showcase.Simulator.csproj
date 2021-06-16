@@ -1,60 +1,30 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <PropertyGroup>
-    <ProjectGuid>{403E358D-67E8-452A-81D2-6068884AF49C}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>OpenSilver.Samples.Showcase.Simulator</RootNamespace>
-    <AssemblyName>OpenSilver.Samples.Showcase.Simulator</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <FileAlignment>512</FileAlignment>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <OutputPath>bin\$(Configuration)\</OutputPath>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Deterministic>true</Deterministic>
-    <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccProvider>SAK</SccProvider>
-    <StartAction>URL</StartAction>
-    <StartURL>http://www.opensilver.net/permalinks/simulator_not_found.aspx</StartURL>
-    <StartArguments>"..\..\..\src\bin\$(Configuration)\netstandard2.0\OpenSilver.Samples.Showcase.dll"</StartArguments>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)' == 'SL'">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)' == 'SL.Release'">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <DefineConstants>TRACE</DefineConstants>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)' == 'SL.WorkInProgress'">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <DefineConstants>TRACE</DefineConstants>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)' == 'UWP'">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <DefineConstants>TRACE</DefineConstants>
-  </PropertyGroup>
-  <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\src\OpenSilver.Samples.Showcase.csproj">
-      <Name>OpenSilver.Samples.Showcase</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- Removing bin\$(Configuration) and obj\$(Configuration) -->
-  <Target Name="FullClean" AfterTargets="Clean">
-    <RemoveDir Directories="$(ProjectDir)$(BaseOutputPath)$(Configuration)\" />
-    <RemoveDir Directories="$(ProjectDir)$(BaseIntermediateOutputPath)$(Configuration)\" />
-  </Target>
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<Configurations>SL;SL.Release;SL.WorkInProgress;UWP</Configurations>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net472</TargetFramework>
+		<StartArguments>"..\..\..\..\src\bin\$(Configuration)\netstandard2.0\OpenSilver.Samples.Showcase.dll"</StartArguments>
+	</PropertyGroup>
+	
+	<PropertyGroup Condition="'$(Configuration)' == 'SL' Or '$(Configuration)' == 'SL.WorkInProgress' Or '$(Configuration)' == 'UWP'">
+		<DebugType>full</DebugType>
+		<Optimize>false</Optimize>
+		<DefineConstants>DEBUG;TRACE</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)' == 'SL.Release'">
+		<DebugType>none</DebugType>
+		<Optimize>true</Optimize>
+		<DefineConstants>TRACE</DefineConstants>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="OpenSilver.Simulator" Version="1.0.0-alpha-019" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\src\OpenSilver.Samples.Showcase.csproj" />
+	</ItemGroup>
+
 </Project>
