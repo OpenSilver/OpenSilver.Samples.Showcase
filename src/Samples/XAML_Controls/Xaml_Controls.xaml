@@ -38,7 +38,7 @@
       <local:ContextMenu_Demo x:Name="ContextMenuDemo" HorizontalAlignment="Center"/>
       <local:Image_Demo x:Name="ImageDemo" HorizontalAlignment="Center"/>
       <local:MediaElement_Demo x:Name="MediaElementDemo" HorizontalAlignment="Center"/>
-      <local:AutoCompleteBox_Demo HorizontalAlignment="Center"/>
+      <local:AutoCompleteBox_Demo x:Name="AutoCompleteBoxDemo" HorizontalAlignment="Center"/>
       <local:Popup_Demo HorizontalAlignment="Center"/>
       <local:DataGrid_Demo x:Name="DataGridDemo" HorizontalAlignment="Center"/>
       <local:HtmlPresenter_Demo HorizontalAlignment="Center"/>
