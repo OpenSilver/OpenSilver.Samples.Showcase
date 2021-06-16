@@ -38,6 +38,7 @@ namespace CSHTML5.Samples.Showcase
 #endif
             ScrollBarDemo.Visibility = Visibility.Collapsed;
             AutoCompleteBoxDemo.Visibility = Visibility.Collapsed;
+            ThumbDemo.Visibility = Visibility.Collapsed;
         }
     }
 }
