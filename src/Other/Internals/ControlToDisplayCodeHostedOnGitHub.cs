@@ -18,6 +18,9 @@ namespace CSHTML5.Samples.Showcase
         public ControlToDisplayCodeHostedOnGitHub()
         {
             this.Loaded += OnLoaded;
+
+            VerticalContentAlignment = VerticalAlignment.Stretch;
+            HorizontalContentAlignment = HorizontalAlignment.Stretch;
         }
 
         void OnLoaded(object sender, RoutedEventArgs e)
