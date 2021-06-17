@@ -15,9 +15,6 @@
       <RowDefinition x:Name="RowThatContainsTheGridSplitter" Height="0"/>
       <RowDefinition x:Name="RowThatContainsTheSourceCodePane" Height="0"/>
     </Grid.RowDefinitions>
-    <Border Grid.Row="0" x:Name="BannerAboutOpenSilverPerformance" Visibility="Collapsed" Background="red" HorizontalAlignment="Stretch" Padding="10,4,10,4">
-      <TextBlock  Text="NOTE: Performance will drastically improve with AOT compilation when .NET 6 becomes available" Foreground="White" FontSize="16" HorizontalAlignment="Left" TextWrapping="Wrap"/>
-    </Border>
     <Grid Grid.Row="1" ClipToBounds="True">
       <Border x:Name="MenuBorder" Canvas.ZIndex="1" Background="#FF4A4A4A" Width="180" HorizontalAlignment="Left">
         <Border.RenderTransform>

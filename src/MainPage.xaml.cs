@@ -25,7 +25,6 @@ namespace CSHTML5.Samples.Showcase
             PerformanceButton.Visibility = Visibility.Collapsed;
             ThirdPartyButton.Visibility = Visibility.Collapsed;
             ThirdPartyHomeButton.Visibility = Visibility.Visible;
-            BannerAboutOpenSilverPerformance.Visibility = Visibility.Visible;
 #endif
 
             MainPage.Current = this;

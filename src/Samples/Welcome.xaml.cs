@@ -23,10 +23,7 @@ namespace CSHTML5.Samples.Showcase
         {
             this.InitializeComponent();
 #if OPENSILVER
-            IntroductionTextBlock.Text = "This app was written in standard C# and XAML, and compiled to WebAssembly using OpenSilver."
-                + Environment.NewLine
-                + Environment.NewLine
-                + "Significant performance improvements are expected in the coming months, when the AOT compilation mode will be enabled.";
+            IntroductionTextBlock.Text = "This app was written in standard C# and XAML, and compiled to WebAssembly using OpenSilver.";
 #endif
         }
     }
