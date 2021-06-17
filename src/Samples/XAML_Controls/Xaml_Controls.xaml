@@ -45,7 +45,7 @@
       <local:ScrollBar_Demo x:Name="ScrollBarDemo" HorizontalAlignment="Center"/>
       <local:Thumb_Demo x:Name="ThumbDemo" HorizontalAlignment="Center"/>
       <local:Viewbox_Demo HorizontalAlignment="Center"/>
-      <local:Frame_Demo HorizontalAlignment="Center"/>
+      <local:Frame_Demo x:Name="FrameDemo" HorizontalAlignment="Center"/>
       <local:Shapes_Demo HorizontalAlignment="Center"/>
       <local:DateAndTimePicker_Demo x:Name="DateAndTimePickerDemo" HorizontalAlignment="Center"/>
     </local:MasonryPanelWithProgressiveLoading>

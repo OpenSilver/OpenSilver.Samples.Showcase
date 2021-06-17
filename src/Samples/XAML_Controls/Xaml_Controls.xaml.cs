@@ -39,6 +39,7 @@ namespace CSHTML5.Samples.Showcase
             ScrollBarDemo.Visibility = Visibility.Collapsed;
             AutoCompleteBoxDemo.Visibility = Visibility.Collapsed;
             ThumbDemo.Visibility = Visibility.Collapsed;
+            FrameDemo.Visibility = Visibility.Collapsed; // The Showcase already uses a Frame to change pages anyway
         }
     }
 }
