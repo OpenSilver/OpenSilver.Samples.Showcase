@@ -4,29 +4,37 @@
     <meta charset="utf-8" />
     <title>OpenSilver Showcase</title>
     <base href="/" />
-    <link rel="stylesheet" type="text/css" href="libs/loader.css">
+    <link rel="stylesheet" type="text/css" href="libs/silverlight-loading.css">
 </head>
 <body>
     <app style="position:absolute;width:100%;height:100%;">
-        <div class="loader-wrap">
-            <div class="loader animating" id="loader">
-                <!-- add 'animating' class to animate the loader -->
-                <span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span>
+        <div class="silverlight-loading-wrapper">
+            <div class="silverlight-loading">
+                <div class="silverlight-loading-ball"></div>
+                <div class="silverlight-loading-ball"></div>
+                <div class="silverlight-loading-ball"></div>
+                <div class="silverlight-loading-ball"></div>
+                <div class="silverlight-loading-ball"></div>
+                <div class="silverlight-loading-ball"></div>
+                <div class="silverlight-loading-ball"></div>
+                <div class="silverlight-loading-ball"></div>
+                <div class="silverlight-loading-ball"></div>
+                <div class="silverlight-loading-ball"></div>
+                <div class="silverlight-loading-ball"></div>
+                <div class="silverlight-loading-ball"></div>
+                <div class="silverlight-loading-ball"></div>
+                <div class="silverlight-loading-ball"></div>
+                <div class="silverlight-loading-ball"></div>
+                <div class="silverlight-loading-ball"></div>
+                <div class="silverlight-loading-percentage-container">
+                    <div id="silverlight-loading-percentage">0%</div>
+                </div>
             </div>
-        </div>
-        <div id="loading" style="position:absolute; width:100%; bottom:30px; text-align:center; font-size:16px; font-family: &quot;Segoe UI&quot;; color: #000000; line-height: initial; padding-bottom:30px;">
-            <span style="font-size:16px;font-weight:500;line-height:50px;">Welcome to the OpenSilver Technology Preview Showcase!</span>
-            <br />
-            <span style="font-size:16px;">
-                First time load takes longer than subsequent ones.
-            </span>
         </div>
     </app>
     <div id="cshtml5-root" style="position: relative; width: 100%; height: 100%; overflow-x: hidden; overflow-y: hidden"></div>
-    <script src="_framework/blazor.webassembly.js"></script>
+    <script src="_framework/blazor.webassembly.js" autostart="false"></script>
     <script type="application/javascript" src="libs/opensilver.js"></script>
+    <script src="libs/BlazorLoader.js"></script>
 </body>
 </html>
