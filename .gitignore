@@ -249,3 +249,4 @@ OpenSilver.Samples.Showcase.Browser/wwwroot/*
 !OpenSilver.Samples.Showcase.Browser/wwwroot/libs
 OpenSilver.Samples.Showcase.Browser/wwwroot/libs/*
 !OpenSilver.Samples.Showcase.Browser/wwwroot/libs/silverlight-loading.css
+!OpenSilver.Samples.Showcase.Browser/wwwroot/libs/BlazorLoader.js
