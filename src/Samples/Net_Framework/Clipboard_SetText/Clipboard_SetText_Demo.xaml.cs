@@ -42,5 +42,10 @@ namespace CSHTML5.Samples.Showcase
             });
         }
 
-    }
+		private void Button_Click(object sender, RoutedEventArgs e)
+		{
+            Clipboard.SetText(ClipboardTextBox.Text);
+            MessageBox.Show("Text copied!");
+		}
+	}
 }
