@@ -16,7 +16,7 @@
                 <TextBlock Text="Please note that it only works if the website does not prevent embedding via the 'X-Frame-Options'." Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left" Margin="0,8,0,0"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox x:Name="TextBoxWithURL" Text="http://cshtml5.uservoice.com" Width="150" Foreground="#FF444444" Background="White" Margin="0,14,0,0"/>
-                    <Button Content="Navigate" Margin="5,10,0,0" Foreground="White" Background="#FF69C8FF" Click="ButtonNavigate_Click" HorizontalAlignment="Center"/>
+                    <Button Content="Navigate" Margin="5,10,0,0" Background="#FF69C8FF" Click="ButtonNavigate_Click" HorizontalAlignment="Center"/>
                 </StackPanel>
                 <Border x:Name="WebBrowserContainer" Width="200" Height="200" Margin="0,14,0,0">
                     <Border.Effect>

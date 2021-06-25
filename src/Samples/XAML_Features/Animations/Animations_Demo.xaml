@@ -58,28 +58,28 @@
                         </DoubleAnimation>
                     </Storyboard>
                 </Canvas.Resources>
-                <Button x:Name="Item1" Content="Item1" Width="40" Height="50" Foreground="White" Background="#FFE44D26" Padding="0" RenderTransformOrigin="0.5,0.5">
+                <Button x:Name="Item1" Content="Item1" Width="40" Height="50" Background="#FFE44D26" Padding="0" RenderTransformOrigin="0.5,0.5">
                     <Button.RenderTransform>
                         <CompositeTransform/>
                     </Button.RenderTransform>
                 </Button>
-                <Button x:Name="Item2" Content="Item2" Width="40" Height="50" Foreground="White" Background="#FFE44D26" Padding="0" RenderTransformOrigin="0.5,0.5">
+                <Button x:Name="Item2" Content="Item2" Width="40" Height="50" Background="#FFE44D26" Padding="0" RenderTransformOrigin="0.5,0.5">
                     <Button.RenderTransform>
                         <CompositeTransform/>
                     </Button.RenderTransform>
                 </Button>
-                <Button x:Name="Item3" Content="Item3" Width="40" Height="50" Foreground="White" Background="#FFE44D26" Padding="0" RenderTransformOrigin="0.5,0.5">
+                <Button x:Name="Item3" Content="Item3" Width="40" Height="50" Background="#FFE44D26" Padding="0" RenderTransformOrigin="0.5,0.5">
                     <Button.RenderTransform>
                         <CompositeTransform/>
                     </Button.RenderTransform>
                 </Button>
-                <Button x:Name="Item4" Content="Item4" Width="40" Height="50" Foreground="White" Background="#FFE44D26" Padding="0" RenderTransformOrigin="0.5,0.5">
+                <Button x:Name="Item4" Content="Item4" Width="40" Height="50" Background="#FFE44D26" Padding="0" RenderTransformOrigin="0.5,0.5">
                     <Button.RenderTransform>
                         <CompositeTransform/>
                     </Button.RenderTransform>
                 </Button>
-                <Button x:Name="ButtonToStartAnimationClose" Content="Close" Visibility="Collapsed" Width="40" Height="50" Click="ButtonToStartAnimationClose_Click" Foreground="White" Background="#FFE44D26" Padding="0"/>
-                <Button x:Name="ButtonToStartAnimationOpen" Content="Start" Width="40" Height="50" Click="ButtonToStartAnimationOpen_Click" Foreground="White" Background="#FFE44D26" Padding="0"/>
+                <Button x:Name="ButtonToStartAnimationClose" Content="Close" Visibility="Collapsed" Width="40" Height="50" Click="ButtonToStartAnimationClose_Click" Background="#FFE44D26" Padding="0"/>
+                <Button x:Name="ButtonToStartAnimationOpen" Content="Start" Width="40" Height="50" Click="ButtonToStartAnimationOpen_Click" Background="#FFE44D26" Padding="0"/>
             </Canvas>
             <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FFFF799C" Style="{StaticResource ButtonViewSource_Style}"/>
         </Grid>
