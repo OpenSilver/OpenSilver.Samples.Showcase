@@ -26,7 +26,7 @@
                                     <TextBlock Width="80" Text="{Binding FirstName}" Foreground="Black"/>
                                     <Rectangle Width="1" Height="20" Fill="Gray" VerticalAlignment="Center"/>
                                     <TextBlock Width="80" Text="{Binding LastName}" Margin="5,0,0,0" Foreground="Black"/>
-                                    <Button Content="Delete" Click="ButtonDelete_Click" Foreground="White" Background="#FFE44D26"/>
+                                    <Button Content="Delete" Click="ButtonDelete_Click" Background="#FFE44D26"/>
                                 </StackPanel>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
@@ -34,7 +34,7 @@
                     <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                         <TextBox x:Name="FirstNameTextBox" Width="80" Text="First Name" Foreground="Black" Background="#FFEEEEEE"/>
                         <TextBox x:Name="LastNameTextBox" Width="80" Text="Last Name" Foreground="Black" Background="#FFEEEEEE"/>
-                        <Button Content="Add" Click="ButtonAdd_Click" Foreground="White" Background="#FFE44D26"/>
+                        <Button Content="Add" Click="ButtonAdd_Click" Background="#FFE44D26"/>
                     </StackPanel>
                     <TextBlock Text="The list above is made using an ItemsControl that has an ObservableCollection&lt;Person&gt; in its ItemsSource. The Delete button is inside the ItemTemplate of the ItemsControl." Foreground="#FF808080" Margin="0,20,0,0" TextWrapping="Wrap" Width="220" FontSize="12" HorizontalAlignment="Left"/>
                 </StackPanel>
