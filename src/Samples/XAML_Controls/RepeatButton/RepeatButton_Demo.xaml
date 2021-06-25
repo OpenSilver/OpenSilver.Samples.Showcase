@@ -19,7 +19,7 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,10,0,0">
                     <Canvas Width="140" Height="80" Background="#DDDDDD" VerticalAlignment="Center" HorizontalAlignment="Left">
-                        <Button x:Name="TestTransformBorder" Canvas.ZIndex="10"  Width="30" Height="30" Background="#FF6666ff" Click="TransformButton_Click"/>
+                        <Button x:Name="TestTransformBorder" Canvas.ZIndex="10"  Width="30" Height="30" Click="TransformButton_Click"/>
                     </Canvas>
                 </StackPanel>
             </StackPanel>
