@@ -3,6 +3,16 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:CSHTML5.Samples.Showcase">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Dictionaries/Style1.xaml"/>
+                <ResourceDictionary Source="Dictionaries/Style2.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+  
     <ContentControl Style="{StaticResource Card_Style}" Width="245">
         <Grid>
             <Grid.RowDefinitions>
@@ -11,8 +21,11 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="ResourceDictionary" Foreground="#FF6F7DFF" Background="#FF9A9FCE" Style="{StaticResource HeaderControl_Style}"/>
-            <TextBlock Grid.Row="1" Text="(Demo under construction)" Foreground="DarkGray" FontSize="12" Margin="0,25,0,20" HorizontalAlignment="Center"/>
-            <!--<Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FF6F7DFF" Style="{StaticResource ButtonViewSource_Style}"/>-->
+            <StackPanel Grid.Row="1">
+                <Button Style="{StaticResource ButtonStyle1}" Margin="5" Content="Button using ButtonStyle1 from Style1.xaml"/>
+                <Button Style="{StaticResource ButtonStyle2}" Margin="5" Content="Button using ButtonStyle2 from Style2.xaml"/>
+            </StackPanel>
+            <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FF6F7DFF" Style="{StaticResource ButtonViewSource_Style}"/>
         </Grid>
     </ContentControl>
 </UserControl>
