@@ -65,7 +65,11 @@ namespace CSHTML5.Extensions.FileSystem
 
         static async Task<bool> Initialize()
         {
+#if OPENSILVER
+            if (CSHTML5.Interop.IsRunningInTheSimulator_WorkAround)
+#else
             if (CSHTML5.Interop.IsRunningInTheSimulator)
+#endif
             {
                 MessageBox.Show("Saving files is currently not supported in the Simulator. Please run in the browser instead.");
                 return false;
