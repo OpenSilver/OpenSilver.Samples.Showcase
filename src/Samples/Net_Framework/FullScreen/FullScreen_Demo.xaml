@@ -12,9 +12,8 @@
             </Grid.RowDefinitions>
             <ContentControl Content="FullScreen_Demo" Foreground="#FFEDD955" Background="#FFCFC687" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" Margin="0,5,0,0">
-                <Button Content="Go Full Screen" FontSize="14" Click="EnterFullScreen_Click"/>
-                <Button Content="Exit Full Screen" FontSize="14"  Margin="0,10,0,0" Click="ExitFullSCreen_Click"/>
-                <TextBlock x:Name="CounterTextBlock" Margin="10,0,0,0" FontSize="26" Foreground="#FF414141" VerticalAlignment="Top"/>
+                <Button Content="Go Full Screen" Margin="5" Click="EnterFullScreen_Click"/>
+                <Button Content="Exit Full Screen" Margin="5,0,5,5" Click="ExitFullSCreen_Click"/>
             </StackPanel>
             <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FCAB54" Style="{StaticResource ButtonViewSource_Style}"/>
         </Grid>

@@ -25,21 +25,19 @@ namespace CSHTML5.Samples.Showcase
 {
     public partial class FullScreen_Demo : UserControl
     {
-        public Host currentHost;
         public FullScreen_Demo()
         {
             this.InitializeComponent();
-            currentHost = new Host();
         }
 
         public void EnterFullScreen_Click(object sender, RoutedEventArgs e)
         {
-            currentHost.Content.IsFullScreen = true;
+            Application.Current.Host.Content.IsFullScreen = true;
         }
 
         public void ExitFullSCreen_Click(object sender, RoutedEventArgs e)
         {
-            currentHost.Content.IsFullScreen = false;
+            Application.Current.Host.Content.IsFullScreen = false;
         }
 
         private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
