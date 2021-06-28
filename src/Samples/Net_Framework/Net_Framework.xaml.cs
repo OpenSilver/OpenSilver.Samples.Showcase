@@ -25,8 +25,8 @@ namespace CSHTML5.Samples.Showcase
             this.InitializeComponent();
 
 #if OPENSILVER
-            File_OpenDemo.Visibility = Visibility.Collapsed;
-            File_SaveDemo.Visibility = Visibility.Collapsed;
+            //File_OpenDemo.Visibility = Visibility.Collapsed;
+            //File_SaveDemo.Visibility = Visibility.Collapsed;
             ZipDemo.Visibility = Visibility.Collapsed;
             //IsolatedStorageFileDemo.Visibility = Visibility.Collapsed;
             //IsolatedStorageSettingsDemo.Visibility = Visibility.Collapsed;
