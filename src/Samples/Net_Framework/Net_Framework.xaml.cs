@@ -33,6 +33,7 @@ namespace CSHTML5.Samples.Showcase
             JSON_SerializerDemo.Visibility = Visibility.Collapsed;
             GetRessourceStreamDemo.Visibility = Visibility.Collapsed;
             FullScreenDemo.Visibility = Visibility.Collapsed;
+            ConsoleDemo.Visibility = Visibility.Collapsed;
 #endif
         }
     }

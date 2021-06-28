@@ -19,7 +19,7 @@
       <local:Regex_Demo HorizontalAlignment="Center"/>
       <local:JSON_Serializer_Demo x:Name="JSON_SerializerDemo" HorizontalAlignment="Center"/>
       <local:DataContractSerializer_Demo HorizontalAlignment="Center"/>
-      <local:Console_Demo HorizontalAlignment="Center"/>
+      <local:Console_Demo x:Name="ConsoleDemo" HorizontalAlignment="Center"/>
       <local:GetRessourceStream_Demo x:Name="GetRessourceStreamDemo" HorizontalAlignment="Center"/>
       <local:RESX_Demo HorizontalAlignment="Center"/>
       <local:Clipboard_SetText_Demo HorizontalAlignment="Center"/>
