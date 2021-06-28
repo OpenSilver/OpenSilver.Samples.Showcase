@@ -50,7 +50,11 @@ namespace Ionic.Zip
 
             Initialize();
 
+#if OPENSILVER
+            if (!CSHTML5.Interop.IsRunningInTheSimulator_WorkAround)
+#else
             if (!CSHTML5.Interop.IsRunningInTheSimulator)
+#endif
             {
                 Interop.ExecuteJavaScript(@"$0.file($1, $2)", _referenceToJavaScriptZipInstance, fileName, fileContent);
             }
