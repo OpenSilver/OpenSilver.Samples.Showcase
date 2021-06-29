@@ -21,7 +21,7 @@
       <local:DataContractSerializer_Demo HorizontalAlignment="Center"/>
       <local:Console_Demo x:Name="ConsoleDemo" HorizontalAlignment="Center"/>
       <local:GetRessourceStream_Demo x:Name="GetRessourceStreamDemo" HorizontalAlignment="Center"/>
-      <local:RESX_Demo HorizontalAlignment="Center"/>
+      <local:RESX_Demo x:Name="RESXDemo" HorizontalAlignment="Center"/>
       <local:Clipboard_SetText_Demo HorizontalAlignment="Center"/>
       <local:Printing_Demo HorizontalAlignment="Center"/>
       <local:FullScreen_Demo x:Name="FullScreenDemo" HorizontalAlignment="Center"/>

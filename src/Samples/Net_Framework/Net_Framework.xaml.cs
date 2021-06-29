@@ -35,6 +35,7 @@ namespace CSHTML5.Samples.Showcase
             //FullScreenDemo.Visibility = Visibility.Collapsed;
             ConsoleDemo.Visibility = Visibility.Collapsed;
 #endif
+            RESXDemo.Visibility = Visibility.Collapsed;
         }
     }
 }
