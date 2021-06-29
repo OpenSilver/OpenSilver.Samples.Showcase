@@ -14,8 +14,8 @@
             <StackPanel Orientation="Vertical" Grid.Row="1" HorizontalAlignment="Center">
                 <TextBox x:Name="TextBoxFileStorageDemo" Text="Enter some text" Margin="0,15,0,0" FontSize="16" Foreground="#FFA967E5" Background="White" />
                 <StackPanel Orientation="Horizontal" Margin="0,10,0,0" HorizontalAlignment="Center">
-                <Button Content="Save File" Click="ButtonSaveToIsolatedStorageFile_Click" FontSize="14"/>
-                <Button Content="Load File" Margin="5,0,0,0" Click="ButtonLoadFromIsolatedStorageFile_Click" FontSize="14"/>
+                <Button Content="Save File" Click="ButtonSaveToIsolatedStorageFile_Click"/>
+                <Button Content="Load File" Margin="5,0,0,0" Click="ButtonLoadFromIsolatedStorageFile_Click"/>
                 </StackPanel>
                 <TextBlock Text="Tip: you can inspect the content of the isolated storage by using Chrome and installing the free 'Storage Area Explorer' extension." Foreground="#FF808080" Margin="0,10,0,0" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left"/>
             </StackPanel>

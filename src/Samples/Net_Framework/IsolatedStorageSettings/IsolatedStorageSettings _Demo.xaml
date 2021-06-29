@@ -15,9 +15,9 @@
                 <TextBlock Text="The IsolatedStorageSettings class lets you easily persist key/value pairs, using the HTML5 Storage API. When you restart the browser, the data is still there." Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" TextAlignment="Left"/>
                 <TextBox x:Name="TextBoxIsolatedStorageSettingsDemo" Text="Enter some text" FontSize="16" Margin="0,10,0,0" Foreground="#FFDC67E5" Background="White"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
-                    <Button Content="Save" Click="ButtonSaveToIsolatedStorageSettings_Click" FontSize="14"/>
-                    <Button Content="Load" Margin="5,0,0,0" Click="ButtonLoadFromIsolatedStorageSettings_Click" FontSize="14"/>
-                    <Button Content="Delete" Margin="5,0,0,0" Click="ButtonDeleteFromIsolatedStorageSettings_Click" FontSize="14"/>
+                    <Button Content="Save" Click="ButtonSaveToIsolatedStorageSettings_Click"/>
+                    <Button Content="Load" Margin="5,0,0,0" Click="ButtonLoadFromIsolatedStorageSettings_Click"/>
+                    <Button Content="Delete" Margin="5,0,0,0" Click="ButtonDeleteFromIsolatedStorageSettings_Click"/>
                 </StackPanel>
             </StackPanel>
             <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FFA2E567" Style="{StaticResource ButtonViewSource_Style}"/>

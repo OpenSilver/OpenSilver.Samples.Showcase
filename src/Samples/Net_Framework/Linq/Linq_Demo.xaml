@@ -11,7 +11,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="Linq" Foreground="#6699ff" Background="#FFBEDCA4" Style="{StaticResource HeaderControl_Style}"/>
-            <Button Grid.Row="1" Content="Click to Test Linq" Click="ButtonToDemonstrateLinq_Click" FontSize="14" HorizontalAlignment="Center"/>
+            <Button Grid.Row="1" Content="Click to Test Linq" Click="ButtonToDemonstrateLinq_Click" HorizontalAlignment="Center"/>
             <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#6699ff" Style="{StaticResource ButtonViewSource_Style}"/>
         </Grid>
     </ContentControl>

@@ -13,7 +13,7 @@
             <ContentControl Content="AsyncAwait" Foreground="#FFFFAD33" Background="#FFCC7A00" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <TextBlock x:Name="TaskBasedCounterTextBlock" Margin="10,10,0,0" FontSize="26" Foreground="#FFFFAD33" VerticalAlignment="Top" Visibility="Collapsed"/>
-                <Button Content="Start Task-Based Countdown" Margin="0,10,0,0" HorizontalAlignment="Center" FontSize="14" Click="ButtonToDemonstrateAsyncAwait_Click"/>
+                <Button Content="Start Task-Based Countdown" Margin="0,10,0,0" HorizontalAlignment="Center" Click="ButtonToDemonstrateAsyncAwait_Click"/>
             </StackPanel>
             <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FFFFAD33" Style="{StaticResource ButtonViewSource_Style}"/>
         </Grid>

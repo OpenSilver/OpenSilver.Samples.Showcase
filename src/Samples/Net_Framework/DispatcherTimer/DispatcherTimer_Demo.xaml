@@ -12,8 +12,8 @@
             </Grid.RowDefinitions>
             <ContentControl Content="DispatcherTimer" Foreground="#FFFFC35B" Background="#FFD2BD9C" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,5,0,0">
-                <Button Content="Start" FontSize="14" VerticalAlignment="Top" Click="ButtonToStartTimer_Click"/>
-                <Button Content="Stop" FontSize="14"  Margin="5,0,0,0" VerticalAlignment="Top" Click="ButtonToStopTimer_Click"/>
+                <Button Content="Start" VerticalAlignment="Top" Click="ButtonToStartTimer_Click"/>
+                <Button Content="Stop" Margin="5,0,0,0" VerticalAlignment="Top" Click="ButtonToStopTimer_Click"/>
                 <TextBlock x:Name="CounterTextBlock" Margin="10,0,0,0" FontSize="26" Foreground="#FF414141" VerticalAlignment="Top"/>
             </StackPanel>
             <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FCAB54" Style="{StaticResource ButtonViewSource_Style}"/>
