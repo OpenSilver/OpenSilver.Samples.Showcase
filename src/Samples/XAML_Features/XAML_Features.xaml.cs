@@ -26,6 +26,7 @@ namespace CSHTML5.Samples.Showcase
 #if OPENSILVER
             //Binding1Demo.Visibility = Visibility.Collapsed;
 #endif
+            MarkupExtensionsDemo.Visibility = Visibility.Collapsed;
         }
     }
 }
