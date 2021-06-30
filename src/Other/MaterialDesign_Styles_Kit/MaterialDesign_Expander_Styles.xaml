@@ -71,7 +71,8 @@
                                                     <ColumnDefinition Width="*"/>
                                                     <ColumnDefinition Width="Auto"/>
                                                 </Grid.ColumnDefinitions>
-                                                <ContentPresenter x:Name="header" Foreground="Black" Margin="4,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}"/>
+                                                <ContentControl x:Name="header" Foreground="Black" Margin="4,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}"/>
+
                                                 <Path x:Name="arrow"
                                                       Visibility="Visible"
                                                       Stroke="{TemplateBinding Foreground}"

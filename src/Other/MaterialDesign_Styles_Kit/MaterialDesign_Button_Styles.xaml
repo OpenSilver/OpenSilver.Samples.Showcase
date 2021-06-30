@@ -73,7 +73,7 @@
                             <Border.Effect>
                                 <DropShadowEffect x:Name="DropShadowEffect" Color="Gray" Opacity="0.4" BlurRadius="6" Direction="-30" ShadowDepth="0"/>
                             </Border.Effect>
-                            <ContentPresenter x:Name="ContentPresenter"
+                            <ContentControl x:Name="ContentPresenter"
                                                 Foreground="{TemplateBinding Foreground}"
                                                 FontSize="{TemplateBinding FontSize}"
                                                 FontWeight="{TemplateBinding FontWeight}"
@@ -152,7 +152,7 @@
                             <Border.Effect>
                                 <DropShadowEffect x:Name="DropShadowEffect" Color="Gray" Opacity="0.4" BlurRadius="6" Direction="-30" ShadowDepth="0"/>
                             </Border.Effect>
-                            <ContentPresenter x:Name="ContentPresenter"
+                            <ContentControl x:Name="ContentPresenter"
                                                   Foreground="{TemplateBinding Foreground}"
                                                   FontSize="{TemplateBinding FontSize}"
                                                   FontWeight="{TemplateBinding FontWeight}"
@@ -219,7 +219,7 @@
                         <Border x:Name="InnerBorder"
                                     Background="{TemplateBinding Background}"
                                 CornerRadius="2">
-                            <ContentPresenter x:Name="ContentPresenter"
+                            <ContentControl x:Name="ContentPresenter"
                                                   Foreground="{TemplateBinding Foreground}"
                                                   FontSize="{TemplateBinding FontSize}"
                                                   FontWeight="{TemplateBinding FontWeight}"
@@ -291,7 +291,7 @@
                         <Border x:Name="InnerBorder"
                                     Background="{TemplateBinding Background}"
                                 CornerRadius="2">
-                            <ContentPresenter x:Name="ContentPresenter"
+                            <ContentControl x:Name="ContentPresenter"
                                                   Foreground="{TemplateBinding Foreground}"
                                                   FontSize="{TemplateBinding FontSize}"
                                                   FontWeight="{TemplateBinding FontWeight}"
@@ -372,7 +372,7 @@
                             <Border.Effect>
                                 <DropShadowEffect x:Name="DropShadowEffect" Color="Gray" Opacity="0.4" BlurRadius="6" Direction="-30" ShadowDepth="0"/>
                             </Border.Effect>
-                            <ContentPresenter x:Name="ContentPresenter"
+                            <ContentControl x:Name="ContentPresenter"
                                                   Foreground="{TemplateBinding Foreground}"
                                                   FontSize="{TemplateBinding FontSize}"
                                                   FontWeight="{TemplateBinding FontWeight}"
@@ -450,7 +450,7 @@
                             <Border.Effect>
                                 <DropShadowEffect x:Name="DropShadowEffect" Color="Gray" Opacity="0.4" BlurRadius="6" Direction="-30" ShadowDepth="0"/>
                             </Border.Effect>
-                            <ContentPresenter x:Name="ContentPresenter"
+                            <ContentControl x:Name="ContentPresenter"
                                                   Foreground="{TemplateBinding Foreground}"
                                                   FontSize="{TemplateBinding FontSize}"
                                                   FontWeight="{TemplateBinding FontWeight}"
@@ -582,7 +582,7 @@
                         <Border x:Name="InnerBorder"
                                     Background="{TemplateBinding Background}"
                                 CornerRadius="4">
-                            <ContentPresenter x:Name="ContentPresenter"
+                            <ContentControl x:Name="ContentPresenter"
                                                 Foreground="{TemplateBinding Foreground}"
                                                 FontSize="{TemplateBinding FontSize}"
                                                 FontWeight="{TemplateBinding FontWeight}"
@@ -635,7 +635,6 @@
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="{TemplateBinding Foreground}"/>
-                                            <!--<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource MaterialDesign_DefaultAccentColor}"/>-->
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -697,7 +696,7 @@
                         <Border x:Name="InnerBorder"
                                     Background="{TemplateBinding Background}"
                                 CornerRadius="4">
-                            <ContentPresenter x:Name="ContentPresenter"
+                            <ContentControl x:Name="ContentPresenter"
                                                 Foreground="{TemplateBinding Foreground}"
                                                 FontSize="{TemplateBinding FontSize}"
                                                 FontWeight="{TemplateBinding FontWeight}"

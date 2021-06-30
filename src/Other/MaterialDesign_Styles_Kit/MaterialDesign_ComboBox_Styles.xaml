@@ -98,15 +98,17 @@
                                     Background="{TemplateBinding Background}"
                                 CornerRadius="2">
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                                <ContentPresenter x:Name="ContentPresenter"
+                                <ContentControl x:Name="ContentPresenter"
                                                   Foreground="Black"
                                                   FontSize="{TemplateBinding FontSize}"
                                                   FontWeight="{TemplateBinding FontWeight}"
                                                   ContentTemplate="{TemplateBinding ContentTemplate}"
                                                   Content="{TemplateBinding Content}"
                                                   Margin="{TemplateBinding Padding}"
-                                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                                HorizontalAlignment="Stretch"
+                                                VerticalAlignment="Stretch"
+                                                  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
                                 <!--The following ContentControl serves to inherit the foreground from the parent ComboBox in the VisualState (cannot use a RelativeSource in a Binding on a Timeline since it is not a element that exists in the Visual tree, and Border does not have the Foreground Property). There is probably a better way to do this.-->
                                 <!--Note: We find a parent of type ScrollViewer because the element is in a Popup, which has no parent, so we cannot go up the visual tree until we find the ComboBox-->
                                 <ContentControl x:Name="ControlForInheritingForeground" Visibility="Collapsed" Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ScrollViewer}}"/>
@@ -184,7 +186,11 @@
                                 Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
-                                Height="{TemplateBinding Height}">
+                                        HorizontalAlignment="Stretch"
+                                        VerticalAlignment="Stretch"
+                                        HorizontalContentAlignment="Stretch"
+                                        VerticalContentAlignment="Stretch"
+                                Height="{TemplateBinding Height}" Foreground="{TemplateBinding Foreground}">
                             <Border.Effect>
                                 <DropShadowEffect x:Name="DropShadowEffect" Color="Gray" Opacity="0.4" BlurRadius="6" Direction="-30" ShadowDepth="0"/>
                             </Border.Effect>
@@ -199,10 +205,10 @@
                                     <Path x:Name="arrow" Visibility="Visible" Stroke="{TemplateBinding Foreground}" Width="13" Height="9" StrokeThickness="2" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None" Data="M 1.5,2.25 L 6.75,7.5 L 12,2.25"/>
                                 </ToggleButton>
                                 <ContentPresenter x:Name="ContentPresenter"
-                                                  Background="{TemplateBinding Background}"
                                                   IsHitTestVisible="False"
                                                   Margin="{TemplateBinding Padding}"
-                                                  VerticalAlignment="Center"/>
+                                                  Content=""
+                                                  ContentTemplate="{x:Null}" />
                             </Grid>
                         </ContentControl>
                         <Popup x:Name="Popup" IsOpen="False">

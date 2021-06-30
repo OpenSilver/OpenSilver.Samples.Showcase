@@ -144,7 +144,7 @@
                         </Border>
 
 
-                        <ContentPresenter x:Name="ContentPresenter"
+                        <ContentControl x:Name="ContentPresenter"
                                                 Foreground="{TemplateBinding Foreground}"
                                                 FontSize="{TemplateBinding FontSize}"
                                                 FontWeight="{TemplateBinding FontWeight}"

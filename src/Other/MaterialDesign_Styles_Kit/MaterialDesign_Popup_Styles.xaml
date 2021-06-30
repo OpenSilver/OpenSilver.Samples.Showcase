@@ -9,7 +9,7 @@
     <!--Requires MaterialDesign_Button_Styles-->
 
     <!--Popup with cross to close-->
-    <Style x:Key="MaterialDesign_PopupContentWithCross_Style" TargetType="ContentPresenter">
+    <Style x:Key="MaterialDesign_PopupContentWithCross_Style" TargetType="ContentControl">
         <Setter Property="Background" Value="White"/>
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="BorderThickness" Value="0"/>
@@ -41,7 +41,7 @@
                                           IsChecked="{Binding Path=Tag.IsOpen, Mode=TwoWay, RelativeSource={RelativeSource Mode=TemplatedParent}}"
                                           HorizontalAlignment="Right"
                                           VerticalAlignment="Top"/>
-                            <ContentPresenter x:Name="ContentPresenter"
+                            <ContentControl x:Name="ContentPresenter"
                                         Foreground="{TemplateBinding Foreground}"
                                         FontSize="{TemplateBinding FontSize}"
                                         FontWeight="{TemplateBinding FontWeight}"

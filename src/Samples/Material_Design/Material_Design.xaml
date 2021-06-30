@@ -121,7 +121,7 @@
                                     <Button Style="{StaticResource MaterialDesign_HyperlinkButton_Style}" Foreground="{StaticResource MaterialDesign_DefaultAccentColor}" Margin="5" HorizontalAlignment="Left" FontWeight="Normal">
                                         <StackPanel Orientation="Horizontal">
                                             <Path Data="M0,22.691865L9.6958332,27.864942 0.24500618,32.000013z M8.8988495,6.3116251L18.869686,12.034729 11.211813,25.370919 10.644821,23.665877 7.7198686,23.364879 7.2188854,21.531844 4.3549361,21.429853 3.5479436,19.422835 1.2459807,19.647815z M13.690775,0.00052993685C13.965764,-0.0064584891,14.233765,0.055554115,14.474758,0.19355655L21.534634,4.2476002C22.392622,4.7375976,22.586618,6.0146238,21.968632,7.0966398L21.126636,8.5616571 10.95782,2.7255753 11.799801,1.2555529C12.243793,0.48054798,12.988775,0.017528671,13.690775,0.00052993685z"
-                                                Fill="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentPresenter}}" 
+                                                Fill="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}" 
                                                 VerticalAlignment="Center"
                                                 Width="12"
                                                 Height="16"
@@ -133,7 +133,7 @@
                                     <Button Style="{StaticResource MaterialDesign_HyperlinkButton_Style}" Foreground="{StaticResource MaterialDesign_DefaultAccentColor}" Margin="5" HorizontalAlignment="Left" FontWeight="Normal">
                                         <StackPanel Orientation="Horizontal">
                                             <Path Data="M25.573002,0L32,0 32,30.320998 25.573002,30.320998 25.573002,27.909011 29.086,27.909011 29.086,2.4119882 25.573002,2.4119882z M0,0L6.426007,0 6.426007,2.4119882 2.9130082,2.4119882 2.9130082,27.909011 6.426007,27.909011 6.426007,30.320998 0,30.320998z"
-                                                Fill="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentPresenter}}" 
+                                                Fill="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}" 
                                                 VerticalAlignment="Center"
                                                 Width="16"
                                                 Height="16"
@@ -144,7 +144,7 @@
                                     <Button Style="{StaticResource MaterialDesign_HyperlinkButton_Style}" Foreground="{StaticResource MaterialDesign_DefaultAccentColor}" Margin="5" HorizontalAlignment="Left" FontWeight="Normal">
                                         <StackPanel Orientation="Horizontal">
                                             <Path Data="M6.7000122,14.300007L25.400024,14.300007 25.400024,26.4 6.7000122,26.4z M0,3.5000009L4.6000366,3.5000009 4.6000366,6.6999988 27.5,6.6999988 27.5,3.5000009 32,3.5000009 32,17.800007 27.5,17.800007 27.5,12.000003 4.6000366,12.000003 4.6000366,17.800007 0,17.800007z M6.6000366,0L25.299988,0 25.299988,4.6999983 6.6000366,4.6999983z"
-                                                Fill="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentPresenter}}" 
+                                                Fill="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}" 
                                                 VerticalAlignment="Center"
                                                 Width="16"
                                                 Height="16"
@@ -172,7 +172,7 @@
                                     <Button Style="{StaticResource MaterialDesign_HyperlinkButton_Style}" Foreground="{StaticResource MaterialDesign_DefaultAccentColor}" Margin="5" HorizontalAlignment="Left" FontWeight="Normal">
                                         <StackPanel Orientation="Horizontal">
                                             <Path Data="M 9,0 L 11,0 11,9 20,9 20,11 11,11 11,20 9,20 9,11 0,11 0,9 9,9Z"
-                                                Fill="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentPresenter}}" 
+                                                Fill="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}" 
                                                 VerticalAlignment="Center"
                                                 Width="16"
                                                 Height="16"
@@ -209,15 +209,15 @@
                 <Button Style="{StaticResource MaterialDesign_Button_Style}" Margin="5">
                     <StackPanel Orientation="Horizontal">
                         <Path Data="M 9,0 L 11,0 11,9 20,9 20,11 11,11 11,20 9,20 9,11 0,11 0,9 9,9Z"
-                            Fill="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentPresenter}}" 
+                            Fill="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}" 
                             VerticalAlignment="Center"
                             Width="16"
                             Height="16"
                             Stretch="Fill"/>
                         <TextBlock Text="Button with icon"
-                            Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentPresenter}}"
-                            FontSize="{Binding Path=FontSize, RelativeSource={RelativeSource AncestorType=ContentPresenter}}"
-                            FontWeight="{Binding Path=FontWeight, RelativeSource={RelativeSource AncestorType=ContentPresenter}}"
+                            Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"
+                            FontSize="{Binding Path=FontSize, RelativeSource={RelativeSource AncestorType=ContentControl}}"
+                            FontWeight="{Binding Path=FontWeight, RelativeSource={RelativeSource AncestorType=ContentControl}}"
                             VerticalAlignment="Center"
                             Margin="15,0,0,0"/>
                     </StackPanel>
@@ -230,14 +230,14 @@
                 <Button Style="{StaticResource MaterialDesign_RoundButton_Style}" Content="..." Margin="5" Width="40" Height="40"/>
                 <Button Style="{StaticResource MaterialDesign_RoundButton_Style}" Margin="5" Width="40" Height="40">
                     <Path Data="M 9,0 L 11,0 11,9 20,9 20,11 11,11 11,20 9,20 9,11 0,11 0,9 9,9Z"
-                        Fill="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentPresenter}}" 
+                        Fill="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}" 
                         VerticalAlignment="Center"
                         Width="20"
                         Height="20"/>
                 </Button>
                 <Button Style="{StaticResource MaterialDesign_ColoredRoundButton_Style}" Margin="5" Width="40" Height="40">
                     <Path Data="M 9,0 L 11,0 11,9 20,9 20,11 11,11 11,20 9,20 9,11 0,11 0,9 9,9Z"
-                        Fill="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentPresenter}}" 
+                        Fill="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}" 
                         VerticalAlignment="Center"
                         Width="20"
                         Height="20"/>
@@ -251,7 +251,7 @@
                 <TextBlock Text="Hyperlink Button:" FontSize="16" Margin="0,10,10,0"/>
                 <Button Style="{StaticResource MaterialDesign_HyperlinkButton_Style}" Margin="5">
                     <Path Data="M8.3560181,18.363037C10.371002,19.880005 12.873993,20.779053 15.584991,20.779053 18.295013,20.779053 20.799011,19.880005 22.813995,18.363037 27.524017,18.955994 31.167999,22.973022 31.167999,27.843994L31.167999,32 0,32 0,27.843994C0,22.973022,3.6459961,18.955994,8.3560181,18.363037z M15.584991,0C20.403992,0 24.311005,3.90802 24.311005,8.7280273 24.311005,13.548035 20.403992,17.454041 15.584991,17.454041 10.765015,17.454041 6.8580017,13.548035 6.8580017,8.7280273 6.8580017,3.90802 10.765015,0 15.584991,0z"
-                        Fill="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentPresenter}}" 
+                        Fill="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}" 
                         VerticalAlignment="Center"
                         Width="20"
                         Height="20"
@@ -260,16 +260,16 @@
                 <Button Style="{StaticResource MaterialDesign_HyperlinkButton_Style}" Margin="20,5,5,5">
                     <StackPanel Orientation="Horizontal">
                         <Path Data="M 9,0 L 11,0 11,9 20,9 20,11 11,11 11,20 9,20 9,11 0,11 0,9 9,9Z"
-                            Fill="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentPresenter}}" 
+                            Fill="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}" 
                             VerticalAlignment="Center"
                             Width="16"
                             Height="16"
                             Stretch="Fill"/>
                         <TextBlock Text="Add"
-                            Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentPresenter}}"
-                            FontSize="{Binding Path=FontSize, RelativeSource={RelativeSource AncestorType=ContentPresenter}}"
-                            FontWeight="{Binding Path=FontWeight, RelativeSource={RelativeSource AncestorType=ContentPresenter}}"
-                            TextDecorations="{Binding Path=TextDecorations, RelativeSource={RelativeSource AncestorType=ContentPresenter}}"
+                            Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"
+                            FontSize="{Binding Path=FontSize, RelativeSource={RelativeSource AncestorType=ContentControl}}"
+                            FontWeight="{Binding Path=FontWeight, RelativeSource={RelativeSource AncestorType=ContentControl}}"
+                            TextDecorations="{Binding Path=TextDecorations, RelativeSource={RelativeSource AncestorType=ContentControl}}"
                             VerticalAlignment="Center"
                             Margin="15,0,0,0"/>
                     </StackPanel>
@@ -277,16 +277,16 @@
                 <Button Style="{StaticResource MaterialDesign_HyperlinkButton_Style}" Margin="20,5,5,5" Foreground="#FFEC004E">
                     <StackPanel Orientation="Horizontal">
                         <Path Data="M 9,0 L 11,0 11,9 20,9 20,11 11,11 11,20 9,20 9,11 0,11 0,9 9,9Z"
-                            Fill="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentPresenter}}" 
+                            Fill="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}" 
                             VerticalAlignment="Center"
                             Width="16"
                             Height="16"
                             Stretch="Fill"/>
                         <TextBlock Text="Colored Add"
-                            Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentPresenter}}"
-                            FontSize="{Binding Path=FontSize, RelativeSource={RelativeSource AncestorType=ContentPresenter}}"
-                            FontWeight="{Binding Path=FontWeight, RelativeSource={RelativeSource AncestorType=ContentPresenter}}"
-                            TextDecorations="{Binding Path=TextDecorations, RelativeSource={RelativeSource AncestorType=ContentPresenter}}"
+                            Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"
+                            FontSize="{Binding Path=FontSize, RelativeSource={RelativeSource AncestorType=ContentControl}}"
+                            FontWeight="{Binding Path=FontWeight, RelativeSource={RelativeSource AncestorType=ContentControl}}"
+                            TextDecorations="{Binding Path=TextDecorations, RelativeSource={RelativeSource AncestorType=ContentControl}}"
                             VerticalAlignment="Center"
                             Margin="15,0,0,0"/>
                     </StackPanel>
@@ -302,7 +302,7 @@
                 <ToggleButton Style="{StaticResource MaterialDesign_ToggleButton_Style}" Content="Four" Margin="5" />
                 <ToggleButton Style="{StaticResource MaterialDesign_ToggleButtonWithPath_Style}" Margin="30,5,2,5" IsChecked="True">
                     <Path Data="M8.3560181,18.363037C10.371002,19.880005 12.873993,20.779053 15.584991,20.779053 18.295013,20.779053 20.799011,19.880005 22.813995,18.363037 27.524017,18.955994 31.167999,22.973022 31.167999,27.843994L31.167999,32 0,32 0,27.843994C0,22.973022,3.6459961,18.955994,8.3560181,18.363037z M15.584991,0C20.403992,0 24.311005,3.90802 24.311005,8.7280273 24.311005,13.548035 20.403992,17.454041 15.584991,17.454041 10.765015,17.454041 6.8580017,13.548035 6.8580017,8.7280273 6.8580017,3.90802 10.765015,0 15.584991,0z"
-                      Fill="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentPresenter}}" 
+                      Fill="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}" 
                       VerticalAlignment="Center"
                       Width="20"
                       Height="20"
@@ -310,7 +310,7 @@
                 </ToggleButton>
                 <ToggleButton Style="{StaticResource MaterialDesign_ToggleButtonWithPath_Style}" Margin="2,5,2,5">
                     <Path Data="M8.3560181,18.363037C10.371002,19.880005 12.873993,20.779053 15.584991,20.779053 18.295013,20.779053 20.799011,19.880005 22.813995,18.363037 27.524017,18.955994 31.167999,22.973022 31.167999,27.843994L31.167999,32 0,32 0,27.843994C0,22.973022,3.6459961,18.955994,8.3560181,18.363037z M15.584991,0C20.403992,0 24.311005,3.90802 24.311005,8.7280273 24.311005,13.548035 20.403992,17.454041 15.584991,17.454041 10.765015,17.454041 6.8580017,13.548035 6.8580017,8.7280273 6.8580017,3.90802 10.765015,0 15.584991,0z"
-                      Fill="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentPresenter}}" 
+                      Fill="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}" 
                       VerticalAlignment="Center"
                       Width="20"
                       Height="20"
@@ -318,7 +318,7 @@
                 </ToggleButton>
                 <ToggleButton Style="{StaticResource MaterialDesign_ToggleButtonWithPath_Style}" Margin="2,5,2,5">
                     <Path Data="M8.3560181,18.363037C10.371002,19.880005 12.873993,20.779053 15.584991,20.779053 18.295013,20.779053 20.799011,19.880005 22.813995,18.363037 27.524017,18.955994 31.167999,22.973022 31.167999,27.843994L31.167999,32 0,32 0,27.843994C0,22.973022,3.6459961,18.955994,8.3560181,18.363037z M15.584991,0C20.403992,0 24.311005,3.90802 24.311005,8.7280273 24.311005,13.548035 20.403992,17.454041 15.584991,17.454041 10.765015,17.454041 6.8580017,13.548035 6.8580017,8.7280273 6.8580017,3.90802 10.765015,0 15.584991,0z"
-                      Fill="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentPresenter}}" 
+                      Fill="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}" 
                       VerticalAlignment="Center"
                       Width="20"
                       Height="20"
@@ -346,16 +346,16 @@
                 <StackPanel Orientation="Vertical" Margin="5">
                     <ToggleButton x:Name="ButtonShowHidePopup" Style="{StaticResource MaterialDesign_ToggleButtonWithPath_Style}">
                         <Path Data="M14.580002,23.394012L14.580002,26.235001 17.18399,26.235001 17.18399,23.394012z M16.117996,5.7660065C14.539993,5.7660065 13.278992,6.2390137 12.332993,7.1880035 10.991989,8.5250092 10.320999,10.223007 10.320999,12.27301L13.043991,12.27301C13.043991,10.695007 13.437988,9.5130005 14.22699,8.7230072 14.697998,8.25 15.289001,8.0130005 16,8.0130005 16.867996,8.0130005 17.537003,8.25 18.009995,8.7230072 18.561996,9.2750092 18.838989,10.106003 18.838989,11.207001 18.838989,12.077011 18.522995,12.827011 17.89299,13.455002 16.789001,14.561005 16.039001,15.429001 15.644989,16.061005 15.090988,16.92601 14.817001,18.228012 14.817001,19.964005L16.947998,19.964005C16.947998,18.545013 17.302002,17.478012 18.009995,16.767014 18.955994,15.824005 19.705994,15.074005 20.259995,14.522003 21.205002,13.574005 21.679001,12.432007 21.679001,11.090012 21.679001,9.5130005 21.166,8.2109985 20.14299,7.1880035 19.194992,6.2390137 17.853989,5.7660065 16.117996,5.7660065z M16,0C24.819992,0 32,7.178009 32,16.001007 32,24.822006 24.819992,32 16,32 7.1759949,32 0,24.822006 0,16.001007 0,7.178009 7.1759949,0 16,0z"
-                            Fill="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentPresenter}}" 
+                            Fill="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}" 
                             VerticalAlignment="Center"
                             Width="20"
                             Height="20"
                             Stretch="Fill"/>
                     </ToggleButton>
                     <Popup x:Name="InformationPopup1" Placement="Bottom" IsOpen="{Binding ElementName=ButtonShowHidePopup, Path=IsChecked, Mode=TwoWay}">
-                        <ContentPresenter Tag="{Binding ElementName=InformationPopup1}" Style="{StaticResource MaterialDesign_PopupContentWithCross_Style}">
-                            <TextBlock Text="This is a sample information popup. Note: we set the 'Tag' property of the ContentPresenter to point to the 'Popup' control (see the source code)." Width="150" TextWrapping="Wrap" Background="White"/>
-                        </ContentPresenter>
+                        <ContentControl Tag="{Binding ElementName=InformationPopup1}" Style="{StaticResource MaterialDesign_PopupContentWithCross_Style}">
+                            <TextBlock Text="This is a sample information popup. Note: we set the 'Tag' property of the ContentControl to point to the 'Popup' control (see the source code)." Width="150" TextWrapping="Wrap" Background="White"/>
+                        </ContentControl>
                     </Popup>
                 </StackPanel>
             </StackPanel>
@@ -384,7 +384,7 @@
                     <TextBox Style="{StaticResource MaterialDesign_TextBox_Style}" Width="200" BorderThickness="1,1,0,1"/>
                     <Button Style="{StaticResource MaterialDesign_ColoredButton_Style}" Padding="3,0,3,0">
                         <Path Data="M12.003748,4.5049986C10.494726,4.5309996 8.9806971,4.987008 7.7016882,5.9000024 4.5866403,8.1250076 4.0476317,12.220008 6.5006675,15.049994 8.9517054,17.875006 13.465759,18.364996 16.581798,16.140005 19.698844,13.915 20.235855,9.8199996 17.783826,6.9899983 16.404809,5.3980035 14.373776,4.5479979 12.305754,4.5049986 12.205747,4.5029997 12.104748,4.5029997 12.003748,4.5049986z M12.127743,2.0721107E-06C15.724792,-0.0019966637 19.286836,1.4420032 21.684881,4.2050108 25.103918,8.1500015 25.075918,13.549994 22.002878,17.435003L31.444,28.325001 26.299932,32.000002 16.892806,21.15C11.969737,23.054996 6.0676631,21.830006 2.5996136,17.834997 -1.5464387,13.049994 -0.63543081,6.1250085 4.6346449,2.3600098 6.8586745,0.77200525 9.5027079,0.0010016877 12.127743,2.0721107E-06z"
-                            Fill="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentPresenter}}" 
+                            Fill="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}" 
                             VerticalAlignment="Center"
                             HorizontalAlignment="Center"
                             Width="16"

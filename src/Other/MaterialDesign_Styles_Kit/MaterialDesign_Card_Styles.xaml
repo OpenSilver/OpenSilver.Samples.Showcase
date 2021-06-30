@@ -28,15 +28,15 @@
                         <Border.Effect>
                             <DropShadowEffect x:Name="DropShadowEffect" Color="Gray" Opacity="0.4" BlurRadius="6" Direction="-30" ShadowDepth="0"/>
                         </Border.Effect>
-                        <ContentPresenter x:Name="ContentPresenter"
+                        <ContentControl x:Name="ContentPresenter"
                                                   Background="{TemplateBinding Background}"
                                                   FontSize="{TemplateBinding FontSize}"
                                                   FontWeight="{TemplateBinding FontWeight}"
                                                   ContentTemplate="{TemplateBinding ContentTemplate}"
                                                   Content="{TemplateBinding Content}"
                                                   Padding="{TemplateBinding Padding}"
-                                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                                  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
@@ -64,15 +64,15 @@
                             BorderBrush="{TemplateBinding BorderBrush}"
                             Padding="{TemplateBinding Padding}"
                             CornerRadius="2">
-                        <ContentPresenter x:Name="ContentPresenter"
+                        <ContentControl x:Name="ContentPresenter"
                                                   Background="{TemplateBinding Background}"
                                                   FontSize="{TemplateBinding FontSize}"
                                                   FontWeight="{TemplateBinding FontWeight}"
                                                   ContentTemplate="{TemplateBinding ContentTemplate}"
                                                   Content="{TemplateBinding Content}"
                                                   Padding="{TemplateBinding Padding}"
-                                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                                  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
@@ -99,15 +99,15 @@
                             BorderBrush="{TemplateBinding BorderBrush}"
                             Padding="{TemplateBinding Padding}"
                             CornerRadius="2">
-                        <ContentPresenter x:Name="ContentPresenter"
+                        <ContentControl x:Name="ContentPresenter"
                                             Background="{TemplateBinding Background}"
                                             FontSize="{TemplateBinding FontSize}"
                                             FontWeight="{TemplateBinding FontWeight}"
                                             ContentTemplate="{TemplateBinding ContentTemplate}"
                                             Content="{TemplateBinding Content}"
                                             Padding="{TemplateBinding Padding}"
-                                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
@@ -134,15 +134,15 @@
                             BorderBrush="{TemplateBinding BorderBrush}"
                             Padding="{TemplateBinding Padding}"
                             CornerRadius="2">
-                        <ContentPresenter x:Name="ContentPresenter"
+                        <ContentControl x:Name="ContentPresenter"
                                                   Background="{TemplateBinding Background}"
                                                   FontSize="{TemplateBinding FontSize}"
                                                   FontWeight="{TemplateBinding FontWeight}"
                                                   ContentTemplate="{TemplateBinding ContentTemplate}"
                                                   Content="{TemplateBinding Content}"
                                                   Padding="{TemplateBinding Padding}"
-                                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                                  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>

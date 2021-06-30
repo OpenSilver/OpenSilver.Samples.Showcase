@@ -42,7 +42,7 @@
                                     <ColumnDefinition Width="auto"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <ContentPresenter Grid.Column="0" Content="{TemplateBinding Tag}" Padding="2"/>
+                                <ContentPresenter Grid.Column="0" Content="{TemplateBinding Tag}" Margin="2"/>
                                 <TextBlock Grid.Column="1" Text="{TemplateBinding PlaceholderText}"
                                            Foreground="DarkGray"
                                            Visibility="{Binding Path=Text, Converter={StaticResource TextToPlaceholderTextVisibilityConverter}, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>

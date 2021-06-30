@@ -146,15 +146,15 @@
                                 Grid.Column="1"
                                 Background="Transparent"
                                 CornerRadius="4">
-                            <ContentPresenter x:Name="ContentPresenter"
+                            <ContentControl x:Name="ContentPresenter"
                                                 Foreground="{TemplateBinding Foreground}"
                                                 FontSize="{TemplateBinding FontSize}"
                                                 FontWeight="{TemplateBinding FontWeight}"
                                                 ContentTemplate="{TemplateBinding ContentTemplate}"
                                                 Content="{TemplateBinding Content}"
                                                 Margin="{TemplateBinding Padding}"
-                                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                                HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
                         </Border>
                     </Grid>
                 </ControlTemplate>
