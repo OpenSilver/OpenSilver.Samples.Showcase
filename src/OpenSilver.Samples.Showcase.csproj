@@ -90,6 +90,7 @@
 		<Content Include="Other\Planets\Saturn.png" />
 		<Content Include="Other\Planets\Uranus.png" />
 		<Content Include="Other\Planets\Venus.png" />
+		<Content Include="Other\SampleText.txt" />
 		<Content Include="Other\smallBall.png" />
 		<Content Include="Other\SampleVideo.mp4" />
 		<Content Include="Other\SampleAudio.mp3" />
@@ -509,6 +510,12 @@
 		</Page>
 		<Page Include="Samples\XAML_Features\XAML_Features.xaml">
 			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Features\XAML_Resource_Dictionary\Dictionaries\Style1.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Features\XAML_Resource_Dictionary\Dictionaries\Style2.xaml">
+		  <Generator>MSBuild:Compile</Generator>
 		</Page>
 		<Page Include="Samples\XAML_Features\XAML_Resource_Dictionary\XAML_Resource_Dictionary_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
