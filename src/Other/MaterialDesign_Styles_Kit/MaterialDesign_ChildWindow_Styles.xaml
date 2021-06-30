@@ -47,9 +47,9 @@
                                             <Button x:Name="CloseButton" Style="{StaticResource MaterialDesign_Button_Style_NoDropShadow}" Content="&#215;" Foreground="{TemplateBinding Foreground}" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" FontSize="26" Effect="{x:Null}" Background="Transparent" />
                                         </Grid>
                                     </ContentControl>
-                                    <ContentControl Background="{TemplateBinding Background}" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                                    <Border Background="{TemplateBinding Background}" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                                         <ContentPresenter x:Name="ContentPresenter" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
-                                    </ContentControl>
+                                    </Border>
                                 </Grid>
                             </Border>
                         </Border>
