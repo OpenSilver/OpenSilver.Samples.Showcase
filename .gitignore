@@ -243,10 +243,5 @@ ModelManifest.xml
 .fake/
 
 src/Third_Party_Resources/
-OpenSilver.Samples.Showcase.Browser/wwwroot/*
-!OpenSilver.Samples.Showcase.Browser/wwwroot/index.html
-!OpenSilver.Samples.Showcase.Browser/wwwroot/favicon.ico
-!OpenSilver.Samples.Showcase.Browser/wwwroot/libs
+OpenSilver.Samples.Showcase.Browser/wwwroot/resources/*
 OpenSilver.Samples.Showcase.Browser/wwwroot/libs/*
-!OpenSilver.Samples.Showcase.Browser/wwwroot/libs/silverlight-loading.css
-!OpenSilver.Samples.Showcase.Browser/wwwroot/libs/BlazorLoader.js

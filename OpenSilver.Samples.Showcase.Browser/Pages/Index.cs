@@ -16,7 +16,7 @@ namespace OpenSilver.Samples.Showcase.Browser.Pages
         protected override void OnInitialized()
         {
             base.OnInitialized();
-            Cshtml5Initializer.Initialize((IJavaScriptExecutionHandler)new UnmarshalledJavaScriptExecutionHandler(this.JSRuntime));
+            Cshtml5Initializer.Initialize(new UnmarshalledJavaScriptExecutionHandler(JSRuntime));
             Program.RunApplication();
         }
 
