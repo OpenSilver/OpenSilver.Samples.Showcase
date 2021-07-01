@@ -6,6 +6,7 @@
     <NoXamlPreprocessor>True</NoXamlPreprocessor>
     <OpenSilverType>3</OpenSilverType>
 	<OpenSilverVersion>1.0.0-alpha-019</OpenSilverVersion>
+	<!--<RunAOTCompilation Condition="'$(IsSecondPass)'=='True'">true</RunAOTCompilation>-->
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)' == 'SL'">
