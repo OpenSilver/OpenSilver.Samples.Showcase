@@ -4,9 +4,11 @@
     <Configurations>SL;SL.Release;SL.WorkInProgress;UWP</Configurations>
     <TargetFramework>net5.0</TargetFramework>
     <NoXamlPreprocessor>True</NoXamlPreprocessor>
-    <OpenSilverType>3</OpenSilverType>
-	<OpenSilverVersion>1.0.0-alpha-019</OpenSilverVersion>
-	<!--<RunAOTCompilation Condition="'$(IsSecondPass)'=='True'">true</RunAOTCompilation>-->
+    <OpenSilverType>4</OpenSilverType>
+	  <OpenSilverVersion>1.0.0-alpha-020</OpenSilverVersion>
+    <!--Use .NET 6 to enable the commented options below-->
+    <!--<PublishTrimmed>true</PublishTrimmed>-->
+	  <!--<RunAOTCompilation Condition="'$(IsSecondPass)'=='True'">true</RunAOTCompilation>-->
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)' == 'SL'">
