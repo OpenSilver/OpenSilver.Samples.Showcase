@@ -22,7 +22,6 @@ namespace CSHTML5.Samples.Showcase
             this.InitializeComponent();
 
 #if OPENSILVER
-            PerformanceButton.Visibility = Visibility.Collapsed;
             ThirdPartyButton.Visibility = Visibility.Collapsed;
             ThirdPartyHomeButton.Visibility = Visibility.Visible;
 #endif
