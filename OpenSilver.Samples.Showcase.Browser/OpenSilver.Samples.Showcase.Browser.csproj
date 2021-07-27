@@ -2,13 +2,11 @@
 
   <PropertyGroup>
     <Configurations>SL;SL.Release;SL.WorkInProgress;UWP</Configurations>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <NoXamlPreprocessor>True</NoXamlPreprocessor>
     <OpenSilverType>3</OpenSilverType>
 	<OpenSilverVersion>1.0.0-alpha-019</OpenSilverVersion>
-	<RunAOTCompilation Condition="'$(IsSecondPass)'=='True'">true</RunAOTCompilation>
-	<PublishTrimmed>true</PublishTrimmed>
-	<!--<BlazorCacheBootResources>false</BlazorCacheBootResources>-->
+	<!--<RunAOTCompilation Condition="'$(IsSecondPass)'=='True'">true</RunAOTCompilation>-->
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)' == 'SL'">
@@ -35,8 +33,8 @@
     <PackageReference Include="OpenSilver" Version="$(OpenSilverVersion)" Condition="'$(Configuration)' == 'SL' Or '$(Configuration)' == 'SL.Release'" />
     <PackageReference Include="OpenSilver.WorkInProgress" Version="$(OpenSilverVersion)" Condition="'$(Configuration)' == 'SL.WorkInProgress'" />
     <PackageReference Include="OpenSilver.UwpCompatible" Version="$(OpenSilverVersion)" Condition="'$(Configuration)' == 'UWP'" />
-	<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.0-preview.5.*" />
-	<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.0-preview.5.*" PrivateAssets="all" />
+	<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="5.0.7" />
+	<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.7" PrivateAssets="all" />
   </ItemGroup>
 
   <ItemGroup>
