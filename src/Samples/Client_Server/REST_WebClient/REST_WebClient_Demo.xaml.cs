@@ -43,10 +43,10 @@ namespace CSHTML5.Samples.Showcase
         {
             try
             {
+#if !OPENSILVER
                 var webClient = new WebClient();
                 webClient.Encoding = Encoding.UTF8;
                 webClient.Headers[HttpRequestHeader.Accept] = "application/xml";
-#if !OPENSILVER
                 string response = await webClient.DownloadStringTaskAsync("http://cshtml5-rest-sample.azurewebsites.net/api/Todo?OwnerId=" + _ownerId.ToString());
                 var dataContractSerializer = new DataContractSerializer(typeof(List<ToDoItem>));
                 List<ToDoItem> toDoItems = (List<ToDoItem>)dataContractSerializer.DeserializeFromString(response);
