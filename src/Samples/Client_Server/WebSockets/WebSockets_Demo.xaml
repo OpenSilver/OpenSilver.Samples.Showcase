@@ -12,7 +12,7 @@
             </Grid.RowDefinitions>
             <ContentControl Content="WebSockets" Foreground="#FFFFA443" Background="#FFFFA443" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <TextBlock Text="The following button will call a sample 'Echo' WebSocket service provided by: http://www.websocket.org/echo.html" Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left"/>
+                <TextBlock Text="The following button will call a sample 'Echo' WebSocket service provided by: https://javascript.info/websocket" Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left"/>
                 <Button Content="Make WebSocket Call" Click="ButtonMakeWebSocketCall_Click" HorizontalAlignment="Center" Margin="5,10,0,0"/>
             </StackPanel>
             <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FFFFA443" Style="{StaticResource ButtonViewSource_Style}"/>
