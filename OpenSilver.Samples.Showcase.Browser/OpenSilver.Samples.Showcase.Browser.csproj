@@ -35,8 +35,8 @@
     <PackageReference Include="OpenSilver" Version="1.0.0-beta.1.22" Condition="'$(Configuration)' == 'SL' Or '$(Configuration)' == 'SL.Release'" />
     <PackageReference Include="OpenSilver.WorkInProgress" Version="$(OpenSilverVersion)" Condition="'$(Configuration)' == 'SL.WorkInProgress'" />
     <PackageReference Include="OpenSilver.UwpCompatible" Version="$(OpenSilverVersion)" Condition="'$(Configuration)' == 'UWP'" />
-	<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="5.0.7" />
-	<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.7" PrivateAssets="all" />
+	<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.0-preview.7.*" />
+	<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.0-preview.7.*" PrivateAssets="all" />
   </ItemGroup>
 
   <ItemGroup>
