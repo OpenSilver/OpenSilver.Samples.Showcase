@@ -1,5 +1,6 @@
 ﻿using CSHTML5;
 using System;
+using System.Windows.Browser;
 #if SLMIGRATION
 using System.Windows;
 using System.Windows.Controls;
@@ -23,11 +24,16 @@ namespace CSHTML5.Samples.Showcase
             HorizontalContentAlignment = HorizontalAlignment.Stretch;
         }
 
+        string GetHtmlString(string filePath)
+        {
+            return string.Format("<script src=\"https://emgithub.com/embed.js?target={0}&style=github&showBorder=on&showLineNumbers=on&showCopy=on\"></script>", HttpUtility.UrlEncode("https://github.com" + filePath.Substring(6)));
+        }
+
         void OnLoaded(object sender, RoutedEventArgs e)
         {
             if (!string.IsNullOrEmpty(_filePathOnGitHub))
             {
-                string htmlString = string.Format("<script src='https://gist-it.appspot.com/{0}?footer=no'></script>", _filePathOnGitHub);
+                string htmlString = GetHtmlString(_filePathOnGitHub);
                 DisplayHtmlString(htmlString);
             }
         }
@@ -56,7 +62,7 @@ namespace CSHTML5.Samples.Showcase
 
                 if (this.IsLoaded)
                 {
-                    string htmlString = string.Format("<script src='https://gist-it.appspot.com/{0}?footer=no'></script>", FilePathOnGitHub);
+                    string htmlString = GetHtmlString(FilePathOnGitHub);
                     if (htmlString != _displayedHtmlString)
                     {
                         DisplayHtmlString(htmlString);
