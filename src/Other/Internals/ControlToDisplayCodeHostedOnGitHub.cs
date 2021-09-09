@@ -1,6 +1,7 @@
 ﻿using CSHTML5;
 using System;
 using System.Windows.Browser;
+using CSHTML5.Internal;
 #if SLMIGRATION
 using System.Windows;
 using System.Windows.Controls;
@@ -26,7 +27,11 @@ namespace CSHTML5.Samples.Showcase
 
         string GetHtmlString(string filePath)
         {
-            return string.Format("<script src=\"https://emgithub.com/embed.js?target={0}&style=github&showBorder=on&showLineNumbers=on&showCopy=on\"></script>", HttpUtility.UrlEncode("https://github.com" + filePath.Substring(6)));
+            var embedJs =
+                INTERNAL_UriHelper.ConvertToHtml5Path("ms-appx:/Other/embed.js");
+            return string.Format(
+                "<script src=\"{0}?target={1}&style=github&showBorder=on&showLineNumbers=on&showCopy=on\"></script>",
+                embedJs, HttpUtility.UrlEncode("https://github.com" + filePath.Substring(6)));
         }
 
         void OnLoaded(object sender, RoutedEventArgs e)
