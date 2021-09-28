@@ -494,6 +494,9 @@
 		<Page Include="Samples\XAML_Features\MarkupExtensions\MarkupExtensions_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
+		<Content Include="Samples\XAML_Features\MouseWheel\MouseWheel_Demo.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</Content>
 		<Page Include="Samples\XAML_Features\RenderTransforms\RenderTransforms_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
@@ -666,6 +669,7 @@
 		<Compile Include="Samples\XAML_Features\FindElementsInHostCoordinates\FindElementsInHostCoordinates_Demo.xaml.cs" />
 		<Compile Include="Samples\XAML_Features\Gradients\Gradients_Demo.xaml.cs" />
 		<Compile Include="Samples\XAML_Features\MarkupExtensions\MarkupExtensions_Demo.xaml.cs" />
+		<Compile Include="Samples\XAML_Features\MouseWheel\MouseWheel_Demo.xaml.cs" />
 		<Compile Include="Samples\XAML_Features\RenderTransforms\RenderTransforms_Demo.xaml.cs" />
 		<Compile Include="Samples\XAML_Features\TransformToVisual\TransformToVisual_Demo.xaml.cs" />
 		<Compile Include="Samples\XAML_Features\UriMapper\UriMapper_Demo.xaml.cs" />
