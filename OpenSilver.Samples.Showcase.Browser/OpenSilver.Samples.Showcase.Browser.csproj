@@ -1,11 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
   <PropertyGroup>
-    <Configurations>SL;SL.Release;SL.WorkInProgress;UWP</Configurations>
+    <Configurations>SL;SL.Release;UWP</Configurations>
     <TargetFramework>net6.0</TargetFramework>
     <NoXamlPreprocessor>True</NoXamlPreprocessor>
     <OpenSilverType>4</OpenSilverType>
-	  <OpenSilverVersion>1.0.0-beta.1.22</OpenSilverVersion>
+	  <OpenSilverVersion>1.0.0</OpenSilverVersion>
     <!--Use .NET 6 to enable the commented options below-->
     <PublishTrimmed>true</PublishTrimmed>
 	<!--<RunAOTCompilation Condition="'$(IsSecondPass)'=='True'">true</RunAOTCompilation>-->
@@ -21,22 +21,16 @@
     <DefineConstants>TRACE;SLMIGRATION;CSHTML5BLAZOR;OPENSILVER</DefineConstants>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)' == 'SL.WorkInProgress'">
-    <Optimize>false</Optimize>
-    <DefineConstants>TRACE;DEBUG;SLMIGRATION;CSHTML5BLAZOR;OPENSILVER</DefineConstants>
-  </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)' == 'UWP'">
     <Optimize>false</Optimize>
     <DefineConstants>DEBUG;TRACE;CSHTML5BLAZOR;OPENSILVER</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="OpenSilver" Version="1.0.0-beta.1.22" Condition="'$(Configuration)' == 'SL' Or '$(Configuration)' == 'SL.Release'" />
-    <PackageReference Include="OpenSilver.WorkInProgress" Version="$(OpenSilverVersion)" Condition="'$(Configuration)' == 'SL.WorkInProgress'" />
+    <PackageReference Include="OpenSilver" Version="$(OpenSilverVersion)" Condition="'$(Configuration)' == 'SL' Or '$(Configuration)' == 'SL.Release'" />
     <PackageReference Include="OpenSilver.UwpCompatible" Version="$(OpenSilverVersion)" Condition="'$(Configuration)' == 'UWP'" />
-	<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.0-preview.7.*" />
-	<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.0-preview.7.*" PrivateAssets="all" />
+	<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.0-rc.1.*" />
+	<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.0-rc.1.*" PrivateAssets="all" />
   </ItemGroup>
 
   <ItemGroup>

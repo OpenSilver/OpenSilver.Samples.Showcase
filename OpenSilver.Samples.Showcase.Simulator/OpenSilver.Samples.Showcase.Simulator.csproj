@@ -1,13 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<Configurations>SL;SL.Release;SL.WorkInProgress;UWP</Configurations>
+		<Configurations>SL;SL.Release;UWP</Configurations>
 		<OutputType>WinExe</OutputType>
 		<TargetFramework>net472</TargetFramework>
 		<StartArguments>"..\..\..\..\src\bin\$(Configuration)\netstandard2.0\OpenSilver.Samples.Showcase.dll"</StartArguments>
 	</PropertyGroup>
 	
-	<PropertyGroup Condition="'$(Configuration)' == 'SL' Or '$(Configuration)' == 'SL.WorkInProgress' Or '$(Configuration)' == 'UWP'">
+	<PropertyGroup Condition="'$(Configuration)' == 'SL' Or '$(Configuration)' == 'UWP'">
 		<DebugType>full</DebugType>
 		<Optimize>false</Optimize>
 		<DefineConstants>DEBUG;TRACE</DefineConstants>
@@ -20,7 +20,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="OpenSilver.Simulator" Version="1.0.0-beta.1.22" />
+		<PackageReference Include="OpenSilver.Simulator" Version="1.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>

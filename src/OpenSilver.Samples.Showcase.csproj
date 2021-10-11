@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
 	<PropertyGroup>
-		<Configurations>SL;SL.Release;SL.WorkInProgress;UWP</Configurations>
+		<Configurations>SL;SL.Release;UWP</Configurations>
 		<TargetFramework>netstandard2.0</TargetFramework>
-		<OpenSilverVersion>1.0.0-alpha-020</OpenSilverVersion>
+		<OpenSilverVersion>1.0.0</OpenSilverVersion>
 		<EnableDefaultItems>false</EnableDefaultItems>
     <IsOpenSilver>true</IsOpenSilver>
 	</PropertyGroup>
@@ -18,12 +18,6 @@
 		<DefineConstants>TRACE;SLMIGRATION;OPENSILVER</DefineConstants>
 	</PropertyGroup>
 
-	<PropertyGroup Condition="'$(Configuration)' == 'SL.WorkInProgress'">
-		<DebugType>full</DebugType>
-		<DebugSymbols>true</DebugSymbols>
-		<DefineConstants>DEBUG;TRACE;SLMIGRATION;OPENSILVER</DefineConstants>
-	</PropertyGroup>
-
 	<PropertyGroup Condition="'$(Configuration)' == 'UWP'">
 		<DebugType>full</DebugType>
 		<DebugSymbols>true</DebugSymbols>
@@ -35,8 +29,7 @@
 		<PackageReference Include="System.ServiceModel.Http" Version="4.7.0" />
 		<PackageReference Include="System.ServiceModel.NetTcp" Version="4.7.0" />
 		<PackageReference Include="System.ServiceModel.Security" Version="4.7.0" />
-		<PackageReference Include="OpenSilver" Version="1.0.0-beta.1.22" Condition="'$(Configuration)' == 'SL' Or '$(Configuration)' == 'SL.Release'" />
-		<PackageReference Include="OpenSilver.WorkInProgress" Version="$(OpenSilverVersion)" Condition="'$(Configuration)' == 'SL.WorkInProgress'" />
+		<PackageReference Include="OpenSilver" Version="$(OpenSilverVersion)" Condition="'$(Configuration)' == 'SL' Or '$(Configuration)' == 'SL.Release'" />
 		<PackageReference Include="OpenSilver.UwpCompatible" Version="$(OpenSilverVersion)" Condition="'$(Configuration)' == 'UWP'" />
 	</ItemGroup>
 
