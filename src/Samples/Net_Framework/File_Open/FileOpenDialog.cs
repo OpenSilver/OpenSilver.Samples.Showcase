@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CSHTML5.Native.Html.Controls;
+using System;
 using System.Collections.Generic;
 #if SLMIGRATION
 using System.Windows;
@@ -33,7 +34,7 @@ using Windows.UI.Xaml.Controls;
 
 namespace CSHTML5.Extensions.FileOpenDialog
 {
-    public class ControlForDisplayingTheFileOpenDialog : Control
+    public class ControlForDisplayingTheFileOpenDialog : HtmlPresenter
     {
         public event EventHandler<FileOpenedEventArgs> FileOpened;
 
@@ -53,8 +54,7 @@ namespace CSHTML5.Extensions.FileOpenDialog
         {
             ResultKind = FileOpenDialog.ResultKind.Text; //Note: this is to set the default value of the property.
 
-            CSharpXamlForHtml5.DomManagement.SetHtmlRepresentation(this,
-                "<input type='file'>");
+            Html = "<input type='file'>";
 
             this.Loaded += ControlForDisplayingAFileOpenDialog_Loaded;
         }
