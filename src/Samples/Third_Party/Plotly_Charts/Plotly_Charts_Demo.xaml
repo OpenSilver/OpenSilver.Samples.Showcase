@@ -23,7 +23,7 @@
                     <plotly:ChartControl x:Name="ChartControl5" Width="320" Height="320" Background="White"/>
                     <plotly:ChartControl x:Name="ChartControl6" Width="320" Height="320" Background="White"/>
                     <TextBlock Text="The Plotly Charts control can be found at:" Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left" Margin="0,4,0,0"/>
-                    <HyperlinkButton Foreground="#FFFF7989" Margin="0,10,0,20" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" NavigateUri="https://github.com/cshtml5/CSHTML5.Extensions.Plotly">
+                    <HyperlinkButton Foreground="#FFFF7989" Margin="0,10,0,20" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" NavigateUri="https://github.com/cshtml5/CSHTML5.Extensions.Plotly" TargetName="_blank">
                         <TextBlock Cursor="Hand" TextWrapping="Wrap" Text="https://github.com/cshtml5/CSHTML5.Extensions.Plotly"/>
                     </HyperlinkButton>
                 </StackPanel>

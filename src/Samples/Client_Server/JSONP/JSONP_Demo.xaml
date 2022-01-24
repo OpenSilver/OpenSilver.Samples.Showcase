@@ -13,7 +13,7 @@
             <ContentControl Content="JSONP" Foreground="#FFBF6CEE" Background="#FFB390CA" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Orientation="Vertical" Grid.Row="1" Margin="0,0,0,10">
                 <TextBlock Text="You can use JSONP to circumvent cross-domain policies. More information and sample code can be found at:" Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left"/>
-                <HyperlinkButton Foreground="#FFBF6CEE" Margin="0,10,0,0" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" NavigateUri="http://cshtml5.com/documentation/jsonp.aspx">
+                <HyperlinkButton Foreground="#FFBF6CEE" Margin="0,10,0,0" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" NavigateUri="http://cshtml5.com/documentation/jsonp.aspx" TargetName="_blank">
                     <TextBlock Cursor="Hand" TextWrapping="Wrap">
                          <Run Text="http://cshtml5.com/documentation"/><LineBreak/><Run Text="/jsonp.aspx"/>
                     </TextBlock>
