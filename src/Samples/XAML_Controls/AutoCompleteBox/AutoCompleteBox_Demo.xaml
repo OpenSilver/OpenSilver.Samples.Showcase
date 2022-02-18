@@ -14,7 +14,7 @@
             <ContentControl Content="AutoCompleteBox" Foreground="#FFFF81E3" Background="#FFCB9DC1" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1">
                 <TextBlock Text="Enter text:" Foreground="#FF808080" FontSize="14" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <AutoCompleteBox x:Name="autoCompleteBox" />
+                <sdk:AutoCompleteBox x:Name="autoCompleteBox" />
             </StackPanel>
             <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FFFF81E3" Style="{StaticResource ButtonViewSource_Style}"/>
         </Grid>

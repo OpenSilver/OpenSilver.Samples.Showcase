@@ -37,7 +37,6 @@ namespace CSHTML5.Samples.Showcase
             NonModalChildWindow.Visibility = Visibility.Collapsed;
 #endif
             ScrollBarDemo.Visibility = Visibility.Collapsed;
-            AutoCompleteBoxDemo.Visibility = Visibility.Collapsed;
             ThumbDemo.Visibility = Visibility.Collapsed;
             FrameDemo.Visibility = Visibility.Collapsed; // The Showcase already uses a Frame to change pages anyway
         }

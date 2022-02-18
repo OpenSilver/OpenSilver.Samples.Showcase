@@ -28,10 +28,7 @@ namespace CSHTML5.Samples.Showcase
 
             HashSet<string> words = new HashSet<string>(source.Split(' ').Where(word => word.Length >= 3));
 
-            foreach (string word in words)
-			{
-                autoCompleteBox.Items.Add(word);
-			}
+            autoCompleteBox.ItemsSource = words;
         }
 
         private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
