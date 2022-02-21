@@ -1,0 +1,61 @@
+﻿<UserControl
+    x:Class="CSHTML5.Samples.Showcase.PropertyChangedTrigger_Demo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+    xmlns:local="using:CSHTML5.Samples.Showcase">
+    <ContentControl Style="{StaticResource Card_Style}" Width="245">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl Content="PropertyChangedTrigger" Foreground="#ff70db70" Background="#FFB2BD69" Style="{StaticResource HeaderControl_Style}"/>
+            <StackPanel Grid.Row="1">
+                <TextBlock Text="The sample below uses a TextBlock inside a Border. The PropertyChangedTrigger is configured to change the background color of the Border based on the text value in the TextBlock." Foreground="#FF808080" Margin="0,0,0,10" TextWrapping="Wrap" Width="220" FontSize="12" HorizontalAlignment="Left"/>
+                <TextBlock Text="Click on the button to toggle the TextBlock text." Foreground="#FF808080" Margin="0,0,0,10" TextWrapping="Wrap" Width="220" FontSize="12" HorizontalAlignment="Left"/>
+                <Button HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click">
+                    <Grid VerticalAlignment="Center" Height="24" Width="180">
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Toggle Border Text" />
+                    </Grid>
+                </Button>
+                <Border x:Name="border" Height="30" Width="186" Background="Yellow" BorderBrush="Gray" BorderThickness="1" Margin="0,3,0,0">
+                    <i:Interaction.Triggers>
+                        <ei:PropertyChangedTrigger Binding="{Binding ElementName=borderText, Path=Text}">
+                            <i:Interaction.Behaviors>
+                                <ei:ConditionBehavior>
+                                    <ei:ConditionalExpression>
+                                        <ei:ComparisonCondition Operator="Equal" LeftOperand="{Binding ElementName=borderText, Path=Text}" RightOperand="Orange"/>
+                                    </ei:ConditionalExpression>
+                                </ei:ConditionBehavior>
+                            </i:Interaction.Behaviors>
+                            <ei:ChangePropertyAction PropertyName="Background">
+                                <ei:ChangePropertyAction.Value>
+                                    <SolidColorBrush Color="Orange"></SolidColorBrush>
+                                </ei:ChangePropertyAction.Value>
+                            </ei:ChangePropertyAction>
+                        </ei:PropertyChangedTrigger>
+                        <ei:PropertyChangedTrigger Binding="{Binding ElementName=borderText, Path=Text}">
+                            <i:Interaction.Behaviors>
+                                <ei:ConditionBehavior>
+                                    <ei:ConditionalExpression>
+                                        <ei:ComparisonCondition Operator="Equal" LeftOperand="{Binding ElementName=borderText, Path=Text}" RightOperand="Yellow"/>
+                                    </ei:ConditionalExpression>
+                                </ei:ConditionBehavior>
+                            </i:Interaction.Behaviors>
+                            <ei:ChangePropertyAction PropertyName="Background">
+                                <ei:ChangePropertyAction.Value>
+                                    <SolidColorBrush Color="Yellow"></SolidColorBrush>
+                                </ei:ChangePropertyAction.Value>
+                            </ei:ChangePropertyAction>
+                        </ei:PropertyChangedTrigger>
+                    </i:Interaction.Triggers>
+                    <TextBlock x:Name="borderText" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Yellow"/>
+                </Border>
+            </StackPanel>
+            <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#ff70db70" Style="{StaticResource ButtonViewSource_Style}"/>
+        </Grid>
+    </ContentControl>
+</UserControl>
