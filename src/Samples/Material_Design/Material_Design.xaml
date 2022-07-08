@@ -17,7 +17,7 @@
             <!--DataGrid-->
             <TextBlock Text="DataGrid:" FontSize="16" Margin="0,40,10,10"/>
             <ContentControl Style="{StaticResource MaterialDesign_Card_Style}" Padding="20">
-                <DataGrid x:Name="DataGrid" Style="{StaticResource MaterialDesign_DataGrid_Style}">
+                <DataGrid x:Name="DataGrid">
                     <DataGrid.Columns>
                         <DataGridTemplateColumn Header="NAME" Width="3*">
                             <DataGridTemplateColumn.CellTemplate>
@@ -43,7 +43,7 @@
                         </DataGridTemplateColumn>
                         <DataGridTextColumn Binding="{Binding Subscription}" Header="SUBSCRIPTION" Width="2*"/>
                         <DataGridTextColumn Binding="{Binding Location}" Header="LOCATION" Width="2*"/>
-                        <DataGridTemplateColumn Binding="{Binding}" Header="" IsReadOnly="True">
+                        <DataGridTemplateColumn Header="" IsReadOnly="True">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <Button Style="{StaticResource MaterialDesign_Button_Style_NoDropShadow}" Content="..." Background="Transparent" Click="ButtonDisplayContextMenu_Click" VerticalContentAlignment="Center">

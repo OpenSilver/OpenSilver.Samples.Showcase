@@ -13,7 +13,7 @@
             <ContentControl Content="DataGrid" Foreground="#FFE45EE2" Background="#FFE45EE2" Style="{StaticResource HeaderControl_Style}"/>
 
             <!--DataGrid-->
-            <DataGrid x:Name="DataGrid1" PageSize="4" Grid.Row="1" AutoGenerateColumns="False" SelectedItemBackground="#FF67D030">
+            <DataGrid x:Name="DataGrid1" Grid.Row="1" AutoGenerateColumns="False">
                 <DataGrid.Columns>
                     <DataGridTemplateColumn Header="NAME" Width="3*">
                         <DataGridTemplateColumn.CellTemplate>
@@ -23,7 +23,7 @@
                                         <ColumnDefinition Width="Auto"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
-                                    <Image Source="{Binding ImagePath }" Width="25" Height="25"/>
+                                    <Image Source="{Binding ImagePath}" Width="25" Height="25"/>
                                     <TextBlock Text="{Binding Name}" Grid.Column="1" VerticalAlignment="Center" Foreground="Blue" Margin="3,0,0,0"/>
                                 </Grid>
                             </DataTemplate>
