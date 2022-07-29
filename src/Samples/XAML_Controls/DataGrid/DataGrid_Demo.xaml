@@ -13,7 +13,7 @@
             <ContentControl Content="DataGrid" Foreground="#FFE45EE2" Background="#FFE45EE2" Style="{StaticResource HeaderControl_Style}"/>
 
             <!--DataGrid-->
-            <DataGrid x:Name="DataGrid1" Grid.Row="1" AutoGenerateColumns="False">
+            <DataGrid x:Name="DataGrid1" Grid.Row="1" AutoGenerateColumns="False" IsAutoHeightOnCustomLayout="True">
                 <DataGrid.Columns>
                     <DataGridTemplateColumn Header="NAME" Width="3*">
                         <DataGridTemplateColumn.CellTemplate>
