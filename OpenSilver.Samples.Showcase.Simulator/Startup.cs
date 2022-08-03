@@ -8,7 +8,7 @@ namespace OpenSilver.Samples.Showcase.Simulator
         [STAThread]
         static int Main(string[] args)
         {
-            return SimulatorLauncher.Start(typeof(CSHTML5.Samples.Showcase.App));
+            return SimulatorLauncher.Start(typeof(OpenSilver.Samples.Showcase.App));
         }
     }
 }

@@ -49,10 +49,10 @@ namespace CSHTML5.Extensions.Plotly
             if (!JSLibraryWasLoaded)
             {
                 // Load the "typedarray.js" polyfill for IE compatibility:
-                await Interop.LoadJavaScriptFile("ms-appx:///CSHTML5.Samples.Showcase/Samples/Third_Party/Plotly_Charts/ChartControl/typedarray.js");
+                await Interop.LoadJavaScriptFile("ms-appx:///OpenSilver.Samples.Showcase/Samples/Third_Party/Plotly_Charts/ChartControl/typedarray.js");
 
                 // Load the "plotly.js" library:
-                await Interop.LoadJavaScriptFile("ms-appx:///CSHTML5.Samples.Showcase/Samples/Third_Party/Plotly_Charts/ChartControl/plotly.min.js");
+                await Interop.LoadJavaScriptFile("ms-appx:///OpenSilver.Samples.Showcase/Samples/Third_Party/Plotly_Charts/ChartControl/plotly.min.js");
 
                 // Remember that the libraries have been loaded in order to not load them again:
                 JSLibraryWasLoaded = true;

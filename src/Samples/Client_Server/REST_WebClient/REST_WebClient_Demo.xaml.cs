@@ -1,5 +1,5 @@
 ﻿#if !OPENSILVER
-using CSHTML5.Samples.Showcase.ServiceReference1;
+using OpenSilver.Samples.Showcase.ServiceReference1;
 #else
 using DotNetForHtml5.Showcase.SampleRestWebService.Models;
 #endif
@@ -25,7 +25,7 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
 #endif
 
-namespace CSHTML5.Samples.Showcase
+namespace OpenSilver.Samples.Showcase
 {
     public partial class REST_WebClient_Demo : UserControl
     {
@@ -203,17 +203,17 @@ namespace CSHTML5.Samples.Showcase
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "REST_WebClient_Demo.xaml",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/Client_Server/REST_WebClient/REST_WebClient_Demo.xaml"
+                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/Client_Server/REST_WebClient/REST_WebClient_Demo.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "REST_WebClient_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/Client_Server/REST_WebClient/REST_WebClient_Demo.xaml.cs"
+                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/Client_Server/REST_WebClient/REST_WebClient_Demo.xaml.cs"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "REST_ToDoItem.cs",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/Client_Server/REST_WebClient/REST_ToDoItem.cs"
+                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/Client_Server/REST_WebClient/REST_ToDoItem.cs"
                 }
             });
         }

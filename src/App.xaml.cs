@@ -12,7 +12,7 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
 #endif
 
-namespace CSHTML5.Samples.Showcase
+namespace OpenSilver.Samples.Showcase
 {
     public sealed partial class App : Application
     {

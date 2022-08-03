@@ -11,7 +11,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 #endif
 
-namespace CSHTML5.Samples.Showcase
+namespace OpenSilver.Samples.Showcase
 {
     /// <summary>
     /// This class organizes its children in such a way that it takes the smallest space possible.

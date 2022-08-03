@@ -16,7 +16,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 #endif
 
-namespace CSHTML5.Samples.Showcase
+namespace OpenSilver.Samples.Showcase
 {
     public partial class HtmlPresenter_Demo : UserControl
     {
@@ -32,12 +32,12 @@ namespace CSHTML5.Samples.Showcase
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "HtmlPresenter_Demo.xaml",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/XAML_Controls/HtmlPresenter/HtmlPresenter_Demo.xaml"
+                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/HtmlPresenter/HtmlPresenter_Demo.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "HtmlPresenter_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/XAML_Controls/HtmlPresenter/HtmlPresenter_Demo.xaml.cs"
+                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/HtmlPresenter/HtmlPresenter_Demo.xaml.cs"
                 }
             });
         }

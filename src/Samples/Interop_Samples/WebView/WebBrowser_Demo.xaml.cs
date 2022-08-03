@@ -16,7 +16,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 #endif
 
-namespace CSHTML5.Samples.Showcase
+namespace OpenSilver.Samples.Showcase
 {
     public partial class WebView_Demo : UserControl
     {
@@ -37,12 +37,12 @@ namespace CSHTML5.Samples.Showcase
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "WebBrowser_Demo.xaml",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Interop_Samples/WebView/WebBrowser_Demo.xaml"
+                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/OpenSilver.Samples.Showcase/Samples/Interop_Samples/WebView/WebBrowser_Demo.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "WebBrowser_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/CSHTML5.Samples.Showcase/Samples/Interop_Samples/WebView/WebBrowser_Demo.xaml.cs"
+                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/OpenSilver.Samples.Showcase/Samples/Interop_Samples/WebView/WebBrowser_Demo.xaml.cs"
                 }
             });
         }

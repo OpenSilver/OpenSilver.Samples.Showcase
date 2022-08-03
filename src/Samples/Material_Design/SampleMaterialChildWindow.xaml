@@ -1,10 +1,10 @@
-﻿<ChildWindow x:Class="CSHTML5.Samples.Showcase.SampleMaterialChildWindow"
+﻿<ChildWindow x:Class="OpenSilver.Samples.Showcase.SampleMaterialChildWindow"
            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
            Width="400"
            Title="The ChildWindow"
            Style="{StaticResource MaterialDesign_ChildWindow_Style}" 
-           xmlns:local="using:CSHTML5.Samples.Showcase">
+           xmlns:local="using:OpenSilver.Samples.Showcase">
     <StackPanel Orientation="Vertical">
         <ContentControl Style="{StaticResource MaterialDesign_CardBody_Style}">
             <StackPanel Orientation="Vertical">

@@ -16,7 +16,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 #endif
 
-namespace CSHTML5.Samples.Showcase
+namespace OpenSilver.Samples.Showcase
 {
     public partial class AttachedProperties_Demo : UserControl
     {
@@ -32,17 +32,17 @@ namespace CSHTML5.Samples.Showcase
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "SampleAttachedProperties.cs",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/XAML_Features/AttachedProperties/SampleAttachedProperties.cs"
+                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Features/AttachedProperties/SampleAttachedProperties.cs"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "AttachedProperties_Demo.xaml",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/XAML_Features/AttachedProperties/AttachedProperties_Demo.xaml"
+                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Features/AttachedProperties/AttachedProperties_Demo.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "AttachedProperties_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/XAML_Features/AttachedProperties/AttachedProperties_Demo.xaml.cs"
+                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Features/AttachedProperties/AttachedProperties_Demo.xaml.cs"
                 }
             });
         }

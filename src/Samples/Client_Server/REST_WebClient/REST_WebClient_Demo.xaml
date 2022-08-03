@@ -1,5 +1,5 @@
 ﻿<UserControl
-    x:Class="CSHTML5.Samples.Showcase.REST_WebClient_Demo"
+    x:Class="OpenSilver.Samples.Showcase.REST_WebClient_Demo"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:CSHTML5.Samples.REST_WebClient">

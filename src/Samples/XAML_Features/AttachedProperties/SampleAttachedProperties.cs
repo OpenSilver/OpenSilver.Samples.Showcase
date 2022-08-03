@@ -9,7 +9,7 @@ using System.Windows;
 using Windows.UI.Xaml;
 #endif
 
-namespace CSHTML5.Samples.Showcase
+namespace OpenSilver.Samples.Showcase
 {
     public static class SampleAttachedProperties
     {

@@ -1,18 +1,18 @@
 ﻿<UserControl
-    x:Class="CSHTML5.Samples.Showcase.Material_Design"
+    x:Class="OpenSilver.Samples.Showcase.Material_Design"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:CSHTML5.Samples.Showcase">
+    xmlns:local="using:OpenSilver.Samples.Showcase">
     <StackPanel Margin="0,0,0,40">
         <TextBlock Text="Material Design" Style="{StaticResource PageHeader_Style}"/>
         <StackPanel Margin="24,0,10,0" EnableProgressiveRendering="True">
             <TextBlock Margin="0,30,0,0" Text="To use the Material Design styles in your application, start by copying to your project the XAML files located in the &quot;MaterialDesign_Styles_Kit&quot; folder of this Showcase application. You can also find them on GitHub at:" FontSize="12" TextWrapping="Wrap" Foreground="Gray"/>
-            <HyperlinkButton FontSize="12" Foreground="Blue" NavigateUri="https://github.com/cshtml5/CSHTML5.Samples.Showcase/tree/master/src/Other/MaterialDesign_Styles_Kit" Cursor="Hand" HorizontalAlignment="Left" TargetName="_blank">
-                <TextBlock Text="https://github.com/cshtml5/CSHTML5.Samples.Showcase/tree/master/src/Other/MaterialDesign_Styles_Kit" TextWrapping="Wrap"/>
+            <HyperlinkButton FontSize="12" Foreground="Blue" NavigateUri="https://github.com/cshtml5/OpenSilver.Samples.Showcase/tree/master/src/Other/MaterialDesign_Styles_Kit" Cursor="Hand" HorizontalAlignment="Left" TargetName="_blank">
+                <TextBlock Text="https://github.com/cshtml5/OpenSilver.Samples.Showcase/tree/master/src/Other/MaterialDesign_Styles_Kit" TextWrapping="Wrap"/>
             </HyperlinkButton>
             <TextBlock Margin="0,10,0,0" Text="Then, import the styles via the &quot;MergedDictionaries&quot; syntax, as shown at:" FontSize="12" TextWrapping="Wrap" Foreground="Gray"/>
-            <HyperlinkButton FontSize="12" Foreground="Blue" NavigateUri="https://github.com/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/App.xaml" TargetName="_blank" Cursor="Hand" HorizontalAlignment="Left">
-                <TextBlock Text="https://github.com/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/App.xaml" TextWrapping="Wrap"/>
+            <HyperlinkButton FontSize="12" Foreground="Blue" NavigateUri="https://github.com/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/App.xaml" TargetName="_blank" Cursor="Hand" HorizontalAlignment="Left">
+                <TextBlock Text="https://github.com/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/App.xaml" TextWrapping="Wrap"/>
             </HyperlinkButton>
             <!--DataGrid-->
             <TextBlock Text="DataGrid:" FontSize="16" Margin="0,40,10,10"/>
