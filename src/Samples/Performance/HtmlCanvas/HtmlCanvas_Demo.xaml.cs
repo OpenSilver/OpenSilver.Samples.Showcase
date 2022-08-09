@@ -41,9 +41,9 @@ namespace OpenSilver.Samples.Showcase
         private void HtmlCanvas_Demo_Loaded(object sender, RoutedEventArgs e)
         {
 #if OPENSILVER
-            if (!CSHTML5.Interop.IsRunningInTheSimulator_WorkAround)
+            if (!OpenSilver.Interop.IsRunningInTheSimulator_WorkAround)
 #else
-            if (!CSHTML5.Interop.IsRunningInTheSimulator)
+            if (!OpenSilver.Interop.IsRunningInTheSimulator)
 #endif
             {
                 // Load the initial sprites:

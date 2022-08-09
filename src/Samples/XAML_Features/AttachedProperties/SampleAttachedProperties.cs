@@ -46,10 +46,10 @@ namespace OpenSilver.Samples.Showcase
                 string value = (newValue != null ? newValue.ToString() : "");
 
                 // Get a reference to the <div> DOM element used to render the UI element:
-                object div = CSHTML5.Interop.GetDiv((FrameworkElement)d);
+                object div = OpenSilver.Interop.GetDiv((FrameworkElement)d);
 
                 // Set the "Aria Label" attribute on the <div> via a JavaScript interop call:
-                CSHTML5.Interop.ExecuteJavaScript("$0.setAttribute('aria-label', $1)", div, value);
+                OpenSilver.Interop.ExecuteJavaScript("$0.setAttribute('aria-label', $1)", div, value);
 
                 //Note: for documentation related to the commands above, please refer to https://opensilver.net/links/how-to-call-javascript.aspx
             }

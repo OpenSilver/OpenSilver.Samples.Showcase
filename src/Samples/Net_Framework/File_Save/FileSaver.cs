@@ -42,7 +42,7 @@ namespace OpenSilver.Extensions.FileSystem
 
             if (await Initialize())
             {
-                CSHTML5.Interop.ExecuteJavaScript(@"
+                OpenSilver.Interop.ExecuteJavaScript(@"
                 var blob = new Blob([$0], { type: ""text/plain;charset=utf-8""});
                 saveAs(blob, $1)
             ", text, filename);
@@ -59,16 +59,16 @@ namespace OpenSilver.Extensions.FileSystem
 
             if (await Initialize())
             {
-                CSHTML5.Interop.ExecuteJavaScript(@"saveAs($0, $1)", javaScriptBlob, filename);
+                OpenSilver.Interop.ExecuteJavaScript(@"saveAs($0, $1)", javaScriptBlob, filename);
             }
         }
 
         static async Task<bool> Initialize()
         {
 #if OPENSILVER
-            if (CSHTML5.Interop.IsRunningInTheSimulator_WorkAround)
+            if (OpenSilver.Interop.IsRunningInTheSimulator_WorkAround)
 #else
-            if (CSHTML5.Interop.IsRunningInTheSimulator)
+            if (OpenSilver.Interop.IsRunningInTheSimulator)
 #endif
             {
                 MessageBox.Show("Saving files is currently not supported in the Simulator. Please run in the browser instead.");
@@ -77,7 +77,7 @@ namespace OpenSilver.Extensions.FileSystem
 
             if (!JSLibraryWasLoaded)
             {
-                await CSHTML5.Interop.LoadJavaScriptFile("https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2014-11-29/FileSaver.min.js");
+                await OpenSilver.Interop.LoadJavaScriptFile("https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2014-11-29/FileSaver.min.js");
                 JSLibraryWasLoaded = true;
             }
             return true;
