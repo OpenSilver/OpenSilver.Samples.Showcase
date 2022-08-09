@@ -116,7 +116,7 @@ namespace OpenSilver.Samples.Showcase
         /// </summary>
         static MasonryPanel()
         {
-            CSHTML5.Interop.ExecuteJavaScript(@"/**
+            OpenSilver.Interop.ExecuteJavaScript(@"/**
  * Vanilla Masonry v1.0.6
  * Dynamic layouts for the flip-side of CSS Floats
  * http://vanilla-masonry.desandro.com

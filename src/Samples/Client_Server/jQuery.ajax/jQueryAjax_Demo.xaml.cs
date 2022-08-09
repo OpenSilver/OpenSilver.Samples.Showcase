@@ -29,7 +29,7 @@ namespace OpenSilver.Samples.Showcase
         {
             try
             {
-                string result = await CSHTML5.Extensions.jQueryAjaxHelper.MakeAjaxCall(
+                string result = await OpenSilver.Extensions.jQueryAjaxHelper.MakeAjaxCall(
                     url: "http://fiddle.jshell.net/echo/html/",
                     data: "some sample text",
                     type: "post");

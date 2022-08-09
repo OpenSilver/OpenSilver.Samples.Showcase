@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 //------------------------------------
 // This extension adds JSON serialization/deserialization
-// support to C#/XAML for HTML5 (www.cshtml5.com)
+// support to C#/XAML for OpenSilver (https://opensilver.net)
 //
 // It is a CSHTML5-compatible version of Newtonsoft JsonConvert,
 // optimized for running in the browser by taking advantage
@@ -20,7 +20,7 @@ using System.Threading.Tasks;
 // This project is licensed under The open-source MIT license:
 // https://opensource.org/licenses/MIT
 //
-// Copyright 2018 Userware / CSHTML5
+// Copyright 2018 Userware / OpenSilver
 //------------------------------------
 
 

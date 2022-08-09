@@ -10,7 +10,7 @@ using Windows.UI.Xaml.Controls;
 #endif
 
 //------------------------------------
-// This is an extension for C#/XAML for HTML5 (www.cshtml5.com)
+// This is an extension for C#/XAML for OpenSilver (https://opensilver.net)
 //
 // It requires v1.0 Beta 7.2 or newer.
 //
@@ -29,10 +29,10 @@ using Windows.UI.Xaml.Controls;
 // This extension is licensed under the open-source MIT license:
 // https://opensource.org/licenses/MIT
 //
-// Copyright 2017 Userware / CSHTML5
+// Copyright 2017 Userware / OpenSilver
 //------------------------------------
 
-namespace CSHTML5.Extensions.FileOpenDialog
+namespace OpenSilver.Extensions.FileOpenDialog
 {
     public class ControlForDisplayingTheFileOpenDialog : HtmlPresenter
     {
@@ -62,7 +62,7 @@ namespace CSHTML5.Extensions.FileOpenDialog
         void ControlForDisplayingAFileOpenDialog_Loaded(object sender, RoutedEventArgs e)
         {
             // Get the reference to the "input" element:
-            var inputElement = CSHTML5.Interop.GetDiv(this);
+            var inputElement = Interop.GetDiv(this);
 
             Action<object> onFileOpened = (result) =>
             {

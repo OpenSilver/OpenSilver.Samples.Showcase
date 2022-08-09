@@ -37,7 +37,7 @@ namespace OpenSilver.Samples.Showcase
             }
         }
 
-        //async void OnFileOpened(object sender, CSHTML5.Extensions.FileOpenDialog.FileOpenedEventArgs e)
+        //async void OnFileOpened(object sender, OpenSilver.Extensions.FileOpenDialog.FileOpenedEventArgs e)
         //{
         //    var javaScriptBlob = e.JavaScriptBlob;
         //    ZipFile zipFile = await ZipFile.Read(javaScriptBlob);

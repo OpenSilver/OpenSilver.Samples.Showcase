@@ -31,7 +31,7 @@ namespace OpenSilver.Samples.Showcase
             // This will call the "Echo" service provided by https://javascript.info/websocket
             //------------------------------------------------
 
-            var webSocket = new CSHTML5.Extensions.WebSockets.WebSocket("wss://javascript.info/article/websocket/demo/hello");
+            var webSocket = new OpenSilver.Extensions.WebSockets.WebSocket("wss://javascript.info/article/websocket/demo/hello");
             webSocket.OnMessage += (s, args) => MessageBox.Show("The server returned the following message: " + args.Data);
             webSocket.OnError += (s, args) => MessageBox.Show("ERROR: " + args.Data);
             webSocket.OnClose += (s, args) => MessageBox.Show("WebSocket Closed");

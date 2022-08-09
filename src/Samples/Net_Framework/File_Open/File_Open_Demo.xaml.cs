@@ -25,7 +25,7 @@ namespace OpenSilver.Samples.Showcase
             this.InitializeComponent();
         }
 
-        async void OnFileOpened(object sender, CSHTML5.Extensions.FileOpenDialog.FileOpenedEventArgs e)
+        async void OnFileOpened(object sender, OpenSilver.Extensions.FileOpenDialog.FileOpenedEventArgs e)
         {
             MessageBox.Show(e.Text);
         }

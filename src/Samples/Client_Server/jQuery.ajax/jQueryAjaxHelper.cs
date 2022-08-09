@@ -2,15 +2,15 @@
 using System.Threading.Tasks;
 
 //------------------------------------
-// This extension adds "jQuery.ajax" support to C#/XAML for HTML5 (www.cshtml5.com)
+// This extension adds "jQuery.ajax" support to C#/XAML for OpenSilver (https://opensilver.net)
 //
 // It is licensed under The open-source MIT license:
 // https://opensource.org/licenses/MIT
 //
-// Copyright 2017 Userware / CSHTML5
+// Copyright 2017 Userware / OpenSilver
 //------------------------------------
 
-namespace CSHTML5.Extensions
+namespace OpenSilver.Extensions
 {
     public static class jQueryAjaxHelper
     {

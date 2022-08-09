@@ -22,7 +22,7 @@ namespace TestNumericTextBox
                 if (this.DomElement != null) //Note: the DOM element is null if the control has not been added to the visual tree yet.
                 {
                     int valueInt;
-                    string valueString = Interop.ExecuteJavaScript("$0.value", this.DomElement).ToString();
+                    string valueString = OpenSilver.Interop.ExecuteJavaScript("$0.value", this.DomElement).ToString();
                     if (Int32.TryParse(valueString, out valueInt))
                     {
                         _value = valueInt;
@@ -35,7 +35,7 @@ namespace TestNumericTextBox
                 _value = value;
 
                 if (this.DomElement != null) //Note: the DOM element is null if the control has not been added to the visual tree yet.
-                    Interop.ExecuteJavaScript("$0.value = $1", this.DomElement, _value);
+                    OpenSilver.Interop.ExecuteJavaScript("$0.value = $1", this.DomElement, _value);
             }
         }
 
@@ -46,7 +46,7 @@ namespace TestNumericTextBox
 #endif
         {
             // Here, the control has been added to the visual tree, so the DOM element exists. We set the initial value:
-            Interop.ExecuteJavaScript("$0.value = $1", this.DomElement, _value);
+            OpenSilver.Interop.ExecuteJavaScript("$0.value = $1", this.DomElement, _value);
         }
     }
 }

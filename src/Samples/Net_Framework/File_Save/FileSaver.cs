@@ -6,7 +6,7 @@ using Windows.UI.Xaml;
 #endif
 
 //------------------------------------
-// This is an extension for C#/XAML for HTML5 (www.cshtml5.com)
+// This is an extension for C#/XAML for OpenSilver (https://opensilver.net)
 //
 // It requires Beta 7.2 or newer.
 //
@@ -23,7 +23,7 @@ using Windows.UI.Xaml;
 // This extension is licensed under the open-source MIT license:
 // https://opensource.org/licenses/MIT
 //
-// Copyright 2016 Userware / CSHTML5
+// Copyright 2016 Userware / OpenSilver
 //------------------------------------
 
 namespace OpenSilver.Extensions.FileSystem
