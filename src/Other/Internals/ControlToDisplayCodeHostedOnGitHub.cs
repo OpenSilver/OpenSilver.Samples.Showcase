@@ -1,5 +1,4 @@
-﻿using CSHTML5;
-using System;
+﻿using System;
 using System.Windows.Browser;
 using CSHTML5.Internal;
 #if SLMIGRATION
