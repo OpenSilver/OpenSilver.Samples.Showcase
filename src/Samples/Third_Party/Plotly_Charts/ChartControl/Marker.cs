@@ -1,5 +1,4 @@
-﻿using CSHTML5;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace OpenSilver.Extensions.Plotly
 {
