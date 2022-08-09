@@ -14,8 +14,8 @@
             <ContentControl Content="HtmlPresenter" Foreground="#FFF78069" Background="#FF8FCBBE" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1">
                 <TextBlock Text="The HtmlPresenter control lets you display HTML and CSS from within your XAML. You can read the documentation at:" Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left"/>
-                <HyperlinkButton Foreground="#FFF78069" Margin="0,10,0,0" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" Cursor="Hand" NavigateUri="http://cshtml5.com/links/how-to-use-the-htmlpresenter.aspx" TargetName="_blank">
-                    <TextBlock Text="http://cshtml5.com/links/how-to-use-the-htmlpresenter.aspx" TextWrapping="Wrap"/>
+                <HyperlinkButton Foreground="#FFF78069" Margin="0,10,0,0" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" Cursor="Hand" NavigateUri="http://opensilver.net/links/how-to-use-the-htmlpresenter.aspx" TargetName="_blank">
+                    <TextBlock Text="http://opensilver.net/links/how-to-use-the-htmlpresenter.aspx" TextWrapping="Wrap"/>
                 </HyperlinkButton>
                 <TextBlock Text="The following example shows how to use the HtmlPresenter to implement a Numeric TextBox using &lt;input type='number'&gt; HTML tag." Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left" Margin="0,10,0,0"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,10,0,0">

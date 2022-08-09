@@ -17,9 +17,9 @@ namespace OpenSilver.Extensions.Plotly
     // as if it was a C# library.
     //
     // Documentation of this concept of "wrapper" can be found at:
-    // http://cshtml5.com/links/how-to-create-extensions.aspx
+    // http://opensilver.net/links/how-to-create-extensions.aspx
     // and
-    // http://cshtml5.com/links/how-to-call-javascript.aspx
+    // http://opensilver.net/links/how-to-call-javascript.aspx
     //
     // WHERE CAN I FIND THE DOCUMENTATION OF THE PLOTLY LIBRARY?
     //

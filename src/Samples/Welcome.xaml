@@ -11,8 +11,8 @@
             <TextBlock Text="Welcome!" Foreground="#FF2299A1" Style="{StaticResource PageHeader_Style}"/>
             <TextBlock x:Name="IntroductionTextBlock" Text="This app was written in standard C# and XAML, and compiled to HTML5 using CSHTML5." FontSize="16" Foreground="#FF333333" TextWrapping="Wrap" Margin="22,10,0,0"/>
             <TextBlock Text="The source code of this app is available at:" FontSize="16" Foreground="#FF333333" TextWrapping="Wrap" Margin="22,10,0,0"/>
-            <HyperlinkButton FontSize="16" Foreground="Blue" Margin="22,10,0,0" NavigateUri="https://github.com/cshtml5/OpenSilver.Samples.Showcase" TargetName="_blank" Cursor="Hand" HorizontalAlignment="Left">
-                <TextBlock Text="https://github.com/cshtml5/OpenSilver.Samples.Showcase" TextWrapping="Wrap"/>
+            <HyperlinkButton FontSize="16" Foreground="Blue" Margin="22,10,0,0" NavigateUri="https://github.com/OpenSilver/OpenSilver.Samples.Showcase" TargetName="_blank" Cursor="Hand" HorizontalAlignment="Left">
+                <TextBlock Text="https://github.com/OpenSilver/OpenSilver.Samples.Showcase" TextWrapping="Wrap"/>
             </HyperlinkButton>
             <TextBlock Text="TIP: Use the menu on the left to navigate from page to page." FontSize="12" Foreground="#FF666666" TextWrapping="Wrap" Margin="22,8,0,0" FontStyle="Italic"/>
         </StackPanel>

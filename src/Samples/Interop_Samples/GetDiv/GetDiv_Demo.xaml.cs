@@ -31,7 +31,7 @@ namespace OpenSilver.Samples.Showcase
 
             Interop.ExecuteJavaScript("$0.style.textDecoration = 'line-through'", div);
             
-            // Note: refer to the documentation at: http://cshtml5.com/links/how-to-call-javascript.aspx
+            // Note: refer to the documentation at: http://opensilver.net/links/how-to-call-javascript.aspx
         }
 
         private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
