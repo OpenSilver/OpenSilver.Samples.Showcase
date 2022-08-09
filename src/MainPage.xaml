@@ -85,7 +85,7 @@ FontFamily="Segoe UI">
             <StackPanel Orientation="Horizontal" Margin="5">
               <Image x:Name="TitleImage" Source="Other/Logo.png" Width="52" Height="60" Stretch="Fill" VerticalAlignment="Center"/>
               <TextBlock x:Name="TitleTextBlock" FontFamily="Segoe UI" TextAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Center" Foreground="#FF00C6D2" FontSize="18">
-                CSHTML5<LineBreak/>Showcase
+                OpenSilver<LineBreak/>Showcase
               </TextBlock>
             </StackPanel>
             <Button Content="Panels &amp; Controls" Click="ButtonXamlControls_Click" Margin="0,10,0,0" Padding="20,3,3,3"/>
