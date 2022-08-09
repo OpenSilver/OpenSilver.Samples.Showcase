@@ -53,27 +53,27 @@ namespace OpenSilver.Samples.Showcase
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "NonModalChildWindow_Demo.xaml",
-                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/ChildWindow2/NonModalChildWindow_Demo.xaml"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/ChildWindow2/NonModalChildWindow_Demo.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "NonModalChildWindow_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/ChildWindow2/NonModalChildWindow_Demo.xaml.cs"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/ChildWindow2/NonModalChildWindow_Demo.xaml.cs"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "SmallChildWindow.xaml",
-                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/ChildWindow2/SmallChildWindow.xaml"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/ChildWindow2/SmallChildWindow.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "SmallChildWindow.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/ChildWindow2/SmallChildWindow.xaml.cs"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/ChildWindow2/SmallChildWindow.xaml.cs"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "DefaultChildWindowStyle.xaml",
-                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/ChildWindow/Styles/DefaultChildWindowStyle.xaml"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/ChildWindow/Styles/DefaultChildWindowStyle.xaml"
                 }
             });
         }

@@ -32,12 +32,12 @@ namespace OpenSilver.Samples.Showcase
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "TextBlock_Demo.xaml",
-                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/Textblock/TextBlock_Demo.xaml"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/Textblock/TextBlock_Demo.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "TextBlock_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/Textblock/TextBlock_Demo.xaml.cs"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/Textblock/TextBlock_Demo.xaml.cs"
                 }
             });
         }

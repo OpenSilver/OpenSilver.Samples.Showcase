@@ -40,12 +40,12 @@ namespace OpenSilver.Samples.Showcase
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "RadioButton_Demo.xaml",
-                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/RadioButton/RadioButton_Demo.xaml"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/RadioButton/RadioButton_Demo.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "RadioButton_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/RadioButton/RadioButton_Demo.xaml.cs"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/RadioButton/RadioButton_Demo.xaml.cs"
                 }
             });
         }

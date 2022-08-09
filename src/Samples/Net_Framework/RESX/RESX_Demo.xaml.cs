@@ -32,12 +32,12 @@ namespace OpenSilver.Samples.Showcase
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "RESX_Demo.xaml",
-                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/RESX/RESX_Demo.xaml"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/RESX/RESX_Demo.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "RESX_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/RESX/RESX_Demo.xaml.cs"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/RESX/RESX_Demo.xaml.cs"
                 }
             });
         }

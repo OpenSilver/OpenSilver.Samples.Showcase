@@ -51,17 +51,17 @@ namespace OpenSilver.Samples.Showcase
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "WebSockets_Demo.xaml",
-                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/Client_Server/WebSockets/WebSockets_Demo.xaml"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Client_Server/WebSockets/WebSockets_Demo.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "WebSockets_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/Client_Server/WebSockets/WebSockets_Demo.xaml.cs"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Client_Server/WebSockets/WebSockets_Demo.xaml.cs"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "WebSocket.cs",
-                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/Client_Server/WebSockets/WebSocket.cs"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Client_Server/WebSockets/WebSocket.cs"
                 }
             });
         }

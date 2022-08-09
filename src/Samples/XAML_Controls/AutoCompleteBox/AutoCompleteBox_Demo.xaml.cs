@@ -38,17 +38,17 @@ namespace OpenSilver.Samples.Showcase
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "AutoCompleteBox_Demo.xaml",
-                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/AutoCompleteBox/AutoCompleteBox_Demo.xaml"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/AutoCompleteBox/AutoCompleteBox_Demo.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "AutoCompleteBox_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/AutoCompleteBox/AutoCompleteBox_Demo.xaml.cs"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/AutoCompleteBox/AutoCompleteBox_Demo.xaml.cs"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "DefaultAutoCompleteBoxStyle.xaml",
-                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/AutoCompleteBox/Styles/DefaultAutoCompleteBoxStyle.xaml"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/AutoCompleteBox/Styles/DefaultAutoCompleteBoxStyle.xaml"
                 }
             });
         }

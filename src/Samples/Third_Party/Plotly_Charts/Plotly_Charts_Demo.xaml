@@ -3,7 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:OpenSilver.Samples.Showcase"
-    xmlns:plotly="using:CSHTML5.Extensions.Plotly">
+    xmlns:plotly="using:OpenSilver.Extensions.Plotly">
     <StackPanel>
         <TextBlock Text="Plotly.js" Style="{StaticResource PageHeader_Style}"/>
         <ContentControl Style="{StaticResource Card_Style}" Width="340" HorizontalAlignment="Left">
@@ -23,8 +23,8 @@
                     <plotly:ChartControl x:Name="ChartControl5" Width="320" Height="320" Background="White"/>
                     <plotly:ChartControl x:Name="ChartControl6" Width="320" Height="320" Background="White"/>
                     <TextBlock Text="The Plotly Charts control can be found at:" Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left" Margin="0,4,0,0"/>
-                    <HyperlinkButton Foreground="#FFFF7989" Margin="0,10,0,20" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" NavigateUri="https://github.com/cshtml5/CSHTML5.Extensions.Plotly" TargetName="_blank">
-                        <TextBlock Cursor="Hand" TextWrapping="Wrap" Text="https://github.com/cshtml5/CSHTML5.Extensions.Plotly"/>
+                    <HyperlinkButton Foreground="#FFFF7989" Margin="0,10,0,20" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" NavigateUri="https://github.com/cshtml5/OpenSilver.Extensions.Plotly" TargetName="_blank">
+                        <TextBlock Cursor="Hand" TextWrapping="Wrap" Text="https://github.com/cshtml5/OpenSilver.Extensions.Plotly"/>
                     </HyperlinkButton>
                 </StackPanel>
                 <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FFFF7989" Style="{StaticResource ButtonViewSource_Style}"/>

@@ -94,12 +94,12 @@ namespace OpenSilver.Samples.Showcase
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "IsolatedStorageSettings_Demo.xaml",
-                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/IsolatedStorageSettings/IsolatedStorageSettings _Demo.xaml"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/IsolatedStorageSettings/IsolatedStorageSettings _Demo.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "IsolatedStorageSettings_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/IsolatedStorageSettings/IsolatedStorageSettings _Demo.xaml.cs"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/IsolatedStorageSettings/IsolatedStorageSettings _Demo.xaml.cs"
                 }
             });
         }

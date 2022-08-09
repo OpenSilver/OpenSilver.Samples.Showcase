@@ -26,7 +26,7 @@ using Windows.UI.Xaml;
 // Copyright 2016 Userware / CSHTML5
 //------------------------------------
 
-namespace CSHTML5.Extensions.FileSystem
+namespace OpenSilver.Extensions.FileSystem
 {
     class FileSaver
     {

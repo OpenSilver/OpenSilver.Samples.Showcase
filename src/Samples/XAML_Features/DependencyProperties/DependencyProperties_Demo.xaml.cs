@@ -64,12 +64,12 @@ namespace OpenSilver.Samples.Showcase
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "DependencyProperties_Demo.xaml",
-                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Features/DependencyProperties/DependencyProperties_Demo.xaml"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Features/DependencyProperties/DependencyProperties_Demo.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "DependencyProperties_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Features/DependencyProperties/DependencyProperties_Demo.xaml.cs"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Features/DependencyProperties/DependencyProperties_Demo.xaml.cs"
                 }
             });
         }

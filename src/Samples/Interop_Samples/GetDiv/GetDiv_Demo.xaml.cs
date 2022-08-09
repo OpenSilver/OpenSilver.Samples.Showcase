@@ -41,12 +41,12 @@ namespace OpenSilver.Samples.Showcase
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "GetDiv_Demo.xaml",
-                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/Interop_Samples/GetDiv/GetDiv_Demo.xaml"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Interop_Samples/GetDiv/GetDiv_Demo.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "GetDiv_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/Interop_Samples/GetDiv/GetDiv_Demo.xaml.cs"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Interop_Samples/GetDiv/GetDiv_Demo.xaml.cs"
                 }
             });
         }

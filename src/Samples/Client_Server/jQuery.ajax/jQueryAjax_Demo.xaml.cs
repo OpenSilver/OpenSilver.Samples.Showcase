@@ -49,17 +49,17 @@ namespace OpenSilver.Samples.Showcase
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "jQueryAjax_Demo.xaml",
-                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/Client_Server/jQuery.ajax/jQueryAjax_Demo.xaml"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Client_Server/jQuery.ajax/jQueryAjax_Demo.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "jQueryAjax_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/Client_Server/jQuery.ajax/jQueryAjax_Demo.xaml.cs"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Client_Server/jQuery.ajax/jQueryAjax_Demo.xaml.cs"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "jQueryAjaxHelper.cs",
-                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/Client_Server/jQuery.ajax/jQueryAjaxHelper.cs"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Client_Server/jQuery.ajax/jQueryAjaxHelper.cs"
                 }
             });
         }

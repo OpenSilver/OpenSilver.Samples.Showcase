@@ -60,12 +60,12 @@ namespace OpenSilver.Samples.Showcase
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "GetRessourceStream_Demo.xaml",
-                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/GetRessourceStream/GetRessourceStream_Demo.xaml"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/GetRessourceStream/GetRessourceStream_Demo.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "GetRessourceStream_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/GetRessourceStream/GetRessourceStream_Demo.xaml.cs"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/GetRessourceStream/GetRessourceStream_Demo.xaml.cs"
                 }
             });
         }

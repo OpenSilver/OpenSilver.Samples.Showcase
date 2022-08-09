@@ -1,4 +1,4 @@
-﻿using CSHTML5.Extensions.Plotly;
+﻿using OpenSilver.Extensions.Plotly;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -331,12 +331,12 @@ namespace OpenSilver.Samples.Showcase
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "Plotly_Charts_Demo.xaml",
-                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/Third_Party/Plotly_Charts/Plotly_Charts_Demo.xaml"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Third_Party/Plotly_Charts/Plotly_Charts_Demo.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "Plotly_Charts_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/Third_Party/Plotly_Charts/Plotly_Charts_Demo.xaml.cs"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Third_Party/Plotly_Charts/Plotly_Charts_Demo.xaml.cs"
                 }
             });
         }

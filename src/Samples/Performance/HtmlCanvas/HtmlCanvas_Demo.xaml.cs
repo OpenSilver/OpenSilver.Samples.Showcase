@@ -182,17 +182,17 @@ namespace OpenSilver.Samples.Showcase
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "HtmlCanvas_Demo.xaml",
-                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/Performance/HtmlCanvas/HtmlCanvas_Demo.xaml"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Performance/HtmlCanvas/HtmlCanvas_Demo.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "HtmlCanvas_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/Performance/HtmlCanvas/HtmlCanvas_Demo.xaml.cs"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Performance/HtmlCanvas/HtmlCanvas_Demo.xaml.cs"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "MainSprite.cs",
-                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/Performance/HtmlCanvas/MainSprite.cs"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Performance/HtmlCanvas/MainSprite.cs"
                 }
             });
         }

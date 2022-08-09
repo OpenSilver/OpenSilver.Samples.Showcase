@@ -11,7 +11,7 @@ using Windows.UI;
 using Windows.UI.Xaml;
 #endif
 
-namespace CSHTML5.Extensions.Plotly
+namespace OpenSilver.Extensions.Plotly
 {
     public class Font
     {

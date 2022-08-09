@@ -37,12 +37,12 @@ namespace OpenSilver.Samples.Showcase
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "HyperlinkButton.xaml",
-                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/HyperlinkButton/HyperlinkButton.xaml"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/HyperlinkButton/HyperlinkButton.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "HyperlinkButton.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/HyperlinkButton/HyperlinkButton.xaml.cs"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/HyperlinkButton/HyperlinkButton.xaml.cs"
                 }
             });
         }

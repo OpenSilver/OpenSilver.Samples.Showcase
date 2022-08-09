@@ -7,7 +7,7 @@ using System.Windows.Controls;
 using Windows.UI.Xaml.Controls;
 #endif
 
-namespace CSHTML5.Extensions.Plotly
+namespace OpenSilver.Extensions.Plotly
 {
     //------------------------------------------------------------------------
     // INTRODUCTION:
