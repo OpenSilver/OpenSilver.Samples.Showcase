@@ -1,0 +1,17 @@
+name: OpenSilver Showcase Build
+
+on:
+  workflow_dispatch:
+    inputs:
+      opensilver-branch:
+        description: 'OpenSilver branch to use'
+        default: 'develop'
+        required: true
+
+jobs:
+  OpenSilverShowcaseBuild:
+    runs-on: windows-latest
+    steps:
+      - name: Echo
+        run: |
+          echo 'Please run in the develop branch'
