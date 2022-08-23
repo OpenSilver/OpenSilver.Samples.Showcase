@@ -30,12 +30,19 @@ jobs:
         run: |
           echo "vdir=${{ env.virtual-directory-release }}" >> $env:GITHUB_ENV
           echo "apath=${{ env.app-path-release }}" >> $env:GITHUB_ENV
-      - uses: microsoft/setup-msbuild@v1.1
+      - name: Setup MSBuild Path
+        uses: microsoft/setup-msbuild@v1.1
       - name: Inject slug/short variables
         uses: rlespinasse/github-slug-action@v3.x
-      - uses: actions/setup-dotnet@v1
+      - name: Install .NET 6
+        uses: actions/setup-dotnet@v1
         with:
           dotnet-version: '6.0.202'
+      - name: Install .NET 7
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '7.0.*'
+          include-prerelease: true
       - name: Clone OpenSilver repo
         uses: actions/checkout@v2
         with:
@@ -82,11 +89,14 @@ jobs:
         run: |
           sed -i 's\<OpenSilverVersion>1.0.0</OpenSilverVersion>\<OpenSilverVersion>${{ steps.format-version.outputs.version }}</OpenSilverVersion>\g' OpenSilver.Samples.Showcase.Browser\OpenSilver.Samples.Showcase.Browser.csproj
           sed -i 's\<OpenSilverVersion>1.0.0</OpenSilverVersion>\<OpenSilverVersion>${{ steps.format-version.outputs.version }}</OpenSilverVersion>\g' src\OpenSilver.Samples.Showcase.csproj
+      - name: Add Source
+        run: |
+          nuget sources Add -Name Local -Source "$(Get-Location)\build\output\OpenSilver\"
       - name: Restore OpenSilver
         working-directory: Showcase
         run: |
-          dotnet restore OpenSilver.Samples.Showcase.Browser\OpenSilver.Samples.Showcase.Browser.csproj -s ../build/output/OpenSilver/ /property:Configuration=SL.Release
-          dotnet restore src\OpenSilver.Samples.Showcase.csproj -s ../build/output/OpenSilver/ /property:Configuration=SL.Release
+          dotnet restore OpenSilver.Samples.Showcase.Browser\OpenSilver.Samples.Showcase.Browser.csproj /property:Configuration=SL.Release
+          dotnet restore src\OpenSilver.Samples.Showcase.csproj /property:Configuration=SL.Release
       - name: Build and Deploy
         working-directory: Showcase
         run: |
