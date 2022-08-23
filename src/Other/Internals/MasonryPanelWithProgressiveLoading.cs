@@ -10,7 +10,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 #endif
 
-namespace CSHTML5.Samples.Showcase
+namespace OpenSilver.Samples.Showcase
 {
     /// <summary>
     /// This class organizes its children in such a way that it takes the smallest space possible.
@@ -30,9 +30,9 @@ namespace CSHTML5.Samples.Showcase
 
         void UpdateMasonryPanel()
         {
-            object thisDiv = CSHTML5.Interop.GetDiv(this);
+            object thisDiv = OpenSilver.Interop.GetDiv(this);
 
-            _wall = CSHTML5.Interop.ExecuteJavaScript(@"
+            _wall = OpenSilver.Interop.ExecuteJavaScript(@"
 (function() { //we make this a function so that we can get a return type
     var thisInnerDiv = $0.children[0]; //this is the div that contains all the children.
 
@@ -58,7 +58,7 @@ namespace CSHTML5.Samples.Showcase
         /// </summary>
         static MasonryPanelWithProgressiveLoading()
         {
-            CSHTML5.Interop.ExecuteJavaScript(@"/**
+            OpenSilver.Interop.ExecuteJavaScript(@"/**
  * Vanilla Masonry v1.0.6
  * Dynamic layouts for the flip-side of CSS Floats
  * http://vanilla-masonry.desandro.com

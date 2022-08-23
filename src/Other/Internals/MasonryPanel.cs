@@ -11,7 +11,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 #endif
 
-namespace CSHTML5.Samples.Showcase
+namespace OpenSilver.Samples.Showcase
 {
     /// <summary>
     /// This class organizes its children in such a way that it takes the smallest space possible.
@@ -39,8 +39,8 @@ namespace CSHTML5.Samples.Showcase
         void MasonryPanel_Loaded(object sender, Windows.UI.Xaml.RoutedEventArgs e)
 #endif
         {
-            //            object thisDiv = CSHTML5.Interop.GetDiv(this);
-            //            _wall = CSHTML5.Interop.ExecuteJavaScript(@"(function() { //we make this a function so that we can get a return type
+            //            object thisDiv = OpenSilver.Interop.GetDiv(this);
+            //            _wall = OpenSilver.Interop.ExecuteJavaScript(@"(function() { //we make this a function so that we can get a return type
             //var thisInnerDiv = $0.children[0]; //this is the div that will contain all the children.
             ////make sure the children all have an auto height to make sure masonry works properly:
             //for (var i = 0; i < thisInnerDiv.children.length; i++) { 
@@ -59,11 +59,11 @@ namespace CSHTML5.Samples.Showcase
         {
             if (this.IsLoaded)
             {
-                object thisDiv = CSHTML5.Interop.GetDiv(this);
+                object thisDiv = OpenSilver.Interop.GetDiv(this);
 
                 //            //if (_wall == null)
                 //            //{
-                //                _wall = CSHTML5.Interop.ExecuteJavaScript(@"
+                //                _wall = OpenSilver.Interop.ExecuteJavaScript(@"
                 //(function() { //we make this a function so that we can get a return type
                 //    var thisInnerDiv = $0.children[0]; //this is the div that contains all the children.
                 //    var wall = new Masonry(thisInnerDiv, {
@@ -74,7 +74,7 @@ namespace CSHTML5.Samples.Showcase
                 //", thisDiv);
                 //            //}
 
-                //            CSHTML5.Interop.ExecuteJavaScript(@"
+                //            OpenSilver.Interop.ExecuteJavaScript(@"
                 //(function() {
                 //    var thisInnerDiv = $0.children[0]; //this is the div that contains all the children.
 
@@ -89,7 +89,7 @@ namespace CSHTML5.Samples.Showcase
 
 
 
-                _wall = CSHTML5.Interop.ExecuteJavaScript(@"
+                _wall = OpenSilver.Interop.ExecuteJavaScript(@"
 (function() { //we make this a function so that we can get a return type
     var thisInnerDiv = $0.children[0]; //this is the div that contains all the children.
 
@@ -116,7 +116,7 @@ namespace CSHTML5.Samples.Showcase
         /// </summary>
         static MasonryPanel()
         {
-            CSHTML5.Interop.ExecuteJavaScript(@"/**
+            OpenSilver.Interop.ExecuteJavaScript(@"/**
  * Vanilla Masonry v1.0.6
  * Dynamic layouts for the flip-side of CSS Floats
  * http://vanilla-masonry.desandro.com

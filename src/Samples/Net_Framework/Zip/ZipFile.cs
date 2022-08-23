@@ -3,7 +3,7 @@ using System;
 using System.Threading.Tasks;
 
 //------------------------------------
-// This is an extension for C#/XAML for HTML5 (www.cshtml5.com)
+// This is an extension for C#/XAML for OpenSilver (https://opensilver.net)
 //
 // It requires v1.0 Beta 7.2 or newer.
 //
@@ -24,7 +24,7 @@ using System.Threading.Tasks;
 // This extension is licensed under the open-source MIT license:
 // https://opensource.org/licenses/MIT
 //
-// Copyright 2017 Userware / CSHTML5
+// Copyright 2017 Userware / OpenSilver
 //------------------------------------
 
 namespace Ionic.Zip
@@ -51,9 +51,9 @@ namespace Ionic.Zip
             Initialize();
 
 #if OPENSILVER
-            if (!CSHTML5.Interop.IsRunningInTheSimulator_WorkAround)
+            if (!OpenSilver.Interop.IsRunningInTheSimulator_WorkAround)
 #else
-            if (!CSHTML5.Interop.IsRunningInTheSimulator)
+            if (!OpenSilver.Interop.IsRunningInTheSimulator)
 #endif
             {
                 Interop.ExecuteJavaScript(@"$0.file($1, $2)", _referenceToJavaScriptZipInstance, fileName, fileContent);

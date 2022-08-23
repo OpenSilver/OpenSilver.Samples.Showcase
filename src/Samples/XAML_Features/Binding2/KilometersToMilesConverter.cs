@@ -11,7 +11,7 @@ using System.Globalization;
 using Windows.UI.Xaml.Data;
 #endif
 
-namespace CSHTML5.Samples.Showcase
+namespace OpenSilver.Samples.Showcase
 {
     public class KilometersToMilesConverter : IValueConverter
     {

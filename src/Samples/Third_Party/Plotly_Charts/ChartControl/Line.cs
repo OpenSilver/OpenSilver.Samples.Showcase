@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CSHTML5;
-
-namespace CSHTML5.Extensions.Plotly
+﻿namespace OpenSilver.Extensions.Plotly
 {
     public class Line
     {

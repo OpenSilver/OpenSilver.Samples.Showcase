@@ -28,7 +28,7 @@ namespace OpenSilver.Samples.Showcase.Browser
         {
             Application.RunApplication(() =>
             {
-                var app = new CSHTML5.Samples.Showcase.App();
+                var app = new OpenSilver.Samples.Showcase.App();
             });
         }
     }

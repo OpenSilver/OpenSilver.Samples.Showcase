@@ -1,5 +1,4 @@
-﻿using CSHTML5;
-using System;
+﻿using System;
 using System.Threading.Tasks;
 #if SLMIGRATION
 using System.Windows.Controls;
@@ -7,7 +6,7 @@ using System.Windows.Controls;
 using Windows.UI.Xaml.Controls;
 #endif
 
-namespace CSHTML5.Extensions.Plotly
+namespace OpenSilver.Extensions.Plotly
 {
     //------------------------------------------------------------------------
     // INTRODUCTION:
@@ -17,9 +16,9 @@ namespace CSHTML5.Extensions.Plotly
     // as if it was a C# library.
     //
     // Documentation of this concept of "wrapper" can be found at:
-    // http://cshtml5.com/links/how-to-create-extensions.aspx
+    // http://opensilver.net/links/how-to-create-extensions.aspx
     // and
-    // http://cshtml5.com/links/how-to-call-javascript.aspx
+    // http://opensilver.net/links/how-to-call-javascript.aspx
     //
     // WHERE CAN I FIND THE DOCUMENTATION OF THE PLOTLY LIBRARY?
     //
@@ -49,10 +48,10 @@ namespace CSHTML5.Extensions.Plotly
             if (!JSLibraryWasLoaded)
             {
                 // Load the "typedarray.js" polyfill for IE compatibility:
-                await Interop.LoadJavaScriptFile("ms-appx:///CSHTML5.Samples.Showcase/Samples/Third_Party/Plotly_Charts/ChartControl/typedarray.js");
+                await Interop.LoadJavaScriptFile("ms-appx:///OpenSilver.Samples.Showcase/Samples/Third_Party/Plotly_Charts/ChartControl/typedarray.js");
 
                 // Load the "plotly.js" library:
-                await Interop.LoadJavaScriptFile("ms-appx:///CSHTML5.Samples.Showcase/Samples/Third_Party/Plotly_Charts/ChartControl/plotly.min.js");
+                await Interop.LoadJavaScriptFile("ms-appx:///OpenSilver.Samples.Showcase/Samples/Third_Party/Plotly_Charts/ChartControl/plotly.min.js");
 
                 // Remember that the libraries have been loaded in order to not load them again:
                 JSLibraryWasLoaded = true;

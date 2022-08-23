@@ -1,7 +1,6 @@
-﻿using CSHTML5;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace CSHTML5.Extensions.Plotly
+namespace OpenSilver.Extensions.Plotly
 {
     public class Trace
     {

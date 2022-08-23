@@ -17,7 +17,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 #endif
 
-namespace CSHTML5.Samples.Showcase
+namespace OpenSilver.Samples.Showcase
 {
     public partial class HtmlCanvas_Demo : UserControl
     {
@@ -41,9 +41,9 @@ namespace CSHTML5.Samples.Showcase
         private void HtmlCanvas_Demo_Loaded(object sender, RoutedEventArgs e)
         {
 #if OPENSILVER
-            if (!CSHTML5.Interop.IsRunningInTheSimulator_WorkAround)
+            if (!OpenSilver.Interop.IsRunningInTheSimulator_WorkAround)
 #else
-            if (!CSHTML5.Interop.IsRunningInTheSimulator)
+            if (!OpenSilver.Interop.IsRunningInTheSimulator)
 #endif
             {
                 // Load the initial sprites:
@@ -182,17 +182,17 @@ namespace CSHTML5.Samples.Showcase
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "HtmlCanvas_Demo.xaml",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/Performance/HtmlCanvas/HtmlCanvas_Demo.xaml"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Performance/HtmlCanvas/HtmlCanvas_Demo.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "HtmlCanvas_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/Performance/HtmlCanvas/HtmlCanvas_Demo.xaml.cs"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Performance/HtmlCanvas/HtmlCanvas_Demo.xaml.cs"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "MainSprite.cs",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/Performance/HtmlCanvas/MainSprite.cs"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Performance/HtmlCanvas/MainSprite.cs"
                 }
             });
         }

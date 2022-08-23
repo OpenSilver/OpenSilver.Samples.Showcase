@@ -10,7 +10,7 @@ using Windows.UI.Xaml.Controls;
 #endif
 
 //------------------------------------
-// This is an extension for C#/XAML for HTML5 (www.cshtml5.com)
+// This is an extension for C#/XAML for OpenSilver (https://opensilver.net)
 //
 // It requires v1.0 Beta 7.2 or newer.
 //
@@ -29,10 +29,10 @@ using Windows.UI.Xaml.Controls;
 // This extension is licensed under the open-source MIT license:
 // https://opensource.org/licenses/MIT
 //
-// Copyright 2017 Userware / CSHTML5
+// Copyright 2017 Userware / OpenSilver
 //------------------------------------
 
-namespace CSHTML5.Extensions.FileOpenDialog
+namespace OpenSilver.Extensions.FileOpenDialog
 {
     public class ControlForDisplayingTheFileOpenDialog : HtmlPresenter
     {
@@ -62,7 +62,7 @@ namespace CSHTML5.Extensions.FileOpenDialog
         void ControlForDisplayingAFileOpenDialog_Loaded(object sender, RoutedEventArgs e)
         {
             // Get the reference to the "input" element:
-            var inputElement = CSHTML5.Interop.GetDiv(this);
+            var inputElement = Interop.GetDiv(this);
 
             Action<object> onFileOpened = (result) =>
             {
@@ -75,7 +75,7 @@ namespace CSHTML5.Extensions.FileOpenDialog
             SetFilter(this.Filter);
 
             // Listen to the "change" property of the "input" element, and call the callback:
-            CSHTML5.Interop.ExecuteJavaScript(@"
+            OpenSilver.Interop.ExecuteJavaScript(@"
                 $0.addEventListener(""change"", function(e) {
                     if(!e) {
                       e = window.event;
@@ -111,7 +111,7 @@ namespace CSHTML5.Extensions.FileOpenDialog
         void SetFilter(string filter)
         {
             // Get the reference to the "input" element:
-            var inputElement = CSHTML5.Interop.GetDiv(this);
+            var inputElement = OpenSilver.Interop.GetDiv(this);
 
             // Process the filter list to convert the syntax from XAML to HTML5:
             // Example of syntax in Silverlight: Image Files (*.bmp, *.jpg)|*.bmp;*.jpg|All Files (*.*)|*.*
@@ -134,11 +134,11 @@ namespace CSHTML5.Extensions.FileOpenDialog
             // Apply the filter:
             if (!string.IsNullOrWhiteSpace(filtersInHtml5))
             {
-                CSHTML5.Interop.ExecuteJavaScript(@"$0.accept = $1", inputElement, filtersInHtml5);
+                OpenSilver.Interop.ExecuteJavaScript(@"$0.accept = $1", inputElement, filtersInHtml5);
             }
             else
             {
-                CSHTML5.Interop.ExecuteJavaScript(@"$0.accept = """"", inputElement);
+                OpenSilver.Interop.ExecuteJavaScript(@"$0.accept = """"", inputElement);
             }
         }
 

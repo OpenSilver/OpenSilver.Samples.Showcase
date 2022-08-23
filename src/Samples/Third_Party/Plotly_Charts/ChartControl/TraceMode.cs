@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CSHTML5.Extensions.Plotly
+namespace OpenSilver.Extensions.Plotly
 {
     [Flags]
     public enum TraceMode : short

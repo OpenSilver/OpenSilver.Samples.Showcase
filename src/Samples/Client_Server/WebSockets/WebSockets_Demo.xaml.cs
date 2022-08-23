@@ -16,7 +16,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 #endif
 
-namespace CSHTML5.Samples.Showcase
+namespace OpenSilver.Samples.Showcase
 {
     public partial class WebSockets_Demo : UserControl
     {
@@ -31,7 +31,7 @@ namespace CSHTML5.Samples.Showcase
             // This will call the "Echo" service provided by https://javascript.info/websocket
             //------------------------------------------------
 
-            var webSocket = new CSHTML5.Extensions.WebSockets.WebSocket("wss://javascript.info/article/websocket/demo/hello");
+            var webSocket = new OpenSilver.Extensions.WebSockets.WebSocket("wss://javascript.info/article/websocket/demo/hello");
             webSocket.OnMessage += (s, args) => MessageBox.Show("The server returned the following message: " + args.Data);
             webSocket.OnError += (s, args) => MessageBox.Show("ERROR: " + args.Data);
             webSocket.OnClose += (s, args) => MessageBox.Show("WebSocket Closed");
@@ -51,17 +51,17 @@ namespace CSHTML5.Samples.Showcase
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "WebSockets_Demo.xaml",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/Client_Server/WebSockets/WebSockets_Demo.xaml"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Client_Server/WebSockets/WebSockets_Demo.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "WebSockets_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/Client_Server/WebSockets/WebSockets_Demo.xaml.cs"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Client_Server/WebSockets/WebSockets_Demo.xaml.cs"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "WebSocket.cs",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/Client_Server/WebSockets/WebSocket.cs"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Client_Server/WebSockets/WebSocket.cs"
                 }
             });
         }

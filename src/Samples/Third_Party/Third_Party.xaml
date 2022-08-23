@@ -1,8 +1,8 @@
 ﻿<UserControl
-    x:Class="CSHTML5.Samples.Showcase.Third_Party"
+    x:Class="OpenSilver.Samples.Showcase.Third_Party"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:CSHTML5.Samples.Showcase">
+    xmlns:local="using:OpenSilver.Samples.Showcase">
   <Border Background="White" CornerRadius="6" Width="500" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="22,22,0,0">
     <Border.Effect>
       <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="10" Opacity="0.1" />

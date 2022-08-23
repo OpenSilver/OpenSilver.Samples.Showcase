@@ -1,5 +1,4 @@
-﻿using CSHTML5;
-using System;
+﻿using System;
 using System.Windows.Browser;
 using CSHTML5.Internal;
 #if SLMIGRATION
@@ -10,7 +9,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 #endif
 
-namespace CSHTML5.Samples.Showcase
+namespace OpenSilver.Samples.Showcase
 {
     public class ControlToDisplayCodeHostedOnGitHub : ContentControl
     {

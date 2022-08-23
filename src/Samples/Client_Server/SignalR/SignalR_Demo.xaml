@@ -1,8 +1,8 @@
 ﻿<UserControl
-    x:Class="CSHTML5.Samples.Showcase.SignalR_Demo"
+    x:Class="OpenSilver.Samples.Showcase.SignalR_Demo"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:CSHTML5.Samples.Showcase">
+    xmlns:local="using:OpenSilver.Samples.Showcase">
     <ContentControl Style="{StaticResource Card_Style}" Width="245">
         <Grid>
             <Grid.RowDefinitions>
@@ -13,9 +13,9 @@
             <ContentControl Content="SignalR" Foreground="#FF3ED49A" Background="#FF92BEAC" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1" Orientation="Vertical" Margin="0,0,0,10">
                 <TextBlock Text="The SignalR extension and demo can be found at:" Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left"/>
-                <HyperlinkButton Foreground="#FF3ED49A" Margin="0,10,0,0" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" NavigateUri="https://github.com/cshtml5/CSHTML5.Extensions.SignalR/" TargetName="_blank">
+                <HyperlinkButton Foreground="#FF3ED49A" Margin="0,10,0,0" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" NavigateUri="https://github.com/OpenSilver/OpenSilver.Extensions.SignalR/" TargetName="_blank">
                     <TextBlock Cursor="Hand" TextWrapping="Wrap">
-                         <Run Text="https://github.com/cshtml5"/><LineBreak/><Run Text="/CSHTML5.Extensions.SignalR/"/>
+                         <Run Text="https://github.com/OpenSilver"/><LineBreak/><Run Text="/OpenSilver.Extensions.SignalR/"/>
                     </TextBlock>
                 </HyperlinkButton>
             </StackPanel>

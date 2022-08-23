@@ -1,15 +1,15 @@
 ﻿using System;
 
 //------------------------------------
-// This extension adds WebSocket support to C#/XAML for HTML5 (www.cshtml5.com)
+// This extension adds WebSocket support to C#/XAML for OpenSilver (https://opensilver.net)
 //
 // This project is licensed under The open-source MIT license:
 // https://opensource.org/licenses/MIT
 //
-// Copyright 2018 Userware / CSHTML5
+// Copyright 2018 Userware / OpenSilver
 //------------------------------------
 
-namespace CSHTML5.Extensions.WebSockets
+namespace OpenSilver.Extensions.WebSockets
 {
     public class WebSocket
     {

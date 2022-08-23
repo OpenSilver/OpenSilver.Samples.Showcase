@@ -1,5 +1,5 @@
 ﻿
-namespace CSHTML5.Extensions.Plotly
+namespace OpenSilver.Extensions.Plotly
 {
     public enum TraceType
     {

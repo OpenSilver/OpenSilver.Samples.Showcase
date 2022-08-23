@@ -16,7 +16,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 #endif
 
-namespace CSHTML5.Samples.Showcase
+namespace OpenSilver.Samples.Showcase
 {
     public partial class GetDiv_Demo : UserControl
     {
@@ -31,7 +31,7 @@ namespace CSHTML5.Samples.Showcase
 
             Interop.ExecuteJavaScript("$0.style.textDecoration = 'line-through'", div);
             
-            // Note: refer to the documentation at: http://cshtml5.com/links/how-to-call-javascript.aspx
+            // Note: refer to the documentation at: http://opensilver.net/links/how-to-call-javascript.aspx
         }
 
         private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
@@ -41,12 +41,12 @@ namespace CSHTML5.Samples.Showcase
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "GetDiv_Demo.xaml",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/Interop_Samples/GetDiv/GetDiv_Demo.xaml"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Interop_Samples/GetDiv/GetDiv_Demo.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "GetDiv_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/Interop_Samples/GetDiv/GetDiv_Demo.xaml.cs"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Interop_Samples/GetDiv/GetDiv_Demo.xaml.cs"
                 }
             });
         }

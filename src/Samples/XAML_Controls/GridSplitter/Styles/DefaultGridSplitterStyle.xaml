@@ -10,7 +10,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="GridSplitter">
                     <Grid Background="{TemplateBinding Background}">
-                        <Thumb x:Name="PART_Thumb" Opacity="0" /> <!-- Note: the thumb control is here only in CSHTML5 -->
+                        <Thumb x:Name="PART_Thumb" Opacity="0" /> <!-- Note: the thumb control is here only in OpenSilver -->
                         <ContentPresenter Content="{TemplateBinding Element}" IsHitTestVisible="False" />
                     </Grid>
                 </ControlTemplate>

@@ -1,7 +1,4 @@
-﻿using CSHTML5;
-using System;
-
-namespace CSHTML5.Extensions.Plotly
+﻿namespace OpenSilver.Extensions.Plotly
 {
     public enum BarMode
     {
