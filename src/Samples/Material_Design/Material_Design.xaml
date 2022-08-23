@@ -17,7 +17,7 @@
             <!--DataGrid-->
             <TextBlock Text="DataGrid:" FontSize="16" Margin="0,40,10,10"/>
             <ContentControl Style="{StaticResource MaterialDesign_Card_Style}" Padding="20">
-                <DataGrid x:Name="DataGrid" IsAutoHeightOnCustomLayout="True" IsAutoWidthOnCustomLayout="True" Width="1250">
+                <DataGrid x:Name="DataGrid" IsAutoHeightOnCustomLayout="True" AutoGenerateColumns="False" Width="800">
                     <DataGrid.Columns>
                         <DataGridTemplateColumn Header="NAME" Width="3*">
                             <DataGridTemplateColumn.CellTemplate>
