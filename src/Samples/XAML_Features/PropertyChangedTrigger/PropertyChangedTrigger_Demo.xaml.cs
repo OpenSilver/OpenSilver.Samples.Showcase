@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 
-namespace CSHTML5.Samples.Showcase
+namespace OpenSilver.Samples.Showcase
 {
     public partial class PropertyChangedTrigger_Demo : UserControl
     {
