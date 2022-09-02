@@ -18,12 +18,12 @@ namespace OpenSilver.Samples.Showcase
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "PropertyChangedTrigger_Demo.xaml",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/XAML_Features/PropertyChangedTrigger/PropertyChangedTrigger_Demo.xaml"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Features/PropertyChangedTrigger/PropertyChangedTrigger_Demo.xaml"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "PropertyChangedTrigger_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/cshtml5/CSHTML5.Samples.Showcase/blob/master/src/Samples/XAML_Features/PropertyChangedTrigger/PropertyChangedTrigger_Demo.xaml.cs"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Features/PropertyChangedTrigger/PropertyChangedTrigger_Demo.xaml.cs"
                 }
             });
         }
