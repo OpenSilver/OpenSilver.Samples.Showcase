@@ -31,7 +31,7 @@
 		<PackageReference Include="System.ServiceModel.Security" Version="4.7.0" />
 		<PackageReference Include="OpenSilver" Version="$(OpenSilverVersion)" Condition="'$(Configuration)' == 'SL' Or '$(Configuration)' == 'SL.Release'" />
 		<PackageReference Include="OpenSilver.UwpCompatible" Version="$(OpenSilverVersion)" Condition="'$(Configuration)' == 'UWP'" />
-		<PackageReference Include="System.ComponentModel.Annotations" Version="4.7.0" />
+		<PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
 	</ItemGroup>
 
 	<!-- Configuration-dependent files -->
