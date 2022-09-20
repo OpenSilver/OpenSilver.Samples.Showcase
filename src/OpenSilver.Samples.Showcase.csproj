@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<Configurations>SL;SL.Release;UWP</Configurations>
 		<TargetFramework>netstandard2.0</TargetFramework>
-		<OpenSilverVersion>1.0.0</OpenSilverVersion>
+		<OpenSilverVersion>1.1.0</OpenSilverVersion>
 		<EnableDefaultItems>false</EnableDefaultItems>
     <IsOpenSilver>true</IsOpenSilver>
 	</PropertyGroup>
