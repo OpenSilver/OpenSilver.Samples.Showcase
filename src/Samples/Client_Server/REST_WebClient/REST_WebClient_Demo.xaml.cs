@@ -56,7 +56,7 @@ namespace OpenSilver.Samples.Showcase
                 var httpClient = new System.Net.Http.HttpClient();
                 httpClient.DefaultRequestHeaders.Accept.Clear();
                 httpClient.DefaultRequestHeaders.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/xml"));
-                var responseMessage = await httpClient.GetAsync("http://cshtml5-rest-sample.azurewebsites.net/api/Todo?OwnerId=" + _ownerId.ToString());
+                var responseMessage = await httpClient.GetAsync("https://cshtml5-rest-sample.azurewebsites.net/api/Todo?OwnerId=" + _ownerId.ToString());
 
                 string response = await responseMessage.Content.ReadAsStringAsync();
 
@@ -110,7 +110,7 @@ namespace OpenSilver.Samples.Showcase
 #else
                 //Note: it seems WebClient is not supported (despite existing) in Blazor so we use HttpClient instead
                 var httpClient = new System.Net.Http.HttpClient();
-                await httpClient.PostAsync("http://cshtml5-rest-sample.azurewebsites.net/api/Todo/",
+                await httpClient.PostAsync("https://cshtml5-rest-sample.azurewebsites.net/api/Todo/",
                     new System.Net.Http.StringContent(data,Encoding.UTF8, "application/json"));
 #endif
                 await RefreshRestToDos();
@@ -139,7 +139,7 @@ namespace OpenSilver.Samples.Showcase
 #else
                 //Note: it seems WebClient is not supported (despite existing) in Blazor so we use HttpClient instead
                 var httpClient = new System.Net.Http.HttpClient();
-                await httpClient.DeleteAsync("http://cshtml5-rest-sample.azurewebsites.net/api/Todo/" + todo.Id.ToString() + "?OwnerId=" + _ownerId.ToString());
+                await httpClient.DeleteAsync("https://cshtml5-rest-sample.azurewebsites.net/api/Todo/" + todo.Id.ToString() + "?OwnerId=" + _ownerId.ToString());
 #endif
 
                 await RefreshRestToDos();
@@ -181,7 +181,7 @@ namespace OpenSilver.Samples.Showcase
 #else
                 //Note: it seems WebClient is not supported (despite existing) in Blazor so we use HttpClient instead
                 var httpClient = new System.Net.Http.HttpClient();
-                await httpClient.PutAsync("http://cshtml5-rest-sample.azurewebsites.net/api/Todo/" + todo.Id.ToString(), 
+                await httpClient.PutAsync("https://cshtml5-rest-sample.azurewebsites.net/api/Todo/" + todo.Id.ToString(), 
                     new System.Net.Http.StringContent(data, Encoding.UTF8, "application/json"));
 #endif
 

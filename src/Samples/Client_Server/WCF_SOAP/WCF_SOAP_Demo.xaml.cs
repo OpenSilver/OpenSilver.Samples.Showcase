@@ -30,6 +30,9 @@ namespace OpenSilver.Samples.Showcase
     {
         Guid _ownerId;
 
+        private static readonly Service1Client.EndpointConfiguration EndpointConfig =
+            Service1Client.EndpointConfiguration.BasicHttpsBinding_IService1;
+
         public WCF_SOAP_Demo()
         {
             this.InitializeComponent();
@@ -43,7 +46,7 @@ namespace OpenSilver.Samples.Showcase
             try
             {
 #if OPENSILVER
-                Service1Client soapClient = new Service1Client(Service1Client.EndpointConfiguration.BasicHttpBinding_IService1);
+                Service1Client soapClient = new Service1Client(EndpointConfig);
                 var result = await soapClient.GetToDosAsync(_ownerId.ToString());
 #else
                 Service1Client soapClient = new Service1Client();
@@ -90,7 +93,7 @@ namespace OpenSilver.Samples.Showcase
 #endif
                 };
 #if OPENSILVER
-                Service1Client soapClient = new Service1Client(Service1Client.EndpointConfiguration.BasicHttpBinding_IService1);
+                Service1Client soapClient = new Service1Client(EndpointConfig);
 #else
                 Service1Client soapClient = new Service1Client();
 #endif
@@ -120,7 +123,7 @@ namespace OpenSilver.Samples.Showcase
                 ToDoItem todo = (ToDoItem)((Button)sender).DataContext;
 
 #if OPENSILVER
-                Service1Client soapClient = new Service1Client(Service1Client.EndpointConfiguration.BasicHttpBinding_IService1);
+                Service1Client soapClient = new Service1Client(EndpointConfig);
 #else
                 Service1Client soapClient = new Service1Client();
 #endif
