@@ -34,7 +34,6 @@ namespace OpenSilver.Samples.Showcase
         {
             this.InitializeComponent();
 
-            this.Loaded += HtmlCanvas_Demo_Loaded;
             this.Unloaded += HtmlCanvas_Demo_Unloaded;
         }
 
