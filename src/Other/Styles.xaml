@@ -88,7 +88,7 @@
                             <VisualStateGroup Name="CommonStates">
                                 <VisualState Name="Normal">
                                 </VisualState>
-                                <VisualState Name="PointerOver">
+                                <VisualState Name="MouseOver">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="InnerBorder">
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="#11000000"/>
@@ -189,7 +189,7 @@
                             <VisualStateGroup Name="CommonStates">
                                 <VisualState Name="Normal">
                                 </VisualState>
-                                <VisualState Name="PointerOver">
+                                <VisualState Name="MouseOver">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="InnerBorder">
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="#11000000"/>

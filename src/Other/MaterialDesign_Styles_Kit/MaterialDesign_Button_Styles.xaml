@@ -32,7 +32,7 @@
                             <VisualStateGroup Name="CommonStates">
                                 <VisualState Name="Normal">
                                 </VisualState>
-                                <VisualState Name="PointerOver">
+                                <VisualState Name="MouseOver">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="InnerBorder">
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Path=Background, Converter={StaticResource AccentColorConverter}, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
@@ -111,7 +111,7 @@
                             <VisualStateGroup Name="CommonStates">
                                 <VisualState Name="Normal">
                                 </VisualState>
-                                <VisualState Name="PointerOver">
+                                <VisualState Name="MouseOver">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Path=Foreground, Converter={StaticResource AccentColorConverter}, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
@@ -190,7 +190,7 @@
                             <VisualStateGroup Name="CommonStates">
                                 <VisualState Name="Normal">
                                 </VisualState>
-                                <VisualState Name="PointerOver">
+                                <VisualState Name="MouseOver">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Path=Foreground, Converter={StaticResource AccentColorConverter}, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
@@ -258,7 +258,7 @@
                             <VisualStateGroup Name="CommonStates">
                                 <VisualState Name="Normal">
                                 </VisualState>
-                                <VisualState Name="PointerOver">
+                                <VisualState Name="MouseOver">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Path=Foreground, Converter={StaticResource AccentColorConverter}, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
@@ -331,7 +331,7 @@
                             <VisualStateGroup Name="CommonStates">
                                 <VisualState Name="Normal">
                                 </VisualState>
-                                <VisualState Name="PointerOver">
+                                <VisualState Name="MouseOver">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Path=Foreground, Converter={StaticResource AccentColorConverter}, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
@@ -409,7 +409,7 @@
                             <VisualStateGroup Name="CommonStates">
                                 <VisualState Name="Normal">
                                 </VisualState>
-                                <VisualState Name="PointerOver">
+                                <VisualState Name="MouseOver">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="InnerBorder">
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Path=Background, Converter={StaticResource AccentColorConverter}, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
@@ -492,7 +492,7 @@
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
-                                <VisualState Name="PointerOver">
+                                <VisualState Name="MouseOver">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="InnerBorder">
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="{TemplateBinding Background}"/>
@@ -624,7 +624,7 @@
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
-                                <VisualState Name="PointerOver">
+                                <VisualState Name="MouseOver">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="{TemplateBinding Foreground}"/>

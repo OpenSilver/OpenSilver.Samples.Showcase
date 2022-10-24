@@ -39,7 +39,7 @@ FontFamily="Segoe UI">
                             <DoubleAnimation Duration="0" Storyboard.TargetName="Background" Storyboard.TargetProperty="Opacity" To="0"/>
                           </Storyboard>
                         </VisualState>
-                        <VisualState Name="PointerOver">
+                        <VisualState Name="MouseOver">
                           <Storyboard>
                             <DoubleAnimation Duration="0" Storyboard.TargetName="Background" Storyboard.TargetProperty="Opacity" To="0.1"/>
                           </Storyboard>

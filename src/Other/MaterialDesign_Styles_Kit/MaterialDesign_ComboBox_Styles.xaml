@@ -21,7 +21,7 @@
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup Name="CommonStates">
                                 <VisualState Name="Normal"/>
-                                <VisualState Name="PointerOver"/>
+                                <VisualState Name="MouseOver"/>
                                 <VisualState Name="Pressed"/>
                                 <VisualState Name="Disabled"/>
                                 <VisualState Name="Checked"/>
@@ -70,7 +70,7 @@
                             <VisualStateGroup Name="CommonStates">
                                 <VisualState Name="Normal">
                                 </VisualState>
-                                <VisualState Name="PointerOver">
+                                <VisualState Name="MouseOver">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Path=Foreground, ElementName=ControlForInheritingForeground, Converter={StaticResource AccentColorConverter}}"/>
@@ -144,7 +144,7 @@
                             <VisualStateGroup Name="CommonStates">
                                 <VisualState Name="Normal">
                                 </VisualState>
-                                <VisualState Name="PointerOver">
+                                <VisualState Name="MouseOver">
                                     <Storyboard>
                                         <!--<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="OuterContentControl">
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="{TemplateBinding Foreground, Converter={StaticResource AccentColorConverter}}"/>
