@@ -7,6 +7,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Media;
 #else
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
