@@ -14,13 +14,13 @@
             <Grid Grid.Row="1" Width="150" Height="100" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" MinWidth="50" />
-                    <ColumnDefinition Width="5" />
+                    <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Border Background="#FFEE6CED" CornerRadius="2" Margin="2">
                     <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Foreground="White">Left side</TextBlock>
                 </Border>
-                <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch"/>
+                <GridSplitter Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
                 <Border Grid.Column="2" Background="#FF9A6CEE" CornerRadius="2" Margin="2">
                     <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Foreground="White">Right side</TextBlock>
                 </Border>

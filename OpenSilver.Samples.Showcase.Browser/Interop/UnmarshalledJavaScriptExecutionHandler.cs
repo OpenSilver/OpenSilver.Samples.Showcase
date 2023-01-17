@@ -4,7 +4,7 @@ using Microsoft.JSInterop.WebAssembly;
 
 namespace OpenSilver.Samples.Showcase.Browser.Interop
 {
-    public class UnmarshalledJavaScriptExecutionHandler : IJavaScriptExecutionHandler
+    public class UnmarshalledJavaScriptExecutionHandler : IJavaScriptExecutionHandler2
     {
         private const string MethodName = "callJSUnmarshalled";
         private readonly WebAssemblyJSRuntime _runtime;
@@ -22,6 +22,11 @@ namespace OpenSilver.Samples.Showcase.Browser.Interop
         public object ExecuteJavaScriptWithResult(string javaScriptToExecute)
         {
             return _runtime.InvokeUnmarshalled<string, object>(MethodName, javaScriptToExecute);
+        }
+
+        public TResult InvokeUnmarshalled<T0, TResult>(string identifier, T0 arg0)
+        {
+            return _runtime.InvokeUnmarshalled<T0, TResult>(identifier, arg0);
         }
     }
 }

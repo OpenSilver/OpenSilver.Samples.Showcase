@@ -1,10 +1,10 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<Configurations>SL;SL.Release;UWP</Configurations>
 		<TargetFramework>netstandard2.0</TargetFramework>
-		<OpenSilverVersion>1.1.0</OpenSilverVersion>
-		<EnableDefaultItems>false</EnableDefaultItems>
+    <OpenSilverVersion>1.2.0-preview-2023-01-17-113548-386ed8bc</OpenSilverVersion>
+    <EnableDefaultItems>false</EnableDefaultItems>
     <IsOpenSilver>true</IsOpenSilver>
 	</PropertyGroup>
 
@@ -25,14 +25,14 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="System.ServiceModel.Duplex" Version="4.7.0" />
-		<PackageReference Include="System.ServiceModel.Http" Version="4.7.0" />
-		<PackageReference Include="System.ServiceModel.NetTcp" Version="4.7.0" />
-		<PackageReference Include="System.ServiceModel.Security" Version="4.7.0" />
+		<PackageReference Include="System.ServiceModel.Duplex" Version="4.10.0" />
+		<PackageReference Include="System.ServiceModel.Http" Version="4.10.0" />
+		<PackageReference Include="System.ServiceModel.NetTcp" Version="4.10.0" />
+		<PackageReference Include="System.ServiceModel.Security" Version="4.10.0" />
 		<PackageReference Include="OpenSilver" Version="$(OpenSilverVersion)" Condition="'$(Configuration)' == 'SL' Or '$(Configuration)' == 'SL.Release'" />
 		<PackageReference Include="OpenSilver.UwpCompatible" Version="$(OpenSilverVersion)" Condition="'$(Configuration)' == 'UWP'" />
 		<PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
-	</ItemGroup>
+  </ItemGroup>
 
 	<!-- Configuration-dependent files -->
 	<Choose>
