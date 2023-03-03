@@ -530,6 +530,7 @@
 		<Compile Include="Other\Internals\MasonryPanelWithProgressiveLoading.cs" />
 		<Compile Include="Other\Internals\ViewSourceButtonHelper.cs" />
 		<Compile Include="Other\Internals\ViewSourceButtonInfo.cs" />
+		<Compile Include="Other\Internals\WrapPanelWithProgressiveLoading.cs" />
 		<Compile Include="Other\MaterialDesign_Styles_Kit\AccentColorConverter.cs" />
 		<Compile Include="Other\MaterialDesign_Styles_Kit\DoubleToCornerRadiusConverter.cs" />
 		<Compile Include="Other\MaterialDesign_Styles_Kit\TextToPlaceholderTextVisibilityConverter.cs" />
