@@ -20,7 +20,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="OpenSilver.Simulator" Version="1.2.0-preview-2023-01-17-113548-386ed8bc" />
+		<PackageReference Include="OpenSilver.Simulator" Version="1.2.0-preview-2023-03-03-135832-70075cdd" />
 	</ItemGroup>
 
 	<ItemGroup>
