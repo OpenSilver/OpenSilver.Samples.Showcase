@@ -6,15 +6,9 @@ env:
   virtual-directory-release: '/opensilvershowcase/release/'
   app-path-release: 'opensilverdemos/opensilvershowcase/release/'
   deploy-service-url: 'opensilverdemos.scm.azurewebsites.net:443'
-  next-release-version: '1.1.0'
 
 on:
   workflow_dispatch:
-    inputs:
-      opensilver-branch:
-        description: 'OpenSilver branch to use'
-        default: 'develop'
-        required: true
 
 jobs:
   OpenSilverShowcaseBuild:
@@ -34,70 +28,22 @@ jobs:
         uses: microsoft/setup-msbuild@v1.1
       - name: Inject slug/short variables
         uses: rlespinasse/github-slug-action@v3.x
-      - name: Install .NET 6
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: '6.0.202'
       - name: Install .NET 7
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: '7.0.*'
-          include-prerelease: true
-      - name: Clone OpenSilver repo
-        uses: actions/checkout@v2
-        with:
-          repository: OpenSilver/OpenSilver
-          ref: ${{ github.event.inputs.opensilver-branch }}
       - name: Clone OpenSilver Showcase
         uses: actions/checkout@v2
         with:
           ref: ${{ github.ref }}
           path: './Showcase'
-      - name: Restore Showcase packages
-        run: |
-          nuget restore Showcase/OpenSilver.Samples.Showcase.sln
-      - name: Restore OpenSilver Packages
-        run: |
-          ./restore-packages-opensilver.bat
-          nuget restore src/OpenSilver.sln -v quiet
-      - name: Build Compiler
-        run: msbuild src/Compiler/Compiler/Compiler.OpenSilver.csproj -p:Configuration=SL -clp:ErrorsOnly -restore
-      - name: Copy Compiler Assemblies
-        run: cp src/Compiler/Compiler/bin/OpenSilver/SL/net461/OpenSilver.Compiler*dll src/packages/OpenSilver.1.0.0/tools/;
-      - name: Build OpenSilver
-        working-directory: build
-        run: msbuild slnf/OpenSilver.slnf -p:Configuration=SL -clp:ErrorsOnly -restore
-      - name: Format Version Suffix
-        id: format-suffix
-        run: echo "::set-output name=suffix::$(date +'%Y-%m-%d-%H%M%S')"
-      - name: Format Package Version
-        id: format-version
-        run: echo "::set-output name=version::${{ env.next-release-version }}-preview-${{ steps.format-suffix.outputs.suffix }}"
-      - name: Pack OpenSilver
-        working-directory: build
-        run: |
-          mkdir temp; echo "OpenSilver ${{ steps.format-version.outputs.version }}" > temp/Version.txt
-          nuget.exe pack nuspec\OpenSilver.nuspec -OutputDirectory "output/OpenSilver" -Properties "PackageId=OpenSilver;PackageVersion=${{ steps.format-version.outputs.version }};Configuration=SL;Target=OpenSilver;RepositoryUrl=https://github.com/${{ env.GITHUB_REPOSITORY_OWNER_PART }}/${{ env.GITHUB_REPOSITORY_NAME_PART }}"
       - name: Replace text
         run: |
           sed -i 's\<base href=\"/\" />\<base href=\"${{ env.vdir }}\" />\g' Showcase/OpenSilver.Samples.Showcase.Browser/wwwroot/index.html
       - name: Replace UserName
         run: |
           sed -i 's\USERNAME\${{ secrets.OPENSILVERDEMOSUSERNAME }}\g' Showcase/OpenSilver.Samples.Showcase.Browser/Properties/PublishProfiles/publish.pubxml
-      - name: Replace OpenSilver Version
-        working-directory: Showcase
-        run: |
-          sed -i 's\<OpenSilverVersion>1.0.0</OpenSilverVersion>\<OpenSilverVersion>${{ steps.format-version.outputs.version }}</OpenSilverVersion>\g' OpenSilver.Samples.Showcase.Browser\OpenSilver.Samples.Showcase.Browser.csproj
-          sed -i 's\<OpenSilverVersion>1.0.0</OpenSilverVersion>\<OpenSilverVersion>${{ steps.format-version.outputs.version }}</OpenSilverVersion>\g' src\OpenSilver.Samples.Showcase.csproj
-      - name: Add Source
-        run: |
-          nuget sources Add -Name Local -Source "$(Get-Location)\build\output\OpenSilver\"
-      - name: Restore OpenSilver
-        working-directory: Showcase
-        run: |
-          dotnet restore OpenSilver.Samples.Showcase.Browser\OpenSilver.Samples.Showcase.Browser.csproj /property:Configuration=SL.Release
-          dotnet restore src\OpenSilver.Samples.Showcase.csproj /property:Configuration=SL.Release
       - name: Build and Deploy
         working-directory: Showcase
         run: |
-          msbuild OpenSilver.Samples.Showcase.Browser\OpenSilver.Samples.Showcase.Browser.csproj /p:DeployOnBuild=true /p:PublishProfile="OpenSilver.Samples.Showcase.Browser\Properties\PublishProfiles\publish.pubxml" /p:Password=${{ secrets.OPENSILVERDEMOSUSERPWD }} /p:DeployIisAppPath=${{ env.apath }} /p:MSDeployServiceURL=${{ env.deploy-service-url }} /p:Configuration=SL.Release
+          msbuild OpenSilver.Samples.Showcase.Browser\OpenSilver.Samples.Showcase.Browser.csproj /p:DeployOnBuild=true /p:PublishProfile="OpenSilver.Samples.Showcase.Browser\Properties\PublishProfiles\publish.pubxml" /p:Password=${{ secrets.OPENSILVERDEMOSUSERPWD }} /p:DeployIisAppPath=${{ env.apath }} /p:MSDeployServiceURL=${{ env.deploy-service-url }} /p:Configuration=SL.Release /restore
