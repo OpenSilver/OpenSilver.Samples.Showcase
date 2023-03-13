@@ -8,6 +8,7 @@
     <OpenSilverVersion>1.2.0-preview-2023-03-13-092122-2df2a81b</OpenSilverVersion>
     <PublishTrimmed>true</PublishTrimmed>
     <!--<RunAOTCompilation>true</RunAOTCompilation>-->
+    <ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)' == 'SL'">
@@ -34,6 +35,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\src\OpenSilver.Samples.Showcase.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js" />
   </ItemGroup>
 
 </Project>
