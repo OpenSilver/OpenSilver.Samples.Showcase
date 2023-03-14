@@ -179,6 +179,9 @@
 		<Page Include="Samples\Interop_Samples\MethodToUpdateDom\MethodToUpdateDom_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
+		<Page Include="Samples\Interop_Samples\PWA\PwaDescription.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</Page>
 		<Page Include="Samples\Material_Design\Material_Design.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
@@ -552,6 +555,7 @@
 		<Compile Include="Samples\Interop_Samples\Interop_Samples.xaml.cs" />
 		<Compile Include="Samples\Interop_Samples\MethodToUpdateDom\AttachedPropertiesWithMethodToUpdateDom.cs" />
 		<Compile Include="Samples\Interop_Samples\MethodToUpdateDom\MethodToUpdateDom_Demo.xaml.cs" />
+		<Compile Include="Samples\Interop_Samples\PWA\PwaDescription.xaml.cs" />
 		<Compile Include="Samples\Material_Design\Material_Design.xaml.cs" />
 		<Compile Include="Samples\Material_Design\SampleMaterialChildWindow.xaml.cs" />
 		<Compile Include="Samples\Net_Framework\AsyncAwait\AsyncAwait_Demo.xaml.cs" />

@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="OpenSilver.Samples.Showcase.PwaDescription"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ContentControl Width="245" Style="{StaticResource Card_Style}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl Background="#FFBEDCA4"
+                            Content="PWA Support"
+                            Foreground="#FFB390CA"
+                            Style="{StaticResource HeaderControl_Style}"/>
+            <StackPanel Grid.Row="1">
+                <TextBlock HorizontalAlignment="Left"
+                           FontSize="12"
+                           Foreground="#FF808080"
+                           Text="An OpenSilver application can be converted into a Progressive Web Application (PWA). This allows you to run your application in its own app window, work offline, automatically update in the background and so on."
+                           TextWrapping="Wrap"/>
+                <TextBlock Margin="0,10,0,0"
+                           HorizontalAlignment="Left"
+                           FontSize="12"
+                           Foreground="#FF808080"
+                           Text="Try it yourself by installing the OpenSilver Showcase app. Just click on the Install button within the URL bar."
+                           TextWrapping="Wrap"/>
+                <HyperlinkButton Margin="0,10,0,0"
+                                 FontSize="12"
+                                 FontWeight="Bold"
+                                 Foreground="#FF69C8FF"
+                                 NavigateUri="https://learn.microsoft.com/en-us/aspnet/core/blazor/progressive-web-app"
+                                 TargetName="_blank">
+                    <TextBlock Text="Learn More"/>
+                </HyperlinkButton>
+            </StackPanel>
+            <Button Grid.Row="2"
+                    Background="#FFA2E567"
+                    Click="ButtonViewSource_Click"
+                    Content="VIEW SOURCE..."
+                    Style="{StaticResource ButtonViewSource_Style}"/>
+        </Grid>
+    </ContentControl>
+</UserControl>
