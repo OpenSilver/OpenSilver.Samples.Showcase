@@ -134,7 +134,7 @@
                                                   FontSize="{TemplateBinding FontSize}"
                                                   FontWeight="{TemplateBinding FontWeight}"
                                                   ContentTemplate="{TemplateBinding ContentTemplate}"
-                                                  Content="{TemplateBinding Content}"
+                                                  Content="{TemplateBinding Header}"
                                                   HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                                   VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                                 <!--The following ContentControl serves to inherit the foreground from the parent ComboBox in the VisualState (cannot use a RelativeSource in a Binding on a Timeline since it is not a element that exists in the Visual tree, and Border does not have the Foreground Property). There is probably a better way to do this.-->
