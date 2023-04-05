@@ -13,17 +13,17 @@
             <Border Grid.Row="1" CornerRadius="5" Background="LightGray" Padding="10" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Border.ContextMenu>
                     <ContextMenu>
-                        <MenuItem Content="Menu Item 1" Click="MenuItem1_Click">
+                        <MenuItem Header="Menu Item 1" Click="MenuItem1_Click">
                             <MenuItem.Icon>
                                 <Image Source="ms-appx:/Other/Logo.png" Width="20" Height="20" Stretch="Fill"/>
                             </MenuItem.Icon>
                         </MenuItem>
-                        <MenuItem Content="Menu Item 2" Click="MenuItem2_Click">
+                        <MenuItem Header="Menu Item 2" Click="MenuItem2_Click">
                             <MenuItem.Icon>
                                 <Image Source="ms-appx:/Other/Logo.png" Width="20" Height="20" Stretch="Fill"/>
                             </MenuItem.Icon>
                         </MenuItem>
-                        <MenuItem Content="Menu Item 3 (longer name)" Click="MenuItem3_Click">
+                        <MenuItem Header="Menu Item 3 (longer name)" Click="MenuItem3_Click">
                             <MenuItem.Icon>
                                 <Image Source="ms-appx:/Other/Logo.png" Width="20" Height="20" Stretch="Fill"/>
                             </MenuItem.Icon>

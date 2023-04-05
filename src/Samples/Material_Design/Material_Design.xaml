@@ -49,8 +49,8 @@
                                     <Button Style="{StaticResource MaterialDesign_Button_Style_NoDropShadow}" Content="..." Background="Transparent" Click="ButtonDisplayContextMenu_Click" VerticalContentAlignment="Center">
                                         <Button.ContextMenu>
                                             <ContextMenu Style="{StaticResource MaterialDesign_ContextMenu_Style}" BorderThickness="0">
-                                                <MenuItem Content="Edit Draft" Style="{StaticResource MaterialDesign_ContextMenuItem_Style}" Click="MenuEditDraft_Click"/>
-                                                <MenuItem Content="Remove Draft" Style="{StaticResource MaterialDesign_ContextMenuItem_Style}" Click="MenuRemoveDraft_Click"/>
+                                                <MenuItem Header="Edit Draft" Style="{StaticResource MaterialDesign_ContextMenuItem_Style}" Click="MenuEditDraft_Click"/>
+                                                <MenuItem Header="Remove Draft" Style="{StaticResource MaterialDesign_ContextMenuItem_Style}" Click="MenuRemoveDraft_Click"/>
                                             </ContextMenu>
                                         </Button.ContextMenu>
                                     </Button>
@@ -426,9 +426,9 @@
                 <Button Style="{StaticResource MaterialDesign_RoundButton_Style}" Content="..." Margin="5" Width="40" Height="40" Click="ButtonDisplayContextMenu_Click">
                     <Button.ContextMenu>
                         <ContextMenu Style="{StaticResource MaterialDesign_ContextMenu_Style}" BorderThickness="0">
-                            <MenuItem Content="Menu Item 1" Style="{StaticResource MaterialDesign_ContextMenuItem_Style}"/>
-                            <MenuItem Content="Menu Item 2" Style="{StaticResource MaterialDesign_ContextMenuItem_Style}"/>
-                            <MenuItem Content="Menu Item 3" Style="{StaticResource MaterialDesign_ContextMenuItem_Style}"/>
+                            <MenuItem Header="Menu Item 1" Style="{StaticResource MaterialDesign_ContextMenuItem_Style}"/>
+                            <MenuItem Header="Menu Item 2" Style="{StaticResource MaterialDesign_ContextMenuItem_Style}"/>
+                            <MenuItem Header="Menu Item 3" Style="{StaticResource MaterialDesign_ContextMenuItem_Style}"/>
                         </ContextMenu>
                     </Button.ContextMenu>
                 </Button>
