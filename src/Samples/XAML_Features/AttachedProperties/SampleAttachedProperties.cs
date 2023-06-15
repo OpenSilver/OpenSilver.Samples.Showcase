@@ -28,7 +28,7 @@ namespace OpenSilver.Samples.Showcase
                 name: "AriaLabel",
                 propertyType: typeof(string),
                 ownerType: typeof(SampleAttachedProperties),
-                typeMetadata: new PropertyMetadata(defaultValue: null)
+                defaultMetadata: new PropertyMetadata(defaultValue: null)
                 {
                     MethodToUpdateDom = AriaLabel_MethodToUpdateDom
                 });
