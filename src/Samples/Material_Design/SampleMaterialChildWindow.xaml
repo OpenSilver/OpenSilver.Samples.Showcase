@@ -9,7 +9,7 @@
         <ContentControl Style="{StaticResource MaterialDesign_CardBody_Style}">
             <StackPanel Orientation="Vertical">
                 <TextBlock Text="Data to Export"/>
-                <ComboBox Style="{StaticResource MaterialDesign_ComboBox_Style}" UseNativeComboBox="False" ItemsSource="{Binding}" Width="150" Height="30" Margin="0,5,5,5"/>
+                <ComboBox Style="{StaticResource MaterialDesign_ComboBox_Style}" ItemsSource="{Binding}" Width="150" Height="30" Margin="0,5,5,5"/>
             </StackPanel>
         </ContentControl>
         <ContentControl Style="{StaticResource MaterialDesign_CardFooter_Style}">

@@ -166,7 +166,7 @@
         </Setter>
     </Style>
 
-    <Style x:Key="MaterialDesign_Button_Style_NoDropShadow" TargetType="Button">
+    <Style x:Key="MaterialDesign_ContentControl_Style_NoDropShadow" TargetType="ContentControl">
         <Setter Property="Background" Value="White"/>
         <Setter Property="Foreground" Value="{StaticResource MaterialDesign_DefaultAccentColor}"/>
         <Setter Property="FontSize" Value="16"/>
@@ -178,7 +178,7 @@
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="Button">
+                <ControlTemplate TargetType="ContentControl">
                     <Border x:Name="OuterBorder"
                                 Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
@@ -232,6 +232,10 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style x:Key="MaterialDesign_Button_Style_NoDropShadow"
+           TargetType="Button"
+           BasedOn="{StaticResource MaterialDesign_ContentControl_Style_NoDropShadow}" />
 
     <!--Button for Hyperlinks-->
     <Style x:Key="MaterialDesign_HyperlinkButton_Style" TargetType="Button">
@@ -306,7 +310,7 @@
     </Style>
 
     <!--Round buttons-->
-    <Style x:Key="MaterialDesign_RoundButton_Style" TargetType="Button">
+    <Style x:Key="MaterialDesign_RoundContentControl_Style" TargetType="ContentControl">
         <Setter Property="Background" Value="White"/>
         <Setter Property="Foreground" Value="{StaticResource MaterialDesign_DefaultAccentColor}"/>
         <Setter Property="FontSize" Value="16"/>
@@ -318,7 +322,7 @@
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="Button">
+                <ControlTemplate TargetType="ContentControl">
                     <Border x:Name="OuterBorder"
                                 Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
@@ -385,6 +389,11 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style x:Key="MaterialDesign_RoundButton_Style"
+           TargetType="Button"
+           BasedOn="{StaticResource MaterialDesign_RoundContentControl_Style}" />
+
     <Style x:Key="MaterialDesign_ColoredRoundButton_Style" TargetType="Button">
         <Setter Property="Background" Value="{StaticResource MaterialDesign_DefaultAccentColor}"/>
         <Setter Property="Foreground" Value="White"/>

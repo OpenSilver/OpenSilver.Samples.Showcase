@@ -5,7 +5,7 @@
     xmlns:local="using:OpenSilver.Samples.Showcase">
     <StackPanel Margin="0,0,0,40">
         <TextBlock Text="Material Design" Style="{StaticResource PageHeader_Style}"/>
-        <StackPanel Margin="24,0,10,0" EnableProgressiveRendering="True">
+        <StackPanel Margin="24,0,10,0" ProgressiveRenderingChunkSize="1">
             <TextBlock Margin="0,30,0,0" Text="To use the Material Design styles in your application, start by copying to your project the XAML files located in the &quot;MaterialDesign_Styles_Kit&quot; folder of this Showcase application. You can also find them on GitHub at:" FontSize="12" TextWrapping="Wrap" Foreground="Gray"/>
             <HyperlinkButton FontSize="12" Foreground="Blue" NavigateUri="https://github.com/OpenSilver/OpenSilver.Samples.Showcase/tree/master/src/Other/MaterialDesign_Styles_Kit" Cursor="Hand" HorizontalAlignment="Left" TargetName="_blank">
                 <TextBlock Text="https://github.com/OpenSilver/OpenSilver.Samples.Showcase/tree/master/src/Other/MaterialDesign_Styles_Kit" TextWrapping="Wrap"/>
@@ -17,7 +17,7 @@
             <!--DataGrid-->
             <TextBlock Text="DataGrid:" FontSize="16" Margin="0,40,10,10"/>
             <ContentControl Style="{StaticResource MaterialDesign_Card_Style}" Padding="20">
-                <DataGrid x:Name="DataGrid" IsAutoHeightOnCustomLayout="True" AutoGenerateColumns="False" Width="800">
+                <DataGrid x:Name="DataGrid" AutoGenerateColumns="False" Width="800">
                     <DataGrid.Columns>
                         <DataGridTemplateColumn Header="NAME" Width="3*">
                             <DataGridTemplateColumn.CellTemplate>
@@ -46,14 +46,14 @@
                         <DataGridTemplateColumn Header="" IsReadOnly="True">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Button Style="{StaticResource MaterialDesign_Button_Style_NoDropShadow}" Content="..." Background="Transparent" Click="ButtonDisplayContextMenu_Click" VerticalContentAlignment="Center">
-                                        <Button.ContextMenu>
-                                            <ContextMenu Style="{StaticResource MaterialDesign_ContextMenu_Style}" BorderThickness="0">
+                                    <ContentControl Style="{StaticResource MaterialDesign_ContentControl_Style_NoDropShadow}" Content="..." Background="Transparent" MouseLeftButtonDown="DisplayContextMenu_Click" VerticalContentAlignment="Center">
+                                        <ContentControl.ContextMenu>
+                                            <ContextMenu Style="{StaticResource MaterialDesign_ContextMenu_Style}" BorderThickness="0" Closed="ContextMenu_Closed">
                                                 <MenuItem Header="Edit Draft" Style="{StaticResource MaterialDesign_ContextMenuItem_Style}" Click="MenuEditDraft_Click"/>
                                                 <MenuItem Header="Remove Draft" Style="{StaticResource MaterialDesign_ContextMenuItem_Style}" Click="MenuRemoveDraft_Click"/>
                                             </ContextMenu>
-                                        </Button.ContextMenu>
-                                    </Button>
+                                        </ContentControl.ContextMenu>
+                                    </ContentControl>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
@@ -89,7 +89,7 @@
                         <ContentControl Style="{StaticResource MaterialDesign_CardBody_Style}">
                             <StackPanel Orientation="Vertical">
                                 <TextBlock Text="Format:"/>
-                                <ComboBox Style="{StaticResource MaterialDesign_ComboBox_Style}" UseNativeComboBox="False" ItemsSource="{Binding}" Width="150" Height="30" Margin="0,8,5,5"/>
+                                <ComboBox Style="{StaticResource MaterialDesign_ComboBox_Style}" ItemsSource="{Binding}" Width="150" Height="30" Margin="0,8,5,5"/>
                             </StackPanel>
                         </ContentControl>
                         <ContentControl Style="{StaticResource MaterialDesign_CardFooter_Style}">
@@ -417,21 +417,21 @@
             <!--ComboBox-->
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="ComboBox:" FontSize="16" Margin="0,10,10,0"/>
-                <ComboBox Style="{StaticResource MaterialDesign_ComboBox_Style}" UseNativeComboBox="False" ItemsSource="{Binding}" Margin="5" Width="140" Height="40"/>
+                <ComboBox Style="{StaticResource MaterialDesign_ComboBox_Style}" ItemsSource="{Binding}" Margin="5" Width="140" Height="40"/>
             </StackPanel>
 
             <!--ContextMenu-->
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="ContextMenu:" FontSize="16" Margin="0,10,10,0"/>
-                <Button Style="{StaticResource MaterialDesign_RoundButton_Style}" Content="..." Margin="5" Width="40" Height="40" Click="ButtonDisplayContextMenu_Click">
-                    <Button.ContextMenu>
-                        <ContextMenu Style="{StaticResource MaterialDesign_ContextMenu_Style}" BorderThickness="0">
+                <ContentControl Style="{StaticResource MaterialDesign_RoundContentControl_Style}" Content="..." Margin="5" Width="40" Height="40" MouseLeftButtonDown="DisplayContextMenu_Click">
+                    <ContentControl.ContextMenu>
+                        <ContextMenu Style="{StaticResource MaterialDesign_ContextMenu_Style}" BorderThickness="0" Closed="ContextMenu_Closed">
                             <MenuItem Header="Menu Item 1" Style="{StaticResource MaterialDesign_ContextMenuItem_Style}"/>
                             <MenuItem Header="Menu Item 2" Style="{StaticResource MaterialDesign_ContextMenuItem_Style}"/>
                             <MenuItem Header="Menu Item 3" Style="{StaticResource MaterialDesign_ContextMenuItem_Style}"/>
                         </ContextMenu>
-                    </Button.ContextMenu>
-                </Button>
+                    </ContentControl.ContextMenu>
+                </ContentControl>
             </StackPanel>
 
             <!--ChildWindow-->

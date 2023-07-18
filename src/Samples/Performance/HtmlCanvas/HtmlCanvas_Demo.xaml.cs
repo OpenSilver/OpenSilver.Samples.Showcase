@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+using System.Threading.Tasks;
 using TestPerformance;
 #if SLMIGRATION
 using System.Windows;
@@ -37,7 +36,7 @@ namespace OpenSilver.Samples.Showcase
             this.Unloaded += HtmlCanvas_Demo_Unloaded;
         }
 
-        private void HtmlCanvas_Demo_Loaded(object sender, RoutedEventArgs e)
+        private async void HtmlCanvas_Demo_Loaded(object sender, RoutedEventArgs e)
         {
 #if OPENSILVER
             if (!OpenSilver.Interop.IsRunningInTheSimulator_WorkAround)
@@ -51,7 +50,7 @@ namespace OpenSilver.Samples.Showcase
                 // Start the main drawing loop:
                 _lastTickCount = Environment.TickCount;
                 _loaded = true;
-                MainLoop();
+                await MainLoopAsync();
             }
             else
             {
@@ -93,8 +92,8 @@ namespace OpenSilver.Samples.Showcase
                 var sprite = new MainSprite(i);
 
                 // Set its position randomly:
-                sprite.X = rand.Next((int)canvasWidth - (int)sprite.Width);
-                sprite.Y = rand.Next((int)canvasHeight - (int)sprite.Height);
+                sprite.X = rand.Next(Math.Abs((int)canvasWidth - (int)sprite.Width));
+                sprite.Y = rand.Next(Math.Abs((int)canvasHeight - (int)sprite.Height));
 
                 // Set its velocity randomly:
                 sprite.VelocityX = rand.Next(-10, 10);
@@ -105,8 +104,10 @@ namespace OpenSilver.Samples.Showcase
             }
         }
 
-        private void MainLoop()
+        private async Task MainLoopAsync()
         {
+            if (!_loaded) return;
+
             // Determine the time elapsed since the last redraw:
             int newTickCount = Environment.TickCount;
             int timeElapsedInMilliseconds = (newTickCount - _lastTickCount);
@@ -149,15 +150,6 @@ namespace OpenSilver.Samples.Showcase
             // Redraw:
             HtmlCanvas1.Draw();
 
-            // Re-enter this same method after a "Do Events":
-            Dispatcher.BeginInvoke((Action)(() =>
-            {
-                if (_loaded) // Continue only if the control has not been unloaded in the meantime.
-                {
-                    MainLoop();
-                }
-            }));
-
             // Calculate the average "Frames Per Second":
             _counterToCalculateAverageFPS++;
             int tickCountToCalculateAverageFPS = Environment.TickCount; // In milliseconds
@@ -172,6 +164,9 @@ namespace OpenSilver.Samples.Showcase
                 _counterToCalculateAverageFPS = 0;
                 _tickCountToCalculateAverageFPS = tickCountToCalculateAverageFPS;
             }
+
+            await Task.Delay(1);
+            await MainLoopAsync();
         }
 
         private void ButtonViewSource_Click(object sender, RoutedEventArgs e)

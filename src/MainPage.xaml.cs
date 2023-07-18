@@ -19,16 +19,16 @@ namespace OpenSilver.Samples.Showcase
     {
         public MainPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
 
 #if OPENSILVER
             ThirdPartyButton.Visibility = Visibility.Collapsed;
             ThirdPartyHomeButton.Visibility = Visibility.Visible;
 #endif
 
-            MainPage.Current = this;
-            this.Loaded += MainPage_Loaded;
-            Window.Current.SizeChanged += Window_SizeChanged;
+            Current = this;
+            Loaded += MainPage_Loaded;
+            SizeChanged += MainPage_SizeChanged;
 
 #if OPENSILVER
             TitleImage.Visibility = Visibility.Collapsed;
@@ -48,8 +48,6 @@ SHOWCASE";
             {
                 NavigateToPage("/Welcome");
             }
-
-            UpdateMenuDispositionBasedOnDisplaySize();
         }
 
         void ButtonXamlControls_Click(object sender, RoutedEventArgs e)
@@ -239,11 +237,7 @@ SHOWCASE";
             }
         }
 
-#if SLMIGRATION
-        private void Window_SizeChanged(object sender, WindowSizeChangedEventArgs e)
-#else
-        private void Window_SizeChanged(object sender, Windows.UI.Core.WindowSizeChangedEventArgs e)
-#endif
+        private void MainPage_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             UpdateMenuDispositionBasedOnDisplaySize();
         }

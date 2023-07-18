@@ -130,7 +130,7 @@ FontFamily="Segoe UI">
           <Image Source="other/MenuIcon.png" Width="50" Height="50" Stretch="Fill"/>
         </Button>
       </Border>
-      <ScrollViewer Grid.Row="1" x:Name="ScrollViewer1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible">
+      <ScrollViewer Grid.Row="1" x:Name="ScrollViewer1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible">
         <sdk:Frame x:Name="PageContainer" JournalOwnership="Automatic" Margin="5,0,0,30" HorizontalContentAlignment="Stretch">
           <sdk:Frame.UriMapper>
             <sdk:UriMapper>

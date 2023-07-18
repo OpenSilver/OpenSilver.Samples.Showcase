@@ -23,24 +23,8 @@ namespace OpenSilver.Samples.Showcase
     {
         public MouseWheel_Demo()
         {
-            this.InitializeComponent();
-            this.Loaded += MouseWheel_Loaded;
-            this.Unloaded += MouseWheel_Unloaded;
-        }
+            InitializeComponent();
 
-        private void MouseWheel_Unloaded(object sender, RoutedEventArgs e)
-        {
-
-#if SLMIGRATION
-            ScrollBorder.MouseWheel -= CountTotalScrollingDistance;
-#else
-            ScrollBorder.PointerWheelChanged += CountTotalScrollingDistance; 
-#endif
-        }
-
-        private void MouseWheel_Loaded(object sender, RoutedEventArgs e)
-        {
-            Interop.ExecuteJavaScript("$0.onwheel = (e) => {e.preventDefault(); return false;}", Interop.GetDiv(ScrollBorder));
 #if SLMIGRATION
             TitleContentControl.Content = "MouseWheel Event";
             ScrollBorder.MouseWheel += CountTotalScrollingDistance;
@@ -48,17 +32,17 @@ namespace OpenSilver.Samples.Showcase
             TitleContentControl.Content = "PointerWheelChanged Event";
             ScrollBorder.PointerWheelChanged += CountTotalScrollingDistance;
 #endif
-
         }
 
         int scrollingDistance = 0;
+
 #if SLMIGRATION
         public void CountTotalScrollingDistance(object sender, MouseWheelEventArgs e)
 #else
         public void CountTotalScrollingDistance(object sender, PointerRoutedEventArgs e)
 #endif
         {
-            OpenSilver.Interop.ExecuteJavaScript("$0.preventDefault()", e.INTERNAL_OriginalJSEventArg);
+            e.Handled = true;
 
 #if SLMIGRATION
             int delta = e.Delta;

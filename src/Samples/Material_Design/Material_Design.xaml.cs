@@ -6,6 +6,7 @@ using System.Linq;
 #if SLMIGRATION
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 #else
 using Windows.Foundation;
 using Windows.UI.Xaml;
@@ -23,22 +24,27 @@ namespace OpenSilver.Samples.Showcase
     {
         public Material_Design()
         {
-            this.InitializeComponent();
-
-#if OPENSILVER
-            //DatePickerDemo.Visibility = Visibility.Collapsed; 
-#endif
+            InitializeComponent();
 
             ObservableCollection<string> items = new ObservableCollection<string>() { "Item 1", "Item 2", "Item 3" };
-            this.DataContext = items;
+            DataContext = items;
 
             DataGrid.ItemsSource = DataGridDataInstance.GetDataSet();
         }
 
-        private void ButtonDisplayContextMenu_Click(object sender, RoutedEventArgs e)
+        private void DisplayContextMenu_Click(object sender, MouseButtonEventArgs e)
         {
-            Button button = (Button)sender;
-            button.ContextMenu.IsOpen = true;
+            ContentControl cc = (ContentControl)sender;
+            cc.ContextMenu.HorizontalOffset = e.GetPosition(null).X;
+            cc.ContextMenu.VerticalOffset = e.GetPosition(null).Y;
+            cc.ContextMenu.IsOpen = true;
+        }
+
+        private void ContextMenu_Closed(object sender, RoutedEventArgs e)
+        {
+            ContextMenu contextMenu = (ContextMenu)sender;
+            contextMenu.HorizontalOffset = 0;
+            contextMenu.VerticalOffset = 0;
         }
 
         private void ButtonShowChildWindow_Click(object sender, RoutedEventArgs e)
