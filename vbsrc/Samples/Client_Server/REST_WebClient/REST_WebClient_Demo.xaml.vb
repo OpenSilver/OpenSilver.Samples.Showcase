@@ -1,5 +1,5 @@
 ﻿#If Not OPENSILVER Then
-using OpenSilver.Samples.VBShowcase.ServiceReference1;
+using OpenSilver.Samples.Showcase.ServiceReference1;
 #Else
 Imports DotNetForHtml5.Showcase.SampleRestWebService.Models
 #End If
@@ -21,7 +21,7 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
 #End If
 
-Namespace Global.OpenSilver.Samples.VBShowcase
+Namespace Global.OpenSilver.Samples.Showcase
     Partial Public Class REST_WebClient_Demo
         Inherits UserControl
         Private _ownerId As Guid

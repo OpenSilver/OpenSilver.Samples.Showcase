@@ -9,7 +9,7 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
 #End If
 
-Namespace Global.OpenSilver.Samples.VBShowcase
+Namespace Global.OpenSilver.Samples.Showcase
     Partial Public NotInheritable Class App
         Inherits Application
         Public Sub New()

@@ -6,7 +6,7 @@ Imports System.Windows.Controls
 using Windows.UI.Xaml.Controls;
 #End If
 
-Namespace Global.OpenSilver.Samples.VBShowcase
+Namespace Global.OpenSilver.Samples.Showcase
     Public Class WrapPanelWithProgressiveLoading
         Inherits WrapPanel
         Public Sub New()

@@ -7,7 +7,7 @@ Imports System.Globalization
 using Windows.UI.Xaml.Data;
 #End If
 
-Namespace Global.OpenSilver.Samples.VBShowcase
+Namespace Global.OpenSilver.Samples.Showcase
     Public Class KilometersToMilesConverter
         Implements IValueConverter
 #If SLMIGRATION

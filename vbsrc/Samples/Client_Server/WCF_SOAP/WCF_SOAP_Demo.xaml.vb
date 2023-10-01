@@ -1,7 +1,7 @@
 ﻿#If OPENSILVER Then
 Imports ServiceReference1
 #Else
-using OpenSilver.Samples.VBShowcase.ServiceReference1;
+using OpenSilver.Samples.Showcase.ServiceReference1;
 #End If
 Imports System
 Imports System.Collections.Generic
@@ -17,7 +17,7 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
 #End If
 
-Namespace Global.OpenSilver.Samples.VBShowcase
+Namespace Global.OpenSilver.Samples.Showcase
     Partial Public Class WCF_SOAP_Demo
         Inherits UserControl
         Private _ownerId As Guid

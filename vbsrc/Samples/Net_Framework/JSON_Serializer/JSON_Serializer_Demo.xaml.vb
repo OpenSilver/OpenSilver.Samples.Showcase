@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Navigation;
 #End If
 
 
-Namespace Global.OpenSilver.Samples.VBShowcase
+Namespace Global.OpenSilver.Samples.Showcase
     Partial Public Class JSON_Serializer_Demo
         Inherits UserControl
         Private _json As String

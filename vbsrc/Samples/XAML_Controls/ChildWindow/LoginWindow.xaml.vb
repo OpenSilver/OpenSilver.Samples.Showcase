@@ -23,7 +23,7 @@ Namespace Global.PreviewOnWinRT
         End Sub
 
         Private Sub LoginWindow_Closing(ByVal sender As Object, ByVal e As ComponentModel.CancelEventArgs)
-            If DialogResult.HasValue AndAlso DialogResult.Value = True AndAlso (Equals(Me.nameBoxField.Text, String.Empty) OrElse Equals(Me.passwordBoxField.Password, String.Empty)) Then
+            If DialogResult.HasValue AndAlso DialogResult.Value = True AndAlso (Equals(Me.nameBox.Text, String.Empty) OrElse Equals(Me.passwordBox.Password, String.Empty)) Then
                 e.Cancel = True
                 Dim cw As ChildWindow = New ChildWindow()
                 cw.Content = "Please Enter your name and password or click Cancel."
@@ -31,16 +31,16 @@ Namespace Global.PreviewOnWinRT
             End If
         End Sub
 
-        Public ReadOnly Property NameBox As TextBox
-            Get
-                Return Me.nameBoxField
-            End Get
-        End Property
+        'Public ReadOnly Property NameBox As TextBox
+        '    Get
+        '        Return Me.nameBoxField
+        '    End Get
+        'End Property
 
-        Public ReadOnly Property PasswordBox As PasswordBox
-            Get
-                Return Me.passwordBoxField
-            End Get
-        End Property
+        'Public ReadOnly Property PasswordBox As PasswordBox
+        '    Get
+        '        Return Me.passwordBoxField
+        '    End Get
+        'End Property
     End Class
 End Namespace

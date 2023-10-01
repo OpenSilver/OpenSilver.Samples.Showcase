@@ -7,7 +7,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 #End If
 
-Namespace Global.OpenSilver.Samples.VBShowcase
+Namespace Global.OpenSilver.Samples.Showcase
     Friend Module ViewSourceButtonHelper
         Public Sub ViewSource(ByVal sourcePaths As List(Of ViewSourceButtonInfo))
             If sourcePaths.Count > 0 Then

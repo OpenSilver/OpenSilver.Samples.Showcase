@@ -12,7 +12,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 #End If
 
-Namespace Global.OpenSilver.Samples.VBShowcase
+Namespace Global.OpenSilver.Samples.Showcase
     Partial Public Class Performance
         Inherits UserControl
         Public Sub New()

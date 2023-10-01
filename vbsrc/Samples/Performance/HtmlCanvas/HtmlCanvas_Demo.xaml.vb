@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 #End If
 
-Namespace Global.OpenSilver.Samples.VBShowcase
+Namespace Global.OpenSilver.Samples.Showcase
     Partial Public Class HtmlCanvas_Demo
         Inherits UserControl
         Private _lastTickCount As Integer = 0

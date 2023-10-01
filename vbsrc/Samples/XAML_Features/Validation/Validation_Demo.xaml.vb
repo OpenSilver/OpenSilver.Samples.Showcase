@@ -15,8 +15,8 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 #End If
 
-Namespace Global.OpenSilver.Samples.VBShowcase
-    Public Partial Class Validation_Demo
+Namespace Global.OpenSilver.Samples.Showcase
+    Partial Public Class Validation_Demo
         Inherits UserControl
         Public Sub New()
             Me.InitializeComponent()

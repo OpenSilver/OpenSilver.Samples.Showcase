@@ -7,7 +7,7 @@ Imports System.Windows.Controls
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 #End If
-Namespace Global.OpenSilver.Samples.VBShowcase
+Namespace Global.OpenSilver.Samples.Showcase
     Public Partial Class PropertyChangedTrigger_Demo
         Inherits UserControl
         Public Sub New()

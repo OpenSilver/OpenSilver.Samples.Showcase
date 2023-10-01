@@ -7,7 +7,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 #End If
 
-Namespace Global.OpenSilver.Samples.VBShowcase
+Namespace Global.OpenSilver.Samples.Showcase
     Friend Module ChildWindowHelper
         Public Sub ShowChildWindow(ByVal content As UIElement)
             Dim childWindow = New ChildWindow() With {

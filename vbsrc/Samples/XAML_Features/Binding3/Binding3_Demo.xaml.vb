@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 #End If
 
-Namespace Global.OpenSilver.Samples.VBShowcase
+Namespace Global.OpenSilver.Samples.Showcase
     Public Partial Class Binding3_Demo
         Inherits UserControl
         Private _listOfContacts As ObservableCollection(Of Person)

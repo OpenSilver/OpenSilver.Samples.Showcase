@@ -12,7 +12,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 #End If
 
-Namespace Global.OpenSilver.Samples.VBShowcase
+Namespace Global.OpenSilver.Samples.Showcase
     Public Partial Class Client_Server
         Inherits UserControl
         Public Sub New()

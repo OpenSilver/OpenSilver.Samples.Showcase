@@ -5,7 +5,7 @@ Imports System.Windows
 using Windows.UI.Xaml;
 #End If
 
-Namespace Global.OpenSilver.Samples.VBShowcase
+Namespace Global.OpenSilver.Samples.Showcase
     Public Module SampleAttachedProperties
         Public Function GetAriaLabel(ByVal obj As DependencyObject) As String
             Return CStr(obj.GetValue(AriaLabelProperty))

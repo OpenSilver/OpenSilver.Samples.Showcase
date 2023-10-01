@@ -1,5 +1,5 @@
 ﻿
-Namespace Global.OpenSilver.Samples.VBShowcase
+Namespace Global.OpenSilver.Samples.Showcase
     Friend Class ViewSourceButtonInfo
         Public Property TabHeader As String
         Public Property FilePathOnGitHub As String

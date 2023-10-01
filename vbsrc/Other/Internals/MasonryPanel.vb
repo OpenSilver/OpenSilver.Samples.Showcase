@@ -8,7 +8,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 #End If
 
-Namespace Global.OpenSilver.Samples.VBShowcase
+Namespace Global.OpenSilver.Samples.Showcase
     ''' <summary>
     ''' This class organizes its children in such a way that it takes the smallest space possible.
     ''' It is based on the Masonry layout (see: http://jsfiddle.net/WH8tW/7/).

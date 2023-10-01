@@ -8,7 +8,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 #End If
 
-Namespace Global.OpenSilver.Samples.VBShowcase
+Namespace Global.OpenSilver.Samples.Showcase
     Public Class ControlToDisplayCodeHostedOnGitHub
         Inherits ContentControl
         Private _filePathOnGitHub As String

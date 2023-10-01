@@ -2,7 +2,7 @@
 Imports System.ComponentModel
 Imports System.Runtime.CompilerServices
 
-Namespace Global.OpenSilver.Samples.VBShowcase
+Namespace Global.OpenSilver.Samples.Showcase
     Public Enum PlanetStructure
         Rock
         Gas
