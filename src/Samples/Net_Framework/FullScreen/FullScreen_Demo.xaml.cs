@@ -53,6 +53,11 @@ namespace OpenSilver.Samples.Showcase
                 {
                     TabHeader = "FullScreen_Demo.xaml.cs",
                     FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/FullScreen/FullScreen_Demo.xaml.cs"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "FullScreen_Demo.xaml.vb",
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/vbsrc/Samples/Net_Framework/FullScreen/FullScreen_Demo.xaml.vb"
                 }
             });
         }

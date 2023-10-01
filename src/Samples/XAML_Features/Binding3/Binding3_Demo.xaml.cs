@@ -69,6 +69,11 @@ namespace OpenSilver.Samples.Showcase
                 {
                     TabHeader = "Binding3_Demo.xaml.cs",
                     FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Features/Binding3/Binding3_Demo.xaml.cs"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "Binding3_Demo.xaml.vb",
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/vbsrc/Samples/XAML_Features/Binding3/Binding3_Demo.xaml.vb"
                 }
             });
         }

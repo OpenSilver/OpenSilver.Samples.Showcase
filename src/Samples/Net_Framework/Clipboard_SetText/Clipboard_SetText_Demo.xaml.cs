@@ -38,6 +38,11 @@ namespace OpenSilver.Samples.Showcase
                 {
                     TabHeader = "Clipboard_SetText_Demo.xaml.cs",
                     FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/Clipboard_SetText/Clipboard_SetText_Demo.xaml.cs"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "Clipboard_SetText_Demo.xaml.vb",
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/vbsrc/Samples/Net_Framework/Clipboard_SetText/Clipboard_SetText_Demo.xaml.vb"
                 }
             });
         }

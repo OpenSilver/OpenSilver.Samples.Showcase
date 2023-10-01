@@ -1,0 +1,25 @@
+﻿<UserControl
+    x:Class="OpenSilver.Samples.VBShowcase.FindElementsInHostCoordinates_Demo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:OpenSilver.Samples.VBShowcase">
+    <ContentControl Style="{StaticResource Card_Style}" Width="245">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl Content="FindElementsIn-HostCoordinates" Foreground="#FFBDE567" Background="#FFB9CD89" Style="{StaticResource HeaderControl_Style}"/>
+            <StackPanel Grid.Row="1">
+                <TextBlock Text="Click on a rectangle to bring it to the front:" Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left"/>
+                <Canvas Margin="0,20,0,0" x:Name="CanvasParent" Height="120">
+                    <Border x:Name="BlueRectangle" BorderBrush="#ffa8afae" BorderThickness="0.75" Canvas.Left="50" Height="75" Width="50" Background="#FF25FFD0"/>
+                    <Border x:Name="GreenRectangle" BorderBrush="#ffa8afae" BorderThickness="0.75" Canvas.Left="90" Canvas.Top="20" Height="75" Width="95" Background="#FFA0EA58"/>
+                    <Border x:Name="YellowRectangle" BorderBrush="#ffa8afae" BorderThickness="0.75" Canvas.Left="70" Canvas.Top="60"  Height="55" Width="65" Background="#FFE5FA41"/>
+                </Canvas>
+            </StackPanel>
+            <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FFBDE567" Style="{StaticResource ButtonViewSource_Style}"/>
+        </Grid>
+    </ContentControl>
+</UserControl>

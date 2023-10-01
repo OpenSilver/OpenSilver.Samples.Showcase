@@ -1,0 +1,33 @@
+﻿<UserControl
+    x:Class="OpenSilver.Samples.VBShowcase.Xaml_Features"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:OpenSilver.Samples.VBShowcase">
+    <StackPanel>
+        <TextBlock Text="XAML Features" Style="{StaticResource PageHeader_Style}"/>
+        <local:WrapPanelWithProgressiveLoading Style="{StaticResource Panel_Style}">
+            <local:RenderTransforms_Demo HorizontalAlignment="Center"/>
+            <local:Drag_And_Drop_Demo HorizontalAlignment="Center"/>
+            <local:Binding1_Demo x:Name="Binding1Demo" HorizontalAlignment="Center"/>
+            <local:Binding2_Demo HorizontalAlignment="Center"/>
+            <local:Binding3_Demo HorizontalAlignment="Center"/>
+            <!--<local:ClickCount_RightTapped_Demo HorizontalAlignment="Center"/>-->
+            <local:Gradients_Demo HorizontalAlignment="Center"/>
+            <local:Animations_Demo HorizontalAlignment="Center"/>
+            <local:DropShadowEffect_Demo HorizontalAlignment="Center"/>
+            <local:Window_SizeChanged_Demo HorizontalAlignment="Center"/>
+            <local:FindElementsInHostCoordinates_Demo HorizontalAlignment="Center"/>
+            <local:ClipToBounds_Demo HorizontalAlignment="Center"/>
+            <local:Validation_Demo HorizontalAlignment="Center"/>
+            <local:MouseWheel_Demo HorizontalAlignment="Center"/>
+            <local:InteractivityTriggers_Demo HorizontalAlignment="Center"/>
+            <local:XAML_Resource_Dictionary_Demo HorizontalAlignment="Center"/>
+            <local:DependencyProperties_Demo HorizontalAlignment="Center"/>
+            <local:AttachedProperties_Demo HorizontalAlignment="Center"/>
+            <local:VisualTreeHelper_Demo HorizontalAlignment="Center"/>
+            <local:MarkupExtensions_Demo x:Name="MarkupExtensionsDemo" HorizontalAlignment="Center"/>
+            <local:UriMapper_Demo HorizontalAlignment="Center"/>
+            <!--<local:PropertyChangedTrigger_Demo HorizontalAlignment="Center"/>-->
+        </local:WrapPanelWithProgressiveLoading>
+    </StackPanel>
+</UserControl>

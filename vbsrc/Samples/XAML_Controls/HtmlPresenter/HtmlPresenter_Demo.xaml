@@ -1,0 +1,123 @@
+﻿<UserControl
+    x:Class="OpenSilver.Samples.VBShowcase.HtmlPresenter_Demo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:OpenSilver.Samples.VBShowcase">
+  <ContentControl Style="{StaticResource Card_Style}" Width="180">
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      <ContentControl Content="HtmlPresenter" Foreground="#FFA05BFF" Background="#FFA793C3" Style="{StaticResource HeaderControl_Style}"/>
+      <ScrollViewer Background="White" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Grid.Row="1" Height="200">
+
+        <native:HtmlPresenter xmlns:native="using:CSHTML5.Native.Html.Controls" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="native">
+
+          <style type='text/css'>
+            .sampleTable table {
+            border-collapse: collapse;
+            width: 150px;
+            background-color: #ffffff
+            }
+
+            .sampleTable th, .sampleTable td {
+            text-align: left;
+            padding: 8px;
+            }
+
+            .sampleTable tr:nth-child(even){background-color: #f2f2f2}
+
+            .sampleTable th {
+            background-color: #4CAF50;
+            color: white;
+            }
+          </style>
+          <h1> HTML : </h1>
+
+          <h2> Text Format</h2>
+          <strong>Strong Format</strong>
+          <br />
+          <em>Em Format</em>
+          <br />
+          <code>Code Format</code>
+          <br />
+          <a href="#">Link Format</a>
+          <br />
+          </p>
+
+          <h2>List Format</h2>
+          <ol>
+            <li>Item 1</li>
+            <li>Item 2</li>
+          </ol>
+
+          <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+          </ul>
+
+          <h2>HTML Form</h2>
+          <h3> Text input</h3>
+          <form action="#" method="post">
+            <div>
+              <label for="name">Text Input:</label>
+              <br/>
+              <input id="name" tabindex="1" name="name" type="text" value="" style="width:100px" />
+            </div>
+
+            <h3>DropDown</h3>
+            <div >
+              <label for="select-choice">Select Dropdown Choice:</label>
+              <select id="select-choice" name="select-choice">
+                <option value="Choice 1">Choice 1</option>
+                <option value="Choice 2">Choice 2</option>
+                <option value="Choice 3">Choice 3</option>
+              </select> &nbsp;
+            </div>
+
+            <h3>CheckBox</h3>
+            <div>
+              <label for="checkbox">Checkbox:</label>
+              <input id="checkbox" name="checkbox" type="checkbox" />
+            </div>
+          </form>
+
+          <h2>HTML Table</h2>
+          <table class="sampleTable">
+            <tr>
+              <th>Feature</th>
+              <th>Example</th>
+            </tr>
+            <tr>
+              <td>classes and IDs</td>
+              <td>
+                <span id="demoId">
+                  This span has an ID
+                  <strong class="demoClass">And this portion has a class</strong> .
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td>Encoding special characters</td>
+              <td>
+                <span style="color: red; font-size: 17px;">&hearts;</span>
+                <strong style="font-size: 20px;">? ?</strong> &gt;&lt;
+              </td>
+            </tr>
+            <tr>
+              <td>comments</td>
+              <td>
+                After this text there is a comment that is only visible by looking at the source
+                <!-- This is a comment! -->
+                </td>
+                </tr>
+          </table>
+        </native:HtmlPresenter>
+
+      </ScrollViewer>
+      <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FFA05BFF" Style="{StaticResource ButtonViewSource_Style}"/>
+    </Grid>
+  </ContentControl>
+</UserControl>

@@ -1,0 +1,21 @@
+﻿<UserControl
+    x:Class="OpenSilver.Samples.VBShowcase.HyperlinkButton_Demo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:OpenSilver.Samples.VBShowcase">
+    <ContentControl Style="{StaticResource Card_Style}" Width="180">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl Content="HyperlinkButton" Foreground="#FF6F98FF" Background="#FF93A5D1" Style="{StaticResource HeaderControl_Style}"/>
+            <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="You can visit the homepage&#x0a; by clicking" TextAlignment="Center"/>
+                <HyperlinkButton x:Name="HyperlinkButtonDemo" Content="here" NavigateUri="https://opensilver.net" TargetName="_blank" Foreground="#FFE44D26" Margin="5,0,0,0" HorizontalAlignment="Center" Cursor="Hand"/>
+            </StackPanel>
+            <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FF6F98FF" Style="{StaticResource ButtonViewSource_Style}"/>
+        </Grid>
+    </ContentControl>
+</UserControl>

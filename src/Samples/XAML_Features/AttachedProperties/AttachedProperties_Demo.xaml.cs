@@ -36,6 +36,11 @@ namespace OpenSilver.Samples.Showcase
                 },
                 new ViewSourceButtonInfo()
                 {
+                    TabHeader = "SampleAttachedProperties.vb",
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/vbsrc/Samples/XAML_Features/AttachedProperties/SampleAttachedProperties.vb"
+                },
+                new ViewSourceButtonInfo()
+                {
                     TabHeader = "AttachedProperties_Demo.xaml",
                     FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Features/AttachedProperties/AttachedProperties_Demo.xaml"
                 },
@@ -43,6 +48,11 @@ namespace OpenSilver.Samples.Showcase
                 {
                     TabHeader = "AttachedProperties_Demo.xaml.cs",
                     FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Features/AttachedProperties/AttachedProperties_Demo.xaml.cs"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "AttachedProperties_Demo.xaml.vb",
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/vbsrc/Samples/XAML_Features/AttachedProperties/AttachedProperties_Demo.xaml.vb"
                 }
             });
         }

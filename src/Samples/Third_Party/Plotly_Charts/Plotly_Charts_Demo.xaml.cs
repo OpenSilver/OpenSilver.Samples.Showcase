@@ -337,6 +337,11 @@ namespace OpenSilver.Samples.Showcase
                 {
                     TabHeader = "Plotly_Charts_Demo.xaml.cs",
                     FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Third_Party/Plotly_Charts/Plotly_Charts_Demo.xaml.cs"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "Plotly_Charts_Demo.xaml.vb",
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/vbsrc/Samples/Third_Party/Plotly_Charts/Plotly_Charts_Demo.xaml.vb"
                 }
             });
         }

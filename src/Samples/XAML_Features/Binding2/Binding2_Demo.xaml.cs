@@ -45,6 +45,16 @@ namespace OpenSilver.Samples.Showcase
                 {
                     TabHeader = "KilometersToMilesConverter.cs",
                     FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Features/Binding2/KilometersToMilesConverter.cs"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "Binding2_Demo.xaml.vb",
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/vbsrc/Samples/XAML_Features/Binding2/Binding2_Demo.xaml.vb"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "KilometersToMilesConverter.vb",
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/vbsrc/Samples/XAML_Features/Binding2/KilometersToMilesConverter.vb"
                 }
             });
         }

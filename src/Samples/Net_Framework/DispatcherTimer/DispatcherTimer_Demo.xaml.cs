@@ -70,9 +70,13 @@ namespace OpenSilver.Samples.Showcase
                 {
                     TabHeader = "DispatcherTimer_Demo.xaml.cs",
                     FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/DispatcherTimer/DispatcherTimer_Demo.xaml.cs"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "DispatcherTimer_Demo.xaml.vb",
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/vbsrc/Samples/Net_Framework/DispatcherTimer/DispatcherTimer_Demo.xaml.vb"
                 }
             });
         }
-
     }
 }

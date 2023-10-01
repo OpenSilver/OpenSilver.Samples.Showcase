@@ -1,0 +1,30 @@
+﻿<UserControl
+    x:Class="OpenSilver.Samples.VBShowcase.Net_Framework"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:OpenSilver.Samples.VBShowcase">
+  <StackPanel>
+    <TextBlock Text=".NET Framework" Style="{StaticResource PageHeader_Style}"/>
+    <local:WrapPanelWithProgressiveLoading Style="{StaticResource Panel_Style}">
+      <local:DispatcherTimer_Demo HorizontalAlignment="Center"/>
+      <local:File_Open_Demo x:Name="File_OpenDemo" HorizontalAlignment="Center"/>
+      <local:File_Save_Demo x:Name="File_SaveDemo" HorizontalAlignment="Center"/>
+      <local:Zip_Demo x:Name="ZipDemo" HorizontalAlignment="Center"/>
+      <local:HtmlPage_Demo HorizontalAlignment="Center"/>
+      <local:Keyboard_Demo HorizontalAlignment="Center"/>
+      <local:IsolatedStorageFile_Demo HorizontalAlignment="Center"/>
+      <local:IsolatedStorageSettings_Demo HorizontalAlignment="Center"/>
+      <local:Linq_Demo HorizontalAlignment="Center"/>
+      <local:AsyncAwait_Demo HorizontalAlignment="Center"/>
+      <local:Regex_Demo HorizontalAlignment="Center"/>
+      <local:JSON_Serializer_Demo x:Name="JSON_SerializerDemo" HorizontalAlignment="Center"/>
+      <local:DataContractSerializer_Demo HorizontalAlignment="Center"/>
+      <local:Console_Demo x:Name="ConsoleDemo" HorizontalAlignment="Center"/>
+      <local:GetRessourceStream_Demo x:Name="GetRessourceStreamDemo" HorizontalAlignment="Center"/>
+      <local:RESX_Demo x:Name="RESXDemo" HorizontalAlignment="Center"/>
+      <local:Clipboard_SetText_Demo HorizontalAlignment="Center"/>
+      <local:Printing_Demo HorizontalAlignment="Center"/>
+      <local:FullScreen_Demo x:Name="FullScreenDemo" HorizontalAlignment="Center"/>
+    </local:WrapPanelWithProgressiveLoading>
+  </StackPanel>
+</UserControl>

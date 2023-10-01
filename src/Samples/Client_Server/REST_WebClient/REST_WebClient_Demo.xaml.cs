@@ -214,6 +214,16 @@ namespace OpenSilver.Samples.Showcase
                 {
                     TabHeader = "REST_ToDoItem.cs",
                     FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Client_Server/REST_WebClient/REST_ToDoItem.cs"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "REST_WebClient_Demo.xaml.vb",
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/vbsrc/Samples/Client_Server/REST_WebClient/REST_WebClient_Demo.xaml.vb"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "REST_ToDoItem.cs",
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/vbsrc/Samples/Client_Server/REST_WebClient/REST_ToDoItem.vb"
                 }
             });
         }

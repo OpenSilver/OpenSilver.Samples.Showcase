@@ -55,7 +55,13 @@ namespace OpenSilver.Samples.Showcase
                 {
                     TabHeader = "DateAndTimePickerd_Demo.xaml.cs",
                     FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/DateAndTimePicker/DateAndTimePicker_Demo.xaml.cs"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "DateAndTimePickerd_Demo.xaml.vb",
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/vbsrc/Samples/XAML_Controls/DateAndTimePicker/DateAndTimePicker_Demo.xaml.vb"
                 }
+
             });
         }
 

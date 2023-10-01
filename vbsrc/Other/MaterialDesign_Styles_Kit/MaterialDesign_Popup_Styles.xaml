@@ -1,0 +1,58 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Styles_Kit_Showcase.MaterialDesign_Styles_Kit">
+
+    <!--<ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="MaterialDesign_Styles_Kit/MaterialDesign_Button_Styles.xaml"/>
+    </ResourceDictionary.MergedDictionaries>-->
+    <!--Requires MaterialDesign_Button_Styles-->
+
+    <!--Popup with cross to close-->
+    <Style x:Key="MaterialDesign_PopupContentWithCross_Style" TargetType="ContentControl">
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Padding" Value="20,15"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ContentPresenter">
+                    <Border x:Name="InnerBorder"
+                                Background="{TemplateBinding Background}"
+                                Padding="5"
+                                CornerRadius="4">
+                        <Border.Effect>
+                            <DropShadowEffect x:Name="DropShadowEffect" Color="Gray" Opacity="0.4" BlurRadius="10" Direction="-30" ShadowDepth="0"/>
+                        </Border.Effect>
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="{TemplateBinding Padding}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <ToggleButton Style="{StaticResource MaterialDesign_ToggleButtonWithPath_Style}"
+                                          Foreground="{StaticResource MaterialDesign_DefaultAccentColor}"
+                                          Grid.Column="1"
+                                          Margin="2,-5,-5,-5"
+                                          FontSize="30"
+                                          Padding="2,-5"
+                                          Content="&#215;"
+                                          IsChecked="{Binding Path=Tag.IsOpen, Mode=TwoWay, RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                                          HorizontalAlignment="Right"
+                                          VerticalAlignment="Top"/>
+                            <ContentControl x:Name="ContentPresenter"
+                                        Foreground="{TemplateBinding Foreground}"
+                                        FontSize="{TemplateBinding FontSize}"
+                                        FontWeight="{TemplateBinding FontWeight}"
+                                        ContentTemplate="{TemplateBinding ContentTemplate}"
+                                        Content="{TemplateBinding Content}"
+                                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

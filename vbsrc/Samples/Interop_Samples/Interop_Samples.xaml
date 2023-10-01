@@ -1,0 +1,16 @@
+﻿<UserControl
+    x:Class="OpenSilver.Samples.VBShowcase.Interop_Samples"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:OpenSilver.Samples.VBShowcase">
+    <StackPanel>
+        <TextBlock Text="Interop" Style="{StaticResource PageHeader_Style}"/>
+        <local:WrapPanelWithProgressiveLoading Style="{StaticResource Panel_Style}">
+            <local:ExecuteJavaScript_Demo HorizontalAlignment="Center"/>
+            <local:Interop_HtmlPresenter_Demo HorizontalAlignment="Center"/>
+            <local:WebView_Demo HorizontalAlignment="Center"/>
+            <local:GetDiv_Demo HorizontalAlignment="Center"/>
+            <local:MethodToUpdateDom_Demo HorizontalAlignment="Center"/>
+        </local:WrapPanelWithProgressiveLoading>
+    </StackPanel>
+</UserControl>

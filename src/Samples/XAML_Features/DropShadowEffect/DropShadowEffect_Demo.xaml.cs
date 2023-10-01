@@ -38,6 +38,11 @@ namespace OpenSilver.Samples.Showcase
                 {
                     TabHeader = "DropShadowEffect_Demo.xaml.cs",
                     FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Features/DropShadowEffect/DropShadowEffect_Demo.xaml.cs"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "DropShadowEffect_Demo.xaml.vb",
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/vbsrc/Samples/XAML_Features/DropShadowEffect/DropShadowEffect_Demo.xaml.vb"
                 }
             });
         }

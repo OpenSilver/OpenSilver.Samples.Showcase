@@ -41,6 +41,11 @@ namespace OpenSilver.Samples.Showcase
                 },
                 new ViewSourceButtonInfo()
                 {
+                    TabHeader = "NumericUpDown_Demo.xaml.vb",
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/vbsrc/Samples/XAML_Controls/NumericUpDown/NumericUpDown_Demo.xaml.vb"
+                },
+                new ViewSourceButtonInfo()
+                {
                     TabHeader = "DefaultNumericUpDownStyle.xaml",
                     FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/NumericUpDown/Styles/DefaultNumericUpDownStyle.xaml"
                 }

@@ -1,0 +1,22 @@
+﻿<UserControl
+    x:Class="OpenSilver.Samples.VBShowcase.GetDiv_Demo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:OpenSilver.Samples.VBShowcase">
+    <ContentControl Style="{StaticResource Card_Style}" Width="245">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl Content="GetDiv" Foreground="#FFA2E567" Background="#FFBEDCA4" Style="{StaticResource HeaderControl_Style}"/>
+            <StackPanel Grid.Row="1" Orientation="Vertical">
+                <TextBlock Text="The 'Interop.GetDiv' method lets you get a reference to the HTML DOM element that corresponds to any given XAML element. This is particularly useful to pass a UIElement to a JS-based library." Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left"/>
+                <TextBlock Text="The following example shows how to set the CSS property 'text-decoration' to 'line-through' by using the 'GetDiv' method:" Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left" Margin="0,10,0,0"/>
+                <Button Content="Click to set the CSS property" Click="ButtonSetCSS_Click" HorizontalAlignment="Center" Margin="5,10,0,0"/>
+            </StackPanel>
+            <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FFA2E567" Style="{StaticResource ButtonViewSource_Style}"/>
+        </Grid>
+    </ContentControl>
+</UserControl>

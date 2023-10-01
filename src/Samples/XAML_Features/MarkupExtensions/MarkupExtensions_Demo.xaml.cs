@@ -38,6 +38,11 @@ namespace OpenSilver.Samples.Showcase
                 {
                     TabHeader = "MarkupExtensions_Demo.xaml.cs",
                     FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Features/MarkupExtensions/MarkupExtensions_Demo.xaml.cs"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "MarkupExtensions_Demo.xaml.vb",
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/vbsrc/Samples/XAML_Features/MarkupExtensions/MarkupExtensions_Demo.xaml.vb"
                 }
             });
         }

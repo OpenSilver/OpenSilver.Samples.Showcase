@@ -51,6 +51,11 @@ namespace OpenSilver.Samples.Showcase
                 {
                     TabHeader = "PasswordBox_Demo.xaml.cs",
                     FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/PasswordBox/PasswordBox_Demo.xaml.cs"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "PasswordBox_Demo.xaml.vb",
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/vbsrc/Samples/XAML_Controls/PasswordBox/PasswordBox_Demo.xaml.vb"
                 }
             });
         }

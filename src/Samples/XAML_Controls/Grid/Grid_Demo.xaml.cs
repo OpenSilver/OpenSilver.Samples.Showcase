@@ -38,6 +38,11 @@ namespace OpenSilver.Samples.Showcase
                 {
                     TabHeader = "Grid_Demo.xaml.cs",
                     FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/Grid/Grid_Demo.xaml.cs"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "Grid_Demo.xaml.vb",
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/vbsrc/Samples/XAML_Controls/Grid/Grid_Demo.xaml.vb"
                 }
             });
         }

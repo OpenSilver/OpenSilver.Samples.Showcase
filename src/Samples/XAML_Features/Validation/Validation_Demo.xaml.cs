@@ -83,6 +83,16 @@ namespace OpenSilver.Samples.Showcase
                 {
                     TabHeader = "Person.cs",
                     FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Features/Validation/Person.cs"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "Validation_Demo.xaml.vb",
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/vbsrc/Samples/XAML_Features/Validation/Validation_Demo.xaml.vb"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "Person.vb",
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/vbsrc/Samples/XAML_Features/Validation/Person.vb"
                 }
             });
         }

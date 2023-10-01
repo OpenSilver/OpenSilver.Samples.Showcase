@@ -1,0 +1,20 @@
+﻿<UserControl
+    x:Class="OpenSilver.Samples.VBShowcase.ClipToBounds_Demo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:OpenSilver.Samples.VBShowcase">
+    <ContentControl Style="{StaticResource Card_Style}" Width="245">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl Content="ClipToBounds" Foreground="#FFFFA443" Background="#FFCB9E73" Style="{StaticResource HeaderControl_Style}"/>
+            <Border Width="100" Height="80" ClipToBounds="True" Background="white" BorderThickness="2" BorderBrush="LightGray" HorizontalAlignment="Center" Margin="0,30,0,0">
+                <Ellipse Fill="#FFFFA443" Height="120" Width="150" Stroke="#FFFFFFFF" StrokeThickness="2"/>
+            </Border>
+            <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FFFFA443" Style="{StaticResource ButtonViewSource_Style}"/>
+        </Grid>
+    </ContentControl>
+</UserControl>

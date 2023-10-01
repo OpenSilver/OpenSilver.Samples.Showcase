@@ -1,0 +1,12 @@
+﻿<UserControl
+    x:Class="OpenSilver.Samples.VBShowcase.Performance"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:OpenSilver.Samples.VBShowcase">
+    <StackPanel>
+        <TextBlock Text="Performance" Style="{StaticResource PageHeader_Style}"/>
+        <local:WrapPanelWithProgressiveLoading Style="{StaticResource Panel_Style}">
+            <local:HtmlCanvas_Demo HorizontalAlignment="Center"/>
+        </local:WrapPanelWithProgressiveLoading>
+    </StackPanel>
+</UserControl>

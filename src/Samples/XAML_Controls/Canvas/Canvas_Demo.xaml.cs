@@ -38,6 +38,11 @@ namespace OpenSilver.Samples.Showcase
                 {
                     TabHeader = "Canvas_Demo.xaml.cs",
                     FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/Canvas/Canvas_Demo.xaml.cs"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "Canvas_Demo.xaml.vb",
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/vbsrc/Samples/XAML_Controls/Canvas/Canvas_Demo.xaml.vb"
                 }
             });
         }

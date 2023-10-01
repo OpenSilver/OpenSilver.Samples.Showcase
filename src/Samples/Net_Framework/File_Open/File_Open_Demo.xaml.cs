@@ -48,6 +48,16 @@ namespace OpenSilver.Samples.Showcase
                 {
                     TabHeader = "FileOpenDialog.cs",
                     FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/File_Open/FileOpenDialog.cs"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "File_Open_Demo.xaml.vb",
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/vbsrc/Samples/Net_Framework/File_Open/File_Open_Demo.xaml.vb"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "FileOpenDialog.vb",
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/vbsrc/Samples/Net_Framework/File_Open/FileOpenDialog.vb"
                 }
             });
         }

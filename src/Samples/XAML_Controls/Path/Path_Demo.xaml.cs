@@ -41,6 +41,11 @@ namespace OpenSilver.Samples.Showcase
                 },
                 new ViewSourceButtonInfo()
                 {
+                    TabHeader = "Path_Demo.xaml.vb",
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/vbsrc/Samples/XAML_Controls/Path/Path_Demo.xaml.vb"
+                },
+                new ViewSourceButtonInfo()
+                {
                     TabHeader = "DefaultPathStyle.xaml",
                     FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/Path/Styles/DefaultPathStyle.xaml"
                 }

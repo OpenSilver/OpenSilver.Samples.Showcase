@@ -1,0 +1,30 @@
+﻿<UserControl
+    x:Class="OpenSilver.Samples.VBShowcase.Interop_HtmlPresenter_Demo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:OpenSilver.Samples.VBShowcase"
+    xmlns:controlns="using:TestNumericTextBox">
+    <ContentControl Style="{StaticResource Card_Style}" Width="245">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl Content="HtmlPresenter" Foreground="#FFF78069" Background="#FF8FCBBE" Style="{StaticResource HeaderControl_Style}"/>
+            <StackPanel Grid.Row="1">
+                <TextBlock Text="The HtmlPresenter control lets you display HTML and CSS from within your XAML. You can read the documentation at:" Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left"/>
+                <HyperlinkButton Foreground="#FFF78069" Margin="0,10,0,0" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" Cursor="Hand" NavigateUri="http://opensilver.net/links/how-to-use-the-htmlpresenter.aspx" TargetName="_blank">
+                    <TextBlock Text="http://opensilver.net/links/how-to-use-the-htmlpresenter.aspx" TextWrapping="Wrap"/>
+                </HyperlinkButton>
+                <TextBlock Text="The following example shows how to use the HtmlPresenter to implement a Numeric TextBox using &lt;input type='number'&gt; HTML tag." Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left" Margin="0,10,0,0"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,10,0,0">
+                    <TextBlock Text="Enter a number:" VerticalAlignment="Center"/>
+                    <controlns:NumericTextBox x:Name="NumericTextBox1" Value="100" Margin="10,0,0,0" Width="100" VerticalAlignment="Center"/>
+                </StackPanel>
+                <Button Content="Then click here" Click="ButtonClickHere_Click" Margin="0,10,0,0" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FFF78069" Style="{StaticResource ButtonViewSource_Style}"/>
+        </Grid>
+    </ContentControl>
+</UserControl>

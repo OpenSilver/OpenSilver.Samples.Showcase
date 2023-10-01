@@ -1,0 +1,32 @@
+﻿<UserControl
+    x:Class="OpenSilver.Samples.VBShowcase.Grid_Demo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:OpenSilver.Samples.VBShowcase">
+    <ContentControl Style="{StaticResource Card_Style}" Width="180">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl Content="Grid" Foreground="#FFFE7484" Background="#DAB6BB" Style="{StaticResource HeaderControl_Style}"/>
+            <!--<TextBlock Grid.Row="1" Text="A Grid can have rows and columns, with fixed or variable sizes." Margin="0,10,0,0" Width="200" Style="{StaticResource Text1_Style}"/>-->
+            <Grid Grid.Row="1" Background="#FFEED6ED" Width="100" Height="100" HorizontalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Row="0" Grid.Column="0" Background="#FFFF99A7"/>
+                <Border Grid.Row="1" Grid.Column="0" Background="#FFF169B3"/>
+                <Border Grid.Row="1" Grid.Column="1" Background="#FFFF99EB"/>
+                <Border Grid.Row="0" Grid.Column="1" Background="#FFFF359E"/>
+            </Grid>
+            <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FFFE7484" Style="{StaticResource ButtonViewSource_Style}"/>
+        </Grid>
+    </ContentControl>
+</UserControl>
