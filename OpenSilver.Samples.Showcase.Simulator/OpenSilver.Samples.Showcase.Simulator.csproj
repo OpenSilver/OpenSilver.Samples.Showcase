@@ -4,8 +4,10 @@
 		<Configurations>SL;SL.Release;UWP</Configurations>
 		<OutputType>WinExe</OutputType>
 		<TargetFramework>net7.0-windows</TargetFramework>
+		<OutputPath>bin/$(Configuration)/cs</OutputPath>
+		<IntermediateOutputPath>obj/$(Configuration)/cs</IntermediateOutputPath>
 	</PropertyGroup>
-	
+
 	<PropertyGroup Condition="'$(Configuration)' == 'SL' Or '$(Configuration)' == 'UWP'">
 		<DebugType>full</DebugType>
 		<Optimize>false</Optimize>
@@ -20,7 +22,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="OpenSilver.Simulator" Version="2.0.0-preview-2023-10-02-170800-00000000" />
-  </ItemGroup>
+	</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\src\OpenSilver.Samples.Showcase.csproj" />

@@ -4,6 +4,8 @@
 		<Configurations>SL;SL.Release;UWP</Configurations>
 		<OutputType>WinExe</OutputType>
 		<TargetFramework>net7.0-windows</TargetFramework>
+		<OutputPath>bin/$(Configuration)/vb</OutputPath>
+		<IntermediateOutputPath>obj/$(Configuration)/vb</IntermediateOutputPath>
 	</PropertyGroup>
 	
 	<PropertyGroup Condition="'$(Configuration)' == 'SL' Or '$(Configuration)' == 'UWP'">

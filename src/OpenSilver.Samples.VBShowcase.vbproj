@@ -4,7 +4,7 @@
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<OpenSilverVersion>2.0.0-preview-2023-10-02-170800-00000000</OpenSilverVersion>
 		<EnableDefaultItems>false</EnableDefaultItems>
-		<!--<IsOpenSilver>true</IsOpenSilver>-->
+		<IsOpenSilver>true</IsOpenSilver>
 		<OutputPath>bin/$(Configuration)/vb</OutputPath>
 		<IntermediateOutputPath>obj/$(Configuration)/vb</IntermediateOutputPath>
 		<OpenSilverGenerateAssemblyInfo>false</OpenSilverGenerateAssemblyInfo>
@@ -670,5 +670,6 @@
 	</ItemGroup>
 	<ItemGroup>
 		<Folder Include="Third_Party_Resources\" />
-	</ItemGroup>	
+	</ItemGroup>
+	
 </Project>
