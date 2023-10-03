@@ -23,7 +23,7 @@
   </ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\src\OpenSilver.Samples.Showcase.csproj" />
+		<ProjectReference Include="..\src\OpenSilver.Samples.VBShowcase.vbproj" />
 	</ItemGroup>
 
 </Project>
