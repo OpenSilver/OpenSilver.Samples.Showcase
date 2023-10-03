@@ -64,7 +64,7 @@ namespace OpenSilver.Samples.Showcase
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "ChildWindow_Demo.xaml.vb",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/vbsrc/Samples/XAML_Controls/ChildWindow/ChildWindow_Demo.xaml.vb"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/ChildWindow/ChildWindow_Demo.xaml.vb"
                 },
                 new ViewSourceButtonInfo()
                 {
@@ -79,7 +79,7 @@ namespace OpenSilver.Samples.Showcase
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "LoginWindow.xaml.vb",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/vbsrc/Samples/XAML_Controls/ChildWindow/LoginWindow.xaml.vb"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/ChildWindow/LoginWindow.xaml.vb"
                 },
                 new ViewSourceButtonInfo()
                 {

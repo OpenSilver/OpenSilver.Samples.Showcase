@@ -170,12 +170,12 @@ namespace OpenSilver.Samples.Showcase
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "JSON_Serializer_Demo.xaml.vb",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/vbsrc/Samples/Net_Framework/JSON_Serializer/JSON_Serializer_Demo.xaml.vb"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/JSON_Serializer/JSON_Serializer_Demo.xaml.vb"
                 },
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "JsonConvert.vb",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/vbsrc/Samples/Net_Framework/JSON_Serializer/JsonConvert.vb"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/JSON_Serializer/JsonConvert.vb"
                 }
             });
         }

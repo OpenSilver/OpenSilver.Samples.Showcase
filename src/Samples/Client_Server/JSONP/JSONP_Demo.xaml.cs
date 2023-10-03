@@ -42,7 +42,7 @@ namespace OpenSilver.Samples.Showcase
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "JSONP_Demo.xaml.vb",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/vbsrc/Samples/Client_Server/JSONP.ajax/JSONP_Demo.xaml.vb"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Client_Server/JSONP.ajax/JSONP_Demo.xaml.vb"
                 }
             });
         }

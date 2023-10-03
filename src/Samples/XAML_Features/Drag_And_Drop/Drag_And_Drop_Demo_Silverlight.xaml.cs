@@ -121,7 +121,7 @@ namespace OpenSilver.Samples.Showcase
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "Drag_And_Drop_Demo_Silverlight.xaml.xaml.vb",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/vbsrc/Samples/XAML_Features/Drag_And_Drop/Drag_And_Drop_Demo.xaml.vb"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Features/Drag_And_Drop/Drag_And_Drop_Demo.xaml.vb"
                 }
             });
         }

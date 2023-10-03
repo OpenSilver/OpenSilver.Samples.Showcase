@@ -1,0 +1,674 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<Configurations>SL;SL.Release;UWP</Configurations>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<OpenSilverVersion>2.0.0-preview-2023-10-02-170800-00000000</OpenSilverVersion>
+		<EnableDefaultItems>false</EnableDefaultItems>
+		<!--<IsOpenSilver>true</IsOpenSilver>-->
+		<OutputPath>bin/$(Configuration)/vb</OutputPath>
+		<IntermediateOutputPath>obj/$(Configuration)/vb</IntermediateOutputPath>
+		<OpenSilverGenerateAssemblyInfo>false</OpenSilverGenerateAssemblyInfo>
+	</PropertyGroup>
+	<PropertyGroup>
+		<OptionExplicit>Off</OptionExplicit>
+		<OptionCompare>Binary</OptionCompare>
+		<OptionStrict>Off</OptionStrict>
+		<OptionInfer>On</OptionInfer>
+		<RootNamespace></RootNamespace>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)' == 'SL'">
+		<DebugType>full</DebugType>
+		<DebugSymbols>true</DebugSymbols>
+		<DefineConstants>DEBUG,TRACE,SLMIGRATION,OPENSILVER</DefineConstants>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)' == 'SL.Release'">
+		<DefineConstants>TRACE,SLMIGRATION,OPENSILVER</DefineConstants>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)' == 'UWP'">
+		<DebugType>full</DebugType>
+		<DebugSymbols>true</DebugSymbols>
+		<DefineConstants>DEBUG,TRACE,OPENSILVER</DefineConstants>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="System.ServiceModel.Duplex" Version="4.10.0" />
+		<PackageReference Include="System.ServiceModel.Http" Version="4.10.0" />
+		<PackageReference Include="System.ServiceModel.NetTcp" Version="4.10.0" />
+		<PackageReference Include="System.ServiceModel.Security" Version="4.10.0" />
+		<PackageReference Include="OpenSilver" Version="$(OpenSilverVersion)" Condition="'$(Configuration)' == 'SL' Or '$(Configuration)' == 'SL.Release'" />
+		<PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+	</ItemGroup>
+	<!-- Configuration-dependent files -->
+	<Choose>
+		<When Condition="$(DefineConstants.Contains('SLMIGRATION'))">
+			<ItemGroup>
+				<Page Include="Samples\XAML_Features\Drag_And_Drop\Drag_And_Drop_Demo_Silverlight.xaml">
+					<Generator>MSBuild:Compile</Generator>
+				</Page>
+				<Page Include="Samples\Interop_Samples\WebView\WebBrowser_Demo.xaml">
+					<Generator>MSBuild:Compile</Generator>
+				</Page>
+				<Compile Include="Samples\XAML_Features\Drag_And_Drop\Drag_And_Drop_Demo_Silverlight.xaml.vb" />
+				<Compile Include="Samples\Interop_Samples\WebView\WebBrowser_Demo.xaml.vb" />
+			</ItemGroup>
+		</When>
+		<Otherwise>
+			<ItemGroup>
+				<Page Include="Samples\XAML_Features\Drag_And_Drop\Drag_And_Drop_Demo.xaml">
+					<Generator>MSBuild:Compile</Generator>
+				</Page>
+				<Page Include="Samples\Interop_Samples\WebView\WebView_Demo.xaml">
+					<Generator>MSBuild:Compile</Generator>
+				</Page>
+				<Compile Include="Samples\XAML_Features\Drag_And_Drop\Drag_And_Drop_Demo.xaml.vb" />
+				<Compile Include="Samples\Interop_Samples\WebView\WebView_Demo.xaml.vb" />
+			</ItemGroup>
+		</Otherwise>
+	</Choose>
+	<ItemGroup>
+		<Content Include="Connected Services\ServiceReference1\ConnectedService.json"></Content>
+		<Content Include="MainPage.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Content>
+		<Content Include="Other\embed.js">
+			<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+			<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+		</Content>
+		<Content Include="Other\Logo.png" />
+		<Content Include="Other\MenuIcon.png" />
+		<Content Include="Other\Planets\Earth.png" />
+		<Content Include="Other\Planets\Jupiter.png" />
+		<Content Include="Other\Planets\Mars.png" />
+		<Content Include="Other\Planets\Mercury.png" />
+		<Content Include="Other\Planets\Neptune.png" />
+		<Content Include="Other\Planets\Saturn.png" />
+		<Content Include="Other\Planets\Uranus.png" />
+		<Content Include="Other\Planets\Venus.png" />
+		<Content Include="Other\SampleText.txt" />
+		<Content Include="Other\smallBall.png" />
+		<Content Include="Other\SampleVideo.mp4" />
+		<Content Include="Other\SampleAudio.mp3" />
+		<Content Include="Other\SplashScreen1.png" />
+		<Content Include="Properties\launchSettings.json" />
+		<Page Include="App.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_Button_Styles.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_Card_Styles.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_CheckBox_Styles.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_ChildWindow_Styles.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_ComboBox_Styles.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_CommonResources.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_ContextMenu_Styles.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_DatePicker_Styles.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_Expander_Styles.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_PasswordBox_Styles.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_Popup_Styles.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_RadioButton_Styles.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_TabControl_Styles.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_TextBox_Styles.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Other\Styles.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\Client_Server\Client_Server.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\Client_Server\jQuery.ajax\jQueryAjax_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\Client_Server\JSONP\JSONP_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\Client_Server\REST_WebClient\REST_WebClient_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\Client_Server\SignalR\SignalR_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\Client_Server\WCF_SOAP\WCF_SOAP_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\Client_Server\WebSockets\WebSockets_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\Interop_Samples\ExecuteJavaScript\ExecuteJavaScript_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\Interop_Samples\GetDiv\GetDiv_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\Interop_Samples\HtmlPresenter\Interop_HtmlPresenter_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\Interop_Samples\Interop_Samples.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\Interop_Samples\MethodToUpdateDom\MethodToUpdateDom_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\Material_Design\Material_Design.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\Material_Design\SampleMaterialChildWindow.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\Net_Framework\AsyncAwait\AsyncAwait_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\Net_Framework\Clipboard_SetText\Clipboard_SetText_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\Net_Framework\Console\Console_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\Net_Framework\DataContractSerializer\DataContractSerializer_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\Net_Framework\DispatcherTimer\DispatcherTimer_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\Net_Framework\File_Open\File_Open_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\Net_Framework\File_Save\File_Save_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\Net_Framework\FullScreen\FullScreen_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\Net_Framework\GetRessourceStream\GetRessourceStream_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\Net_Framework\HtmlPage\HtmlPage_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\Net_Framework\IsolatedStorageFile\IsolatedStorageFile_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\Net_Framework\IsolatedStorageSettings\IsolatedStorageSettings _Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\Net_Framework\JSON_Serializer\JSON_Serializer_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\Net_Framework\Keyboard\Keyboard_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\Net_Framework\Linq\Linq_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\Net_Framework\Net_Framework.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\Net_Framework\Printing\Invoice.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\Net_Framework\Printing\Printing_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\Net_Framework\Regex\Regex_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\Net_Framework\RESX\RESX_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\Net_Framework\Zip\Zip_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\Performance\HtmlCanvas\HtmlCanvas_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\Performance\Performance.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\Third_Party\Plotly_Charts\Plotly_Charts_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\Third_Party\Third_Party.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\Welcome.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\AutoCompleteBox\AutoCompleteBox_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\Border\Border_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\Button\Button_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\Button\Styles\DefaultButtonStyle.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\Canvas\Canvas_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\CheckBox\CheckBox_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\ChildWindow2\NonModalChildWindow_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\ChildWindow2\SmallChildWindow.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\ChildWindow\ChildWindow_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\ChildWindow\LoginWindow.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\ChildWindow\Styles\DefaultChildWindowStyle.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\ChildWindow\Styles\ModernChildWindowStyle.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\ComboBox\ComboBox_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\ComboBox\Styles\DefaultComboBoxStyle.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\ContextMenu\ContextMenu_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\ContextMenu_MenuItem\ContextMenu_MenuItem_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\ContextMenu_MenuItem\Styles\DefaultMenuItemStyle.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\DataGrid\DataGrid_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\DateAndTimePicker\DateAndTimePicker_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\DockPanel\DockPanel_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\Expander\Expander_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\Expander\Styles\DefaultExpanderStyle.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\Frame\Frame_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\GridSplitter\GridSplitter_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\GridSplitter\Styles\DefaultGridSplitterStyle.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\Grid\Grid_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\HtmlPresenter\HtmlPresenter_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\HyperlinkButton\HyperlinkButton.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\Image\Image_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\Label\Label_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\ListBox\ListBox_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\MediaElement\MediaElement_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\NumericUpDown\NumericUpDown_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\NumericUpDown\Styles\DefaultNumericUpDownStyle.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\PasswordBox\PasswordBox_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\Path\Path_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\Popup\Popup_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\RadioButton\RadioButton_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\RepeatButton\RepeatButton_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\ScrollBar\ScrollBar_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\ScrollBar\Styles\DefaultScrollBarStyle.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\ScrollViewer\ScrollViewer_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\Shapes\Shapes_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\Slider\Slider_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\StackPanel\StackPanel_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\TabControl\Styles\DefaultTabControlStyle.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\TabControl\Styles\DefaultTabItemStyle.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\TabControl\TabControl_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\Textblock\TextBlock_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\TextBox\TextBox_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\Thumb\Styles\DefaultThumbStyle.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\Thumb\Thumb_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\ToggleButton\Styles\DefaultToggleButtonStyle.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\ToggleButton\ToggleButton_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\ToolTip\Styles\DefaultToolTipStyle.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\ToolTip\ToolTip_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\Viewbox\Styles\DefaultViewboxStyle.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\Viewbox\Viewbox_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\WrapPanel\WrapPanel_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Controls\Xaml_Controls.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Features\Animations\Animations_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Features\AttachedProperties\AttachedProperties_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Features\Binding1\Binding1_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Features\Binding2\Binding2_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Features\Binding3\Binding3_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Features\ClipToBounds\ClipToBounds_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Features\PropertyChangedTrigger\PropertyChangedTrigger_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Features\InteractivityTriggers\InteractivityTriggers_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Features\Commanding\Commanding_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Features\DependencyProperties\DependencyProperties_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Features\DropShadowEffect\DropShadowEffect_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Features\FindElementsInHostCoordinates\FindElementsInHostCoordinates_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Features\Gradients\Gradients_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Features\MarkupExtensions\MarkupExtensions_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Content Include="Samples\XAML_Features\MouseWheel\MouseWheel_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Content>
+		<Page Include="Samples\XAML_Features\RenderTransforms\RenderTransforms_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Features\TransformToVisual\TransformToVisual_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Features\UriMapper\UriMapper_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Features\Validation\Validation_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Features\VisualTreeHelper\VisualTreeHelper_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Features\Window_SizeChanged\Window_SizeChanged_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Features\XAML_Features.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Features\XAML_Resource_Dictionary\Dictionaries\Style1.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Features\XAML_Resource_Dictionary\Dictionaries\Style2.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\XAML_Features\XAML_Resource_Dictionary\XAML_Resource_Dictionary_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Include="App.xaml.vb" />
+		<Compile Include="Connected Services\ServiceReference1\Reference.vb" />
+		<Compile Include="MainPage.xaml.vb" />
+		<Compile Include="Other\Internals\ChildWindowHelper.vb" />
+		<Compile Include="Other\Internals\ControlToDisplayCodeHostedOnGitHub.vb" />
+		<Compile Include="Other\Internals\MasonryPanel.vb" />
+		<Compile Include="Other\Internals\MasonryPanelWithProgressiveLoading.vb" />
+		<Compile Include="Other\Internals\ViewSourceButtonHelper.vb" />
+		<Compile Include="Other\Internals\ViewSourceButtonInfo.vb" />
+		<Compile Include="Other\Internals\WrapPanelWithProgressiveLoading.vb" />
+		<Compile Include="Other\MaterialDesign_Styles_Kit\AccentColorConverter.vb" />
+		<Compile Include="Other\MaterialDesign_Styles_Kit\DoubleToCornerRadiusConverter.vb" />
+		<Compile Include="Other\MaterialDesign_Styles_Kit\TextToPlaceholderTextVisibilityConverter.vb" />
+		<Compile Include="Other\Planet.vb" />
+		<Compile Include="Samples\Client_Server\Client_Server.xaml.vb" />
+		<Compile Include="Samples\Client_Server\jQuery.ajax\jQueryAjaxHelper.vb" />
+		<Compile Include="Samples\Client_Server\jQuery.ajax\jQueryAjax_Demo.xaml.vb" />
+		<Compile Include="Samples\Client_Server\JSONP\JSONP_Demo.xaml.vb" />
+		<Compile Include="Samples\Client_Server\REST_WebClient\REST_ToDoItem.vb" />
+		<Compile Include="Samples\Client_Server\REST_WebClient\REST_WebClient_Demo.xaml.vb" />
+		<Compile Include="Samples\Client_Server\SignalR\SignalR_Demo.xaml.vb" />
+		<Compile Include="Samples\Client_Server\WCF_SOAP\WCF_SOAP_Demo.xaml.vb" />
+		<Compile Include="Samples\Client_Server\WebSockets\WebSocket.vb" />
+		<Compile Include="Samples\Client_Server\WebSockets\WebSockets_Demo.xaml.vb" />
+		<Compile Include="Samples\Interop_Samples\ExecuteJavaScript\ExecuteJavaScript_Demo.xaml.vb" />
+		<Compile Include="Samples\Interop_Samples\GetDiv\GetDiv_Demo.xaml.vb" />
+		<Compile Include="Samples\Interop_Samples\HtmlPresenter\Interop_HtmlPresenter_Demo.xaml.vb" />
+		<Compile Include="Samples\Interop_Samples\HtmlPresenter\NumericTextBox.vb" />
+		<Compile Include="Samples\Interop_Samples\Interop_Samples.xaml.vb" />
+		<Compile Include="Samples\Interop_Samples\MethodToUpdateDom\AttachedPropertiesWithMethodToUpdateDom.vb" />
+		<Compile Include="Samples\Interop_Samples\MethodToUpdateDom\MethodToUpdateDom_Demo.xaml.vb" />
+		<Compile Include="Samples\Material_Design\Material_Design.xaml.vb" />
+		<Compile Include="Samples\Material_Design\SampleMaterialChildWindow.xaml.vb" />
+		<Compile Include="Samples\Net_Framework\AsyncAwait\AsyncAwait_Demo.xaml.vb" />
+		<Compile Include="Samples\Net_Framework\Clipboard_SetText\Clipboard_SetText_Demo.xaml.vb" />
+		<Compile Include="Samples\Net_Framework\Console\Console_Demo.xaml.vb" />
+		<Compile Include="Samples\Net_Framework\DataContractSerializer\DataContractSerializer_Demo.xaml.vb" />
+		<Compile Include="Samples\Net_Framework\DispatcherTimer\DispatcherTimer_Demo.xaml.vb" />
+		<Compile Include="Samples\Net_Framework\File_Open\FileOpenDialog.vb" />
+		<Compile Include="Samples\Net_Framework\File_Open\File_Open_Demo.xaml.vb" />
+		<Compile Include="Samples\Net_Framework\File_Save\FileSaver.vb" />
+		<Compile Include="Samples\Net_Framework\File_Save\File_Save_Demo.xaml.vb" />
+		<Compile Include="Samples\Net_Framework\FullScreen\FullScreen_Demo.xaml.vb" />
+		<Compile Include="Samples\Net_Framework\GetRessourceStream\GetRessourceStream_Demo.xaml.vb" />
+		<Compile Include="Samples\Net_Framework\HtmlPage\HtmlPage_Demo.xaml.vb" />
+		<Compile Include="Samples\Net_Framework\IsolatedStorageFile\IsolatedStorageFile_Demo.xaml.vb" />
+		<Compile Include="Samples\Net_Framework\IsolatedStorageSettings\IsolatedStorageSettings _Demo.xaml.vb" />
+		<Compile Include="Samples\Net_Framework\JSON_Serializer\InteropHelper.vb" />
+		<Compile Include="Samples\Net_Framework\JSON_Serializer\JsonConvert.vb" />
+		<Compile Include="Samples\Net_Framework\JSON_Serializer\JSON_Serializer_Demo.xaml.vb" />
+		<Compile Include="Samples\Net_Framework\Keyboard\Keyboard_Demo.xaml.vb" />
+		<Compile Include="Samples\Net_Framework\Linq\Linq_Demo.xaml.vb" />
+		<Compile Include="Samples\Net_Framework\Net_Framework.xaml.vb" />
+		<Compile Include="Samples\Net_Framework\Printing\Invoice.xaml.vb" />
+		<Compile Include="Samples\Net_Framework\Printing\Printing_Demo.xaml.vb" />
+		<Compile Include="Samples\Net_Framework\Regex\Regex_Demo.xaml.vb" />
+		<Compile Include="Samples\Net_Framework\RESX\RESX_Demo.xaml.vb" />
+		<Compile Include="Samples\Net_Framework\Zip\ZipFile.vb" />
+		<Compile Include="Samples\Net_Framework\Zip\Zip_Demo.xaml.vb" />
+		<Compile Include="Samples\Performance\HtmlCanvas\HtmlCanvas_Demo.xaml.vb" />
+		<Compile Include="Samples\Performance\HtmlCanvas\MainSprite.vb" />
+		<Compile Include="Samples\Performance\Performance.xaml.vb" />
+		<Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Annotation.vb" />
+		<Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Axis.vb" />
+		<Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\BarMode.vb" />
+		<Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\ChartControl.vb" />
+		<Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Data.vb" />
+		<Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Domain.vb" />
+		<Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Font.vb" />
+		<Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\InteropHelper.vb" />
+		<Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Layout.vb" />
+		<Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Legend.vb" />
+		<Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Line.vb" />
+		<Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Marker.vb" />
+		<Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Trace.vb" />
+		<Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\TraceMode.vb" />
+		<Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\TraceType.vb" />
+		<Compile Include="Samples\Third_Party\Plotly_Charts\Plotly_Charts_Demo.xaml.vb" />
+		<Compile Include="Samples\Third_Party\Third_Party.xaml.vb" />
+		<Compile Include="Samples\Welcome.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\AutoCompleteBox\AutoCompleteBox_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\Border\Border_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\Button\Button_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\Canvas\Canvas_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\CheckBox\CheckBox_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\ChildWindow2\NonModalChildWindow_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\ChildWindow2\SmallChildWindow.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\ChildWindow\ChildWindow_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\ChildWindow\LoginWindow.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\ComboBox\ComboBox_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\ContextMenu\ContextMenu_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\ContextMenu_MenuItem\ContextMenu_MenuItem_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\DataGrid\DataGrid_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\DateAndTimePicker\DateAndTimePicker_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\DockPanel\DockPanel_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\Expander\Expander_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\Frame\Frame_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\GridSplitter\GridSplitter_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\Grid\Grid_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\HtmlPresenter\HtmlPresenter_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\HyperlinkButton\HyperlinkButton.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\Image\Image_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\Label\Label_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\ListBox\ListBox_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\MediaElement\MediaElement_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\NumericUpDown\NumericUpDown_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\PasswordBox\PasswordBox_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\Path\Path_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\Popup\Popup_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\RadioButton\RadioButton_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\RepeatButton\RepeatButton_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\ScrollBar\ScrollBar_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\ScrollViewer\ScrollViewer_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\Shapes\Shapes_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\Slider\Slider_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\StackPanel\StackPanel_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\TabControl\TabControl_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\Textblock\TextBlock_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\TextBox\TextBox_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\Thumb\Thumb_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\ToggleButton\ToggleButton_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\ToolTip\ToolTip_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\Viewbox\Viewbox_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\WrapPanel\WrapPanel_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Controls\Xaml_Controls.xaml.vb" />
+		<Compile Include="Samples\XAML_Features\Animations\Animations_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Features\AttachedProperties\AttachedProperties_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Features\AttachedProperties\SampleAttachedProperties.vb" />
+		<Compile Include="Samples\XAML_Features\Binding1\Binding1_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Features\Binding2\Binding2_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Features\Binding2\KilometersToMilesConverter.vb" />
+		<Compile Include="Samples\XAML_Features\Binding3\Binding3_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Features\ClipToBounds\ClipToBounds_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Features\PropertyChangedTrigger\PropertyChangedTrigger_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Features\InteractivityTriggers\InteractivityTriggers_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Features\Commanding\Commanding_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Features\DependencyProperties\DependencyProperties_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Features\DropShadowEffect\DropShadowEffect_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Features\FindElementsInHostCoordinates\FindElementsInHostCoordinates_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Features\Gradients\Gradients_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Features\MarkupExtensions\MarkupExtensions_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Features\MouseWheel\MouseWheel_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Features\RenderTransforms\RenderTransforms_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Features\TransformToVisual\TransformToVisual_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Features\UriMapper\UriMapper_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Features\Validation\Person.vb" />
+		<Compile Include="Samples\XAML_Features\Validation\Validation_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Features\VisualTreeHelper\VisualTreeHelper_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Features\Window_SizeChanged\Window_SizeChanged_Demo.xaml.vb" />
+		<Compile Include="Samples\XAML_Features\XAML_Features.xaml.vb" />
+		<Compile Include="Samples\XAML_Features\XAML_Resource_Dictionary\XAML_Resource_Dictionary_Demo.xaml.vb" />
+	</ItemGroup>
+	<ItemGroup>
+		<Folder Include="Third_Party_Resources\" />
+	</ItemGroup>	
+</Project>

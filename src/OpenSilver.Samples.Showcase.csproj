@@ -3,9 +3,11 @@
 	<PropertyGroup>
 		<Configurations>SL;SL.Release;UWP</Configurations>
 		<TargetFramework>netstandard2.0</TargetFramework>
-    <OpenSilverVersion>1.2.0-preview-2023-10-06-143046-f00b75f8</OpenSilverVersion>
-    <EnableDefaultItems>false</EnableDefaultItems>
-    <IsOpenSilver>true</IsOpenSilver>
+		<OpenSilverVersion>1.2.0-preview-2023-10-06-143046-f00b75f8</OpenSilverVersion>
+		<EnableDefaultItems>false</EnableDefaultItems>
+		<IsOpenSilver>true</IsOpenSilver>
+		<OutputPath>bin/$(Configuration)/cs</OutputPath>
+		<IntermediateOutputPath>obj/$(Configuration)/cs</IntermediateOutputPath>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)' == 'SL'">
@@ -31,7 +33,7 @@
 		<PackageReference Include="System.ServiceModel.Security" Version="4.10.0" />
 		<PackageReference Include="OpenSilver" Version="$(OpenSilverVersion)" Condition="'$(Configuration)' == 'SL' Or '$(Configuration)' == 'SL.Release'" />
 		<PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
-  </ItemGroup>
+	</ItemGroup>
 
 	<!-- Configuration-dependent files -->
 	<Choose>
@@ -74,8 +76,8 @@
 			<Generator>MSBuild:Compile</Generator>
 		</Content>
 		<Content Include="Other\embed.js">
-		  <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-		  <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+			<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+			<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
 		</Content>
 		<Content Include="Other\Logo.png" />
 		<Content Include="Other\MenuIcon.png" />
@@ -281,10 +283,10 @@
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
 		<Page Include="Samples\XAML_Controls\ChildWindow2\NonModalChildWindow_Demo.xaml">
-		  <Generator>MSBuild:Compile</Generator>
+			<Generator>MSBuild:Compile</Generator>
 		</Page>
 		<Page Include="Samples\XAML_Controls\ChildWindow2\SmallChildWindow.xaml">
-		  <Generator>MSBuild:Compile</Generator>
+			<Generator>MSBuild:Compile</Generator>
 		</Page>
 		<Page Include="Samples\XAML_Controls\ChildWindow\ChildWindow_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
@@ -461,10 +463,10 @@
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
 		<Page Include="Samples\XAML_Features\PropertyChangedTrigger\PropertyChangedTrigger_Demo.xaml">
-		  <Generator>MSBuild:Compile</Generator>
+			<Generator>MSBuild:Compile</Generator>
 		</Page>
 		<Page Include="Samples\XAML_Features\InteractivityTriggers\InteractivityTriggers_Demo.xaml">
-		  <Generator>MSBuild:Compile</Generator>
+			<Generator>MSBuild:Compile</Generator>
 		</Page>
 		<Page Include="Samples\XAML_Features\Commanding\Commanding_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
@@ -485,7 +487,7 @@
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
 		<Content Include="Samples\XAML_Features\MouseWheel\MouseWheel_Demo.xaml">
-		  <Generator>MSBuild:Compile</Generator>
+			<Generator>MSBuild:Compile</Generator>
 		</Content>
 		<Page Include="Samples\XAML_Features\RenderTransforms\RenderTransforms_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
@@ -509,10 +511,10 @@
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
 		<Page Include="Samples\XAML_Features\XAML_Resource_Dictionary\Dictionaries\Style1.xaml">
-		  <Generator>MSBuild:Compile</Generator>
+			<Generator>MSBuild:Compile</Generator>
 		</Page>
 		<Page Include="Samples\XAML_Features\XAML_Resource_Dictionary\Dictionaries\Style2.xaml">
-		  <Generator>MSBuild:Compile</Generator>
+			<Generator>MSBuild:Compile</Generator>
 		</Page>
 		<Page Include="Samples\XAML_Features\XAML_Resource_Dictionary\XAML_Resource_Dictionary_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
@@ -676,11 +678,4 @@
 	<ItemGroup>
 		<Folder Include="Third_Party_Resources\" />
 	</ItemGroup>
-
-	<!-- Removing bin\$(Configuration) and obj\$(Configuration) -->
-	<Target Name="FullClean" AfterTargets="Clean">
-		<RemoveDir Directories="$(ProjectDir)$(BaseOutputPath)$(Configuration)\" />
-		<RemoveDir Directories="$(ProjectDir)$(BaseIntermediateOutputPath)$(Configuration)\" />
-	</Target>
-
 </Project>

@@ -46,7 +46,7 @@ namespace OpenSilver.Samples.Showcase
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "AttachedPropertiesWithMethodToUpdateDom.vb",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/vbsrc/Samples/Interop_Samples/MethodToUpdateDom/AttachedPropertiesWithMethodToUpdateDom.vb"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Interop_Samples/MethodToUpdateDom/AttachedPropertiesWithMethodToUpdateDom.vb"
                 },
                 new ViewSourceButtonInfo()
                 {
@@ -61,7 +61,7 @@ namespace OpenSilver.Samples.Showcase
                 new ViewSourceButtonInfo()
                 {
                     TabHeader = "MethodToUpdateDom_Demo.xaml.vb",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/vbsrc/Samples/Interop_Samples/MethodToUpdateDom/MethodToUpdateDom_Demo.xaml.vb"
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Interop_Samples/MethodToUpdateDom/MethodToUpdateDom_Demo.xaml.vb"
                 }
             });
         }

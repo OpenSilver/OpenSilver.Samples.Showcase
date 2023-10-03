@@ -3,8 +3,7 @@
 	<PropertyGroup>
 		<Configurations>SL;SL.Release;UWP</Configurations>
 		<OutputType>WinExe</OutputType>
-		<TargetFramework>net472</TargetFramework>
-		<StartArguments>"..\..\..\..\src\bin\$(Configuration)\netstandard2.0\OpenSilver.Samples.Showcase.dll"</StartArguments>
+		<TargetFramework>net7.0-windows</TargetFramework>
 	</PropertyGroup>
 	
 	<PropertyGroup Condition="'$(Configuration)' == 'SL' Or '$(Configuration)' == 'UWP'">
@@ -20,11 +19,11 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="OpenSilver.Simulator" Version="2.0.0-private-09262023" />
+		<PackageReference Include="OpenSilver.Simulator" Version="2.0.0-preview-2023-10-02-170800-00000000" />
   </ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\src\OpenSilver.Samples.Showcase.csproj" />
+		<ProjectReference Include="..\src\OpenSilver.Samples.VBShowcase.vbproj" />
 	</ItemGroup>
 
 </Project>

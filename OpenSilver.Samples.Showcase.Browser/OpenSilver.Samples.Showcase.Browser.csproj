@@ -27,14 +27,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="OpenSilver" Version="$(OpenSilverVersion)" Condition="'$(Configuration)' == 'SL' Or '$(Configuration)' == 'SL.Release'" />
+    <PackageReference Include="OpenSilver" Version="2.0.0-preview-2023-10-02-170800-00000000" Condition="'$(Configuration)' == 'SL' Or '$(Configuration)' == 'SL.Release'" />
     <PackageReference Include="OpenSilver.UwpCompatible" Version="$(OpenSilverVersion)" Condition="'$(Configuration)' == 'UWP'" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.0" PrivateAssets="all" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\OpenSilver.Samples.Showcase.csproj" />
+    <ProjectReference Include="..\src\OpenSilver.Samples.VBShowcase.vbproj" />
   </ItemGroup>
 
 </Project>

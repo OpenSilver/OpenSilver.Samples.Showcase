@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenSilver.Samples.Showcase
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenSilver.Samples.Showcase.Browser", "OpenSilver.Samples.Showcase.Browser\OpenSilver.Samples.Showcase.Browser.csproj", "{A0EA0E2B-0E48-4CC6-8B71-1C048D02D3A9}"
 EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "OpenSilver.Samples.VBShowcase", "vbsrc\OpenSilver.Samples.VBShowcase.vbproj", "{879B661C-C043-0347-129C-94534F77A125}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "OpenSilver.Samples.VBShowcase", "src\OpenSilver.Samples.VBShowcase.vbproj", "{879B661C-C043-0347-129C-94534F77A125}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
