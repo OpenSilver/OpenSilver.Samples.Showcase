@@ -3,10 +3,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Styles_Kit_Showcase.MaterialDesign_Styles_Kit">
 
-    <!--<ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="MaterialDesign_Styles_Kit/MaterialDesign_Button_Styles.xaml"/>
-    </ResourceDictionary.MergedDictionaries>-->
-    <!--Requires MaterialDesign_Button_Styles-->
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="MaterialDesign_Button_Styles.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
 
     <!--Popup with cross to close-->
     <Style x:Key="MaterialDesign_PopupContentWithCross_Style" TargetType="ContentControl">

@@ -19,11 +19,6 @@ namespace OpenSilver.Samples.Showcase
     {
         public App()
         {
-            this.Resources.Add("AccentColorConverter", new AccentColorConverter());
-            this.Resources.Add("DoubleToCornerRadiusConverter", new DoubleToCornerRadiusConverter());
-            this.Resources.Add("TextToPlaceholderTextVisibilityConverter", new TextToPlaceholderTextVisibilityConverter());
-            this.Resources.Add("MaterialDesign_DefaultAccentColor", new SolidColorBrush(Color.FromArgb(255, 0, 105, 236)));
-
             this.InitializeComponent();
 
             // Enter construction logic here...

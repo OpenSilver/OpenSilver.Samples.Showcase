@@ -3,10 +3,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Styles_Kit_Showcase.MaterialDesign_Styles_Kit">
 
-    <!--<ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="MaterialDesign_Styles_Kit/MaterialDesign_CommonResources.xaml"/>
-    </ResourceDictionary.MergedDictionaries>-->
-    <!--Requires MaterialDesign_CommonResources-->
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="MaterialDesign_CommonResources.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
 
     <!--TabControl-->
     <Style x:Key="MaterialDesign_TabControl_Style" TargetType="TabControl">
