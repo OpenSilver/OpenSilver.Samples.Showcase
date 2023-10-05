@@ -7,7 +7,6 @@
 		<IsOpenSilver>true</IsOpenSilver>
 		<OutputPath>bin/$(Configuration)/vb</OutputPath>
 		<IntermediateOutputPath>obj/$(Configuration)/vb</IntermediateOutputPath>
-		<OpenSilverGenerateAssemblyInfo>false</OpenSilverGenerateAssemblyInfo>
 	</PropertyGroup>
 	<PropertyGroup>
 		<OptionExplicit>Off</OptionExplicit>

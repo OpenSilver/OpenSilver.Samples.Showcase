@@ -9,21 +9,25 @@
 		<!--Use .NET 6 to enable the commented options below-->
 		<PublishTrimmed>true</PublishTrimmed>
 		<!--<RunAOTCompilation Condition="'$(IsSecondPass)'=='True'">true</RunAOTCompilation>-->
-		<OutputPath>bin/$(Configuration)/vb</OutputPath>
-		<IntermediateOutputPath>obj/$(Configuration)/vb</IntermediateOutputPath>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)' == 'SL'">
+		<OutputPath>bin/$(Configuration)_vb</OutputPath>
+		<IntermediateOutputPath>obj/$(Configuration)_vb</IntermediateOutputPath>
 		<Optimize>false</Optimize>
 		<DefineConstants>TRACE;DEBUG;SLMIGRATION;CSHTML5BLAZOR;OPENSILVER</DefineConstants>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)' == 'SL.Release'">
+		<OutputPath>bin/$(Configuration)_vb</OutputPath>
+		<IntermediateOutputPath>obj/$(Configuration)_vb</IntermediateOutputPath>
 		<Optimize>true</Optimize>
 		<DefineConstants>TRACE;SLMIGRATION;CSHTML5BLAZOR;OPENSILVER</DefineConstants>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)' == 'UWP'">
+		<OutputPath>bin/$(Configuration)_vb</OutputPath>
+		<IntermediateOutputPath>obj/$(Configuration)_vb</IntermediateOutputPath>
 		<Optimize>false</Optimize>
 		<DefineConstants>DEBUG;TRACE;CSHTML5BLAZOR;OPENSILVER</DefineConstants>
 	</PropertyGroup>
