@@ -2,7 +2,7 @@
 	<PropertyGroup>
 		<Configurations>SL;SL.Release;UWP</Configurations>
 		<TargetFramework>netstandard2.0</TargetFramework>
-		<OpenSilverVersion>2.0.0-preview-2023-10-02-170800-00000000</OpenSilverVersion>
+		<OpenSilverVersion>1.2.0-preview-2023-10-05-100022-dbcb3462</OpenSilverVersion>
 		<EnableDefaultItems>false</EnableDefaultItems>
 		<IsOpenSilver>true</IsOpenSilver>
 		<OutputPath>bin/$(Configuration)/vb</OutputPath>
