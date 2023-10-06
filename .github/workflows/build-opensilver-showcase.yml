@@ -15,12 +15,12 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Set directory environment variables
-        if: "${{ github.event.inputs.opensilver-branch == 'develop' }}"
+        if: "${{ github.event.inputs.opensilver-branch == 'feature/AddStaggeredPanel' }}"
         run: |
           echo "vdir=${{ env.virtual-directory }}" >> $env:GITHUB_ENV
           echo "apath=${{ env.app-path }}" >> $env:GITHUB_ENV
       - name: Set directory environment variables
-        if: "${{ github.event.inputs.opensilver-branch == 'releases/OpenSilver/1.1.0' }}"
+        #if: "${{ github.event.inputs.opensilver-branch == 'releases/OpenSilver/1.1.0' }}"
         run: |
           echo "vdir=${{ env.virtual-directory-release }}" >> $env:GITHUB_ENV
           echo "apath=${{ env.app-path-release }}" >> $env:GITHUB_ENV
