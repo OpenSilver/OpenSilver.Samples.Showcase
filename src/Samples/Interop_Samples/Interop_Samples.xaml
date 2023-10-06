@@ -6,10 +6,10 @@
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
     <StackPanel>
         <TextBlock Text="Interop" Style="{StaticResource PageHeader_Style}"/>
-        <ItemsControl CustomLayout="True">
+        <ItemsControl>
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <controls:StaggeredPanel/>
+                    <controls:StaggeredPanel DesiredColumnWidth="280"/>
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
             <ItemsControl.Items>

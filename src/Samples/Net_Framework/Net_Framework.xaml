@@ -6,10 +6,15 @@
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
     <StackPanel>
         <TextBlock Text=".NET Framework" Style="{StaticResource PageHeader_Style}"/>
-        <ItemsControl CustomLayout="True">
+        <!--Note: Following demos are not in the ItemsControl below because they are larger than the StaggeredPanel expects, leading to them overflowing into the next column-->
+        <StackPanel Orientation="Horizontal">
+            <local:DataContractSerializer_Demo HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <local:Printing_Demo HorizontalAlignment="Center"/>
+        </StackPanel>
+        <ItemsControl>
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <controls:StaggeredPanel/>
+                    <controls:StaggeredPanel DesiredColumnWidth="280"/>
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
             <ItemsControl.Items>
@@ -32,10 +37,5 @@
                 <local:FullScreen_Demo x:Name="FullScreenDemo" HorizontalAlignment="Center"/>
             </ItemsControl.Items>
         </ItemsControl>
-        <!--Note: Following demos are not in the ItemsControl above because they are larger than the StaggeredPanel expects, leading to them overflowing into the next column-->
-        <StackPanel Orientation="Horizontal">
-            <local:DataContractSerializer_Demo HorizontalAlignment="Center"/>
-            <local:Printing_Demo HorizontalAlignment="Center"/>
-        </StackPanel>
     </StackPanel>
 </UserControl>
