@@ -5,7 +5,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <NoXamlPreprocessor>True</NoXamlPreprocessor>
     <OpenSilverType>4</OpenSilverType>
-    <OpenSilverVersion>1.2.0-preview-2023-06-15-125520-4c2b998e</OpenSilverVersion>
+    <OpenSilverVersion>1.2.0-preview-2023-10-06-143046-f00b75f8</OpenSilverVersion>
     <!--Use .NET 6 to enable the commented options below-->
     <PublishTrimmed>true</PublishTrimmed>
     <!--<RunAOTCompilation Condition="'$(IsSecondPass)'=='True'">true</RunAOTCompilation>-->
