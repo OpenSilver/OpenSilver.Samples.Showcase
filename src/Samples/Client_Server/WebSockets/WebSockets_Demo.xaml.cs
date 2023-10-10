@@ -70,7 +70,7 @@ namespace OpenSilver.Samples.Showcase
                 },
                 new ViewSourceButtonInfo()
                 {
-                    TabHeader = "WebSocket.cs",
+                    TabHeader = "WebSocket.vb",
                     FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Client_Server/WebSockets/WebSocket.vb"
                 }
             });

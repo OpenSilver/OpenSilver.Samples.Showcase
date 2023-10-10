@@ -1,46 +1,42 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
-	<PropertyGroup>
-		<Configurations>SL;SL.Release;UWP</Configurations>
-		<TargetFramework>net7.0</TargetFramework>
-		<NoXamlPreprocessor>True</NoXamlPreprocessor>
-		<OpenSilverType>4</OpenSilverType>
-		<OpenSilverVersion>1.2.0-preview-2023-10-06-143046-f00b75f8</OpenSilverVersion>
-		<!--Use .NET 6 to enable the commented options below-->
-		<PublishTrimmed>true</PublishTrimmed>
-		<!--<RunAOTCompilation Condition="'$(IsSecondPass)'=='True'">true</RunAOTCompilation>-->
-	</PropertyGroup>
+  <PropertyGroup>
+    <Configurations>SL;SL.Release;UWP</Configurations>
+    <TargetFramework>net7.0</TargetFramework>
+    <NoXamlPreprocessor>True</NoXamlPreprocessor>
+    <OpenSilverType>4</OpenSilverType>
+    <OpenSilverVersion>1.2.0-preview-2023-10-06-143046-f00b75f8</OpenSilverVersion>
+    <!--Use .NET 6 to enable the commented options below-->
+    <PublishTrimmed>true</PublishTrimmed>
+    <!--<RunAOTCompilation Condition="'$(IsSecondPass)'=='True'">true</RunAOTCompilation>-->
+    <OutputPath>bin/$(Configuration)_cs</OutputPath>
+    <IntermediateOutputPath>obj/$(Configuration)_cs</IntermediateOutputPath>
+  </PropertyGroup>
 
-	<PropertyGroup Condition="'$(Configuration)' == 'SL'">
-		<OutputPath>bin/$(Configuration)_cs</OutputPath>
-		<IntermediateOutputPath>obj/$(Configuration)_cs</IntermediateOutputPath>
-		<Optimize>false</Optimize>
-		<DefineConstants>TRACE;DEBUG;SLMIGRATION;CSHTML5BLAZOR;OPENSILVER</DefineConstants>
-	</PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'SL'">
+    <Optimize>false</Optimize>
+    <DefineConstants>TRACE;DEBUG;SLMIGRATION;CSHTML5BLAZOR;OPENSILVER</DefineConstants>
+  </PropertyGroup>
 
-	<PropertyGroup Condition="'$(Configuration)' == 'SL.Release'">
-		<OutputPath>bin/$(Configuration)_cs</OutputPath>
-		<IntermediateOutputPath>obj/$(Configuration)_cs</IntermediateOutputPath>
-		<Optimize>true</Optimize>
-		<DefineConstants>TRACE;SLMIGRATION;CSHTML5BLAZOR;OPENSILVER</DefineConstants>
-	</PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'SL.Release'">
+    <Optimize>true</Optimize>
+    <DefineConstants>TRACE;SLMIGRATION;CSHTML5BLAZOR;OPENSILVER</DefineConstants>
+  </PropertyGroup>
 
-	<PropertyGroup Condition="'$(Configuration)' == 'UWP'">
-		<OutputPath>bin/$(Configuration)_cs</OutputPath>
-		<IntermediateOutputPath>obj/$(Configuration)_cs</IntermediateOutputPath>
-		<Optimize>false</Optimize>
-		<DefineConstants>DEBUG;TRACE;CSHTML5BLAZOR;OPENSILVER</DefineConstants>
-	</PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'UWP'">
+    <Optimize>false</Optimize>
+    <DefineConstants>DEBUG;TRACE;CSHTML5BLAZOR;OPENSILVER</DefineConstants>
+  </PropertyGroup>
 
-	<ItemGroup>
-		<PackageReference Include="OpenSilver" Version="$(OpenSilverVersion)" Condition="'$(Configuration)' == 'SL' Or '$(Configuration)' == 'SL.Release'" />
-		<PackageReference Include="OpenSilver.UwpCompatible" Version="$(OpenSilverVersion)" Condition="'$(Configuration)' == 'UWP'" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.0" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.0" PrivateAssets="all" />
-	</ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="OpenSilver" Version="$(OpenSilverVersion)" Condition="'$(Configuration)' == 'SL' Or '$(Configuration)' == 'SL.Release'" />
+    <PackageReference Include="OpenSilver.UwpCompatible" Version="$(OpenSilverVersion)" Condition="'$(Configuration)' == 'UWP'" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.0" PrivateAssets="all" />
+  </ItemGroup>
 
-	<ItemGroup>
-		<ProjectReference Include="..\src\OpenSilver.Samples.Showcase.csproj" />
-	</ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\src\OpenSilver.Samples.Showcase.csproj" />
+  </ItemGroup>
 
 </Project>

@@ -222,7 +222,7 @@ namespace OpenSilver.Samples.Showcase
                 },
                 new ViewSourceButtonInfo()
                 {
-                    TabHeader = "REST_ToDoItem.cs",
+                    TabHeader = "REST_ToDoItem.vb",
                     FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Client_Server/REST_WebClient/REST_ToDoItem.vb"
                 }
             });

@@ -9,13 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenSilver.Samples.Showcase
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenSilver.Samples.Showcase.Browser", "OpenSilver.Samples.Showcase.Browser\OpenSilver.Samples.Showcase.Browser.csproj", "{A0EA0E2B-0E48-4CC6-8B71-1C048D02D3A9}"
 EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "OpenSilver.Samples.VBShowcase", "src\OpenSilver.Samples.VBShowcase.vbproj", "{879B661C-C043-0347-129C-94534F77A125}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "OpenSilver.Samples.Showcase", "src\OpenSilver.Samples.Showcase.vbproj", "{879B661C-C043-0347-129C-94534F77A125}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenSilver.Samples.Showcase.Browser.vb", "OpenSilver.Samples.Showcase.Browser\OpenSilver.Samples.Showcase.Browser.vb.csproj", "{441F926C-FD06-43D9-8ACE-58A7D2251F14}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenSilver.Samples.Showcase.Simulator.vb", "OpenSilver.Samples.Showcase.Simulator\OpenSilver.Samples.Showcase.Simulator.vb.csproj", "{F3DD95BC-B407-4CA4-8EA6-55F4DEE3D65A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSharp", "CSharp", "{119B9FBC-4843-4625-AAD2-1B1411C26E17}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "C#", "C#", "{119B9FBC-4843-4625-AAD2-1B1411C26E17}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VB", "VB", "{9AD18E5B-C74C-4363-B2B3-7D0B29F7D2CF}"
 EndProject
