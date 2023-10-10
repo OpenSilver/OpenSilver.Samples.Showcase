@@ -1,7 +1,8 @@
 ﻿Imports System
 Imports System.Collections.Generic
+Imports System.Threading.Tasks
 Imports TestPerformance
-#If SLMIGRATION
+#If SLMIGRATION Then
 Imports System.Windows
 Imports System.Windows.Controls
 #Else
@@ -15,7 +16,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 #End If
 
-Namespace Global.OpenSilver.Samples.Showcase
+Namespace OpenSilver.Samples.Showcase
     Partial Public Class HtmlCanvas_Demo
         Inherits UserControl
         Private _lastTickCount As Integer = 0
@@ -33,19 +34,20 @@ Namespace Global.OpenSilver.Samples.Showcase
             AddHandler Unloaded, AddressOf HtmlCanvas_Demo_Unloaded
         End Sub
 
-        Private Sub HtmlCanvas_Demo_Loaded(ByVal sender As Object, ByVal e As RoutedEventArgs)
+        Private Async Sub HtmlCanvas_Demo_Loaded(ByVal sender As Object, ByVal e As RoutedEventArgs)
 #If OPENSILVER Then
-#Else
-            if (!OpenSilver.Interop.IsRunningInTheSimulator)
-#End If
             If Not Interop.IsRunningInTheSimulator_WorkAround Then
+#Else
+            If Not OpenSilver.Interop.IsRunningInTheSimulator Then
+#End If
+
                 ' Load the initial sprites:
                 Me.ComboBoxToChooseNumberOfSprites.SelectedIndex = 1 ' This will raise the "SelectionChanged" event, which loads the sprites.
 
                 ' Start the main drawing loop:
                 _lastTickCount = Environment.TickCount
                 _loaded = True
-                MainLoop()
+                Await MainLoopAsync()
             Else
                 Visibility = Visibility.Collapsed
                 MessageBox.Show("The Simulator is too slow to run this demo. Please run the demo in the browser instead.")
@@ -78,11 +80,11 @@ Namespace Global.OpenSilver.Samples.Showcase
             ' Create the sprites:
             For i = 0 To spriteCount - 1
                 ' Create a new sprite:
-                Dim sprite = New MainSprite(i)
+                Dim sprite = New TestPerformance.MainSprite(i)
 
                 ' Set its position randomly:
-                sprite.X = rand.Next(CInt(canvasWidth) - CInt(sprite.Width))
-                sprite.Y = rand.Next(CInt(canvasHeight) - CInt(sprite.Height))
+                sprite.X = rand.Next(Math.Abs(CInt(canvasWidth) - CInt(sprite.Width)))
+                sprite.Y = rand.Next(Math.Abs(CInt(canvasHeight) - CInt(sprite.Height)))
 
                 ' Set its velocity randomly:
                 sprite.VelocityX = rand.Next(-10, 10)
@@ -93,7 +95,9 @@ Namespace Global.OpenSilver.Samples.Showcase
             Next
         End Sub
 
-        Private Sub MainLoop()
+        Private Async Function MainLoopAsync() As Task
+            If Not _loaded Then Return
+
             ' Determine the time elapsed since the last redraw:
             Dim newTickCount = Environment.TickCount
             Dim timeElapsedInMilliseconds = newTickCount - _lastTickCount
@@ -107,7 +111,7 @@ Namespace Global.OpenSilver.Samples.Showcase
             For Each child In Me.HtmlCanvas1.Children
                 Dim timeFactor = timeElapsedInMilliseconds / 30.0R ' This is intended to adjust the movement so that, no matter the frames per second, the items always move at the same speed.
 
-                Dim sprite = CType(child, MainSprite)
+                Dim sprite = CType(child, TestPerformance.MainSprite)
                 sprite.Move(sprite.VelocityX * timeFactor, sprite.VelocityY * timeFactor)
 
                 If sprite.X < 0 Then
@@ -129,13 +133,6 @@ Namespace Global.OpenSilver.Samples.Showcase
             ' Redraw:
             Me.HtmlCanvas1.Draw()
 
-            ' Re-enter this same method after a "Do Events":
-            Dispatcher.BeginInvoke(CType((Sub()
-                                              If _loaded Then ' Continue only if the control has not been unloaded in the meantime.
-                                                  MainLoop()
-                                              End If
-                                          End Sub), Action))
-
             ' Calculate the average "Frames Per Second":
             _counterToCalculateAverageFPS += 1
             Dim tickCountToCalculateAverageFPS = Environment.TickCount ' In milliseconds
@@ -149,27 +146,30 @@ Namespace Global.OpenSilver.Samples.Showcase
                 _counterToCalculateAverageFPS = 0
                 _tickCountToCalculateAverageFPS = tickCountToCalculateAverageFPS
             End If
-        End Sub
+
+            Await Task.Delay(1)
+            Await MainLoopAsync()
+        End Function
 
         Private Sub ButtonViewSource_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            Call ViewSource(New List(Of ViewSourceButtonInfo)() From {
-                    New ViewSourceButtonInfo() With {
+            Call Showcase.ViewSourceButtonHelper.ViewSource(New List(Of OpenSilver.Samples.Showcase.ViewSourceButtonInfo)() From {
+                    New Showcase.ViewSourceButtonInfo() With {
         .TabHeader = "HtmlCanvas_Demo.xaml",
         .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Performance/HtmlCanvas/HtmlCanvas_Demo.xaml"
     },
-                    New ViewSourceButtonInfo() With {
+                    New Showcase.ViewSourceButtonInfo() With {
         .TabHeader = "HtmlCanvas_Demo.xaml.cs",
         .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Performance/HtmlCanvas/HtmlCanvas_Demo.xaml.cs"
     },
-                    New ViewSourceButtonInfo() With {
+                    New Showcase.ViewSourceButtonInfo() With {
         .TabHeader = "MainSprite.cs",
         .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Performance/HtmlCanvas/MainSprite.cs"
     },
-                    New ViewSourceButtonInfo() With {
+                    New Showcase.ViewSourceButtonInfo() With {
         .TabHeader = "HtmlCanvas_Demo.xaml.vb",
         .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Performance/HtmlCanvas/HtmlCanvas_Demo.xaml.vb"
     },
-                    New ViewSourceButtonInfo() With {
+                    New Showcase.ViewSourceButtonInfo() With {
         .TabHeader = "MainSprite.vb",
         .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Performance/HtmlCanvas/MainSprite.vb"
     }

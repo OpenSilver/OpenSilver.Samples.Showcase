@@ -2,6 +2,7 @@
 #If SLMIGRATION
 Imports System.Windows
 Imports System.Windows.Controls
+Imports System.Windows.Input
 #Else
 using Windows.Foundation;
 using Windows.UI.Xaml;
@@ -13,15 +14,11 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 #End If
 
-Namespace Global.OpenSilver.Samples.Showcase
+Namespace OpenSilver.Samples.Showcase
     Public Partial Class Material_Design
         Inherits UserControl
         Public Sub New()
             Me.InitializeComponent()
-
-#If OPENSILVER
-            'DatePickerDemo.Visibility = Visibility.Collapsed; 
-#End If
 
             Dim items As ObservableCollection(Of String) = New ObservableCollection(Of String)() From {
                 "Item 1",
@@ -33,13 +30,21 @@ Namespace Global.OpenSilver.Samples.Showcase
             Me.DataGrid.ItemsSource = DataGridDataInstance.GetDataSet()
         End Sub
 
-        Private Sub ButtonDisplayContextMenu_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            Dim button = CType(sender, Button)
-            button.ContextMenu.IsOpen = True
+        Private Sub DisplayContextMenu_Click(ByVal sender As Object, ByVal e As MouseButtonEventArgs)
+            Dim cc = CType(sender, ContentControl)
+            cc.ContextMenu.HorizontalOffset = e.GetPosition(Nothing).X
+            cc.ContextMenu.VerticalOffset = e.GetPosition(Nothing).Y
+            cc.ContextMenu.IsOpen = True
+        End Sub
+
+        Private Sub ContextMenu_Closed(ByVal sender As Object, ByVal e As RoutedEventArgs)
+            Dim contextMenu = CType(sender, ContextMenu)
+            contextMenu.HorizontalOffset = 0
+            contextMenu.VerticalOffset = 0
         End Sub
 
         Private Sub ButtonShowChildWindow_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            Dim childWindow = New SampleMaterialChildWindow()
+            Dim childWindow = New OpenSilver.Samples.Showcase.SampleMaterialChildWindow()
             childWindow.Show()
         End Sub
 

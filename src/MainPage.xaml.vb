@@ -17,7 +17,7 @@ Namespace Global.OpenSilver.Samples.Showcase
 
         Private Shared _Current As MainPage
         Public Sub New()
-            Me.InitializeComponent()
+            InitializeComponent()
 
 #If OPENSILVER Then
             Me.ThirdPartyButton.Visibility = Visibility.Collapsed
@@ -26,7 +26,7 @@ Namespace Global.OpenSilver.Samples.Showcase
 
             Current = Me
             AddHandler Loaded, AddressOf MainPage_Loaded
-            AddHandler Window.Current.SizeChanged, AddressOf Window_SizeChanged
+            AddHandler SizeChanged, AddressOf MainPage_SizeChanged
 
 #If OPENSILVER Then
             Me.TitleImage.Visibility = Visibility.Collapsed
@@ -51,8 +51,6 @@ SHOWCASE"
             If Not HtmlPage.Document.DocumentUri.OriginalString.Contains("#") Then
                 NavigateToPage("/Welcome")
             End If
-
-            UpdateMenuDispositionBasedOnDisplaySize()
         End Sub
 
         Private Sub ButtonXamlControls_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
@@ -213,11 +211,7 @@ SHOWCASE"
             End If
         End Sub
 
-#If SLMIGRATION Then
-#Else
-        private void Window_SizeChanged(object sender, Windows.UI.Core.WindowSizeChangedEventArgs e)
-#End If
-        Private Sub Window_SizeChanged(ByVal sender As Object, ByVal e As WindowSizeChangedEventArgs)
+        Private Sub MainPage_SizeChanged(ByVal sender As Object, ByVal e As SizeChangedEventArgs)
             UpdateMenuDispositionBasedOnDisplaySize()
         End Sub
 

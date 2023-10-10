@@ -13,10 +13,6 @@ Namespace OpenSilver.Samples.Showcase
     Partial Public NotInheritable Class App
         Inherits Application
         Public Sub New()
-            Resources.Add("AccentColorConverter", New AccentColorConverter())
-            Resources.Add("DoubleToCornerRadiusConverter", New DoubleToCornerRadiusConverter())
-            Resources.Add("TextToPlaceholderTextVisibilityConverter", New TextToPlaceholderTextVisibilityConverter())
-            Resources.Add("MaterialDesign_DefaultAccentColor", New SolidColorBrush(Color.FromArgb(255, 0, 105, 236)))
 
             Me.InitializeComponent()
 

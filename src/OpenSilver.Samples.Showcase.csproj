@@ -6,8 +6,8 @@
 		<OpenSilverVersion>1.2.0-preview-2023-10-06-143046-f00b75f8</OpenSilverVersion>
 		<EnableDefaultItems>false</EnableDefaultItems>
 		<IsOpenSilver>true</IsOpenSilver>
-		<OutputPath>bin/$(Configuration)/cs</OutputPath>
-		<IntermediateOutputPath>obj/$(Configuration)/cs</IntermediateOutputPath>
+		<OutputPath>bin/$(Configuration)_cs</OutputPath>
+		<IntermediateOutputPath>obj/$(Configuration)_cs</IntermediateOutputPath>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)' == 'SL'">

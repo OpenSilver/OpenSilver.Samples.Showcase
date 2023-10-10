@@ -4,8 +4,8 @@
 		<Configurations>SL;SL.Release;UWP</Configurations>
 		<OutputType>WinExe</OutputType>
 		<TargetFramework>net7.0-windows</TargetFramework>
-		<OutputPath>bin/$(Configuration)/vb</OutputPath>
-		<IntermediateOutputPath>obj/$(Configuration)/vb</IntermediateOutputPath>
+		<OutputPath>bin/$(Configuration)_vb</OutputPath>
+		<IntermediateOutputPath>obj/$(Configuration)_vb</IntermediateOutputPath>
 	</PropertyGroup>
 	
 	<PropertyGroup Condition="'$(Configuration)' == 'SL' Or '$(Configuration)' == 'UWP'">
@@ -21,7 +21,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="OpenSilver.Simulator" Version="1.2.0-preview-2023-10-05-100022-dbcb3462" />
+		<PackageReference Include="OpenSilver.Simulator" Version="1.2.0-preview-2023-10-06-143046-f00b75f8" />
   </ItemGroup>
 
 	<ItemGroup>
