@@ -45,6 +45,16 @@ namespace OpenSilver.Samples.Showcase
                 {
                     TabHeader = "Planet.cs",
                     FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Other/Planet.cs"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "ListBox_Demo.xaml.vb",
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/ListBox/ListBox_Demo.xaml.vb"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "Planet.vb",
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Other/Planet.vb"
                 }
             });
         }

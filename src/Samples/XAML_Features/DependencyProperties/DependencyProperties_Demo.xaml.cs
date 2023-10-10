@@ -70,6 +70,11 @@ namespace OpenSilver.Samples.Showcase
                 {
                     TabHeader = "DependencyProperties_Demo.xaml.cs",
                     FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Features/DependencyProperties/DependencyProperties_Demo.xaml.cs"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "DependencyProperties_Demo.xaml.vb",
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Features/DependencyProperties/DependencyProperties_Demo.xaml.vb"
                 }
             });
         }

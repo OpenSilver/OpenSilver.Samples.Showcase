@@ -41,6 +41,11 @@ namespace OpenSilver.Samples.Showcase
                 },
                 new ViewSourceButtonInfo()
                 {
+                    TabHeader = "ToggleButton_Demo.xaml.vb",
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/ToggleButton/ToggleButton_Demo.xaml.vb"
+                },
+                new ViewSourceButtonInfo()
+                {
                     TabHeader = "DefaultToggleButtonStyle.xaml",
                     FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/ToggleButton/Styles/DefaultToggleButtonStyle.xaml"
                 }

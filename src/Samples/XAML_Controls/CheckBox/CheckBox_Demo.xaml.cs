@@ -48,6 +48,11 @@ namespace OpenSilver.Samples.Showcase
                 {
                     TabHeader = "CheckBox_Demo.xaml.cs",
                     FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/CheckBox/CheckBox_Demo.xaml.cs"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "CheckBox_Demo.xaml.vb",
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/CheckBox/CheckBox_Demo.xaml.vb"
                 }
             });
         }

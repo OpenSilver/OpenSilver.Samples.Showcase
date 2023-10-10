@@ -43,6 +43,11 @@ namespace OpenSilver.Samples.Showcase
                 {
                     TabHeader = "TextBox_Demo.xaml.cs",
                     FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/TextBox/TextBox_Demo.xaml.cs"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "TextBox_Demo.xaml.vb",
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/TextBox/TextBox_Demo.xaml.vb"
                 }
             });
         }

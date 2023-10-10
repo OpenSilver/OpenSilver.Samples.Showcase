@@ -1,13 +1,23 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29613.14
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenSilver.Samples.Showcase", "src\OpenSilver.Samples.Showcase.csproj", "{6611D950-1488-4943-AF60-AFBFF1496AF2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenSilver.Samples.Showcase.Simulator", "OpenSilver.Samples.Showcase.Simulator\OpenSilver.Samples.Showcase.Simulator.csproj", "{94E461FF-8810-4E0A-A5CA-FB663681F9F3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenSilver.Samples.Showcase.Browser", "OpenSilver.Samples.Showcase.Browser\OpenSilver.Samples.Showcase.Browser.csproj", "{A0EA0E2B-0E48-4CC6-8B71-1C048D02D3A9}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "OpenSilver.Samples.Showcase", "src\OpenSilver.Samples.Showcase.vbproj", "{879B661C-C043-0347-129C-94534F77A125}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenSilver.Samples.Showcase.Browser.vb", "OpenSilver.Samples.Showcase.Browser\OpenSilver.Samples.Showcase.Browser.vb.csproj", "{441F926C-FD06-43D9-8ACE-58A7D2251F14}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenSilver.Samples.Showcase.Simulator.vb", "OpenSilver.Samples.Showcase.Simulator\OpenSilver.Samples.Showcase.Simulator.vb.csproj", "{F3DD95BC-B407-4CA4-8EA6-55F4DEE3D65A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "C#", "C#", "{119B9FBC-4843-4625-AAD2-1B1411C26E17}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VB", "VB", "{9AD18E5B-C74C-4363-B2B3-7D0B29F7D2CF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,9 +44,35 @@ Global
 		{A0EA0E2B-0E48-4CC6-8B71-1C048D02D3A9}.SL|Any CPU.Build.0 = SL|Any CPU
 		{A0EA0E2B-0E48-4CC6-8B71-1C048D02D3A9}.UWP|Any CPU.ActiveCfg = UWP|Any CPU
 		{A0EA0E2B-0E48-4CC6-8B71-1C048D02D3A9}.UWP|Any CPU.Build.0 = UWP|Any CPU
+		{879B661C-C043-0347-129C-94534F77A125}.SL.Release|Any CPU.ActiveCfg = SL.Release|Any CPU
+		{879B661C-C043-0347-129C-94534F77A125}.SL.Release|Any CPU.Build.0 = SL.Release|Any CPU
+		{879B661C-C043-0347-129C-94534F77A125}.SL|Any CPU.ActiveCfg = SL|Any CPU
+		{879B661C-C043-0347-129C-94534F77A125}.SL|Any CPU.Build.0 = SL|Any CPU
+		{879B661C-C043-0347-129C-94534F77A125}.UWP|Any CPU.ActiveCfg = UWP|Any CPU
+		{879B661C-C043-0347-129C-94534F77A125}.UWP|Any CPU.Build.0 = UWP|Any CPU
+		{441F926C-FD06-43D9-8ACE-58A7D2251F14}.SL.Release|Any CPU.ActiveCfg = SL.Release|Any CPU
+		{441F926C-FD06-43D9-8ACE-58A7D2251F14}.SL.Release|Any CPU.Build.0 = SL.Release|Any CPU
+		{441F926C-FD06-43D9-8ACE-58A7D2251F14}.SL|Any CPU.ActiveCfg = SL|Any CPU
+		{441F926C-FD06-43D9-8ACE-58A7D2251F14}.SL|Any CPU.Build.0 = SL|Any CPU
+		{441F926C-FD06-43D9-8ACE-58A7D2251F14}.UWP|Any CPU.ActiveCfg = UWP|Any CPU
+		{441F926C-FD06-43D9-8ACE-58A7D2251F14}.UWP|Any CPU.Build.0 = UWP|Any CPU
+		{F3DD95BC-B407-4CA4-8EA6-55F4DEE3D65A}.SL.Release|Any CPU.ActiveCfg = SL.Release|Any CPU
+		{F3DD95BC-B407-4CA4-8EA6-55F4DEE3D65A}.SL.Release|Any CPU.Build.0 = SL.Release|Any CPU
+		{F3DD95BC-B407-4CA4-8EA6-55F4DEE3D65A}.SL|Any CPU.ActiveCfg = SL|Any CPU
+		{F3DD95BC-B407-4CA4-8EA6-55F4DEE3D65A}.SL|Any CPU.Build.0 = SL|Any CPU
+		{F3DD95BC-B407-4CA4-8EA6-55F4DEE3D65A}.UWP|Any CPU.ActiveCfg = UWP|Any CPU
+		{F3DD95BC-B407-4CA4-8EA6-55F4DEE3D65A}.UWP|Any CPU.Build.0 = UWP|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6611D950-1488-4943-AF60-AFBFF1496AF2} = {119B9FBC-4843-4625-AAD2-1B1411C26E17}
+		{94E461FF-8810-4E0A-A5CA-FB663681F9F3} = {119B9FBC-4843-4625-AAD2-1B1411C26E17}
+		{A0EA0E2B-0E48-4CC6-8B71-1C048D02D3A9} = {119B9FBC-4843-4625-AAD2-1B1411C26E17}
+		{879B661C-C043-0347-129C-94534F77A125} = {9AD18E5B-C74C-4363-B2B3-7D0B29F7D2CF}
+		{441F926C-FD06-43D9-8ACE-58A7D2251F14} = {9AD18E5B-C74C-4363-B2B3-7D0B29F7D2CF}
+		{F3DD95BC-B407-4CA4-8EA6-55F4DEE3D65A} = {9AD18E5B-C74C-4363-B2B3-7D0B29F7D2CF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {487C6C1E-8943-483B-89FE-84ACF0ECB68D}

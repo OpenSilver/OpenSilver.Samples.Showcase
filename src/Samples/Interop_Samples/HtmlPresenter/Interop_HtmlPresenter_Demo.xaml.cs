@@ -48,6 +48,16 @@ namespace OpenSilver.Samples.Showcase
                 {
                     TabHeader = "NumericTextBox.cs",
                     FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Interop_Samples/HtmlPresenter/NumericTextBox.cs"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "Interop_HtmlPresenter_Demo.xaml.vb",
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Interop_Samples/HtmlPresenter/Interop_HtmlPresenter_Demo.xaml.vb"
+                },
+                new ViewSourceButtonInfo()
+                {
+                    TabHeader = "NumericTextBox.vb",
+                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Interop_Samples/HtmlPresenter/NumericTextBox.vb"
                 }
             });
         }
