@@ -529,6 +529,7 @@
     <Compile Include="Other\Internals\ControlToDisplayCodeHostedOnGitHub.cs" />
     <Compile Include="Other\Internals\MasonryPanel.cs" />
     <Compile Include="Other\Internals\MasonryPanelWithProgressiveLoading.cs" />
+    <Compile Include="Other\Internals\StaggeredPanel.cs" />
     <Compile Include="Other\Internals\ViewSourceButtonHelper.cs" />
     <Compile Include="Other\Internals\ViewSourceButtonInfo.cs" />
     <Compile Include="Other\Internals\WrapPanelWithProgressiveLoading.cs" />
