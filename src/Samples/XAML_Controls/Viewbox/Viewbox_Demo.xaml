@@ -24,7 +24,7 @@
                         <TextBlock Text="Left side" Padding="5" Foreground="White"/>
                     </Viewbox>
                 </Border>
-                <sdk:GridSplitter Grid.Column="1" Width="10"/>
+                <sdk:GridSplitter Grid.Column="1" Width="10"  HorizontalAlignment="Center"/>
                 <Border Grid.Column="2" Background="#FF9A6CEE" CornerRadius="2">
                     <Viewbox>
                         <TextBlock Text="Right side" Padding="5" Foreground="White"/>
