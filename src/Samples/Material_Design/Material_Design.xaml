@@ -397,8 +397,8 @@
             <!--PasswordBox-->
             <WrapPanel Orientation="Horizontal" Margin="0,10,0,0">
                 <TextBlock Text="PasswordBox:" FontSize="16" Margin="0,0,10,0" VerticalAlignment="Center"/>
-                <PasswordBox Style="{StaticResource MaterialDesign_PasswordBox_Style}" Margin="5" VerticalAlignment="Top"/>
-                <PasswordBox Style="{StaticResource MaterialDesign_PasswordBox_Style}" Margin="5">
+                <PasswordBox Style="{StaticResource MaterialDesign_PasswordBox_Style}" Margin="5" VerticalAlignment="Top" MinWidth="100"/>
+                <PasswordBox Style="{StaticResource MaterialDesign_PasswordBox_Style}" Margin="5" MinWidth="100">
                     <PasswordBox.Tag>
                         <Path Data="M 2,10 A 8,10 0 0 1 10,0
                             A 8,10 0 0 1 18,10

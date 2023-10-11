@@ -22,7 +22,7 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
-                        <TextBox x:Name="TextBox"
+                        <DatePickerTextBox x:Name="TextBox"
                                  Grid.Column="0"
                                  Style="{StaticResource MaterialDesign_TextBox_Style}"
                                  Background="White"
