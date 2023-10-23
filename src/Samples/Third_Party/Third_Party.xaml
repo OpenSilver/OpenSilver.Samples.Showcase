@@ -12,7 +12,7 @@
 
       <native:HtmlPresenter xmlns:native="using:CSHTML5.Native.Html.Controls" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="native">
         <ul style="font-size:1.4em; margin:10px;">
-          <li style="margin-top:10px;">Telerik UI for Silverlight* (<a href="https://doc.opensilver.net/documentation/3rd-party-libraries/telerik.html"  style="margin-top:10px;">Doc</a>|<a href="https://opensilvertelerik.azurewebsites.net/?alpha-20-rev-2021-08-04">Demo</a>)</li>
+          <li style="margin-top:10px;">Telerik UI for Silverlight* (<a href="https://doc.opensilver.net/documentation/3rd-party-libraries/telerik.html"  style="margin-top:10px;">Doc</a>|<a href="https://opensilvertelerik.azurewebsites.net/?20231015">Demo</a>)</li>
           <li style="margin-top:10px;"> Telerik Kendo UI* (via JavaScript interop)       </li>
           <li style="margin-top:10px;">DevExpress for Silverlight* (<a href="https://doc.opensilver.net/documentation/3rd-party-libraries/devexpress.html">Doc</a>)</li>
           <li style="margin-top:10px;"> DevExpress DevExtreme*                           </li>
