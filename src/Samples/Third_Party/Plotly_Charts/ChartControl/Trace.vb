@@ -1,6 +1,4 @@
-﻿Imports System.Collections.Generic
-
-Namespace Global.OpenSilver.Extensions.Plotly
+﻿Namespace Global.OpenSilver.Extensions.Plotly
     Public Class Trace
         Public Sub New()
             ' Set default values:

@@ -1,10 +1,4 @@
-﻿Imports System
-Imports System.Threading.Tasks
-#If SLMIGRATION
-Imports System.Windows.Controls
-#Else
-using Windows.UI.Xaml.Controls;
-#End If
+﻿Imports System.Windows.Controls
 
 Namespace Global.OpenSilver.Extensions.Plotly
     '------------------------------------------------------------------------

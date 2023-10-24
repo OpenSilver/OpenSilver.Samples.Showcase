@@ -1,14 +1,7 @@
-﻿Imports System
-Imports System.Windows.Browser
-#If SLMIGRATION Then
+﻿Imports System.Windows.Browser
 Imports System.Windows
 Imports System.Windows.Controls
 Imports System.Windows.Media
-#Else
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Media;
-#End If
 
 Namespace Global.OpenSilver.Samples.Showcase
 

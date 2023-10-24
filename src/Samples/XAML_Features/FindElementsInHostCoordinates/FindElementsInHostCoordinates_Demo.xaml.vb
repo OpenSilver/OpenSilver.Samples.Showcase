@@ -1,20 +1,6 @@
-﻿Imports System.Collections.Generic
-Imports System.Linq
-#If SLMIGRATION
-Imports System.Windows
-Imports System.Windows.Controls
+﻿Imports System.Windows.Controls
 Imports System.Windows.Input
 Imports System.Windows.Media
-#Else
-using Windows.Foundation;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
-#End If
 
 Namespace Global.OpenSilver.Samples.Showcase
     Partial Public Class FindElementsInHostCoordinates_Demo
@@ -27,24 +13,12 @@ Namespace Global.OpenSilver.Samples.Showcase
             InitAllZIndex()
             _highestZIndex = 2
 
-#If SLMIGRATION Then
             AddHandler MouseLeftButtonDown, AddressOf FindElementsInHostCoordinates_Demo_PointerPressed
-#Else
-            this.PointerPressed += FindElementsInHostCoordinates_Demo_PointerPressed; 
-#End If
         End Sub
 
-#If SLMIGRATION Then
         Private Sub FindElementsInHostCoordinates_Demo_PointerPressed(ByVal sender As Object, ByVal e As MouseButtonEventArgs)
             ' Get the absolute coordinates of the pointer:
             Dim currentPoint = e.GetPosition(Nothing)
-
-#Else
-        void FindElementsInHostCoordinates_Demo_PointerPressed(object sender, PointerRoutedEventArgs e) 
-        {
-            // Get the absolute coordinates of the pointer:
-            Point currentPoint = e.GetCurrentPoint(null).Position;
-#End If
 
             ' Find the element that is under the pointer:
             Dim uiElement = VisualTreeHelper.FindElementsInHostCoordinates(currentPoint, Me.CanvasParent).FirstOrDefault()

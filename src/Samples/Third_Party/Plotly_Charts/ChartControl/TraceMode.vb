@@ -1,6 +1,4 @@
-﻿Imports System
-Imports System.Collections.Generic
-Imports System.Runtime.CompilerServices
+﻿Imports System.Runtime.CompilerServices
 
 Namespace Global.OpenSilver.Extensions.Plotly
     <Flags>

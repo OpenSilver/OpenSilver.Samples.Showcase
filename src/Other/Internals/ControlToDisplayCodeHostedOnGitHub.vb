@@ -1,12 +1,7 @@
 ﻿Imports System.Windows.Browser
 Imports CSHTML5.Internal
-#If SLMIGRATION Then
 Imports System.Windows
 Imports System.Windows.Controls
-#Else
-Imports Windows.UI.Xaml
-Imports Windows.UI.Xaml.Controls
-#End If
 
 Namespace Global.OpenSilver.Samples.Showcase
     Public Class ControlToDisplayCodeHostedOnGitHub
@@ -39,11 +34,7 @@ Namespace Global.OpenSilver.Samples.Showcase
         End Sub
 
         Private Sub DisplayHtmlString(ByVal htmlString As String)
-#If SLMIGRATION Then
             Dim webView = New WebBrowser()
-#Else
-            Dim webView = New WebView()
-#End If
             webView.NavigateToString(htmlString)
             Content = webView
             _displayedHtmlString = htmlString

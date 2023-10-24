@@ -1,29 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Configurations>SL;SL.Release;UWP</Configurations>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <OpenSilverVersion>2.0.1</OpenSilverVersion>
     <EnableDefaultItems>false</EnableDefaultItems>
     <IsOpenSilver>true</IsOpenSilver>
     <OutputPath>bin/$(Configuration)_cs</OutputPath>
     <IntermediateOutputPath>obj/$(Configuration)_cs</IntermediateOutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)' == 'SL'">
-    <DebugType>full</DebugType>
-    <DebugSymbols>true</DebugSymbols>
-    <DefineConstants>DEBUG;TRACE;SLMIGRATION;OPENSILVER</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)' == 'SL.Release'">
-    <DefineConstants>TRACE;SLMIGRATION;OPENSILVER</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)' == 'UWP'">
-    <DebugType>full</DebugType>
-    <DebugSymbols>true</DebugSymbols>
-    <DefineConstants>DEBUG;TRACE;OPENSILVER</DefineConstants>
+    <DefineTrace>true</DefineTrace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -31,43 +14,21 @@
     <PackageReference Include="System.ServiceModel.Http" Version="4.10.0" />
     <PackageReference Include="System.ServiceModel.NetTcp" Version="4.10.0" />
     <PackageReference Include="System.ServiceModel.Security" Version="4.10.0" />
-    <PackageReference Include="OpenSilver" Version="$(OpenSilverVersion)" Condition="'$(Configuration)' == 'SL' Or '$(Configuration)' == 'SL.Release'" />
+    <PackageReference Include="OpenSilver" Version="2.0.1" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
   </ItemGroup>
 
-  <!-- Configuration-dependent files -->
-  <Choose>
-    <When Condition="$(DefineConstants.Contains('SLMIGRATION'))">
-      <ItemGroup>
+  <ItemGroup>
+    <Page Include="Samples\XAML_Features\Drag_And_Drop\Drag_And_Drop_Demo_Silverlight.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Interop_Samples\WebView\WebBrowser_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
 
-        <Page Include="Samples\XAML_Features\Drag_And_Drop\Drag_And_Drop_Demo_Silverlight.xaml">
-          <Generator>MSBuild:Compile</Generator>
-        </Page>
-        <Page Include="Samples\Interop_Samples\WebView\WebBrowser_Demo.xaml">
-          <Generator>MSBuild:Compile</Generator>
-        </Page>
-
-        <Compile Include="Samples\XAML_Features\Drag_And_Drop\Drag_And_Drop_Demo_Silverlight.xaml.cs" />
-        <Compile Include="Samples\Interop_Samples\WebView\WebBrowser_Demo.xaml.cs" />
-
-      </ItemGroup>
-    </When>
-    <Otherwise>
-      <ItemGroup>
-
-        <Page Include="Samples\XAML_Features\Drag_And_Drop\Drag_And_Drop_Demo.xaml">
-          <Generator>MSBuild:Compile</Generator>
-        </Page>
-        <Page Include="Samples\Interop_Samples\WebView\WebView_Demo.xaml">
-          <Generator>MSBuild:Compile</Generator>
-        </Page>
-
-        <Compile Include="Samples\XAML_Features\Drag_And_Drop\Drag_And_Drop_Demo.xaml.cs" />
-        <Compile Include="Samples\Interop_Samples\WebView\WebView_Demo.xaml.cs" />
-
-      </ItemGroup>
-    </Otherwise>
-  </Choose>
+    <Compile Include="Samples\XAML_Features\Drag_And_Drop\Drag_And_Drop_Demo_Silverlight.xaml.cs" />
+    <Compile Include="Samples\Interop_Samples\WebView\WebBrowser_Demo.xaml.cs" />
+  </ItemGroup>
 
   <ItemGroup>
     <Content Include="Connected Services\ServiceReference1\ConnectedService.json" />

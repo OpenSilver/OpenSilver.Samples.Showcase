@@ -1,8 +1,4 @@
-﻿Imports System
-Imports CSHTML5.Native.Html.Controls
-#If Not SLMIGRATION
-using Windows.UI;
-#End If
+﻿Imports CSHTML5.Native.Html.Controls
 
 Namespace Global.TestPerformance
     Public Class MainSprite

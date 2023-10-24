@@ -1,12 +1,5 @@
 ﻿Imports CSHTML5.Native.Html.Controls
-Imports System
-Imports System.Collections.Generic
-#If SLMIGRATION
 Imports System.Windows
-#Else
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-#End If
 
 '------------------------------------
 ' This is an extension for C#/XAML for OpenSilver (https://opensilver.net)

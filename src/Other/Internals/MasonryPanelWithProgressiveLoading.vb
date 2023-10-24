@@ -1,12 +1,6 @@
 ﻿Imports System.Collections.Specialized
-Imports System.Linq
-#If SLMIGRATION
 Imports System.Windows
 Imports System.Windows.Controls
-#Else
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-#End If
 
 Namespace Global.OpenSilver.Samples.Showcase
     ''' <summary>

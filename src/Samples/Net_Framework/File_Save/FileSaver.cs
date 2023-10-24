@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Windows;
-#if !SLMIGRATION
-using Windows.UI.Xaml;
-#endif
 
 //------------------------------------
 // This is an extension for C#/XAML for OpenSilver (https://opensilver.net)

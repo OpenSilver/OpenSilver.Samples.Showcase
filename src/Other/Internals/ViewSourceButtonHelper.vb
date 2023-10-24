@@ -1,12 +1,4 @@
-﻿Imports System.Collections.Generic
-
-#If SLMIGRATION Then
-Imports System.Windows
-Imports System.Windows.Controls
-#Else
-Imports Windows.UI.Xaml
-Imports Windows.UI.Xaml.Controls
-#End If
+﻿Imports System.Windows.Controls
 
 Namespace Global.OpenSilver.Samples.Showcase
     Friend Module ViewSourceButtonHelper

@@ -1,5 +1,4 @@
 ﻿Imports CSHTML5.Native.Html.Controls
-Imports System
 
 Namespace Global.TestNumericTextBox
     Public Class NumericTextBox
@@ -30,10 +29,6 @@ Namespace Global.TestNumericTextBox
             End Set
         End Property
 
-#If SLMIGRATION Then
-#Else
-        void NumericTextBox_Loaded(object sender, Windows.UI.Xaml.RoutedEventArgs e)
-#End If
         Private Sub NumericTextBox_Loaded(ByVal sender As Object, ByVal e As Windows.RoutedEventArgs)
             ' Here, the control has been added to the visual tree, so the DOM element exists. We set the initial value:
             OpenSilver.Interop.ExecuteJavaScript("$0.value = $1", DomElement, _value)

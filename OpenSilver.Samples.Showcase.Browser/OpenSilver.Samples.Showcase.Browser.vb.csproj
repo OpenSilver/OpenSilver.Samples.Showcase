@@ -1,36 +1,19 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
   <PropertyGroup>
-    <Configurations>SL;SL.Release;UWP</Configurations>
     <TargetFramework>net7.0</TargetFramework>
     <NoXamlPreprocessor>True</NoXamlPreprocessor>
     <OpenSilverType>5</OpenSilverType>
-	<OpenSilverVersion>2.0.1</OpenSilverVersion>
     <!--Use .NET 6 to enable the commented options below-->
     <PublishTrimmed>true</PublishTrimmed>
     <!--<RunAOTCompilation Condition="'$(IsSecondPass)'=='True'">true</RunAOTCompilation>-->
     <OutputPath>bin/$(Configuration)_vb</OutputPath>
     <IntermediateOutputPath>obj/$(Configuration)_vb</IntermediateOutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)' == 'SL'">
-    <Optimize>false</Optimize>
-    <DefineConstants>TRACE;DEBUG;SLMIGRATION;CSHTML5BLAZOR;OPENSILVER</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)' == 'SL.Release'">
-    <Optimize>true</Optimize>
-    <DefineConstants>TRACE;SLMIGRATION;CSHTML5BLAZOR;OPENSILVER</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)' == 'UWP'">
-    <Optimize>false</Optimize>
-    <DefineConstants>DEBUG;TRACE;CSHTML5BLAZOR;OPENSILVER</DefineConstants>
+    <DefineTrace>true</DefineTrace>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="OpenSilver" Version="$(OpenSilverVersion)" Condition="'$(Configuration)' == 'SL' Or '$(Configuration)' == 'SL.Release'" />
-    <PackageReference Include="OpenSilver.UwpCompatible" Version="$(OpenSilverVersion)" Condition="'$(Configuration)' == 'UWP'" />
+    <PackageReference Include="OpenSilver" Version="2.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.0" PrivateAssets="all" />
   </ItemGroup>

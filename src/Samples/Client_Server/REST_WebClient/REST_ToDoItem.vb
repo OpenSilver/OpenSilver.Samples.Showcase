@@ -1,6 +1,4 @@
-﻿Imports System
-
-Namespace Global.DotNetForHtml5.Showcase.SampleRestWebService.Models
+﻿Namespace Global.DotNetForHtml5.Showcase.SampleRestWebService.Models
     Public Class ToDoItem
         Public Sub New()
         End Sub

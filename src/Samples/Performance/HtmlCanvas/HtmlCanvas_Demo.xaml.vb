@@ -1,20 +1,5 @@
-﻿Imports System
-Imports System.Collections.Generic
-Imports System.Threading.Tasks
-Imports TestPerformance
-#If SLMIGRATION Then
-Imports System.Windows
+﻿Imports System.Windows
 Imports System.Windows.Controls
-#Else
-using Windows.Foundation;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
-#End If
 
 Namespace OpenSilver.Samples.Showcase
     Partial Public Class HtmlCanvas_Demo

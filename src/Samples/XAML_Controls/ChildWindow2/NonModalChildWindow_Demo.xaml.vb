@@ -1,19 +1,7 @@
 ﻿Imports PreviewOnWinRT
-Imports System
-Imports System.Collections.Generic
-#If SLMIGRATION
+Imports System.Threading
 Imports System.Windows
 Imports System.Windows.Controls
-#Else
-using Windows.Foundation;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
-#End If
 
 Namespace Global.OpenSilver.Samples.Showcase
     Partial Public Class NonModalChildWindow_Demo
@@ -25,7 +13,7 @@ Namespace Global.OpenSilver.Samples.Showcase
 
         Private Sub ButtonTestChildWindow_Modal_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
             Dim childWindow As SmallChildWindow = New SmallChildWindow()
-            childWindow.Title = "ChildWindow (Modal)" & Math.Min(Threading.Interlocked.Increment(_n), _n - 1).ToString()
+            childWindow.Title = "ChildWindow (Modal)" & Math.Min(Interlocked.Increment(_n), _n - 1).ToString()
 #If Not OPENSILVER Then
             childWindow.IsModal = true; 
 #End If
@@ -33,7 +21,7 @@ Namespace Global.OpenSilver.Samples.Showcase
         End Sub
         Private Sub ButtonTestChildWindow_NonModal_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
             Dim childWindow As SmallChildWindow = New SmallChildWindow()
-            childWindow.Title = "ChildWindow (Non-modal)" & Math.Min(Threading.Interlocked.Increment(_n), _n - 1).ToString()
+            childWindow.Title = "ChildWindow (Non-modal)" & Math.Min(Interlocked.Increment(_n), _n - 1).ToString()
 #If Not OPENSILVER Then
             childWindow.IsModal = false; 
 #End If

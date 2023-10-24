@@ -1,6 +1,4 @@
 ﻿Imports CSHTML5
-Imports System
-Imports System.Threading.Tasks
 
 '------------------------------------
 ' This is an extension for C#/XAML for OpenSilver (https://opensilver.net)

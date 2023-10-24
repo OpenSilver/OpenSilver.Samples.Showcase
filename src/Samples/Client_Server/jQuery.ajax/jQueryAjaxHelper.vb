@@ -1,7 +1,4 @@
-﻿Imports System
-Imports System.Threading.Tasks
-
-'------------------------------------
+﻿'------------------------------------
 ' This extension adds "jQuery.ajax" support to C#/XAML for OpenSilver (https://opensilver.net)
 '
 ' It is licensed under The open-source MIT license:

@@ -1,11 +1,5 @@
-﻿
-#If SLMIGRATION
-Imports System.Windows
+﻿Imports System.Windows
 Imports System.Windows.Controls
-#Else
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-#End If
 
 Namespace Global.OpenSilver.Samples.Showcase
     Friend Module ChildWindowHelper

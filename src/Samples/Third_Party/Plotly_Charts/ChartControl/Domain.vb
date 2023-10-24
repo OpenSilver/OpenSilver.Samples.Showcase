@@ -1,6 +1,4 @@
-﻿Imports System.Collections.Generic
-
-Namespace Global.OpenSilver.Extensions.Plotly
+﻿Namespace Global.OpenSilver.Extensions.Plotly
     Public Class Domain
         Public Property X As List(Of Double)
 

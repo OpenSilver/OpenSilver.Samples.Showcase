@@ -1,9 +1,4 @@
-﻿Imports System
-Imports System.Threading.Tasks
-Imports System.Windows
-#If Not SLMIGRATION
-using Windows.UI.Xaml;
-#End If
+﻿Imports System.Windows
 
 '------------------------------------
 ' This is an extension for C#/XAML for OpenSilver (https://opensilver.net)

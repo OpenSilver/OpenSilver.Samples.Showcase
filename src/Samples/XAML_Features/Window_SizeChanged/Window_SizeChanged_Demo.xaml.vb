@@ -1,17 +1,5 @@
-﻿Imports System.Collections.Generic
-#If SLMIGRATION
-Imports System.Windows
+﻿Imports System.Windows
 Imports System.Windows.Controls
-#Else
-using Windows.Foundation;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
-#End If
 
 Namespace Global.OpenSilver.Samples.Showcase
     Partial Public Class Window_SizeChanged_Demo
@@ -38,10 +26,6 @@ Namespace Global.OpenSilver.Samples.Showcase
         End Sub
 #End Region
 
-#If SLMIGRATION Then
-#Else
-        void Current_SizeChanged(object sender, Windows.UI.Core.WindowSizeChangedEventArgs e) 
-#End If
         Private Sub Current_SizeChanged(ByVal sender As Object, ByVal e As WindowSizeChangedEventArgs)
 
             Me.TextBlockValueX.Text = (If(Double.IsNaN(e.Size.Width), "NaN", e.Size.Width.ToString()))

@@ -1,14 +1,8 @@
-﻿Imports System.Collections.Generic
-
-#If SLMIGRATION
-Imports System.Windows
+﻿Imports System.Windows
 Imports System.Windows.Controls
-#Else
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-#End If
+
 Namespace Global.OpenSilver.Samples.Showcase
-    Public Partial Class PropertyChangedTrigger_Demo
+    Partial Public Class PropertyChangedTrigger_Demo
         Inherits UserControl
         Public Sub New()
             Me.InitializeComponent()

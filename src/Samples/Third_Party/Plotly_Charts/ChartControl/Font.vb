@@ -1,11 +1,4 @@
-﻿
-#If SLMIGRATION
-#Else
-using Windows.UI;
-using Windows.UI.Xaml;
-#End If
-
-Namespace Global.OpenSilver.Extensions.Plotly
+﻿Namespace Global.OpenSilver.Extensions.Plotly
     Public Class Font
         Public Sub New()
             ' Set default values:

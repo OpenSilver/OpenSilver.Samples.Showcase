@@ -1,13 +1,7 @@
-﻿using System;
-using System.Windows.Browser;
+﻿using System.Windows.Browser;
 using CSHTML5.Internal;
-#if SLMIGRATION
 using System.Windows;
 using System.Windows.Controls;
-#else
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-#endif
 
 namespace OpenSilver.Samples.Showcase
 {
@@ -50,11 +44,7 @@ namespace OpenSilver.Samples.Showcase
 
         void DisplayHtmlString(string htmlString)
         {
-#if SLMIGRATION
             var webView = new WebBrowser();
-#else
-            var webView = new WebView(); 
-#endif
             webView.NavigateToString(htmlString);
             this.Content = webView;
             _displayedHtmlString = htmlString;

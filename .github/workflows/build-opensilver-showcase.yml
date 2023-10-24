@@ -46,4 +46,4 @@ jobs:
       - name: Build and Deploy
         working-directory: Showcase
         run: |
-          msbuild OpenSilver.Samples.Showcase.Browser\OpenSilver.Samples.Showcase.Browser.csproj /p:DeployOnBuild=true /p:PublishProfile="OpenSilver.Samples.Showcase.Browser\Properties\PublishProfiles\publish.pubxml" /p:Password=${{ secrets.OPENSILVERDEMOSUSERPWD }} /p:DeployIisAppPath=${{ env.apath }} /p:MSDeployServiceURL=${{ env.deploy-service-url }} /p:Configuration=SL.Release /restore
+          msbuild OpenSilver.Samples.Showcase.Browser\OpenSilver.Samples.Showcase.Browser.csproj /p:DeployOnBuild=true /p:PublishProfile="OpenSilver.Samples.Showcase.Browser\Properties\PublishProfiles\publish.pubxml" /p:Password=${{ secrets.OPENSILVERDEMOSUSERPWD }} /p:DeployIisAppPath=${{ env.apath }} /p:MSDeployServiceURL=${{ env.deploy-service-url }} /p:Configuration=Release /restore

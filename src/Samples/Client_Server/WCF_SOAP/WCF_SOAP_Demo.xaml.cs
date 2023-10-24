@@ -1,28 +1,9 @@
-﻿#if OPENSILVER
-using ServiceReference1;
-#else
-using OpenSilver.Samples.Showcase.ServiceReference1;
-#endif
+﻿using ServiceReference1;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Runtime.Serialization;
 using System.ServiceModel;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Xml;
-using System.Xml.Serialization;
-#if SLMIGRATION
 using System.Windows.Controls;
-#else
-using Windows.UI;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Media;
-#endif
 
 namespace OpenSilver.Samples.Showcase
 {

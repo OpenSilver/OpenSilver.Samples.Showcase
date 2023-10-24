@@ -1,10 +1,4 @@
-﻿
-
-#If SLMIGRATION
-Imports System.Windows.Controls
-#Else
-using Windows.UI.Xaml.Controls;
-#End If
+﻿Imports System.Windows.Controls
 
 Namespace Global.OpenSilver.Samples.Showcase
     Public Class WrapPanelWithProgressiveLoading

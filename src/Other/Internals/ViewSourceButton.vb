@@ -1,13 +1,5 @@
-﻿Imports System
-Imports System.Collections.Generic
-
-#If SLMIGRATION Then
-Imports System.Windows
+﻿Imports System.Windows
 Imports System.Windows.Controls
-#Else
-Imports Windows.UI.Xaml
-Imports Windows.UI.Xaml.Controls
-#End If
 
 Namespace Global.OpenSilver.Samples.Showcase
     Public NotInheritable Class ViewSourceButton

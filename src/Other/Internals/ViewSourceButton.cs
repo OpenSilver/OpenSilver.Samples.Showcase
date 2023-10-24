@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-
-#if SLMIGRATION
+﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-#else
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-#endif
 
 namespace OpenSilver.Samples.Showcase
 {

@@ -1,9 +1,4 @@
-﻿
-#If SLMIGRATION
-Imports System.Windows
-#Else
-using Windows.UI.Xaml;
-#End If
+﻿Imports System.Windows
 
 Namespace Global.OpenSilver.Samples.Showcase
     Public Module SampleAttachedProperties

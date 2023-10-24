@@ -1,6 +1,4 @@
-﻿Imports System
-
-'------------------------------------
+﻿'------------------------------------
 ' This extension adds WebSocket support to C#/XAML for OpenSilver (https://opensilver.net)
 '
 ' This project is licensed under The open-source MIT license:

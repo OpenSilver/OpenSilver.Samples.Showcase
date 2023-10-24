@@ -1,17 +1,4 @@
-﻿using MaterialDesign_Styles_Kit;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-#if SLMIGRATION
-using System.Windows;
-using System.Windows.Media;
-#else
-using Windows.UI;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Media;
-#endif
+﻿using System.Windows;
 
 namespace OpenSilver.Samples.Showcase
 {

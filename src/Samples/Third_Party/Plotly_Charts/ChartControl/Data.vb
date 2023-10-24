@@ -1,6 +1,4 @@
-﻿Imports System.Collections.Generic
-
-Namespace Global.OpenSilver.Extensions.Plotly
+﻿Namespace Global.OpenSilver.Extensions.Plotly
     Public Class Data
         Public Sub New()
             ' Set default values:

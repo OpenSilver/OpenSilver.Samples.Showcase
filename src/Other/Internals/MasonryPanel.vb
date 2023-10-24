@@ -1,12 +1,6 @@
 ﻿Imports System.Collections.Specialized
-Imports System.Linq
-#If SLMIGRATION
 Imports System.Windows
 Imports System.Windows.Controls
-#Else
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-#End If
 
 Namespace Global.OpenSilver.Samples.Showcase
     ''' <summary>
@@ -30,10 +24,6 @@ Namespace Global.OpenSilver.Samples.Showcase
         ''' <summary>
         ''' This method prepares the inner div of this class so that it uses Masonry.
         ''' </summary>
-#If SLMIGRATION
-#Else
-        void MasonryPanel_Loaded(object sender, Windows.UI.Xaml.RoutedEventArgs e)
-#End If
         Private Sub MasonryPanel_Loaded(ByVal sender As Object, ByVal e As RoutedEventArgs)
             '            object thisDiv = OpenSilver.Interop.GetDiv(this);
             '            _wall = OpenSilver.Interop.ExecuteJavaScript(@"(function() { //we make this a function so that we can get a return type

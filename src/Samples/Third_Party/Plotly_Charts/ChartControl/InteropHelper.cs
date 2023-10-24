@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OpenSilver.Extensions.Plotly
+﻿namespace OpenSilver.Extensions.Plotly
 {
     public static class InteropHelper
     {

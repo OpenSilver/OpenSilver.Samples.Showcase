@@ -1,25 +1,10 @@
-﻿#If Not OPENSILVER Then
-using OpenSilver.Samples.Showcase.ServiceReference1;
-#Else
-Imports DotNetForHtml5.Showcase.SampleRestWebService.Models
-#End If
-
-Imports System
-Imports System.Collections.Generic
+﻿Imports DotNetForHtml5.Showcase.SampleRestWebService.Models
 Imports System.IO
 Imports System.Net
 Imports System.Runtime.Serialization
 Imports System.Text
-Imports System.Threading.Tasks
 Imports System.Windows
-#If SLMIGRATION
 Imports System.Windows.Controls
-#Else
-using Windows.UI;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Media;
-#End If
 
 Namespace Global.OpenSilver.Samples.Showcase
     Partial Public Class REST_WebClient_Demo
