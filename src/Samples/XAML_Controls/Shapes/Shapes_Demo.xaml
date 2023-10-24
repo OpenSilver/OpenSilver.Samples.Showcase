@@ -2,7 +2,7 @@
     x:Class="OpenSilver.Samples.Showcase.Shapes_Demo"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:OpenSilver.Samples.Showcase">
+    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
     <ContentControl Style="{StaticResource Card_Style}" Width="180">
         <Grid>
             <Grid.RowDefinitions>
@@ -16,7 +16,18 @@
             <Ellipse Fill="#FF879DFF" Height="100" Canvas.Top="20" Width="140" Stroke="#FF0023BF" StrokeThickness="5" Canvas.Left="10"/>
             <Line Stroke="red" X1="10" Y1="25" X2="140" Y2="65" StrokeThickness="2" />
           </Canvas>
-            <Button Grid.Row="2" Content="VIEW SOURCE..." Margin="0,10,0,0" Click="ButtonViewSource_Click" Background="#FF66CC66" Style="{StaticResource ButtonViewSource_Style}"/>
+            <local:ViewSourceButton Grid.Row="2"
+                                    Margin="0,10,0,0"
+                                    Background="#FF66CC66">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Shapes"
+                                                FileName="Shapes_Demo.xaml" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Shapes"
+                                                FileName="Shapes_Demo.xaml.cs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Shapes"
+                                                FileName="Shapes_Demo.xaml.vb" />
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

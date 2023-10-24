@@ -31,38 +31,5 @@ namespace OpenSilver.Samples.Showcase
         {
             await FileSaver.SaveTextToFile("Hello World!", "MyTestFile.txt");
         }
-
-        private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
-        {
-            ViewSourceButtonHelper.ViewSource(new List<ViewSourceButtonInfo>()
-            {
-                new ViewSourceButtonInfo()
-                {
-                    TabHeader = "File_Save_Demo.xaml",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/File_Save/File_Save_Demo.xaml"
-                },
-                new ViewSourceButtonInfo()
-                {
-                    TabHeader = "File_Save_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/File_Save/File_Save_Demo.xaml.cs"
-                },
-                new ViewSourceButtonInfo()
-                {
-                    TabHeader = "FileSaver.cs",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/File_Save/FileSaver.cs"
-                },
-                new ViewSourceButtonInfo()
-                {
-                    TabHeader = "File_Save_Demo.xaml.vb",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/File_Save/File_Save_Demo.xaml.vb"
-                },
-                new ViewSourceButtonInfo()
-                {
-                    TabHeader = "FileSaver.vb",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/File_Save/FileSaver.vb"
-                }
-            });
-        }
-
     }
 }

@@ -167,31 +167,5 @@ Namespace Global.OpenSilver.Samples.Showcase
             button.IsEnabled = True
             button.Content = "Update"
         End Sub
-
-        Private Sub ButtonViewSource_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            Call ViewSource(New List(Of ViewSourceButtonInfo)() From {
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "REST_WebClient_Demo.xaml",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Client_Server/REST_WebClient/REST_WebClient_Demo.xaml"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "REST_WebClient_Demo.xaml.cs",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Client_Server/REST_WebClient/REST_WebClient_Demo.xaml.cs"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "REST_ToDoItem.cs",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Client_Server/REST_WebClient/REST_ToDoItem.cs"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "REST_WebClient_Demo.xaml.vb",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Client_Server/REST_WebClient/REST_WebClient_Demo.xaml.vb"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "REST_ToDoItem.vb",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Client_Server/REST_WebClient/REST_ToDoItem.vb"
-    }
-})
-        End Sub
-
     End Class
 End Namespace

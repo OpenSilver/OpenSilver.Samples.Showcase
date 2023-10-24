@@ -90,23 +90,6 @@ Namespace Global.OpenSilver.Samples.Showcase
             Return Convert.ToBoolean(Interop.ExecuteJavaScript("window.IE_VERSION && document.location.protocol === ""file:"""))
         End Function
 
-        Private Sub ButtonViewSource_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            Call ViewSource(New List(Of ViewSourceButtonInfo)() From {
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "IsolatedStorageFile_Demo.xaml",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/IsolatedStorageFile/IsolatedStorageFile_Demo.xaml"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "IsolatedStorageFile_Demo.xaml.cs",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/IsolatedStorageFile/IsolatedStorageFile_Demo.xaml.cs"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "IsolatedStorageFile_Demo.xaml.vb",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/IsolatedStorageFile/IsolatedStorageFile_Demo.xaml.vb"
-    }
-})
-        End Sub
-
         Private Class CSharpImpl
             <Obsolete("Please refactor calling code to use normal Visual Basic assignment")>
             Shared Function __Assign(Of T)(ByRef target As T, value As T) As T

@@ -23,23 +23,5 @@ Namespace Global.OpenSilver.Samples.Showcase
         Private Sub RadioButton_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
             Dispatcher.BeginInvoke(Sub() MessageBox.Show(If(Me.RadioButton1.IsChecked = True, "Option 1 selected", "Option 2 selected")))
         End Sub
-
-        Private Sub ButtonViewSource_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            Call ViewSource(New List(Of ViewSourceButtonInfo)() From {
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "RadioButton_Demo.xaml",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/RadioButton/RadioButton_Demo.xaml"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "RadioButton_Demo.xaml.cs",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/RadioButton/RadioButton_Demo.xaml.cs"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "RadioButton_Demo.xaml.vb",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/RadioButton/RadioButton_Demo.xaml.vb"
-    }
-})
-        End Sub
-
     End Class
 End Namespace

@@ -3,7 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:extensions="using:OpenSilver.Extensions.FileOpenDialog"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:OpenSilver.Samples.Showcase">
+    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
     <ContentControl Style="{StaticResource Card_Style}" Width="245">
         <Grid>
             <Grid.RowDefinitions>
@@ -20,7 +20,21 @@
                     <extensions:ControlForDisplayingTheFileOpenDialog FileOpened="OnFileOpened" Filter="*.zip" ResultKind="DataURL"/>
                 </Border>-->
             </StackPanel>
-            <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FF6F7DFF" Style="{StaticResource ButtonViewSource_Style}"/>
+            <local:ViewSourceButton Grid.Row="2"
+                                    Background="#FF6F7DFF">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/Zip"
+                                                FileName="Zip_Demo.xaml" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/Zip"
+                                                FileName="Zip_Demo.xaml.cs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/Zip"
+                                                FileName="Zip_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/Zip"
+                                                FileName="ZipFile.cs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/Zip"
+                                                FileName="ZipFile.vb" />
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

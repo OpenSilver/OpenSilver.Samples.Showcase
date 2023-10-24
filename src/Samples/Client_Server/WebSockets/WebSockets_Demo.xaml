@@ -2,7 +2,7 @@
     x:Class="OpenSilver.Samples.Showcase.WebSockets_Demo"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:OpenSilver.Samples.Showcase">
+    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
     <ContentControl Style="{StaticResource Card_Style}" Width="245">
         <Grid>
             <Grid.RowDefinitions>
@@ -15,7 +15,21 @@
                 <TextBlock Text="The following button will call a sample 'Echo' WebSocket service provided by: https://javascript.info/websocket" Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left"/>
                 <Button Content="Make WebSocket Call" Click="ButtonMakeWebSocketCall_Click" HorizontalAlignment="Center" Margin="5,10,0,0"/>
             </StackPanel>
-            <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FFFFA443" Style="{StaticResource ButtonViewSource_Style}"/>
+            <local:ViewSourceButton Grid.Row="2"
+                                    Background="#FFFFA443">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Client_Server/WebSockets"
+                                                FileName="WebSockets_Demo.xaml" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Client_Server/WebSockets"
+                                                FileName="WebSockets_Demo.xaml.cs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Client_Server/WebSockets"
+                                                FileName="WebSockets_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Client_Server/WebSockets"
+                                                FileName="WebSocket.cs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Client_Server/WebSockets"
+                                                FileName="WebSocket.vb" />
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

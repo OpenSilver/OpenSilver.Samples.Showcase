@@ -37,28 +37,5 @@ namespace OpenSilver.Samples.Showcase
 #endif
                 MessageBox.Show("You pressed Enter!" + Environment.NewLine + Environment.NewLine + "This is the text that you entered: " + TextBoxInput.Text);
         }
-
-        private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
-        {
-            ViewSourceButtonHelper.ViewSource(new List<ViewSourceButtonInfo>()
-            {
-                new ViewSourceButtonInfo()
-                {
-                    TabHeader = "Keyboard_Demo.xaml",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/Keyboard/Keyboard_Demo.xaml"
-                },
-                new ViewSourceButtonInfo()
-                {
-                    TabHeader = "Keyboard_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/Keyboard/Keyboard_Demo.xaml.cs"
-                },
-                new ViewSourceButtonInfo()
-                {
-                    TabHeader = "Keyboard_Demo.xaml.vb",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/Keyboard/Keyboard_Demo.xaml.vb"
-                }
-            });
-        }
-
     }
 }

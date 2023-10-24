@@ -18,7 +18,7 @@ using Windows.UI.Xaml.Navigation;
 #End If
 
 Namespace Global.OpenSilver.Samples.Showcase
-    Public Partial Class DataContractSerializer_Demo
+    Partial Public Class DataContractSerializer_Demo
         Inherits UserControl
         Private _classToSerialize As ClassToSerialize
 
@@ -50,7 +50,7 @@ Namespace Global.OpenSilver.Samples.Showcase
         Private Sub ButtonSerializeDeserialize_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
             ' Serialize:
             Dim dataContractSerializer = New DataContractSerializer(GetType(ClassToSerialize))
-#If OPENSILVER
+#If OPENSILVER Then
             Dim xml As String = Nothing
             Dim stream1 As MemoryStream = New MemoryStream()
             dataContractSerializer.WriteObject(stream1, _classToSerialize)
@@ -68,7 +68,7 @@ Namespace Global.OpenSilver.Samples.Showcase
 
             ' Deserialize:
             dataContractSerializer = New DataContractSerializer(GetType(ClassToSerialize))
-#If OPENSILVER
+#If OPENSILVER Then
             Dim deserializedObject As ClassToSerialize = CType(dataContractSerializer.ReadObject(New MemoryStream(Encoding.UTF8.GetBytes(xml))), ClassToSerialize)
 #Else
             ClassToSerialize deserializedObject = (ClassToSerialize)dataContractSerializer.DeserializeFromString(xml); 
@@ -77,23 +77,5 @@ Namespace Global.OpenSilver.Samples.Showcase
             ' Display the result of the deserialization:
             Me.SerializationDestinationPanel.DataContext = deserializedObject
         End Sub
-
-        Private Sub ButtonViewSource_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            Call ViewSource(New List(Of ViewSourceButtonInfo)() From {
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "DataContractSerializer_Demo.xaml",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/DataContractSerializer/DataContractSerializer_Demo.xaml"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "DataContractSerializer_Demo.xaml.cs",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/DataContractSerializer/DataContractSerializer_Demo.xaml.cs"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "DataContractSerializer_Demo.xaml.vb",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/DataContractSerializer/DataContractSerializer_Demo.xaml.vb"
-    }
-})
-        End Sub
-
     End Class
 End Namespace

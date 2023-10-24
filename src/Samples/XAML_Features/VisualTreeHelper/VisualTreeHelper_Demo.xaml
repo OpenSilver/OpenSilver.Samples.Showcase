@@ -2,7 +2,7 @@
     x:Class="OpenSilver.Samples.Showcase.VisualTreeHelper_Demo"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:OpenSilver.Samples.Showcase">
+    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
     <ContentControl Style="{StaticResource Card_Style}" Width="245">
         <Grid>
             <Grid.RowDefinitions>
@@ -15,7 +15,18 @@
                 <TextBlock Text="The Visual Tree of this example contains the following elements: "  Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left"/>
                 <Button Content="Show Visual Tree" Click="RevealTree_Click" Margin="0,10,0,0"/>
             </StackPanel>
-            <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FF69C8FF" Style="{StaticResource ButtonViewSource_Style}" Margin="0,10,0,0"/>
+            <local:ViewSourceButton Grid.Row="2"
+                                    Background="#FF69C8FF"
+                                    Margin="0,10,0,0">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/VisualTreeHelper"
+                                                FileName="VisualTreeHelper_Demo.xaml" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/VisualTreeHelper"
+                                                FileName="VisualTreeHelper_Demo.xaml.cs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/VisualTreeHelper"
+                                                FileName="VisualTreeHelper_Demo.xaml.vb" />
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

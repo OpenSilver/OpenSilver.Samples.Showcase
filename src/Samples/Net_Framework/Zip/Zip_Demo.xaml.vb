@@ -38,30 +38,5 @@ Namespace Global.OpenSilver.Samples.Showcase
         '    string content = entry.ExtractToString();
         '    MessageBox.Show(content);
         '}
-
-        Private Sub ButtonViewSource_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            Call ViewSource(New List(Of ViewSourceButtonInfo)() From {
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "Zip_Demo.xaml",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/Zip/Zip_Demo.xaml"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "Zip_Demo.xaml.cs",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/Zip/Zip_Demo.xaml.cs"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "ZipFile.cs",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/Zip/ZipFile.cs"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "Zip_Demo.xaml.vb",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/Zip/Zip_Demo.xaml.vb"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "ZipFile.vb",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/Zip/ZipFile.vb"
-    }
-})
-        End Sub
     End Class
 End Namespace

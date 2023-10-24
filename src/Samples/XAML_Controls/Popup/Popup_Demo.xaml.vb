@@ -20,23 +20,6 @@ Namespace Global.OpenSilver.Samples.Showcase
             Me.InitializeComponent()
         End Sub
 
-        Private Sub ButtonViewSource_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            Call ViewSource(New List(Of ViewSourceButtonInfo)() From {
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "Popup_Demo.xaml",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/Popup/Popup_Demo.xaml"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "Popup_Demo.xaml.cs",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/Popup/Popup_Demo.xaml.cs"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "Popup_Demo.xaml.vb",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/Popup/Popup_Demo.xaml.vb"
-    }
-})
-        End Sub
-
         Private Sub OpenPopupButton_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
             Me.MyPopup.IsOpen = True
         End Sub

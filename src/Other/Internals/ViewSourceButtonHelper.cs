@@ -10,32 +10,33 @@ using Windows.UI.Xaml.Controls;
 
 namespace OpenSilver.Samples.Showcase
 {
-    static class ViewSourceButtonHelper
+    internal static class ViewSourceButtonHelper
     {
-        public static void ViewSource(List<ViewSourceButtonInfo> sourcePaths)
+        public static void ViewSource(List<ViewSourceButtonInfo> sourcePaths) => ViewSourceImpl(sourcePaths);
+
+        public static void ViewSource(params ViewSourceButtonInfo[] sourcePaths) => ViewSourceImpl(sourcePaths);
+
+        private static void ViewSourceImpl(ICollection<ViewSourceButtonInfo> sourcePaths)
         {
-            if (sourcePaths.Count > 0)
+            if (sourcePaths is null || sourcePaths.Count == 0)
             {
-                var tabControl = new TabControl();
-
-                foreach (ViewSourceButtonInfo viewSourceButtonInfo in sourcePaths)
-                {
-                    var tabItem = new TabItem()
-                    {
-                        Header = viewSourceButtonInfo.TabHeader,
-                        Content = new ControlToDisplayCodeHostedOnGitHub()
-                        {
-                            FilePathOnGitHub = viewSourceButtonInfo.FilePathOnGitHub
-                        }
-                    };
-
-                    tabControl.Items.Add(tabItem);
-                }
-
-                ((TabItem)tabControl.Items[0]).IsSelected = true;
-
-                MainPage.Current.ViewSourceCode(tabControl);
+                return;
             }
+
+            var tabControl = new TabControl();
+
+            foreach (ViewSourceButtonInfo viewSourceButtonInfo in sourcePaths)
+            {
+                tabControl.Items.Add(new TabItem()
+                {
+                    Header = viewSourceButtonInfo.GetHeader(),
+                    Content = new ControlToDisplayCodeHostedOnGitHub(viewSourceButtonInfo.GetAbsoluteUrl()),
+                });
+            }
+
+            ((TabItem)tabControl.Items[0]).IsSelected = true;
+
+            MainPage.Current.ViewSourceCode(tabControl);
         }
     }
 }

@@ -2,7 +2,7 @@
     x:Class="OpenSilver.Samples.Showcase.HtmlPage_Demo"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:OpenSilver.Samples.Showcase">
+    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
     <ContentControl Style="{StaticResource Card_Style}" Width="245">
         <Grid>
             <Grid.RowDefinitions>
@@ -12,7 +12,17 @@
             </Grid.RowDefinitions>
             <ContentControl Content="HtmlPage" Foreground="#FFA2E567" Background="#FFBEDCA4" Style="{StaticResource HeaderControl_Style}"/>
             <Button Grid.Row="1" Content="Get Current URL" Click="ButtonGetCurrentURL_Click" HorizontalAlignment="Center"/>
-            <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FFA2E567" Style="{StaticResource ButtonViewSource_Style}"/>
+            <local:ViewSourceButton Grid.Row="2"
+                                    Background="#FFA2E567">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/HtmlPage"
+                                                FileName="HtmlPage_Demo.xaml" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/HtmlPage"
+                                                FileName="HtmlPage_Demo.xaml.cs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/HtmlPage"
+                                                FileName="HtmlPage_Demo.xaml.vb" />
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

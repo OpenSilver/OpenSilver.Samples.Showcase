@@ -16,7 +16,7 @@ using Windows.UI.Xaml.Navigation;
 #End If
 
 Namespace Global.OpenSilver.Samples.Showcase
-    Public Partial Class Binding3_Demo
+    Partial Public Class Binding3_Demo
         Inherits UserControl
         Private _listOfContacts As ObservableCollection(Of Person)
 
@@ -62,23 +62,5 @@ Namespace Global.OpenSilver.Samples.Showcase
                 .LastName = Me.LastNameTextBox.Text
             })
         End Sub
-
-        Private Sub ButtonViewSource_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            Call ViewSource(New List(Of ViewSourceButtonInfo)() From {
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "Binding3_Demo.xaml",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Features/Binding3/Binding3_Demo.xaml"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "Binding3_Demo.xaml.cs",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Features/Binding3/Binding3_Demo.xaml.cs"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "Binding3_Demo.xaml.vb",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Features/Binding3/Binding3_Demo.xaml.vb"
-    }
-})
-        End Sub
-
     End Class
 End Namespace

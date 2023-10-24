@@ -41,37 +41,5 @@ namespace OpenSilver.Samples.Showcase
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
-        {
-            ViewSourceButtonHelper.ViewSource(new List<ViewSourceButtonInfo>()
-            {
-                new ViewSourceButtonInfo()
-                {
-                    TabHeader = "jQueryAjax_Demo.xaml",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Client_Server/jQuery.ajax/jQueryAjax_Demo.xaml"
-                },
-                new ViewSourceButtonInfo()
-                {
-                    TabHeader = "jQueryAjax_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Client_Server/jQuery.ajax/jQueryAjax_Demo.xaml.cs"
-                },
-                new ViewSourceButtonInfo()
-                {
-                    TabHeader = "jQueryAjaxHelper.cs",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Client_Server/jQuery.ajax/jQueryAjaxHelper.cs"
-                },
-                new ViewSourceButtonInfo()
-                {
-                    TabHeader = "jQueryAjax_Demo.xaml.vb",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Client_Server/jQuery.ajax/jQueryAjax_Demo.xaml.vb"
-                },
-                new ViewSourceButtonInfo()
-                {
-                    TabHeader = "jQueryAjaxHelper.vb",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Client_Server/jQuery.ajax/jQueryAjaxHelper.vb"
-                }
-            });
-        }
     }
 }

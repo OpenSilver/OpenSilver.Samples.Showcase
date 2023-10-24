@@ -150,31 +150,5 @@ Namespace OpenSilver.Samples.Showcase
             Await Task.Delay(1)
             Await MainLoopAsync()
         End Function
-
-        Private Sub ButtonViewSource_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            Call Showcase.ViewSourceButtonHelper.ViewSource(New List(Of OpenSilver.Samples.Showcase.ViewSourceButtonInfo)() From {
-                    New Showcase.ViewSourceButtonInfo() With {
-        .TabHeader = "HtmlCanvas_Demo.xaml",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Performance/HtmlCanvas/HtmlCanvas_Demo.xaml"
-    },
-                    New Showcase.ViewSourceButtonInfo() With {
-        .TabHeader = "HtmlCanvas_Demo.xaml.cs",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Performance/HtmlCanvas/HtmlCanvas_Demo.xaml.cs"
-    },
-                    New Showcase.ViewSourceButtonInfo() With {
-        .TabHeader = "MainSprite.cs",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Performance/HtmlCanvas/MainSprite.cs"
-    },
-                    New Showcase.ViewSourceButtonInfo() With {
-        .TabHeader = "HtmlCanvas_Demo.xaml.vb",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Performance/HtmlCanvas/HtmlCanvas_Demo.xaml.vb"
-    },
-                    New Showcase.ViewSourceButtonInfo() With {
-        .TabHeader = "MainSprite.vb",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Performance/HtmlCanvas/MainSprite.vb"
-    }
-})
-        End Sub
-
     End Class
 End Namespace

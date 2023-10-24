@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Navigation;
 #End If
 
 Namespace Global.OpenSilver.Samples.Showcase
-    Public Partial Class Drag_And_Drop_Demo
+    Partial Public Class Drag_And_Drop_Demo
         Inherits UserControl
         Private _isPointerCaptured As Boolean
         Private _pointerX As Double
@@ -27,7 +27,7 @@ Namespace Global.OpenSilver.Samples.Showcase
             Me.InitializeComponent()
         End Sub
 
-#If SLMIGRATION
+#If SLMIGRATION Then
 #Else
         void DragAndDropItem_PointerPressed(object sender, PointerRoutedEventArgs e)
 #End If
@@ -36,7 +36,7 @@ Namespace Global.OpenSilver.Samples.Showcase
             _objectLeft = Canvas.GetLeft(uielement)
             _objectTop = Canvas.GetTop(uielement)
 
-#If SLMIGRATION
+#If SLMIGRATION Then
             _pointerX = e.GetPosition(Nothing).X
             _pointerY = e.GetPosition(Nothing).Y
             uielement.CaptureMouse()
@@ -48,7 +48,7 @@ Namespace Global.OpenSilver.Samples.Showcase
             _isPointerCaptured = True
         End Sub
 
-#If SLMIGRATION
+#If SLMIGRATION Then
 #Else
         void DragAndDropItem_PointerMoved(object sender, PointerRoutedEventArgs e)
 #End If
@@ -56,7 +56,7 @@ Namespace Global.OpenSilver.Samples.Showcase
             Dim uielement = CType(sender, UIElement)
             If _isPointerCaptured Then
                 ' Calculate the new position of the object:
-#If SLMIGRATION
+#If SLMIGRATION Then
                 Dim deltaH = e.GetPosition(Nothing).X - _pointerX
                 Dim deltaV = e.GetPosition(Nothing).Y - _pointerY
 #Else
@@ -71,7 +71,7 @@ Namespace Global.OpenSilver.Samples.Showcase
                 Canvas.SetTop(uielement, _objectTop)
 
                 ' Remember the pointer position:
-#If SLMIGRATION
+#If SLMIGRATION Then
                 _pointerX = e.GetPosition(Nothing).X
                 _pointerY = e.GetPosition(Nothing).Y
 #Else
@@ -81,36 +81,18 @@ Namespace Global.OpenSilver.Samples.Showcase
             End If
         End Sub
 
-#If SLMIGRATION
+#If SLMIGRATION Then
 #Else
         void DragAndDropItem_PointerReleased(object sender, PointerRoutedEventArgs e)
 #End If
         Private Sub DragAndDropItem_PointerReleased(ByVal sender As Object, ByVal e As MouseButtonEventArgs)
             Dim uielement = CType(sender, UIElement)
             _isPointerCaptured = False
-#If SLMIGRATION
+#If SLMIGRATION Then
             uielement.ReleaseMouseCapture()
 #Else
             uielement.ReleasePointerCapture(e.Pointer);
 #End If
         End Sub
-
-        Private Sub ButtonViewSource_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            Call ViewSource(New List(Of ViewSourceButtonInfo)() From {
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "Drag_And_Drop_Demo_Silverlight.xaml",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Features/Drag_And_Drop/Drag_And_Drop_Demo.xaml"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "Drag_And_Drop_Demo_Silverlight.xaml.xaml.cs",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Features/Drag_And_Drop/Drag_And_Drop_Demo.xaml.cs"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "Drag_And_Drop_Demo_Silverlight.xaml.xaml.vb",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Features/Drag_And_Drop/Drag_And_Drop_Demo.xaml.vb"
-    }
-})
-        End Sub
-
     End Class
 End Namespace

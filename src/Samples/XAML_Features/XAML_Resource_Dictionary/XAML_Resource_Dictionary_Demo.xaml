@@ -2,7 +2,7 @@
     x:Class="OpenSilver.Samples.Showcase.XAML_Resource_Dictionary_Demo"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:OpenSilver.Samples.Showcase">
+    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
 
     <UserControl.Resources>
         <ResourceDictionary>
@@ -25,7 +25,21 @@
                 <Button Style="{StaticResource ButtonStyle1}" Margin="5" Content="Button using ButtonStyle1 from Style1.xaml"/>
                 <Button Style="{StaticResource ButtonStyle2}" Margin="5" Content="Button using ButtonStyle2 from Style2.xaml"/>
             </StackPanel>
-            <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FF6F7DFF" Style="{StaticResource ButtonViewSource_Style}"/>
+            <local:ViewSourceButton Grid.Row="2"
+                                    Background="#FF6F7DFF">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/XAML_Resource_Dictionary"
+                                                FileName="XAML_Resource_Dictionary_Demo.xaml" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/XAML_Resource_Dictionary"
+                                                FileName="XAML_Resource_Dictionary_Demo.xaml.cs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/XAML_Resource_Dictionary"
+                                                FileName="XAML_Resource_Dictionary_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/XAML_Resource_Dictionary/Dictionaries"
+                                                FileName="Style1.xaml" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/XAML_Resource_Dictionary/Dictionaries"
+                                                FileName="Style2.xaml" />
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

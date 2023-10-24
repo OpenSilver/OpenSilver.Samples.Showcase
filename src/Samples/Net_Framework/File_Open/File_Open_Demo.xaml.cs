@@ -25,42 +25,9 @@ namespace OpenSilver.Samples.Showcase
             this.InitializeComponent();
         }
 
-        async void OnFileOpened(object sender, OpenSilver.Extensions.FileOpenDialog.FileOpenedEventArgs e)
+        void OnFileOpened(object sender, OpenSilver.Extensions.FileOpenDialog.FileOpenedEventArgs e)
         {
             MessageBox.Show(e.Text);
         }
-
-        private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
-        {
-            ViewSourceButtonHelper.ViewSource(new List<ViewSourceButtonInfo>()
-            {
-                new ViewSourceButtonInfo()
-                {
-                    TabHeader = "File_Open_Demo.xaml",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/File_Open/File_Open_Demo.xaml"
-                },
-                new ViewSourceButtonInfo()
-                {
-                    TabHeader = "File_Open_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/File_Open/File_Open_Demo.xaml.cs"
-                },
-                new ViewSourceButtonInfo()
-                {
-                    TabHeader = "FileOpenDialog.cs",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/File_Open/FileOpenDialog.cs"
-                },
-                new ViewSourceButtonInfo()
-                {
-                    TabHeader = "File_Open_Demo.xaml.vb",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/File_Open/File_Open_Demo.xaml.vb"
-                },
-                new ViewSourceButtonInfo()
-                {
-                    TabHeader = "FileOpenDialog.vb",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/File_Open/FileOpenDialog.vb"
-                }
-            });
-        }
-
     }
 }

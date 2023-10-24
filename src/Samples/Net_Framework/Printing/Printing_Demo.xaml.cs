@@ -30,33 +30,5 @@ namespace OpenSilver.Samples.Showcase
             var invoiceToPrint = new Invoice();
             CSHTML5.Native.Html.Printing.PrintManager.Print(invoiceToPrint);
         }
-
-        private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
-        {
-            ViewSourceButtonHelper.ViewSource(new List<ViewSourceButtonInfo>()
-            {
-                new ViewSourceButtonInfo()
-                {
-                    TabHeader = "Printing_Demo.xaml",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/Printing/Printing_Demo.xaml"
-                },
-                new ViewSourceButtonInfo()
-                {
-                    TabHeader = "Printing_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/Printing/Printing_Demo.xaml.cs"
-                },
-                new ViewSourceButtonInfo()
-                {
-                    TabHeader = "Printing_Demo.xaml.vb",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/Printing/Printing_Demo.xaml.vb"
-                },
-                new ViewSourceButtonInfo()
-                {
-                    TabHeader = "Invoice.xaml",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/Printing/Invoice.xaml"
-                }
-            });
-        }
-
     }
 }

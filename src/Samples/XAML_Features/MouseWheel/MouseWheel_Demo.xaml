@@ -2,7 +2,7 @@
     x:Class="OpenSilver.Samples.Showcase.MouseWheel_Demo"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:OpenSilver.Samples.Showcase">
+    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
 
     <ContentControl Style="{StaticResource Card_Style}" Width="245">
         <Grid>
@@ -18,7 +18,17 @@
                     <Border x:Name="ScrollBorder" Background="LightBlue" Width="70" Height="25" HorizontalAlignment="Left" />
                 </StackPanel>
             </StackPanel>
-            <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FF6FA9FF" Style="{StaticResource ButtonViewSource_Style}"/>
+            <local:ViewSourceButton Grid.Row="2"
+                                    Background="#FF6FA9FF">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/MouseWheel"
+                                                FileName="MouseWheel_Demo.xaml" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/MouseWheel"
+                                                FileName="MouseWheel_Demo.xaml.cs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/MouseWheel"
+                                                FileName="MouseWheel_Demo.xaml.vb" />
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
         </Grid>
     </ContentControl>
 

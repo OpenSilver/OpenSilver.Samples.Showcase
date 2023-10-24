@@ -120,24 +120,5 @@ Namespace Global.OpenSilver.Samples.Showcase
             button.IsEnabled = True
             button.Content = "Delete"
         End Sub
-
-        Private Sub ButtonViewSource_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            Call ViewSource(New List(Of ViewSourceButtonInfo)() From {
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "WCF_SOAP_Demo.xaml",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Client_Server/WCF_SOAP/WCF_SOAP_Demo.xaml"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "WCF_SOAP_Demo.xaml.cs",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Client_Server/WCF_SOAP/WCF_SOAP_Demo.xaml.cs"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "WCF_SOAP_Demo.xaml.vb",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Client_Server/WCF_SOAP/WCF_SOAP_Demo.xaml.vb"
-    }
-})
-        End Sub
-
-
     End Class
 End Namespace

@@ -14,7 +14,7 @@ using Windows.UI.Xaml.Navigation;
 #End If
 
 Namespace Global.OpenSilver.Samples.Showcase
-    Public Partial Class ExecuteJavaScript_Demo
+    Partial Public Class ExecuteJavaScript_Demo
         Inherits UserControl
         Public Sub New()
             Me.InitializeComponent()
@@ -23,23 +23,5 @@ Namespace Global.OpenSilver.Samples.Showcase
         Private Sub SendJavaScriptMessage(ByVal sender As Object, ByVal e As RoutedEventArgs)
             Interop.ExecuteJavaScript("alert($0);", Me.TextBoxInput.Text)
         End Sub
-
-        Private Sub ButtonViewSource_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            Call ViewSource(New List(Of ViewSourceButtonInfo)() From {
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "ExecuteJavaScript_Demo.xaml",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Interop_Samples/ExecuteJavaScript/ExecuteJavaScript_Demo.xaml"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "ExecuteJavaScript_Demo.xaml.cs",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Interop_Samples/ExecuteJavaScript/ExecuteJavaScript_Demo.xaml.cs"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "ExecuteJavaScript_Demo.xaml.vb",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Interop_Samples/ExecuteJavaScript/ExecuteJavaScript_Demo.xaml.vb"
-    }
-})
-        End Sub
-
     End Class
 End Namespace

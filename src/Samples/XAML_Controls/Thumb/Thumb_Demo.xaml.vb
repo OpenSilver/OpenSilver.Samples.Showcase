@@ -14,32 +14,10 @@ using Windows.UI.Xaml.Navigation;
 #End If
 
 Namespace Global.OpenSilver.Samples.Showcase
-    Public Partial Class Thumb_Demo
+    Partial Public Class Thumb_Demo
         Inherits UserControl
         Public Sub New()
             Me.InitializeComponent()
         End Sub
-
-        Private Sub ButtonViewSource_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            Call ViewSource(New List(Of ViewSourceButtonInfo)() From {
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "Thumb_Demo.xaml",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/Thumb/Thumb_Demo.xaml"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "Thumb_Demo.xaml.cs",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/Thumb/Thumb_Demo.xaml.cs"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "Thumb_Demo.xaml.vb",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/Thumb/Thumb_Demo.xaml.vb"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "DefaultThumbStyle.xaml",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/Thumb/Styles/DefaultThumbStyle.xaml"
-    }
-})
-        End Sub
-
     End Class
 End Namespace

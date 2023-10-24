@@ -16,7 +16,7 @@ using Windows.UI.Xaml.Navigation;
 #End If
 
 Namespace Global.OpenSilver.Samples.Showcase
-    Public Partial Class IsolatedStorageSettings_Demo
+    Partial Public Class IsolatedStorageSettings_Demo
         Inherits UserControl
         Public Sub New()
             Me.InitializeComponent()
@@ -73,23 +73,5 @@ Namespace Global.OpenSilver.Samples.Showcase
         Private Function IsRunningFromLocalFileSystemOnInternetExplorer() As Boolean
             Return Convert.ToBoolean(Interop.ExecuteJavaScript("window.IE_VERSION && document.location.protocol === ""file:"""))
         End Function
-
-        Private Sub ButtonViewSource_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            Call ViewSource(New List(Of ViewSourceButtonInfo)() From {
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "IsolatedStorageSettings_Demo.xaml",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/IsolatedStorageSettings/IsolatedStorageSettings _Demo.xaml"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "IsolatedStorageSettings_Demo.xaml.cs",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/IsolatedStorageSettings/IsolatedStorageSettings _Demo.xaml.cs"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "IsolatedStorageSettings_Demo.xaml.vb",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/IsolatedStorageSettings/IsolatedStorageSettings _Demo.xaml.vb"
-    }
-})
-        End Sub
-
     End Class
 End Namespace

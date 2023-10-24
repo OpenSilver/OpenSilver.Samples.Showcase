@@ -20,23 +20,6 @@ Namespace Global.OpenSilver.Samples.Showcase
             Me.InitializeComponent()
         End Sub
 
-        Private Sub ButtonViewSource_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            Call ViewSource(New List(Of ViewSourceButtonInfo)() From {
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "MediaElement_Demo.xaml",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/MediaElement/MediaElement_Demo.xaml"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "MediaElement_Demo.xaml.cs",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/MediaElement/MediaElement_Demo.xaml.cs"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "MediaElement_Demo.xaml.vb",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/MediaElement/MediaElement_Demo.xaml.vb"
-    }
-})
-        End Sub
-
         Private Sub ButtonToPlayAudio_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
             Me.MediaElementForAudio.Play()
         End Sub

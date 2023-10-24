@@ -136,30 +136,5 @@ Namespace Global.OpenSilver.Samples.Showcase
             B2C
         End Enum
 
-        Private Sub ButtonViewSource_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            Call ViewSource(New List(Of ViewSourceButtonInfo)() From {
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "JSON_Serializer_Demo.xaml",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/JSON_Serializer/JSON_Serializer_Demo.xaml"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "JSON_Serializer_Demo.xaml.cs",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/JSON_Serializer/JSON_Serializer_Demo.xaml.cs"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "JsonConvert.cs",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/JSON_Serializer/JsonConvert.cs"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "JSON_Serializer_Demo.xaml.vb",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/JSON_Serializer/JSON_Serializer_Demo.xaml.vb"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "JsonConvert.vb",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/JSON_Serializer/JsonConvert.vb"
-    }
-})
-        End Sub
-
     End Class
 End Namespace

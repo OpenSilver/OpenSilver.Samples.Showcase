@@ -14,7 +14,7 @@ using Windows.UI.Xaml.Navigation;
 #End If
 
 Namespace Global.OpenSilver.Samples.Showcase
-    Public Partial Class MethodToUpdateDom_Demo
+    Partial Public Class MethodToUpdateDom_Demo
         Inherits UserControl
         Public Sub New()
             Me.InitializeComponent()
@@ -27,31 +27,5 @@ Namespace Global.OpenSilver.Samples.Showcase
 
             ' Note: refer to the documentation at: http://opensilver.net/links/how-to-call-javascript.aspx
         End Sub
-
-        Private Sub ButtonViewSource_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            Call ViewSource(New List(Of ViewSourceButtonInfo)() From {
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "AttachedPropertiesWithMethodToUpdateDom.cs",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Interop_Samples/MethodToUpdateDom/AttachedPropertiesWithMethodToUpdateDom.cs"
-    },
-    New ViewSourceButtonInfo() With {
-        .TabHeader = "AttachedPropertiesWithMethodToUpdateDom.vb",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Interop_Samples/MethodToUpdateDom/AttachedPropertiesWithMethodToUpdateDom.vb"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "MethodToUpdateDom_Demo.xaml",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Interop_Samples/MethodToUpdateDom/MethodToUpdateDom_Demo.xaml"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "MethodToUpdateDom_Demo.xaml.cs",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Interop_Samples/MethodToUpdateDom/MethodToUpdateDom_Demo.xaml.cs"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "MethodToUpdateDom_Demo.xaml.vb",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Interop_Samples/MethodToUpdateDom/MethodToUpdateDom_Demo.xaml.vb"
-    }
-})
-        End Sub
-
     End Class
 End Namespace

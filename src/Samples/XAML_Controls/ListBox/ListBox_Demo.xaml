@@ -2,7 +2,7 @@
     x:Class="OpenSilver.Samples.Showcase.ListBox_Demo"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:OpenSilver.Samples.Showcase">
+    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
 
     <ContentControl Style="{StaticResource Card_Style}" Width="180">
         <Grid>
@@ -16,7 +16,21 @@
                 <ListBox x:Name="ListBox1" DisplayMemberPath="Name" SelectedValuePath="ImagePath" VerticalAlignment="Top" SelectionMode="Single" BorderThickness="1" BorderBrush="LightGray"/>
                 <Image Source="{Binding ElementName=ListBox1, Path=SelectedValue}" Width="60" Height="60" Margin="20,0,0,0" VerticalAlignment="Top"/>
             </StackPanel>
-            <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FF6F7DFF" Style="{StaticResource ButtonViewSource_Style}"/>
+            <local:ViewSourceButton Grid.Row="2"
+                                    Background="#FF6F7DFF">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ListBox"
+                                                FileName="ListBox_Demo.xaml" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ListBox"
+                                                FileName="ListBox_Demo.xaml.cs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Other"
+                                                FileName="Planet.cs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ListBox"
+                                                FileName="ListBox_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Other"
+                                                FileName="Planet.vb" />
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

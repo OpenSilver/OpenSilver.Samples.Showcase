@@ -1,11 +1,11 @@
 ﻿Imports System.Windows.Browser
 Imports CSHTML5.Internal
-#If SLMIGRATION
+#If SLMIGRATION Then
 Imports System.Windows
 Imports System.Windows.Controls
 #Else
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
+Imports Windows.UI.Xaml
+Imports Windows.UI.Xaml.Controls
 #End If
 
 Namespace Global.OpenSilver.Samples.Showcase
@@ -21,9 +21,14 @@ Namespace Global.OpenSilver.Samples.Showcase
             HorizontalContentAlignment = HorizontalAlignment.Stretch
         End Sub
 
+        Public Sub New(absolutePath As String)
+            Me.New()
+            FilePathOnGitHub = absolutePath
+        End Sub
+
         Private Function GetHtmlString(ByVal filePath As String) As String
             Dim embedJs = INTERNAL_UriHelper.ConvertToHtml5Path("ms-appx:/Other/embed.js")
-            Return String.Format("<script src=""{0}?target={1}&style=github&showBorder=on&showLineNumbers=on&showCopy=on""></script>", embedJs, HttpUtility.UrlEncode("https://github.com" & filePath.Substring(6)))
+            Return String.Format("<script src=""{0}?target={1}&style=github&showBorder=on&showLineNumbers=on&showCopy=on""></script>", embedJs, HttpUtility.UrlEncode(filePath))
         End Function
 
         Private Sub OnLoaded(ByVal sender As Object, ByVal e As RoutedEventArgs)
@@ -34,10 +39,10 @@ Namespace Global.OpenSilver.Samples.Showcase
         End Sub
 
         Private Sub DisplayHtmlString(ByVal htmlString As String)
-#If SLMIGRATION
+#If SLMIGRATION Then
             Dim webView = New WebBrowser()
 #Else
-            var webView = new WebView(); 
+            Dim webView = New WebView()
 #End If
             webView.NavigateToString(htmlString)
             Content = webView

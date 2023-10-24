@@ -45,28 +45,5 @@ namespace OpenSilver.Samples.Showcase
             TaskBasedCounterTextBlock.Visibility = Visibility.Collapsed;
             button.Visibility = Visibility.Visible;
         }
-
-        private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
-        {
-            ViewSourceButtonHelper.ViewSource(new List<ViewSourceButtonInfo>()
-            {
-                new ViewSourceButtonInfo()
-                {
-                    TabHeader = "AsyncAwait_Demo.xaml",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/AsyncAwait/AsyncAwait_Demo.xaml"
-                },
-                new ViewSourceButtonInfo()
-                {
-                    TabHeader = "AsyncAwait_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/AsyncAwait/AsyncAwait_Demo.xaml.cs"
-                },
-                new ViewSourceButtonInfo()
-                {
-                    TabHeader = "AsyncAwait_Demo.xaml.vb",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/AsyncAwait/AsyncAwait_Demo.xaml.vb"
-                }
-            });
-        }
-
     }
 }

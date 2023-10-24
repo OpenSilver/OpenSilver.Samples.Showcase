@@ -2,7 +2,7 @@
     x:Class="OpenSilver.Samples.Showcase.AsyncAwait_Demo"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:OpenSilver.Samples.Showcase">
+    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
     <ContentControl Style="{StaticResource Card_Style}" Width="245">
         <Grid>
             <Grid.RowDefinitions>
@@ -15,7 +15,17 @@
                 <TextBlock x:Name="TaskBasedCounterTextBlock" Margin="10,10,0,0" FontSize="26" Foreground="#FFFFAD33" VerticalAlignment="Top" Visibility="Collapsed"/>
                 <Button Content="Start Task-Based Countdown" Margin="0,10,0,0" HorizontalAlignment="Center" Click="ButtonToDemonstrateAsyncAwait_Click"/>
             </StackPanel>
-            <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FFFFAD33" Style="{StaticResource ButtonViewSource_Style}"/>
+            <local:ViewSourceButton Grid.Row="2"
+                                    Background="#FFFFAD33">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/AsyncAwait"
+                                                FileName="AsyncAwait_Demo.xaml" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/AsyncAwait"
+                                                FileName="AsyncAwait_Demo.xaml.cs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/AsyncAwait"
+                                                FileName="AsyncAwait_Demo.xaml.vb" />
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

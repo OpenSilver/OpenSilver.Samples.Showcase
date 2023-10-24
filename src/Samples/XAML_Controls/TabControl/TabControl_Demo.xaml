@@ -2,7 +2,7 @@
     x:Class="OpenSilver.Samples.Showcase.TabControl_Demo"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:OpenSilver.Samples.Showcase">
+    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
     <ContentControl Style="{StaticResource Card_Style}" Width="180">
         <Grid>
             <Grid.RowDefinitions>
@@ -22,7 +22,21 @@
                     <TextBlock Text="Content of Tab 3" Margin="20"/>
                 </TabItem>
             </TabControl>
-            <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FF3ED4B2" Style="{StaticResource ButtonViewSource_Style}"/>
+            <local:ViewSourceButton Grid.Row="2"
+                                    Background="#FF3ED4B2">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/TabControl"
+                                                FileName="TabControl_Demo.xaml" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/TabControl"
+                                                FileName="TabControl_Demo.xaml.cs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/TabControl"
+                                                FileName="TabControl_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/TabControl/Styles"
+                                                FileName="DefaultTabControlStyle.xaml" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/TabControl/Styles"
+                                                FileName="DefaultTabItemStyle.xaml" />
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

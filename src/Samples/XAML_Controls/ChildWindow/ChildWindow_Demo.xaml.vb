@@ -37,37 +37,5 @@ Namespace OpenSilver.Samples.Showcase
                 Me.TextBlockForTestingChildWindow.Text = "Login cancelled."
             End If
         End Sub
-
-        Private Sub ButtonViewSource_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            Call ViewSource(New List(Of ViewSourceButtonInfo)() From {
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "ChildWindow_Demo.xaml",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/ChildWindow/ChildWindow_Demo.xaml"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "ChildWindow_Demo.xaml.cs",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/ChildWindow/ChildWindow_Demo.xaml.cs"
-    }, New ViewSourceButtonInfo() With {
-        .TabHeader = "ChildWindow_Demo.xaml.vb",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/ChildWindow/ChildWindow_Demo.xaml.vb"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "LoginWindow.xaml",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/ChildWindow/LoginWindow.xaml"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "LoginWindow.xaml.cs",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/ChildWindow/LoginWindow.xaml.cs"
-    }, New ViewSourceButtonInfo() With {
-        .TabHeader = "LoginWindow.xaml.vb",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/ChildWindow/LoginWindow.xaml.vb"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "DefaultChildWindowStyle.xaml",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/ChildWindow/Styles/DefaultChildWindowStyle.xaml"
-    }
-})
-        End Sub
-
     End Class
 End Namespace

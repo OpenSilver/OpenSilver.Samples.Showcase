@@ -2,7 +2,7 @@
     x:Class="OpenSilver.Samples.Showcase.Canvas_Demo"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:OpenSilver.Samples.Showcase">
+    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
     <ContentControl Style="{StaticResource Card_Style}" Width="180">
         <Grid>
             <Grid.RowDefinitions>
@@ -16,7 +16,18 @@
                 <Border Canvas.Left="60" Canvas.Top="27" Width="70" Height="50" Background="#FF22E695"/>
                 <Border Canvas.Left="44" Canvas.Top="70" Width="43" Height="20" Background="#FF22E6DF"/>
             </Canvas>
-            <Button Grid.Row="2" Content="VIEW SOURCE..." Margin="0,10,0,0" Click="ButtonViewSource_Click" Background="#FF66CC66" Style="{StaticResource ButtonViewSource_Style}"/>
+            <local:ViewSourceButton Grid.Row="2"
+                                    Margin="0,10,0,0"
+                                    Background="#FF66CC66">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Canvas"
+                                                FileName="Canvas_Demo.xaml" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Canvas"
+                                                FileName="Canvas_Demo.xaml.cs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Canvas"
+                                                FileName="Canvas_Demo.xaml.vb" />
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

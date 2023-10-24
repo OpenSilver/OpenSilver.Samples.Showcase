@@ -36,46 +36,5 @@ namespace OpenSilver.Samples.Showcase
                 await FileSaver.SaveJavaScriptBlobToFile(jsBlob, "MyTestFile.zip");
             }
         }
-
-        //async void OnFileOpened(object sender, OpenSilver.Extensions.FileOpenDialog.FileOpenedEventArgs e)
-        //{
-        //    var javaScriptBlob = e.JavaScriptBlob;
-        //    ZipFile zipFile = await ZipFile.Read(javaScriptBlob);
-        //    ZipEntry entry = zipFile["MyTestFileInsideTheZIP.txt"];
-        //    string content = entry.ExtractToString();
-        //    MessageBox.Show(content);
-        //}
-
-        private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
-        {
-            ViewSourceButtonHelper.ViewSource(new List<ViewSourceButtonInfo>()
-            {
-                new ViewSourceButtonInfo()
-                {
-                    TabHeader = "Zip_Demo.xaml",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/Zip/Zip_Demo.xaml"
-                },
-                new ViewSourceButtonInfo()
-                {
-                    TabHeader = "Zip_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/Zip/Zip_Demo.xaml.cs"
-                },
-                new ViewSourceButtonInfo()
-                {
-                    TabHeader = "ZipFile.cs",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/Zip/ZipFile.cs"
-                },
-                new ViewSourceButtonInfo()
-                {
-                    TabHeader = "Zip_Demo.xaml.vb",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/Zip/Zip_Demo.xaml.vb"
-                },
-                new ViewSourceButtonInfo()
-                {
-                    TabHeader = "ZipFile.vb",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/Zip/ZipFile.vb"
-                }
-            });
-        }
     }
 }

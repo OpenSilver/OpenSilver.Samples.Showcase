@@ -2,7 +2,7 @@
     x:Class="OpenSilver.Samples.Showcase.HtmlPresenter_Demo"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:OpenSilver.Samples.Showcase">
+    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
   <ContentControl Style="{StaticResource Card_Style}" Width="180">
     <Grid>
       <Grid.RowDefinitions>
@@ -117,7 +117,17 @@
         </native:HtmlPresenter>
 
       </ScrollViewer>
-      <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FFA05BFF" Style="{StaticResource ButtonViewSource_Style}"/>
-    </Grid>
+            <local:ViewSourceButton Grid.Row="2"
+                                    Background="#FFA05BFF">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/HtmlPresenter"
+                                                FileName="HtmlPresenter_Demo.xaml" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/HtmlPresenter"
+                                                FileName="HtmlPresenter_Demo.xaml.cs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/HtmlPresenter"
+                                                FileName="HtmlPresenter_Demo.xaml.vb" />
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
   </ContentControl>
 </UserControl>

@@ -16,7 +16,7 @@ using Windows.UI.Xaml.Navigation;
 #End If
 
 Namespace Global.OpenSilver.Samples.Showcase
-    Public Partial Class InteractivityTriggers_Demo
+    Partial Public Class InteractivityTriggers_Demo
         Inherits UserControl
         Public Sub New()
             Me.InitializeComponent()
@@ -53,23 +53,5 @@ Namespace Global.OpenSilver.Samples.Showcase
                 MessageBox.Show("The command was successfully executed.")
             End Sub
         End Class
-
-        Private Sub ButtonViewSource_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            Call ViewSource(New List(Of ViewSourceButtonInfo)() From {
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "Commanding_Demo.xaml",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Features/InteractivityTriggers/InteractivityTriggers_Demo.xaml"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "Commanding_Demo.xaml.cs",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Features/InteractivityTriggers/InteractivityTriggers_Demo.xaml.cs"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "Commanding_Demo.xaml.vb",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Features/InteractivityTriggers/InteractivityTriggers_Demo.xaml.vb"
-    }
-})
-        End Sub
-
     End Class
 End Namespace

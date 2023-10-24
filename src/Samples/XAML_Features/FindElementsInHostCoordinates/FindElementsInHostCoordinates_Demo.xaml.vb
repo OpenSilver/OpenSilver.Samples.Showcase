@@ -17,7 +17,7 @@ using Windows.UI.Xaml.Navigation;
 #End If
 
 Namespace Global.OpenSilver.Samples.Showcase
-    Public Partial Class FindElementsInHostCoordinates_Demo
+    Partial Public Class FindElementsInHostCoordinates_Demo
         Inherits UserControl
         Private _highestZIndex As Integer
 
@@ -27,14 +27,14 @@ Namespace Global.OpenSilver.Samples.Showcase
             InitAllZIndex()
             _highestZIndex = 2
 
-#If SLMIGRATION
+#If SLMIGRATION Then
             AddHandler MouseLeftButtonDown, AddressOf FindElementsInHostCoordinates_Demo_PointerPressed
 #Else
             this.PointerPressed += FindElementsInHostCoordinates_Demo_PointerPressed; 
 #End If
         End Sub
 
-#If SLMIGRATION
+#If SLMIGRATION Then
         Private Sub FindElementsInHostCoordinates_Demo_PointerPressed(ByVal sender As Object, ByVal e As MouseButtonEventArgs)
             ' Get the absolute coordinates of the pointer:
             Dim currentPoint = e.GetPosition(Nothing)
@@ -62,24 +62,5 @@ Namespace Global.OpenSilver.Samples.Showcase
             Canvas.SetZIndex(Me.GreenRectangle, 1)
             Canvas.SetZIndex(Me.YellowRectangle, 2)
         End Sub
-
-        Private Sub ButtonViewSource_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            Call ViewSource(New List(Of ViewSourceButtonInfo)() From {
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "FindElementsInHostCoordinates_Demo.xaml",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Features/FindElementsInHostCoordinates/FindElementsInHostCoordinates_Demo.xaml"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "FindElementsInHostCoordinates_Demo.xaml.cs",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Features/FindElementsInHostCoordinates/FindElementsInHostCoordinates_Demo.xaml.cs"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "FindElementsInHostCoordinates_Demo.xaml.vb",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Features/FindElementsInHostCoordinates/FindElementsInHostCoordinates_Demo.xaml.vb"
-    }
-})
-        End Sub
-
-
     End Class
 End Namespace

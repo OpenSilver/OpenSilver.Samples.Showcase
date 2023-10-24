@@ -2,7 +2,7 @@
     x:Class="OpenSilver.Samples.Showcase.ToolTip_Demo"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:OpenSilver.Samples.Showcase">
+    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
     <ContentControl Style="{StaticResource Card_Style}" Width="180">
         <Grid>
             <Grid.RowDefinitions>
@@ -32,7 +32,20 @@
                     <TextBlock Text="Button with image ToolTip normal" TextWrapping="Wrap" TextAlignment="Center"/>
                 </Button.Content>
             </Button>-->
-            <Button Grid.Row="3" Content="VIEW SOURCE..." Margin="0,10,0,0"  Click="ButtonViewSource_Click" Background="#FCAB54" Style="{StaticResource ButtonViewSource_Style}"/>
+            <local:ViewSourceButton Grid.Row="3"
+                                    Margin="0,10,0,0"
+                                    Background="#FFA2E567">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ToolTip"
+                                                FileName="ToolTip_Demo.xaml" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ToolTip"
+                                                FileName="ToolTip_Demo.xaml.cs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ToolTip"
+                                                FileName="ToolTip_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ToolTip/Styles"
+                                                FileName="DefaultToolTipStyle.xaml" />
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

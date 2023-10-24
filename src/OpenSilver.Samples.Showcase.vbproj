@@ -215,7 +215,7 @@
     <Page Include="Samples\Net_Framework\IsolatedStorageFile\IsolatedStorageFile_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\Net_Framework\IsolatedStorageSettings\IsolatedStorageSettings _Demo.xaml">
+    <Page Include="Samples\Net_Framework\IsolatedStorageSettings\IsolatedStorageSettings_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\Net_Framework\JSON_Serializer\JSON_Serializer_Demo.xaml">
@@ -524,6 +524,7 @@
     <Compile Include="Other\Internals\ControlToDisplayCodeHostedOnGitHub.vb" />
     <Compile Include="Other\Internals\MasonryPanel.vb" />
     <Compile Include="Other\Internals\MasonryPanelWithProgressiveLoading.vb" />
+    <Compile Include="Other\Internals\ViewSourceButton.vb" />
     <Compile Include="Other\Internals\ViewSourceButtonHelper.vb" />
     <Compile Include="Other\Internals\ViewSourceButtonInfo.vb" />
     <Compile Include="Other\Internals\WrapPanelWithProgressiveLoading.vb" />
@@ -563,7 +564,7 @@
     <Compile Include="Samples\Net_Framework\GetRessourceStream\GetRessourceStream_Demo.xaml.vb" />
     <Compile Include="Samples\Net_Framework\HtmlPage\HtmlPage_Demo.xaml.vb" />
     <Compile Include="Samples\Net_Framework\IsolatedStorageFile\IsolatedStorageFile_Demo.xaml.vb" />
-    <Compile Include="Samples\Net_Framework\IsolatedStorageSettings\IsolatedStorageSettings _Demo.xaml.vb" />
+    <Compile Include="Samples\Net_Framework\IsolatedStorageSettings\IsolatedStorageSettings_Demo.xaml.vb" />
     <Compile Include="Samples\Net_Framework\JSON_Serializer\InteropHelper.vb" />
     <Compile Include="Samples\Net_Framework\JSON_Serializer\JsonConvert.vb" />
     <Compile Include="Samples\Net_Framework\JSON_Serializer\JSON_Serializer_Demo.xaml.vb" />

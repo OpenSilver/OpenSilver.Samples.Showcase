@@ -24,38 +24,5 @@ namespace OpenSilver.Samples.Showcase
         {
             this.InitializeComponent();
         }
-
-        private void ButtonViewSource_Click(object sender, RoutedEventArgs e)
-        {
-            ViewSourceButtonHelper.ViewSource(new List<ViewSourceButtonInfo>()
-            {
-                new ViewSourceButtonInfo()
-                {
-                    TabHeader = "TabControl_Demo.xaml",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/TabControl/TabControl_Demo.xaml"
-                },
-                new ViewSourceButtonInfo()
-                {
-                    TabHeader = "TabControl_Demo.xaml.cs",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/TabControl/TabControl_Demo.xaml.cs"
-                }, 
-                new ViewSourceButtonInfo()
-                {
-                    TabHeader = "TabControl_Demo.xaml.vb",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/TabControl/TabControl_Demo.xaml.vb"
-                },
-                new ViewSourceButtonInfo()
-                {
-                    TabHeader = "DefaultTabControlStyle.xaml",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/TabControl/Styles/DefaultTabControlStyle.xaml"
-                },
-                new ViewSourceButtonInfo()
-                {
-                    TabHeader = "DefaultTabItemStyle.xaml",
-                    FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/TabControl/Styles/DefaultTabItemStyle.xaml"
-                }
-            });
-        }
-
     }
 }

@@ -24,13 +24,19 @@ namespace OpenSilver.Samples.Showcase
             HorizontalContentAlignment = HorizontalAlignment.Stretch;
         }
 
+        public ControlToDisplayCodeHostedOnGitHub(string absolutePath)
+            : this()
+        {
+            FilePathOnGitHub = absolutePath;
+        }
+
         string GetHtmlString(string filePath)
         {
             var embedJs =
                 INTERNAL_UriHelper.ConvertToHtml5Path("ms-appx:/Other/embed.js");
             return string.Format(
                 "<script src=\"{0}?target={1}&style=github&showBorder=on&showLineNumbers=on&showCopy=on\"></script>",
-                embedJs, HttpUtility.UrlEncode("https://github.com" + filePath.Substring(6)));
+                embedJs, HttpUtility.UrlEncode(filePath));
         }
 
         void OnLoaded(object sender, RoutedEventArgs e)

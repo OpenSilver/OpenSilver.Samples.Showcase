@@ -14,7 +14,7 @@ using Windows.UI.Xaml.Navigation;
 #End If
 
 Namespace Global.OpenSilver.Samples.Showcase
-    Public Partial Class Window_SizeChanged_Demo
+    Partial Public Class Window_SizeChanged_Demo
         Inherits UserControl
         Public Sub New()
             Me.InitializeComponent()
@@ -38,7 +38,7 @@ Namespace Global.OpenSilver.Samples.Showcase
         End Sub
 #End Region
 
-#If SLMIGRATION
+#If SLMIGRATION Then
 #Else
         void Current_SizeChanged(object sender, Windows.UI.Core.WindowSizeChangedEventArgs e) 
 #End If
@@ -52,23 +52,5 @@ Namespace Global.OpenSilver.Samples.Showcase
             Me.TextBlockValueX.Text = Window.Current.Bounds.Width.ToString()
             Me.TextBlockValueY.Text = Window.Current.Bounds.Height.ToString()
         End Sub
-
-        Private Sub ButtonViewSource_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            Call ViewSource(New List(Of ViewSourceButtonInfo)() From {
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "Window_SizeChanged_Demo.xaml",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Features/Window_SizeChanged/Window_SizeChanged_Demo.xaml"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "Window_SizeChanged_Demo.xaml.cs",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Features/Window_SizeChanged/Window_SizeChanged_Demo.xaml.cs"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "Window_SizeChanged_Demo.xaml.vb",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Features/Window_SizeChanged/Window_SizeChanged_Demo.xaml.vb"
-    }
-})
-        End Sub
-
     End Class
 End Namespace

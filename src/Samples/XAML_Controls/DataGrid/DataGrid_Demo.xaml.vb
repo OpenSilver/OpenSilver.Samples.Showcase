@@ -22,22 +22,5 @@ Namespace Global.OpenSilver.Samples.Showcase
             ' Populate the data grid with the list of planets:
             Me.DataGrid1.ItemsSource = Planet.GetListOfPlanets()
         End Sub
-
-        Private Sub ButtonViewSource_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            Call ViewSource(New List(Of ViewSourceButtonInfo)() From {
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "DataGrid_Demo.xaml",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/DataGrid/DataGrid_Demo.xaml"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "DataGrid_Demo.xaml.cs",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/DataGrid/DataGrid_Demo.xaml.cs"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "DataGrid_Demo.xaml.vb",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Controls/DataGrid/DataGrid_Demo.xaml.vb"
-    }
-})
-        End Sub
     End Class
 End Namespace

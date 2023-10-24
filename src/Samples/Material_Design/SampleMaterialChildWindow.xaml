@@ -4,7 +4,7 @@
            Width="400"
            Title="The ChildWindow"
            Style="{StaticResource MaterialDesign_ChildWindow_Style}" 
-           xmlns:local="using:OpenSilver.Samples.Showcase">
+           xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
     <StackPanel Orientation="Vertical">
         <ContentControl Style="{StaticResource MaterialDesign_CardBody_Style}">
             <StackPanel Orientation="Vertical">

@@ -14,36 +14,10 @@ using Windows.UI.Xaml.Navigation;
 #End If
 
 Namespace Global.OpenSilver.Samples.Showcase
-    Public Partial Class XAML_Resource_Dictionary_Demo
+    Partial Public Class XAML_Resource_Dictionary_Demo
         Inherits UserControl
         Public Sub New()
             Me.InitializeComponent()
         End Sub
-
-        Private Sub ButtonViewSource_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            Call ViewSource(New List(Of ViewSourceButtonInfo)() From {
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "XAML_Resource_Dictionary_Demo.xaml",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Features/XAML_Resource_Dictionary/XAML_Resource_Dictionary_Demo.xaml"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "XAML_Resource_Dictionary_Demo.xaml.cs",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Features/XAML_Resource_Dictionary/XAML_Resource_Dictionary_Demo.xaml.cs"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "XAML_Resource_Dictionary_Demo.xaml.vb",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Features/XAML_Resource_Dictionary/XAML_Resource_Dictionary_Demo.xaml.vb"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "Style1.xaml",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Features/XAML_Resource_Dictionary/Dictionaries/Style1.xaml"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "Style2.xaml",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/XAML_Features/XAML_Resource_Dictionary/Dictionaries/Style2.xaml"
-    }
-})
-        End Sub
-
     End Class
 End Namespace

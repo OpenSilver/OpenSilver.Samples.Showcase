@@ -16,7 +16,7 @@ using Windows.UI.Xaml.Navigation;
 #End If
 
 Namespace Global.OpenSilver.Samples.Showcase
-    Public Partial Class DispatcherTimer_Demo
+    Partial Public Class DispatcherTimer_Demo
         Inherits UserControl
         Private _dispatcherTimer As DispatcherTimer
 
@@ -51,23 +51,5 @@ Namespace Global.OpenSilver.Samples.Showcase
         Public Sub Dispose()
             _dispatcherTimer.Stop()
         End Sub
-
-        Private Sub ButtonViewSource_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            Call ViewSource(New List(Of ViewSourceButtonInfo)() From {
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "DispatcherTimer_Demo.xaml",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/DispatcherTimer/DispatcherTimer_Demo.xaml"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "DispatcherTimer_Demo.xaml.cs",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/DispatcherTimer/DispatcherTimer_Demo.xaml.cs"
-    },
-                    New ViewSourceButtonInfo() With {
-        .TabHeader = "DispatcherTimer_Demo.xaml.vb",
-        .FilePathOnGitHub = "github/OpenSilver/OpenSilver.Samples.Showcase/blob/master/src/Samples/Net_Framework/DispatcherTimer/DispatcherTimer_Demo.xaml.vb"
-    }
-})
-        End Sub
-
     End Class
 End Namespace
