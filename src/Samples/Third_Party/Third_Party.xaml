@@ -2,7 +2,8 @@
     x:Class="OpenSilver.Samples.Showcase.Third_Party"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:OpenSilver.Samples.Showcase">
+    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase"
+    xmlns:native="clr-namespace:CSHTML5.Native.Html.Controls;assembly=OpenSilver">
   <Border Background="White" CornerRadius="6" Width="500" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="22,22,0,0">
     <Border.Effect>
       <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="10" Opacity="0.1" />
@@ -10,8 +11,8 @@
     <StackPanel Margin="0,0,20,20">
       <TextBlock Text="Third-Party Components" Foreground="#FF2299A1" Style="{StaticResource PageHeader_Style}"/>
 
-      <native:HtmlPresenter xmlns:native="using:CSHTML5.Native.Html.Controls" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="native">
-        <ul style="font-size:1.4em; margin:10px;">
+      <native:HtmlPresenter>
+        <ul style="font-size:1.4em; margin: -10px 10px;">
           <li style="margin-top:10px;">Telerik UI for Silverlight* (<a href="https://doc.opensilver.net/documentation/3rd-party-libraries/telerik.html"  style="margin-top:10px;">Doc</a>|<a href="https://opensilvertelerik.azurewebsites.net/?alpha-20-rev-2021-08-04">Demo</a>)</li>
           <li style="margin-top:10px;"> Telerik Kendo UI* (via JavaScript interop)       </li>
           <li style="margin-top:10px;">DevExpress for Silverlight* (<a href="https://doc.opensilver.net/documentation/3rd-party-libraries/devexpress.html">Doc</a>)</li>
