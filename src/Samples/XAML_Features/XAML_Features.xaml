@@ -2,10 +2,11 @@
     x:Class="OpenSilver.Samples.Showcase.Xaml_Features"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controlskit="clr-namespace:OpenSilver.ControlsKit;assembly=OpenSilver.ControlsKit.Controls"
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
     <StackPanel>
         <TextBlock Text="XAML Features" Style="{StaticResource PageHeader_Style}"/>
-        <local:WrapPanelWithProgressiveLoading Style="{StaticResource Panel_Style}">
+        <controlskit:StaggeredPanel DesiredColumnWidth="280" ProgressiveRenderingChunkSize="2">
             <local:RenderTransforms_Demo HorizontalAlignment="Center"/>
             <local:Drag_And_Drop_Demo HorizontalAlignment="Center"/>
             <local:Binding1_Demo x:Name="Binding1Demo" HorizontalAlignment="Center"/>
@@ -28,6 +29,6 @@
             <local:MarkupExtensions_Demo x:Name="MarkupExtensionsDemo" HorizontalAlignment="Center"/>
             <local:UriMapper_Demo HorizontalAlignment="Center"/>
             <!--<local:PropertyChangedTrigger_Demo HorizontalAlignment="Center"/>-->
-        </local:WrapPanelWithProgressiveLoading>
+        </controlskit:StaggeredPanel>
     </StackPanel>
 </UserControl>
