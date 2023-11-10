@@ -10,6 +10,7 @@
             <local:Grid_Demo HorizontalAlignment="Center"/>
             <local:StackPanel_Demo HorizontalAlignment="Center"/>
             <local:TreeView_Demo HorizontalAlignment="Center"/>
+            <local:TreeView2_Demo HorizontalAlignment="Center"/>
             <local:DockPanel_Demo HorizontalAlignment="Center"/>
             <local:WrapPanel_Demo HorizontalAlignment="Center"/>
             <local:Canvas_Demo HorizontalAlignment="Center"/>
