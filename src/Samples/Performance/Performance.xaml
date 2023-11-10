@@ -2,11 +2,12 @@
     x:Class="OpenSilver.Samples.Showcase.Performance"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controlskit="clr-namespace:OpenSilver.ControlsKit;assembly=OpenSilver.ControlsKit.Controls"
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
-    <StackPanel>
-        <TextBlock Text="Performance" Style="{StaticResource PageHeader_Style}"/>
-        <local:WrapPanelWithProgressiveLoading Style="{StaticResource Panel_Style}">
-            <local:HtmlCanvas_Demo HorizontalAlignment="Center"/>
-        </local:WrapPanelWithProgressiveLoading>
-    </StackPanel>
+
+    <TextBlock Text="Performance" Style="{StaticResource PageHeader_Style}"/>
+    <controlskit:StaggeredPanel ProgressiveRenderingChunkSize="2" DesiredColumnWidth="265">
+        <local:Virtualization_Demo/>
+        <local:HtmlCanvas_Demo HorizontalAlignment="Center"/>
+    </controlskit:StaggeredPanel>
 </UserControl>
