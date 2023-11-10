@@ -1,0 +1,41 @@
+﻿<UserControl
+    x:Class="OpenSilver.Samples.Showcase.TreeView_Demo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+    <ContentControl Style="{StaticResource Card_Style}" Width="180">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl Content="TreeView" Foreground="#FFFCAB54" Background="#FFCCA376" Style="{StaticResource HeaderControl_Style}"/>
+            <TreeView Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TreeViewItem Header="Planets">
+                    <TreeViewItem Header="Earth"/>
+                    <TreeViewItem Header="Jupiter"/>
+                    <TreeViewItem Header="Mars"/>
+                    <TreeViewItem Header="Mercury"/>
+                    <TreeViewItem Header="Neptune"/>
+                    <TreeViewItem Header="Saturn"/>
+                    <TreeViewItem Header="Uranus"/>
+                    <TreeViewItem Header="Venus"/>
+                </TreeViewItem>
+            </TreeView>
+            <local:ViewSourceButton Grid.Row="2"
+                                Background="#FCAB54">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Button"
+                                            FileName="Button_Demo.xaml" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Button"
+                                            FileName="Button_Demo.xaml.cs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Button"
+                                            FileName="Button_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Button/Styles"
+                                            FileName="DefaultButtonStyle.xaml" />
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
+</UserControl>

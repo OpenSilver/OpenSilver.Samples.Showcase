@@ -26,6 +26,9 @@
     <Page Include="Samples\Performance\Virtualization\Virtualization_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\XAML_Controls\TreeView\TreeView_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\XAML_Features\Drag_And_Drop\Drag_And_Drop_Demo_Silverlight.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -34,6 +37,7 @@
     </Page>
     <Compile Include="Samples\Performance\Progressive_Loading\ProgressiveLoading_Demo.xaml.cs" />
     <Compile Include="Samples\Performance\Virtualization\Virtualization_Demo.xaml.cs" />
+    <Compile Include="Samples\XAML_Controls\TreeView\TreeView_Demo.xaml.cs" />
 
     <Compile Include="Samples\XAML_Features\Drag_And_Drop\Drag_And_Drop_Demo_Silverlight.xaml.cs" />
     <Compile Include="Samples\Interop_Samples\WebView\WebBrowser_Demo.xaml.cs" />
