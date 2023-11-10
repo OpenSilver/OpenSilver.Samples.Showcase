@@ -20,6 +20,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Include="Samples\Performance\Progressive_Loading\ProgressiveLoading_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\Performance\Virtualization\Virtualization_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -29,6 +32,7 @@
     <Page Include="Samples\Interop_Samples\WebView\WebBrowser_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Compile Include="Samples\Performance\Progressive_Loading\ProgressiveLoading_Demo.xaml.cs" />
     <Compile Include="Samples\Performance\Virtualization\Virtualization_Demo.xaml.cs" />
 
     <Compile Include="Samples\XAML_Features\Drag_And_Drop\Drag_And_Drop_Demo_Silverlight.xaml.cs" />
