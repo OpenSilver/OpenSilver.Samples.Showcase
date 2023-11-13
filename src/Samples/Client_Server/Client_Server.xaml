@@ -11,6 +11,7 @@
             <local:REST_WebClient_Demo x:Name="REST_WebClientDemo" HorizontalAlignment="Center"/>
             <!--<local:SignalR_Demo HorizontalAlignment="Center"/>-->
             <local:WebSockets_Demo HorizontalAlignment="Center"/>
+            <local:RIAServices_Demo HorizontalAlignment="Center"/>
             <local:JSONP_Demo HorizontalAlignment="Center"/>
             <local:jQueryAjax_Demo HorizontalAlignment="Center"/>
         </controlskit:StaggeredPanel>

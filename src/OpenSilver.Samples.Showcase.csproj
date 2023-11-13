@@ -20,6 +20,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Include="Samples\Client_Server\RIAServices\RIAServices_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\Performance\AOTCompilation\AOT_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -48,6 +51,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Compile Include="Other\Leagues\League.cs" />
+    <Compile Include="Samples\Client_Server\RIAServices\RIAServices_Demo.xaml.cs" />
     <Compile Include="Samples\Performance\AOTCompilation\AOT_Demo.xaml.cs" />
     <Compile Include="Samples\Performance\Progressive_Loading\ProgressiveLoading_Demo.xaml.cs" />
     <Compile Include="Samples\Performance\Virtualization\Virtualization_Demo.xaml.cs" />
