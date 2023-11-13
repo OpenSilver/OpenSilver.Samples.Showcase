@@ -9,6 +9,7 @@
     <controlskit:StaggeredPanel ProgressiveRenderingChunkSize="2" DesiredColumnWidth="265">
         <local:Virtualization_Demo/>
         <local:ProgressiveLoading_Demo/>
+        <local:AOT_Demo/>
         <local:HtmlCanvas_Demo HorizontalAlignment="Center"/>
     </controlskit:StaggeredPanel>
 </UserControl>

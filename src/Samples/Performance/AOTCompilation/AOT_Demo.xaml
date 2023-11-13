@@ -1,0 +1,20 @@
+﻿<UserControl
+    x:Class="OpenSilver.Samples.Showcase.AOT_Demo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+    <ContentControl Style="{StaticResource Card_Style}" Width="250">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl Content="AOT Compilation" Foreground="#FFFCAB54" Background="#FFCCA376" Style="{StaticResource HeaderControl_Style}"/>
+            <TextBlock Grid.Row="1" Foreground="Gray" FontSize="14" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top">
+            Ahead-of-time (AOT) compilation will let your application run much faster.
+                You can enable it by following <Hyperlink NavigateUri="https://doc.opensilver.net/documentation/how-to-topics/aot-compilation.html">these steps</Hyperlink>.
+            </TextBlock>
+        </Grid>
+    </ContentControl>
+</UserControl>
