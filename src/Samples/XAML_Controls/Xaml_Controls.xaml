@@ -22,6 +22,7 @@
             <local:Label_Demo HorizontalAlignment="Center" />
             <local:Path_Demo HorizontalAlignment="Center"/>
             <local:DataForm_Demo HorizontalAlignment="Center"/>
+            <local:BusyIndicator_Demo HorizontalAlignment="Center"/>
             <local:Border_Demo HorizontalAlignment="Center"/>
             <local:ScrollViewer_Demo x:Name="ScrollViewerDemo" HorizontalAlignment="Center"/>
             <local:ToolTip_Demo HorizontalAlignment="Center"/>
