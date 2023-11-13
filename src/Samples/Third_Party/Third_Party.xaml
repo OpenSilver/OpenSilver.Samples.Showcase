@@ -17,6 +17,7 @@
           <li style="margin-top:10px;"> Telerik Kendo UI* (via JavaScript interop)       </li>
           <li style="margin-top:10px;">DevExpress for Silverlight* (<a href="https://doc.opensilver.net/documentation/3rd-party-libraries/devexpress.html">Doc</a>)</li>
           <li style="margin-top:10px;"> DevExpress DevExtreme*                           </li>
+          <li style="margin-top:10px;">SignalR (<a href="https://github.com/OpenSilver/OpenSilver.Extensions.SignalR/" style="margin-top:10px;">Demo</a>)</li>
           <li style="margin-top:10px;">Syncfusion Essential JS* (via JavaScript interop) (<a href="https://doc.opensilver.net/documentation/3rd-party-libraries/syncfusion.html">Doc</a>)</li>
           <li style="margin-top:10px;">Open RIA Services (<a href="https://doc.opensilver.net/documentation/3rd-party-libraries/ria-services.html" style="margin-top:10px;">Doc</a>)</li>
           <li style="margin-top:10px;">PRISM (<a href="https://doc.opensilver.net/documentation/3rd-party-libraries/prism.html" style="margin-top:10px;">Doc</a>)</li>
@@ -25,6 +26,13 @@
           <li style="margin-top:10px;">OData (<a href="https://doc.opensilver.net/documentation/3rd-party-libraries/odata.html" style="margin-top:10px;">Doc</a>)</li>
           <li style="margin-top:10px;">MVVM Light (<a href="https://doc.opensilver.net/documentation/3rd-party-libraries/galasoft-mvvm-light.html" style="margin-top:10px;">Doc</a>)</li>
           <li style="margin-top:10px;">Newtonsoft Json (<a href="https://doc.opensilver.net/documentation/3rd-party-libraries/newtonsoft-json-net.html" style="margin-top:10px;">Doc</a>)</li>
+          <li style="margin-top:10px;">Caliburn.Micro</li>
+          <li style="margin-top:10px;">PostSharp</li>
+          <li style="margin-top:10px;">Blacklight Controls</li>
+          <li style="margin-top:10px;">Google Protobuf</li>
+          <li style="margin-top:10px;">Reactive Extensions</li>
+          <li style="margin-top:10px;">MS Expression Interaction/Behavior</li>
+          <li style="margin-top:10px;">Microsoft Enterprise Library</li>
           <li style="margin-top:10px;"> Plotly.js (via JavaScript interop)               </li>
           <li style="margin-top:10px;"> More...</li>
         </ul>
