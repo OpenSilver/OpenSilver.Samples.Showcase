@@ -11,7 +11,26 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="TextBlock" Foreground="#FF3ED4B2" Background="#FF8FCBBE" Style="{StaticResource HeaderControl_Style}"/>
-            <TextBlock Grid.Row="1" Text="Use a TextBlock to display some text." Foreground="#FF2DBF9E" FontSize="18" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <StackPanel Grid.Row="1">
+                <TextBlock Text="Use a TextBlock to display some text." Foreground="#FF2DBF9E" FontSize="16" TextWrapping="Wrap" TextAlignment="Center"/>
+                <TextBlock Text="This one has Character spacing and LineHeight properties." Foreground="#FF2DBF9E" FontSize="16" TextWrapping="Wrap" TextAlignment="Center" CharacterSpacing="100" LineHeight="30" Margin="0,10"/>
+                <TextBlock Foreground="#FF2DBF9E" FontSize="16" TextWrapping="Wrap" TextAlignment="Center" Margin="0,10">
+                    Here, we are using rich formatting, like 
+                    <Run FontWeight="Bold">bold</Run>,
+                    <Run FontStyle="Italic">italic</Run>,
+                    <Run FontFamily="Papyrus">font family</Run>,
+                    <Run FontSize="18">bigger font</Run>,
+                    <Run Foreground="Red">colors</Run>,
+                    and even <Hyperlink NavigateUri="https://www.OpenSilver.net">hyperlinks</Hyperlink>.
+                </TextBlock>
+                <TextBlock Text="Some ways to deal with overflows:" Foreground="#FF2DBF9E" FontSize="16" TextWrapping="Wrap" TextAlignment="Center" Margin="0,10,0,0"/>
+                <TextBlock Text="TextWrapping - here is some text" Foreground="#FF2DBF9E" FontSize="16" TextWrapping="Wrap" TextAlignment="Center"/>
+                <TextBlock Text="No Ellipsis - here is some text" Foreground="#FF2DBF9E" FontSize="16" TextTrimming="None" TextAlignment="Center"/>
+                <TextBlock Text="Word Ellipsis - here is some text" Foreground="#FF2DBF9E" FontSize="16" TextTrimming="WordEllipsis" TextAlignment="Center"/>
+                <TextBlock Text="Character Ellipsis - here is some text" Foreground="#FF2DBF9E" FontSize="16" TextTrimming="CharacterEllipsis" TextAlignment="Center"/>
+
+
+            </StackPanel>
             <local:ViewSourceButton Grid.Row="2"
                                     Background="#FF3ED4B2">
                 <local:ViewSourceButton.Sources>
