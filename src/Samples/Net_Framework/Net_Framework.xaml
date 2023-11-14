@@ -9,6 +9,7 @@
         <controlskit:StaggeredPanel DesiredColumnWidth="280" ProgressiveRenderingChunkSize="2">
             <local:DispatcherTimer_Demo HorizontalAlignment="Center"/>
             <local:File_Open_Demo x:Name="File_OpenDemo" HorizontalAlignment="Center"/>
+            <local:OpenFileDialog_Demo HorizontalAlignment="Center"/>
             <local:File_Save_Demo x:Name="File_SaveDemo" HorizontalAlignment="Center"/>
             <local:Printing_Demo HorizontalAlignment="Center"/>
             <local:Zip_Demo x:Name="ZipDemo" HorizontalAlignment="Center"/>
