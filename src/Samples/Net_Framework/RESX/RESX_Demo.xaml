@@ -8,11 +8,13 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="RESX" Foreground="#FF6FA9FF" Background="#FF95ABCB" Style="{StaticResource HeaderControl_Style}"/>
-            <TextBlock Grid.Row="1" Text="(Demo under construction)" Foreground="DarkGray" FontSize="12" Margin="0,25,0,20" HorizontalAlignment="Center"/>
-            <local:ViewSourceButton Grid.Row="2"
+            <Button Grid.Row="1" Content="Read from resource file" FontSize="12" Margin="0,5" HorizontalAlignment="Center" Click="ButtonReadResource_Click"/>
+            <TextBlock Grid.Row="2" Text="Refer to the &quot;Custom MarkupExtensions&quot; to see how to read Resx strings from XAML" Foreground="Gray" FontSize="14" TextWrapping="Wrap" TextAlignment="Center" Margin="0,25,0,20" HorizontalAlignment="Center"/>
+            <local:ViewSourceButton Grid.Row="3"
                                     Background="#FF6FA9FF">
                 <local:ViewSourceButton.Sources>
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/RESX"

@@ -54,6 +54,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Compile Include="Other\Leagues\League.cs" />
+    <Compile Include="Other\SampleResourceFile.Designer.cs" />
     <Compile Include="Samples\Client_Server\RIAServices\RIAServices_Demo.xaml.cs" />
     <Compile Include="Samples\Net_Framework\OpenFileDialog\OpenFileDialog_Demo.xaml.cs" />
     <Compile Include="Samples\Performance\AOTCompilation\AOT_Demo.xaml.cs" />
@@ -677,6 +678,10 @@
     <Compile Include="Samples\XAML_Features\Window_SizeChanged\Window_SizeChanged_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Features\XAML_Features.xaml.cs" />
     <Compile Include="Samples\XAML_Features\XAML_Resource_Dictionary\XAML_Resource_Dictionary_Demo.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Other\SampleResourceFile.resx" />
   </ItemGroup>
 
   <ItemGroup>

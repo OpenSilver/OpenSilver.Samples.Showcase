@@ -14,6 +14,7 @@
             <local:Printing_Demo HorizontalAlignment="Center"/>
             <local:Zip_Demo x:Name="ZipDemo" HorizontalAlignment="Center"/>
             <local:HtmlPage_Demo HorizontalAlignment="Center"/>
+            <local:RESX_Demo/>
             <local:Keyboard_Demo HorizontalAlignment="Center"/>
             <local:IsolatedStorageFile_Demo HorizontalAlignment="Center"/>
             <local:IsolatedStorageSettings_Demo HorizontalAlignment="Center"/>
