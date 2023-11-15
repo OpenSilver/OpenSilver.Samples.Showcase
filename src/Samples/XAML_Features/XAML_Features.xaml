@@ -14,6 +14,7 @@
             <local:Binding3_Demo HorizontalAlignment="Center"/>
             <!--<local:ClickCount_RightTapped_Demo HorizontalAlignment="Center"/>-->
             <local:Gradients_Demo HorizontalAlignment="Center"/>
+            <local:Styles_Demo/>
             <local:Animations_Demo HorizontalAlignment="Center"/>
             <local:DropShadowEffect_Demo HorizontalAlignment="Center"/>
             <local:Window_SizeChanged_Demo HorizontalAlignment="Center"/>

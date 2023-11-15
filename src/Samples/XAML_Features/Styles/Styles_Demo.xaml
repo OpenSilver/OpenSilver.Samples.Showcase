@@ -1,0 +1,65 @@
+﻿<UserControl
+    x:Class="OpenSilver.Samples.Showcase.Styles_Demo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+    <ContentControl Style="{StaticResource Card_Style}" Width="180">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl Content="Styles" Foreground="#FF3ED4B2" Background="#FF8FCBBE" Style="{StaticResource HeaderControl_Style}"/>
+            <TextBlock Grid.Row="1" Foreground="Gray" FontSize="16" TextWrapping="Wrap" TextAlignment="Center" Margin="0,0,0,15">
+                To understand styles better, read <Hyperlink NavigateUri="https://learn.microsoft.com/en-us/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms603146(v=vs.95)">this</Hyperlink> (interesting keywords are "scoping rules", "implicit", and "BasedOn").
+            </TextBlock>
+
+            <StackPanel Grid.Row="2">
+                <StackPanel.Resources>
+                    <Style x:Key="MyTextBlockStyle" TargetType="TextBlock">
+                        <Style.Setters>
+                            <Setter Property="Foreground" Value="DarkBlue"/>
+                            <Setter Property="TextWrapping" Value="Wrap"/>
+                            <Setter Property="FontSize" Value="14"/>
+                            <Setter Property="TextAlignment" Value="Center"/>
+                            <Setter Property="FontFamily" Value="Georgia"/>
+                            <Setter Property="Margin" Value="0,5,0,5"/>
+                        </Style.Setters>
+                    </Style>
+                    <Style TargetType="TextBlock" BasedOn="{StaticResource MyTextBlockStyle}">
+                        <Style.Setters>
+                            <Setter Property="Foreground" Value="DarkRed"/>
+                            <Setter Property="FontWeight" Value="bold"/>
+                        </Style.Setters>
+                    </Style>
+                </StackPanel.Resources>
+                <TextBlock Text="This TextBlock has a custom Style which sets a few properties" Style="{StaticResource MyTextBlockStyle}"/>
+                <TextBlock Text="This TextBlock has an implicit Style based on the custom one above, overwriting the Foreground property value, and making the text bold."/>
+                <Border>
+                    <Border.Resources>
+                        <Style TargetType="TextBlock" BasedOn="{StaticResource MyTextBlockStyle}">
+                            <Style.Setters>
+                                <Setter Property="Foreground" Value="Purple"/>
+                                <Setter Property="FontStyle" Value="Italic"/>
+                            </Style.Setters>
+                        </Style>
+                    </Border.Resources>
+                    <TextBlock Text="This TextBlock also has an implicit Style based on the custom one, but defined in a narrowed scope so it takes precedence over the other implicit Style."/>
+                </Border>
+            </StackPanel>
+            <local:ViewSourceButton Grid.Row="3"
+                                Background="#FF3ED4B2">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/Styles"
+                                            FileName="Styles_Demo.xaml" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/Styles"
+                                            FileName="TextBlock_Demo.xaml.cs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/Styles"
+                                            FileName="Styles_Demo.xaml.vb" />
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
+</UserControl>
