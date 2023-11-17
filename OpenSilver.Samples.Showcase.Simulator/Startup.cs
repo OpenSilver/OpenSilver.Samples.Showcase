@@ -8,7 +8,9 @@ namespace OpenSilver.Samples.Showcase.Simulator
         [STAThread]
         static int Main(string[] args)
         {
-            return SimulatorLauncher.Start(typeof(OpenSilver.Samples.Showcase.App));
+            SimulatorLaunchParameters launchParameters = new SimulatorLaunchParameters();
+            launchParameters.InitParams = "InitParamsForSimulatorKey=SimValue,OtherInitParamsForSimulatorKey=OtherSimValue";
+            return SimulatorLauncher.Start(typeof(OpenSilver.Samples.Showcase.App), launchParameters);
         }
     }
 }
