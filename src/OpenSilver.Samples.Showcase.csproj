@@ -20,6 +20,33 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Include="Samples\Charts\AreaSeries\AreaSeries_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Charts\BarSeries\BarSeries_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Charts\BubbleSeries\BubbleSeries_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Charts\Charts.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Charts\ColumnSeries\ColumnSeries_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Charts\LineSeries\LineSeries_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Charts\PieSeries\PieSeries_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Charts\ScatterSeries\ScatterSeries_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Charts\Stacked100AreaSeries\Stacked100AreaSeries_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\Client_Server\RIAServices\RIAServices_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -57,7 +84,17 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Compile Include="Other\Leagues\League.cs" />
+    <Compile Include="Other\Sales.cs" />
     <Compile Include="Other\SampleResourceFile.Designer.cs" />
+    <Compile Include="Samples\Charts\AreaSeries\AreaSeries_Demo.xaml.cs" />
+    <Compile Include="Samples\Charts\BarSeries\BarSeries_Demo.xaml.cs" />
+    <Compile Include="Samples\Charts\BubbleSeries\BubbleSeries_Demo.xaml.cs" />
+    <Compile Include="Samples\Charts\Charts.xaml.cs" />
+    <Compile Include="Samples\Charts\ColumnSeries\ColumnSeries_Demo.xaml.cs" />
+    <Compile Include="Samples\Charts\LineSeries\LineSeries_Demo.xaml.cs" />
+    <Compile Include="Samples\Charts\PieSeries\PieSeries_Demo.xaml.cs" />
+    <Compile Include="Samples\Charts\ScatterSeries\ScatterSeries_Demo.xaml.cs" />
+    <Compile Include="Samples\Charts\Stacked100AreaSeries\Stacked100AreaSeries_Demo.xaml.cs" />
     <Compile Include="Samples\Client_Server\RIAServices\RIAServices_Demo.xaml.cs" />
     <Compile Include="Samples\Net_Framework\InitParams\InitParams_Demo.xaml.cs" />
     <Compile Include="Samples\Net_Framework\OpenFileDialog\OpenFileDialog_Demo.xaml.cs" />

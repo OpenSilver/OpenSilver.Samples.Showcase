@@ -1,0 +1,21 @@
+﻿<UserControl
+    x:Class="OpenSilver.Samples.Showcase.Charts"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controlskit="clr-namespace:OpenSilver.ControlsKit;assembly=OpenSilver.ControlsKit.Controls"
+    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+    <StackPanel>
+        <TextBlock Text="Charts" Style="{StaticResource PageHeader_Style}"/>
+        <controlskit:StaggeredPanel DesiredColumnWidth="700" ProgressiveRenderingChunkSize="2">
+            <local:AreaSeries_Demo/>
+            <local:BarSeries_Demo/>
+            <local:BubbleSeries_Demo/>
+            <local:ColumnSeries_Demo/>
+            <local:LineSeries_Demo/>
+            <local:PieSeries_Demo/>
+            <local:ScatterSeries_Demo/>
+            <!--<local:Stacked100AreaSeries_Demo/>-->
+            
+        </controlskit:StaggeredPanel>
+    </StackPanel>
+</UserControl>

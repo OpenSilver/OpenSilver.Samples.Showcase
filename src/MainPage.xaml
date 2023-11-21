@@ -93,6 +93,7 @@ FontFamily="Segoe UI">
             <Button Content=".NET Framework" Click="ButtonNetFramework_Click" Margin="0,3,0,0" Padding="20,3,3,3"/>
             <Button Content="Client / Server" Click="ButtonClientServer_Click" Margin="0,3,0,0" Padding="20,3,3,3"/>
             <Button Content="Interop" Click="ButtonInterop_Click" Margin="0,3,0,0" Padding="20,3,3,3"/>
+            <Button Content="Charts" Click="ButtonCharts_Click" Margin="0,3,0,0" Padding="20,3,3,3"/>
             <Button x:Name="PerformanceButton" Content="Performance" Click="ButtonPerformance_Click" Margin="0,3,0,0" Padding="20,3,3,3"/>
             <Button Content="Material Design" Click="ButtonMaterialDesign_Click" Margin="0,3,0,0" Padding="20,3,3,3"/>
             <Button x:Name="ThirdPartyHomeButton" Content="Third-Party" Visibility="Collapsed" Click="ThirdParty_Click"  Margin="0,3,0,0" Padding="20,3,3,3"/>

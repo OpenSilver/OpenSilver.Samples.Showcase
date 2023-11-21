@@ -66,6 +66,11 @@ SHOWCASE";
             NavigateToPage("/Interop_Samples");
         }
 
+        void ButtonCharts_Click(object sender, RoutedEventArgs e)
+        {
+            NavigateToPage("/Charts");
+        }
+        
         void ButtonPerformance_Click(object sender, RoutedEventArgs e)
         {
             NavigateToPage("/Performance");
