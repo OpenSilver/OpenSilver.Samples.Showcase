@@ -9,7 +9,7 @@ namespace OpenSilver.Samples.Showcase
             this.InitializeComponent();
 
             // Populate the data grid with the list of planets:
-            DataGrid1.ItemsSource = Planet.GetListOfPlanets();
+            DataGrid1.ItemsSource = AtomicElements.Elements;
         }
     }
 }

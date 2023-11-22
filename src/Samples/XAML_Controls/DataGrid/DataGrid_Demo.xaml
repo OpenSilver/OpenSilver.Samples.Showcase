@@ -10,12 +10,12 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="DataGrid" Foreground="#FFE45EE2" Background="#FFE45EE2" Style="{StaticResource HeaderControl_Style}"/>
-
+            <ContentControl Content="DataGrid & DataPager" Foreground="#FFE45EE2" Background="#FFE45EE2" Style="{StaticResource HeaderControl_Style}"/>
+            <StackPanel Grid.Row="1">
             <!--DataGrid-->
             <DataGrid x:Name="DataGrid1" Grid.Row="1" AutoGenerateColumns="False">
                 <DataGrid.Columns>
-                    <DataGridTemplateColumn Header="NAME" Width="3*">
+                    <DataGridTemplateColumn Header="Name" Width="3*">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <Grid>
@@ -23,16 +23,20 @@
                                         <ColumnDefinition Width="Auto"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
-                                    <Image Source="{Binding ImagePath}" Width="25" Height="25"/>
                                     <TextBlock Text="{Binding Name}" Grid.Column="1" VerticalAlignment="Center" Foreground="Blue" Margin="3,0,0,0"/>
                                 </Grid>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
-                    <DataGridTextColumn Binding="{Binding Radius}" Header="Radius" Width="2*"/>
+                    <DataGridTextColumn Binding="{Binding Symbol}" Header="Symbol" Width="2*"/>
                 </DataGrid.Columns>
             </DataGrid>
-
+            <DataPager
+                       DisplayMode="FirstLastPreviousNextNumeric" PageSize="10"
+                       NumericButtonCount="3" Height="24"
+                       HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                       Source="{Binding ItemsSource, ElementName=DataGrid1}" />
+            </StackPanel>
             <local:ViewSourceButton Grid.Row="2"
                                     Background="#FFE45EE2">
                 <local:ViewSourceButton.Sources>

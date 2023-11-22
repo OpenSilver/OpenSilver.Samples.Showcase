@@ -83,6 +83,7 @@
     <Page Include="Samples\Interop_Samples\WebView\WebBrowser_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Compile Include="Other\Elements.cs" />
     <Compile Include="Other\Leagues\League.cs" />
     <Compile Include="Other\Sales.cs" />
     <Compile Include="Other\SampleResourceFile.Designer.cs" />
