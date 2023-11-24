@@ -10,7 +10,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="DataGrid & DataPager" Foreground="#FFE45EE2" Background="#FFE45EE2" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="DataGrid &amp; DataPager" Foreground="#FFE45EE2" Background="#FFE45EE2" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1">
             <!--DataGrid-->
             <DataGrid x:Name="DataGrid1" Grid.Row="1" AutoGenerateColumns="False">
