@@ -21,6 +21,7 @@
             <local:TextBlock_Demo HorizontalAlignment="Center"/>
             <local:Label_Demo HorizontalAlignment="Center" />
             <local:Path_Demo HorizontalAlignment="Center"/>
+            <local:ProgressBar_Demo/>
             <local:DataForm_Demo HorizontalAlignment="Center"/>
             <local:BusyIndicator_Demo HorizontalAlignment="Center"/>
             <local:Border_Demo HorizontalAlignment="Center"/>

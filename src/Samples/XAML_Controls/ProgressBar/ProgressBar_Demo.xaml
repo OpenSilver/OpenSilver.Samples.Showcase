@@ -1,0 +1,32 @@
+﻿<UserControl
+    x:Class="OpenSilver.Samples.Showcase.ProgressBar_Demo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+    <ContentControl Style="{StaticResource Card_Style}" Width="180">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl Content="Calendar" Foreground="#FF13D7E3" Background="#FF91C3C5" Style="{StaticResource HeaderControl_Style}"/>
+            <StackPanel Grid.Row="1">
+                <TextBlock Text="You can use the NumericUpDown to change the progress of the ProgressBar below." TextWrapping="Wrap" TextAlignment="Center" Margin="0,0,0,10"/>
+                <ProgressBar Minimum="0" Maximum="100" Value="{Binding Path=Value, ElementName=MyNumericUpDown}" Margin="0,5" Height="10"/>
+                <NumericUpDown x:Name="MyNumericUpDown" Minimum="0" Maximum="100" Increment="5"/>
+            </StackPanel>
+            <local:ViewSourceButton Grid.Row="2"
+                            Background="#FF13D7E3">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Calendar"
+                                        FileName="Calendar_Demo.xaml" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Calendar"
+                                        FileName="Calendar_Demo.xaml.cs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Calendar"
+                                        FileName="Calendar_Demo.xaml.vb" />
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
+</UserControl>
