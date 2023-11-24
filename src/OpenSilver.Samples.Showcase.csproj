@@ -109,6 +109,7 @@
 
     <Compile Include="Samples\XAML_Features\Drag_And_Drop\Drag_And_Drop_Demo_Silverlight.xaml.cs" />
     <Compile Include="Samples\Interop_Samples\WebView\WebBrowser_Demo.xaml.cs" />
+    <Compile Include="Samples\XAML_Features\ImageBrush\ImageBrush_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Features\Styles\Styles_Demo.xaml.cs" />
   </ItemGroup>
 
@@ -132,6 +133,7 @@
     <Content Include="Other\Planets\Saturn.png" />
     <Content Include="Other\Planets\Uranus.png" />
     <Content Include="Other\Planets\Venus.png" />
+    <Content Include="Other\SampleProfilePhoto.png" />
     <Content Include="Other\SampleText.txt" />
     <Content Include="Other\smallBall.png" />
     <Content Include="Other\SampleVideo.mp4" />
@@ -503,6 +505,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Features\ClipToBounds\ClipToBounds_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\XAML_Features\ImageBrush\ImageBrush_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Features\PropertyChangedTrigger\PropertyChangedTrigger_Demo.xaml">

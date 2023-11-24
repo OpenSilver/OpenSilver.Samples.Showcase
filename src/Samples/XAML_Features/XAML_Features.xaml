@@ -17,6 +17,7 @@
             <local:Styles_Demo/>
             <local:Animations_Demo HorizontalAlignment="Center"/>
             <local:DropShadowEffect_Demo HorizontalAlignment="Center"/>
+            <local:ImageBrush_Demo/>
             <local:Window_SizeChanged_Demo HorizontalAlignment="Center"/>
             <local:FindElementsInHostCoordinates_Demo HorizontalAlignment="Center"/>
             <local:ClipToBounds_Demo HorizontalAlignment="Center"/>
