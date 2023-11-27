@@ -7,16 +7,36 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="Shapes" Foreground="#FF66CC66" Background="#FFC6DC9C" Style="{StaticResource HeaderControl_Style}"/>
-          <Canvas Grid.Row="1" Height="125">
-            <Rectangle Fill="#FF9BFF91" Height="57" Canvas.Left="10" Width="150" Stroke="#FF1DE00A" StrokeThickness="5"/>
-            <Ellipse Fill="#FF879DFF" Height="100" Canvas.Top="20" Width="140" Stroke="#FF0023BF" StrokeThickness="5" Canvas.Left="10"/>
-            <Line Stroke="red" X1="10" Y1="25" X2="140" Y2="65" StrokeThickness="2" />
-          </Canvas>
-            <local:ViewSourceButton Grid.Row="2"
+            <TextBlock Grid.Row="1" Foreground="Gray" TextWrapping="Wrap" TextAlignment="Center" Margin="0,10">
+                       Below, you can see a sample of the 
+                <Run Foreground="#FF1DE00A" Text="Rectangle"/>, 
+                <Run Foreground="#FF0023BF" Text="Ellipse"/>, 
+                <Run Foreground="Red" Text="Line"/>, 
+                <Run Foreground="Peru" Text="Polygon"/>, 
+                <Run Foreground="Orange" Text="Path"/>, and 
+                <Run Foreground="Purple" Text="Polyline"/> Shapes.
+            </TextBlock>
+            <Canvas Grid.Row="2" Height="125">
+                <Rectangle Fill="#FF9BFF91" Height="57" Canvas.Left="10" Width="150" Stroke="#FF1DE00A" StrokeThickness="5"/>
+                <Ellipse Fill="#FF879DFF" Height="100" Canvas.Top="20" Width="140" Stroke="#FF0023BF" StrokeThickness="5" Canvas.Left="10"/>
+                <Line Stroke="Red" X1="10" Y1="25" X2="140" Y2="65" StrokeThickness="2" />
+                <Polygon Points="0, 48 48, 0 48, 96" StrokeThickness="1" Stroke="Red" Fill="Peru" />
+                <Path Data="m100,120 C90,30 50,70 100,25 Q130,60 100,120">
+                    <Path.Fill>
+                        <LinearGradientBrush>
+                            <GradientStop Offset="0" Color="Yellow"/>
+                            <GradientStop Offset="1" Color="Red"/>
+                        </LinearGradientBrush>
+                    </Path.Fill>
+                </Path>
+                <Polyline Points="0,0 20,125 100,55 120,55 120,100" Stroke="Purple" StrokeThickness="2"/>
+            </Canvas>
+            <local:ViewSourceButton Grid.Row="3"
                                     Margin="0,10,0,0"
                                     Background="#FF66CC66">
                 <local:ViewSourceButton.Sources>
