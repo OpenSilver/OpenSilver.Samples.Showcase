@@ -123,6 +123,7 @@
     <Compile Include="Samples\Interop_Samples\WebView\WebBrowser_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Features\ImageBrush\ImageBrush_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Features\Styles\Styles_Demo.xaml.cs" />
+    <Compile Include="Samples\XAML_Features\XamlReader\XamlReader_Demo.xaml.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -568,6 +569,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Features\Window_SizeChanged\Window_SizeChanged_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\XAML_Features\XamlReader\XamlReader_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Features\XAML_Features.xaml">

@@ -1,0 +1,37 @@
+﻿<UserControl
+    x:Class="OpenSilver.Samples.Showcase.XamlReader_Demo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+
+    <ContentControl Style="{StaticResource Card_Style}" Width="245">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl Content="XamlReader" Foreground="#FFFF799C" Background="#FFC69EA9" Style="{StaticResource HeaderControl_Style}"/>
+            <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="Add fields" Click="ButtonAddFields_Click" Margin="0,0,10,0"/>
+                    <Button Content="Clear" Click="ButtonClear_Click" VerticalAlignment="Center"/>
+                </StackPanel>
+                <Border BorderBrush="LightGray" BorderThickness="1" CornerRadius="5" Margin="0,5">
+                    <StackPanel x:Name="Container" Margin="10,10"/>
+                </Border>
+            </StackPanel>
+            <local:ViewSourceButton Grid.Row="2"
+                                Background="#FFFF799C">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/XamlReader"
+                                            FileName="XamlReader_Demo.xaml" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/XamlReader"
+                                            FileName="XamlReader_Demo.xaml.cs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/XamlReader"
+                                            FileName="XamlReader_Demo.xaml.vb" />
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
+</UserControl>
