@@ -1,0 +1,42 @@
+﻿<UserControl
+    x:Class="OpenSilver.Samples.Showcase.WriteableBitmap_Demo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+    <ContentControl Style="{StaticResource Card_Style}" Width="245">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl Content="WriteableBitmap" Foreground="#FF6FA9FF" Background="#FF95ABCB" Style="{StaticResource HeaderControl_Style}"/>
+            <Grid Grid.Row="1" x:Name="LayoutRoot" HorizontalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="200"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="200"/>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" x:Name="ivSource" Source="/Other/SampleProfilePhoto.png" Width="200" Height="200" Visibility="Visible" Stretch="Fill"/>
+                <StackPanel Grid.Row="1" HorizontalAlignment="Center" Orientation="Horizontal">
+                    <Button Margin="10,10" Content="Mirror" Click="MirrorButton_Click"/>
+                    <Button Margin="0,10" Content="Clear" Click="ClearButton_Click" />
+                </StackPanel>
+                <Border Grid.Row="2" BorderThickness="1" BorderBrush="Gray" Height="200">
+                    <Image x:Name="ivDestination" Width="200" Height="200" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="Fill"/>
+                </Border>
+            </Grid>
+            <local:ViewSourceButton Grid.Row="3"
+                                Background="#FF6FA9FF">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/WriteableBitmap"
+                                            FileName="WriteableBitmap_Demo.xaml" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/WriteableBitmap"
+                                            FileName="WriteableBitmap_Demo.xaml.cs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/WriteableBitmap"
+                                            FileName="WriteableBitmap_Demo.xaml.vb" />
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
+</UserControl>
