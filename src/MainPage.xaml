@@ -81,9 +81,13 @@ FontFamily="Segoe UI">
           <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="14" Opacity="0.2" />
         </Border.Effect>
         <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
-          <StackPanel Margin="0,20,0,0">
-            <StackPanel Orientation="Horizontal" Margin="5">
-              <Image x:Name="TitleImage" Source="Other/Logo.png" Width="52" Height="60" Stretch="Fill" VerticalAlignment="Center"/>
+          <StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                            <Button x:Name="ButtonBackwards" Content="←" FontSize="22" Click="ButtonBackwards_Click"/>
+                            <Button x:Name="ButtonForward" Content="→" FontSize="22" Click="ButtonForward_Click"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5,10,5,5">
+              <Image x:Name="TitleImage" Source="/Other/Logo.png" Width="52" Height="60" Stretch="Fill" VerticalAlignment="Center"/>
               <TextBlock x:Name="TitleTextBlock" FontFamily="Segoe UI" TextAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Center" Foreground="#FF00C6D2" FontSize="18">
                 OpenSilver<LineBreak/>Showcase
               </TextBlock>
@@ -132,7 +136,7 @@ FontFamily="Segoe UI">
         </Button>
       </Border>
       <ScrollViewer Grid.Row="1" x:Name="ScrollViewer1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible" Background="#E1E1E1">
-        <sdk:Frame x:Name="PageContainer" JournalOwnership="Automatic" Margin="5,0,0,30" HorizontalContentAlignment="Stretch">
+        <sdk:Frame x:Name="PageContainer" JournalOwnership="Automatic" Margin="5,0,0,30" HorizontalContentAlignment="Stretch" Navigated="PageContainer_Navigated">
           <sdk:Frame.UriMapper>
             <sdk:UriMapper>
               <sdk:UriMapping

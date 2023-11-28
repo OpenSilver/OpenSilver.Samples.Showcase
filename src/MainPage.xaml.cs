@@ -41,6 +41,9 @@ SHOWCASE";
             }
         }
 
+        #region Navigation
+
+        #region Page buttons clicks handling
         void ButtonXamlControls_Click(object sender, RoutedEventArgs e)
         {
             NavigateToPage("/XAML_Controls");
@@ -120,6 +123,7 @@ SHOWCASE";
         {
             NavigateToPage("/Third_Party");
         }
+        #endregion
 
         void NavigateToPage(string targetUri)
         {
@@ -135,7 +139,31 @@ SHOWCASE";
             ScrollViewer1.ScrollToVerticalOffset(0d);
         }
 
-#region Show/hide source code
+        private void ButtonBackwards_Click(object sender, RoutedEventArgs e)
+        {
+            if (PageContainer.CanGoBack)
+            {
+                PageContainer.GoBack();
+            }
+        }
+
+        private void ButtonForward_Click(object sender, RoutedEventArgs e)
+        {
+            if (PageContainer.CanGoForward)
+            {
+                PageContainer.GoForward();
+            }
+        }
+
+        private void PageContainer_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
+        {
+            ButtonBackwards.IsEnabled = PageContainer.CanGoBack;
+            ButtonForward.IsEnabled = PageContainer.CanGoForward;
+        }
+
+        #endregion
+
+        #region Show/hide source code
 
         public void ViewSourceCode(UIElement controlThatDisplaysTheSourceCode)
         {
@@ -272,6 +300,6 @@ SHOWCASE";
             }
         }
 
-#endregion
+        #endregion
     }
 }
