@@ -1,0 +1,35 @@
+﻿<UserControl
+    x:Class="OpenSilver.Samples.Showcase.MeasureArrange_Demo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+    <ContentControl Style="{StaticResource Card_Style}" Width="245">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl Content="Measure/Arrange" Foreground="#FFE6E166" Background="#FFC5B58B" Style="{StaticResource HeaderControl_Style}"/>
+            <local:RadialPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="220" Height="150">
+                <TextBlock Text="one"/>
+                <TextBlock Text="two"/>
+                <TextBlock Text="three"/>
+                <TextBlock Text="four"/>
+                <TextBlock Text="five"/>
+                <TextBlock Text="six"/>
+            </local:RadialPanel>
+            <local:ViewSourceButton Grid.Row="2"
+                                Background="#FFE6E166">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/MeasureArrange"
+                                            FileName="MeasureArrange_Demo_Silverlight.xaml" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/MeasureArrange"
+                                            FileName="MeasureArrange_Demo_Silverlight.xaml.cs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/MeasureArrange"
+                                            FileName="MeasureArrange_Demo_Silverlight.xaml.vb" />
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
+</UserControl>
