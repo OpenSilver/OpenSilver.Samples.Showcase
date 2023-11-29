@@ -12,7 +12,8 @@
             </Grid.RowDefinitions>
             <ContentControl Content="Frame &amp; UriMapper" Foreground="#FFE6E166" Background="#FFA9D4A4" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1">
-                <TextBlock Text="The Uri Mapper is used to associate a URI fragment to a XAML page. You can see an example using Frame in mainPage.xaml. Scroll Down to the Uri section"  Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left"/>
+                <TextBlock Text="The Uri Mapper is used to associate a URI fragment to a XAML page. You can see an example using Frame in MainPage.xaml. Scroll Down to the Uri section."  Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left"/>
+                <TextBlock Text="NavigationService also helps navigate back and forth through the pages. To try it, press the arrow buttons in the navigation menu. For the related code, see in MainPage.xaml.cs"  Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" Margin="0,10,0,0" HorizontalAlignment="Left"/>
             </StackPanel>
             <local:ViewSourceButton Grid.Row="2"
                                     Background="#FFE6E166"
