@@ -42,7 +42,7 @@ namespace OpenSilver.Samples.Showcase
                         <TextBox Text=""Doe"" Grid.Row=""2"" Grid.Column=""2""/>
                     </Grid>";
             object newContent = XamlReader.Load(xaml);
-            //stackPanelRoot is the visual root of a Page in existing XAML markup already loaded by the appmodel
+            // Add the newly created XAML controls to the visual tree:
             Container.Children.Add(newContent as UIElement);
         }
 

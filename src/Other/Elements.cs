@@ -134,14 +134,8 @@ namespace OpenSilver.Samples.Showcase
                 new Element("Tennessine", "Ts"),
                 new Element("Oganesson", "Og")
             };
-            
         }
-
-
-
     }
-
-
 
     class Element
     {

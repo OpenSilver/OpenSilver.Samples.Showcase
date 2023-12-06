@@ -29,7 +29,6 @@ namespace OpenSilver.Samples.Showcase
         void OnPropertyChanged([CallerMemberName] string caller = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(caller));
-            ObservableCollection<string> strings = new ObservableCollection<string>() { "azsa", "aszae", "zefzed", "swdxcfsd" };
         }
 
         public static ObservableCollection<League> Leagues { get; set; } = GetListOfLeagues();
