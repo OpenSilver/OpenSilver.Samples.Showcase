@@ -60,6 +60,11 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Compile Include="Other\Leagues\Leagues.vb" />
+    <Compile Include="Other\SampleResourceFileVB.Designer.vb">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SampleResourceFileVB.resx</DependentUpon>
+    </Compile>
     <Compile Include="Samples\Client_Server\RIAServices\RIAServices_Demo.xaml.vb" />
     <Compile Include="Samples\Net_Framework\OpenFileDialog\OpenFileDialog_Demo.xaml.vb" />
     <Compile Include="Samples\Performance\AOTCompilation\AOT_Demo.xaml.vb" />
@@ -681,6 +686,12 @@
     <Compile Include="Samples\XAML_Features\Window_SizeChanged\Window_SizeChanged_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Features\XAML_Features.xaml.vb" />
     <Compile Include="Samples\XAML_Features\XAML_Resource_Dictionary\XAML_Resource_Dictionary_Demo.xaml.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Other\SampleResourceFileVB.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SampleResourceFileVB.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Third_Party_Resources\" />
