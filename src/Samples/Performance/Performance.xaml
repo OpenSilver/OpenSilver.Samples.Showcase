@@ -6,7 +6,7 @@
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
 
     <TextBlock Text="Performance" Style="{StaticResource PageHeader_Style}"/>
-    <controlskit:StaggeredPanel ProgressiveRenderingChunkSize="2" DesiredColumnWidth="265">
+    <controlskit:StaggeredPanel ProgressiveRenderingChunkSize="2" DesiredColumnWidth="330">
         <local:Virtualization_Demo/>
         <local:ProgressiveLoading_Demo/>
         <local:AOT_Demo/>
