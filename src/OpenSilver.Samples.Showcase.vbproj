@@ -26,12 +26,16 @@
   </ItemGroup>
   
   <ItemGroup>
+    <Page Include="Samples\Performance\Virtualization\Virtualization_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\XAML_Features\Drag_And_Drop\Drag_And_Drop_Demo_Silverlight.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\Interop_Samples\WebView\WebBrowser_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Compile Include="Samples\Performance\Virtualization\Virtualization_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Features\Drag_And_Drop\Drag_And_Drop_Demo_Silverlight.xaml.vb" />
     <Compile Include="Samples\Interop_Samples\WebView\WebBrowser_Demo.xaml.vb" />
   </ItemGroup>
