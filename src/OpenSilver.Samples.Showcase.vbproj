@@ -26,6 +26,30 @@
   </ItemGroup>
   
   <ItemGroup>
+    <Page Include="Samples\Charts\AreaSeries\AreaSeries_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Charts\BarSeries\BarSeries_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Charts\BubbleSeries\BubbleSeries_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Charts\Charts.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Charts\ColumnSeries\ColumnSeries_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Charts\LineSeries\LineSeries_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Charts\PieSeries\PieSeries_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Charts\ScatterSeries\ScatterSeries_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\Client_Server\RIAServices\RIAServices_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -63,11 +87,20 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Compile Include="Other\Leagues\Leagues.vb" />
+    <Compile Include="Other\Sales.vb" />
     <Compile Include="Other\SampleResourceFileVB.Designer.vb">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>SampleResourceFileVB.resx</DependentUpon>
     </Compile>
+    <Compile Include="Samples\Charts\AreaSeries\AreaSeries_Demo.xaml.vb" />
+    <Compile Include="Samples\Charts\BarSeries\BarSeries_Demo.xaml.vb" />
+    <Compile Include="Samples\Charts\BubbleSeries\BubbleSeries_Demo.xaml.vb" />
+    <Compile Include="Samples\Charts\Charts.xaml.vb" />
+    <Compile Include="Samples\Charts\ColumnSeries\ColumnSeries_Demo.xaml.vb" />
+    <Compile Include="Samples\Charts\LineSeries\LineSeries_Demo.xaml.vb" />
+    <Compile Include="Samples\Charts\PieSeries\PieSeries_Demo.xaml.vb" />
+    <Compile Include="Samples\Charts\ScatterSeries\ScatterSeries_Demo.xaml.vb" />
     <Compile Include="Samples\Client_Server\RIAServices\RIAServices_Demo.xaml.vb" />
     <Compile Include="Samples\Net_Framework\InitParams\InitParams_Demo.xaml.vb" />
     <Compile Include="Samples\Net_Framework\OpenFileDialog\OpenFileDialog_Demo.xaml.vb" />

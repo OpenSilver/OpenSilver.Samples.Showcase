@@ -65,6 +65,9 @@ SHOWCASE"
         Private Sub ButtonInterop_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
             NavigateToPage("/Interop_Samples")
         End Sub
+        Private Sub ButtonCharts_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
+            NavigateToPage("/Charts")
+        End Sub
 
         Private Sub ButtonPerformance_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
             NavigateToPage("/Performance")
