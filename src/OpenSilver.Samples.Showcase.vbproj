@@ -77,6 +77,9 @@
     <Page Include="Samples\XAML_Controls\DataForm\DataForm_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\XAML_Controls\ProgressBar\ProgressBar_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\XAML_Controls\TreeView2\TreeView2_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -114,6 +117,7 @@
     <Compile Include="Samples\XAML_Controls\BusyIndicator\BusyIndicator_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\Calendar\Calendar_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\DataForm\DataForm_Demo.xaml.vb" />
+    <Compile Include="Samples\XAML_Controls\ProgressBar\ProgressBar_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\TreeView2\TreeView2_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\TreeView\TreeView_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Features\Drag_And_Drop\Drag_And_Drop_Demo_Silverlight.xaml.vb" />
