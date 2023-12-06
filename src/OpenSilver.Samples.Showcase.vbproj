@@ -71,6 +71,7 @@
     <Compile Include="Samples\XAML_Controls\TreeView\TreeView_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Features\Drag_And_Drop\Drag_And_Drop_Demo_Silverlight.xaml.vb" />
     <Compile Include="Samples\Interop_Samples\WebView\WebBrowser_Demo.xaml.vb" />
+    <Compile Include="Samples\XAML_Features\Styles\Styles_Demo.xaml.vb" />
   </ItemGroup>
   
   <ItemGroup>
@@ -494,6 +495,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Content>
     <Page Include="Samples\XAML_Features\RenderTransforms\RenderTransforms_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\XAML_Features\Styles\Styles_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Features\TransformToVisual\TransformToVisual_Demo.xaml">
