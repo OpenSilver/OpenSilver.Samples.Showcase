@@ -127,6 +127,8 @@
     <Compile Include="Samples\XAML_Features\Drag_And_Drop\Drag_And_Drop_Demo_Silverlight.xaml.vb" />
     <Compile Include="Samples\Interop_Samples\WebView\WebBrowser_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Features\ImageBrush\ImageBrush_Demo.xaml.vb" />
+    <Compile Include="Samples\XAML_Features\MeasureArrange\MeasureArrange_Demo.xaml.vb" />
+    <Compile Include="Samples\XAML_Features\MeasureArrange\RadialPanel.vb" />
     <Compile Include="Samples\XAML_Features\Styles\Styles_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Features\XamlReader\XamlReader_Demo.xaml.vb" />
   </ItemGroup>
@@ -526,6 +528,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Features\ImageBrush\ImageBrush_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\XAML_Features\MeasureArrange\MeasureArrange_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Features\PropertyChangedTrigger\PropertyChangedTrigger_Demo.xaml">
