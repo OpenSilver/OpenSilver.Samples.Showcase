@@ -29,6 +29,9 @@
     <Page Include="Samples\Client_Server\RIAServices\RIAServices_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\Net_Framework\InitParams\InitParams_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\Net_Framework\OpenFileDialog\OpenFileDialog_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -66,6 +69,7 @@
       <DependentUpon>SampleResourceFileVB.resx</DependentUpon>
     </Compile>
     <Compile Include="Samples\Client_Server\RIAServices\RIAServices_Demo.xaml.vb" />
+    <Compile Include="Samples\Net_Framework\InitParams\InitParams_Demo.xaml.vb" />
     <Compile Include="Samples\Net_Framework\OpenFileDialog\OpenFileDialog_Demo.xaml.vb" />
     <Compile Include="Samples\Performance\AOTCompilation\AOT_Demo.xaml.vb" />
     <Compile Include="Samples\Performance\Progressive_Loading\ProgressiveLoading_Demo.xaml.vb" />
