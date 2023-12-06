@@ -7,7 +7,7 @@ Namespace Global.OpenSilver.Samples.Showcase
             Me.InitializeComponent()
 
             ' Populate the data grid with the list of planets:
-            Me.DataGrid1.ItemsSource = Planet.GetListOfPlanets()
+            Me.DataGrid1.ItemsSource = AtomicElements.Elements
         End Sub
     End Class
 End Namespace

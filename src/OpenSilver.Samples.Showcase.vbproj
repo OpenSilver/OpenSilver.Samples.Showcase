@@ -86,6 +86,7 @@
     <Page Include="Samples\Interop_Samples\WebView\WebBrowser_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Compile Include="Other\Elements.vb" />
     <Compile Include="Other\Leagues\Leagues.vb" />
     <Compile Include="Other\Sales.vb" />
     <Compile Include="Other\SampleResourceFileVB.Designer.vb">
