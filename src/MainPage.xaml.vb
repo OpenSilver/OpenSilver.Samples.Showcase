@@ -46,6 +46,8 @@ SHOWCASE"
             End If
         End Sub
 
+#Region "Navigation"
+#Region "Page buttons clicks handling"
         Private Sub ButtonXamlControls_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
             NavigateToPage("/XAML_Controls")
         End Sub
@@ -108,6 +110,7 @@ SHOWCASE"
         Private Sub ThirdParty_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
             NavigateToPage("/Third_Party")
         End Sub
+#End Region
 
         Private Sub NavigateToPage(ByVal targetUri As String)
             'Hide the menu:
@@ -120,6 +123,25 @@ SHOWCASE"
             ' Scroll to top:
             Me.ScrollViewer1.ScrollToVerticalOffset(0R)
         End Sub
+
+        Private Sub ButtonBackwards_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
+            If PageContainer.CanGoBack Then
+                PageContainer.GoBack()
+            End If
+        End Sub
+
+        Private Sub ButtonForward_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
+            If PageContainer.CanGoForward Then
+                PageContainer.GoForward()
+            End If
+        End Sub
+
+        Private Sub PageContainer_Navigated(ByVal sender As Object, ByVal e As System.Windows.Navigation.NavigationEventArgs)
+            ButtonBackwards.IsEnabled = PageContainer.CanGoBack
+            ButtonForward.IsEnabled = PageContainer.CanGoForward
+        End Sub
+
+#End Region
 
 #Region "Show/hide source code"
 
