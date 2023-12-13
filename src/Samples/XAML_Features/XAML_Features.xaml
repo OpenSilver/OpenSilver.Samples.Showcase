@@ -15,6 +15,7 @@
             <!--<local:ClickCount_RightTapped_Demo HorizontalAlignment="Center"/>-->
             <local:Gradients_Demo HorizontalAlignment="Center"/>
             <local:Styles_Demo/>
+            <local:Triggers_Demo/>
             <local:XamlReader_Demo/>
             <local:MeasureArrange_Demo/>
             <local:Animations_Demo HorizontalAlignment="Center"/>

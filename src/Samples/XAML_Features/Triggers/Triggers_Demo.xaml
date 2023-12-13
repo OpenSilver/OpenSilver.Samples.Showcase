@@ -1,0 +1,55 @@
+﻿<UserControl
+    x:Class="OpenSilver.Samples.Showcase.Triggers_Demo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+    <ContentControl Style="{StaticResource Card_Style}" Width="245">
+        <Grid>
+            <Grid.Resources>
+                <Style TargetType="Rectangle">
+                    <Setter Property="Width" Value="50" />
+                    <Setter Property="Height" Value="50" />
+                    <Setter Property="Margin" Value="20" />
+                    <Setter Property="HorizontalAlignment" Value="Center" />
+                </Style>
+
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl x:Name="TitleContentControl" Content="Triggers" Foreground="#FF6FA9FF" Background="#FF95ABCB" Style="{StaticResource HeaderControl_Style}"/>
+            <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <StackPanel Width="240">
+                    <TextBlock TextWrapping="Wrap" Text="Below, we set Border.Triggers with an EventTrigger which starts a Storyboard with a repeating color animation." Margin="5,0,5,5" TextAlignment="Center"/>
+                    <Border x:Name="MyBorder" Width="50" Height="50" Background="DarkRed">
+                        <Border.Triggers>
+                            <EventTrigger RoutedEvent="FrameworkElement.LoadedEvent">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="Background.Color" Storyboard.TargetName="MyBorder" RepeatBehavior="Forever" Duration="0:0:1">
+                                            <EasingColorKeyFrame KeyTime="0:0:0.5" Value="Green"/>
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Border.Triggers>
+                    </Border>
+                    <TextBlock TextWrapping="Wrap" Text="Note: Like in Silverlight, EventTrigger.RoutedEvent only supports the Loaded event." Foreground="Gray" Margin="5,0,5,15" TextAlignment="Center"/>
+                </StackPanel>
+            </StackPanel>
+            <local:ViewSourceButton Grid.Row="2"
+                            Background="#FF6FA9FF">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/Triggers"
+                                        FileName="Triggers_Demo.xaml" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/Triggers"
+                                        FileName="Triggers_Demo.xaml.cs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/Triggers"
+                                        FileName="Triggers_Demo.xaml.vb" />
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
+</UserControl>

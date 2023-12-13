@@ -129,6 +129,7 @@
     <Compile Include="Samples\XAML_Features\MeasureArrange\MeasureArrange_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Features\MeasureArrange\RadialPanel.cs" />
     <Compile Include="Samples\XAML_Features\Styles\Styles_Demo.xaml.cs" />
+    <Compile Include="Samples\XAML_Features\Triggers\Triggers_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Features\XamlReader\XamlReader_Demo.xaml.cs" />
   </ItemGroup>
 
@@ -566,6 +567,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Features\TransformToVisual\TransformToVisual_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\XAML_Features\Triggers\Triggers_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Features\UriMapper\UriMapper_Demo.xaml">
