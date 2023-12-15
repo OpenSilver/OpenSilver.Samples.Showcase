@@ -14,6 +14,7 @@
             <local:DockPanel_Demo HorizontalAlignment="Center"/>
             <local:WrapPanel_Demo HorizontalAlignment="Center"/>
             <local:Canvas_Demo HorizontalAlignment="Center"/>
+            <local:InkPresenter_Demo/>
             <local:Button_Demo HorizontalAlignment="Center"/>
             <local:TextBox_Demo HorizontalAlignment="Center"/>
             <local:CheckBox_Demo HorizontalAlignment="Center"/>
