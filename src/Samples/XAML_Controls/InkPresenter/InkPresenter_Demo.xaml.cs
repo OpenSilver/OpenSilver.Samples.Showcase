@@ -54,6 +54,9 @@ namespace OpenSilver.Samples.Showcase
             InkPad.Strokes.Add(LastStroke);
             CanUndoStroke = true;
             CanClearStrokes = true;
+
+            CanRedoStroke = false;
+            nextStrokes.Clear();
         }
 
         private void OnIP_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -106,6 +109,7 @@ namespace OpenSilver.Samples.Showcase
             if(nextStrokes.Count > 0)
             {
                 InkPad.Strokes.Add(nextStrokes.Pop());
+                CanUndoStroke = true;
             }
             if(nextStrokes.Count == 0)
             {

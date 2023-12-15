@@ -63,6 +63,10 @@ Namespace OpenSilver.Samples.Showcase
             InkPad.Strokes.Add(LastStroke)
             CanUndoStroke = True
             CanClearStrokes = True
+
+            CanRedoStroke = False
+            nextStrokes.Clear()
+
         End Sub
 
         Private Sub OnIP_MouseLeftButtonUp(ByVal sender As Object, ByVal e As MouseButtonEventArgs)
@@ -104,6 +108,7 @@ Namespace OpenSilver.Samples.Showcase
         Private Sub OnRedoLastStroke(ByVal sender As Object, ByVal e As RoutedEventArgs)
             If nextStrokes.Count > 0 Then
                 InkPad.Strokes.Add(nextStrokes.Pop())
+                CanUndoStroke = True
             End If
             If nextStrokes.Count = 0 Then
                 CanRedoStroke = False
