@@ -354,7 +354,7 @@
                     </ToggleButton>
                     <Popup x:Name="InformationPopup1" Placement="Bottom" IsOpen="{Binding ElementName=ButtonShowHidePopup, Path=IsChecked, Mode=TwoWay}">
                         <ContentControl Tag="{Binding ElementName=InformationPopup1}" Style="{StaticResource MaterialDesign_PopupContentWithCross_Style}">
-                            <TextBlock Text="This is a sample information popup. Note: we set the 'Tag' property of the ContentControl to point to the 'Popup' control (see the source code)." Width="150" TextWrapping="Wrap" Background="White"/>
+                            <TextBlock Text="This is a sample information popup. Note: we set the 'Tag' property of the ContentControl to point to the 'Popup' control (see the source code)." Width="150" TextWrapping="Wrap"/>
                         </ContentControl>
                     </Popup>
                 </StackPanel>
