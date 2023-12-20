@@ -15,7 +15,7 @@
     <PackageReference Include="System.ServiceModel.Http" Version="4.10.0" />
     <PackageReference Include="System.ServiceModel.NetTcp" Version="4.10.0" />
     <PackageReference Include="System.ServiceModel.Security" Version="4.10.0" />
-    <PackageReference Include="OpenSilver" Version="2.0.1" />
+    <PackageReference Include="OpenSilver" Version="2.1.0-preview-2023-12-19-121845-6b78cac9" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
   </ItemGroup>
 
@@ -45,6 +45,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\Charts\Stacked100AreaSeries\Stacked100AreaSeries_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Charts\TreeMap\TreeMap_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\Client_Server\RIAServices\RIAServices_Demo.xaml">
@@ -111,6 +114,7 @@
     <Compile Include="Samples\Charts\PieSeries\PieSeries_Demo.xaml.cs" />
     <Compile Include="Samples\Charts\ScatterSeries\ScatterSeries_Demo.xaml.cs" />
     <Compile Include="Samples\Charts\Stacked100AreaSeries\Stacked100AreaSeries_Demo.xaml.cs" />
+    <Compile Include="Samples\Charts\TreeMap\TreeMap_Demo.xaml.cs" />
     <Compile Include="Samples\Client_Server\RIAServices\RIAServices_Demo.xaml.cs" />
     <Compile Include="Samples\Net_Framework\InitParams\InitParams_Demo.xaml.cs" />
     <Compile Include="Samples\Net_Framework\OpenFileDialog\OpenFileDialog_Demo.xaml.cs" />
@@ -766,5 +770,9 @@
 
   <ItemGroup>
     <Folder Include="Third_Party_Resources\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Samples\Charts\TreeMap\TreeMap_Demo.xaml" />
   </ItemGroup>
 </Project>
