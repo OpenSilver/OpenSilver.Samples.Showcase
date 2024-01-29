@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <NoXamlPreprocessor>True</NoXamlPreprocessor>
+    <OpenSilverType>5</OpenSilverType>
+    <!--Use .NET 6 to enable the commented options below-->
+    <PublishTrimmed>true</PublishTrimmed>
+    <!--<RunAOTCompilation Condition="'$(IsSecondPass)'=='True'">true</RunAOTCompilation>-->
+    <OutputPath>bin/$(Configuration)_fs</OutputPath>
+    <IntermediateOutputPath>obj/$(Configuration)_fs</IntermediateOutputPath>
+    <DefineTrace>true</DefineTrace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OpenSilver" Version="2.1.0-preview-2024-01-23-161510-f3c17ee1" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.0" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\src\OpenSilver.Samples.Showcase.fsproj" />
+  </ItemGroup>
+
+</Project>

@@ -42,6 +42,8 @@
                                                 FileName="ToolTip_Demo.xaml.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ToolTip"
                                                 FileName="ToolTip_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ToolTip"
+                                                FileName="ToolTip_Demo.xaml.fs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ToolTip/Styles"
                                                 FileName="DefaultToolTipStyle.xaml" />
                 </local:ViewSourceButton.Sources>

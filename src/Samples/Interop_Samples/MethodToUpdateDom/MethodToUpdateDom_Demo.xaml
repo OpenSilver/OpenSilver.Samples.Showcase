@@ -21,9 +21,13 @@
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Interop_Samples/MethodToUpdateDom"
                                                 FileName="MethodToUpdateDom_Demo.xaml.vb" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Interop_Samples/MethodToUpdateDom"
+                                                FileName="MethodToUpdateDom_Demo.xaml.fs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Interop_Samples/MethodToUpdateDom"
                                                 FileName="AttachedPropertiesWithMethodToUpdateDom.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Interop_Samples/MethodToUpdateDom"
                                                 FileName="AttachedPropertiesWithMethodToUpdateDom.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Interop_Samples/MethodToUpdateDom"
+                                                FileName="AttachedPropertiesWithMethodToUpdateDom.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </StackPanel>

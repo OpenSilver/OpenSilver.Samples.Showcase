@@ -47,9 +47,13 @@
                         <local:ViewSourceButtonInfo RelativePath="src/Samples/Performance/HtmlCanvas"
                                                     FileName="HtmlCanvas_Demo.xaml.vb" />
                         <local:ViewSourceButtonInfo RelativePath="src/Samples/Performance/HtmlCanvas"
+                                                    FileName="HtmlCanvas_Demo.xaml.fs" />
+                        <local:ViewSourceButtonInfo RelativePath="src/Samples/Performance/HtmlCanvas"
                                                     FileName="MainSprite.cs" />
                         <local:ViewSourceButtonInfo RelativePath="src/Samples/Performance/HtmlCanvas"
                                                     FileName="MainSprite.vb" />
+                        <local:ViewSourceButtonInfo RelativePath="src/Samples/Performance/HtmlCanvas"
+                                                    FileName="MainSprite.fs" />
                     </local:ViewSourceButton.Sources>
                 </local:ViewSourceButton>
             </StackPanel>

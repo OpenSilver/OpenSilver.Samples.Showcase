@@ -32,6 +32,8 @@
                                                 FileName="RepeatButton_Demo.xaml.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/RepeatButton"
                                                 FileName="RepeatButton_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/RepeatButton"
+                                                FileName="RepeatButton_Demo.xaml.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

@@ -44,6 +44,8 @@
                                                 FileName="DockPanel_Demo.xaml.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/DockPanel"
                                                 FileName="DockPanel_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/DockPanel"
+                                                FileName="DockPanel_Demo.xaml.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

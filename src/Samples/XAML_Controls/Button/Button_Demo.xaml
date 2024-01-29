@@ -21,6 +21,8 @@
                                                 FileName="Button_Demo.xaml.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Button"
                                                 FileName="Button_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Button"
+                                                FileName="Button_Demo.xaml.fs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Button/Styles"
                                                 FileName="DefaultButtonStyle.xaml" />
                 </local:ViewSourceButton.Sources>

@@ -33,6 +33,8 @@
                                                 FileName="ScrollBar_Demo.xaml.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ScrollBar"
                                                 FileName="ScrollBar_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ScrollBar"
+                                                FileName="ScrollBar_Demo.xaml.fs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ScrollBar/Styles"
                                                 FileName="DefaultScrollBarStyle.xaml" />
                 </local:ViewSourceButton.Sources>

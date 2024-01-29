@@ -25,6 +25,8 @@
                                         FileName="ProgressBar_Demo.xaml.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ProgressBar"
                                         FileName="ProgressBar_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ProgressBar"
+                                        FileName="ProgressBar_Demo.xaml.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

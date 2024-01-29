@@ -21,6 +21,8 @@
                                                 FileName="NumericUpDown_Demo.xaml.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/NumericUpDown"
                                                 FileName="NumericUpDown_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/NumericUpDown"
+                                                FileName="NumericUpDown_Demo.xaml.fs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/NumericUpDown/Styles"
                                                 FileName="DefaultNumericUpDownStyle.xaml" />
                 </local:ViewSourceButton.Sources>

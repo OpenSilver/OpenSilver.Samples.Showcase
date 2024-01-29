@@ -28,6 +28,8 @@
                                             FileName="MeasureArrange_Demo_Silverlight.xaml.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/MeasureArrange"
                                             FileName="MeasureArrange_Demo_Silverlight.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/MeasureArrange"
+                                            FileName="MeasureArrange_Demo_Silverlight.xaml.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

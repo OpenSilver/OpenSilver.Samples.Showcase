@@ -31,6 +31,8 @@
                                                 FileName="TabControl_Demo.xaml.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/TabControl"
                                                 FileName="TabControl_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/TabControl"
+                                                FileName="TabControl_Demo.xaml.fs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/TabControl/Styles"
                                                 FileName="DefaultTabControlStyle.xaml" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/TabControl/Styles"

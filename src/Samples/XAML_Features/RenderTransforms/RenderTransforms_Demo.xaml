@@ -52,6 +52,8 @@
                                                 FileName="RenderTransforms_Demo.xaml.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/RenderTransforms"
                                                 FileName="RenderTransforms_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/RenderTransforms"
+                                                FileName="RenderTransforms_Demo.xaml.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

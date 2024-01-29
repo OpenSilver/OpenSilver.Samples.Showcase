@@ -27,8 +27,12 @@
                                                 FileName="Planet.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ListBox"
                                                 FileName="ListBox_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ListBox"
+                                                FileName="ListBox_Demo.xaml.fs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Other"
                                                 FileName="Planet.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Other"
+                                                FileName="Planet.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

@@ -29,9 +29,13 @@
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Client_Server/jQuery.ajax"
                                                 FileName="jQueryAjax_Demo.xaml.vb" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Client_Server/jQuery.ajax"
+                                                FileName="jQueryAjax_Demo.xaml.fs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Client_Server/jQuery.ajax"
                                                 FileName="jQueryAjaxHelper.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Client_Server/jQuery.ajax"
                                                 FileName="jQueryAjaxHelper.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Client_Server/jQuery.ajax"
+                                                FileName="jQueryAjaxHelper.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

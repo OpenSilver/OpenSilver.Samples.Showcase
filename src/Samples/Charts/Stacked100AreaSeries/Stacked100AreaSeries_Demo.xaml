@@ -39,6 +39,8 @@ IndependentValuePath="Month">
                                       FileName="Stacked100AreaSeries_Demo.xaml.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Charts/Stacked100AreaSeries"
                                       FileName="Stacked100AreaSeries_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Charts/Stacked100AreaSeries"
+                                      FileName="Stacked100AreaSeries_Demo.xaml.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

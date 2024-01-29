@@ -34,6 +34,8 @@ IndependentValuePath="Month">
                                       FileName="BubbleSeries_Demo.xaml.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Charts/BubbleSeries"
                                       FileName="BubbleSeries_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Charts/BubbleSeries"
+                                      FileName="BubbleSeries_Demo.xaml.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

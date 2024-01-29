@@ -34,9 +34,13 @@
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/Binding2"
                                                 FileName="Binding2_Demo.xaml.vb" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/Binding2"
+                                                FileName="Binding2_Demo.xaml.fs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/Binding2"
                                                 FileName="KilometersToMilesConverter.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/Binding2"
                                                 FileName="KilometersToMilesConverter.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/Binding2"
+                                                FileName="KilometersToMilesConverter.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

@@ -21,7 +21,7 @@
     <PackageReference Include="System.ServiceModel.Http" Version="4.10.0" />
     <PackageReference Include="System.ServiceModel.NetTcp" Version="4.10.0" />
     <PackageReference Include="System.ServiceModel.Security" Version="4.10.0" />
-    <PackageReference Include="OpenSilver" Version="2.1.0-preview-2023-12-19-121845-6b78cac9" />
+    <PackageReference Include="OpenSilver" Version="2.1.0-preview-2024-01-23-161510-f3c17ee1" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
   </ItemGroup>
   

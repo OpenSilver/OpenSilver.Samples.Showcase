@@ -28,6 +28,8 @@
                                                 FileName="SignalR_Demo.xaml.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Client_Server/SignalR"
                                                 FileName="SignalR_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Client_Server/SignalR"
+                                                FileName="SignalR_Demo.xaml.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

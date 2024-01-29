@@ -23,6 +23,8 @@
                                                 FileName="ScrollViewer_Demo.xaml.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ScrollViewer"
                                                 FileName="ScrollViewer_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ScrollViewer"
+                                                FileName="ScrollViewer_Demo.xaml.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

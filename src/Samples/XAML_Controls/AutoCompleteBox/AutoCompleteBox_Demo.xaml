@@ -24,6 +24,8 @@
                                                 FileName="AutoCompleteBox_Demo.xaml.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/AutoCompleteBox"
                                                 FileName="AutoCompleteBox_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/AutoCompleteBox"
+                                                FileName="AutoCompleteBox_Demo.xaml.fs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/AutoCompleteBox/Styles"
                                                 FileName="DefaultAutoCompleteBoxStyle.xaml" />
                 </local:ViewSourceButton.Sources>

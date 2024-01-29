@@ -36,6 +36,8 @@
                                                     FileName="Plotly_Charts_Demo.xaml.cs" />
                         <local:ViewSourceButtonInfo RelativePath="src/Samples/Third_Party/Plotly_Charts"
                                                     FileName="Plotly_Charts_Demo.xaml.vb" />
+                        <local:ViewSourceButtonInfo RelativePath="src/Samples/Third_Party/Plotly_Charts"
+                                                    FileName="Plotly_Charts_Demo.xaml.fs" />
                     </local:ViewSourceButton.Sources>
                 </local:ViewSourceButton>
             </Grid>

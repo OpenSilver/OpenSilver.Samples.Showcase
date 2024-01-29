@@ -33,9 +33,13 @@
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/JSON_Serializer"
                                                 FileName="JSON_Serializer_Demo.xaml.vb" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/JSON_Serializer"
+                                                FileName="JSON_Serializer_Demo.xaml.fs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/JSON_Serializer"
                                                 FileName="JsonConvert.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/JSON_Serializer"
                                                 FileName="JsonConvert.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/JSON_Serializer"
+                                                FileName="JsonConvert.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

@@ -42,6 +42,8 @@
                                                 FileName="ContextMenu_MenuItem_Demo.xaml.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ContextMenu_MenuItem"
                                                 FileName="ContextMenu_MenuItem_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ContextMenu_MenuItem"
+                                                FileName="ContextMenu_MenuItem_Demo.xaml.fs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ContextMenu_MenuItem/Styles"
                                                 FileName="DefaultMenuItemStyle.xaml" />
                 </local:ViewSourceButton.Sources>

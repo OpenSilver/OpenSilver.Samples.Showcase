@@ -40,6 +40,8 @@
                                                 FileName="Viewbox_Demo.xaml.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Viewbox"
                                                 FileName="Viewbox_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Viewbox"
+                                                FileName="Viewbox_Demo.xaml.fs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Viewbox/Styles"
                                                 FileName="DefaultViewboxStyle.xaml" />
                 </local:ViewSourceButton.Sources>

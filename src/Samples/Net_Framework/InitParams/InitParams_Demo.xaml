@@ -33,6 +33,8 @@
                                             FileName="InitParams_Demo.xaml.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/InitParams"
                                             FileName="InitParams_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/InitParams"
+                                            FileName="InitParams_Demo.xaml.fs" />
                     <local:ViewSourceButtonInfo RelativePath="OpenSilver.Samples.Showcase.Browser/wwwroot"
                          FileName="index.html" />
                     <local:ViewSourceButtonInfo RelativePath="OpenSilver.Samples.Showcase.Simulator"
