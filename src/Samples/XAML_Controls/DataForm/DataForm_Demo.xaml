@@ -27,6 +27,8 @@
                                             FileName="DataForm_Demo.xaml.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/DataForm"
                                             FileName="DataForm_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/DataForm"
+                                            FileName="DataForm_Demo.xaml.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

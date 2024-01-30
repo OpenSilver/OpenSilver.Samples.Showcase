@@ -25,9 +25,13 @@
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Client_Server/WebSockets"
                                                 FileName="WebSockets_Demo.xaml.vb" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Client_Server/WebSockets"
+                                                FileName="WebSockets_Demo.xaml.fs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Client_Server/WebSockets"
                                                 FileName="WebSocket.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Client_Server/WebSockets"
                                                 FileName="WebSocket.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Client_Server/WebSockets"
+                                                FileName="WebSocket.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

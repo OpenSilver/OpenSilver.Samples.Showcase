@@ -40,6 +40,8 @@
                                                 FileName="TextBlock_Demo.xaml.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Textblock"
                                                 FileName="TextBlock_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Textblock"
+                                                FileName="TextBlock_Demo.xaml.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

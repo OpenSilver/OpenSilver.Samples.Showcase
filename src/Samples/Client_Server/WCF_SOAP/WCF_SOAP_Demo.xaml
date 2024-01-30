@@ -45,6 +45,8 @@
                                                 FileName="WCF_SOAP_Demo.xaml.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Client_Server/WCF_SOAP"
                                                 FileName="WCF_SOAP_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Client_Server/WCF_SOAP"
+                                                FileName="WCF_SOAP_Demo.xaml.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

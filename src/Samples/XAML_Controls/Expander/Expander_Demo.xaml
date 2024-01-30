@@ -34,6 +34,8 @@
                                                 FileName="Expander_Demo.xaml.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Expander"
                                                 FileName="Expander_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Expander"
+                                                FileName="Expander_Demo.xaml.fs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Expander/Styles"
                                                 FileName="DefaultExpanderStyle.xaml" />
                 </local:ViewSourceButton.Sources>

@@ -30,6 +30,8 @@
                                                 FileName="Drag_And_Drop_Demo_Silverlight.xaml.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/Drag_And_Drop"
                                                 FileName="Drag_And_Drop_Demo_Silverlight.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/Drag_And_Drop"
+                                                FileName="Drag_And_Drop_Demo_Silverlight.xaml.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

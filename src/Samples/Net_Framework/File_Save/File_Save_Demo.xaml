@@ -22,9 +22,13 @@
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/File_Save"
                                                 FileName="File_Save_Demo.xaml.vb" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/File_Save"
+                                                FileName="File_Save_Demo.xaml.fs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/File_Save"
                                                 FileName="FileSaver.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/File_Save"
                                                 FileName="FileSaver.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/File_Save"
+                                                FileName="FileSaver.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

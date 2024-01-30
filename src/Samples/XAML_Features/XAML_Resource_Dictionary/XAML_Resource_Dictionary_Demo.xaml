@@ -34,6 +34,8 @@
                                                 FileName="XAML_Resource_Dictionary_Demo.xaml.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/XAML_Resource_Dictionary"
                                                 FileName="XAML_Resource_Dictionary_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/XAML_Resource_Dictionary"
+                                                FileName="XAML_Resource_Dictionary_Demo.xaml.fs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/XAML_Resource_Dictionary/Dictionaries"
                                                 FileName="Style1.xaml" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/XAML_Resource_Dictionary/Dictionaries"

@@ -38,6 +38,8 @@
                                                 FileName="MediaElement_Demo.xaml.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/MediaElement"
                                                 FileName="MediaElement_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/MediaElement"
+                                                FileName="MediaElement_Demo.xaml.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

@@ -21,6 +21,8 @@
                                                 FileName="Thumb_Demo.xaml.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Thumb"
                                                 FileName="Thumb_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Thumb"
+                                                FileName="Thumb_Demo.xaml.fs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Thumb/Styles"
                                                 FileName="DefaultThumbStyle.xaml" />
                 </local:ViewSourceButton.Sources>

@@ -31,6 +31,8 @@
                                                 FileName="DateAndTimePicker_Demo.xaml.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/DateAndTimePicker"
                                                 FileName="DateAndTimePicker_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/DateAndTimePicker"
+                                                FileName="DateAndTimePicker_Demo.xaml.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
     </Grid>

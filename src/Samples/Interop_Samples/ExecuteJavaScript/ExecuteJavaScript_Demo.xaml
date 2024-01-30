@@ -31,6 +31,8 @@
                                                 FileName="ExecuteJavaScript_Demo.xaml.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Interop_Samples/ExecuteJavaScript"
                                                 FileName="ExecuteJavaScript_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Interop_Samples/ExecuteJavaScript"
+                                                FileName="ExecuteJavaScript_Demo.xaml.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

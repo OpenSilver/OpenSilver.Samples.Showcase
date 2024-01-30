@@ -26,6 +26,8 @@
                                                 FileName="ToggleButton_Demo.xaml.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ToggleButton"
                                                 FileName="ToggleButton_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ToggleButton"
+                                                FileName="ToggleButton_Demo.xaml.fs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ToggleButton/Styles"
                                                 FileName="DefaultToggleButtonStyle.xaml" />
                 </local:ViewSourceButton.Sources>

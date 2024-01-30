@@ -34,9 +34,13 @@
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/Validation"
                                                 FileName="Validation_Demo.xaml.vb" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/Validation"
+                                                FileName="Validation_Demo.xaml.fs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/Validation"
                                                 FileName="Person.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/Validation"
                                                 FileName="Person.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/Validation"
+                                                FileName="Person.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

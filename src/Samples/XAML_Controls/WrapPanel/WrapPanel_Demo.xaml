@@ -29,6 +29,8 @@
                                                 FileName="WrapPanel_Demo.xaml.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/WrapPanel"
                                                 FileName="WrapPanel_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/WrapPanel"
+                                                FileName="WrapPanel_Demo.xaml.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

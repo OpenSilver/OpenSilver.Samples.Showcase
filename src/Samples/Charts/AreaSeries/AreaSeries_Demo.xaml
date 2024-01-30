@@ -34,6 +34,8 @@
                                             FileName="AreaSeries_Demo.xaml.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Charts/AreaSeries"
                                             FileName="AreaSeries_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Charts/AreaSeries"
+                                            FileName="AreaSeries_Demo.xaml.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

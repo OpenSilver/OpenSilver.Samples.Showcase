@@ -25,11 +25,15 @@
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ChildWindow2"
                                                 FileName="NonModalChildWindow_Demo.xaml.vb" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ChildWindow2"
+                                                FileName="NonModalChildWindow_Demo.xaml.fs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ChildWindow2"
                                                 FileName="SmallChildWindow.xaml" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ChildWindow2"
                                                 FileName="SmallChildWindow.xaml.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ChildWindow2"
                                                 FileName="SmallChildWindow.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ChildWindow2"
+                                                FileName="SmallChildWindow.xaml.fs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ChildWindow/Styles"
                                                 FileName="DefaultChildWindowStyle.xaml" />
                 </local:ViewSourceButton.Sources>

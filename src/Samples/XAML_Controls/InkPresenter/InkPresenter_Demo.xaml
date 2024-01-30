@@ -30,11 +30,11 @@
                 <StackPanel Orientation="Horizontal"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Bottom" Grid.Row="1">
-                    <Button Content="X" Click="OnClearInkPad" IsEnabled="{Binding CanClearStrokes, RelativeSource={RelativeSource AncestorType=local:InkPresenter_Demo}}"/>
-                    <Button Click="OnUndoLastStroke" IsEnabled="{Binding CanUndoStroke, RelativeSource={RelativeSource AncestorType=local:InkPresenter_Demo}}">
+                    <Button Content="X" Click="OnClearInkPad" IsEnabled="{Binding CanClearStrokes, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+                    <Button Click="OnUndoLastStroke" IsEnabled="{Binding CanUndoStroke, RelativeSource={RelativeSource AncestorType=UserControl}}">
                         <Path Stroke="Black" StrokeThickness="2" Data="M2,10 C7,0 12,0 22,10 M6,9 L2,10 0,7"/>
                     </Button>
-                    <Button Click="OnRedoLastStroke" IsEnabled="{Binding CanRedoStroke, RelativeSource={RelativeSource AncestorType=local:InkPresenter_Demo}}">
+                    <Button Click="OnRedoLastStroke" IsEnabled="{Binding CanRedoStroke, RelativeSource={RelativeSource AncestorType=UserControl}}">
                         <Path Stroke="Black" StrokeThickness="2" Data="M20,10 C15,0 10,0 0,10 M16,9 L20,10 22,7"/>
                     </Button>
                 </StackPanel>
@@ -48,6 +48,8 @@
                                             FileName="InkPresenter_Demo.xaml.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/InkPresenter"
                                             FileName="InkPresenter_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/InkPresenter"
+                                            FileName="InkPresenter_Demo.xaml.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

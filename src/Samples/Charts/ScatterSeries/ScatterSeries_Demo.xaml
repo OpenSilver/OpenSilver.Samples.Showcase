@@ -34,6 +34,8 @@ IndependentValuePath="Month">
                                       FileName="ScatterSeries_Demo.xaml.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Charts/ScatterSeries"
                                       FileName="ScatterSeries_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Charts/ScatterSeries"
+                                      FileName="ScatterSeries_Demo.xaml.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

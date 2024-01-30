@@ -24,6 +24,8 @@
                                                 FileName="HyperlinkButton.xaml.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/HyperlinkButton"
                                                 FileName="HyperlinkButton.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/HyperlinkButton"
+                                                FileName="HyperlinkButton.xaml.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

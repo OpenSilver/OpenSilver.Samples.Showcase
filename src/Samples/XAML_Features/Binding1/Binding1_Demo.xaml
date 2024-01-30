@@ -67,10 +67,14 @@
                                                 FileName="Binding1_Demo.xaml.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/Binding1"
                                                 FileName="Binding1_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/Binding1"
+                                                FileName="Binding1_Demo.xaml.fs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Other"
                                                 FileName="Planet.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Other"
                                                 FileName="Planet.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Other"
+                                                FileName="Planet.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

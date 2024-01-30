@@ -24,6 +24,8 @@
                                                 FileName="AsyncAwait_Demo.xaml.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/AsyncAwait"
                                                 FileName="AsyncAwait_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/AsyncAwait"
+                                                FileName="AsyncAwait_Demo.xaml.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

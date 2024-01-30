@@ -28,6 +28,8 @@
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/Printing"
                                                 FileName="Printing_Demo.xaml.vb" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/Printing"
+                                                FileName="Printing_Demo.xaml.fs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/Printing"
                                                 FileName="Invoice.xaml" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>

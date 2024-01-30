@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <OutputPath>bin/$(Configuration)_fs</OutputPath>
+    <IntermediateOutputPath>obj/$(Configuration)_fs</IntermediateOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OpenSilver.Simulator" Version="2.1.0-preview-2024-01-23-161510-f3c17ee1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\src\OpenSilver.Samples.Showcase.fsproj" />
+  </ItemGroup>
+
+</Project>

@@ -44,9 +44,13 @@
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Client_Server/REST_WebClient"
                                                 FileName="REST_WebClient_Demo.xaml.vb" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Client_Server/REST_WebClient"
+                                                FileName="REST_WebClient_Demo.xaml.fs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Client_Server/REST_WebClient"
                                                 FileName="REST_ToDoItem.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Client_Server/REST_WebClient"
                                                 FileName="REST_ToDoItem.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Client_Server/REST_WebClient"
+                                                FileName="REST_ToDoItem.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

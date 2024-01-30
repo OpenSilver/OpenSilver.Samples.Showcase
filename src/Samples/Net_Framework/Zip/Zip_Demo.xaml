@@ -30,9 +30,13 @@
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/Zip"
                                                 FileName="Zip_Demo.xaml.vb" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/Zip"
+                                                FileName="Zip_Demo.xaml.fs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/Zip"
                                                 FileName="ZipFile.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/Zip"
                                                 FileName="ZipFile.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/Zip"
+                                                FileName="ZipFile.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>
