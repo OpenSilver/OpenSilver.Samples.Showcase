@@ -39,7 +39,7 @@ jobs:
           path: './Showcase'
       - name: Replace text
         run: |
-          sed -i 's\<base href=\"/\" />\<base href=\"${{ env.vdir }}\" />\g' Showcase/OpenSilver.Samples.Showcase.Browser/wwwroot/index.html
+          sed -i 's|<base href=\"/\" />|<base href=\"${{ env.vdir }}\" />|g' Showcase/OpenSilver.Samples.Showcase.Browser/wwwroot/index.html
       - name: Replace UserName
         run: |
           sed -i 's\USERNAME\${{ secrets.OPENSILVERDEMOSUSERNAME }}\g' Showcase/OpenSilver.Samples.Showcase.Browser/Properties/PublishProfiles/publish.pubxml
