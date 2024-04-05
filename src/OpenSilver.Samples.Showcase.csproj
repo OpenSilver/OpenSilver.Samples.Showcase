@@ -10,12 +10,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="OpenSilver.ControlsKit" Version="2.0.1" />
     <PackageReference Include="System.ServiceModel.Duplex" Version="4.10.0" />
     <PackageReference Include="System.ServiceModel.Http" Version="4.10.0" />
     <PackageReference Include="System.ServiceModel.NetTcp" Version="4.10.0" />
     <PackageReference Include="System.ServiceModel.Security" Version="4.10.0" />
-    <PackageReference Include="OpenSilver" Version="2.1.0" />
+    <PackageReference Include="OpenSilver" Version="2.2.0-preview-2024-04-04-080542-cc866b4b" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
   </ItemGroup>
 
@@ -766,5 +765,9 @@
 
   <ItemGroup>
     <Folder Include="Third_Party_Resources\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\OpenSilver.ControlsKit\src\OpenSilver.ControlsKit.Controls\OpenSilver.ControlsKit.Controls.csproj" />
   </ItemGroup>
 </Project>

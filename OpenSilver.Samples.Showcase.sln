@@ -27,6 +27,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenSilver.Samples.Showcase
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenSilver.Samples.Showcase.Browser.fs", "OpenSilver.Samples.Showcase.Browser\OpenSilver.Samples.Showcase.Browser.fs.csproj", "{A1FCF43B-99E1-4387-AA9B-A92D16F2E92E}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenSilverBlazorServer.Wpf", "OpenSilverBlazorServer.Wpf\OpenSilverBlazorServer.Wpf.csproj", "{E6D27637-4FF3-4CD8-B504-597559C18599}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenSilverBlazorServer.Server", "OpenSilverBlazorServer.Server\OpenSilverBlazorServer.Server.csproj", "{4FA35311-E406-4BDC-A0FE-82A6AAB660FB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenSilver.ControlsKit.Controls", "..\OpenSilver.ControlsKit\src\OpenSilver.ControlsKit.Controls\OpenSilver.ControlsKit.Controls.csproj", "{76F909E0-C6C5-4B0B-BBD6-D6DACB6526C2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +75,18 @@ Global
 		{A1FCF43B-99E1-4387-AA9B-A92D16F2E92E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1FCF43B-99E1-4387-AA9B-A92D16F2E92E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1FCF43B-99E1-4387-AA9B-A92D16F2E92E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6D27637-4FF3-4CD8-B504-597559C18599}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6D27637-4FF3-4CD8-B504-597559C18599}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6D27637-4FF3-4CD8-B504-597559C18599}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6D27637-4FF3-4CD8-B504-597559C18599}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FA35311-E406-4BDC-A0FE-82A6AAB660FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FA35311-E406-4BDC-A0FE-82A6AAB660FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FA35311-E406-4BDC-A0FE-82A6AAB660FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FA35311-E406-4BDC-A0FE-82A6AAB660FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76F909E0-C6C5-4B0B-BBD6-D6DACB6526C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76F909E0-C6C5-4B0B-BBD6-D6DACB6526C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76F909E0-C6C5-4B0B-BBD6-D6DACB6526C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76F909E0-C6C5-4B0B-BBD6-D6DACB6526C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

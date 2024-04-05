@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OpenSilverBlazorServer.Wpf\OpenSilverBlazorServer.Wpf.csproj" />
+    <ProjectReference Include="..\src\OpenSilver.Samples.Showcase.csproj" />
+  </ItemGroup>
+
+</Project>
