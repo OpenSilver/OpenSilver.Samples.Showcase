@@ -23,9 +23,7 @@ Namespace Global.OpenSilver.Samples.Showcase
 
 #If OPENSILVER Then
             Me.TitleImage.Visibility = Visibility.Collapsed
-            Me.TitleTextBlock.Text = "OPENSILVER
-SHOWCASE"
-            Me.TitleTextBlock.TextAlignment = TextAlignment.Center
+            Me.TitleTextBlock.Text = "OPENSILVER SHOWCASE (VB)"
             Me.TitleTextBlock.HorizontalAlignment = HorizontalAlignment.Center
 #End If
         End Sub

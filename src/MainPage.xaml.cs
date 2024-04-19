@@ -23,9 +23,7 @@ namespace OpenSilver.Samples.Showcase
 
 #if OPENSILVER
             TitleImage.Visibility = Visibility.Collapsed;
-            TitleTextBlock.Text = @"OPENSILVER
-SHOWCASE";
-            TitleTextBlock.TextAlignment = TextAlignment.Center;
+            TitleTextBlock.Text = "OPENSILVER SHOWCASE";
             TitleTextBlock.HorizontalAlignment = HorizontalAlignment.Center;
 #endif
         }

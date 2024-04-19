@@ -32,9 +32,7 @@ type MainPage() as this =
 
 #if OPENSILVER
         this.TitleImage.Visibility <- Visibility.Collapsed
-        this.TitleTextBlock.Text <- @"OPENSILVER
-SHOWCASE";
-        this.TitleTextBlock.TextAlignment <- TextAlignment.Center
+        this.TitleTextBlock.Text <- "OPENSILVER SHOWCASE (F#)";
         this.TitleTextBlock.HorizontalAlignment <- HorizontalAlignment.Center
 #endif
 
