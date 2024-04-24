@@ -23,6 +23,8 @@
                                 Background="#FFE6E166">
                 <local:ViewSourceButton.Sources>
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/MeasureArrange"
+                                            FileName="RadialPanel.cs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/MeasureArrange"
                                             FileName="MeasureArrange_Demo.xaml" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/MeasureArrange"
                                             FileName="MeasureArrange_Demo.xaml.cs" />
