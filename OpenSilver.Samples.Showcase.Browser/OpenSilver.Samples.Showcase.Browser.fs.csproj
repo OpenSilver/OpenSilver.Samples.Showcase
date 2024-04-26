@@ -6,7 +6,7 @@
     <OpenSilverType>5</OpenSilverType>
     <!--Use .NET 6 to enable the commented options below-->
     <PublishTrimmed>true</PublishTrimmed>
-    <!--<RunAOTCompilation Condition="'$(IsSecondPass)'=='True'">true</RunAOTCompilation>-->
+    <WasmEnableSIMD>false</WasmEnableSIMD>
     <OutputPath>bin/$(Configuration)_fs</OutputPath>
     <IntermediateOutputPath>obj/$(Configuration)_fs</IntermediateOutputPath>
     <DefineTrace>true</DefineTrace>

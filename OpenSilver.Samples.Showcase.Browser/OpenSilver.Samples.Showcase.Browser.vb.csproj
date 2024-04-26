@@ -6,6 +6,7 @@
     <OpenSilverType>5</OpenSilverType>
     <!--Use .NET 6 to enable the commented options below-->
     <PublishTrimmed>true</PublishTrimmed>
+    <WasmEnableSIMD>false</WasmEnableSIMD>
     <!--<RunAOTCompilation Condition="'$(IsSecondPass)'=='True'">true</RunAOTCompilation>-->
     <OutputPath>bin/$(Configuration)_vb</OutputPath>
     <IntermediateOutputPath>obj/$(Configuration)_vb</IntermediateOutputPath>
