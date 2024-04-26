@@ -2,42 +2,50 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>OpenSilver Showcase</title>
     <base href="/" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <link rel="stylesheet" type="text/css" href="silverlight-loading.css">
+    <script>
+        (function () {
+            const style = document.createElement('link');
+            style.setAttribute('rel', 'stylesheet');
+            style.setAttribute('type', 'text/css');
+            style.setAttribute('href', 'loading-indicator.css?date=' + new Date().toISOString());
+            document.head.appendChild(style);
+            const script = document.createElement('script');
+            script.setAttribute('type', 'application/javascript');
+            script.setAttribute('src', 'libs/opensilver.js?date=' + new Date().toISOString());
+            document.head.appendChild(script);
+        })();
+    </script>
 </head>
 <body>
-    <app style="position:absolute;width:100%;height:100%;left:0;top:0;">
-        <div class="silverlight-loading-wrapper">
-            <div class="silverlight-loading">
-                <div class="silverlight-loading-ball"></div>
-                <div class="silverlight-loading-ball"></div>
-                <div class="silverlight-loading-ball"></div>
-                <div class="silverlight-loading-ball"></div>
-                <div class="silverlight-loading-ball"></div>
-                <div class="silverlight-loading-ball"></div>
-                <div class="silverlight-loading-ball"></div>
-                <div class="silverlight-loading-ball"></div>
-                <div class="silverlight-loading-ball"></div>
-                <div class="silverlight-loading-ball"></div>
-                <div class="silverlight-loading-ball"></div>
-                <div class="silverlight-loading-ball"></div>
-                <div class="silverlight-loading-ball"></div>
-                <div class="silverlight-loading-ball"></div>
-                <div class="silverlight-loading-ball"></div>
-                <div class="silverlight-loading-ball"></div>
-                <div class="silverlight-loading-percentage-container">
-                    <div id="silverlight-loading-percentage">0%</div>
-                </div>
+    <div id="app">
+        <div class="loading-indicator-wrapper">
+            <div class="loading-indicator">
+                <div class="loading-indicator-ball"></div>
+                <div class="loading-indicator-ball"></div>
+                <div class="loading-indicator-ball"></div>
+                <div class="loading-indicator-ball"></div>
+                <div class="loading-indicator-ball"></div>
+                <div class="loading-indicator-ball"></div>
+                <div class="loading-indicator-ball"></div>
+                <div class="loading-indicator-ball"></div>
+                <div class="loading-indicator-ball"></div>
+                <div class="loading-indicator-ball"></div>
+                <div class="loading-indicator-ball"></div>
+                <div class="loading-indicator-ball"></div>
+                <div class="loading-indicator-ball"></div>
+                <div class="loading-indicator-ball"></div>
+                <div class="loading-indicator-ball"></div>
+                <div class="loading-indicator-ball"></div>
+                <div class="loading-indicator-text"></div>
             </div>
         </div>
-    </app>
-    <div id="opensilver-root" style="position: relative; width: 100%; height: 100%; overflow-x: hidden; overflow-y: hidden">
-        <param name="InitParams" value="SomeInitParam=SomeValue,SomeOtherInitParam=SomeOtherValue"/>
     </div>
-    <script src="_framework/blazor.webassembly.js" autostart="false"></script>
-    <script type="application/javascript" src="libs/opensilver.js"></script>
-    <script src="BlazorLoader.js"></script>
+    <div id="opensilver-root" style="position: relative; width: 100%; height: 100%; overflow-x: hidden; overflow-y: hidden">
+        <param name="InitParams" value="SomeInitParam=SomeValue,SomeOtherInitParam=SomeOtherValue" />
+    </div>
+    <script src="_framework/blazor.webassembly.js"></script>
 </body>
 </html>

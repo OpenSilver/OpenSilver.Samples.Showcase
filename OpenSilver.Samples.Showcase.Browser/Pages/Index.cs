@@ -3,6 +3,8 @@ using OpenSilver.Samples.Showcase.Browser.Interop;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 using Microsoft.JSInterop;
+using System.Threading.Tasks;
+using System;
 
 namespace OpenSilver.Samples.Showcase.Browser.Pages
 {
@@ -13,9 +15,15 @@ namespace OpenSilver.Samples.Showcase.Browser.Pages
         {
         }
 
-        protected override void OnInitialized()
+        protected async override Task OnInitializedAsync()
         {
-            base.OnInitialized();
+            await base.OnInitializedAsync();
+
+            if (!await JSRuntime.InvokeAsync<bool>("getOSFilesLoadedPromise"))
+            {
+                throw new InvalidOperationException("Failed to initialize OpenSilver. Check your browser's console for error details.");
+            }
+
             Cshtml5Initializer.Initialize(new UnmarshalledJavaScriptExecutionHandler(JSRuntime));
             Program.RunApplication();
         }
