@@ -28,10 +28,10 @@ jobs:
         uses: microsoft/setup-msbuild@v1.1
       - name: Inject slug/short variables
         uses: rlespinasse/github-slug-action@v3.x
-      - name: Install .NET 7
+      - name: Install .NET 8
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: '7.0.*'
+          dotnet-version: '8.0.*'
       - name: Clone OpenSilver Showcase
         uses: actions/checkout@v2
         with:
