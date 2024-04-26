@@ -2,13 +2,13 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net7.0-windows</TargetFramework>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <OutputPath>bin/$(Configuration)_cs</OutputPath>
     <IntermediateOutputPath>obj/$(Configuration)_cs</IntermediateOutputPath>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="OpenSilver.Simulator" Version="2.1.0" />
+    <PackageReference Include="OpenSilver.Simulator" Version="2.2.0-preview-2024-04-26-095706-591b44f5" />
   </ItemGroup>
 
   <ItemGroup>
