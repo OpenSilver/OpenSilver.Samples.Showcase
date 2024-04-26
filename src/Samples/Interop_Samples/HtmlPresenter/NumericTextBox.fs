@@ -3,6 +3,7 @@
 open CSHTML5
 open CSHTML5.Native.Html.Controls
 open System
+open System.Windows.Controls
 
 type NumericTextBox() as this =
     inherit HtmlPresenter()
@@ -11,6 +12,7 @@ type NumericTextBox() as this =
 
     do
         this.Html <- @"<input type=""number"" pattern=""[0-9]*"" style=""width:100%;height:100%"">"
+        this.ScrollMode <- ScrollMode.Disabled
         this.Loaded.Add(fun _ -> this.NumericTextBox_Loaded())
 
     member this.Value

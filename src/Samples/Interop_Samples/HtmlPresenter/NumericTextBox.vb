@@ -1,4 +1,5 @@
 ﻿Imports CSHTML5.Native.Html.Controls
+Imports System.Windows.Controls
 
 Namespace Global.TestNumericTextBox
     Public Class NumericTextBox
@@ -7,6 +8,8 @@ Namespace Global.TestNumericTextBox
 
         Public Sub New()
             Html = "<input type=""number"" pattern=""[0-9]*"" style=""width:100%;height:100%"">"
+
+            ScrollMode = ScrollMode.Disabled
 
             AddHandler Loaded, AddressOf NumericTextBox_Loaded
         End Sub

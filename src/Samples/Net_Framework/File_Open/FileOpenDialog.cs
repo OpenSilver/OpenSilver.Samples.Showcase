@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Windows;
+using System.Windows.Controls;
 
 //------------------------------------
 // This is an extension for C#/XAML for OpenSilver (https://opensilver.net)
@@ -49,6 +50,8 @@ namespace OpenSilver.Extensions.FileOpenDialog
             ResultKind = FileOpenDialog.ResultKind.Text; //Note: this is to set the default value of the property.
 
             Html = "<input type='file'>";
+
+            ScrollMode = ScrollMode.Disabled;
 
             this.Loaded += ControlForDisplayingAFileOpenDialog_Loaded;
         }

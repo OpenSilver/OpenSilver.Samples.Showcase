@@ -2,6 +2,7 @@
 
 open System
 open System.Windows
+open System.Windows.Controls
 open CSHTML5.Native.Html.Controls
 open OpenSilver
 
@@ -64,6 +65,8 @@ type ControlForDisplayingTheFileOpenDialog() as this =
         this.ResultKind <- ResultKind.Text
 
         this.Html <- "<input type='file'>"
+
+        this.ScrollMode <- ScrollMode.Disabled
 
         this.Loaded.Add(fun args -> this.ControlForDisplayingAFileOpenDialog_Loaded(args))
 

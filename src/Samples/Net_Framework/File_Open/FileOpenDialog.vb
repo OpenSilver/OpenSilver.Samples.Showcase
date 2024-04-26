@@ -1,5 +1,6 @@
 ﻿Imports CSHTML5.Native.Html.Controls
 Imports System.Windows
+Imports System.Windows.Controls
 
 '------------------------------------
 ' This is an extension for C#/XAML for OpenSilver (https://opensilver.net)
@@ -45,6 +46,8 @@ Namespace Global.OpenSilver.Extensions.FileOpenDialog
             ResultKind = ResultKind.Text 'Note: this is to set the default value of the property.
 
             Html = "<input type='file'>"
+
+            ScrollMode = ScrollMode.Disabled
 
             AddHandler Loaded, AddressOf ControlForDisplayingAFileOpenDialog_Loaded
         End Sub

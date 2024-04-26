@@ -1,5 +1,6 @@
 ﻿using CSHTML5.Native.Html.Controls;
 using System;
+using System.Windows.Controls;
 
 namespace TestNumericTextBox
 {
@@ -10,6 +11,8 @@ namespace TestNumericTextBox
         public NumericTextBox()
         {
             this.Html = @"<input type=""number"" pattern=""[0-9]*"" style=""width:100%;height:100%"">";
+
+            this.ScrollMode = ScrollMode.Disabled;
 
             this.Loaded += NumericTextBox_Loaded;
         }

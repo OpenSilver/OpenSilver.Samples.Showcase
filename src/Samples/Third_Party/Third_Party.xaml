@@ -11,7 +11,7 @@
     <StackPanel Margin="0,0,20,20">
       <TextBlock Text="Third-Party Components" Foreground="#FF2299A1" Style="{StaticResource PageHeader_Style}"/>
 
-      <native:HtmlPresenter>
+      <native:HtmlPresenter ScrollMode="Disabled">
         <ul style="font-size:1.4em; margin: -10px 10px;">
           <li style="margin-top:10px;">Telerik UI for Silverlight* (<a href="https://doc.opensilver.net/documentation/3rd-party-libraries/telerik.html"  style="margin-top:10px;">Doc</a>|<a href="https://opensilvertelerik.azurewebsites.net/?alpha-20-rev-2021-08-04">Demo</a>)</li>
           <li style="margin-top:10px;"> Telerik Kendo UI* (via JavaScript interop)       </li>
