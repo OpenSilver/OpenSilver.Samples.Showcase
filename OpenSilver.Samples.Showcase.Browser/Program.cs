@@ -16,6 +16,9 @@ namespace OpenSilver.Samples.Showcase.Browser
 
             builder.Services.AddTransient(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
+            // For blazor components
+            OpenSilver.Compatibility.Blazor.Initializer.Initialize(builder);
+
             var host = builder.Build();
             await host.RunAsync();
         }
