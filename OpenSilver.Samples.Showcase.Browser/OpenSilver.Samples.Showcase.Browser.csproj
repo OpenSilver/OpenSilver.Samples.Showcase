@@ -20,6 +20,12 @@
   </ItemGroup>
 
   <ItemGroup>
+	<BlazorWebAssemblyLazyLoad Include="OpenSilver.Samples.Showcase.Radzen.wasm" />
+    <BlazorWebAssemblyLazyLoad Include="Radzen.Blazor.wasm" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OpenSilver.Samples.Showcase.Radzen\OpenSilver.Samples.Showcase.Radzen.csproj" />
     <ProjectReference Include="..\src\OpenSilver.Samples.Showcase.csproj" />
   </ItemGroup>
 
