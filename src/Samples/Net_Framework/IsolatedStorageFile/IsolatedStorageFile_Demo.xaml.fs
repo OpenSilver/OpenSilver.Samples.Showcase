@@ -14,18 +14,7 @@ type IsolatedStorageFile_Demo() as this =
     let IsRunningFromLocalFileSystemOnInternetExplorer() =
         Convert.ToBoolean(Interop.ExecuteJavaScript(@"window.IE_VERSION && document.location.protocol === ""file:"""))
 
-    let DisplayWarningIfRunningFromLocalFileSystemOnInternetExplorer() =
-        // When running inside Internet Explorer or Edge, the HTML5
-        // Storage API is available only if the URL starts with http
-        // or https. This method will display a message to the user
-        // to inform her about this.
-        if CSharpXamlForHtml5.Environment.IsRunningInJavaScript then
-            // Execute a piece of JavaScript code:
-            if IsRunningFromLocalFileSystemOnInternetExplorer() then
-                MessageBox.Show("The local storage - used to persist data - is not available on Internet Explorer or Edge when running the website from the local file system (i.e., the URL starts with 'c:\' or 'file:///'). To solve the problem, please run the website from a web server instead (i.e., the URL must start with 'http://' or 'https://') or test the local storage open a different browser.") |> ignore
-                true
-            else false
-        else false
+    let DisplayWarningIfRunningFromLocalFileSystemOnInternetExplorer() = false
 
     do
         this.InitializeComponent()

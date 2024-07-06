@@ -1,4 +1,5 @@
-﻿Imports CSHTML5.Native.Html.Controls
+﻿Imports CSHTML5.Internal
+Imports CSHTML5.Native.Html.Controls
 Imports System.Windows
 Imports System.Windows.Controls
 
@@ -135,7 +136,7 @@ Namespace Global.OpenSilver.Extensions.FileOpenDialog
 
         Private Shared Sub Filter_Changed(ByVal d As DependencyObject, ByVal e As DependencyPropertyChangedEventArgs)
             Dim control = CType(d, ControlForDisplayingTheFileOpenDialog)
-            If CSharpXamlForHtml5.DomManagement.IsControlInVisualTree(control) Then
+            If INTERNAL_VisualTreeManager.IsElementInVisualTree(control) Then
                 control.SetFilter(If(e.NewValue, "").ToString())
             End If
         End Sub

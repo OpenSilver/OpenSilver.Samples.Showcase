@@ -49,11 +49,7 @@ Namespace Global.OpenSilver.Extensions.FileSystem
         End Function
 
         Private Shared Async Function Initialize() As Task(Of Boolean)
-#If OPENSILVER Then
-#Else
-            if (OpenSilver.Interop.IsRunningInTheSimulator)
-#End If
-            If Interop.IsRunningInTheSimulator_WorkAround Then
+            If OpenSilver.Interop.IsRunningInTheSimulator Then
                 MessageBox.Show("Saving files is currently not supported in the Simulator. Please run in the browser instead.")
                 Return False
             End If

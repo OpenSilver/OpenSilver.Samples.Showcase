@@ -62,11 +62,7 @@ namespace OpenSilver.Extensions.FileSystem
 
         static async Task<bool> Initialize()
         {
-#if OPENSILVER
-            if (OpenSilver.Interop.IsRunningInTheSimulator_WorkAround)
-#else
             if (OpenSilver.Interop.IsRunningInTheSimulator)
-#endif
             {
                 MessageBox.Show("Saving files is currently not supported in the Simulator. Please run in the browser instead.");
                 return false;

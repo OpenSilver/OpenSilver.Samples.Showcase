@@ -14,9 +14,6 @@
         <Setter Property="VerticalContentAlignment" Value="Stretch"/>
         <Setter Property="Margin" Value="0,0,5,0"/>
         <Setter Property="Padding" Value="6,0,6,3"/>
-        <Setter Property="SelectedBackground" Value="White"/>
-        <Setter Property="SelectedForeground" Value="Black"/>
-        <Setter Property="SelectedAccent" Value="Blue"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="TabItem">
@@ -43,13 +40,13 @@
                                 x:Name="TemplateTopSelected" Visibility="Collapsed"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="1,0,1,0" 
-                                Background="{TemplateBinding SelectedBackground}"
+                                Background="White"
                                 CornerRadius="3,3,0,0"
                                 Cursor="Arrow">
                             <StackPanel>
-                                <Border Height="3" CornerRadius="3,3,0,0" Background="{TemplateBinding SelectedAccent}"/>
+                                <Border Height="3" CornerRadius="3,3,0,0" Background="Blue"/>
                                 <ContentControl x:Name="HeaderTopSelected"
-                                            Foreground="{TemplateBinding SelectedForeground}" 
+                                            Foreground="Black" 
                                             Margin="{TemplateBinding Padding}"
                                             />
                             </StackPanel>

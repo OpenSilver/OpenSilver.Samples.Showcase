@@ -22,11 +22,7 @@ type HtmlCanvas_Demo() as this =
 
     member private this.HtmlCanvas_Demo_Loaded(sender: obj, e: RoutedEventArgs) =
         async {
-#if OPENSILVER
-            if not OpenSilver.Interop.IsRunningInTheSimulator_WorkAround then
-#else
             if not OpenSilver.Interop.IsRunningInTheSimulator then
-#endif
                 // Load the initial sprites:
                 this.ComboBoxToChooseNumberOfSprites.SelectedIndex <- 1 // This will raise the "SelectionChanged" event, which loads the sprites.
 

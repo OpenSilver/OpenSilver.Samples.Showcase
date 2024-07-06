@@ -26,11 +26,7 @@ namespace OpenSilver.Samples.Showcase
 
         private async void HtmlCanvas_Demo_Loaded(object sender, RoutedEventArgs e)
         {
-#if OPENSILVER
-            if (!OpenSilver.Interop.IsRunningInTheSimulator_WorkAround)
-#else
             if (!OpenSilver.Interop.IsRunningInTheSimulator)
-#endif
             {
                 // Load the initial sprites:
                 ComboBoxToChooseNumberOfSprites.SelectedIndex = 1; // This will raise the "SelectionChanged" event, which loads the sprites.

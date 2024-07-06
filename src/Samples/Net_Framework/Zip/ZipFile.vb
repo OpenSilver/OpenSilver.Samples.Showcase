@@ -45,11 +45,7 @@ Namespace Global.Ionic.Zip
 
             Initialize()
 
-#If OPENSILVER Then
-#Else
-            if (!OpenSilver.Interop.IsRunningInTheSimulator)
-#End If
-            If Not OpenSilver.Interop.IsRunningInTheSimulator_WorkAround Then
+            If Not OpenSilver.Interop.IsRunningInTheSimulator Then
                 Interop.ExecuteJavaScript("$0.file($1, $2)", _referenceToJavaScriptZipInstance, fileName, fileContent)
             Else
                 Dim length = fileContent.Length

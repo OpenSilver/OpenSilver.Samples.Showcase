@@ -5,6 +5,7 @@ open System.Windows
 open System.Windows.Controls
 open CSHTML5.Native.Html.Controls
 open OpenSilver
+open CSHTML5.Internal
 
 //------------------------------------
 // This is an extension for C#/XAML for OpenSilver (https://opensilver.net)
@@ -154,5 +155,5 @@ type ControlForDisplayingTheFileOpenDialog() as this =
 
     static member Filter_Changed (d: DependencyObject) (newValue : obj) =
         let control = d :?> ControlForDisplayingTheFileOpenDialog
-        if CSharpXamlForHtml5.DomManagement.IsControlInVisualTree(control) then
+        if INTERNAL_VisualTreeManager.IsElementInVisualTree(control) then
             control.SetFilter(if isNull(newValue) then "" else newValue :?> string)

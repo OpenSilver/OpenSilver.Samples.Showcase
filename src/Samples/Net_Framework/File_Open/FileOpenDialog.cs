@@ -1,4 +1,5 @@
-﻿using CSHTML5.Native.Html.Controls;
+﻿using CSHTML5.Internal;
+using CSHTML5.Native.Html.Controls;
 using System;
 using System.Collections.Generic;
 using System.Windows;
@@ -151,7 +152,7 @@ namespace OpenSilver.Extensions.FileOpenDialog
         static void Filter_Changed(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var control = (ControlForDisplayingTheFileOpenDialog)d;
-            if (CSharpXamlForHtml5.DomManagement.IsControlInVisualTree(control))
+            if (INTERNAL_VisualTreeManager.IsElementInVisualTree(control))
             {
                 control.SetFilter((e.NewValue ?? "").ToString());
             }

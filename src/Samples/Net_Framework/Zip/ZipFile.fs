@@ -46,11 +46,7 @@ type ZipFile() =
             do! ZipFile.LoadJSLibrary()
             this.Initialize()
 
-#if OPENSILVER
-            if not (Interop.IsRunningInTheSimulator_WorkAround) then
-#else
             if not (Interop.IsRunningInTheSimulator) then
-#endif
                 Interop.ExecuteJavaScript(@"$0.file($1, $2)", this._referenceToJavaScriptZipInstance, fileName, fileContent) |> ignore
             else
                 let length = fileContent.Length

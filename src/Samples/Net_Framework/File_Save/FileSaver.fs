@@ -31,11 +31,7 @@ type FileSaver() =
 
     static member private initialize () : Async<bool> =
         async {
-#if OPENSILVER
-            if OpenSilver.Interop.IsRunningInTheSimulator_WorkAround then
-#else
-            if isRunningInSimulator = OpenSilver.Interop.IsRunningInTheSimulator then
-#endif
+            if OpenSilver.Interop.IsRunningInTheSimulator then
                 MessageBox.Show("Saving files is currently not supported in the Simulator. Please run in the browser instead.") |> ignore
                 return false
             else
