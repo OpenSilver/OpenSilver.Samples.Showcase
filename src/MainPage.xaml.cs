@@ -121,11 +121,6 @@ namespace OpenSilver.Samples.Showcase
         {
             NavigateToPage("/Third_Party");
         }
-
-        void Radzen_Click(object sender, RoutedEventArgs e)
-        {
-            NavigateToPage("/Blazor_Radzen");
-        }        
         #endregion
 
         void NavigateToPage(string targetUri)
