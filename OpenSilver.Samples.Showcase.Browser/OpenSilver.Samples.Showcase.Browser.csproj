@@ -17,11 +17,12 @@
     <PackageReference Include="OpenSilver" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.0" PrivateAssets="all" />
+    <PackageReference Include="Radzen.Blazor" Version="4.30.2" />
   </ItemGroup>
 
   <ItemGroup>
-	<BlazorWebAssemblyLazyLoad Include="OpenSilver.Samples.Showcase.Radzen.wasm" />
-    <BlazorWebAssemblyLazyLoad Include="Radzen.Blazor.wasm" />
+	<!--<BlazorWebAssemblyLazyLoad Include="OpenSilver.Samples.Showcase.Radzen.wasm" />-->
+    <!--<BlazorWebAssemblyLazyLoad Include="Radzen.Blazor.wasm" />-->
   </ItemGroup>
 
   <ItemGroup>

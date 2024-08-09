@@ -1,0 +1,71 @@
+﻿<UserControl
+    x:Class="OpenSilver.Samples.Showcase.RadzenHtmlEditor_Demo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:razor="clr-namespace:OpenSilver.Compatibility.Blazor;assembly=OpenSilver.Compatibility.Blazor"
+    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+
+    <ContentControl Style="{StaticResource Card_Style}" Width="440">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl Content="HtmlEditor" Foreground="#FFFF81E3" Background="#FFCB9DC1" Style="{StaticResource HeaderControl_Style}"/>
+            <StackPanel Grid.Row="1">
+                <razor:RazorComponent Margin="0,20,0,0" Height="360">
+                    @using Radzen
+@using Radzen.Blazor
+
+                    <RadzenHtmlEditor bind-Value=@htmlValue style="height: 300px;" Input=@OnInput Change=@OnChange Paste=@OnPaste Execute=@OnExecute UploadUrl="upload/image" />
+
+<!--<EventConsole @ref=@console />-->
+
+@code {
+    string htmlValue = "<h1>Hello World!</h1>";
+
+    void OnPaste(global::Radzen.HtmlEditorPasteEventArgs args)
+    {
+        //console.Log($"Paste: {args.Html}");
+    }
+
+    void OnChange(string html)
+    {
+        //console.Log($"Change: {html}");
+    }
+
+    void OnInput(string html)
+    {
+        //console.Log($"Input: {html}");
+    }
+
+    void OnExecute(global::Radzen.HtmlEditorExecuteEventArgs args)
+    {
+        //console.Log($"Execute: {args.CommandName}");
+    }
+}
+
+
+                    @code {
+
+    void OnColorChange(string value)
+    {
+        //this.OnColorChange2(value);
+    }
+}
+                </razor:RazorComponent>
+            </StackPanel>
+            <!--<local:ViewSourceButton Grid.Row="2" Background="#FFFF81E3">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo RelativePath="OpenSilver.Samples.Showcase.Radzen/Samples"
+                                                FileName="RadzenDataGrid_Demo.xaml" />
+                    <local:ViewSourceButtonInfo RelativePath="OpenSilver.Samples.Showcase.Radzen/Samples"
+                                                FileName="RadzenDataGrid_Demo.xaml.cs" />
+                    <local:ViewSourceButtonInfo RelativePath="OpenSilver.Samples.Showcase.Radzen/Samples"
+                                                FileName="Employees.cs" />
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>-->
+        </Grid>
+        </ContentControl>
+</UserControl>

@@ -34,11 +34,10 @@ namespace OpenSilver.Samples.Showcase
             try
             {
                 await LazyLoadingHelper.AssemblyLoader.LoadAssembliesAsync(
-                    new string[] { 
-                        "Radzen.Blazor.wasm", 
-                        "OpenSilver.Samples.Showcase.Radzen.wasm" 
+                    new string[] {
+                        //"Radzen.Blazor.wasm",
+                        //"OpenSilver.Samples.Showcase.Radzen.wasm"
                     });
-
                 Assembly assemblySample = LazyLoadingHelper.GetLoadedAssembly("OpenSilver.Samples.Showcase.Radzen");
                 Type type = assemblySample.GetType("OpenSilver.Samples.Showcase.Radzen_Sample");
                 object content = Activator.CreateInstance(type);

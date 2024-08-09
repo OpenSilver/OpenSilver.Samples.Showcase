@@ -1,0 +1,45 @@
+﻿<UserControl
+    x:Class="OpenSilver.Samples.Showcase.RadzenAutoComplete_Demo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:razor="clr-namespace:OpenSilver.Compatibility.Blazor;assembly=OpenSilver.Compatibility.Blazor"
+    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+
+
+    <ContentControl Style="{StaticResource Card_Style}" Width="300">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl Content="AutoComplete" Foreground="#FFFF81E3" Background="#FFCB9DC1" Style="{StaticResource HeaderControl_Style}"/>
+            <StackPanel Grid.Row="1">
+                <razor:RazorComponent Margin="0,20,0,0" Height="100">
+                    @using Radzen
+@using Radzen.Blazor
+                    <RadzenAutoComplete x:Name="testName" @bind-Value="@companyName" Data="{Binding Words, Mode=TwoWay}" FilterCaseSensitivity="global::Radzen.FilterCaseSensitivity.CaseInsensitive"/>
+                            <!--<RadzenText TextStyle="TextStyle.Body2">Start typing e.g. France
+        @((MarkupString)(!string.IsNullOrEmpty(companyName) ? $", Value is:<strong>{companyName}</strong> " : ""))
+                            </RadzenText>-->
+
+                    @code {
+    string companyName;
+
+}
+                </razor:RazorComponent>
+                <TextBlock x:Name="ValueTextBlock" Text="{Binding Value, ElementName=testName}"/>
+            </StackPanel>
+            <!--<local:ViewSourceButton Grid.Row="2" Background="#FFFF81E3">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo RelativePath="OpenSilver.Samples.Showcase.Radzen/Samples"
+                                                FileName="RadzenDataGrid_Demo.xaml" />
+                    <local:ViewSourceButtonInfo RelativePath="OpenSilver.Samples.Showcase.Radzen/Samples"
+                                                FileName="RadzenDataGrid_Demo.xaml.cs" />
+                    <local:ViewSourceButtonInfo RelativePath="OpenSilver.Samples.Showcase.Radzen/Samples"
+                                                FileName="Employees.cs" />
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>-->
+        </Grid>
+    </ContentControl>
+</UserControl>

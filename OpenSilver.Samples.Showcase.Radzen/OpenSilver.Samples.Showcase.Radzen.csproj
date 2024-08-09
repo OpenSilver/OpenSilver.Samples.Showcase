@@ -7,23 +7,80 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Samples\AutoComplete\RadzenAutoComplete_Demo.xaml.cs" />
+    <Compile Include="Samples\Button\RadzenButton_Demo.xaml.cs" />
+    <Compile Include="Samples\CheckBoxList\RadzenCheckBoxList_Demo.xaml.cs" />
+    <Compile Include="Samples\CheckBox\RadzenCheckBox_Demo.xaml.cs" />
+    <Compile Include="Samples\ColorPicker\RadzenColorPicker_Demo.xaml.cs" />
+    <Compile Include="Samples\DatePicker\RadzenDatePicker_Demo.xaml.cs" />
+    <Compile Include="Samples\DropDownDataGrid\RadzenDropDownDataGrid_Demo.xaml.cs" />
+    <Compile Include="Samples\DropDown\RadzenDropDown_Demo.xaml.cs" />
+    <Compile Include="Samples\FormField\RadzenFormField_Demo.xaml.cs" />
+    <Compile Include="Samples\HtmlEditor\RadzenHtmlEditor_Demo.xaml.cs" />
+    <Compile Include="Samples\ListBox\RadzenListBox_Demo.xaml.cs" />
+    <Compile Include="Samples\Mask\RadzenMask_Demo.xaml.cs" />
     <Compile Include="Samples\Radzen_Sample.xaml.cs" />
     <Compile Include="Samples\DataGrid\RadzenDataGrid_Demo.xaml.cs" />
     <Compile Include="Samples\Employees.cs" />
+    <Compile Include="Samples\Scheduler\Appointment.cs" />
+    <Compile Include="Samples\Scheduler\RadzenScheduler_Demo.xaml.cs" />
+    <Compile Include="Samples\ToggleButton\RadzenToggleButton_Demo.xaml.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="OpenSilver" Version="2.2.0" />
     <PackageReference Include="OpenSilver.ControlsKit" Version="2.2.0" />
-    <PackageReference Include="OpenSilver.Compatibility.Blazor" Version="1.1.0-private-1" />
+    <PackageReference Include="OpenSilver.Compatibility.Blazor" Version="1.1.0-private-2024-07-15" />
     <PackageReference Include="Radzen.Blazor" Version="4.30.2" />
   </ItemGroup>
 
   <ItemGroup>
+    <Page Include="Samples\AutoComplete\RadzenAutoComplete_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Button\RadzenButton_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\CheckBoxList\RadzenCheckBoxList_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\CheckBox\RadzenCheckBox_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\ColorPicker\RadzenColorPicker_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\DatePicker\RadzenDatePicker_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\DropDownDataGrid\RadzenDropDownDataGrid_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\DropDown\RadzenDropDown_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\FormField\RadzenFormField_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\HtmlEditor\RadzenHtmlEditor_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\ListBox\RadzenListBox_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Mask\RadzenMask_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\Radzen_Sample.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\DataGrid\RadzenDataGrid_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Scheduler\RadzenScheduler_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\ToggleButton\RadzenToggleButton_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
@@ -34,6 +91,62 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Samples\Radzen_Sample.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Samples\ColorPicker\RadzenColorPicker_Demo.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Samples\Scheduler\RadzenScheduler_Demo.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Samples\HtmlEditor\RadzenHtmlEditor_Demo.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Samples\AutoComplete\RadzenAutoComplete_Demo.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Samples\Button\RadzenButton_Demo.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Samples\ToggleButton\RadzenToggleButton_Demo.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Samples\CheckBox\RadzenCheckBox_Demo.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Samples\CheckBoxList\RadzenCheckBoxList_Demo.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Samples\DatePicker\RadzenDatepicker_Demo.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Samples\DropDown\RadzenDropDown_Demo.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Samples\DropDownDataGrid\RadzenDropDownDataGrid_Demo.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Samples\FormField\RadzenFormField_Demo.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Samples\ListBox\RadzenListBox_Demo.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Samples\Mask\RadzenMask_Demo.xaml" />
   </ItemGroup>
 
 </Project>

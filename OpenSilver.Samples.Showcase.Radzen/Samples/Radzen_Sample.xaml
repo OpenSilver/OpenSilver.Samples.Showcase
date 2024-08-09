@@ -8,6 +8,20 @@
         <TextBlock Text="Radzen Componenents" Style="{StaticResource PageHeader_Style}"/>
         <controlskit:StaggeredPanel ProgressiveRenderingChunkSize="2">
             <local:RadzenDataGrid_Demo HorizontalAlignment="Center"/>
+            <local:RadzenColorPicker_Demo HorizontalAlignment="Center"/>
+            <local:RadzenScheduler_Demo HorizontalAlignment="Center" />
+            <local:RadzenHtmlEditor_Demo HorizontalAlignment="Center" />
+            <local:RadzenAutoComplete_Demo HorizontalAlignment="Center" />
+            <local:RadzenButton_Demo HorizontalAlignment="Center" />
+            <local:RadzenToggleButton_Demo HorizontalAlignment="Center" />
+            <local:RadzenCheckBox_Demo HorizontalAlignment="Center" />
+            <local:RadzenCheckBoxList_Demo HorizontalAlignment="Center" />
+            <local:RadzenDatePicker_Demo HorizontalAlignment="Center" />
+            <local:RadzenDropDown_Demo HorizontalAlignment="Center" />
+            <local:RadzenDropDownDataGrid_Demo HorizontalAlignment="Center" />
+            <local:RadzenFormField_Demo HorizontalAlignment="Center" />
+            <local:RadzenListBox_Demo HorizontalAlignment="Center" />
+            <local:RadzenMask_Demo HorizontalAlignment="Center" />
         </controlskit:StaggeredPanel>
     </StackPanel>
 
