@@ -22,6 +22,10 @@
             <local:RadzenFormField_Demo HorizontalAlignment="Center" />
             <local:RadzenListBox_Demo HorizontalAlignment="Center" />
             <local:RadzenMask_Demo HorizontalAlignment="Center" />
+            <local:RadzenNumeric_Demo HorizontalAlignment="Center" />
+            <local:RadzenPassword_Demo HorizontalAlignment="Center" />
+            <local:RadzenRadioButtonList_Demo HorizontalAlignment="Center" />
+            <local:RadzenRating_Demo HorizontalAlignment="Center" />
         </controlskit:StaggeredPanel>
     </StackPanel>
 

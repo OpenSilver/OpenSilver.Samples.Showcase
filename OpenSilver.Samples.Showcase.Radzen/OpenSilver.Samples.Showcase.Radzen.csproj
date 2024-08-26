@@ -19,9 +19,13 @@
     <Compile Include="Samples\HtmlEditor\RadzenHtmlEditor_Demo.xaml.cs" />
     <Compile Include="Samples\ListBox\RadzenListBox_Demo.xaml.cs" />
     <Compile Include="Samples\Mask\RadzenMask_Demo.xaml.cs" />
+    <Compile Include="Samples\Numeric\RadzenNumeric_Demo.xaml.cs" />
+    <Compile Include="Samples\Password\RadzenPassword_Demo.xaml.cs" />
+    <Compile Include="Samples\RadioButtonList\RadzenRadioButtonList_Demo.xaml.cs" />
     <Compile Include="Samples\Radzen_Sample.xaml.cs" />
     <Compile Include="Samples\DataGrid\RadzenDataGrid_Demo.xaml.cs" />
     <Compile Include="Samples\Employees.cs" />
+    <Compile Include="Samples\Rating\RadzenRating_Demo.xaml.cs" />
     <Compile Include="Samples\Scheduler\Appointment.cs" />
     <Compile Include="Samples\Scheduler\RadzenScheduler_Demo.xaml.cs" />
     <Compile Include="Samples\ToggleButton\RadzenToggleButton_Demo.xaml.cs" />
@@ -71,10 +75,22 @@
     <Page Include="Samples\Mask\RadzenMask_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\Numeric\RadzenNumeric_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Password\RadzenPassword_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\RadioButtonList\RadzenRadioButtonList_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\Radzen_Sample.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\DataGrid\RadzenDataGrid_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Rating\RadzenRating_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\Scheduler\RadzenScheduler_Demo.xaml">
@@ -147,6 +163,22 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Samples\Mask\RadzenMask_Demo.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Samples\Numeric\RadzenNumeric_Demo.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Samples\Password\RadzenPassword_Demo.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Samples\RadioButtonList\RadzenRadioButtonList_Demo.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Samples\Rating\RadzenRating_Demo.xaml" />
   </ItemGroup>
 
 </Project>
