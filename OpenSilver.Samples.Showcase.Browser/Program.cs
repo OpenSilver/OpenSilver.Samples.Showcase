@@ -1,9 +1,6 @@
-﻿using System;
-using System.Net.Http;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.DependencyInjection;
-using System.Windows;
 
 namespace OpenSilver.Samples.Showcase.Browser
 {
@@ -13,19 +10,8 @@ namespace OpenSilver.Samples.Showcase.Browser
         {
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.RootComponents.Add<App>("#app");
-
-            builder.Services.AddTransient(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
-
             var host = builder.Build();
             await host.RunAsync();
-        }
-
-        public static void RunApplication()
-        {
-            Application.RunApplication(() =>
-            {
-                var app = new OpenSilver.Samples.Showcase.App();
-            });
         }
     }
 }
