@@ -13,7 +13,7 @@
             <ContentControl Content="AOT Compilation" Foreground="#FFFCAB54" Background="#FFCCA376" Style="{StaticResource HeaderControl_Style}"/>
             <TextBlock Grid.Row="1" Foreground="Gray" FontSize="14" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top">
             Ahead-of-time (AOT) compilation will let your application run much faster.
-                You can enable it by following <Hyperlink NavigateUri="https://doc.opensilver.net/documentation/how-to-topics/aot-compilation.html">these steps</Hyperlink>.
+                You can enable it by following <Hyperlink NavigateUri="https://doc.opensilver.net/documentation/how-to-topics/aot-compilation.html" TargetName="_blank">these steps</Hyperlink>.
             </TextBlock>
         </Grid>
     </ContentControl>

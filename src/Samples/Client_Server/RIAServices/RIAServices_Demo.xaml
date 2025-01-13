@@ -13,7 +13,7 @@
             <ContentControl Content="RIA Services" Foreground="#FFFCAB54" Background="#FFCCA376" Style="{StaticResource HeaderControl_Style}"/>
             <TextBlock Grid.Row="1" Foreground="Gray" FontSize="14" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top">
                 You can make complex client/server Business Applications very quickly using RIA Services.
-                See tutorial and documentation <Hyperlink NavigateUri="https://doc.opensilver.net/documentation/general/business-app.html">here</Hyperlink>.
+                See tutorial and documentation <Hyperlink NavigateUri="https://doc.opensilver.net/documentation/general/business-app.html" TargetName="_blank">here</Hyperlink>.
             </TextBlock>
         </Grid>
     </ContentControl>

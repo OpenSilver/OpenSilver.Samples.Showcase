@@ -21,7 +21,7 @@
                     <Run FontFamily="Papyrus">font family</Run>,
                     <Run FontSize="18">bigger font</Run>,
                     <Run Foreground="Red">colors</Run>,
-                    and even <Hyperlink NavigateUri="https://www.OpenSilver.net">hyperlinks</Hyperlink>.
+                    and even <Hyperlink NavigateUri="https://www.OpenSilver.net" TargetName="_blank">hyperlinks</Hyperlink>.
                 </TextBlock>
                 <TextBlock Text="Some ways to deal with overflows:" Foreground="#FF2DBF9E" FontSize="16" TextWrapping="Wrap" TextAlignment="Center" Margin="0,10,0,0"/>
                 <TextBlock Text="TextWrapping - here is some text" Foreground="#FF2DBF9E" FontSize="16" TextWrapping="Wrap" TextAlignment="Center"/>
