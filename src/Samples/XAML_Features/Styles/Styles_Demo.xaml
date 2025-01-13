@@ -13,7 +13,7 @@
             </Grid.RowDefinitions>
             <ContentControl Content="Styles" Foreground="#FF3ED4B2" Background="#FF8FCBBE" Style="{StaticResource HeaderControl_Style}"/>
             <TextBlock Grid.Row="1" Foreground="Gray" FontSize="16" TextWrapping="Wrap" TextAlignment="Center" Margin="0,0,0,15">
-                To understand styles better, read <Hyperlink NavigateUri="https://learn.microsoft.com/en-us/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms603146(v=vs.95)">this</Hyperlink> (interesting keywords are "scoping rules", "implicit", and "BasedOn").
+                To understand styles better, read <Hyperlink NavigateUri="https://learn.microsoft.com/en-us/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms603146(v=vs.95)" TargetName="_blank">this</Hyperlink> (interesting keywords are "scoping rules", "implicit", and "BasedOn").
             </TextBlock>
 
             <StackPanel Grid.Row="2">
