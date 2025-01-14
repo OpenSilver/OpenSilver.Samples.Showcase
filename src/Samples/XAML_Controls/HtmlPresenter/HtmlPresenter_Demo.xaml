@@ -13,9 +13,7 @@
       <ContentControl Content="HtmlPresenter" Foreground="#FFA05BFF" Background="#FFA793C3" Style="{StaticResource HeaderControl_Style}"/>
       <ScrollViewer Background="White" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Grid.Row="1" Height="200">
 
-        <native:HtmlPresenter xmlns:native="using:CSHTML5.Native.Html.Controls"
-                              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                              mc:Ignorable="native"
+        <native:HtmlPresenter xmlns:native="clr-namespace:CSHTML5.Native.Html.Controls;assembly=OpenSilver"
                               ScrollMode="Disabled">
 
           <style type='text/css'>
