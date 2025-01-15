@@ -763,8 +763,4 @@
   <ItemGroup>
     <EmbeddedResource Include="Other\SampleResourceFile.resx" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Third_Party_Resources\" />
-  </ItemGroup>
 </Project>
