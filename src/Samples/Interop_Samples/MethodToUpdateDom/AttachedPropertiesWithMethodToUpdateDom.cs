@@ -42,7 +42,7 @@ namespace OpenSilver.Samples.Showcase
                 // Set the "Aria Label" attribute on the <div> via a JavaScript interop call:
                 OpenSilver.Interop.ExecuteJavaScript("$0.setAttribute('aria-label', $1)", div, value);
 
-                //Note: for documentation related to the commands above, please refer to https://opensilver.net/links/how-to-call-javascript.aspx
+                //Note: for documentation related to the commands above, please refer to https://doc.opensilver.net/documentation/in-depth-topics/call-javascript-from-csharp.html
             }
         }
 
