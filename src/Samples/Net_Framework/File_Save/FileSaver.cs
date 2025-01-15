@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Threading.Tasks;
-using System.Windows;
 
 //------------------------------------
 // This is an extension for C#/XAML for OpenSilver (https://opensilver.net)
@@ -62,12 +61,6 @@ namespace OpenSilver.Extensions.FileSystem
 
         static async Task<bool> Initialize()
         {
-            if (OpenSilver.Interop.IsRunningInTheSimulator)
-            {
-                MessageBox.Show("Saving files is currently not supported in the Simulator. Please run in the browser instead.");
-                return false;
-            }
-
             if (!JSLibraryWasLoaded)
             {
                 await OpenSilver.Interop.LoadJavaScriptFile("https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2014-11-29/FileSaver.min.js");

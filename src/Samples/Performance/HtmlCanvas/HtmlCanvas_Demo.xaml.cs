@@ -26,21 +26,13 @@ namespace OpenSilver.Samples.Showcase
 
         private async void HtmlCanvas_Demo_Loaded(object sender, RoutedEventArgs e)
         {
-            if (!OpenSilver.Interop.IsRunningInTheSimulator)
-            {
-                // Load the initial sprites:
-                ComboBoxToChooseNumberOfSprites.SelectedIndex = 1; // This will raise the "SelectionChanged" event, which loads the sprites.
+            // Load the initial sprites:
+            ComboBoxToChooseNumberOfSprites.SelectedIndex = 1; // This will raise the "SelectionChanged" event, which loads the sprites.
 
-                // Start the main drawing loop:
-                _lastTickCount = Environment.TickCount;
-                _loaded = true;
-                await MainLoopAsync();
-            }
-            else
-            {
-                this.Visibility = Visibility.Collapsed;
-                MessageBox.Show("The Simulator is too slow to run this demo. Please run the demo in the browser instead.");
-            }
+            // Start the main drawing loop:
+            _lastTickCount = Environment.TickCount;
+            _loaded = true;
+            await MainLoopAsync();
         }
 
         void HtmlCanvas_Demo_Unloaded(object sender, RoutedEventArgs e)
