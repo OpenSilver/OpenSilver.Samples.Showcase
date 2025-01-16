@@ -15,8 +15,8 @@ namespace OpenSilver.Samples.Showcase
             var div = Interop.GetDiv(this);
 
             Interop.ExecuteJavaScript("$0.style.textDecoration = 'line-through'", div);
-            
-            // Note: refer to the documentation at: http://opensilver.net/links/how-to-call-javascript.aspx
+
+            // Note: refer to the documentation at: https://doc.opensilver.net/documentation/in-depth-topics/call-javascript-from-csharp.html
         }
     }
 }

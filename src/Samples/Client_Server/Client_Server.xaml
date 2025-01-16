@@ -13,7 +13,7 @@
             <local:WebSockets_Demo HorizontalAlignment="Center"/>
             <local:RIAServices_Demo HorizontalAlignment="Center"/>
             <local:JSONP_Demo HorizontalAlignment="Center"/>
-            <local:jQueryAjax_Demo HorizontalAlignment="Center"/>
+            <!--<local:jQueryAjax_Demo HorizontalAlignment="Center"/>-->
         </controlskit:StaggeredPanel>
     </StackPanel>
 </UserControl>

@@ -13,11 +13,11 @@
 
       <native:HtmlPresenter ScrollMode="Disabled">
         <ul style="font-size:1.4em; margin: -10px 10px;">
-          <li style="margin-top:10px;">Telerik UI for Silverlight* (<a href="https://doc.opensilver.net/documentation/3rd-party-libraries/telerik.html"  style="margin-top:10px;">Doc</a>|<a href="https://opensilvertelerik.azurewebsites.net/?alpha-20-rev-2021-08-04">Demo</a>)</li>
+          <li style="margin-top:10px;">Telerik UI for Silverlight* (<a href="https://doc.opensilver.net/documentation/3rd-party-libraries/telerik.html"  style="margin-top:10px;">Doc</a>|<a href="https://opensilverdemos.azurewebsites.net/telerikshowcase/release">Demo</a>)</li>
           <li style="margin-top:10px;"> Telerik Kendo UI* (via JavaScript interop)       </li>
           <li style="margin-top:10px;">DevExpress for Silverlight* (<a href="https://doc.opensilver.net/documentation/3rd-party-libraries/devexpress.html">Doc</a>)</li>
           <li style="margin-top:10px;"> DevExpress DevExtreme*                           </li>
-          <li style="margin-top:10px;">SignalR (<a href="https://github.com/OpenSilver/OpenSilver.Extensions.SignalR/" style="margin-top:10px;">Demo</a>)</li>
+          <li style="margin-top:10px;">SignalR</li>
           <li style="margin-top:10px;">Syncfusion Essential JS* (via JavaScript interop) (<a href="https://doc.opensilver.net/documentation/3rd-party-libraries/syncfusion.html">Doc</a>)</li>
           <li style="margin-top:10px;">Open RIA Services (<a href="https://doc.opensilver.net/documentation/3rd-party-libraries/ria-services.html" style="margin-top:10px;">Doc</a>)</li>
           <li style="margin-top:10px;">PRISM (<a href="https://doc.opensilver.net/documentation/3rd-party-libraries/prism.html" style="margin-top:10px;">Doc</a>)</li>
