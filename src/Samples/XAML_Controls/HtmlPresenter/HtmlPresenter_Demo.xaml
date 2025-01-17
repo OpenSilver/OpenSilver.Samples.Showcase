@@ -15,7 +15,7 @@
 
         <native:HtmlPresenter xmlns:native="clr-namespace:CSHTML5.Native.Html.Controls;assembly=OpenSilver"
                               ScrollMode="Disabled">
-
+          <![CDATA[
           <style type='text/css'>
             .sampleTable table {
             border-collapse: collapse;
@@ -117,6 +117,7 @@
                   </tr>
             </table>
           </div>
+          ]]>
         </native:HtmlPresenter>
 
       </ScrollViewer>
