@@ -48,7 +48,7 @@
                                 <DataTemplate>
                                     <ContentControl Style="{StaticResource MaterialDesign_ContentControl_Style_NoDropShadow}" Content="..." Background="Transparent" MouseLeftButtonDown="DisplayContextMenu_Click" VerticalContentAlignment="Center">
                                         <ContentControl.ContextMenu>
-                                            <ContextMenu Style="{StaticResource MaterialDesign_ContextMenu_Style}" BorderThickness="0" Closed="ContextMenu_Closed">
+                                            <ContextMenu Style="{StaticResource MaterialDesign_ContextMenu_Style}" BorderThickness="0">
                                                 <MenuItem Header="Edit Draft" Style="{StaticResource MaterialDesign_ContextMenuItem_Style}" Click="MenuEditDraft_Click"/>
                                                 <MenuItem Header="Remove Draft" Style="{StaticResource MaterialDesign_ContextMenuItem_Style}" Click="MenuRemoveDraft_Click"/>
                                             </ContextMenu>
@@ -425,7 +425,7 @@
                 <TextBlock Text="ContextMenu:" FontSize="16" Margin="0,10,10,0"/>
                 <ContentControl Style="{StaticResource MaterialDesign_RoundContentControl_Style}" Content="..." Margin="5" Width="40" Height="40" MouseLeftButtonDown="DisplayContextMenu_Click">
                     <ContentControl.ContextMenu>
-                        <ContextMenu Style="{StaticResource MaterialDesign_ContextMenu_Style}" BorderThickness="0" Closed="ContextMenu_Closed">
+                        <ContextMenu Style="{StaticResource MaterialDesign_ContextMenu_Style}" BorderThickness="0">
                             <MenuItem Header="Menu Item 1" Style="{StaticResource MaterialDesign_ContextMenuItem_Style}"/>
                             <MenuItem Header="Menu Item 2" Style="{StaticResource MaterialDesign_ContextMenuItem_Style}"/>
                             <MenuItem Header="Menu Item 3" Style="{StaticResource MaterialDesign_ContextMenuItem_Style}"/>

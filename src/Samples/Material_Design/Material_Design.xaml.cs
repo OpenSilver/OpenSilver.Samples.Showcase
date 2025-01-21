@@ -21,16 +21,7 @@ namespace OpenSilver.Samples.Showcase
         private void DisplayContextMenu_Click(object sender, MouseButtonEventArgs e)
         {
             ContentControl cc = (ContentControl)sender;
-            cc.ContextMenu.HorizontalOffset = e.GetPosition(null).X;
-            cc.ContextMenu.VerticalOffset = e.GetPosition(null).Y;
             cc.ContextMenu.IsOpen = true;
-        }
-
-        private void ContextMenu_Closed(object sender, RoutedEventArgs e)
-        {
-            ContextMenu contextMenu = (ContextMenu)sender;
-            contextMenu.HorizontalOffset = 0;
-            contextMenu.VerticalOffset = 0;
         }
 
         private void ButtonShowChildWindow_Click(object sender, RoutedEventArgs e)
