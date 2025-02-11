@@ -243,5 +243,5 @@ ModelManifest.xml
 .fake/
 
 src/Third_Party_Resources/
-OpenSilver.Samples.Showcase.Browser/wwwroot/resources/*
-OpenSilver.Samples.Showcase.Browser/wwwroot/libs/*
+**/wwwroot/resources/*
+**/wwwroot/libs/*
