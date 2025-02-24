@@ -27,7 +27,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ContentControl">
-                        <Border Background="White" CornerRadius="6">
+                        <Border Background="{DynamicResource Theme_ContainerBackgroundBrush}" CornerRadius="6">
                             <Border.Effect>
                                 <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="10" Opacity="0.1" />
                             </Border.Effect>
@@ -124,7 +124,7 @@
                         <Border x:Name="InnerBorder"
                                 CornerRadius="10"
                                 Margin="-1"
-                                Background="{TemplateBinding Foreground}">
+                                Background="{DynamicResource Theme_ControlBackgroundBrush}">
                             <TextBlock x:Name="MainTextBlock" Text="{TemplateBinding Content}" Foreground="{TemplateBinding Background}" Margin="{TemplateBinding Padding}" TextDecorations="Underline" FontWeight="Bold"/>
                             <!--<ContentPresenter x:Name="ContentPresenter"
                                                 ContentTemplate="{TemplateBinding ContentTemplate}"

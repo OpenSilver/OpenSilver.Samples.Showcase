@@ -3,6 +3,8 @@ using System.Windows.Browser;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using OpenSilver.Themes.Modern;
+using System.Windows.Controls.Primitives;
 
 namespace OpenSilver.Samples.Showcase
 {
@@ -20,6 +22,7 @@ namespace OpenSilver.Samples.Showcase
             Current = this;
             Loaded += MainPage_Loaded;
             SizeChanged += MainPage_SizeChanged;
+            Theming.Theme th = new Themes.Modern.ModernTheme();
 
 #if OPENSILVER
             TitleImage.Visibility = Visibility.Collapsed;
@@ -299,5 +302,22 @@ namespace OpenSilver.Samples.Showcase
         }
 
         #endregion
+
+        private void ToggleThemeButton_Click(object sender, RoutedEventArgs e)
+        {
+            bool isDark = (sender as ToggleButton)?.IsChecked == true;
+            ModernTheme theme = Application.Current.Theme as ModernTheme;
+            if (theme != null)
+            {
+                if (isDark)
+                {
+                    theme.CurrentPalette = ModernTheme.Palettes.Dark;
+                }
+                else
+                {
+                    theme.CurrentPalette = ModernTheme.Palettes.Light;
+                }
+            }
+        }
     }
 }

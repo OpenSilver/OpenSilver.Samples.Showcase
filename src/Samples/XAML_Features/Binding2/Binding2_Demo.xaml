@@ -18,10 +18,10 @@
                     <StackPanel.Resources>
                         <local:KilometersToMilesConverter x:Key="KilometersToMilesConverter"/>
                     </StackPanel.Resources>
-                    <TextBlock Text="Kilometers:" VerticalAlignment="Top" Foreground="Black"/>
-                    <TextBox x:Name="KilometersTextBox" Width="60" Margin="5,0,0,0" Background="#FFEEEEEE"/>
-                    <TextBlock Text="Miles:"  Margin="5,0,0,0" VerticalAlignment="Top" Foreground="Black"/>
-                    <TextBox x:Name="MilesTextBox" Width="60" Margin="5,0,0,0" Text="{Binding ElementName=KilometersTextBox, Path=Text, Mode=TwoWay, Converter={StaticResource KilometersToMilesConverter}}" Background="#FFEEEEEE"/>
+                    <TextBlock Text="Kilometers:" VerticalAlignment="Center"/>
+                    <TextBox x:Name="KilometersTextBox" Width="60" Margin="5,0,0,0"/>
+                    <TextBlock Text="Miles:"  Margin="5,0,0,0" VerticalAlignment="Center"/>
+                    <TextBox x:Name="MilesTextBox" Width="60" Margin="5,0,0,0" Text="{Binding ElementName=KilometersTextBox, Path=Text, Mode=TwoWay, Converter={StaticResource KilometersToMilesConverter}}"/>
                 </StackPanel>
             </StackPanel>
             <local:ViewSourceButton Grid.Row="2"

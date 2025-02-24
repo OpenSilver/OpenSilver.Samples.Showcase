@@ -19,7 +19,7 @@
         </DataTemplate>
     </UserControl.Resources>
 
-    <ContentControl Style="{StaticResource Card_Style}" Width="180">
+    <ContentControl Style="{StaticResource Card_Style}" Width="200">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>

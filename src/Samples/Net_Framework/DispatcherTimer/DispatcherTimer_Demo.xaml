@@ -14,7 +14,7 @@
             <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,5,0,0">
                 <Button Content="Start" VerticalAlignment="Top" Click="ButtonToStartTimer_Click"/>
                 <Button Content="Stop" Margin="5,0,0,0" VerticalAlignment="Top" Click="ButtonToStopTimer_Click"/>
-                <TextBlock x:Name="CounterTextBlock" Margin="10,0,0,0" FontSize="26" Foreground="#FF414141" VerticalAlignment="Top"/>
+                <TextBlock x:Name="CounterTextBlock" Margin="10,0,0,0" FontSize="26" VerticalAlignment="Top"/>
             </StackPanel>
             <local:ViewSourceButton Grid.Row="2"
                                     Background="#FCAB54">

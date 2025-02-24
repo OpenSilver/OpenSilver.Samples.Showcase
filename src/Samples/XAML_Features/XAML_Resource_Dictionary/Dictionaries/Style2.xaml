@@ -5,7 +5,7 @@
 
     <Style x:Key="ButtonStyle2" TargetType="Button">
         <Setter Property="Background" Value="Green"/>
-        <Setter Property="Foreground" Value="Green"/>
+        <Setter Property="Foreground" Value="Purple"/>
     </Style>
 
 </ResourceDictionary>

@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
     <ContentControl Style="{StaticResource Card_Style}"
-                    Width="180"
-                    Height="200">
+                    Width="240"
+                    Height="250">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />

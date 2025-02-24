@@ -3,7 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
-    <ContentControl Style="{StaticResource Card_Style}" Width="180">
+    <ContentControl Style="{StaticResource Card_Style}" Width="200">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -31,11 +31,11 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Bottom" Grid.Row="1">
                     <Button Content="X" Click="OnClearInkPad" IsEnabled="{Binding CanClearStrokes, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
-                    <Button Click="OnUndoLastStroke" IsEnabled="{Binding CanUndoStroke, RelativeSource={RelativeSource AncestorType=UserControl}}">
-                        <Path Stroke="Black" StrokeThickness="2" Data="M2,10 C7,0 12,0 22,10 M6,9 L2,10 0,7"/>
+                    <Button Click="OnUndoLastStroke" IsEnabled="{Binding CanUndoStroke, RelativeSource={RelativeSource AncestorType=UserControl}}" Margin="2,0">
+                        <Path Stroke="White" StrokeThickness="2" Data="M2,10 C7,0 12,0 22,10 M6,9 L2,10 0,7"/>
                     </Button>
                     <Button Click="OnRedoLastStroke" IsEnabled="{Binding CanRedoStroke, RelativeSource={RelativeSource AncestorType=UserControl}}">
-                        <Path Stroke="Black" StrokeThickness="2" Data="M20,10 C15,0 10,0 0,10 M16,9 L20,10 22,7"/>
+                        <Path Stroke="White" StrokeThickness="2" Data="M20,10 C15,0 10,0 0,10 M16,9 L20,10 22,7"/>
                     </Button>
                 </StackPanel>
             </Grid>

@@ -3,7 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
-    <ContentControl Style="{StaticResource Card_Style}" Width="180">
+    <ContentControl Style="{StaticResource Card_Style}" Width="200">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -12,10 +12,10 @@
             </Grid.RowDefinitions>
             <ContentControl Content="ToggleButton" Foreground="#FF7EE476" Background="#FFA9D4A4" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,15,0,15">
-                <ToggleButton Content="One" Margin="5,0,0,0" Background="#FFc1f3be" Padding="4,4,4,4"/>
-                <ToggleButton Content="Two" Margin="5,0,0,0" Background="#FFc1f3be" Padding="4,4,4,4"/>
-                <ToggleButton Content="Three" Margin="5,0,0,0" Background="#FFc1f3be" Padding="4,4,4,4"/>
-                <ToggleButton Content="Four" Margin="5,0,0,0" Background="#FFc1f3be" Padding="4,4,4,4"/>
+                <ToggleButton Content="One" Margin="5,0,0,0" Background="#2cc922" Padding="4,4,4,4"/>
+                <ToggleButton Content="Two" Margin="5,0,0,0" Background="#2cc922" Padding="4,4,4,4"/>
+                <ToggleButton Content="Three" Margin="5,0,0,0" Background="#2cc922" Padding="4,4,4,4"/>
+                <ToggleButton Content="Four" Margin="5,0,0,0" Background="#2cc922" Padding="4,4,4,4"/>
             </StackPanel>
             <local:ViewSourceButton Grid.Row="2"
                                     Background="#FF7EE476">

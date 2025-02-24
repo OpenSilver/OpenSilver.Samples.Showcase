@@ -3,14 +3,14 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
-    <ContentControl Style="{StaticResource Card_Style}" Width="180">
+    <ContentControl Style="{StaticResource Card_Style}" Width="200">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <Border Grid.Row="1" CornerRadius="5" Background="LightGray" Padding="10" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Border Grid.Row="1" CornerRadius="5" Background="DarkCyan" Padding="10" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Border.ContextMenu>
                     <ContextMenu>
                         <MenuItem Header="Menu Item 1" Click="MenuItem1_Click">

@@ -13,16 +13,16 @@
             </Grid.RowDefinitions>
             <ContentControl Content="DropShadowEffect" Foreground="#ff70db70" Background="#FFB2BD69" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1">
-                <TextBlock Foreground="#FF808080" TextWrapping="Wrap" Width="220" FontSize="14" HorizontalAlignment="Center" TextAlignment="Center">
+                <TextBlock x:Name="ShadowedText" TextWrapping="Wrap" Width="220" FontSize="14" HorizontalAlignment="Center" TextAlignment="Center">
                 This text has some shadows<LineBreak/>
                 applied on it.
                     <TextBlock.Effect>
-                        <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="10" Opacity="0.3" />
+                        <DropShadowEffect ShadowDepth="3" Color="{DynamicResource Theme_TextColor}" BlurRadius="10" Opacity="0.3" />
                     </TextBlock.Effect>
                 </TextBlock>
-                <Rectangle Grid.Row="1" Fill="White" Width="40" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,0">
+                <Rectangle x:Name="ShadowedRectangle" Grid.Row="1" Fill="White" Width="40" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,0">
                     <Rectangle.Effect>
-                        <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="10" Opacity="0.3" />
+                        <DropShadowEffect ShadowDepth="3" Color="{DynamicResource Theme_TextColor}" BlurRadius="10" Opacity="0.3" />
                     </Rectangle.Effect>
                 </Rectangle>
             </StackPanel>
