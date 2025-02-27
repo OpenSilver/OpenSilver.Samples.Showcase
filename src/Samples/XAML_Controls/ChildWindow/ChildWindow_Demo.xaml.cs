@@ -1,10 +1,12 @@
-﻿using PreviewOnWinRT;
+﻿using OpenSilver.Samples.Showcase.Search;
+using PreviewOnWinRT;
 using System;
 using System.Windows;
 using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("layout", "window", "popup", "modal", "dialog")]
     public partial class ChildWindow_Demo : UserControl
     {
         public ChildWindow_Demo()

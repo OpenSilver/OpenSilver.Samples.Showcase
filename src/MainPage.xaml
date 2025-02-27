@@ -204,6 +204,7 @@ Value="1" />
               </StackPanel>
             </Expander>
             <Button Content="Home" Click="ButtonHome_Click" HorizontalContentAlignment="Left" FontSize="16" Margin="0,3,0,0" Padding="20,3,3,3"/>
+            <Button Content="Search" Click="ButtonSearch_Click" HorizontalContentAlignment="Left" FontSize="16" Margin="0,3,0,0" Padding="20,3,3,3"/>
           </StackPanel>
         </ScrollViewer>
       </Border>
@@ -222,6 +223,9 @@ Value="1" />
               <sdk:UriMapping
                 Uri="/Welcome"
                 MappedUri="/Samples/Welcome.xaml"/>
+              <sdk:UriMapping
+                Uri="/Search"
+                MappedUri="/Samples/Search.xaml"/>
               <sdk:UriMapping
                 Uri="/Third_Party/{path}"
                 MappedUri="/Samples/Third_Party/{path}.xaml"/>

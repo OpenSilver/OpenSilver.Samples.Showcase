@@ -1,7 +1,9 @@
-﻿using System.Windows.Controls;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("data", "MVVM", "binding", "UI")]
     public partial class Binding2_Demo : UserControl
     {
         public Binding2_Demo()

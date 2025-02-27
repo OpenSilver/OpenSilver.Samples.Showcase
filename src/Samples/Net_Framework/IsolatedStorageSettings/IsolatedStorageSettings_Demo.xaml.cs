@@ -1,10 +1,12 @@
-﻿using System;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System;
 using System.IO.IsolatedStorage;
 using System.Windows;
 using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("storage", "settings", "local storage", "persistence", "user data")]
     public partial class IsolatedStorageSettings_Demo : UserControl
     {
         public IsolatedStorageSettings_Demo()

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
@@ -8,6 +9,7 @@ using System.Windows.Input;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("drawing", "inking", "pen input", "sketch", "graphics")]
     public partial class InkPresenter_Demo : UserControl, INotifyPropertyChanged
     {
 

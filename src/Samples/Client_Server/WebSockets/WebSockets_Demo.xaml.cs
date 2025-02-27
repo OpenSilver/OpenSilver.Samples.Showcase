@@ -1,8 +1,10 @@
-﻿using System.Windows;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("WebSockets", "network", "communication", "web")]
     public partial class WebSockets_Demo : UserControl
     {
         public WebSockets_Demo()

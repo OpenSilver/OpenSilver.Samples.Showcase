@@ -1,9 +1,11 @@
-﻿using System.Collections.ObjectModel;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("data", "MVVM", "binding", "UI")]
     public partial class Binding3_Demo : UserControl
     {
         ObservableCollection<Person> _listOfContacts;

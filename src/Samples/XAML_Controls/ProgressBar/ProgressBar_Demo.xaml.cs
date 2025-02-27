@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -12,6 +13,7 @@ using System.Windows.Navigation;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("progress", "indicator", "loading", "status", "UI")]
     public partial class ProgressBar_Demo : UserControl
     {
         public ProgressBar_Demo()

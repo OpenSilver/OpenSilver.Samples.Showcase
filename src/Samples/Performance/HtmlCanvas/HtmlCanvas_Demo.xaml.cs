@@ -3,9 +3,11 @@ using System.Threading.Tasks;
 using TestPerformance;
 using System.Windows;
 using System.Windows.Controls;
+using OpenSilver.Samples.Showcase.Search;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("performance", "HTML canvas", "sprites", "FPS", "graphics")]
     public partial class HtmlCanvas_Demo : UserControl
     {
         int _lastTickCount = 0;

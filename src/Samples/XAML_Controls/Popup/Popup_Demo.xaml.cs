@@ -1,8 +1,10 @@
-﻿using System.Windows;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("popup", "modal", "window", "overlay", "UI")]
     public partial class Popup_Demo : UserControl
     {
         public Popup_Demo()

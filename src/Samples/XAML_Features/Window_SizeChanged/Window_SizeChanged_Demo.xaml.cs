@@ -1,8 +1,10 @@
-﻿using System.Windows;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("window", "resize", "event", "UI")]
     public partial class Window_SizeChanged_Demo : UserControl
     {
         public Window_SizeChanged_Demo()

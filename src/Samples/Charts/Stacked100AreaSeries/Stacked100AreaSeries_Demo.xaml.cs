@@ -1,4 +1,5 @@
 ﻿using OpenSilver.Samples.Showcase.Other;
+using OpenSilver.Samples.Showcase.Search;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -15,6 +16,7 @@ using System.Windows.Navigation;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("chart", "data", "visualization", "graph", "plot", "area", "stacked", "points")]
     public partial class Stacked100AreaSeries_Demo : UserControl
     {
         public Stacked100AreaSeries_Demo()

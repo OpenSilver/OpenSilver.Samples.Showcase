@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -14,6 +15,7 @@ using System.Windows.Threading;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("loading", "busy", "indicator", "status", "UI")]
     public partial class BusyIndicator_Demo : UserControl
     {
         DispatcherTimer timer;

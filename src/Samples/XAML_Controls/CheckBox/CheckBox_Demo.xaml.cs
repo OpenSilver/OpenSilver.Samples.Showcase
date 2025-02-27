@@ -1,8 +1,10 @@
-﻿using System.Windows;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("input", "toggle", "boolean", "selection", "form")]
     public partial class CheckBox_Demo : UserControl
     {
         public CheckBox_Demo()

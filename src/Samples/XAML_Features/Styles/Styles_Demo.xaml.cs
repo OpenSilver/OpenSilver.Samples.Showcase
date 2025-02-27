@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -12,6 +13,7 @@ using System.Windows.Navigation;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("styling", "XAML", "themes", "customization", "UI")]
     public partial class Styles_Demo : UserControl
     {
         public Styles_Demo()

@@ -1,9 +1,11 @@
-﻿using System.Threading.Tasks;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("asynchronous", "await", "task", "thread")]
     public partial class AsyncAwait_Demo : UserControl
     {
         public AsyncAwait_Demo()

@@ -1,9 +1,11 @@
-﻿using System.Windows;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("animation", "effects", "motion", "behavior")]
     public partial class Animations_Demo : UserControl
     {
         public Animations_Demo()

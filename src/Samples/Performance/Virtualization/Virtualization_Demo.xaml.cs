@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -14,6 +15,7 @@ using System.Windows.Navigation;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("performance", "virtualization", "lazy loading", "memory optimization", "UI")]
     public partial class Virtualization_Demo : UserControl
     {
         public List<Tuple<string, string>> colors = GetColorList();

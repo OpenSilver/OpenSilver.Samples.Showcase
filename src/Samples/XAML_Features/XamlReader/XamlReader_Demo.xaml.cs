@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -15,6 +16,7 @@ using static System.Net.WebRequestMethods;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("XAML", "runtime", "parsing", "UI", "dynamic")]
     public partial class XamlReader_Demo : UserControl
     {
         public XamlReader_Demo()

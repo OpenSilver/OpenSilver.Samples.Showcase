@@ -14,9 +14,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Navigation;
 using OpenSilver.Controls;
+using OpenSilver.Samples.Showcase.Search;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("file", "dialog", "filesystem", "browse")]
     public partial class OpenFileDialog_Demo : UserControl
     {
         private Controls.OpenFileDialog openFileDialog1;

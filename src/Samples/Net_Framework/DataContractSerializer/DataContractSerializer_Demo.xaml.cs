@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System;
 using System.IO;
 using System.Runtime.Serialization;
 using System.Windows;
@@ -6,6 +7,7 @@ using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("serialization", "deserialization", "data contract", "XML", "data exchange")]
     public partial class DataContractSerializer_Demo : UserControl
     {
         private ClassToSerialize _classToSerialize;

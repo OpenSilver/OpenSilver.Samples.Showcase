@@ -1,8 +1,10 @@
-﻿using System.Windows;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("media", "video", "audio", "multimedia", "playback", "play")]
     public partial class MediaElement_Demo : UserControl
     {
         public MediaElement_Demo()

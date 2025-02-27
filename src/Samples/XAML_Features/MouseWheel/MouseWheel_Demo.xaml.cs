@@ -1,8 +1,10 @@
-﻿using System.Windows.Controls;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("mouse", "scrolling", "interaction", "input", "event")]
     public partial class MouseWheel_Demo : UserControl
     {
         public MouseWheel_Demo()

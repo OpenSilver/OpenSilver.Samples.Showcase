@@ -1,4 +1,5 @@
-﻿using ServiceReference1;
+﻿using OpenSilver.Samples.Showcase.Search;
+using ServiceReference1;
 using System;
 using System.ServiceModel;
 using System.Threading.Tasks;
@@ -7,6 +8,7 @@ using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("WCF", "SOAP", "web", "service", "communication", "network")]
     public partial class WCF_SOAP_Demo : UserControl
     {
         Guid _ownerId;

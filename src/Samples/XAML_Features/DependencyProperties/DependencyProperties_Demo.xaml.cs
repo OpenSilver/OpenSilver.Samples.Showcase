@@ -1,8 +1,10 @@
-﻿using System.Windows;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("properties", "dependency property", "binding", "XAML", "UI")]
     public partial class DependencyProperties_Demo : UserControl
     {
         public DependencyProperties_Demo()

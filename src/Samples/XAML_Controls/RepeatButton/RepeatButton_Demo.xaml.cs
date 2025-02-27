@@ -1,10 +1,12 @@
-﻿using System;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("input", "repeat", "button", "click", "control")]
     public partial class RepeatButton_Demo : UserControl
     {
         public RepeatButton_Demo()

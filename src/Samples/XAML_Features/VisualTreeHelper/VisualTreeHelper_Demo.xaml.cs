@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -6,6 +7,7 @@ using System.Windows.Media;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("visual tree", "UI elements", "XAML", "hierarchy", "UI")]
     public partial class VisualTreeHelper_Demo : UserControl
     {
         public VisualTreeHelper_Demo()

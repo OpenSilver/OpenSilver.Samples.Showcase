@@ -1,10 +1,12 @@
-﻿using System;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("input", "keypress", "event", "interaction")]
     public partial class Keyboard_Demo : UserControl
     {
         public Keyboard_Demo()

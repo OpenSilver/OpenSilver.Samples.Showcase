@@ -1,9 +1,11 @@
-﻿using System.Text.RegularExpressions;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("regular expressions", "pattern", "match", "string processing", "search", "validation")]
     public partial class Regex_Demo : UserControl
     {
         public Regex_Demo()

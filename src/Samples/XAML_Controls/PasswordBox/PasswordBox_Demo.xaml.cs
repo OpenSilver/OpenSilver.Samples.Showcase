@@ -1,8 +1,10 @@
-﻿using System.Windows;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("input", "password", "text", "entry", "form")]
     public partial class PasswordBox_Demo : UserControl
     {
         public PasswordBox_Demo()

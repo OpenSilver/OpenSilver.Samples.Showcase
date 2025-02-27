@@ -1,9 +1,11 @@
-﻿using PreviewOnWinRT;
+﻿using OpenSilver.Samples.Showcase.Search;
+using PreviewOnWinRT;
 using System.Windows;
 using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("layout", "window", "popup", "nonmodal", "non-modal", "dialog")]
     public partial class NonModalChildWindow_Demo : UserControl
     {
         int _n;

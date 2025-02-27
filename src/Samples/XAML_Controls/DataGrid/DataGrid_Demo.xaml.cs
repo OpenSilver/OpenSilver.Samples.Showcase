@@ -1,7 +1,9 @@
-﻿using System.Windows.Controls;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("data", "display", "grid", "table", "binding")]
     public partial class DataGrid_Demo : UserControl
     {
         public DataGrid_Demo()

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -13,6 +14,7 @@ using System.Windows.Navigation;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("bitmap", "image", "graphics", "drawing", "rendering")]
     public partial class WriteableBitmap_Demo : UserControl
     {
         public WriteableBitmap_Demo()

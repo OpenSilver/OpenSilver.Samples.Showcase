@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase
 {

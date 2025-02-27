@@ -1,8 +1,10 @@
-﻿using System.Windows;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("DOM", "JavaScript", "update", "HTML", "interop")]
     public partial class MethodToUpdateDom_Demo : UserControl
     {
         public MethodToUpdateDom_Demo()

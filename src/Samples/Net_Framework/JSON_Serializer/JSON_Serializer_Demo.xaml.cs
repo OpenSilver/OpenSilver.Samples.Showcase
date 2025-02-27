@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using OpenSilver.Samples.Showcase.Search;
 using System;
 using System.Collections.Generic;
 using System.Windows;
@@ -6,6 +7,7 @@ using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("JSON", "serialization", "deserialization", "serialize")]
     public partial class JSON_Serializer_Demo : UserControl
     {
         private string _json;

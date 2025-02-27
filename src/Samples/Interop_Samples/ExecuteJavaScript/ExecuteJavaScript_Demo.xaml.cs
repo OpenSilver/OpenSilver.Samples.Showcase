@@ -1,8 +1,10 @@
-﻿using System.Windows;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("JavaScript", "interop", "browser", "script")]
     public partial class ExecuteJavaScript_Demo : UserControl
     {
         public ExecuteJavaScript_Demo()

@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -6,6 +7,7 @@ using System.Windows.Media;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("coordinates", "mouse", "hit test", "interaction")]
     public partial class FindElementsInHostCoordinates_Demo : UserControl
     {
         private int _highestZIndex;

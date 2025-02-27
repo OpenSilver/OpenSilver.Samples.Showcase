@@ -2,9 +2,11 @@
 using System.Windows.Input;
 using System.Windows;
 using System.Windows.Controls;
+using OpenSilver.Samples.Showcase.Search;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("interaction", "triggers", "behavior", "events", "UI")]
     public partial class InteractivityTriggers_Demo : UserControl
     {
         public InteractivityTriggers_Demo()

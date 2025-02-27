@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
@@ -6,6 +7,7 @@ using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("resource", "stream", "file access", "embedded resources", "load")]
     public partial class GetRessourceStream_Demo : UserControl
     {
         Uri currentUri;

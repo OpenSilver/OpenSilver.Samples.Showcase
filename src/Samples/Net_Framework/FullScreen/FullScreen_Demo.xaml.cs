@@ -1,8 +1,10 @@
-﻿using System.Windows;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("fullscreen", "UI", "display", "window", "maximize")]
     public partial class FullScreen_Demo : UserControl
     {
         public FullScreen_Demo()

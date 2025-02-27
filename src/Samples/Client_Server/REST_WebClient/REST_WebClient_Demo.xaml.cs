@@ -1,4 +1,5 @@
 ﻿using DotNetForHtml5.Showcase.SampleRestWebService.Models;
+using OpenSilver.Samples.Showcase.Search;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,6 +11,7 @@ using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("REST", "API", "WebClient", "HTTP", "web", "service")]
     public partial class REST_WebClient_Demo : UserControl
     {
         Guid _ownerId;

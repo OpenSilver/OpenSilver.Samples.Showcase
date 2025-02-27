@@ -1,4 +1,5 @@
 ﻿using OpenSilver.Samples.Showcase.Other;
+using OpenSilver.Samples.Showcase.Search;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,6 +14,7 @@ using System.Windows.Navigation;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("chart", "data", "visualization", "graph", "plot", "line", "points")]
     public partial class LineSeries_Demo : UserControl
     {
         public LineSeries_Demo()

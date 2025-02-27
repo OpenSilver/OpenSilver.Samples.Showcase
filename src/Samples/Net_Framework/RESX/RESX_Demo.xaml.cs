@@ -1,8 +1,10 @@
-﻿using System.Windows;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("resources", "localization", "RESX", "translation")]
     public partial class RESX_Demo : UserControl
     {
         public RESX_Demo()

@@ -1,9 +1,11 @@
-﻿using System.Windows;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("interaction", "drag", "drop", "UI")]
     public partial class Drag_And_Drop_Demo : UserControl
     {
         bool _isPointerCaptured;

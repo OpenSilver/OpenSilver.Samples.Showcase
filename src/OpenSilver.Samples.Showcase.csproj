@@ -72,6 +72,9 @@
     <Page Include="Samples\Performance\Virtualization\Virtualization_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\Search.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\XAML_Controls\BusyIndicator\BusyIndicator_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -100,6 +103,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Compile Include="Other\Elements.cs" />
+    <Compile Include="Other\Internals\Search\SamplesInfoLoader.cs" />
+    <Compile Include="Other\Internals\Search\ControlSearch.cs" />
+    <Compile Include="Other\Internals\Search\SearchableItem.cs" />
+    <Compile Include="Other\Internals\Search\SearchKeywordAttribute.cs" />
     <Compile Include="Other\Leagues\League.cs" />
     <Compile Include="Other\Sales.cs" />
     <Compile Include="Other\SampleResourceFile.Designer.cs" />
@@ -120,6 +127,7 @@
     <Compile Include="Samples\Performance\AOTCompilation\AOT_Demo.xaml.cs" />
     <Compile Include="Samples\Performance\Progressive_Loading\ProgressiveLoading_Demo.xaml.cs" />
     <Compile Include="Samples\Performance\Virtualization\Virtualization_Demo.xaml.cs" />
+    <Compile Include="Samples\Search.xaml.cs" />
     <Compile Include="Samples\XAML_Controls\BusyIndicator\BusyIndicator_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Controls\Calendar\Calendar_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Controls\DataForm\DataForm_Demo.xaml.cs" />

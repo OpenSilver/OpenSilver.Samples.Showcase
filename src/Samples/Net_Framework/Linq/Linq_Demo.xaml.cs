@@ -1,9 +1,11 @@
-﻿using System.Linq;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("query", "queries", "data processing", "collections")]
     public partial class Linq_Demo : UserControl
     {
         public Linq_Demo()

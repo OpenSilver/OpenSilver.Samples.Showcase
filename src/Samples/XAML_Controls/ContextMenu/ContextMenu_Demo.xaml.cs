@@ -1,8 +1,10 @@
-﻿using System.Windows;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("menu", "context", "right-click", "items", "commands", "options", "control")]
     public partial class ContextMenu_Demo : UserControl
     {
         public ContextMenu_Demo()

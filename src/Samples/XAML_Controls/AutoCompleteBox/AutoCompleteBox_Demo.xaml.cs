@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("input", "autocomplete", "auto-complete", "text", "entry", "search")]
     public partial class AutoCompleteBox_Demo : UserControl
     {
         public AutoCompleteBox_Demo()

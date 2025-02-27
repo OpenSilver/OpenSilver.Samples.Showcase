@@ -1,8 +1,10 @@
-﻿using System.Windows;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("HTML", "DOM", "JavaScript", "interop")]
     public partial class GetDiv_Demo : UserControl
     {
         public GetDiv_Demo()

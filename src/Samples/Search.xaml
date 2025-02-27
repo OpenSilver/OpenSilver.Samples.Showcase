@@ -1,0 +1,23 @@
+﻿<UserControl
+    x:Class="OpenSilver.Samples.Showcase.Samples.Search"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controlskit="clr-namespace:OpenSilver.ControlsKit;assembly=OpenSilver.ControlsKit.Controls"
+    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase.Samples">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <TextBox x:Name="SearchField" MinWidth="200" Margin="0,0,5,0" KeyDown="SearchField_KeyDown"/>
+            <Button Click="ButtonSearch_Click" Width="32" Height="32">
+                <Path Stroke="White" Data="M 17 17 A 1 1 0 0 0 -17 -17 A 1 1 0 0 0 17 17 L 52 54" StrokeThickness="2" Stretch="Uniform"/>
+            </Button>
+        </StackPanel>
+        <controlskit:StaggeredPanel Grid.Row="1" ProgressiveRenderingChunkSize="2" x:Name="SamplesContainer">
+            
+        </controlskit:StaggeredPanel>
+    </Grid>
+</UserControl>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System;
 using System.IO;
 using System.IO.IsolatedStorage;
 using System.Text;
@@ -7,6 +8,7 @@ using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("storage", "file system", "sandbox", "local files", "persistence")]
     public partial class IsolatedStorageFile_Demo : UserControl
     {
         public IsolatedStorageFile_Demo()

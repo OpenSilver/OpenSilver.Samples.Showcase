@@ -120,6 +120,11 @@ namespace OpenSilver.Samples.Showcase
             NavigateToPage("/Welcome");
         }
 
+        void ButtonSearch_Click(object sender, RoutedEventArgs e)
+        {
+            NavigateToPage("/Search");
+        }
+
         void ThirdParty_Click(object sender, RoutedEventArgs e)
         {
             NavigateToPage("/Third_Party");

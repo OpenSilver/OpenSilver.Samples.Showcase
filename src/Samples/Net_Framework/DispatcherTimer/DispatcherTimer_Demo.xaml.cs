@@ -1,10 +1,12 @@
-﻿using System;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Threading;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("timer", "interval", "event", "clock")]
     public partial class DispatcherTimer_Demo : UserControl
     {
         DispatcherTimer _dispatcherTimer;

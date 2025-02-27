@@ -2,9 +2,11 @@
 using Ionic.Zip;
 using System.Windows;
 using System.Windows.Controls;
+using OpenSilver.Samples.Showcase.Search;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("compression", "zip", "file", "archive")]
     public partial class Zip_Demo : UserControl
     {
         public Zip_Demo()

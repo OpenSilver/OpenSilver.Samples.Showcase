@@ -1,10 +1,12 @@
-﻿using System;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("input", "form", "data entry", "error handling", "UI")]
     public partial class Validation_Demo : UserControl
     {
         public Validation_Demo()
