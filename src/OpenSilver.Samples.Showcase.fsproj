@@ -98,6 +98,18 @@
     <Compile Include="Other\Internals\ViewSourceButtonInfo.fs" />
     <Compile Include="Other\Internals\ViewSourceButtonHelper.fs" />
     <Compile Include="Other\Internals\ViewSourceButton.fs" />
+    <Page Include="Samples\Maui_Hybrid\Location\Location.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="Samples\Maui_Hybrid\Location\Location.xaml.fs">
+      <DependentUpon>Samples\Maui_Hybrid\Location\Location.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Samples\Maui_Hybrid\Maui_Hybrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="Samples\Maui_Hybrid\Maui_Hybrid.xaml.fs">
+      <DependentUpon>Samples\Maui_Hybrid\Maui_Hybrid.xaml.xaml</DependentUpon>
+    </Compile>
     <Page Include="Samples\XAML_Features\Drag_And_Drop\Drag_And_Drop_Demo_Silverlight.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -101,6 +101,9 @@ type MainPage() as this =
     member this.ThirdParty_Click(sender: obj, e: RoutedEventArgs) =
         this.NavigateToPage("/Third_Party")
 
+    member this.MauiHybrid_Click(sender: obj, e: RoutedEventArgs) =
+        this.NavigateToPage("/Maui_Hybrid")
+
     member private this.ButtonBackwards_Click(sender: obj, e: RoutedEventArgs) =
         if this.PageContainer.CanGoBack then
             this.PageContainer.GoBack()

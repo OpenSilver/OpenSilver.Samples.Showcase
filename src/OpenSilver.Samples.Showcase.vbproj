@@ -53,6 +53,12 @@
     <Page Include="Samples\Client_Server\RIAServices\RIAServices_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\Maui_Hybrid\Location\Location.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Maui_Hybrid\Maui_Hybrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\Net_Framework\InitParams\InitParams_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -118,6 +124,8 @@
     <Compile Include="Samples\Charts\PieSeries\PieSeries_Demo.xaml.vb" />
     <Compile Include="Samples\Charts\ScatterSeries\ScatterSeries_Demo.xaml.vb" />
     <Compile Include="Samples\Client_Server\RIAServices\RIAServices_Demo.xaml.vb" />
+    <Compile Include="Samples\Maui_Hybrid\Location\Location.xaml.vb" />
+    <Compile Include="Samples\Maui_Hybrid\Maui_Hybrid.xaml.vb" />
     <Compile Include="Samples\Net_Framework\InitParams\InitParams_Demo.xaml.vb" />
     <Compile Include="Samples\Net_Framework\OpenFileDialog\OpenFileDialog_Demo.xaml.vb" />
     <Compile Include="Samples\Net_Framework\UnhandledException\UnhandledException_Demo.xaml.vb" />

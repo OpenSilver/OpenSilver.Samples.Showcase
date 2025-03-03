@@ -108,6 +108,10 @@ Namespace Global.OpenSilver.Samples.Showcase
         Private Sub ThirdParty_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
             NavigateToPage("/Third_Party")
         End Sub
+
+        Private Sub MauiHybrid_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
+            NavigateToPage("/Maui_Hybrid")
+        End Sub
 #End Region
 
         Private Sub NavigateToPage(ByVal targetUri As String)

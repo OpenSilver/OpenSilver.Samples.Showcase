@@ -129,6 +129,11 @@ namespace OpenSilver.Samples.Showcase
         {
             NavigateToPage("/Third_Party");
         }
+
+        void MauiHybrid_Click(object sender, RoutedEventArgs e)
+        {
+            NavigateToPage("/Maui_Hybrid");
+        }
         #endregion
 
         void NavigateToPage(string targetUri)
