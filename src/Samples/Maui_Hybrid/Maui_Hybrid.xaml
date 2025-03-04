@@ -8,6 +8,11 @@
         <TextBlock Text="Maui Hybrid" Style="{StaticResource PageHeader_Style}"/>
         <controlskit:StaggeredPanel ProgressiveRenderingChunkSize="2">
             <local:Location HorizontalAlignment="Center"/>
+            <local:Flashlight_Demo HorizontalAlignment="Center"/>
+            <local:Vibration_Demo HorizontalAlignment="Center"/>
+            <local:OrientationSensors_Demo HorizontalAlignment="Center"/>
+            <local:DisplayInfo_Demo HorizontalAlignment="Center"/>
+            <local:Battery_Demo HorizontalAlignment="Center"/>
         </controlskit:StaggeredPanel>
     </StackPanel>
 

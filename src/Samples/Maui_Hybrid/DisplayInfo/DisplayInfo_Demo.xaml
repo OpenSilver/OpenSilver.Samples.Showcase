@@ -1,0 +1,34 @@
+﻿<UserControl
+    x:Class="OpenSilver.Samples.Showcase.DisplayInfo_Demo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+
+    <ContentControl Style="{StaticResource Card_Style}" Width="180">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl Content="Display info" Foreground="#FF3ED49A" Background="#FF92BEAC" Style="{StaticResource HeaderControl_Style}"/>
+            <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Button Content="Get Display information" Click="ButtonGetDisplayInfo_Click"/>
+                <TextBlock x:Name="DisplayInfo" TextWrapping="Wrap"/>
+            </StackPanel>
+            <local:ViewSourceButton Grid.Row="2"
+                         Background="#FF3ED49A">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Maui_Hybrid/DisplayInfo"
+                                     FileName="DisplayInfo_Demo.xaml" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Maui_Hybrid/DisplayInfo"
+                                     FileName="DisplayInfo_Demo.xaml.cs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Maui_Hybrid/DisplayInfo"
+                                     FileName="DisplayInfo_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Maui_Hybrid/DisplayInfo"
+                                     FileName="DisplayInfo_Demo.xaml.fs" />
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
+</UserControl>

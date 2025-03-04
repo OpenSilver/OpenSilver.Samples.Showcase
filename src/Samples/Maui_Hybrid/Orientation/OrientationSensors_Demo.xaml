@@ -1,0 +1,60 @@
+﻿<UserControl
+    x:Class="OpenSilver.Samples.Showcase.OrientationSensors_Demo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+
+    <ContentControl Style="{StaticResource Card_Style}" Width="180">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl Content="Orientation sensors" Foreground="#FF3ED49A" Background="#FF92BEAC" Style="{StaticResource HeaderControl_Style}"/>
+            <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <!--Compass-->
+                <Button Content="Compass on/off" Click="CompassToggleButton_Click"/>
+                <Path Width="20" Height="20" x:Name="CompassPath" Data="M0,5 L3,0 L6,5 M3,0 L3,10" RenderTransformOrigin=".5,.5" Stroke="Black" Stretch="Uniform">
+                    <Path.RenderTransform>
+                        <RotateTransform x:Name="CompassTransform"/>
+                    </Path.RenderTransform>
+                </Path>
+                <!--Accelerometer-->
+                <Button Content="Accelerometer on/off" Click="AccelerometerToggleButton_Click"/>
+                <TextBlock x:Name="AccelX" Text="X = ?"/>
+                <TextBlock x:Name="AccelY" Text="Y = ?"/>
+                <TextBlock x:Name="AccelZ" Text="Z = ?"/>
+                <!--Gyroscope-->
+                <Button Content="Gyroscope on/off" Click="GyroscopeToggleButton_Click"/>
+                <TextBlock x:Name="GyroX" Text="X = ?"/>
+                <TextBlock x:Name="GyroY" Text="Y = ?"/>
+                <TextBlock x:Name="GyroZ" Text="Z = ?"/>
+                <!--Magnetometer-->
+                <Button Content="Magnetometer on/off" Click="MagnetometerToggleButton_Click"/>
+                <TextBlock x:Name="MagnX" Text="X = ?"/>
+                <TextBlock x:Name="MagnY" Text="Y = ?"/>
+                <TextBlock x:Name="MagnZ" Text="Z = ?"/>
+                <!--Orientation-->
+                <Button Content="OrientationSensor on/off" Click="OrientationSensorToggleButton_Click"/>
+                <TextBlock x:Name="OriW" Text="W = ?"/>
+                <TextBlock x:Name="OriX" Text="X = ?"/>
+                <TextBlock x:Name="OriY" Text="Y = ?"/>
+                <TextBlock x:Name="OriZ" Text="Z = ?"/>
+            </StackPanel>
+            <local:ViewSourceButton Grid.Row="2"
+                             Background="#FF3ED49A">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Maui_Hybrid/Orientation"
+                                         FileName="OrientationSensors_Demo.xaml" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Maui_Hybrid/Orientation"
+                                         FileName="OrientationSensors_Demo.xaml.cs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Maui_Hybrid/Orientation"
+                                         FileName="OrientationSensors_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Maui_Hybrid/Orientation"
+                                         FileName="OrientationSensors_Demo.xaml.fs" />
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
+</UserControl>
