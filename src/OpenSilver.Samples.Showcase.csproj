@@ -52,6 +52,9 @@
     <Page Include="Samples\Client_Server\RIAServices\RIAServices_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\Maui_Hybrid\Barometer\Barometer_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\Maui_Hybrid\Battery\Battery_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -68,6 +71,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\Maui_Hybrid\Orientation\OrientationSensors_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Maui_Hybrid\Shake\Shake_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\Maui_Hybrid\Vibration\Vibration_Demo.xaml">
@@ -142,12 +148,14 @@
     <Compile Include="Samples\Charts\ScatterSeries\ScatterSeries_Demo.xaml.cs" />
     <Compile Include="Samples\Charts\Stacked100AreaSeries\Stacked100AreaSeries_Demo.xaml.cs" />
     <Compile Include="Samples\Client_Server\RIAServices\RIAServices_Demo.xaml.cs" />
+    <Compile Include="Samples\Maui_Hybrid\Barometer\Barometer_Demo.xaml.cs" />
     <Compile Include="Samples\Maui_Hybrid\Battery\Battery_Demo.xaml.cs" />
     <Compile Include="Samples\Maui_Hybrid\DisplayInfo\DisplayInfo_Demo.xaml.cs" />
     <Compile Include="Samples\Maui_Hybrid\Flashlight\Flashlight_Demo.xaml.cs" />
     <Compile Include="Samples\Maui_Hybrid\Location\Location.xaml.cs" />
     <Compile Include="Samples\Maui_Hybrid\Maui_Hybrid.xaml.cs" />
     <Compile Include="Samples\Maui_Hybrid\Orientation\OrientationSensors_Demo.xaml.cs" />
+    <Compile Include="Samples\Maui_Hybrid\Shake\Shake_Demo.xaml.cs" />
     <Compile Include="Samples\Maui_Hybrid\Vibration\Vibration_Demo.xaml.cs" />
     <Compile Include="Samples\Net_Framework\InitParams\InitParams_Demo.xaml.cs" />
     <Compile Include="Samples\Net_Framework\OpenFileDialog\OpenFileDialog_Demo.xaml.cs" />

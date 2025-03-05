@@ -13,6 +13,8 @@
             <local:OrientationSensors_Demo HorizontalAlignment="Center"/>
             <local:DisplayInfo_Demo HorizontalAlignment="Center"/>
             <local:Battery_Demo HorizontalAlignment="Center"/>
+            <local:Shake_Demo HorizontalAlignment="Center"/>
+            <local:Barometer_Demo HorizontalAlignment="Center"/>
         </controlskit:StaggeredPanel>
     </StackPanel>
 
