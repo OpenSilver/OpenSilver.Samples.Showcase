@@ -11,9 +11,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Navigation;
 using Microsoft.Maui.Devices;
+using OpenSilver.Samples.Showcase.Search;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("maui", "hybrid", "device", "native", "haptic", "feedback")]
     public partial class Vibration_Demo : UserControl
     {
         public Vibration_Demo()

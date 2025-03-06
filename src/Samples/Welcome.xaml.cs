@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using Microsoft.Maui.Devices;
+using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase
 {

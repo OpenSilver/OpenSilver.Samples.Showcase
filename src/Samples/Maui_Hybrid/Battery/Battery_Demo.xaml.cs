@@ -11,9 +11,11 @@ using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Navigation;
+using OpenSilver.Samples.Showcase.Search;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("maui", "hybrid", "device", "native", "charge", "charging", "status", "information")]
     public partial class Battery_Demo : UserControl
     {
         public Battery_Demo()

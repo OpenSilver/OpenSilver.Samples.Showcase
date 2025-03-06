@@ -1,11 +1,14 @@
 ﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using Microsoft.Maui.ApplicationModel;
 using Microsoft.Maui.Devices.Sensors;
+using OpenSilver.Samples.Showcase.Search;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("maui", "hybrid", "device", "native", "shaking")]
     public partial class Shake_Demo : UserControl
     {
         public Shake_Demo()
@@ -45,7 +48,8 @@ namespace OpenSilver.Samples.Showcase
                             // Turn off ShakeSensor
                             Accelerometer.Default.Stop();
                             Accelerometer.Default.ShakeDetected -= ShakeSensor_ReadingChanged;
-                            ShakeTextBlock.Foreground = new SolidColorBrush(Colors.Black);
+                            ShakeTextBlock.SetValue(TextBlock.ForegroundProperty, DependencyProperty.UnsetValue);
+                            //ShakeTextBlock.Foreground = null;
                         }
                     }
                     else

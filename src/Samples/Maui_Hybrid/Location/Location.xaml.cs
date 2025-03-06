@@ -2,9 +2,11 @@
 using Microsoft.Maui.Devices.Sensors;
 using System.Windows;
 using System.Windows.Controls;
+using OpenSilver.Samples.Showcase.Search;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("maui", "hybrid", "device", "native", "geolocation", "coordinates", "longitude", "latitude", "information")]
     public partial class Location : UserControl
     {
         public Location()

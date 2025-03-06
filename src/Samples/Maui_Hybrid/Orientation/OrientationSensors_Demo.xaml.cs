@@ -1,10 +1,15 @@
-﻿using System.Windows.Controls;
+﻿using System.Runtime.CompilerServices;
+using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Shapes;
 using Microsoft.Maui.ApplicationModel;
 using Microsoft.Maui.Devices.Sensors;
+using OpenSilver.Samples.Showcase.Search;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("maui", "hybrid", "device", "native", "sensor", "information", "compass", "accelerometer", "gyroscope", "magnetometer", "orientation")]
     public partial class OrientationSensors_Demo : UserControl
     {
         public OrientationSensors_Demo()
@@ -36,14 +41,17 @@ namespace OpenSilver.Samples.Showcase
                             // Turn on compass
                             Compass.Default.ReadingChanged += Compass_ReadingChanged;
                             Compass.Default.Start(SensorSpeed.Default);
-                            CompassPath.Stroke = new SolidColorBrush(Colors.Green);
+                            //CompassPath.Stroke = new SolidColorBrush(Colors.Green);
+                            TextBlock.SetForeground(CompassPath, new SolidColorBrush(Colors.Green));
                         }
                         else
                         {
                             // Turn off compass
                             Compass.Default.Stop();
                             Compass.Default.ReadingChanged -= Compass_ReadingChanged;
-                            CompassPath.Stroke = new SolidColorBrush(Colors.Black);
+                            //CompassPath.SetValue(Path.StrokeProperty, DependencyProperty.UnsetValue);
+
+                            CompassPath.SetValue(TextBlock.ForegroundProperty, DependencyProperty.UnsetValue);
                         }
                     }
                 }

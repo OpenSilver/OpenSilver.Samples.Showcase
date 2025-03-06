@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
 
-    <ContentControl Style="{StaticResource Card_Style}" Width="180">
+    <ContentControl Style="{StaticResource Card_Style}" Width="200">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -13,7 +13,7 @@
             </Grid.RowDefinitions>
             <ContentControl Content="Display info" Foreground="#FF3ED49A" Background="#FF92BEAC" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Button Content="Get Display information" Click="ButtonGetDisplayInfo_Click"/>
+                <Button Content="Get Display information" Click="ButtonGetDisplayInfo_Click" Height="32"/>
                 <TextBlock x:Name="DisplayInfo" TextWrapping="Wrap"/>
             </StackPanel>
             <local:ViewSourceButton Grid.Row="2"

@@ -1,10 +1,13 @@
-﻿using System.Windows.Controls;
+﻿using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media;
 using Microsoft.Maui.ApplicationModel;
 using Microsoft.Maui.Devices.Sensors;
+using OpenSilver.Samples.Showcase.Search;
 
 namespace OpenSilver.Samples.Showcase
 {
+    [SearchKeywords("maui", "hybrid", "device", "native", "pressure", "measure", "sensor", "information")]
     public partial class Barometer_Demo : UserControl
     {
         public Barometer_Demo()
@@ -43,7 +46,8 @@ namespace OpenSilver.Samples.Showcase
                             // Turn off Barometer
                             Barometer.Default.Stop();
                             Barometer.Default.ReadingChanged -= Barometer_ReadingChanged;
-                            BarometerTextBlock.Foreground = new SolidColorBrush(Colors.Black);
+                            //BarometerTextBlock.Foreground = new SolidColorBrush(Colors.Black);
+                            BarometerTextBlock.SetValue(TextBlock.ForegroundProperty, DependencyProperty.UnsetValue);
                         }
                     }
                     else

@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
 
-    <ContentControl Style="{StaticResource Card_Style}" Width="180">
+    <ContentControl Style="{StaticResource Card_Style}" Width="200">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -14,29 +14,29 @@
             <ContentControl Content="Orientation sensors" Foreground="#FF3ED49A" Background="#FF92BEAC" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <!--Compass-->
-                <Button Content="Compass on/off" Click="CompassToggleButton_Click"/>
-                <Path Width="20" Height="20" x:Name="CompassPath" Data="M0,5 L3,0 L6,5 M3,0 L3,10" RenderTransformOrigin=".5,.5" Stroke="Black" Stretch="Uniform">
+                <Button Content="Compass on/off" Click="CompassToggleButton_Click" Height="32" Margin="0,0,0,10"/>
+                <Path Width="20" Height="20" x:Name="CompassPath" Data="M0,5 L3,0 L6,5 M3,0 L3,10" RenderTransformOrigin=".5,.5" Stretch="Uniform" Stroke="{Binding (TextBlock.Foreground), RelativeSource={RelativeSource Self}}">
                     <Path.RenderTransform>
                         <RotateTransform x:Name="CompassTransform"/>
                     </Path.RenderTransform>
                 </Path>
                 <!--Accelerometer-->
-                <Button Content="Accelerometer on/off" Click="AccelerometerToggleButton_Click"/>
+                <Button Content="Accelerometer on/off" Click="AccelerometerToggleButton_Click" Height="32" Margin="10"/>
                 <TextBlock x:Name="AccelX" Text="X = ?"/>
                 <TextBlock x:Name="AccelY" Text="Y = ?"/>
                 <TextBlock x:Name="AccelZ" Text="Z = ?"/>
                 <!--Gyroscope-->
-                <Button Content="Gyroscope on/off" Click="GyroscopeToggleButton_Click"/>
+                <Button Content="Gyroscope on/off" Click="GyroscopeToggleButton_Click" Height="32" Margin="10"/>
                 <TextBlock x:Name="GyroX" Text="X = ?"/>
                 <TextBlock x:Name="GyroY" Text="Y = ?"/>
                 <TextBlock x:Name="GyroZ" Text="Z = ?"/>
                 <!--Magnetometer-->
-                <Button Content="Magnetometer on/off" Click="MagnetometerToggleButton_Click"/>
+                <Button Content="Magnetometer on/off" Click="MagnetometerToggleButton_Click" Height="32" Margin="10"/>
                 <TextBlock x:Name="MagnX" Text="X = ?"/>
                 <TextBlock x:Name="MagnY" Text="Y = ?"/>
                 <TextBlock x:Name="MagnZ" Text="Z = ?"/>
                 <!--Orientation-->
-                <Button Content="OrientationSensor on/off" Click="OrientationSensorToggleButton_Click"/>
+                <Button Content="OrientationSensor on/off" Click="OrientationSensorToggleButton_Click" Height="32" Margin="10"/>
                 <TextBlock x:Name="OriW" Text="W = ?"/>
                 <TextBlock x:Name="OriX" Text="X = ?"/>
                 <TextBlock x:Name="OriY" Text="Y = ?"/>

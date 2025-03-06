@@ -5,6 +5,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using OpenSilver.Themes.Modern;
 using System.Windows.Controls.Primitives;
+using Microsoft.Maui.Devices;
 
 namespace OpenSilver.Samples.Showcase
 {
@@ -29,6 +30,11 @@ namespace OpenSilver.Samples.Showcase
             TitleTextBlock.Text = "OPENSILVER SHOWCASE";
             TitleTextBlock.HorizontalAlignment = HorizontalAlignment.Center;
 #endif
+
+            if(DeviceInfo.Current.Platform == DevicePlatform.Unknown)
+            {
+                MauiHybridButton.Visibility = Visibility.Collapsed;
+            }
         }
 
         public static MainPage Current { get; private set; }
