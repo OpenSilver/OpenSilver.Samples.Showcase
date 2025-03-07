@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
+using CSHTML5.Internal;
 using Microsoft.Maui.ApplicationModel;
 using Microsoft.Maui.Devices;
 using Microsoft.Maui.Devices.Sensors;
@@ -15,6 +17,8 @@ namespace OpenSilver.Samples.Showcase
     [SearchKeywords("maui", "hybrid", "device", "native", "sensor", "information", "compass", "accelerometer", "gyroscope", "magnetometer", "orientation")]
     public partial class OrientationSensors_Demo : UserControl
     {
+        INTERNAL_DispatcherQueueHandler queueHandler = new INTERNAL_DispatcherQueueHandler();
+
         public OrientationSensors_Demo()
         {
             this.InitializeComponent();
@@ -75,7 +79,7 @@ namespace OpenSilver.Samples.Showcase
                         {
                             // Turn on compass
                             Compass.Default.ReadingChanged += Compass_ReadingChanged;
-                            Compass.Default.Start(SensorSpeed.Default);
+                            Compass.Default.Start(SensorSpeed.UI);
                             //CompassPath.Stroke = new SolidColorBrush(Colors.Green);
                             TextBlock.SetForeground(CompassPath, new SolidColorBrush(Colors.Green));
                         }
@@ -228,10 +232,13 @@ namespace OpenSilver.Samples.Showcase
 
         private void Magnetometer_ReadingChanged(object sender, MagnetometerChangedEventArgs e)
         {
-            var velocity = e.Reading.MagneticField;
-            MagnX.Text = $"X: {velocity.X}µT";
-            MagnY.Text = $"Y: {velocity.Y}µT";
-            MagnZ.Text = $"Z: {velocity.Z}µT";
+            queueHandler.QueueActionIfQueueIsEmpty(() =>
+            {
+                var velocity = e.Reading.MagneticField;
+                MagnX.Text = $"X: {velocity.X}µT";
+                MagnY.Text = $"Y: {velocity.Y}µT";
+                MagnZ.Text = $"Z: {velocity.Z}µT";
+            });
         }
         #endregion
 
@@ -273,11 +280,14 @@ namespace OpenSilver.Samples.Showcase
 
         private void OrientationSensor_ReadingChanged(object sender, OrientationSensorChangedEventArgs e)
         {
-            var velocity = e.Reading.Orientation;
+            queueHandler.QueueActionIfQueueIsEmpty(() =>
+            {
+                var velocity = e.Reading.Orientation;
             OriW.Text = $"W: {velocity.W}";
             OriX.Text = $"X: {velocity.X}";
             OriY.Text = $"Y: {velocity.Y}";
             OriZ.Text = $"Z: {velocity.Z}";
+            });
         }
         #endregion
     }
