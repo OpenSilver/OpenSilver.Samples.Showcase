@@ -13,7 +13,7 @@
             </Grid.RowDefinitions>
             <ContentControl Content="Barometer status" Foreground="#FF3ED49A" Background="#FF92BEAC" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel x:Name="SampleContainer" Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Button Content="Barometer on/off" Click="BarometerToggleButton_Click" Height="32"/>
+                <ToggleButton Content="Barometer on/off" Click="BarometerToggleButton_Click" Height="32"/>
                 <TextBlock x:Name="BarometerTextBlock" TextWrapping="Wrap"/>
             </StackPanel>
             <local:ViewSourceButton Grid.Row="2"

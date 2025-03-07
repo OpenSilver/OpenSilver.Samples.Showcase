@@ -15,7 +15,7 @@
             <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <!--Compass-->
                 <StackPanel x:Name="CompassContainer"  Orientation="Vertical">
-                <Button Content="Compass on/off" Click="CompassToggleButton_Click" Height="32" Margin="0,0,0,10"/>
+                <ToggleButton Content="Compass on/off" Click="CompassToggleButton_Click" Height="32" Margin="0,0,0,10"/>
                 <Path x:Name="CompassPath" Width="20" Height="20" Data="M0,5 L3,0 L6,5 M3,0 L3,10" RenderTransformOrigin=".5,.5" Stretch="Uniform" Stroke="{Binding (TextBlock.Foreground), RelativeSource={RelativeSource Self}}">
                     <Path.RenderTransform>
                         <RotateTransform x:Name="CompassTransform"/>
@@ -24,7 +24,7 @@
                 </StackPanel>
                 <!--Accelerometer-->
                 <StackPanel x:Name="AccelerometerContainer"  Orientation="Vertical">
-                    <Button Content="Accelerometer on/off" Click="AccelerometerToggleButton_Click" Height="32" Margin="10"/>
+                    <ToggleButton Content="Accelerometer on/off" Click="AccelerometerToggleButton_Click" Height="32" Margin="10"/>
                     <TextBlock x:Name="AccelX" Text="X = ?"/>
                     <TextBlock x:Name="AccelY" Text="Y = ?"/>
                     <TextBlock x:Name="AccelZ" Text="Z = ?"/>
@@ -32,7 +32,7 @@
                 </StackPanel>
                 <!--Gyroscope-->
                 <StackPanel x:Name="GyroscopeContainer"  Orientation="Vertical">
-                    <Button Content="Gyroscope on/off" Click="GyroscopeToggleButton_Click" Height="32" Margin="10"/>
+                    <ToggleButton Content="Gyroscope on/off" Click="GyroscopeToggleButton_Click" Height="32" Margin="10"/>
                     <TextBlock x:Name="GyroX" Text="X = ?"/>
                     <TextBlock x:Name="GyroY" Text="Y = ?"/>
                     <TextBlock x:Name="GyroZ" Text="Z = ?"/>
@@ -40,7 +40,7 @@
                 </StackPanel>
                 <!--Magnetometer-->
                 <StackPanel x:Name="MagnetometerContainer"  Orientation="Vertical">
-                    <Button Content="Magnetometer on/off" Click="MagnetometerToggleButton_Click" Height="32" Margin="10"/>
+                    <ToggleButton Content="Magnetometer on/off" Click="MagnetometerToggleButton_Click" Height="32" Margin="10"/>
                     <TextBlock x:Name="MagnX" Text="X = ?"/>
                     <TextBlock x:Name="MagnY" Text="Y = ?"/>
                     <TextBlock x:Name="MagnZ" Text="Z = ?"/>
@@ -48,7 +48,7 @@
                 </StackPanel>
                 <!--Orientation-->
                 <StackPanel x:Name="OrientationContainer" Orientation="Vertical">
-                    <Button Content="OrientationSensor on/off" Click="OrientationSensorToggleButton_Click" Height="32" Margin="10"/>
+                    <ToggleButton Content="OrientationSensor on/off" Click="OrientationSensorToggleButton_Click" Height="32" Margin="10"/>
                     <TextBlock x:Name="OriW" Text="W = ?"/>
                     <TextBlock x:Name="OriX" Text="X = ?"/>
                     <TextBlock x:Name="OriY" Text="Y = ?"/>
