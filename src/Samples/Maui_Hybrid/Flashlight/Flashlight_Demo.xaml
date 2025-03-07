@@ -12,8 +12,10 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="Flashlight" Foreground="#FF3ED49A" Background="#FF92BEAC" Style="{StaticResource HeaderControl_Style}"/>
-            <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel x:Name="SampleContainer" Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <ToggleButton x:Name="FlashlightButton" Content="Turn on/off" Click="SwitchButton_Click" HorizontalAlignment="Center" Height="32"/>
+                <TextBlock x:Name="UnsupportedTextBlock" TextWrapping="Wrap" Visibility="Collapsed"/>
+
             </StackPanel>
             <local:ViewSourceButton Grid.Row="2"
                                 Background="#FF3ED49A">

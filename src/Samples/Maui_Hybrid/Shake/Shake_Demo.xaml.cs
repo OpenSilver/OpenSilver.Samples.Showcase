@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using Microsoft.Maui.ApplicationModel;
+using Microsoft.Maui.Devices;
 using Microsoft.Maui.Devices.Sensors;
 using OpenSilver.Samples.Showcase.Search;
 
@@ -14,6 +15,12 @@ namespace OpenSilver.Samples.Showcase
         public Shake_Demo()
         {
             this.InitializeComponent();
+
+            if (!Accelerometer.Default.IsSupported)
+            {
+                SampleContainer.Children.Clear();
+                SampleContainer.Children.Add(new TextBlock() { Text = "This device does not support detecting shakes.", TextWrapping = TextWrapping.Wrap });
+            }
         }
 
     

@@ -23,7 +23,7 @@ namespace OpenSilver.Samples.Showcase
             this.InitializeComponent();
         }
 
-        private void WatchBatteryToggleButton_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void CheckBatteryStatusButton_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             MainThread.BeginInvokeOnMainThread(async () =>
             {
@@ -36,49 +36,51 @@ namespace OpenSilver.Samples.Showcase
                     status = await Permissions.RequestAsync<Permissions.Battery>();
                 }
 
-                // If permission is granted, fetch the location.
-                if (status == PermissionStatus.Granted)
+                try
                 {
-                    if (WatchBatteryToggleButton.IsChecked == true)
+                    // If permission is granted, fetch the location.
+                    if (status == PermissionStatus.Granted)
                     {
-                        Battery.Default.BatteryInfoChanged += Battery_BatteryInfoChanged;
-                    }
-                    else
-                    {
-                        Battery.Default.BatteryInfoChanged -= Battery_BatteryInfoChanged;
-                    }
+                        string str = $"Battery is {Battery.Default.ChargeLevel * 100}% charged." + Environment.NewLine;
+                        switch (Battery.Default.State)
+                        {
+                            case BatteryState.Charging:
+                                str += "Battery is currently charging";
+                                break;
+                            case BatteryState.Discharging:
+                                str += "Charger is not connected and the battery is discharging";
+                                break;
+                            case BatteryState.Full:
+                                str += "Battery is full";
+                                break;
+                            case BatteryState.NotCharging:
+                                str += "The battery isn't charging";
+                                break;
+                            case BatteryState.NotPresent:
+                                str += "Battery is not available";
+                                break;
+                            default:
+                                str += "Battery is unknown";
+                                break;
+                        }
 
+                        BatteryStatus.Text = str;
+
+                    }
+                }
+                catch (FeatureNotSupportedException ex)
+                {
+                    BatteryStatus.Text = "The Battery status feature is not supported on this device.";
+                }
+                catch (PermissionException ex)
+                {
+                    BatteryStatus.Text = "This sample requires your permission to check the battery status.";
+                }
+                catch
+                {
+                    BatteryStatus.Text = "Could not check battery status.";
                 }
             });
-        }
-
-        private void Battery_BatteryInfoChanged(object sender, BatteryInfoChangedEventArgs e)
-        {
-            string str = $"Battery is {e.ChargeLevel * 100}% charged." + Environment.NewLine;
-            switch (e.State)
-            {
-                case BatteryState.Charging:
-                    str += "Battery is currently charging";
-                    break;
-                case BatteryState.Discharging:
-                    str += "Charger is not connected and the battery is discharging";
-                    break;
-                case BatteryState.Full:
-                    str += "Battery is full";
-                    break;
-                case BatteryState.NotCharging:
-                    str += "The battery isn't charging";
-                    break;
-                case BatteryState.NotPresent:
-                    str += "Battery is not available";
-                    break;
-                default:
-                    str += "Battery is unknown";
-                    break;
-            }
-
-            BatteryStatus.Text = str;
-
         }
     }
 }

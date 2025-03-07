@@ -48,11 +48,13 @@ namespace OpenSilver.Samples.Showcase
                     }
                     catch (FeatureNotSupportedException ex)
                     {
-                        // Handle not supported on device exception
+                        UnsupportedTextBlock.Text = "The flashlight is not supported on this device.";
+                        UnsupportedTextBlock.Visibility = Visibility.Visible;
                     }
                     catch (PermissionException ex)
                     {
-                        // Handle permission exception
+                        UnsupportedTextBlock.Text = "This sample requires your permission to use the flashlight.";
+                        UnsupportedTextBlock.Visibility = Visibility.Visible;
                     }
                     catch (Exception ex)
                     {

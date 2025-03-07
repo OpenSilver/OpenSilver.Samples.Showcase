@@ -12,7 +12,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="Shake" Foreground="#FF3ED49A" Background="#FF92BEAC" Style="{StaticResource HeaderControl_Style}"/>
-            <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel x:Name="SampleContainer" Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Button Content="Shake sensor on/off" Click="ShakeToggleButton_Click" Height="32"/>
                 <TextBlock x:Name="ShakeTextBlock" TextWrapping="Wrap" Text="No shakes detected yet."/>
             </StackPanel>

@@ -14,33 +14,48 @@
             <ContentControl Content="Orientation sensors" Foreground="#FF3ED49A" Background="#FF92BEAC" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <!--Compass-->
+                <StackPanel x:Name="CompassContainer"  Orientation="Vertical">
                 <Button Content="Compass on/off" Click="CompassToggleButton_Click" Height="32" Margin="0,0,0,10"/>
-                <Path Width="20" Height="20" x:Name="CompassPath" Data="M0,5 L3,0 L6,5 M3,0 L3,10" RenderTransformOrigin=".5,.5" Stretch="Uniform" Stroke="{Binding (TextBlock.Foreground), RelativeSource={RelativeSource Self}}">
+                <Path x:Name="CompassPath" Width="20" Height="20" Data="M0,5 L3,0 L6,5 M3,0 L3,10" RenderTransformOrigin=".5,.5" Stretch="Uniform" Stroke="{Binding (TextBlock.Foreground), RelativeSource={RelativeSource Self}}">
                     <Path.RenderTransform>
                         <RotateTransform x:Name="CompassTransform"/>
                     </Path.RenderTransform>
                 </Path>
+                </StackPanel>
                 <!--Accelerometer-->
-                <Button Content="Accelerometer on/off" Click="AccelerometerToggleButton_Click" Height="32" Margin="10"/>
-                <TextBlock x:Name="AccelX" Text="X = ?"/>
-                <TextBlock x:Name="AccelY" Text="Y = ?"/>
-                <TextBlock x:Name="AccelZ" Text="Z = ?"/>
+                <StackPanel x:Name="AccelerometerContainer"  Orientation="Vertical">
+                    <Button Content="Accelerometer on/off" Click="AccelerometerToggleButton_Click" Height="32" Margin="10"/>
+                    <TextBlock x:Name="AccelX" Text="X = ?"/>
+                    <TextBlock x:Name="AccelY" Text="Y = ?"/>
+                    <TextBlock x:Name="AccelZ" Text="Z = ?"/>
+                    <TextBlock x:Name="AccelerometerNotSupportedTextBlock" Margin="10" Text="This device does not support the Accelerometer" TextWrapping="Wrap" Visibility="Collapsed"/>
+                </StackPanel>
                 <!--Gyroscope-->
-                <Button Content="Gyroscope on/off" Click="GyroscopeToggleButton_Click" Height="32" Margin="10"/>
-                <TextBlock x:Name="GyroX" Text="X = ?"/>
-                <TextBlock x:Name="GyroY" Text="Y = ?"/>
-                <TextBlock x:Name="GyroZ" Text="Z = ?"/>
+                <StackPanel x:Name="GyroscopeContainer"  Orientation="Vertical">
+                    <Button Content="Gyroscope on/off" Click="GyroscopeToggleButton_Click" Height="32" Margin="10"/>
+                    <TextBlock x:Name="GyroX" Text="X = ?"/>
+                    <TextBlock x:Name="GyroY" Text="Y = ?"/>
+                    <TextBlock x:Name="GyroZ" Text="Z = ?"/>
+                    <TextBlock x:Name="GyroscopeNotSupportedTextBlock" Margin="10" Text="This device does not support the Gyroscope" TextWrapping="Wrap" Visibility="Collapsed"/>
+                </StackPanel>
                 <!--Magnetometer-->
-                <Button Content="Magnetometer on/off" Click="MagnetometerToggleButton_Click" Height="32" Margin="10"/>
-                <TextBlock x:Name="MagnX" Text="X = ?"/>
-                <TextBlock x:Name="MagnY" Text="Y = ?"/>
-                <TextBlock x:Name="MagnZ" Text="Z = ?"/>
+                <StackPanel x:Name="MagnetometerContainer"  Orientation="Vertical">
+                    <Button Content="Magnetometer on/off" Click="MagnetometerToggleButton_Click" Height="32" Margin="10"/>
+                    <TextBlock x:Name="MagnX" Text="X = ?"/>
+                    <TextBlock x:Name="MagnY" Text="Y = ?"/>
+                    <TextBlock x:Name="MagnZ" Text="Z = ?"/>
+                    <TextBlock x:Name="MagnetometerNotSupportedTextBlock" Margin="10" Text="This device does not support the Magnetometer" TextWrapping="Wrap" Visibility="Collapsed"/>
+                </StackPanel>
                 <!--Orientation-->
-                <Button Content="OrientationSensor on/off" Click="OrientationSensorToggleButton_Click" Height="32" Margin="10"/>
-                <TextBlock x:Name="OriW" Text="W = ?"/>
-                <TextBlock x:Name="OriX" Text="X = ?"/>
-                <TextBlock x:Name="OriY" Text="Y = ?"/>
-                <TextBlock x:Name="OriZ" Text="Z = ?"/>
+                <StackPanel x:Name="OrientationContainer" Orientation="Vertical">
+                    <Button Content="OrientationSensor on/off" Click="OrientationSensorToggleButton_Click" Height="32" Margin="10"/>
+                    <TextBlock x:Name="OriW" Text="W = ?"/>
+                    <TextBlock x:Name="OriX" Text="X = ?"/>
+                    <TextBlock x:Name="OriY" Text="Y = ?"/>
+                    <TextBlock x:Name="OriZ" Text="Z = ?"/>
+                    <TextBlock x:Name="OrientationNotSupportedTextBlock" Margin="10" Text="This device does not support the Orientation feature" TextWrapping="Wrap" Visibility="Collapsed"/>
+                </StackPanel>
+                <TextBlock x:Name="UnsupportedTextBlock" TextWrapping="Wrap" Visibility="Collapsed"/>
             </StackPanel>
             <local:ViewSourceButton Grid.Row="2"
                              Background="#FF3ED49A">

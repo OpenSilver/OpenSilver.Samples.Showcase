@@ -3,6 +3,9 @@ using Microsoft.Maui.Devices.Sensors;
 using System.Windows;
 using System.Windows.Controls;
 using OpenSilver.Samples.Showcase.Search;
+using Microsoft.Maui.Devices;
+using System.Security.Cryptography;
+using System;
 
 namespace OpenSilver.Samples.Showcase
 {
@@ -30,25 +33,40 @@ namespace OpenSilver.Samples.Showcase
                 // If permission is granted, fetch the location.
                 if (status == PermissionStatus.Granted)
                 {
-                    var request = new GeolocationRequest(GeolocationAccuracy.Medium);
-                    var location = await Geolocation.Default.GetLocationAsync(request);
-
-                    if (location != null)
+                    try
                     {
-                        // Switch back to the OpenSilver thread to update the UI.
-                        Dispatcher.BeginInvoke(() =>
+                        var request = new GeolocationRequest(GeolocationAccuracy.Medium);
+                        var location = await Geolocation.Default.GetLocationAsync(request);
+
+                        if (location != null)
                         {
-                            LocationTextBlock.Text = location.ToString();
-                        });
+                            // Switch back to the OpenSilver thread to update the UI.
+                            Dispatcher.BeginInvoke(() =>
+                            {
+                                LocationTextBlock.Text = location.ToString();
+                            });
+                        }
+                    }
+                    catch (FeatureNotSupportedException fnsEx)
+                    {
+                        LocationTextBlock.Text = "This device does not support Geolocation.";
+                    }
+                    catch (FeatureNotEnabledException fneEx)
+                    {
+                        LocationTextBlock.Text = "The Geolocation feature is not enabled.";
+                    }
+                    catch (PermissionException pEx)
+                    {
+                        LocationTextBlock.Text = "This sample requires permission to use Geolocation.";
+                    }
+                    catch (Exception ex)
+                    {
+                        LocationTextBlock.Text = "Could not get location.";
                     }
                 }
                 else
                 {
-                    // Inform the user if permission was denied.
-                    Dispatcher.BeginInvoke(() =>
-                    {
-                        MessageBox.Show("Location permission denied.");
-                    });
+                    LocationTextBlock.Text = "This sample requires permission to use Geolocation.";
                 }
             });
         }

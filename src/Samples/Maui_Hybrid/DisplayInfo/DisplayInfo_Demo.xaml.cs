@@ -21,6 +21,12 @@ namespace OpenSilver.Samples.Showcase
         public DisplayInfo_Demo()
         {
             this.InitializeComponent();
+
+            if (!Vibration.Default.IsSupported)
+            {
+                SampleContainer.Children.Clear();
+                SampleContainer.Children.Add(new TextBlock() { Text = "This device does not support getting the display information.", TextWrapping = TextWrapping.Wrap });
+            }
         }
 
         private void ButtonGetDisplayInfo_Click(object sender, RoutedEventArgs e)

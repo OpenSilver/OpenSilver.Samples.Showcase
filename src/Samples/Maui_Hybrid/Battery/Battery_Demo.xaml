@@ -12,8 +12,8 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="Battery status" Foreground="#FF3ED49A" Background="#FF92BEAC" Style="{StaticResource HeaderControl_Style}"/>
-            <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <ToggleButton x:Name="WatchBatteryToggleButton" Content="Watch battery on/off" Click="WatchBatteryToggleButton_Click" Height="32"/>
+            <StackPanel x:Name="SampleContainer" Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Button Content="Check battery status" Click="CheckBatteryStatusButton_Click" Height="32"/>
                 <TextBlock x:Name="BatteryStatus" TextWrapping="Wrap"/>
             </StackPanel>
             <local:ViewSourceButton Grid.Row="2"

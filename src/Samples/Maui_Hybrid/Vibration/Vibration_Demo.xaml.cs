@@ -21,7 +21,15 @@ namespace OpenSilver.Samples.Showcase
         public Vibration_Demo()
         {
             this.InitializeComponent();
+
+
+            if(!Vibration.Default.IsSupported)
+            {
+                SampleContainer.Children.Clear();
+                SampleContainer.Children.Add(new TextBlock() { Text = "This device does not support vibrations.", TextWrapping = TextWrapping.Wrap });
+            }
         }
+
 
         void VibrateButton_Click(object sender, RoutedEventArgs e)
         {

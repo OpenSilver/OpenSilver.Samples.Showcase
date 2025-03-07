@@ -1,9 +1,12 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
 using Microsoft.Maui.ApplicationModel;
+using Microsoft.Maui.Devices;
 using Microsoft.Maui.Devices.Sensors;
 using OpenSilver.Samples.Showcase.Search;
 
@@ -15,6 +18,38 @@ namespace OpenSilver.Samples.Showcase
         public OrientationSensors_Demo()
         {
             this.InitializeComponent();
+            List<string> unsupportedFeatures = new List<string>();
+            if (!Compass.Default.IsSupported)
+            {
+                CompassContainer.Visibility = Visibility.Collapsed;
+                unsupportedFeatures.Add("Compass");
+            }
+            if (!Accelerometer.Default.IsSupported)
+            {
+                AccelerometerContainer.Visibility = Visibility.Collapsed;
+                unsupportedFeatures.Add("Accelerometer");
+            }
+            if (!Gyroscope.Default.IsSupported)
+            {
+                GyroscopeContainer.Visibility = Visibility.Collapsed;
+                unsupportedFeatures.Add("Gyroscope");
+            }
+            if (!Magnetometer.Default.IsSupported)
+            {
+                MagnetometerContainer.Visibility = Visibility.Collapsed;
+                unsupportedFeatures.Add("Magnetometer");
+            }
+            if (!OrientationSensor.Default.IsSupported)
+            {
+                OrientationContainer.Visibility = Visibility.Collapsed;
+                unsupportedFeatures.Add("Orientation sensor");
+            }
+
+            if(unsupportedFeatures.Any())
+            {
+                UnsupportedTextBlock.Text = $"The following sections of this have been hidden because this device does not support them: \r\n - {string.Join(",\r\n - ", unsupportedFeatures)}.";
+                UnsupportedTextBlock.Visibility = Visibility.Visible;
+            }
         }
 
         #region Compass
