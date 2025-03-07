@@ -27,6 +27,10 @@
         </ResourceDictionary>
     </Application.Resources>
     <Application.Theme>
-        <mt:ModernTheme CurrentPalette="Light" />
+        <mt:ModernTheme CurrentPalette="Light">
+            <mt:ModernTheme.DarkPalette>
+                <mt:DarkPalette ContainerBackgroundColor="#FF1A1A1A" />
+            </mt:ModernTheme.DarkPalette>
+        </mt:ModernTheme>
     </Application.Theme>
 </Application>
