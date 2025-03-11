@@ -58,7 +58,16 @@
     <Page Include="Samples\Maui_Hybrid\Battery\Battery_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\Maui_Hybrid\Camera\Camera_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Maui_Hybrid\Connectivity\Connectivity_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\Maui_Hybrid\DisplayInfo\DisplayInfo_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Maui_Hybrid\FilePickerAndShare\FilePickerAndShare_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\Maui_Hybrid\Flashlight\Flashlight_Demo.xaml">
@@ -68,6 +77,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\Maui_Hybrid\Maui_Hybrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Maui_Hybrid\OpenMapApp\OpenMapApp_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\Maui_Hybrid\Orientation\OrientationSensors_Demo.xaml">
@@ -150,10 +162,14 @@
     <Compile Include="Samples\Client_Server\RIAServices\RIAServices_Demo.xaml.cs" />
     <Compile Include="Samples\Maui_Hybrid\Barometer\Barometer_Demo.xaml.cs" />
     <Compile Include="Samples\Maui_Hybrid\Battery\Battery_Demo.xaml.cs" />
+    <Compile Include="Samples\Maui_Hybrid\Camera\Camera_Demo.xaml.cs" />
+    <Compile Include="Samples\Maui_Hybrid\Connectivity\Connectivity_Demo.xaml.cs" />
     <Compile Include="Samples\Maui_Hybrid\DisplayInfo\DisplayInfo_Demo.xaml.cs" />
+    <Compile Include="Samples\Maui_Hybrid\FilePickerAndShare\FilePickerAndShare_Demo.xaml.cs" />
     <Compile Include="Samples\Maui_Hybrid\Flashlight\Flashlight_Demo.xaml.cs" />
     <Compile Include="Samples\Maui_Hybrid\Location\Location.xaml.cs" />
     <Compile Include="Samples\Maui_Hybrid\Maui_Hybrid.xaml.cs" />
+    <Compile Include="Samples\Maui_Hybrid\OpenMapApp\OpenMapApp_Demo.xaml.cs" />
     <Compile Include="Samples\Maui_Hybrid\Orientation\OrientationSensors_Demo.xaml.cs" />
     <Compile Include="Samples\Maui_Hybrid\Shake\Shake_Demo.xaml.cs" />
     <Compile Include="Samples\Maui_Hybrid\Vibration\Vibration_Demo.xaml.cs" />

@@ -1,0 +1,35 @@
+﻿<UserControl
+    x:Class="OpenSilver.Samples.Showcase.Camera_Demo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+
+    <ContentControl Style="{StaticResource Card_Style}" Width="200">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl Content="Camera" Foreground="#FF3ED49A" Background="#FF92BEAC" Style="{StaticResource HeaderControl_Style}"/>
+            <StackPanel x:Name="SampleContainer" Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Button Content="Take a picture" Click="TakePhotoButton_Click" Height="32"/>
+                <TextBlock x:Name="FeatureNotAllowedTextBlock" Text="This sample requires the permission to use the camera to work" Visibility="Collapsed" TextWrapping="Wrap"/>
+                <Image x:Name="PhotoTakenImage" Width="180" Height="150" Stretch="Uniform" Visibility="Collapsed"/>
+            </StackPanel>
+            <local:ViewSourceButton Grid.Row="2"
+                     Background="#FF3ED49A">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Maui_Hybrid/Camera"
+                                 FileName="Camera_Demo.xaml" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Maui_Hybrid/Camera"
+                                 FileName="Camera_Demo.xaml.cs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Maui_Hybrid/Camera"
+                                 FileName="Camera_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Maui_Hybrid/Camera"
+                                 FileName="Camera_Demo.xaml.fs" />
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
+</UserControl>

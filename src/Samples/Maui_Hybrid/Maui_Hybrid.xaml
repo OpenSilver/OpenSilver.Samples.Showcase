@@ -15,6 +15,10 @@
             <local:Battery_Demo HorizontalAlignment="Center"/>
             <local:Shake_Demo HorizontalAlignment="Center"/>
             <local:Barometer_Demo HorizontalAlignment="Center"/>
+            <local:FilePickerAndShare_Demo HorizontalAlignment="Center"/>
+            <local:Connectivity_Demo HorizontalAlignment="Center"/>
+            <local:OpenMapApp_Demo HorizontalAlignment="Center"/>
+            <local:Camera_Demo HorizontalAlignment="Center"/>
         </controlskit:StaggeredPanel>
     </StackPanel>
 
