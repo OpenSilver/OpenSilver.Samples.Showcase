@@ -28,6 +28,12 @@
     </array>
     <key>XSAppIconAssets</key>
     <string>Assets.xcassets/appicon.appiconset</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>This app requires location access while using the app.</string>
+    <key>NSMotionUsageDescription</key>
+    <string>This app requires motion sensor access.</string>
+    <key>NSCameraUsageDescription</key>
+    <string>The app requires camera access to take pictures.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>This app needs access to the photo gallery to demonstrate certain samples.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
