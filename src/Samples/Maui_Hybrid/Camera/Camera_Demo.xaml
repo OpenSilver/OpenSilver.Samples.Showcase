@@ -11,14 +11,14 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="Camera" Foreground="#FF3ED49A" Background="#FF92BEAC" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="Camera" Foreground="#3ed49a" Background="#FF92BEAC" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel x:Name="SampleContainer" Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Button Content="Take a picture" Click="TakePhotoButton_Click" Height="32"/>
+                <Button Content="Take a picture" Click="TakePhotoButton_Click" Height="32" Foreground="#3ed49a" Background="{DynamicResource NativeApiButtonBackground}" FontWeight="Bold"/>
                 <TextBlock x:Name="FeatureNotAllowedTextBlock" Text="This sample requires the permission to use the camera to work" Visibility="Collapsed" TextWrapping="Wrap"/>
                 <Image x:Name="PhotoTakenImage" Width="180" Height="150" Stretch="Uniform" Visibility="Collapsed"/>
             </StackPanel>
             <local:ViewSourceButton Grid.Row="2"
-                     Background="#FF3ED49A">
+                     Background="#3ed49a">
                 <local:ViewSourceButton.Sources>
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Maui_Hybrid/Camera"
                                  FileName="Camera_Demo.xaml" />

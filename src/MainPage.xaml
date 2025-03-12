@@ -10,6 +10,9 @@ Background="#FFF0F0F0"
 mc:Ignorable="d"
     Foreground="{DynamicResource Theme_TextBrush}"
 FontFamily="Segoe UI">
+    <Page.Resources>
+        <SolidColorBrush x:Key="NativeApiButtonBackground" Color="#dddddd"/>
+    </Page.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition x:Name="RowThatContainsTheBanner" Height="Auto"/>

@@ -243,6 +243,25 @@ namespace OpenSilver.Samples.Showcase
 
         #endregion
 
+
+
+        #region themes switch related code
+        SolidColorBrush _nativeApiButtonBackgroundBrush;
+        public SolidColorBrush NativeApiButtonBackgroundBrush
+        {
+            get
+            {
+                if(_nativeApiButtonBackgroundBrush == null)
+                {
+                    _nativeApiButtonBackgroundBrush = this.Resources["NativeApiButtonBackground"] as SolidColorBrush;
+                }
+                return _nativeApiButtonBackgroundBrush;
+
+            }
+        }
+        Color lightColor = Color.FromRgb(221, 221, 221);
+        Color darkColor = Color.FromRgb(60, 60, 60);
+
         private void ToggleThemeButton_Click(object sender, RoutedEventArgs e)
         {
             bool isDark = (sender as ToggleButton)?.IsChecked == true;
@@ -251,14 +270,17 @@ namespace OpenSilver.Samples.Showcase
             {
                 if (isDark)
                 {
+                    NativeApiButtonBackgroundBrush.Color = darkColor;
                     theme.CurrentPalette = ModernTheme.Palettes.Dark;
                 }
                 else
                 {
+                    NativeApiButtonBackgroundBrush.Color = lightColor;
                     theme.CurrentPalette = ModernTheme.Palettes.Light;
                 }
             }
         }
+        #endregion
     }
 
 }

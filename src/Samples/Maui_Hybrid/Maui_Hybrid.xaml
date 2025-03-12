@@ -5,7 +5,7 @@
     xmlns:controlskit="clr-namespace:OpenSilver.ControlsKit;assembly=OpenSilver.ControlsKit.Controls"
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
   <StackPanel>
-        <TextBlock Text="Maui Hybrid" Style="{StaticResource PageHeader_Style}"/>
+        <TextBlock Text="Native APis (Maui Hybrid)" Style="{StaticResource PageHeader_Style}"/>
         <controlskit:StaggeredPanel ProgressiveRenderingChunkSize="2">
             <local:Location HorizontalAlignment="Center"/>
             <local:Flashlight_Demo HorizontalAlignment="Center"/>

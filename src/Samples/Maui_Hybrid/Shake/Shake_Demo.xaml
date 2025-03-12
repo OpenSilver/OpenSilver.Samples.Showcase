@@ -11,13 +11,13 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="Shake" Foreground="#FF3ED49A" Background="#FF92BEAC" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="Shake" Foreground="#0026d3" Background="#FF92BEAC" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel x:Name="SampleContainer" Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <ToggleButton Content="Shake sensor on/off" Click="ShakeToggleButton_Click" Height="32"/>
+                <ToggleButton Content="Shake sensor on/off" Click="ShakeToggleButton_Click" Height="32" Foreground="#0026d3" Background="{DynamicResource NativeApiButtonBackground}" FontWeight="Bold"/>
                 <TextBlock x:Name="ShakeTextBlock" TextWrapping="Wrap" Text="No shakes detected yet."/>
             </StackPanel>
             <local:ViewSourceButton Grid.Row="2"
-             Background="#FF3ED49A">
+             Background="#0026d3">
                 <local:ViewSourceButton.Sources>
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Maui_Hybrid/Shake"
                          FileName="Shake_Demo.xaml" />

@@ -11,13 +11,13 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="Barometer status" Foreground="#FF3ED49A" Background="#FF92BEAC" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="Barometer status" Foreground="#bde567" Background="#FF92BEAC" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel x:Name="SampleContainer" Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <ToggleButton Content="Barometer on/off" Click="BarometerToggleButton_Click" Height="32"/>
+                <ToggleButton Content="Barometer on/off" Click="BarometerToggleButton_Click" Height="32" Foreground="#bde567" Background="{DynamicResource NativeApiButtonBackground}" FontWeight="Bold"/>
                 <TextBlock x:Name="BarometerTextBlock" TextWrapping="Wrap"/>
             </StackPanel>
             <local:ViewSourceButton Grid.Row="2"
-                 Background="#FF3ED49A">
+                 Background="#bde567">
                 <local:ViewSourceButton.Sources>
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Maui_Hybrid/Barometer"
                              FileName="Barometer_Demo.xaml" />

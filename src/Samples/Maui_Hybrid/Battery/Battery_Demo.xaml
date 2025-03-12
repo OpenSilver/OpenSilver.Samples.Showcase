@@ -11,13 +11,13 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="Battery status" Foreground="#FF3ED49A" Background="#FF92BEAC" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="Battery status" Foreground="#08bbaf" Background="#FF92BEAC" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel x:Name="SampleContainer" Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Button Content="Check battery status" Click="CheckBatteryStatusButton_Click" Height="32"/>
+                <Button Content="Check battery status" Click="CheckBatteryStatusButton_Click" Height="32" Foreground="#08bbaf" Background="{DynamicResource NativeApiButtonBackground}" FontWeight="Bold"/>
                 <TextBlock x:Name="BatteryStatus" TextWrapping="Wrap"/>
             </StackPanel>
             <local:ViewSourceButton Grid.Row="2"
-                     Background="#FF3ED49A">
+                     Background="#08bbaf">
                 <local:ViewSourceButton.Sources>
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Maui_Hybrid/Battery"
                                  FileName="Battery_Demo.xaml" />

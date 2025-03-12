@@ -11,13 +11,13 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="Geolocation" Foreground="#FF3ED49A" Background="#FF92BEAC" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="Geolocation" Foreground="#fe7484" Background="#FF92BEAC" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Button Content="Get" Click="GetButton_Click" HorizontalAlignment="Center" Height="32" Width="80"/>
+                <Button Content="Get location" Click="GetButton_Click" HorizontalAlignment="Center" Height="32" Foreground="#fe7484" Background="{DynamicResource NativeApiButtonBackground}" FontWeight="Bold"/>
                 <TextBlock x:Name="LocationTextBlock" Text="" Foreground="#FF808080" TextWrapping="Wrap" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Top"/>
             </StackPanel>
             <local:ViewSourceButton Grid.Row="2"
-                                    Background="#FF3ED49A">
+                                    Background="#fe7484">
                 <local:ViewSourceButton.Sources>
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Maui_Hybrid/Location"
                                                 FileName="Location.xaml" />

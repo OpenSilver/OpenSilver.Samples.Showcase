@@ -11,14 +11,14 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="Flashlight" Foreground="#FF3ED49A" Background="#FF92BEAC" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="Flashlight" Foreground="#d3a500" Background="#FF92BEAC" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel x:Name="SampleContainer" Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <ToggleButton x:Name="FlashlightButton" Content="Turn on/off" Click="SwitchButton_Click" HorizontalAlignment="Center" Height="32"/>
+                <ToggleButton x:Name="FlashlightButton" Content="Turn on/off" Click="SwitchButton_Click" HorizontalAlignment="Center" Height="32" Foreground="#d3a500" Background="{DynamicResource NativeApiButtonBackground}" FontWeight="Bold"/>
                 <TextBlock x:Name="UnsupportedTextBlock" TextWrapping="Wrap" Visibility="Collapsed"/>
 
             </StackPanel>
             <local:ViewSourceButton Grid.Row="2"
-                                Background="#FF3ED49A">
+                                Background="#d3a500">
                 <local:ViewSourceButton.Sources>
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Maui_Hybrid/Flashlight"
                                             FileName="Flashlight_Demo.xaml" />

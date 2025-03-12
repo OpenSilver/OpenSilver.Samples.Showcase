@@ -11,12 +11,12 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="Open map App" Foreground="#FF3ED49A" Background="#FF92BEAC" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="Open map App" Foreground="#d30091" Background="#FF92BEAC" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel x:Name="SampleContainer" Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Button Content="Open map Application" Click="OpenMapAppButton_Click" Height="32"/>
+                <Button Content="Open map Application" Click="OpenMapAppButton_Click" Height="32" Foreground="#d30091" Background="{DynamicResource NativeApiButtonBackground}" FontWeight="Bold"/>
             </StackPanel>
             <local:ViewSourceButton Grid.Row="2"
-                 Background="#FF3ED49A">
+                 Background="#d30091">
                 <local:ViewSourceButton.Sources>
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Maui_Hybrid/OpenMapApp"
                              FileName="OpenMapApp_Demo.xaml" />
