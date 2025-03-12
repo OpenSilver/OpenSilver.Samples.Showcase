@@ -1,17 +1,9 @@
 ﻿using Microsoft.Maui.ApplicationModel;
 using Microsoft.Maui.Devices;
+using OpenSilver.Samples.Showcase.Search;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
-using System.Windows.Data;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Navigation;
-using OpenSilver.Samples.Showcase.Search;
 
 namespace OpenSilver.Samples.Showcase
 {
@@ -20,7 +12,17 @@ namespace OpenSilver.Samples.Showcase
     {
         public Flashlight_Demo()
         {
-            this.InitializeComponent();
+            InitializeComponent();
+
+            MainThread.BeginInvokeOnMainThread(async () =>
+            {
+                if (!await Flashlight.Default.IsSupportedAsync())
+                {
+                    FlashlightButton.Visibility = Visibility.Collapsed;
+                    UnsupportedTextBlock.Text = "The flashlight is not supported on this device.";
+                    UnsupportedTextBlock.Visibility = Visibility.Visible;
+                }
+            });
         }
 
         void SwitchButton_Click(object sender, RoutedEventArgs e)
@@ -46,12 +48,7 @@ namespace OpenSilver.Samples.Showcase
                         else
                             await Flashlight.Default.TurnOffAsync();
                     }
-                    catch (FeatureNotSupportedException ex)
-                    {
-                        UnsupportedTextBlock.Text = "The flashlight is not supported on this device.";
-                        UnsupportedTextBlock.Visibility = Visibility.Visible;
-                    }
-                    catch (PermissionException ex)
+                    catch (PermissionException)
                     {
                         UnsupportedTextBlock.Text = "This sample requires your permission to use the flashlight.";
                         UnsupportedTextBlock.Visibility = Visibility.Visible;
@@ -63,6 +60,5 @@ namespace OpenSilver.Samples.Showcase
                 }
             });
         }
-
     }
 }
