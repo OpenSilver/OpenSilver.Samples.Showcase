@@ -13,6 +13,7 @@
             </Grid.RowDefinitions>
             <ContentControl Content="Vibration" Foreground="#FF3ED49A" Background="#FF92BEAC" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel x:Name="SampleContainer" Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Margin="0,0,0,10" Text="Ensure haptic feedback is enabled in your device settings." TextWrapping="Wrap" />
                 <Button Content="Vibrate" Click="VibrateButton_Click" HorizontalAlignment="Center" Height="32"/>
                 <Button Content="Haptic feedback" Margin="0,10,0,0" Click="HapticFeedbackButton_Click" HorizontalAlignment="Center" Height="32"/>
             </StackPanel>
