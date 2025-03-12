@@ -1,41 +1,27 @@
 ﻿using Microsoft.Maui.ApplicationModel;
 using Microsoft.Maui.Devices;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+using OpenSilver.Samples.Showcase.Search;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
-using System.Windows.Data;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Navigation;
-using OpenSilver.Samples.Showcase.Search;
 
 namespace OpenSilver.Samples.Showcase
 {
-    [SearchKeywords("maui", "hybrid", "device", "native", "screen", "information", "pixel")]
+    [SearchKeywords("maui", "hybrid", "device", "native", "screen", "information", "pixel", "display")]
     public partial class DisplayInfo_Demo : UserControl
     {
         public DisplayInfo_Demo()
         {
-            this.InitializeComponent();
-
-            if (!Vibration.Default.IsSupported)
-            {
-                SampleContainer.Children.Clear();
-                SampleContainer.Children.Add(new TextBlock() { Text = "This device does not support getting the display information.", TextWrapping = TextWrapping.Wrap });
-            }
+            InitializeComponent();
         }
 
         private void ButtonGetDisplayInfo_Click(object sender, RoutedEventArgs e)
         {
-            MainThread.BeginInvokeOnMainThread(async () =>
+            MainThread.BeginInvokeOnMainThread(() =>
             {
                 try
                 {
-                    System.Text.StringBuilder sb = new System.Text.StringBuilder();
+                    var sb = new StringBuilder();
 
                     sb.AppendLine($"Pixel width: {DeviceDisplay.Current.MainDisplayInfo.Width} / Pixel Height: {DeviceDisplay.Current.MainDisplayInfo.Height}");
                     sb.AppendLine($"Density: {DeviceDisplay.Current.MainDisplayInfo.Density}");
