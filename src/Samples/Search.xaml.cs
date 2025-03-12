@@ -1,16 +1,8 @@
-﻿using OpenSilver.ControlsKit;
-using OpenSilver.Samples.Showcase.Search;
+﻿using OpenSilver.Samples.Showcase.Search;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
-using System.Windows.Data;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Navigation;
 
 namespace OpenSilver.Samples.Showcase.Samples
 {
@@ -18,7 +10,14 @@ namespace OpenSilver.Samples.Showcase.Samples
     {
         public Search()
         {
-            this.InitializeComponent();
+            InitializeComponent();
+
+            SearchField.Loaded += OnSearchFieldLoaded;
+        }
+
+        private void OnSearchFieldLoaded(object sender, RoutedEventArgs e)
+        {
+            SearchField.Focus();
         }
 
         private void ButtonSearch_Click(object sender, RoutedEventArgs e)
@@ -30,7 +29,7 @@ namespace OpenSilver.Samples.Showcase.Samples
 
         private void SearchField_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.Key == Key.Enter)
+            if (e.Key == Key.Enter)
             {
                 string searchText = SearchField.Text;
                 PerformSearch(searchText);
@@ -61,6 +60,5 @@ namespace OpenSilver.Samples.Showcase.Samples
                 }
             }
         }
-
     }
 }
