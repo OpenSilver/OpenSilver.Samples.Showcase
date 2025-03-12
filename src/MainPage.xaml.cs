@@ -6,6 +6,7 @@ using System.Windows.Media;
 using OpenSilver.Themes.Modern;
 using System.Windows.Controls.Primitives;
 using Microsoft.Maui.Devices;
+using System.Collections.Generic;
 
 namespace OpenSilver.Samples.Showcase
 {
@@ -15,10 +16,10 @@ namespace OpenSilver.Samples.Showcase
         {
             InitializeComponent();
 
-#if OPENSILVER
-            ThirdPartyButton.Visibility = Visibility.Collapsed;
-            ThirdPartyHomeButton.Visibility = Visibility.Visible;
-#endif
+            //#if OPENSILVER
+            //            ThirdPartyButton.Visibility = Visibility.Collapsed;
+            //            ThirdPartyHomeButton.Visibility = Visibility.Visible;
+            //#endif
 
             Current = this;
             Loaded += MainPage_Loaded;
@@ -31,10 +32,12 @@ namespace OpenSilver.Samples.Showcase
             TitleTextBlock.HorizontalAlignment = HorizontalAlignment.Center;
 #endif
 
-            if(DeviceInfo.Current.Platform == DevicePlatform.Unknown)
-            {
-                MauiHybridButton.Visibility = Visibility.Collapsed;
-            }
+            MenuListBox.ItemsSource = PageInfo.Pages;
+
+            //if (DeviceInfo.Current.Platform == DevicePlatform.Unknown)
+            //{
+            //    MauiHybridButton.Visibility = Visibility.Collapsed;
+            //}
         }
 
         public static MainPage Current { get; private set; }
@@ -44,103 +47,24 @@ namespace OpenSilver.Samples.Showcase
             // Navigate to the "Welcome" page by default:
             if (!HtmlPage.Document.DocumentUri.OriginalString.Contains("#"))
             {
-                NavigateToPage("/Welcome");
+
+                MenuListBox.SelectedItem = PageInfo.LandingPageInfo;
             }
         }
 
         #region Navigation
 
-        #region Page buttons clicks handling
-        void ButtonXamlControls_Click(object sender, RoutedEventArgs e)
+        private void MenuListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            NavigateToPage("/XAML_Controls");
+            if (!(e.AddedItems?.Count == 0))
+            {
+                PageInfo page = e.AddedItems[0] as PageInfo;
+                if (page != null)
+                {
+                    NavigateToPage(page.Path);
+                }
+            }
         }
-
-        void ButtonXamlFeatures_Click(object sender, RoutedEventArgs e)
-        {
-            NavigateToPage("/XAML_Features");
-        }
-
-        void ButtonNetFramework_Click(object sender, RoutedEventArgs e)
-        {
-            NavigateToPage("/Net_Framework");
-        }
-
-        void ButtonClientServer_Click(object sender, RoutedEventArgs e)
-        {
-            NavigateToPage("/Client_Server");
-        }
-
-        void ButtonInterop_Click(object sender, RoutedEventArgs e)
-        {
-            NavigateToPage("/Interop_Samples");
-        }
-
-        void ButtonCharts_Click(object sender, RoutedEventArgs e)
-        {
-            NavigateToPage("/Charts");
-        }
-        
-        void ButtonPerformance_Click(object sender, RoutedEventArgs e)
-        {
-            NavigateToPage("/Performance");
-        }
-
-        void ButtonMaterialDesign_Click(object sender, RoutedEventArgs e)
-        {
-            NavigateToPage("/Material_Design");
-        }
-
-        void ButtonPlotlyCharts_Click(object sender, RoutedEventArgs e)
-        {
-            NavigateToPage("/Third_Party/Plotly_Charts/Plotly_Charts_Demo");
-        }
-
-        void ButtonSyncfusionEssentialJS1Spreadsheet_Click(object sender, RoutedEventArgs e)
-        {
-            NavigateToPage("/Third_Party/Syncfusion_EssentialJS1/Spreadsheet/Spreadsheet_Demo");
-        }
-
-        void ButtonSyncfusionEssentialJS1RichTextEditor_Click(object sender, RoutedEventArgs e)
-        {
-            NavigateToPage("/Third_Party/Syncfusion_EssentialJS1/RichTextEditor/RichTextEditor_Demo");
-        }
-
-        void ButtonTelerikKendoUIGrid_Click(object sender, RoutedEventArgs e)
-        {
-            NavigateToPage("/Third_Party/Telerik_KendoUI/Grid/Grid_Demo");
-        }
-
-        void ButtonTelerikKendoUIEditor_Click(object sender, RoutedEventArgs e)
-        {
-            NavigateToPage("/Third_Party/Telerik_KendoUI/Editor/Editor_Demo");
-        }
-
-        void ButtonDevExtremeDataGrid_Click(object sender, RoutedEventArgs e)
-        {
-            NavigateToPage("/Third_Party/DevExtreme/DataGrid/DataGrid_Demo");
-        }
-
-        void ButtonHome_Click(object sender, RoutedEventArgs e)
-        {
-            NavigateToPage("/Welcome");
-        }
-
-        void ButtonSearch_Click(object sender, RoutedEventArgs e)
-        {
-            NavigateToPage("/Search");
-        }
-
-        void ThirdParty_Click(object sender, RoutedEventArgs e)
-        {
-            NavigateToPage("/Third_Party");
-        }
-
-        void MauiHybrid_Click(object sender, RoutedEventArgs e)
-        {
-            NavigateToPage("/Maui_Hybrid");
-        }
-        #endregion
 
         void NavigateToPage(string targetUri)
         {
@@ -210,9 +134,9 @@ namespace OpenSilver.Samples.Showcase
             RowThatContainsTheSourceCodePane.Height = new GridLength(0d);
         }
 
-#endregion
+        #endregion
 
-#region States management
+        #region States management
 
         //This region contains all that we use to make the menu on the left disappear when the screen is too small.
 
@@ -336,4 +260,5 @@ namespace OpenSilver.Samples.Showcase
             }
         }
     }
+
 }

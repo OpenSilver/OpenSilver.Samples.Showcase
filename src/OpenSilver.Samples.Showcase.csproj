@@ -148,6 +148,7 @@
     <Compile Include="Other\Internals\Search\SearchableItem.cs" />
     <Compile Include="Other\Internals\Search\SearchKeywordAttribute.cs" />
     <Compile Include="Other\Leagues\League.cs" />
+    <Compile Include="Other\PageInfo.cs" />
     <Compile Include="Other\Sales.cs" />
     <Compile Include="Other\SampleResourceFile.Designer.cs" />
     <Compile Include="Samples\Charts\AreaSeries\AreaSeries_Demo.xaml.cs" />
