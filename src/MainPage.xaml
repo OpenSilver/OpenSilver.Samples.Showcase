@@ -9,7 +9,7 @@ xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
 Background="#FFF0F0F0"
 mc:Ignorable="d"
     Foreground="{DynamicResource Theme_TextBrush}"
-FontFamily="Segoe UI">
+    FontFamily="{StaticResource InterFontFamily}">
     <Page.Resources>
         <SolidColorBrush x:Key="NativeApiButtonBackground" Color="#dddddd"/>
     </Page.Resources>
@@ -172,8 +172,7 @@ Value="1" />
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <Image x:Name="TitleImage" Grid.Column="0" Source="/Other/Logo.png" Width="52" Height="60" Stretch="Fill" VerticalAlignment="Center"/>
-                            <TextBlock x:Name="TitleTextBlock" Grid.Column="1" FontFamily="Segoe UI" TextAlignment="Left" TextWrapping="Wrap" Margin="5,0,0,0" VerticalAlignment="Center" Foreground="#FF00C6D2" FontSize="18" Text="OpenSilver Showcase">
-                            </TextBlock>
+                            <TextBlock x:Name="TitleTextBlock" Grid.Column="1" TextAlignment="Left" TextWrapping="Wrap" Margin="5,0,0,0" VerticalAlignment="Center" Foreground="#FF00C6D2" FontSize="18" Text="OpenSilver Showcase"/>
                         </Grid>
                         <ListBox x:Name="MenuListBox" SelectionChanged="MenuListBox_SelectionChanged" Background="Transparent" BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Hidden">
                             <ListBox.ItemContainerStyle>

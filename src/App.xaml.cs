@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Media;
 
 namespace OpenSilver.Samples.Showcase
 {
@@ -6,9 +7,14 @@ namespace OpenSilver.Samples.Showcase
     {
         public App()
         {
-            this.InitializeComponent();
+            InitializeComponent();
 
-            // Enter construction logic here...
+            Startup += OnAppStartup;
+        }
+
+        private async void OnAppStartup(object sender, StartupEventArgs e)
+        {
+            await FontFamily.LoadFontAsync("ms-appx:///OpenSilver.Samples.Showcase/Other/Inter_VariableFont_slnt_wght.ttf");
 
             var mainPage = new MainPage();
             Window.Current.Content = mainPage;
