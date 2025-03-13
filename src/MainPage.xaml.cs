@@ -56,7 +56,7 @@ namespace OpenSilver.Samples.Showcase
 
         private void MenuListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (!(e.AddedItems?.Count == 0))
+            if (!(_skipMenuListBox_SelectionChanged && (e.AddedItems?.Count == 0)))
             {
                 PageInfo page = e.AddedItems[0] as PageInfo;
                 if (page != null)
@@ -100,6 +100,16 @@ namespace OpenSilver.Samples.Showcase
         {
             ButtonBackwards.IsEnabled = PageContainer.CanGoBack;
             ButtonForward.IsEnabled = PageContainer.CanGoForward;
+        }
+
+        bool _skipMenuListBox_SelectionChanged = false;
+        internal void StartSearch(string searchTerms)
+        {
+            _skipMenuListBox_SelectionChanged = true;
+            MenuListBox.SelectedItem = PageInfo.SearchPageInfo;
+
+            NavigateToPage($"/Search/{Uri.EscapeUriString(searchTerms)}");
+            _skipMenuListBox_SelectionChanged = false;
         }
 
         #endregion
@@ -243,15 +253,13 @@ namespace OpenSilver.Samples.Showcase
 
         #endregion
 
-
-
         #region themes switch related code
         SolidColorBrush _nativeApiButtonBackgroundBrush;
         public SolidColorBrush NativeApiButtonBackgroundBrush
         {
             get
             {
-                if(_nativeApiButtonBackgroundBrush == null)
+                if (_nativeApiButtonBackgroundBrush == null)
                 {
                     _nativeApiButtonBackgroundBrush = this.Resources["NativeApiButtonBackground"] as SolidColorBrush;
                 }
@@ -280,6 +288,7 @@ namespace OpenSilver.Samples.Showcase
                 }
             }
         }
+
         #endregion
     }
 

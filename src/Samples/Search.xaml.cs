@@ -3,6 +3,7 @@ using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Navigation;
 
 namespace OpenSilver.Samples.Showcase.Samples
 {
@@ -18,7 +19,23 @@ namespace OpenSilver.Samples.Showcase.Samples
         private void OnSearchFieldLoaded(object sender, RoutedEventArgs e)
         {
             SearchField.Focus();
+
+            //get the MainPage and start the search:
+            if (Application.Current.RootVisual is MainPage mainPage)
+            {
+                string originalPath = mainPage.PageContainer.CurrentSource.OriginalString;
+                if (originalPath.Length > 8)
+                {
+                    string searchTerms = originalPath.Substring(8); // get rid of the "/Search/" from "Search/searchParameters"
+                    if (!string.IsNullOrWhiteSpace(searchTerms))
+                    {
+                        SearchField.Text = searchTerms;
+                        PerformSearch(searchTerms);
+                    }
+                }
+            }
         }
+
 
         private void ButtonSearch_Click(object sender, RoutedEventArgs e)
         {

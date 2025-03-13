@@ -22,6 +22,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Include="Other\Internals\Search\SearchControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\Charts\AreaSeries\AreaSeries_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -146,6 +149,7 @@
     <Compile Include="Other\Internals\Search\SamplesInfoLoader.cs" />
     <Compile Include="Other\Internals\Search\ControlSearch.cs" />
     <Compile Include="Other\Internals\Search\SearchableItem.cs" />
+    <Compile Include="Other\Internals\Search\SearchControl.xaml.cs" />
     <Compile Include="Other\Internals\Search\SearchKeywordAttribute.cs" />
     <Compile Include="Other\Leagues\League.cs" />
     <Compile Include="Other\PageInfo.cs" />

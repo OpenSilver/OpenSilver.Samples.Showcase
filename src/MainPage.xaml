@@ -247,6 +247,9 @@ Value="1" />
                 Uri="/Search"
                 MappedUri="/Samples/Search.xaml"/>
                             <sdk:UriMapping
+                Uri="/Search/{searchTerms}"
+                MappedUri="/Samples/Search.xaml?SearchTerms={searchTerms}"/>
+                            <sdk:UriMapping
                 Uri="/Third_Party/{path}"
                 MappedUri="/Samples/Third_Party/{path}.xaml"/>
                             <sdk:UriMapping

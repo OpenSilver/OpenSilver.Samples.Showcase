@@ -6,6 +6,7 @@
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
     <StackPanel>
         <TextBlock Text=".NET Framework" Style="{StaticResource PageHeader_Style}"/>
+        <local:SearchControl HorizontalAlignment="Right"/>
         <controlskit:StaggeredPanel DesiredColumnWidth="280" ProgressiveRenderingChunkSize="2">
             <local:DispatcherTimer_Demo HorizontalAlignment="Center"/>
             <local:File_Open_Demo x:Name="File_OpenDemo" HorizontalAlignment="Center"/>

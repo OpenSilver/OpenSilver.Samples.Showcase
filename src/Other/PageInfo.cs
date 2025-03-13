@@ -12,6 +12,7 @@ namespace OpenSilver.Samples.Showcase
 
         static List<PageInfo> _pageInfos;
         static PageInfo _landingPageInfo;
+        static PageInfo _searchPageInfo;
         public static List<PageInfo> Pages
         {
             get
@@ -29,7 +30,7 @@ namespace OpenSilver.Samples.Showcase
                     _pageInfos.Add(new PageInfo("Native APIs", "/Maui_Hybrid"));
                     _pageInfos.Add(new PageInfo("Third-Party", "/Third_Party"));
                     _pageInfos.Add(LandingPageInfo);
-                    _pageInfos.Add(new PageInfo("Search", "/Search"));
+                    _pageInfos.Add(SearchPageInfo);
                 }
 
                 return _pageInfos;
@@ -45,6 +46,18 @@ namespace OpenSilver.Samples.Showcase
                     _landingPageInfo = new PageInfo("Home", "/Welcome");
                 }
                 return _landingPageInfo;
+            }
+        }
+
+        public static PageInfo SearchPageInfo
+        {
+            get
+            {
+                if (_searchPageInfo == null)
+                {
+                    _searchPageInfo = new PageInfo("Search", "/Search");
+                }
+                return _searchPageInfo;
             }
         }
 

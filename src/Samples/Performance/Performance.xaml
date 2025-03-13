@@ -5,11 +5,14 @@
     xmlns:controlskit="clr-namespace:OpenSilver.ControlsKit;assembly=OpenSilver.ControlsKit.Controls"
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
 
-    <TextBlock Text="Performance" Style="{StaticResource PageHeader_Style}"/>
-    <controlskit:StaggeredPanel ProgressiveRenderingChunkSize="2" DesiredColumnWidth="330">
-        <local:Virtualization_Demo/>
-        <local:ProgressiveLoading_Demo/>
-        <local:AOT_Demo/>
-        <local:HtmlCanvas_Demo HorizontalAlignment="Center"/>
-    </controlskit:StaggeredPanel>
+    <StackPanel>
+        <TextBlock Text="Performance" Style="{StaticResource PageHeader_Style}"/>
+        <local:SearchControl HorizontalAlignment="Right"/>
+        <controlskit:StaggeredPanel ProgressiveRenderingChunkSize="2" DesiredColumnWidth="330">
+            <local:Virtualization_Demo/>
+            <local:ProgressiveLoading_Demo/>
+            <local:AOT_Demo/>
+            <local:HtmlCanvas_Demo HorizontalAlignment="Center"/>
+        </controlskit:StaggeredPanel>
+    </StackPanel>
 </UserControl>

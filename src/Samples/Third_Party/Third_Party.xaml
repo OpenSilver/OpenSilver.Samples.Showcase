@@ -4,15 +4,16 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase"
     xmlns:native="clr-namespace:CSHTML5.Native.Html.Controls;assembly=OpenSilver">
-  <Border Background="White" CornerRadius="6" Width="500" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="22,22,0,0">
-    <Border.Effect>
-      <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="10" Opacity="0.1" />
-    </Border.Effect>
-    <StackPanel Margin="0,0,20,20">
-      <TextBlock Text="Third-Party Components" Foreground="#FF2299A1" Style="{StaticResource PageHeader_Style}"/>
+    <Border Background="White" CornerRadius="6" Width="500" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="22,22,0,0">
+        <Border.Effect>
+            <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="10" Opacity="0.1" />
+        </Border.Effect>
+        <StackPanel Margin="0,0,20,20">
+            <TextBlock Text="Third-Party Components" Foreground="#FF2299A1" Style="{StaticResource PageHeader_Style}"/>
+            <local:SearchControl HorizontalAlignment="Right"/>
 
-      <native:HtmlPresenter ScrollMode="Disabled">
-        <![CDATA[
+            <native:HtmlPresenter ScrollMode="Disabled">
+                <![CDATA[
         <ul style="font-size:1.4em; margin: -10px 10px;">
           <li style="margin-top:10px;">Telerik UI for Silverlight* (<a href="https://doc.opensilver.net/documentation/3rd-party-libraries/telerik.html"  style="margin-top:10px;">Doc</a>|<a href="https://opensilverdemos.azurewebsites.net/telerikshowcase/release">Demo</a>)</li>
           <li style="margin-top:10px;"> Telerik Kendo UI* (via JavaScript interop)       </li>
@@ -38,10 +39,10 @@
           <li style="margin-top:10px;"> More...</li>
         </ul>
         ]]>
-      </native:HtmlPresenter>
+            </native:HtmlPresenter>
 
 
-      <TextBlock Text="*Note: a license from the third-party vendor is required." FontSize="12" Foreground="#FF666666" TextWrapping="Wrap" Margin="22,8,0,0" FontStyle="Italic"/>
-    </StackPanel>
-  </Border>
+            <TextBlock Text="*Note: a license from the third-party vendor is required." FontSize="12" Foreground="#FF666666" TextWrapping="Wrap" Margin="22,8,0,0" FontStyle="Italic"/>
+        </StackPanel>
+    </Border>
 </UserControl>

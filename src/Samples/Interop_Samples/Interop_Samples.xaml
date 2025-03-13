@@ -6,6 +6,7 @@
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
     <StackPanel>
         <TextBlock Text="Interop" Style="{StaticResource PageHeader_Style}"/>
+        <local:SearchControl HorizontalAlignment="Right"/>
         <controlskit:StaggeredPanel DesiredColumnWidth="280" ProgressiveRenderingChunkSize="2">
             <local:ExecuteJavaScript_Demo HorizontalAlignment="Center"/>
             <local:Interop_HtmlPresenter_Demo HorizontalAlignment="Center"/>

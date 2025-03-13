@@ -6,6 +6,7 @@
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
     <StackPanel>
         <TextBlock Text="XAML Features" Style="{StaticResource PageHeader_Style}"/>
+        <local:SearchControl HorizontalAlignment="Right"/>
         <controlskit:StaggeredPanel DesiredColumnWidth="280" ProgressiveRenderingChunkSize="2">
             <local:RenderTransforms_Demo HorizontalAlignment="Center"/>
             <local:Drag_And_Drop_Demo HorizontalAlignment="Center"/>
