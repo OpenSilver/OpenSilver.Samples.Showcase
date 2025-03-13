@@ -11,22 +11,25 @@ namespace OpenSilver.Samples.Showcase
     {
         public OpenMapApp_Demo()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
 
-        private async void OpenMapAppButton_Click(object sender, RoutedEventArgs e)
+        private void OpenMapAppButton_Click(object sender, RoutedEventArgs e)
         {
-            var location = new Microsoft.Maui.Devices.Sensors.Location(48.8584, 2.2945);
-            var options = new MapLaunchOptions { Name = "Eiffel tower" };
+            MainThread.BeginInvokeOnMainThread(async () =>
+            {
+                var location = new Microsoft.Maui.Devices.Sensors.Location(48.8584, 2.2945);
+                var options = new MapLaunchOptions { Name = "Eiffel tower" };
 
-            try
-            {
-                await Map.Default.OpenAsync(location, options);
-            }
-            catch (Exception ex)
-            {
-                // No map application available to open
-            }
+                try
+                {
+                    await Map.Default.OpenAsync(location, options);
+                }
+                catch (Exception ex)
+                {
+                    // No map application available to open
+                }
+            });
         }
     }
 }
