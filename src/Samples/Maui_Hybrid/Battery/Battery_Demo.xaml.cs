@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Navigation;
 using OpenSilver.Samples.Showcase.Search;
+using System.Windows.Documents;
 
 namespace OpenSilver.Samples.Showcase
 {
@@ -21,6 +22,26 @@ namespace OpenSilver.Samples.Showcase
         public Battery_Demo()
         {
             this.InitializeComponent();
+
+            if (DeviceInfo.Current.Platform == DevicePlatform.Unknown)
+            {
+                //if we are in a browser which doesn't support the battery status API, show a message instead of the Sample contents.
+
+                bool isBatteryUnsupported = Interop.ExecuteJavaScriptGetResult<bool>("!navigator.getBattery");
+                if (isBatteryUnsupported)
+                {
+                    SampleContainer.Children.Clear();
+
+                    Hyperlink link = new Hyperlink() { NavigateUri = new Uri("https://developer.mozilla.org/en-US/docs/Web/API/Battery_Status_API#browser_compatibility"), TargetName = "_blank" };
+                    link.Inlines.Add("here");
+                    TextBlock tb = new TextBlock();
+                    tb.TextWrapping = TextWrapping.Wrap;
+                    tb.Inlines.Add("The battery status API is not supported in this browser. Check ");
+                    tb.Inlines.Add(link);
+                    tb.Inlines.Add(" to see its compatibility table.");
+                    SampleContainer.Children.Add(tb);
+                }
+            }
         }
 
         private void CheckBatteryStatusButton_Click(object sender, System.Windows.RoutedEventArgs e)
@@ -37,7 +58,7 @@ namespace OpenSilver.Samples.Showcase
 
         private void CheckBattery_Browser()
         {
-            Interop.ExecuteJavaScriptAsync("if (navigator.getBattery) { navigator.getBattery().then((battery) => { $0(\"Battery is \" + (battery.charging ? \"\" : \"not \") + \"charging\\r\\nCharge level: \" + battery.level * 100 + \"%\") })} else { $0(\"Battery status is not available in this browser.\") }", (Action<string>)UpdateBatteryStatus_Browser) ;
+            Interop.ExecuteJavaScriptAsync("navigator.getBattery().then((battery) => { $0(\"Battery is \" + (battery.charging ? \"\" : \"not \") + \"charging\\r\\nCharge level: \" + battery.level * 100 + \"%\", true) })", (Action<string>)UpdateBatteryStatus_Browser);
         }
 
         private void UpdateBatteryStatus_Browser(string text)
