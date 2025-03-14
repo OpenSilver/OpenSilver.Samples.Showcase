@@ -9,10 +9,10 @@ using System;
 
 namespace OpenSilver.Samples.Showcase
 {
-    [SearchKeywords("maui", "hybrid", "device", "native", "geolocation", "coordinates", "longitude", "latitude", "information")]
-    public partial class Location : UserControl
+    [SearchKeywords("maui", "hybrid", "device", "native", "coordinates", "longitude", "latitude", "information")]
+    public partial class Geolocation : UserControl
     {
-        public Location()
+        public Geolocation()
         {
             this.InitializeComponent();
         }
@@ -59,7 +59,7 @@ namespace OpenSilver.Samples.Showcase
                     try
                     {
                         var request = new GeolocationRequest(GeolocationAccuracy.Medium);
-                        var location = await Geolocation.Default.GetLocationAsync(request);
+                        var location = await Microsoft.Maui.Devices.Sensors.Geolocation.Default.GetLocationAsync(request);
 
                         if (location != null)
                         {

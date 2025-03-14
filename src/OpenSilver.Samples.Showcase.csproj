@@ -76,7 +76,7 @@
     <Page Include="Samples\Maui_Hybrid\Flashlight\Flashlight_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\Maui_Hybrid\Location\Location.xaml">
+    <Page Include="Samples\Maui_Hybrid\Geolocation\Geolocation.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\Maui_Hybrid\Maui_Hybrid.xaml">
@@ -172,7 +172,7 @@
     <Compile Include="Samples\Maui_Hybrid\DisplayInfo\DisplayInfo_Demo.xaml.cs" />
     <Compile Include="Samples\Maui_Hybrid\FilePickerAndShare\FilePickerAndShare_Demo.xaml.cs" />
     <Compile Include="Samples\Maui_Hybrid\Flashlight\Flashlight_Demo.xaml.cs" />
-    <Compile Include="Samples\Maui_Hybrid\Location\Location.xaml.cs" />
+    <Compile Include="Samples\Maui_Hybrid\Geolocation\Geolocation.xaml.cs" />
     <Compile Include="Samples\Maui_Hybrid\Maui_Hybrid.xaml.cs" />
     <Compile Include="Samples\Maui_Hybrid\OpenMapApp\OpenMapApp_Demo.xaml.cs" />
     <Compile Include="Samples\Maui_Hybrid\Orientation\OrientationSensors_Demo.xaml.cs" />

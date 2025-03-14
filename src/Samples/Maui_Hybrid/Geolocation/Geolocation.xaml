@@ -1,5 +1,5 @@
 ﻿<UserControl
-    x:Class="OpenSilver.Samples.Showcase.Location"
+    x:Class="OpenSilver.Samples.Showcase.Geolocation"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
@@ -19,14 +19,14 @@
             <local:ViewSourceButton Grid.Row="2"
                                     Background="#fe7484">
                 <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Maui_Hybrid/Location"
-                                                FileName="Location.xaml" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Maui_Hybrid/Location"
-                                                FileName="Location.xaml.cs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Maui_Hybrid/Location"
-                                                FileName="Location.xaml.vb" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Maui_Hybrid/Location"
-                                                FileName="Location.xaml.fs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Maui_Hybrid/Geolocation"
+                                                FileName="Geolocation.xaml" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Maui_Hybrid/Geolocation"
+                                                FileName="Geolocation.xaml.cs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Maui_Hybrid/Geolocation"
+                                                FileName="Geolocation.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Maui_Hybrid/Geolocation"
+                                                FileName="Geolocation.xaml.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>
