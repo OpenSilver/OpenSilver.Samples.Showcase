@@ -4,13 +4,19 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase"
     xmlns:native="clr-namespace:CSHTML5.Native.Html.Controls;assembly=OpenSilver">
-    <Border Background="White" CornerRadius="6" Width="500" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="22,22,0,0">
+    <Border Background="White" CornerRadius="6" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="22,22,0,0">
         <Border.Effect>
             <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="10" Opacity="0.1" />
         </Border.Effect>
         <StackPanel Margin="0,0,20,20">
-            <TextBlock Text="Third-Party Components" Foreground="#FF2299A1" Style="{StaticResource PageHeader_Style}"/>
-            <local:SearchControl HorizontalAlignment="Right"/>
+            <Grid>
+                <TextBlock Text="Third-Party Components" Foreground="#FF2299A1" Style="{StaticResource PageHeader_Style}"/>
+                <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <TextBlock Text="Third-Party Components" Style="{StaticResource PageHeader_Style}" Foreground="Transparent"/>
+                    <local:SearchControl HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                    <Border Width="30"/>
+                </WrapPanel>
+            </Grid>
 
             <native:HtmlPresenter ScrollMode="Disabled">
                 <![CDATA[

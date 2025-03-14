@@ -5,17 +5,30 @@
     xmlns:controlskit="clr-namespace:OpenSilver.ControlsKit;assembly=OpenSilver.ControlsKit.Controls"
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase.Samples">
 
-    
+
     <StackPanel>
-        <TextBlock Text="Search" Style="{StaticResource PageHeader_Style}"/>
+        <Grid>
+            <TextBlock Text="Search" Style="{StaticResource PageHeader_Style}"/>
+            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Text="Search" Style="{StaticResource PageHeader_Style}" Foreground="Transparent"/>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
+                    <TextBox x:Name="SearchField" MinWidth="200" Margin="0,0,5,0" KeyDown="SearchField_KeyDown" BorderBrush="#858585"/>
+                    <Button Click="ButtonSearch_Click" Width="32" Height="32" Background="#858585">
+                        <Path Stroke="White" Data="M 17 17 A 1 1 0 0 0 -17 -17 A 1 1 0 0 0 17 17 L 52 54" StrokeThickness="2" Stretch="Uniform"/>
+                    </Button>
+                </StackPanel>
+                <Border Width="30"/>
+            </WrapPanel>
+        </Grid>
+        <!--<TextBlock Text="Search" Style="{StaticResource PageHeader_Style}"/>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
             <TextBox x:Name="SearchField" MinWidth="200" Margin="0,0,5,0" KeyDown="SearchField_KeyDown"/>
             <Button Click="ButtonSearch_Click" Width="32" Height="32">
                 <Path Stroke="White" Data="M 17 17 A 1 1 0 0 0 -17 -17 A 1 1 0 0 0 17 17 L 52 54" StrokeThickness="2" Stretch="Uniform"/>
             </Button>
-        </StackPanel>
+        </StackPanel>-->
         <controlskit:StaggeredPanel Grid.Row="1" ProgressiveRenderingChunkSize="2" x:Name="SamplesContainer">
-            
+
         </controlskit:StaggeredPanel>
     </StackPanel>
 </UserControl>

@@ -5,8 +5,14 @@
     xmlns:controlskit="clr-namespace:OpenSilver.ControlsKit;assembly=OpenSilver.ControlsKit.Controls"
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
   <StackPanel>
-        <TextBlock Text="Native APis (Maui Hybrid)" Style="{StaticResource PageHeader_Style}"/>
-        <local:SearchControl HorizontalAlignment="Right"/>
+        <Grid>
+            <TextBlock Text="Native APis (Maui Hybrid)" Style="{StaticResource PageHeader_Style}"/>
+            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Text="Native APis (Maui Hybrid)" Style="{StaticResource PageHeader_Style}" Foreground="Transparent"/>
+                <local:SearchControl HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                <Border Width="30"/>
+            </WrapPanel>
+        </Grid>
         <controlskit:StaggeredPanel ProgressiveRenderingChunkSize="2">
             <local:Location HorizontalAlignment="Center"/>
             <local:Flashlight_Demo HorizontalAlignment="Center"/>

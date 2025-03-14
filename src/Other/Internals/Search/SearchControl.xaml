@@ -9,8 +9,8 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <TextBox x:Name="SearchField" MinWidth="200" Height="32" Margin="0,0,5,0" KeyDown="SearchField_KeyDown"/>
-        <Button Click="ButtonSearch_Click"  Width="32" Height="32" Grid.Column="1">
+        <TextBox x:Name="SearchField" MinWidth="200" Height="32" Margin="0,0,5,0" KeyDown="SearchField_KeyDown" BorderBrush="858585"/>
+        <Button Click="ButtonSearch_Click"  Width="32" Height="32" Grid.Column="1" Background="#858585">
             <Path Stroke="White" Data="M 17 17 A 1 1 0 0 0 -17 -17 A 1 1 0 0 0 17 17 L 52 54" StrokeThickness="2" Stretch="Uniform"/>
         </Button>
     </Grid>

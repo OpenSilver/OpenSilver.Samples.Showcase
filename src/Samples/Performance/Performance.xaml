@@ -6,8 +6,14 @@
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
 
     <StackPanel>
-        <TextBlock Text="Performance" Style="{StaticResource PageHeader_Style}"/>
-        <local:SearchControl HorizontalAlignment="Right"/>
+        <Grid>
+            <TextBlock Text="Performance" Style="{StaticResource PageHeader_Style}"/>
+            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Text="Performance" Style="{StaticResource PageHeader_Style}" Foreground="Transparent"/>
+                <local:SearchControl HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                <Border Width="30"/>
+            </WrapPanel>
+        </Grid>
         <controlskit:StaggeredPanel ProgressiveRenderingChunkSize="2" DesiredColumnWidth="330">
             <local:Virtualization_Demo/>
             <local:ProgressiveLoading_Demo/>

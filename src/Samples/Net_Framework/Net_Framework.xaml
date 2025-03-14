@@ -5,8 +5,14 @@
     xmlns:controlskit="clr-namespace:OpenSilver.ControlsKit;assembly=OpenSilver.ControlsKit.Controls"
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
     <StackPanel>
-        <TextBlock Text=".NET Framework" Style="{StaticResource PageHeader_Style}"/>
-        <local:SearchControl HorizontalAlignment="Right"/>
+        <Grid>
+            <TextBlock Text=".NET Framework" Style="{StaticResource PageHeader_Style}"/>
+            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Text=".NET Framework" Style="{StaticResource PageHeader_Style}" Foreground="Transparent"/>
+                <local:SearchControl HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                <Border Width="30"/>
+            </WrapPanel>
+        </Grid>
         <controlskit:StaggeredPanel DesiredColumnWidth="280" ProgressiveRenderingChunkSize="2">
             <local:DispatcherTimer_Demo HorizontalAlignment="Center"/>
             <local:File_Open_Demo x:Name="File_OpenDemo" HorizontalAlignment="Center"/>
