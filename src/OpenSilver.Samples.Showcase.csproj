@@ -290,7 +290,7 @@
     <Page Include="Samples\Client_Server\JSONP\JSONP_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\Client_Server\REST_WebClient\REST_WebClient_Demo.xaml">
+    <Page Include="Samples\Client_Server\REST_HttpClient\REST_HttpClient_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\Client_Server\SignalR\SignalR_Demo.xaml">
@@ -693,8 +693,8 @@
     <Compile Include="Samples\Client_Server\jQuery.ajax\jQueryAjaxHelper.cs" />
     <Compile Include="Samples\Client_Server\jQuery.ajax\jQueryAjax_Demo.xaml.cs" />
     <Compile Include="Samples\Client_Server\JSONP\JSONP_Demo.xaml.cs" />
-    <Compile Include="Samples\Client_Server\REST_WebClient\REST_ToDoItem.cs" />
-    <Compile Include="Samples\Client_Server\REST_WebClient\REST_WebClient_Demo.xaml.cs" />
+    <Compile Include="Samples\Client_Server\REST_HttpClient\REST_ToDoItem.cs" />
+    <Compile Include="Samples\Client_Server\REST_HttpClient\REST_HttpClient_Demo.xaml.cs" />
     <Compile Include="Samples\Client_Server\SignalR\SignalR_Demo.xaml.cs" />
     <Compile Include="Samples\Client_Server\WCF_SOAP\WCF_SOAP_Demo.xaml.cs" />
     <Compile Include="Samples\Client_Server\WebSockets\WebSocket.cs" />

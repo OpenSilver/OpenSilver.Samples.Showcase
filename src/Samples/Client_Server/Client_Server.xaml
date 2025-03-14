@@ -15,7 +15,7 @@
         </Grid>
         <controlskit:StaggeredPanel DesiredColumnWidth="320" ProgressiveRenderingChunkSize="2">
             <local:WCF_SOAP_Demo HorizontalAlignment="Center"/>
-            <local:REST_WebClient_Demo x:Name="REST_WebClientDemo" HorizontalAlignment="Center"/>
+            <local:REST_HttpClient_Demo x:Name="REST_WebClientDemo" HorizontalAlignment="Center"/>
             <!--<local:SignalR_Demo HorizontalAlignment="Center"/>-->
             <local:WebSockets_Demo HorizontalAlignment="Center"/>
             <local:RIAServices_Demo HorizontalAlignment="Center"/>

@@ -11,12 +11,12 @@ using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase
 {
-    [SearchKeywords("REST", "API", "WebClient", "HTTP", "web", "service")]
-    public partial class REST_WebClient_Demo : UserControl
+    [SearchKeywords("REST", "API", "HttpClient", "HTTP", "web", "service")]
+    public partial class REST_HttpClient_Demo : UserControl
     {
         Guid _ownerId;
 
-        public REST_WebClient_Demo()
+        public REST_HttpClient_Demo()
         {
             this.InitializeComponent();
 
