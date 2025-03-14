@@ -22,8 +22,12 @@ namespace OpenSilver.Samples.Showcase
         {
             this.InitializeComponent();
 
-
-            if(!Vibration.Default.IsSupported)
+            if (DeviceInfo.Current.Platform == DevicePlatform.Unknown)
+            {
+                SampleContainer.Children.Clear();
+                SampleContainer.Children.Add(new TextBlock() { Text = "The vibration sample is not supported in the browser.", TextWrapping = TextWrapping.Wrap });
+            }
+            else if (!Vibration.Default.IsSupported)
             {
                 SampleContainer.Children.Clear();
                 SampleContainer.Children.Add(new TextBlock() { Text = "This device does not support vibrations.", TextWrapping = TextWrapping.Wrap });

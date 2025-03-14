@@ -22,37 +22,45 @@ namespace OpenSilver.Samples.Showcase
         public OrientationSensors_Demo()
         {
             this.InitializeComponent();
-            List<string> unsupportedFeatures = new List<string>();
-            if (!Compass.Default.IsSupported)
+            if (DeviceInfo.Current.Platform == DevicePlatform.Unknown)
             {
-                CompassContainer.Visibility = Visibility.Collapsed;
-                unsupportedFeatures.Add("Compass");
+                SampleContainer.Children.Clear();
+                SampleContainer.Children.Add(new TextBlock() { Text = "These samples are not supported in the browser.", TextWrapping = TextWrapping.Wrap });
             }
-            if (!Accelerometer.Default.IsSupported)
+            else
             {
-                AccelerometerContainer.Visibility = Visibility.Collapsed;
-                unsupportedFeatures.Add("Accelerometer");
-            }
-            if (!Gyroscope.Default.IsSupported)
-            {
-                GyroscopeContainer.Visibility = Visibility.Collapsed;
-                unsupportedFeatures.Add("Gyroscope");
-            }
-            if (!Magnetometer.Default.IsSupported)
-            {
-                MagnetometerContainer.Visibility = Visibility.Collapsed;
-                unsupportedFeatures.Add("Magnetometer");
-            }
-            if (!OrientationSensor.Default.IsSupported)
-            {
-                OrientationContainer.Visibility = Visibility.Collapsed;
-                unsupportedFeatures.Add("Orientation sensor");
-            }
+                List<string> unsupportedFeatures = new List<string>();
+                if (!Compass.Default.IsSupported)
+                {
+                    CompassContainer.Visibility = Visibility.Collapsed;
+                    unsupportedFeatures.Add("Compass");
+                }
+                if (!Accelerometer.Default.IsSupported)
+                {
+                    AccelerometerContainer.Visibility = Visibility.Collapsed;
+                    unsupportedFeatures.Add("Accelerometer");
+                }
+                if (!Gyroscope.Default.IsSupported)
+                {
+                    GyroscopeContainer.Visibility = Visibility.Collapsed;
+                    unsupportedFeatures.Add("Gyroscope");
+                }
+                if (!Magnetometer.Default.IsSupported)
+                {
+                    MagnetometerContainer.Visibility = Visibility.Collapsed;
+                    unsupportedFeatures.Add("Magnetometer");
+                }
+                if (!OrientationSensor.Default.IsSupported)
+                {
+                    OrientationContainer.Visibility = Visibility.Collapsed;
+                    unsupportedFeatures.Add("Orientation sensor");
+                }
 
-            if(unsupportedFeatures.Any())
-            {
-                UnsupportedTextBlock.Text = $"The following sections of this have been hidden because this device does not support them: \r\n - {string.Join(",\r\n - ", unsupportedFeatures)}.";
-                UnsupportedTextBlock.Visibility = Visibility.Visible;
+                if (unsupportedFeatures.Any())
+                {
+                    UnsupportedTextBlock.Text = $"The following sections of this have been hidden because this device does not support them: \r\n - {string.Join(",\r\n - ", unsupportedFeatures)}.";
+                    UnsupportedTextBlock.Visibility = Visibility.Visible;
+                }
             }
         }
 

@@ -13,16 +13,23 @@ namespace OpenSilver.Samples.Showcase
         public Flashlight_Demo()
         {
             InitializeComponent();
-
-            MainThread.BeginInvokeOnMainThread(async () =>
+            if (DeviceInfo.Current.Platform == DevicePlatform.Unknown)
             {
-                if (!await Flashlight.Default.IsSupportedAsync())
+                SampleContainer.Children.Clear();
+                SampleContainer.Children.Add(new TextBlock() { Text = "The flashlight is not supported in the browser.", TextWrapping = TextWrapping.Wrap });
+            }
+            else
+            {
+                MainThread.BeginInvokeOnMainThread(async () =>
                 {
-                    FlashlightButton.Visibility = Visibility.Collapsed;
-                    UnsupportedTextBlock.Text = "The flashlight is not supported on this device.";
-                    UnsupportedTextBlock.Visibility = Visibility.Visible;
-                }
-            });
+                    if (!await Flashlight.Default.IsSupportedAsync())
+                    {
+                        FlashlightButton.Visibility = Visibility.Collapsed;
+                        UnsupportedTextBlock.Text = "The flashlight is not supported on this device.";
+                        UnsupportedTextBlock.Visibility = Visibility.Visible;
+                    }
+                });
+            }
         }
 
         void SwitchButton_Click(object sender, RoutedEventArgs e)

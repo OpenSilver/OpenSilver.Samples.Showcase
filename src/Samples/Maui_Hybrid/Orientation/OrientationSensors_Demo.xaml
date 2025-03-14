@@ -12,7 +12,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="Orientation sensors" Foreground="#66cc66" Background="#FF92BEAC" Style="{StaticResource HeaderControl_Style}"/>
-            <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel x:Name="SampleContainer" Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <!--Compass-->
                 <StackPanel x:Name="CompassContainer"  Orientation="Vertical">
                     <ToggleButton Content="Compass on/off" Click="CompassToggleButton_Click" Height="32" Margin="0,0,0,10" Foreground="#66cc66" Background="{DynamicResource NativeApiButtonBackground}" FontWeight="Bold"/>

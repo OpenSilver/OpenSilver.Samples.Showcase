@@ -1,6 +1,7 @@
 ﻿using Microsoft.Maui.ApplicationModel;
 using Microsoft.Maui.Media;
 using Microsoft.Maui.Storage;
+using Microsoft.Maui.Devices;
 using OpenSilver.Samples.Showcase.Search;
 using System;
 using System.IO;
@@ -16,6 +17,11 @@ namespace OpenSilver.Samples.Showcase
         public Camera_Demo()
         {
             this.InitializeComponent();
+            if (DeviceInfo.Current.Platform == DevicePlatform.Unknown)
+            {
+                SampleContainer.Children.Clear();
+                SampleContainer.Children.Add(new TextBlock() { Text = "The camera app is not supported in the browser.", TextWrapping = TextWrapping.Wrap });
+            }
         }
 
         private async void TakePhotoButton_Click(object sender, RoutedEventArgs e)

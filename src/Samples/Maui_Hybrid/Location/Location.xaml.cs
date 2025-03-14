@@ -19,6 +19,29 @@ namespace OpenSilver.Samples.Showcase
 
         void GetButton_Click(object sender, RoutedEventArgs e)
         {
+            if(DeviceInfo.Current.Platform == DevicePlatform.Unknown)
+            {
+                GetLocation_Browser();
+            }
+            else
+            {
+                GetLocation_Maui();
+            }
+        }
+
+        private void GetLocation_Browser()
+        {
+            Interop.ExecuteJavaScriptAsync("navigator.geolocation.getCurrentPosition((pos) => {$0(\"lat: \"+ pos.coords.latitude + \"\\r\\nlong: \" + pos.coords.longitude)})", (Action<string>)ReceiveLocation).ToString();
+            //LocationTextBlock.Text = result;
+        }
+
+        private void ReceiveLocation(string obj)
+        {
+            LocationTextBlock.Text = obj;
+        }
+
+        private void GetLocation_Maui()
+        {
             MainThread.BeginInvokeOnMainThread(async () =>
             {
                 // Check the current location permission status.

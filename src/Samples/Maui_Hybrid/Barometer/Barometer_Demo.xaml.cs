@@ -14,7 +14,12 @@ namespace OpenSilver.Samples.Showcase
         public Barometer_Demo()
         {
             this.InitializeComponent();
-            if (!Barometer.Default.IsSupported)
+            if (DeviceInfo.Current.Platform == DevicePlatform.Unknown)
+            {
+                SampleContainer.Children.Clear();
+                SampleContainer.Children.Add(new TextBlock() { Text = "The barometer feature is not supported in the browser.", TextWrapping = TextWrapping.Wrap });
+            }
+            else if (!Barometer.Default.IsSupported)
             {
                 SampleContainer.Children.Clear();
                 SampleContainer.Children.Add(new TextBlock() { Text = "This device does not support the barometer.", TextWrapping = TextWrapping.Wrap });

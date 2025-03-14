@@ -1,4 +1,5 @@
 ﻿using Microsoft.Maui.ApplicationModel;
+using Microsoft.Maui.Devices;
 using OpenSilver.Samples.Showcase.Search;
 using System;
 using System.Windows;
@@ -12,6 +13,11 @@ namespace OpenSilver.Samples.Showcase
         public OpenMapApp_Demo()
         {
             InitializeComponent();
+            if (DeviceInfo.Current.Platform == DevicePlatform.Unknown)
+            {
+                SampleContainer.Children.Clear();
+                SampleContainer.Children.Add(new TextBlock() { Text = "The map app is not supported in the browser.", TextWrapping = TextWrapping.Wrap });
+            }
         }
 
         private void OpenMapAppButton_Click(object sender, RoutedEventArgs e)

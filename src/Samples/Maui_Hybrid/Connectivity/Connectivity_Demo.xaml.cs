@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using Microsoft.Maui.ApplicationModel;
 using Microsoft.Maui.Networking;
+using Microsoft.Maui.Devices;
 using OpenSilver.Samples.Showcase.Search;
 
 namespace OpenSilver.Samples.Showcase
@@ -22,6 +23,12 @@ namespace OpenSilver.Samples.Showcase
         public Connectivity_Demo()
         {
             this.InitializeComponent();
+
+            if (DeviceInfo.Current.Platform == DevicePlatform.Unknown)
+            {
+                SampleContainer.Children.Clear();
+                SampleContainer.Children.Add(new TextBlock() { Text = "The connectivity sample is not supported in the browser.", TextWrapping = TextWrapping.Wrap });
+            }
         }
         void CheckConnectivityButton_Click(object sender, RoutedEventArgs e)
         {

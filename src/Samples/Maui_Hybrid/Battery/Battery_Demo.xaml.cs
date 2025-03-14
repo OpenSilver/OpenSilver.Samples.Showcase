@@ -25,6 +25,28 @@ namespace OpenSilver.Samples.Showcase
 
         private void CheckBatteryStatusButton_Click(object sender, System.Windows.RoutedEventArgs e)
         {
+            if (DeviceInfo.Current.Platform == DevicePlatform.Unknown)
+            {
+                CheckBattery_Browser();
+            }
+            else
+            {
+                CheckBattery_Maui();
+            }
+        }
+
+        private void CheckBattery_Browser()
+        {
+            Interop.ExecuteJavaScriptAsync("if (navigator.getBattery) { navigator.getBattery().then((battery) => { $0(\"Battery is \" + (battery.charging ? \"\" : \"not \") + \"charging\\r\\nCharge level: \" + battery.level * 100 + \"%\") })} else { $0(\"Battery status is not available in this browser.\") }", (Action<string>)UpdateBatteryStatus_Browser) ;
+        }
+
+        private void UpdateBatteryStatus_Browser(string text)
+        {
+            BatteryStatus.Text = text;
+        }
+
+        private void CheckBattery_Maui()
+        {
             MainThread.BeginInvokeOnMainThread(async () =>
             {
                 // Check the current location permission status.

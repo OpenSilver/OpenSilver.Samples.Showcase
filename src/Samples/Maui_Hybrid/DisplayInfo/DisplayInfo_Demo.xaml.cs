@@ -13,6 +13,11 @@ namespace OpenSilver.Samples.Showcase
         public DisplayInfo_Demo()
         {
             InitializeComponent();
+            if (DeviceInfo.Current.Platform == DevicePlatform.Unknown)
+            {
+                SampleContainer.Children.Clear();
+                SampleContainer.Children.Add(new TextBlock() { Text = "The display info sample is not supported in the browser.", TextWrapping = TextWrapping.Wrap });
+            }
         }
 
         private void ButtonGetDisplayInfo_Click(object sender, RoutedEventArgs e)

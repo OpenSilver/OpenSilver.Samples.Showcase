@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using Microsoft.Maui.ApplicationModel;
 using Microsoft.Maui.ApplicationModel.DataTransfer;
+using Microsoft.Maui.Devices;
 using Microsoft.Maui.Storage;
 using System.Windows.Media.Imaging;
 using OpenSilver.Samples.Showcase.Search;
@@ -16,6 +17,12 @@ namespace OpenSilver.Samples.Showcase
         public FilePickerAndShare_Demo()
         {
             this.InitializeComponent();
+
+            if (DeviceInfo.Current.Platform == DevicePlatform.Unknown)
+            {
+                SampleContainer.Children.Clear();
+                SampleContainer.Children.Add(new TextBlock() { Text = "This sample is not supported in the browser.", TextWrapping = TextWrapping.Wrap });
+            }
         }
 
         private void PickImageButton_Click(object sender, System.Windows.RoutedEventArgs e)
