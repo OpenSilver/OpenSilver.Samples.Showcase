@@ -1,16 +1,8 @@
 ﻿using OpenSilver.Samples.Showcase.Search;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
-using System.Windows.Data;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 
 namespace OpenSilver.Samples.Showcase
 {
@@ -19,7 +11,19 @@ namespace OpenSilver.Samples.Showcase
     {
         public WriteableBitmap_Demo()
         {
-            this.InitializeComponent();
+            InitializeComponent();
+
+            if (Interop.IsRunningInTheSimulator) // simulator or MAUI Hybrid
+            {
+                LayoutRoot.Children.Clear();
+                LayoutRoot.RowDefinitions.Clear();
+                LayoutRoot.Children.Add(new TextBlock
+                {
+                    Text = "This feature is not supported on the current platform.",
+                    TextWrapping = TextWrapping.Wrap,
+                    FontSize = 12,
+                });
+            }
         }
 
         private void ClearButton_Click(System.Object sender, System.Windows.RoutedEventArgs e)

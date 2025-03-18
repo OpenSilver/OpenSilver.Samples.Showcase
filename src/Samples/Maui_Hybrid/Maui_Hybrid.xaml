@@ -6,7 +6,7 @@
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
   <StackPanel>
         <Grid>
-            <TextBlock Text="Native APis (Web or Maui Hybrid)" Style="{StaticResource PageHeader_Style}"/>
+            <TextBlock Text="Native APIs (Web or MAUI Hybrid)" Style="{StaticResource PageHeader_Style}"/>
             <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <TextBlock Text="Native APis (Maui Hybrid)" Style="{StaticResource PageHeader_Style}" Foreground="Transparent"/>
                 <local:SearchControl HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
