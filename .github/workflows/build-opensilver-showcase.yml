@@ -9,18 +9,37 @@ env:
 
 on:
   workflow_dispatch:
+    inputs:
+      opensilver-version:
+        description: 'OpenSilver version'
+        default: '3.2.0'
+        required: true
+      opensilver-moderntheme-version:
+        description: 'OpenSilver.Themes.Modern version'
+        default: '3.2.0'
+        required: true
+      opensilver-controlskit-version:
+        description: 'OpenSilver.ControlsKit version'
+        default: '3.2.0'
+        required: true
+      showcase-options:
+        type: choice
+        description: 'App path'
+        options:
+          - develop
+          - release
 
 jobs:
   OpenSilverShowcaseBuild:
     runs-on: windows-latest
     steps:
       - name: Set directory environment variables
-        if: "${{ github.event.inputs.opensilver-branch == 'develop' }}"
+        if: "${{ github.event.inputs.showcase-options == 'develop' }}"
         run: |
           echo "vdir=${{ env.virtual-directory }}" >> $env:GITHUB_ENV
           echo "apath=${{ env.app-path }}" >> $env:GITHUB_ENV
       - name: Set directory environment variables
-        #if: "${{ github.event.inputs.opensilver-branch == 'releases/OpenSilver/1.1.0' }}"
+        if: "${{ github.event.inputs.showcase-options == 'release' }}"
         run: |
           echo "vdir=${{ env.virtual-directory-release }}" >> $env:GITHUB_ENV
           echo "apath=${{ env.app-path-release }}" >> $env:GITHUB_ENV
@@ -28,10 +47,10 @@ jobs:
         uses: microsoft/setup-msbuild@v1.1
       - name: Inject slug/short variables
         uses: rlespinasse/github-slug-action@v3.x
-      - name: Install .NET 8
+      - name: Install .NET 9
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: '8.0.*'
+          dotnet-version: '9.0.102'
       - name: Install wasm-tools workload
         run: dotnet workload install wasm-tools
       - name: Clone OpenSilver Showcase
@@ -41,11 +60,11 @@ jobs:
           path: './Showcase'
       - name: Replace text
         run: |
-          sed -i 's|<base href=\"/\" />|<base href=\"${{ env.vdir }}\" />|g' Showcase/OpenSilver.Samples.Showcase.Browser/wwwroot/index.html
+          sed -i 's|<base href="/" />|<base href="${{ env.vdir }}" />|g' Showcase/OpenSilver.Samples.Showcase.Browser/wwwroot/index.html
       - name: Replace UserName
         run: |
-          sed -i 's\USERNAME\${{ secrets.OPENSILVERDEMOSUSERNAME }}\g' Showcase/OpenSilver.Samples.Showcase.Browser/Properties/PublishProfiles/publish.pubxml
+          sed -i 's|USERNAME|${{ secrets.OPENSILVERDEMOSUSERNAME }}|g' Showcase/OpenSilver.Samples.Showcase.Browser/Properties/PublishProfiles/publish.pubxml
       - name: Build and Deploy
         working-directory: Showcase
         run: |
-          msbuild OpenSilver.Samples.Showcase.Browser\OpenSilver.Samples.Showcase.Browser.csproj /p:DeployOnBuild=true /p:PublishProfile="OpenSilver.Samples.Showcase.Browser\Properties\PublishProfiles\publish.pubxml" /p:Password=${{ secrets.OPENSILVERDEMOSUSERPWD }} /p:DeployIisAppPath=${{ env.apath }} /p:MSDeployServiceURL=${{ env.deploy-service-url }} /p:Configuration=Release /restore
+          msbuild OpenSilver.Samples.Showcase.Browser\OpenSilver.Samples.Showcase.Browser.csproj /p:DeployOnBuild=true /p:PublishProfile="OpenSilver.Samples.Showcase.Browser\Properties\PublishProfiles\publish.pubxml" /p:Password=${{ secrets.OPENSILVERDEMOSUSERPWD }} /p:DeployIisAppPath=${{ env.apath }} /p:MSDeployServiceURL=${{ env.deploy-service-url }} /p:Configuration=Release /p:OpenSilverVersion=${{ github.event.inputs.opensilver-version }} /p:OpenSilverModernThemeVersion=${{ github.event.inputs.opensilver-moderntheme-version }} /p:OpenSilverControlsKitVersion=${{ github.event.inputs.opensilver-controlskit-version }} /restore

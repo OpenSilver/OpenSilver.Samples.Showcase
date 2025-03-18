@@ -1,0 +1,7 @@
+<Project>
+  <PropertyGroup>
+    <OpenSilverVersion Condition=" '$(OpenSilverVersion)' == '' ">3.2.0</OpenSilverVersion>
+	<OpenSilverModernThemeVersion Condition=" '$(OpenSilverModernThemeVersion)' == '' ">3.2.0</OpenSilverModernThemeVersion>
+    <OpenSilverControlsKitVersion Condition=" '$(OpenSilverControlsKitVersion)' == '' ">3.2.0</OpenSilverControlsKitVersion>
+  </PropertyGroup>
+</Project>

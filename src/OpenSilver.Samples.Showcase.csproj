@@ -11,13 +11,13 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Maui.Essentials" Version="8.0.100" />
-    <PackageReference Include="OpenSilver.ControlsKit" Version="3.2.0" />
-    <PackageReference Include="OpenSilver.Themes.Modern" Version="3.2.0" />
+    <PackageReference Include="OpenSilver.ControlsKit" Version="[$(OpenSilverControlsKitVersion)]" />
+    <PackageReference Include="OpenSilver.Themes.Modern" Version="[$(OpenSilverModernThemeVersion)]" />
     <PackageReference Include="System.ServiceModel.Duplex" Version="4.10.0" />
     <PackageReference Include="System.ServiceModel.Http" Version="4.10.0" />
     <PackageReference Include="System.ServiceModel.NetTcp" Version="4.10.0" />
     <PackageReference Include="System.ServiceModel.Security" Version="4.10.0" />
-    <PackageReference Include="OpenSilver" Version="3.2.0" />
+    <PackageReference Include="OpenSilver" Version="[$(OpenSilverVersion)]" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
   </ItemGroup>
 
