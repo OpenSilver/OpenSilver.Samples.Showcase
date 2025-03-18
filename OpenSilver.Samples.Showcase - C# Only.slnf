@@ -1,0 +1,10 @@
+{
+  "solution": {
+    "path": "OpenSilver.Samples.Showcase.sln",
+    "projects": [
+      "src\\OpenSilver.Samples.Showcase.csproj",
+	  "OpenSilver.Samples.Showcase.Browser\\OpenSilver.Samples.Showcase.Browser.csproj",
+	  "OpenSilver.Samples.Showcase.Simulator\\OpenSilver.Samples.Showcase.Simulator.csproj"
+    ]
+  }
+}
