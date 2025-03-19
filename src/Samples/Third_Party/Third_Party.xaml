@@ -2,12 +2,13 @@
     x:Class="OpenSilver.Samples.Showcase.Third_Party"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase"
-    xmlns:native="clr-namespace:CSHTML5.Native.Html.Controls;assembly=OpenSilver">
-    <Border Background="White" CornerRadius="6" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="22,22,0,0">
+    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+    
+    <Border Background="{DynamicResource Theme_ContainerBackgroundBrush}" CornerRadius="6" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="22,22,0,0">
         <Border.Effect>
             <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="10" Opacity="0.1" />
         </Border.Effect>
+        
         <StackPanel Margin="0,0,20,20">
             <Grid>
                 <TextBlock Text="Third-Party Components" Foreground="#FF2299A1" Style="{StaticResource PageHeader_Style}"/>
@@ -18,37 +19,66 @@
                 </WrapPanel>
             </Grid>
 
-            <native:HtmlPresenter ScrollMode="Disabled">
-                <![CDATA[
-        <ul style="font-size:1.4em; margin: -10px 10px;">
-          <li style="margin-top:10px;">Telerik UI for Silverlight* (<a href="https://doc.opensilver.net/documentation/3rd-party-libraries/telerik.html"  style="margin-top:10px;">Doc</a>|<a href="https://opensilverdemos.azurewebsites.net/telerikshowcase/release">Demo</a>)</li>
-          <li style="margin-top:10px;"> Telerik Kendo UI* (via JavaScript interop)       </li>
-          <li style="margin-top:10px;">DevExpress for Silverlight* (<a href="https://doc.opensilver.net/documentation/3rd-party-libraries/devexpress.html">Doc</a>)</li>
-          <li style="margin-top:10px;"> DevExpress DevExtreme*                           </li>
-          <li style="margin-top:10px;">SignalR</li>
-          <li style="margin-top:10px;">Syncfusion Essential JS* (via JavaScript interop) (<a href="https://doc.opensilver.net/documentation/3rd-party-libraries/syncfusion.html">Doc</a>)</li>
-          <li style="margin-top:10px;">Open RIA Services (<a href="https://doc.opensilver.net/documentation/3rd-party-libraries/ria-services.html" style="margin-top:10px;">Doc</a>)</li>
-          <li style="margin-top:10px;">PRISM (<a href="https://doc.opensilver.net/documentation/3rd-party-libraries/prism.html" style="margin-top:10px;">Doc</a>)</li>
-          <li style="margin-top:10px;">MEF (<a href="https://doc.opensilver.net/documentation/3rd-party-libraries/mef.html" style="margin-top:10px;">Doc</a>)</li>
-          <li style="margin-top:10px;">Unity (<a href="https://doc.opensilver.net/documentation/3rd-party-libraries/unity.html" style="margin-top:10px;">Doc</a>)</li>
-          <li style="margin-top:10px;">OData (<a href="https://doc.opensilver.net/documentation/3rd-party-libraries/odata.html" style="margin-top:10px;">Doc</a>)</li>
-          <li style="margin-top:10px;">MVVM Light (<a href="https://doc.opensilver.net/documentation/3rd-party-libraries/galasoft-mvvm-light.html" style="margin-top:10px;">Doc</a>)</li>
-          <li style="margin-top:10px;">Newtonsoft Json (<a href="https://doc.opensilver.net/documentation/3rd-party-libraries/newtonsoft-json-net.html" style="margin-top:10px;">Doc</a>)</li>
-          <li style="margin-top:10px;">Caliburn.Micro</li>
-          <li style="margin-top:10px;">PostSharp</li>
-          <li style="margin-top:10px;">Blacklight Controls</li>
-          <li style="margin-top:10px;">Google Protobuf</li>
-          <li style="margin-top:10px;">Reactive Extensions</li>
-          <li style="margin-top:10px;">MS Expression Interaction/Behavior</li>
-          <li style="margin-top:10px;">Microsoft Enterprise Library</li>
-          <li style="margin-top:10px;"> Plotly.js (via JavaScript interop)               </li>
-          <li style="margin-top:10px;"> More...</li>
-        </ul>
-        ]]>
-            </native:HtmlPresenter>
+            <StackPanel Margin="30,5,0,0">
+                <StackPanel.Resources>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="FontSize" Value="14"/>
+                        <Setter Property="Margin" Value="0,10,0,0"/>
+                    </Style>
+                </StackPanel.Resources>
 
+                <TextBlock>
+                    • Telerik UI for Silverlight*
+                    (<Hyperlink NavigateUri="https://doc.opensilver.net/documentation/3rd-party-libraries/telerik.html" TargetName="_blank">Doc</Hyperlink>
+                    | <Hyperlink NavigateUri="https://opensilverdemos.azurewebsites.net/telerikshowcase/release" TargetName="_blank">Demo</Hyperlink>)
+                </TextBlock>
+                <TextBlock Text="• Telerik Kendo UI* (via JavaScript interop)"/>
+                <TextBlock>
+                    • DevExpress for Silverlight*
+                    (<Hyperlink NavigateUri="https://doc.opensilver.net/documentation/3rd-party-libraries/devexpress.html" TargetName="_blank">Doc</Hyperlink>)
+                </TextBlock>
+                <TextBlock Text="• DevExpress DevExtreme*"/>
+                <TextBlock Text="• SignalR"/>
+                <TextBlock>
+                        • Syncfusion Essential JS* (via JavaScript interop)
+                    (<Hyperlink NavigateUri="https://doc.opensilver.net/documentation/3rd-party-libraries/syncfusion.html" TargetName="_blank">Doc</Hyperlink>)
+                </TextBlock>
+                <TextBlock>
+                    • Open RIA Services
+                    (<Hyperlink NavigateUri="https://doc.opensilver.net/documentation/3rd-party-libraries/ria-services.html" TargetName="_blank">Doc</Hyperlink>)
+                </TextBlock>
+                <TextBlock>
+                    • PRISM (<Hyperlink NavigateUri="https://doc.opensilver.net/documentation/3rd-party-libraries/prism.html" TargetName="_blank">Doc</Hyperlink>)
+                </TextBlock>
+                <TextBlock>
+                    • MEF (<Hyperlink NavigateUri="https://doc.opensilver.net/documentation/3rd-party-libraries/mef.html" TargetName="_blank">Doc</Hyperlink>)
+                </TextBlock>
+                <TextBlock>
+                    • Unity (<Hyperlink NavigateUri="https://doc.opensilver.net/documentation/3rd-party-libraries/unity.html" TargetName="_blank">Doc</Hyperlink>)
+                </TextBlock>
+                <TextBlock>
+                    • OData (<Hyperlink NavigateUri="https://doc.opensilver.net/documentation/3rd-party-libraries/odata.html" TargetName="_blank">Doc</Hyperlink>)
+                </TextBlock>
+                <TextBlock>
+                    • MVVM Light
+                    (<Hyperlink NavigateUri="https://doc.opensilver.net/documentation/3rd-party-libraries/galasoft-mvvm-light.html" TargetName="_blank">Doc</Hyperlink>)
+                </TextBlock>
+                <TextBlock>
+                    • Newtonsoft Json
+                    (<Hyperlink NavigateUri="https://doc.opensilver.net/documentation/3rd-party-libraries/newtonsoft-json-net.html" TargetName="_blank">Doc</Hyperlink>)
+                </TextBlock>
+                <TextBlock Text="• Caliburn.Micro"/>
+                <TextBlock Text="• PostSharp"/>
+                <TextBlock Text="• Blacklight Controls"/>
+                <TextBlock Text="• Google Protobuf"/>
+                <TextBlock Text="• Reactive Extensions"/>
+                <TextBlock Text="• MS Expression Interactions/Behaviors"/>
+                <TextBlock Text="• Microsoft Enterprise Library"/>
+                <TextBlock Text="• Plotly.js (via JavaScript interop)"/>
+                <TextBlock Text="• More..."/>
+            </StackPanel>
 
-            <TextBlock Text="*Note: a license from the third-party vendor is required." FontSize="12" Foreground="#FF666666" TextWrapping="Wrap" Margin="22,8,0,0" FontStyle="Italic"/>
+            <TextBlock Text="*Note: a license from the third-party vendor is required." FontSize="12" Foreground="#FF666666" TextWrapping="Wrap" Margin="22,10,0,0" FontStyle="Italic"/>
         </StackPanel>
     </Border>
 </UserControl>
