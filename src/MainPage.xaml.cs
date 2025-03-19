@@ -1,12 +1,10 @@
-﻿using System;
-using System.Windows.Browser;
+﻿using OpenSilver.Themes.Modern;
+using System;
 using System.Windows;
+using System.Windows.Browser;
 using System.Windows.Controls;
-using System.Windows.Media;
-using OpenSilver.Themes.Modern;
 using System.Windows.Controls.Primitives;
-using Microsoft.Maui.Devices;
-using System.Collections.Generic;
+using System.Windows.Media;
 
 namespace OpenSilver.Samples.Showcase
 {
@@ -124,7 +122,6 @@ namespace OpenSilver.Samples.Showcase
                 RowThatContainsThePage.Height = new GridLength(0.5d, GridUnitType.Star);
                 RowThatContainsTheGridSplitter.Height = new GridLength(5d);
                 RowThatContainsTheSourceCodePane.Height = new GridLength(0.5d, GridUnitType.Star);
-                //GridSplitter1.ResizeDirection = GridSplitter.GridResizeDirection.Rows;
                 GridSplitter1.Visibility = Visibility.Visible;
                 SourceCodePane.Visibility = Visibility.Visible;
             }
@@ -273,8 +270,7 @@ namespace OpenSilver.Samples.Showcase
         private void ToggleThemeButton_Click(object sender, RoutedEventArgs e)
         {
             bool isDark = (sender as ToggleButton)?.IsChecked == true;
-            ModernTheme theme = Application.Current.Theme as ModernTheme;
-            if (theme != null)
+            if (Application.Current.Theme is ModernTheme theme)
             {
                 if (isDark)
                 {
@@ -286,10 +282,16 @@ namespace OpenSilver.Samples.Showcase
                     NativeApiButtonBackgroundBrush.Color = lightColor;
                     theme.CurrentPalette = ModernTheme.Palettes.Light;
                 }
+
+                if (SourceCodePane.Visibility == Visibility.Visible &&
+                    PlaceWhereSourceCodeWillBeDisplayed.Child is TabControl tabControl &&
+                    tabControl.SelectedItem is TabItem tabItem &&
+                    tabItem.Content is ControlToDisplayCodeHostedOnGitHub gitHubControl)
+                {
+                    gitHubControl.Refresh();
+                }
             }
         }
-
         #endregion
     }
-
 }
