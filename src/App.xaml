@@ -29,7 +29,7 @@
     <Application.Theme>
         <mt:ModernTheme CurrentPalette="Light">
             <mt:ModernTheme.DarkPalette>
-                <mt:DarkPalette ContainerBackgroundColor="#FF1A1A1A" />
+                <mt:DarkPalette ContainerBackgroundColor="#FF212121" />
             </mt:ModernTheme.DarkPalette>
         </mt:ModernTheme>
     </Application.Theme>
