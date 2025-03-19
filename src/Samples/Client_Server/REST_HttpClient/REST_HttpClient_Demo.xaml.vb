@@ -7,7 +7,7 @@ Imports System.Windows
 Imports System.Windows.Controls
 
 Namespace Global.OpenSilver.Samples.Showcase
-    Partial Public Class REST_WebClient_Demo
+    Partial Public Class REST_HttpClient_Demo
         Inherits UserControl
         Private _ownerId As Guid
 

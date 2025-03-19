@@ -133,9 +133,6 @@
     <Page Include="Samples\XAML_Controls\ProgressBar\ProgressBar_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\XAML_Controls\TreeView2\TreeView2_Demo.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Samples\XAML_Controls\TreeView\TreeView_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -191,7 +188,6 @@
     <Compile Include="Samples\XAML_Controls\DataForm\DataForm_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Controls\InkPresenter\InkPresenter_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Controls\ProgressBar\ProgressBar_Demo.xaml.cs" />
-    <Compile Include="Samples\XAML_Controls\TreeView2\TreeView2_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Controls\TreeView\TreeView_Demo.xaml.cs" />
 
     <Compile Include="Samples\XAML_Features\Drag_And_Drop\Drag_And_Drop_Demo_Silverlight.xaml.cs" />
@@ -390,9 +386,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\Performance\Performance.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Samples\Third_Party\Plotly_Charts\Plotly_Charts_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\Third_Party\Third_Party.xaml">
@@ -737,22 +730,6 @@
     <Compile Include="Samples\Performance\HtmlCanvas\HtmlCanvas_Demo.xaml.cs" />
     <Compile Include="Samples\Performance\HtmlCanvas\MainSprite.cs" />
     <Compile Include="Samples\Performance\Performance.xaml.cs" />
-    <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Annotation.cs" />
-    <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Axis.cs" />
-    <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\BarMode.cs" />
-    <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\ChartControl.cs" />
-    <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Data.cs" />
-    <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Domain.cs" />
-    <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Font.cs" />
-    <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\InteropHelper.cs" />
-    <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Layout.cs" />
-    <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Legend.cs" />
-    <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Line.cs" />
-    <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Marker.cs" />
-    <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Trace.cs" />
-    <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\TraceMode.cs" />
-    <Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\TraceType.cs" />
-    <Compile Include="Samples\Third_Party\Plotly_Charts\Plotly_Charts_Demo.xaml.cs" />
     <Compile Include="Samples\Third_Party\Third_Party.xaml.cs" />
     <Compile Include="Samples\Welcome.xaml.cs" />
     <Compile Include="Samples\XAML_Controls\AutoCompleteBox\AutoCompleteBox_Demo.xaml.cs" />

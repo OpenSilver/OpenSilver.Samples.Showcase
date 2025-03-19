@@ -12,11 +12,6 @@ Namespace Global.OpenSilver.Samples.Showcase
         Public Sub New()
             InitializeComponent()
 
-#If OPENSILVER Then
-            Me.ThirdPartyButton.Visibility = Visibility.Collapsed
-            Me.ThirdPartyHomeButton.Visibility = Visibility.Visible
-#End If
-
             Current = Me
             AddHandler Loaded, AddressOf MainPage_Loaded
             AddHandler SizeChanged, AddressOf MainPage_SizeChanged

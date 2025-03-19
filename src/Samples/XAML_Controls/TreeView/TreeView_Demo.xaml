@@ -3,15 +3,33 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+    
+    <UserControl.Resources>
+        <HierarchicalDataTemplate x:Key="DivisionDataTemplate" DataType="local:Division"
+                                  ItemsSource="{Binding Path=Teams}">
+            <TextBlock Text="{Binding Path=Name}"/>
+        </HierarchicalDataTemplate>
+
+        <HierarchicalDataTemplate x:Key="LeagueDataTemplate" DataType="local:League"
+                                  ItemsSource="{Binding Path=Divisions}" ItemTemplate="{StaticResource DivisionDataTemplate}">
+            <TextBlock Text="{Binding Path=Name}"/>
+        </HierarchicalDataTemplate>
+
+        <DataTemplate DataType="local:Team">
+            <TextBlock Text="{Binding Path=Name}"/>
+        </DataTemplate>
+    </UserControl.Resources>
+    
     <ContentControl Style="{StaticResource Card_Style}" Width="200">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="TreeView" Foreground="#FFFCAB54" Background="#FFCCA376" Style="{StaticResource HeaderControl_Style}"/>
-            <TreeView Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TreeView Grid.Row="1" VerticalAlignment="Center">
                 <TreeViewItem Header="Planets">
                     <TreeViewItem Header="Earth"/>
                     <TreeViewItem Header="Jupiter"/>
@@ -23,7 +41,8 @@
                     <TreeViewItem Header="Venus"/>
                 </TreeViewItem>
             </TreeView>
-            <local:ViewSourceButton Grid.Row="2"
+            <TreeView Grid.Row="2" VerticalAlignment="Center" ItemsSource="{x:Static local:League.Leagues}" ItemTemplate="{StaticResource LeagueDataTemplate}"/>
+            <local:ViewSourceButton Grid.Row="3"
                                 Background="#FCAB54">
                 <local:ViewSourceButton.Sources>
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Button"

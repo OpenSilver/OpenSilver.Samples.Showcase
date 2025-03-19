@@ -20,11 +20,6 @@ type MainPage() as this =
     do
         this.InitializeComponent()
         
-#if OPENSILVER
-        this.ThirdPartyButton.Visibility <- Visibility.Collapsed
-        this.ThirdPartyHomeButton.Visibility <- Visibility.Visible
-#endif
-
         ViewSourceButtonHelper.OnViewSourceRequested <- Some(this.ViewSourceCode)
 
         this.Loaded.Add(fun _ -> this.MainPage_Loaded())

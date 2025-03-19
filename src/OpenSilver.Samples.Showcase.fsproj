@@ -11,6 +11,8 @@
 
   <ItemGroup>
     <PackageReference Include="OpenSilver.ControlsKit" Version="[$(OpenSilverControlsKitVersion)]" />
+    <PackageReference Include="OpenSilver.Themes.Modern" Version="[$(OpenSilverModernThemeVersion)]" />
+    <PackageReference Include="Microsoft.Maui.Essentials" Version="8.0.100" />
     <PackageReference Include="System.ServiceModel.Duplex" Version="4.10.0" />
     <PackageReference Include="System.ServiceModel.Http" Version="4.10.0" />
     <PackageReference Include="System.ServiceModel.NetTcp" Version="4.10.0" />
@@ -98,12 +100,6 @@
     <Compile Include="Other\Internals\ViewSourceButtonInfo.fs" />
     <Compile Include="Other\Internals\ViewSourceButtonHelper.fs" />
     <Compile Include="Other\Internals\ViewSourceButton.fs" />
-    <Page Include="Samples\Maui_Hybrid\Location\Location.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Compile Include="Samples\Maui_Hybrid\Location\Location.xaml.fs">
-      <DependentUpon>Samples\Maui_Hybrid\Location\Location.xaml</DependentUpon>
-    </Compile>
     <Page Include="Samples\Maui_Hybrid\Maui_Hybrid.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -152,7 +148,7 @@
     <Compile Include="Other\Internals\WrapPanelWithProgressiveLoading.fs" />
     <Compile Include="Samples\Interop_Samples\MethodToUpdateDom\AttachedPropertiesWithMethodToUpdateDom.fs" />
     <Compile Include="Samples\Performance\HtmlCanvas\MainSprite.fs" />
-    <Compile Include="Samples\Client_Server\REST_WebClient\REST_ToDoItem.fs" />
+    <Compile Include="Samples\Client_Server\REST_HttpClient\REST_ToDoItem.fs" />
     <Page Include="Samples\Charts\AreaSeries\AreaSeries_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -207,11 +203,11 @@
     <Compile Include="Samples\Client_Server\RIAServices\RIAServices_Demo.xaml.fs">
       <DependentUpon>Samples\Client_Server\RIAServices\RIAServices_Demo.xaml</DependentUpon>
     </Compile>
-    <Page Include="Samples\Client_Server\REST_WebClient\REST_WebClient_Demo.xaml">
+    <Page Include="Samples\Client_Server\REST_HttpClient\REST_HttpClient_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Compile Include="Samples\Client_Server\REST_WebClient\REST_WebClient_Demo.xaml.fs">
-      <DependentUpon>Samples\Client_Server\REST_WebClient\REST_WebClient_Demo.xaml</DependentUpon>
+    <Compile Include="Samples\Client_Server\REST_HttpClient\REST_HttpClient_Demo.xaml.fs">
+      <DependentUpon>Samples\Client_Server\REST_HttpClient\REST_HttpClient_Demo.xaml</DependentUpon>
     </Compile>
     <Page Include="Samples\Client_Server\WCF_SOAP\WCF_SOAP_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -477,12 +473,6 @@
     <Compile Include="Samples\Performance\Performance.xaml.fs">
       <DependentUpon>Samples\Performance\Performance.xaml</DependentUpon>
     </Compile>
-    <Page Include="Samples\Third_Party\Plotly_Charts\Plotly_Charts_Demo.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Compile Include="Samples\Third_Party\Plotly_Charts\Plotly_Charts_Demo.xaml.fs">
-      <DependentUpon>Samples\Third_Party\Plotly_Charts\Plotly_Charts_Demo.xaml</DependentUpon>
-    </Compile>
     <Page Include="Samples\Third_Party\Third_Party.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -524,12 +514,6 @@
     </Page>
     <Compile Include="Samples\XAML_Controls\ProgressBar\ProgressBar_Demo.xaml.fs">
       <DependentUpon>Samples\XAML_Controls\ProgressBar\ProgressBar_Demo.xaml</DependentUpon>
-    </Compile>
-    <Page Include="Samples\XAML_Controls\TreeView2\TreeView2_Demo.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Compile Include="Samples\XAML_Controls\TreeView2\TreeView2_Demo.xaml.fs">
-      <DependentUpon>Samples\XAML_Controls\TreeView2\TreeView2_Demo.xaml</DependentUpon>
     </Compile>
     <Page Include="Samples\XAML_Controls\TreeView\TreeView_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -1044,9 +1028,5 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Other\Internals\ChildWindowHelper.fs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Third_Party_Resources\" />
   </ItemGroup>
 </Project>

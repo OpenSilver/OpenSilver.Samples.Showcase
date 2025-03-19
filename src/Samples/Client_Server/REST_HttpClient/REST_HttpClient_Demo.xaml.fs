@@ -11,8 +11,8 @@ open System.Text
 open System.Windows
 open System.Windows.Controls
 
-type REST_WebClient_Demo() as this =
-    inherit REST_WebClient_DemoXaml()
+type REST_HttpClient_Demo() as this =
+    inherit REST_HttpClient_DemoXaml()
 
     let mutable _ownerId : Guid = Guid.NewGuid()
 
