@@ -196,10 +196,15 @@ Value="1" />
                                                                     <ColorAnimation Storyboard.TargetName="SelectedBorder" 
                                                                                     Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" 
                                                                                     To="#FF00C6D2" Duration="0"/>
+                                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContainerBorder" 
+                                                                                                   Storyboard.TargetProperty="(TextBlock.Foreground)" 
+                                                                                                   Duration="0">
+                                                                        <DiscreteObjectKeyFrame KeyTime="0" Value="#FF00C6D2"/>
+                                                                    </ObjectAnimationUsingKeyFrames>
                                                                     <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContainerBorder"
                                                                                                    Storyboard.TargetProperty="(TextBlock.FontWeight)"
                                                                                                    Duration="0">
-                                                                        <DiscreteObjectKeyFrame KeyTime="0" Value="Bold" />
+                                                                        <DiscreteObjectKeyFrame KeyTime="0" Value="SemiBold" />
                                                                     </ObjectAnimationUsingKeyFrames>
                                                                 </Storyboard>
                                                             </VisualState>
@@ -217,9 +222,9 @@ Value="1" />
                             </ListBox.ItemContainerStyle>
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
-                                    <StackPanel Orientation="Horizontal">
+                                    <Grid Cursor="Hand">
                                         <TextBlock Text="{Binding Name}"/>
-                                    </StackPanel>
+                                    </Grid>
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
                         </ListBox>
@@ -236,7 +241,7 @@ Value="1" />
                     <!--<Image Source="other/MenuIcon.png" Width="50" Height="50" Stretch="Fill"/>-->
                 </Button>
             </Border>
-            <ScrollViewer Grid.Row="1" x:Name="ScrollViewer1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible" Background="{DynamicResource Theme_BackgroundBrush}">
+            <ScrollViewer Grid.Row="1" x:Name="ScrollViewer1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Background="{DynamicResource Theme_BackgroundBrush}">
                 <sdk:Frame x:Name="PageContainer" JournalOwnership="Automatic" Margin="5,0,0,30" HorizontalContentAlignment="Stretch" Navigated="PageContainer_Navigated">
                     <sdk:Frame.UriMapper>
                         <sdk:UriMapper>
