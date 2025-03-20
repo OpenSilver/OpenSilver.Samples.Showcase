@@ -1,8 +1,10 @@
-﻿Imports System.Windows
+﻿Imports OpenSilver.Samples.Showcase.Search
+Imports System.Windows
 Imports System.Windows.Controls
 Imports System.Windows.Input
 
 Namespace Global.OpenSilver.Samples.Showcase
+    <SearchKeywords("interaction", "drag", "drop", "UI")>
     Partial Public Class Drag_And_Drop_Demo
         Inherits UserControl
         Private _isPointerCaptured As Boolean

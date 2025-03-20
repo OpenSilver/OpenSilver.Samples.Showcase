@@ -1,8 +1,10 @@
-﻿Imports System
+﻿Imports OpenSilver.Samples.Showcase.Search
+Imports System
 Imports System.Windows.Controls
 Imports System.Windows.Media.Imaging
 
 Namespace OpenSilver.Samples.Showcase
+    <SearchKeywords("bitmap", "image", "graphics", "drawing", "rendering")>
     Partial Public Class WriteableBitmap_Demo
         Inherits UserControl
 

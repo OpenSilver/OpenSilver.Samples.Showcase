@@ -1,6 +1,8 @@
-﻿Imports System.Windows.Controls
+﻿Imports OpenSilver.Samples.Showcase.Search
+Imports System.Windows.Controls
 
 Namespace Global.OpenSilver.Samples.Showcase
+    <SearchKeywords("input", "autocomplete", "auto-complete", "text", "entry", "search")>
     Partial Public Class AutoCompleteBox_Demo
         Inherits UserControl
         Public Sub New()

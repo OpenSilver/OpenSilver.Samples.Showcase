@@ -1,7 +1,9 @@
-﻿Imports System.Windows
+﻿Imports OpenSilver.Samples.Showcase.Search
+Imports System.Windows
 Imports System.Windows.Controls
 
 Namespace OpenSilver.Samples.Showcase
+    <SearchKeywords("initialization", "parameters", "startup", "configuration", "settings")>
     Partial Public Class InitParams_Demo
         Inherits UserControl
 

@@ -1,7 +1,9 @@
-﻿Imports System.Windows
+﻿Imports OpenSilver.Samples.Showcase.Search
+Imports System.Windows
 Imports System.Windows.Controls
 
 Namespace Global.OpenSilver.Samples.Showcase
+    <SearchKeywords("HTML", "interop", "rendering", "web", "UI")>
     Partial Public Class Interop_HtmlPresenter_Demo
         Inherits UserControl
         Public Sub New()

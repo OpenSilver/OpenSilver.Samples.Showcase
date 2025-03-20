@@ -1,10 +1,12 @@
-﻿Imports System
+﻿Imports OpenSilver.Samples.Showcase.Search
+Imports System
 Imports System.IO
 Imports System.Text
 Imports System.Windows
 Imports System.Windows.Controls
 
 Namespace OpenSilver.Samples.Showcase
+    <SearchKeywords("file", "dialog", "filesystem", "browse")>
     Partial Public Class OpenFileDialog_Demo
         Inherits UserControl
 

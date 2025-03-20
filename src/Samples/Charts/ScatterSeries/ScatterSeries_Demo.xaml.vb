@@ -1,7 +1,9 @@
 ﻿Imports OpenSilver.Samples.Showcase.Other
+Imports OpenSilver.Samples.Showcase.Search
 Imports System.Windows.Controls
 
 Namespace OpenSilver.Samples.Showcase
+    <SearchKeywords("chart", "data", "visualization", "graph", "plot", "points")>
     Partial Public Class ScatterSeries_Demo
         Inherits UserControl
 

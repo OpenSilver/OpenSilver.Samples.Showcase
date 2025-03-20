@@ -1,7 +1,9 @@
-﻿Imports System.Windows
+﻿Imports OpenSilver.Samples.Showcase.Search
+Imports System.Windows
 Imports System.Windows.Controls
 
 Namespace OpenSilver.Samples.Showcase
+    <SearchKeywords("performance", "HTML canvas", "sprites", "FPS", "graphics")>
     Partial Public Class HtmlCanvas_Demo
         Inherits UserControl
         Private _lastTickCount As Integer = 0

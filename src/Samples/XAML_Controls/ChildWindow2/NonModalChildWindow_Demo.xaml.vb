@@ -1,9 +1,11 @@
-﻿Imports PreviewOnWinRT
+﻿Imports OpenSilver.Samples.Showcase.Search
+Imports PreviewOnWinRT
 Imports System.Threading
 Imports System.Windows
 Imports System.Windows.Controls
 
 Namespace Global.OpenSilver.Samples.Showcase
+    <SearchKeywords("layout", "window", "popup", "nonmodal", "non-modal", "dialog")>
     Partial Public Class NonModalChildWindow_Demo
         Inherits UserControl
         Private _n As Integer

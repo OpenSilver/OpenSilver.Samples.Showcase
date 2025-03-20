@@ -1,4 +1,5 @@
-﻿Imports System.ComponentModel
+﻿Imports OpenSilver.Samples.Showcase.Search
+Imports System.ComponentModel
 Imports System.Runtime.CompilerServices
 Imports System.Windows
 Imports System.Windows.Controls
@@ -6,6 +7,7 @@ Imports System.Windows.Ink
 Imports System.Windows.Input
 
 Namespace OpenSilver.Samples.Showcase
+    <SearchKeywords("drawing", "inking", "pen input", "sketch", "graphics")>
     Partial Public Class InkPresenter_Demo
         Inherits UserControl
         Implements INotifyPropertyChanged

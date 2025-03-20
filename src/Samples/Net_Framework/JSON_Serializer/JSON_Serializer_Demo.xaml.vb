@@ -1,8 +1,10 @@
 ﻿Imports Newtonsoft.Json
+Imports OpenSilver.Samples.Showcase.Search
 Imports System.Windows
 Imports System.Windows.Controls
 
 Namespace Global.OpenSilver.Samples.Showcase
+    <SearchKeywords("JSON", "serialization", "deserialization", "serialize")>
     Partial Public Class JSON_Serializer_Demo
         Inherits UserControl
         Private _json As String

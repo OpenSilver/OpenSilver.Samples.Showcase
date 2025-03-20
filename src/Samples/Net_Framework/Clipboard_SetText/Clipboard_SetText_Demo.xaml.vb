@@ -1,8 +1,10 @@
-﻿Imports System.Windows
+﻿Imports OpenSilver.Samples.Showcase.Search
+Imports System.Windows
 Imports System.Windows.Controls
 
 Namespace Global.OpenSilver.Samples.Showcase
-    Public Partial Class Clipboard_SetText_Demo
+    <SearchKeywords("clipboard", "copy", "paste", "text", "interaction")>
+    Partial Public Class Clipboard_SetText_Demo
         Inherits UserControl
         Public Sub New()
             Me.InitializeComponent()

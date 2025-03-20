@@ -1,9 +1,11 @@
-﻿Imports System.Text
+﻿Imports OpenSilver.Samples.Showcase.Search
+Imports System.Text
 Imports System.Windows
 Imports System.Windows.Controls
 Imports System.Windows.Media
 
-Namespace Global.OpenSilver.Samples.Showcase
+Namespace OpenSilver.Samples.Showcase
+    <SearchKeywords("visual tree", "UI elements", "XAML", "hierarchy", "UI")>
     Partial Public Class VisualTreeHelper_Demo
         Inherits UserControl
         Public Sub New()

@@ -1,7 +1,9 @@
-﻿Imports System.Windows.Controls
+﻿Imports OpenSilver.Samples.Showcase.Search
+Imports System.Windows.Controls
 Imports System.Windows.Input
 
 Namespace OpenSilver.Samples.Showcase
+    <SearchKeywords("mouse", "scrolling", "interaction", "input", "event")>
     Partial Public Class MouseWheel_Demo
         Inherits UserControl
         Public Sub New()

@@ -28,6 +28,9 @@
   </ItemGroup>
   
   <ItemGroup>
+    <Page Include="Other\Internals\Search\SearchControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\Charts\AreaSeries\AreaSeries_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -52,10 +55,49 @@
     <Page Include="Samples\Charts\ScatterSeries\ScatterSeries_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\Charts\Stacked100AreaSeries\Stacked100AreaSeries_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\Client_Server\RIAServices\RIAServices_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\Maui_Hybrid\Barometer\Barometer_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Maui_Hybrid\Battery\Battery_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Maui_Hybrid\Camera\Camera_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Maui_Hybrid\Connectivity\Connectivity_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Maui_Hybrid\DisplayInfo\DisplayInfo_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Maui_Hybrid\FilePickerAndShare\FilePickerAndShare_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Maui_Hybrid\Flashlight\Flashlight_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Maui_Hybrid\Geolocation\Geolocation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\Maui_Hybrid\Maui_Hybrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Maui_Hybrid\OpenMapApp\OpenMapApp_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Maui_Hybrid\Orientation\OrientationSensors_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Maui_Hybrid\Shake\Shake_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Maui_Hybrid\Vibration\Vibration_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\Net_Framework\InitParams\InitParams_Demo.xaml">
@@ -77,6 +119,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\Performance\Virtualization\Virtualization_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Search.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Controls\BusyIndicator\BusyIndicator_Demo.xaml">
@@ -104,7 +149,13 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Compile Include="Other\Elements.vb" />
+    <Compile Include="Other\Internals\Search\ControlSearch.vb" />
+    <Compile Include="Other\Internals\Search\SamplesInfoLoader.vb" />
+    <Compile Include="Other\Internals\Search\SearchableItem.vb" />
+    <Compile Include="Other\Internals\Search\SearchControl.xaml.vb" />
+    <Compile Include="Other\Internals\Search\SearchKeywordAttribute.vb" />
     <Compile Include="Other\Leagues\Leagues.vb" />
+    <Compile Include="Other\PageInfo.vb" />
     <Compile Include="Other\Sales.vb" />
     <Compile Include="Other\SampleResourceFileVB.Designer.vb">
       <DesignTime>True</DesignTime>
@@ -119,8 +170,21 @@
     <Compile Include="Samples\Charts\LineSeries\LineSeries_Demo.xaml.vb" />
     <Compile Include="Samples\Charts\PieSeries\PieSeries_Demo.xaml.vb" />
     <Compile Include="Samples\Charts\ScatterSeries\ScatterSeries_Demo.xaml.vb" />
+    <Compile Include="Samples\Charts\Stacked100AreaSeries\Stacked100AreaSeries_Demo.xaml.vb" />
     <Compile Include="Samples\Client_Server\RIAServices\RIAServices_Demo.xaml.vb" />
+    <Compile Include="Samples\Maui_Hybrid\Barometer\Barometer_Demo.xaml.vb" />
+    <Compile Include="Samples\Maui_Hybrid\Battery\Battery_Demo.xaml.vb" />
+    <Compile Include="Samples\Maui_Hybrid\Camera\Camera_Demo.xaml.vb" />
+    <Compile Include="Samples\Maui_Hybrid\Connectivity\Connectivity_Demo.xaml.vb" />
+    <Compile Include="Samples\Maui_Hybrid\DisplayInfo\DisplayInfo_Demo.xaml.vb" />
+    <Compile Include="Samples\Maui_Hybrid\FilePickerAndShare\FilePickerAndShare_Demo.xaml.vb" />
+    <Compile Include="Samples\Maui_Hybrid\Flashlight\Flashlight_Demo.xaml.vb" />
+    <Compile Include="Samples\Maui_Hybrid\Geolocation\Geolocation.xaml.vb" />
     <Compile Include="Samples\Maui_Hybrid\Maui_Hybrid.xaml.vb" />
+    <Compile Include="Samples\Maui_Hybrid\OpenMapApp\OpenMapApp_Demo.xaml.vb" />
+    <Compile Include="Samples\Maui_Hybrid\Orientation\OrientationSensors_Demo.xaml.vb" />
+    <Compile Include="Samples\Maui_Hybrid\Shake\Shake_Demo.xaml.vb" />
+    <Compile Include="Samples\Maui_Hybrid\Vibration\Vibration_Demo.xaml.vb" />
     <Compile Include="Samples\Net_Framework\InitParams\InitParams_Demo.xaml.vb" />
     <Compile Include="Samples\Net_Framework\OpenFileDialog\OpenFileDialog_Demo.xaml.vb" />
     <Compile Include="Samples\Net_Framework\UnhandledException\UnhandledException_Demo.xaml.vb" />
@@ -128,6 +192,7 @@
     <Compile Include="Samples\Performance\AOTCompilation\AOT_Demo.xaml.vb" />
     <Compile Include="Samples\Performance\Progressive_Loading\ProgressiveLoading_Demo.xaml.vb" />
     <Compile Include="Samples\Performance\Virtualization\Virtualization_Demo.xaml.vb" />
+    <Compile Include="Samples\Search.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\BusyIndicator\BusyIndicator_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\Calendar\Calendar_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\DataForm\DataForm_Demo.xaml.vb" />
@@ -155,7 +220,6 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
     <Content Include="Other\Logo.png" />
-    <Content Include="Other\MenuIcon.png" />
     <Content Include="Other\Planets\Earth.png" />
     <Content Include="Other\Planets\Jupiter.png" />
     <Content Include="Other\Planets\Mars.png" />

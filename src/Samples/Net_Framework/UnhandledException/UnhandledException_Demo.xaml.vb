@@ -1,8 +1,10 @@
-﻿Imports System
+﻿Imports OpenSilver.Samples.Showcase.Search
+Imports System
 Imports System.Windows
 Imports System.Windows.Controls
 
 Namespace OpenSilver.Samples.Showcase
+    <SearchKeywords("error handling", "exception", "debugging", "logging")>
     Partial Public Class UnhandledException_Demo
         Inherits UserControl
 

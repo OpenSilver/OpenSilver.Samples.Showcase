@@ -1,8 +1,10 @@
-﻿Imports System.Windows.Controls
+﻿Imports OpenSilver.Samples.Showcase.Search
+Imports System.Windows.Controls
 Imports System.Windows.Input
 Imports System.Windows.Media
 
-Namespace Global.OpenSilver.Samples.Showcase
+Namespace OpenSilver.Samples.Showcase
+    <SearchKeywords("coordinates", "mouse", "hit test", "interaction")>
     Partial Public Class FindElementsInHostCoordinates_Demo
         Inherits UserControl
         Private _highestZIndex As Integer

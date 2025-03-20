@@ -1,6 +1,8 @@
-﻿Imports System.Windows.Controls
+﻿Imports OpenSilver.Samples.Showcase.Search
+Imports System.Windows.Controls
 
 Namespace Global.OpenSilver.Samples.Showcase
+    <SearchKeywords("data", "display", "grid", "table", "binding")>
     Partial Public Class DataGrid_Demo
         Inherits UserControl
         Public Sub New()

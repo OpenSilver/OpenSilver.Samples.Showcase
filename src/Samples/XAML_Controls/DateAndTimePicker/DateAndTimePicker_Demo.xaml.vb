@@ -1,7 +1,9 @@
-﻿Imports System.Windows
+﻿Imports OpenSilver.Samples.Showcase.Search
+Imports System.Windows
 Imports System.Windows.Controls
 
 Namespace Global.OpenSilver.Samples.Showcase
+    <SearchKeywords("input", "date", "time", "picker", "selection", "calendar")>
     Partial Public Class DateAndTimePicker_Demo
         Inherits UserControl
         Public Sub New()

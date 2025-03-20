@@ -1,8 +1,10 @@
-﻿Imports System.Windows
+﻿Imports OpenSilver.Samples.Showcase.Search
+Imports System.Windows
 Imports System.Windows.Controls
 Imports System.Windows.Input
 
 Namespace Global.OpenSilver.Samples.Showcase
+    <SearchKeywords("input", "keypress", "event", "interaction")>
     Partial Public Class Keyboard_Demo
         Inherits UserControl
         Public Sub New()

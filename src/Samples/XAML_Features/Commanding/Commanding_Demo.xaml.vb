@@ -1,8 +1,10 @@
-﻿Imports System.Windows.Input
+﻿Imports OpenSilver.Samples.Showcase.Search
+Imports System.Windows.Input
 Imports System.Windows
 Imports System.Windows.Controls
 
-Namespace Global.OpenSilver.Samples.Showcase
+Namespace OpenSilver.Samples.Showcase
+    <SearchKeywords("click", "interaction", "command")>
     Partial Public Class Commanding_Demo
         Inherits UserControl
         Private _myICommand As ICommand

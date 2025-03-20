@@ -1,8 +1,10 @@
-﻿Imports System.Collections.ObjectModel
+﻿Imports OpenSilver.Samples.Showcase.Search
+Imports System.Collections.ObjectModel
 Imports System.Windows
 Imports System.Windows.Controls
 
-Namespace Global.OpenSilver.Samples.Showcase
+Namespace OpenSilver.Samples.Showcase
+    <SearchKeywords("data", "MVVM", "binding", "UI")>
     Partial Public Class Binding3_Demo
         Inherits UserControl
         Private _listOfContacts As ObservableCollection(Of Person)

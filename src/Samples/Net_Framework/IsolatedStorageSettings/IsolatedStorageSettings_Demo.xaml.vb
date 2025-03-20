@@ -1,8 +1,10 @@
-﻿Imports System.IO.IsolatedStorage
+﻿Imports OpenSilver.Samples.Showcase.Search
+Imports System.IO.IsolatedStorage
 Imports System.Windows
 Imports System.Windows.Controls
 
 Namespace Global.OpenSilver.Samples.Showcase
+    <SearchKeywords("storage", "settings", "local storage", "persistence", "user data")>
     Partial Public Class IsolatedStorageSettings_Demo
         Inherits UserControl
         Public Sub New()

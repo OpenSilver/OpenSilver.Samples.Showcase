@@ -1,6 +1,8 @@
-﻿Imports System.Windows.Controls
+﻿Imports OpenSilver.Samples.Showcase.Search
+Imports System.Windows.Controls
 
 Namespace OpenSilver.Samples.Showcase
+    <SearchKeywords("form", "input", "editor", "data", "binding")>
     Partial Public Class DataForm_Demo
         Inherits UserControl
 

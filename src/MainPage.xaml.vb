@@ -1,255 +1,218 @@
-﻿Imports System.Windows.Browser
+﻿Imports OpenSilver.Themes.Modern
+Imports System
 Imports System.Windows
+Imports System.Windows.Browser
 Imports System.Windows.Controls
+Imports System.Windows.Controls.Primitives
 Imports System.Windows.Media
 
-Namespace Global.OpenSilver.Samples.Showcase
-
+Namespace OpenSilver.Samples.Showcase
     Partial Public Class MainPage
         Inherits Page
 
-        Private Shared _Current As MainPage
         Public Sub New()
             InitializeComponent()
+
+            ' #If OPENSILVER
+            ' ThirdPartyButton.Visibility = Visibility.Collapsed
+            ' ThirdPartyHomeButton.Visibility = Visibility.Visible
+            ' #End If
 
             Current = Me
             AddHandler Loaded, AddressOf MainPage_Loaded
             AddHandler SizeChanged, AddressOf MainPage_SizeChanged
 
+            Dim th As New Themes.Modern.ModernTheme()
+
 #If OPENSILVER Then
-            Me.TitleImage.Visibility = Visibility.Collapsed
-            Me.TitleTextBlock.Text = "OPENSILVER SHOWCASE (VB)"
-            Me.TitleTextBlock.HorizontalAlignment = HorizontalAlignment.Center
+            TitleImage.Visibility = Visibility.Collapsed
+            TitleTextBlock.Text = "OPENSILVER SHOWCASE"
+            TitleTextBlock.HorizontalAlignment = HorizontalAlignment.Center
 #End If
+
+            MenuListBox.ItemsSource = PageInfo.Pages
+
+            ' If DeviceInfo.Current.Platform = DevicePlatform.Unknown Then
+            ' MauiHybridButton.Visibility = Visibility.Collapsed
+            ' End If
         End Sub
 
         Public Shared Property Current As MainPage
-            Get
-                Return _Current
-            End Get
-            Private Set(ByVal value As MainPage)
-                _Current = value
-            End Set
-        End Property
 
-        Private Sub MainPage_Loaded(ByVal sender As Object, ByVal e As RoutedEventArgs)
+        Private Sub MainPage_Loaded(sender As Object, e As RoutedEventArgs)
             ' Navigate to the "Welcome" page by default:
             If Not HtmlPage.Document.DocumentUri.OriginalString.Contains("#") Then
-                NavigateToPage("/Welcome")
+                MenuListBox.SelectedItem = PageInfo.LandingPageInfo
             End If
         End Sub
 
 #Region "Navigation"
-#Region "Page buttons clicks handling"
-        Private Sub ButtonXamlControls_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            NavigateToPage("/XAML_Controls")
+
+        Private Sub MenuListBox_SelectionChanged(sender As Object, e As SelectionChangedEventArgs)
+            If Not (_skipMenuListBox_SelectionChanged AndAlso (e.AddedItems?.Count = 0)) Then
+                Dim page As PageInfo = TryCast(e.AddedItems(0), PageInfo)
+                If page IsNot Nothing Then
+                    NavigateToPage(page.Path)
+                End If
+            End If
         End Sub
 
-        Private Sub ButtonXamlFeatures_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            NavigateToPage("/XAML_Features")
-        End Sub
-
-        Private Sub ButtonNetFramework_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            NavigateToPage("/Net_Framework")
-        End Sub
-
-        Private Sub ButtonClientServer_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            NavigateToPage("/Client_Server")
-        End Sub
-
-        Private Sub ButtonInterop_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            NavigateToPage("/Interop_Samples")
-        End Sub
-        Private Sub ButtonCharts_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            NavigateToPage("/Charts")
-        End Sub
-
-        Private Sub ButtonPerformance_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            NavigateToPage("/Performance")
-        End Sub
-
-        Private Sub ButtonMaterialDesign_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            NavigateToPage("/Material_Design")
-        End Sub
-
-        Private Sub ButtonPlotlyCharts_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            NavigateToPage("/Third_Party/Plotly_Charts/Plotly_Charts_Demo")
-        End Sub
-
-        Private Sub ButtonSyncfusionEssentialJS1Spreadsheet_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            NavigateToPage("/Third_Party/Syncfusion_EssentialJS1/Spreadsheet/Spreadsheet_Demo")
-        End Sub
-
-        Private Sub ButtonSyncfusionEssentialJS1RichTextEditor_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            NavigateToPage("/Third_Party/Syncfusion_EssentialJS1/RichTextEditor/RichTextEditor_Demo")
-        End Sub
-
-        Private Sub ButtonTelerikKendoUIGrid_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            NavigateToPage("/Third_Party/Telerik_KendoUI/Grid/Grid_Demo")
-        End Sub
-
-        Private Sub ButtonTelerikKendoUIEditor_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            NavigateToPage("/Third_Party/Telerik_KendoUI/Editor/Editor_Demo")
-        End Sub
-
-        Private Sub ButtonDevExtremeDataGrid_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            NavigateToPage("/Third_Party/DevExtreme/DataGrid/DataGrid_Demo")
-        End Sub
-
-        Private Sub ButtonHome_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            NavigateToPage("/Welcome")
-        End Sub
-
-        Private Sub ThirdParty_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            NavigateToPage("/Third_Party")
-        End Sub
-
-        Private Sub MauiHybrid_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            NavigateToPage("/Maui_Hybrid")
-        End Sub
-#End Region
-
-        Private Sub NavigateToPage(ByVal targetUri As String)
-            'Hide the menu:
-            If _currentState = CurrentState.SmallResolution_ShowMenu Then GoToState(CurrentState.SmallResolution_HideMenu)
+        Private Sub NavigateToPage(targetUri As String)
+            ' Hide the menu:
+            If _currentState = CurrentState.SmallResolution_ShowMenu Then
+                GoToState(CurrentState.SmallResolution_HideMenu)
+            End If
 
             ' Navigate to the target page:
-            Dim uri As Uri = New Uri(targetUri, UriKind.Relative)
-            Me.PageContainer.Source = uri
+            Dim uri As New Uri(targetUri, UriKind.Relative)
+            PageContainer.Source = uri
 
             ' Scroll to top:
-            Me.ScrollViewer1.ScrollToVerticalOffset(0R)
+            ScrollViewer1.ScrollToVerticalOffset(0)
         End Sub
 
-        Private Sub ButtonBackwards_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
+        Private Sub ButtonBackwards_Click(sender As Object, e As RoutedEventArgs)
             If PageContainer.CanGoBack Then
                 PageContainer.GoBack()
             End If
         End Sub
 
-        Private Sub ButtonForward_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
+        Private Sub ButtonForward_Click(sender As Object, e As RoutedEventArgs)
             If PageContainer.CanGoForward Then
                 PageContainer.GoForward()
             End If
         End Sub
 
-        Private Sub PageContainer_Navigated(ByVal sender As Object, ByVal e As System.Windows.Navigation.NavigationEventArgs)
+        Private Sub PageContainer_Navigated(sender As Object, e As System.Windows.Navigation.NavigationEventArgs)
             ButtonBackwards.IsEnabled = PageContainer.CanGoBack
             ButtonForward.IsEnabled = PageContainer.CanGoForward
+        End Sub
+
+        Private _skipMenuListBox_SelectionChanged As Boolean
+
+        Friend Sub StartSearch(searchTerms As String)
+            _skipMenuListBox_SelectionChanged = True
+            MenuListBox.SelectedItem = PageInfo.SearchPageInfo
+            NavigateToPage($"/Search/{Uri.EscapeUriString(searchTerms)}")
+            _skipMenuListBox_SelectionChanged = False
         End Sub
 
 #End Region
 
 #Region "Show/hide source code"
 
-        Public Sub ViewSourceCode(ByVal controlThatDisplaysTheSourceCode As UIElement)
-            ' Open the Source Code Pane, which is the place where the source code will be displayed:
-            If Me.SourceCodePane.Visibility = Visibility.Collapsed Then
-                Me.RowThatContainsThePage.Height = New GridLength(0.5R, GridUnitType.Star)
-                Me.RowThatContainsTheGridSplitter.Height = New GridLength(5.0R)
-                Me.RowThatContainsTheSourceCodePane.Height = New GridLength(0.5R, GridUnitType.Star)
-                'GridSplitter1.ResizeDirection = GridSplitter.GridResizeDirection.Rows;
-                Me.GridSplitter1.Visibility = Visibility.Visible
-                Me.SourceCodePane.Visibility = Visibility.Visible
+        Public Sub ViewSourceCode(controlThatDisplaysTheSourceCode As UIElement)
+            ' Open the Source Code Pane
+            If SourceCodePane.Visibility = Visibility.Collapsed Then
+                RowThatContainsThePage.Height = New GridLength(0.5, GridUnitType.Star)
+                RowThatContainsTheGridSplitter.Height = New GridLength(5)
+                RowThatContainsTheSourceCodePane.Height = New GridLength(0.5, GridUnitType.Star)
+                GridSplitter1.Visibility = Visibility.Visible
+                SourceCodePane.Visibility = Visibility.Visible
             End If
 
-            ' Display the source code:
-            Me.PlaceWhereSourceCodeWillBeDisplayed.Child = controlThatDisplaysTheSourceCode
+            ' Display the source code
+            PlaceWhereSourceCodeWillBeDisplayed.Child = controlThatDisplaysTheSourceCode
         End Sub
 
-        Private Sub ButtonToCloseSourceCode_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            ' Close the Source Code Pane, which is the place where the source code is displayed:
-            Me.PlaceWhereSourceCodeWillBeDisplayed.Child = Nothing
-            Me.GridSplitter1.Visibility = Visibility.Collapsed
-            Me.SourceCodePane.Visibility = Visibility.Collapsed
-            Me.RowThatContainsThePage.Height = New GridLength(1.0R, GridUnitType.Star)
-            Me.RowThatContainsTheGridSplitter.Height = New GridLength(0R)
-            Me.RowThatContainsTheSourceCodePane.Height = New GridLength(0R)
+        Private Sub ButtonToCloseSourceCode_Click(sender As Object, e As RoutedEventArgs)
+            ' Close the Source Code Pane
+            PlaceWhereSourceCodeWillBeDisplayed.Child = Nothing
+            GridSplitter1.Visibility = Visibility.Collapsed
+            SourceCodePane.Visibility = Visibility.Collapsed
+            RowThatContainsThePage.Height = New GridLength(1, GridUnitType.Star)
+            RowThatContainsTheGridSplitter.Height = New GridLength(0)
+            RowThatContainsTheSourceCodePane.Height = New GridLength(0)
         End Sub
 
 #End Region
 
-#Region "States management"
+#Region "States Management"
 
-        'This region contains all that we use to make the menu on the left disappear when the screen is too small.
-
-        Friend Enum CurrentState
-            Unset ' Initial value
-            LargeResolution_SeeBothMenuAndPage ' This corresponds to tablets and other devices with high resolution. In this case we see both the menu and the page.
-            SmallResolution_ShowMenu ' This corresponds to smartphones and other devices with low resolution. In this case we see the menu.
-            SmallResolution_HideMenu ' This corresponds to smartphones and other devices with low resolution. In this case we do not see the menu.
+        Private Enum CurrentState
+            Unset
+            LargeResolution_SeeBothMenuAndPage
+            SmallResolution_ShowMenu
+            SmallResolution_HideMenu
         End Enum
 
         Private _currentState As CurrentState
 
-        Private Sub GoToState(ByVal newState As CurrentState)
+        Private Sub GoToState(newState As CurrentState)
             If newState <> _currentState Then
                 If newState = CurrentState.LargeResolution_SeeBothMenuAndPage Then
-                    ' Hide the button to hide/show the menu:
-                    Me.ButtonToHideOrShowMenu.Visibility = Visibility.Collapsed
-                    Me.PageContainer.Margin = New Thickness(0, 0, 0, 30)
-
-                    ' Set the translation of the frame to 0:
-                    CType(Me.PageContainer.RenderTransform, TranslateTransform).X = 0
-
-                    ' Set the margin of the frame to 180 (which is the size of the menu):
-                    Dim margin As Thickness = Me.PageContainer.Margin
-                    margin.Left = 180
-                    Me.PageContainer.Margin = margin
-
-                    ' Set the translation of the border to 0:
-                    CType(Me.MenuBorder.RenderTransform, TranslateTransform).X = 0
+                    ButtonToHideOrShowMenu.Visibility = Visibility.Collapsed
+                    PageContainer.Margin = New Thickness(20, 0, 0, 30)
+                    CType(PageContainer.RenderTransform, TranslateTransform).X = 0
+                    Dim margin As Thickness = PageContainer.Margin
+                    margin.Left += MenuBorder.Width
+                    PageContainer.Margin = margin
+                    CType(MenuBorder.RenderTransform, TranslateTransform).X = 0
                 Else
-                    ' Revert the changes that are specific to the CurrentState.LargeResolution_SeeBothMenuAndPage state.
-
-                    ' Show the button to hide/show the menu:
-                    Me.ButtonToHideOrShowMenu.Visibility = Visibility.Visible
-                    Me.PageContainer.Margin = New Thickness(0, 50, 0, 30)
-
-                    Dim margin As Thickness = Me.PageContainer.Margin
+                    ButtonToHideOrShowMenu.Visibility = Visibility.Visible
+                    PageContainer.Margin = New Thickness(0, 50, 0, 30)
+                    Dim margin As Thickness = PageContainer.Margin
                     margin.Left = 0
-                    Me.PageContainer.Margin = margin
+                    PageContainer.Margin = margin
 
                     If newState = CurrentState.SmallResolution_ShowMenu Then
-                        ' Show the menu:
-                        CType(Me.PageContainer.RenderTransform, TranslateTransform).X = 180
-                        CType(Me.ButtonToHideOrShowMenu.RenderTransform, TranslateTransform).X = 180
-                        CType(Me.MenuBorder.RenderTransform, TranslateTransform).X = 0
+                        CType(PageContainer.RenderTransform, TranslateTransform).X = 180
+                        CType(ButtonToHideOrShowMenu.RenderTransform, TranslateTransform).X = 180
+                        CType(MenuBorder.RenderTransform, TranslateTransform).X = 0
                     Else
-                        ' Hide the menu:
-                        CType(Me.PageContainer.RenderTransform, TranslateTransform).X = 0
-                        CType(Me.ButtonToHideOrShowMenu.RenderTransform, TranslateTransform).X = 0
-                        CType(Me.MenuBorder.RenderTransform, TranslateTransform).X = -180
+                        CType(PageContainer.RenderTransform, TranslateTransform).X = 0
+                        CType(ButtonToHideOrShowMenu.RenderTransform, TranslateTransform).X = 0
+                        CType(MenuBorder.RenderTransform, TranslateTransform).X = -180
                     End If
                 End If
                 _currentState = newState
             End If
         End Sub
 
-        Private Sub MainPage_SizeChanged(ByVal sender As Object, ByVal e As SizeChangedEventArgs)
+        Private Sub MainPage_SizeChanged(sender As Object, e As SizeChangedEventArgs)
             UpdateMenuDispositionBasedOnDisplaySize()
         End Sub
 
         Private Sub UpdateMenuDispositionBasedOnDisplaySize()
-            'note: another way to get the display width is commented below:
-            'Rect windowBounds = Window.Current.Bounds;
-            'double displayWidth = windowBounds.Width;
-
-            Dim actualWidth = Me.ActualWidth
-            If Not Double.IsNaN(actualWidth) AndAlso actualWidth > 560.0R Then
+            Dim actualWidth As Double = Me.ActualWidth
+            If Not Double.IsNaN(actualWidth) AndAlso actualWidth > 560 Then
                 GoToState(CurrentState.LargeResolution_SeeBothMenuAndPage)
             ElseIf _currentState = CurrentState.LargeResolution_SeeBothMenuAndPage OrElse _currentState = CurrentState.Unset Then
                 GoToState(CurrentState.SmallResolution_HideMenu)
             End If
         End Sub
 
-        Private Sub ButtonToHideOrShowMenu_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
+        Private Sub ButtonToHideOrShowMenu_Click(sender As Object, e As RoutedEventArgs)
             If _currentState = CurrentState.SmallResolution_ShowMenu Then
                 GoToState(CurrentState.SmallResolution_HideMenu)
             ElseIf _currentState = CurrentState.SmallResolution_HideMenu Then
                 GoToState(CurrentState.SmallResolution_ShowMenu)
-            Else
-                ' Not supposed to happen because the button is not visible when in large resolution mode.
+            End If
+        End Sub
+
+#End Region
+
+#Region "Themes Switch"
+
+        Private _nativeApiButtonBackgroundBrush As SolidColorBrush
+        Public ReadOnly Property NativeApiButtonBackgroundBrush As SolidColorBrush
+            Get
+                If _nativeApiButtonBackgroundBrush Is Nothing Then
+                    _nativeApiButtonBackgroundBrush = TryCast(Me.Resources("NativeApiButtonBackground"), SolidColorBrush)
+                End If
+                Return _nativeApiButtonBackgroundBrush
+            End Get
+        End Property
+
+        Private ReadOnly lightColor As Color = Color.FromRgb(221, 221, 221)
+        Private ReadOnly darkColor As Color = Color.FromRgb(60, 60, 60)
+
+        Private Sub ToggleThemeButton_Click(sender As Object, e As RoutedEventArgs)
+            Dim isDark As Boolean = CType(sender, ToggleButton)?.IsChecked = True
+            Dim theme As ModernTheme = TryCast(Application.Current.Theme, ModernTheme)
+            If theme IsNot Nothing Then
+                NativeApiButtonBackgroundBrush.Color = If(isDark, darkColor, lightColor)
+                theme.CurrentPalette = If(isDark, ModernTheme.Palettes.Dark, ModernTheme.Palettes.Light)
             End If
         End Sub
 

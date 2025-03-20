@@ -1,8 +1,10 @@
-﻿Imports System.Windows.Input
+﻿Imports OpenSilver.Samples.Showcase.Search
+Imports System.Windows.Input
 Imports System.Windows
 Imports System.Windows.Controls
 
-Namespace Global.OpenSilver.Samples.Showcase
+Namespace OpenSilver.Samples.Showcase
+    <SearchKeywords("interaction", "triggers", "behavior", "events", "UI")>
     Partial Public Class InteractivityTriggers_Demo
         Inherits UserControl
         Public Sub New()

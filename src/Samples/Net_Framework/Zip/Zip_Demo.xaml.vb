@@ -1,9 +1,11 @@
 ﻿Imports OpenSilver.Extensions.FileSystem
+Imports OpenSilver.Samples.Showcase.Search
 Imports Ionic.Zip
 Imports System.Windows
 Imports System.Windows.Controls
 
 Namespace Global.OpenSilver.Samples.Showcase
+    <SearchKeywords("compression", "zip", "file", "archive")>
     Partial Public Class Zip_Demo
         Inherits UserControl
         Public Sub New()

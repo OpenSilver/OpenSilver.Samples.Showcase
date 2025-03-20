@@ -1,6 +1,8 @@
-﻿Imports System.Windows.Controls
+﻿Imports OpenSilver.Samples.Showcase.Search
+Imports System.Windows.Controls
 
-Namespace Global.OpenSilver.Samples.Showcase
+Namespace OpenSilver.Samples.Showcase
+    <SearchKeywords("click", "interaction", "command")>
     Partial Public Class TransformToVisual_Demo
         Inherits UserControl
         Public Sub New()

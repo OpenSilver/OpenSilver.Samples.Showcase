@@ -1,6 +1,8 @@
-﻿Imports System.Windows.Controls
+﻿Imports OpenSilver.Samples.Showcase.Search
+Imports System.Windows.Controls
 
 Namespace Global.OpenSilver.Samples.Showcase
+    <SearchKeywords("input", "selection", "list", "items", "choices")>
     Partial Public Class ListBox_Demo
         Inherits UserControl
         Public Sub New()

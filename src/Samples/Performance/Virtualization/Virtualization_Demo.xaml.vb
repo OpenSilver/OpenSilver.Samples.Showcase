@@ -1,10 +1,12 @@
-﻿Imports System
+﻿Imports OpenSilver.Samples.Showcase.Search
+Imports System
 Imports System.Collections.Generic
 Imports System.Reflection
 Imports System.Windows.Controls
 Imports System.Windows.Media
 
 Namespace OpenSilver.Samples.Showcase
+    <SearchKeywords("performance", "virtualization", "lazy loading", "memory optimization", "UI")>
     Partial Public Class Virtualization_Demo
         Inherits UserControl
 

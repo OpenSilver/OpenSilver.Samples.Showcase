@@ -1,6 +1,6 @@
 ﻿Imports System.Windows.Controls
 
-Namespace Global.OpenSilver.Samples.Showcase
+Namespace OpenSilver.Samples.Showcase
     Partial Public Class MarkupExtensions_Demo
         Inherits UserControl
         Public Sub New()

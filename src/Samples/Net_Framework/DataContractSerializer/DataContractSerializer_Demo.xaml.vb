@@ -1,10 +1,12 @@
-﻿Imports System.IO
+﻿Imports OpenSilver.Samples.Showcase.Search
+Imports System.IO
 Imports System.Runtime.Serialization
 Imports System.Text
 Imports System.Windows
 Imports System.Windows.Controls
 
 Namespace Global.OpenSilver.Samples.Showcase
+    <SearchKeywords("serialization", "deserialization", "data contract", "XML", "data exchange")>
     Partial Public Class DataContractSerializer_Demo
         Inherits UserControl
         Private _classToSerialize As ClassToSerialize

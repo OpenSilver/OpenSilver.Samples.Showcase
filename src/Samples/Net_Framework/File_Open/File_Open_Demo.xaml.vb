@@ -1,7 +1,9 @@
-﻿Imports System.Windows
+﻿Imports OpenSilver.Samples.Showcase.Search
+Imports System.Windows
 Imports System.Windows.Controls
 
 Namespace Global.OpenSilver.Samples.Showcase
+    <SearchKeywords("timer", "interval", "event", "clock")>
     Partial Public Class File_Open_Demo
         Inherits UserControl
         Public Sub New()

@@ -1,8 +1,10 @@
-﻿Imports System.Windows
+﻿Imports OpenSilver.Samples.Showcase.Search
+Imports System.Windows
 Imports System.Windows.Controls
 Imports System.Windows.Data
 
-Namespace Global.OpenSilver.Samples.Showcase
+Namespace OpenSilver.Samples.Showcase
+    <SearchKeywords("input", "form", "data entry", "error handling", "UI")>
     Partial Public Class Validation_Demo
         Inherits UserControl
         Public Sub New()

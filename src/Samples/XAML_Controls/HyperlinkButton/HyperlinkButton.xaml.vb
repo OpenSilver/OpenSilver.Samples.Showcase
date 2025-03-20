@@ -1,6 +1,8 @@
-﻿Imports System.Windows.Controls
+﻿Imports OpenSilver.Samples.Showcase.Search
+Imports System.Windows.Controls
 
 Namespace Global.OpenSilver.Samples.Showcase
+    <SearchKeywords("hyperlink", "text", "navigation", "control", "button", "web")>
     Partial Public Class HyperlinkButton_Demo
         Inherits UserControl
         Public Sub New()

@@ -1,8 +1,10 @@
-﻿Imports System.Windows
+﻿Imports OpenSilver.Samples.Showcase.Search
+Imports System.Windows
 Imports System.Windows.Controls
 Imports System.Windows.Markup
 
 Namespace OpenSilver.Samples.Showcase
+    <SearchKeywords("XAML", "runtime", "parsing", "UI", "dynamic")>
     Partial Public Class XamlReader_Demo
         Inherits UserControl
 

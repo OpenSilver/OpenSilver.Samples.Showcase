@@ -1,9 +1,11 @@
-﻿Imports System
+﻿Imports OpenSilver.Samples.Showcase.Search
+Imports System
 Imports System.Windows
 Imports System.Windows.Controls
 Imports System.Windows.Threading
 
 Namespace OpenSilver.Samples.Showcase
+    <SearchKeywords("loading", "busy", "indicator", "status", "UI")>
     Partial Public Class BusyIndicator_Demo
         Inherits UserControl
 

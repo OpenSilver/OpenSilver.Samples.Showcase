@@ -1,8 +1,10 @@
-﻿Imports System.Windows
+﻿Imports OpenSilver.Samples.Showcase.Search
+Imports System.Windows
 Imports System.Windows.Controls
 Imports System.Windows.Media.Animation
 
-Namespace Global.OpenSilver.Samples.Showcase
+Namespace OpenSilver.Samples.Showcase
+    <SearchKeywords("animation", "effects", "motion", "behavior")>
     Partial Public Class Animations_Demo
         Inherits UserControl
         Public Sub New()

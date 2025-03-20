@@ -1,8 +1,10 @@
-﻿Imports System.IO
+﻿Imports OpenSilver.Samples.Showcase.Search
+Imports System.IO
 Imports System.Windows
 Imports System.Windows.Controls
 
 Namespace Global.OpenSilver.Samples.Showcase
+    <SearchKeywords("resource", "stream", "file access", "embedded resources", "load")>
     Partial Public Class GetRessourceStream_Demo
         Inherits UserControl
         Private currentUri As Uri

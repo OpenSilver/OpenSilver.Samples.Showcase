@@ -1,8 +1,9 @@
-﻿Imports Other
+﻿Imports OpenSilver.Samples.Showcase.Search
 Imports System.Windows
 Imports System.Windows.Controls
 
 Namespace OpenSilver.Samples.Showcase
+    <SearchKeywords("resources", "localization", "RESX", "translation")>
     Partial Public Class RESX_Demo
         Inherits UserControl
 

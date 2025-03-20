@@ -1,8 +1,10 @@
-﻿Imports System.Windows.Browser
+﻿Imports OpenSilver.Samples.Showcase.Search
+Imports System.Windows.Browser
 Imports System.Windows
 Imports System.Windows.Controls
 
 Namespace Global.OpenSilver.Samples.Showcase
+    <SearchKeywords("HTML", "browser", "web", "host")>
     Partial Public Class HtmlPage_Demo
         Inherits UserControl
         Public Sub New()

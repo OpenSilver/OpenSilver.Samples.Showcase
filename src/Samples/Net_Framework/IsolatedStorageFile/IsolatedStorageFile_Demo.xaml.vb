@@ -1,11 +1,13 @@
-﻿Imports System.IO
+﻿Imports OpenSilver.Samples.Showcase.Search
+Imports System.IO
 Imports System.IO.IsolatedStorage
 Imports System.Text
 Imports System.Windows
 Imports System.Windows.Controls
 
 Namespace Global.OpenSilver.Samples.Showcase
-    Public Partial Class IsolatedStorageFile_Demo
+    <SearchKeywords("storage", "file system", "sandbox", "local files", "persistence")>
+    Partial Public Class IsolatedStorageFile_Demo
         Inherits UserControl
         Public Sub New()
             Me.InitializeComponent()

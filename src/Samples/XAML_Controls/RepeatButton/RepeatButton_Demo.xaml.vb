@@ -1,8 +1,10 @@
-﻿Imports System.Windows
+﻿Imports OpenSilver.Samples.Showcase.Search
+Imports System.Windows
 Imports System.Windows.Controls
 Imports System.Windows.Media
 
 Namespace Global.OpenSilver.Samples.Showcase
+    <SearchKeywords("input", "repeat", "button", "click", "control")>
     Partial Public Class RepeatButton_Demo
         Inherits UserControl
         Public Sub New()

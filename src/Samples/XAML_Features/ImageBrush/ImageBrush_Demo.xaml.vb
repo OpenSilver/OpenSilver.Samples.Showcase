@@ -1,6 +1,8 @@
-﻿Imports System.Windows.Controls
+﻿Imports OpenSilver.Samples.Showcase.Search
+Imports System.Windows.Controls
 
-Namespace Global.OpenSilver.Samples.Showcase
+Namespace OpenSilver.Samples.Showcase
+    <SearchKeywords("brush", "image", "fill", "background", "UI")>
     Partial Public Class ImageBrush_Demo
         Inherits UserControl
         Public Sub New()

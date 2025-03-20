@@ -1,8 +1,10 @@
-﻿Imports System.Text.RegularExpressions
+﻿Imports OpenSilver.Samples.Showcase.Search
+Imports System.Text.RegularExpressions
 Imports System.Windows
 Imports System.Windows.Controls
 
 Namespace Global.OpenSilver.Samples.Showcase
+    <SearchKeywords("regular expressions", "pattern", "match", "string processing", "search", "validation")>
     Partial Public Class Regex_Demo
         Inherits UserControl
         Public Sub New()

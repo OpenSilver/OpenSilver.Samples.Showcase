@@ -1,8 +1,10 @@
-﻿Imports System.Windows
+﻿Imports OpenSilver.Samples.Showcase.Search
+Imports System.Windows
 Imports System.Windows.Controls
 Imports System.Windows.Threading
 
 Namespace Global.OpenSilver.Samples.Showcase
+    <SearchKeywords("timer", "interval", "event", "clock")>
     Partial Public Class DispatcherTimer_Demo
         Inherits UserControl
         Private _dispatcherTimer As DispatcherTimer

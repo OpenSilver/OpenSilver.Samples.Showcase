@@ -1,9 +1,11 @@
-﻿Imports ServiceReference1
+﻿Imports OpenSilver.Samples.Showcase.Search
+Imports ServiceReference1
 Imports System.ServiceModel
 Imports System.Windows
 Imports System.Windows.Controls
 
 Namespace Global.OpenSilver.Samples.Showcase
+    <SearchKeywords("WCF", "SOAP", "web", "service", "communication", "network")>
     Partial Public Class WCF_SOAP_Demo
         Inherits UserControl
         Private _ownerId As Guid

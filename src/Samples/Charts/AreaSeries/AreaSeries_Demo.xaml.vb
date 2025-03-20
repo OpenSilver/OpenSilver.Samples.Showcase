@@ -1,7 +1,9 @@
-﻿Imports OpenSilver.Samples.Showcase.Other
-Imports System.Windows.Controls
+﻿Imports System.Windows.Controls
+Imports OpenSilver.Samples.Showcase.Other
+Imports OpenSilver.Samples.Showcase.Search
 
 Namespace OpenSilver.Samples.Showcase
+    <SearchKeywords("chart", "data", "visualization", "graph", "plot", "area", "points")>
     Partial Public Class AreaSeries_Demo
         Inherits UserControl
 

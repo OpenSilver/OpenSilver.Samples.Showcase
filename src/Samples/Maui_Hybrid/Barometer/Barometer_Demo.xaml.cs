@@ -57,7 +57,6 @@ namespace OpenSilver.Samples.Showcase
                             // Turn off Barometer
                             Barometer.Default.Stop();
                             Barometer.Default.ReadingChanged -= Barometer_ReadingChanged;
-                            //BarometerTextBlock.Foreground = new SolidColorBrush(Colors.Black);
                             BarometerTextBlock.SetValue(TextBlock.ForegroundProperty, DependencyProperty.UnsetValue);
                         }
                     }

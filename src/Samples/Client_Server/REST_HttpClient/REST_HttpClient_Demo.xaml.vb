@@ -1,4 +1,5 @@
 ﻿Imports DotNetForHtml5.Showcase.SampleRestWebService.Models
+Imports OpenSilver.Samples.Showcase.Search
 Imports System.IO
 Imports System.Net
 Imports System.Runtime.Serialization
@@ -7,6 +8,7 @@ Imports System.Windows
 Imports System.Windows.Controls
 
 Namespace Global.OpenSilver.Samples.Showcase
+    <SearchKeywords("REST", "API", "HttpClient", "HTTP", "web", "service")>
     Partial Public Class REST_HttpClient_Demo
         Inherits UserControl
         Private _ownerId As Guid
