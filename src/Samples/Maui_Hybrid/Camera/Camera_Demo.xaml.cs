@@ -189,6 +189,10 @@ return data;
             //Use the base64 string as source for the image:
             PhotoTakenImage.Source = LoadImageFromBase64(imgData);
             PhotoTakenImage.Visibility = Visibility.Visible;
+
+            //close the camera
+            StopWatchingCamera();
+            GetVideoGrid.Visibility = Visibility.Collapsed;
         }
 
         public static BitmapImage LoadImageFromBase64(string base64String)
