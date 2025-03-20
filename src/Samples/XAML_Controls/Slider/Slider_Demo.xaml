@@ -11,7 +11,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="Slider" Foreground="#FF3ED4C8" Background="#FFA3CFCA" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="Slider" Foreground="#FF76A6A2" Background="#FFA3CFCA" Style="{StaticResource HeaderControl_Style}"/>
             <Grid Grid.Row="1" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="2*"/>

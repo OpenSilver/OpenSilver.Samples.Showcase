@@ -10,7 +10,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="JSON Serializer" Foreground="#FF3ED4B2" Background="#FF8FCBBE" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="JSON Serializer" Foreground="#FF89B8AD" Background="#FF8FCBBE" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1" HorizontalAlignment="Center">
                 <Button Click="Button_Click_Serialization" Margin="0,0,0,0" HorizontalAlignment="Center">
                     <TextBlock TextAlignment="Center" FontSize="14">Serialize</TextBlock>

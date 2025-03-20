@@ -10,7 +10,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="ProgressBar" Foreground="#FF13D7E3" Background="#FF91C3C5" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="ProgressBar" Foreground="#FF73AFB3" Background="#FF91C3C5" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1">
                 <TextBlock Text="You can use the NumericUpDown to change the progress of the ProgressBar below." TextWrapping="Wrap" TextAlignment="Center" Margin="0,0,0,10"/>
                 <ProgressBar Minimum="0" Maximum="100" Value="{Binding Path=Value, ElementName=MyNumericUpDown}" Margin="0,5" Height="10"/>

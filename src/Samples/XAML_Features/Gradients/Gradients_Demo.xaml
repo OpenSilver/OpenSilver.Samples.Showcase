@@ -10,7 +10,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="Gradients" Foreground="#FF7EE476" Background="#FFA9D4A4" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="Gradients" Foreground="#FF70B36B" Background="#FFA9D4A4" Style="{StaticResource HeaderControl_Style}"/>
           <StackPanel Grid.Row="1">
             <Border Height="70" Width="120" VerticalAlignment="Center" HorizontalAlignment="Center">
               <Border.Background>
@@ -39,7 +39,7 @@
             </Ellipse>
           </StackPanel>
             <local:ViewSourceButton Grid.Row="2"
-                                    Background="#FF7EE476">
+                                    Background="#FF70B36B">
                 <local:ViewSourceButton.Sources>
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/Gradients"
                                                 FileName="Gradients_Demo.xaml" />

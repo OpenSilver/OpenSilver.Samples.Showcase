@@ -10,7 +10,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="StackPanel" Foreground="#FF3ED4C8" Background="#FFA3CFCA" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="StackPanel" Foreground="#FF76A6A2" Background="#FFA3CFCA" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
                 <!--<TextBlock Text="A StackPanel arranges child elements into a single line that can be oriented horizontally or vertically." Foreground="#FF808080" Margin="0,20,0,0" TextWrapping="Wrap" Width="220" FontSize="12" HorizontalAlignment="Left"/>-->
                 <!--<TextBlock Text="Vertical example:" Foreground="#FF808080" Margin="0,10,0,0" TextWrapping="Wrap" Width="220" FontSize="12" HorizontalAlignment="Left"/>-->

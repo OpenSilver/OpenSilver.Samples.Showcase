@@ -10,7 +10,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="TextBox" Foreground="#FF3ED49A" Background="#FF92BEAC" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="TextBox" Foreground="#FF92BEAC" Background="#FF92BEAC" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <TextBlock Text="Type your name: " Foreground="#FF808080" TextWrapping="Wrap" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                 <TextBox x:Name="TextBoxName" Text="John Doe" Width="120" Margin="0,10,0,0"/>

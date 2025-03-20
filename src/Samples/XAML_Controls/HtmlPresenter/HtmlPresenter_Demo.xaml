@@ -11,7 +11,7 @@
         <RowDefinition Height="Auto"/>
       </Grid.RowDefinitions>
       <ContentControl Content="HtmlPresenter" Foreground="#FFA05BFF" Background="#FFA793C3" Style="{StaticResource HeaderControl_Style}"/>
-      <ScrollViewer Background="White" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Grid.Row="1" Height="200">
+            <ScrollViewer Background="{DynamicResource Theme_BorderBrush}" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Grid.Row="1" Height="200">
 
         <native:HtmlPresenter xmlns:native="clr-namespace:CSHTML5.Native.Html.Controls;assembly=OpenSilver"
                               ScrollMode="Disabled">
@@ -35,7 +35,7 @@
             color: white;
             }
           </style>
-          <div style="margin: -10px 0px;">
+          <div style="margin: -10px 0px;background-color: #F5E7E7">
             <h1> HTML : </h1>
 
             <h2> Text Format</h2>

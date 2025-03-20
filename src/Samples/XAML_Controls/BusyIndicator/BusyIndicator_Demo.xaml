@@ -7,6 +7,7 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
@@ -14,10 +15,9 @@
 
             <Button Grid.Row="1"  Content="Show for 3 seconds" Click="Button_Click" VerticalAlignment="Top" Canvas.ZIndex="1" Margin="2"/>
             <!--BusyIndicator-->
-            <BusyIndicator x:Name="MyBusyIndicator" Grid.Row="1" />
+            <BusyIndicator x:Name="MyBusyIndicator" Grid.Row="2" />
 
-            <local:ViewSourceButton Grid.Row="2"
-                                Background="#FFE45EE2">
+            <local:ViewSourceButton Grid.Row="3" Background="#FFE45EE2">
                 <local:ViewSourceButton.Sources>
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/BusyIndicator"
                                             FileName="BusyIndicator_Demo.xaml" />

@@ -10,14 +10,14 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="GetDiv" Foreground="#FFA2E567" Background="#FFBEDCA4" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="GetDiv" Foreground="#FFB3BFA9" Background="#FFBEDCA4" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1" Orientation="Vertical">
                 <TextBlock Text="The 'Interop.GetDiv' method lets you get a reference to the HTML DOM element that corresponds to any given XAML element. This is particularly useful to pass a UIElement to a JS-based library." Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left"/>
                 <TextBlock Text="The following example shows how to set the CSS property 'text-decoration' to 'line-through' by using the 'GetDiv' method:" Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left" Margin="0,10,0,0"/>
                 <Button Content="Click to set the CSS property" Click="ButtonSetCSS_Click" HorizontalAlignment="Center" Margin="5,10,0,0"/>
             </StackPanel>
             <local:ViewSourceButton Grid.Row="2"
-                                    Background="#FFA2E567">
+                                    Background="#FFB3BFA9">
                 <local:ViewSourceButton.Sources>
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Interop_Samples/GetDiv"
                                                 FileName="GetDiv_Demo.xaml" />

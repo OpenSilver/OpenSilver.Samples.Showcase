@@ -10,7 +10,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="Popup" Foreground="#FF87C0FF" Background="#FFA4BCD4" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="Popup" Foreground="#FF3393FF" Background="#FFA4BCD4" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Button Content="Open popup" Click="OpenPopupButton_Click"/>
                 <Popup x:Name="MyPopup">
@@ -23,7 +23,7 @@
                 </Popup>
             </StackPanel>
             <local:ViewSourceButton Grid.Row="2"
-                                    Background="#FF87C0FF">
+                                    Background="#FF3393FF">
                 <local:ViewSourceButton.Sources>
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Popup"
                                                 FileName="Popup_Demo.xaml" />

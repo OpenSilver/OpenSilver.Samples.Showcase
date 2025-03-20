@@ -10,7 +10,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="WrapPanel" Foreground="#FFBDE567" Background="#FFB9CD89" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="WrapPanel" Foreground="#FFB1C28C" Background="#FFB9CD89" Style="{StaticResource HeaderControl_Style}"/>
             <WrapPanel Grid.Row="1" Background="{DynamicResource Theme_ControlBackgroundBrush}" Width="100" Height="100">
                 <Border Width="20" Height="20" Background="#FFB9E58D" Margin="5"/>
                 <Border Width="30" Height="20" Background="#FFB9E58D" Margin="5"/>

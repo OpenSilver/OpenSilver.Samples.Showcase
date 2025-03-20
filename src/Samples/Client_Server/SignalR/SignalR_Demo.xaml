@@ -10,7 +10,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="SignalR" Foreground="#FF3ED49A" Background="#FF92BEAC" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="SignalR" Foreground="#FF92BEAC" Background="#FF92BEAC" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1" Orientation="Vertical" Margin="0,0,0,10">
                 <TextBlock Text="The SignalR extension and demo can be found at:" Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left"/>
                 <HyperlinkButton Foreground="#FF3ED49A" Margin="0,10,0,0" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" NavigateUri="https://github.com/OpenSilver/OpenSilver.Extensions.SignalR/" TargetName="_blank">

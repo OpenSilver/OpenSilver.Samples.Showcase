@@ -10,10 +10,10 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="MarkupExtensions" Foreground="#FF69C8FF" Background="#FFA1C3D7" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="MarkupExtensions" Foreground="#FF33B4FF" Background="#FFA1C3D7" Style="{StaticResource HeaderControl_Style}"/>
             <TextBlock Grid.Row="1" Text="(Demo under construction)" Foreground="DarkGray" FontSize="12" Margin="0,25,0,20" HorizontalAlignment="Center"/>
             <local:ViewSourceButton Grid.Row="2"
-                                    Background="#FF69C8FF">
+                                    Background="#FF33B4FF">
                 <local:ViewSourceButton.Sources>
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/MarkupExtensions"
                                                 FileName="MarkupExtensions_Demo.xaml" />

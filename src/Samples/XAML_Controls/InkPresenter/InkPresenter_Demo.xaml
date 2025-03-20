@@ -10,7 +10,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="InkPresenter" Foreground="#FF13D7E3" Background="#FF91C3C5" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="InkPresenter" Foreground="#FF73AFB3" Background="#FF91C3C5" Style="{StaticResource HeaderControl_Style}"/>
             <Grid Grid.Row="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -30,7 +30,7 @@
                 <StackPanel Orientation="Horizontal"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Bottom" Grid.Row="1">
-                    <Button Content="X" Click="OnClearInkPad" IsEnabled="{Binding CanClearStrokes, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+                    <Button Content="🗙" Click="OnClearInkPad" IsEnabled="{Binding CanClearStrokes, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
                     <Button Click="OnUndoLastStroke" IsEnabled="{Binding CanUndoStroke, RelativeSource={RelativeSource AncestorType=UserControl}}" Margin="2,0">
                         <Path Stroke="White" StrokeThickness="2" Data="M2,10 C7,0 12,0 22,10 M6,9 L2,10 0,7"/>
                     </Button>

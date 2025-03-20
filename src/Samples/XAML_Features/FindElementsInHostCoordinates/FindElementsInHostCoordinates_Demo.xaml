@@ -10,7 +10,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="FindElementsIn-HostCoordinates" Foreground="#FFBDE567" Background="#FFB9CD89" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="FindElementsIn HostCoordinates" Foreground="#FFB1C28C" Background="#FFB9CD89" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1">
                 <TextBlock Text="Click on a rectangle to bring it to the front:" Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left"/>
                 <Canvas Margin="0,20,0,0" x:Name="CanvasParent" Height="120">

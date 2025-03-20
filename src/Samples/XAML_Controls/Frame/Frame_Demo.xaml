@@ -10,7 +10,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="Frame" Foreground="#FF13D7E3" Background="#FF91C3C5" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="Frame" Foreground="#FF73AFB3" Background="#FF91C3C5" Style="{StaticResource HeaderControl_Style}"/>
             <TextBlock Grid.Row="1" Text="(Demo under construction)" Foreground="DarkGray" FontSize="12" Margin="0,25,0,20" HorizontalAlignment="Center"/>
             <local:ViewSourceButton Grid.Row="2"
                                     Background="#FF13D7E3">

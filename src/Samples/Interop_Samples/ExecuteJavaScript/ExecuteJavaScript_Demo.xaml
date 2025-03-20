@@ -10,10 +10,10 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="ExecuteJavaScript" Foreground="#FF69C8FF" Background="#FFA1C3D7" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="ExecuteJavaScript" Foreground="#FF33B4FF" Background="#FFA1C3D7" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1" HorizontalAlignment="Center">
                 <TextBlock Text="You can call JavaScript from C#, and C# from JavaScript. To do so, just use the method named 'Interop.ExecuteJavaScript'. You can read the documentation at:" Foreground="#FF808080" TextWrapping="Wrap" FontSize="12"/>
-                <HyperlinkButton Foreground="#FF69C8FF" Margin="0,10,0,0" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" Cursor="Hand" NavigateUri="https://doc.opensilver.net/documentation/in-depth-topics/call-javascript-from-csharp.html" TargetName="_blank">
+                <HyperlinkButton Margin="0,10,0,0" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" Cursor="Hand" NavigateUri="https://doc.opensilver.net/documentation/in-depth-topics/call-javascript-from-csharp.html" TargetName="_blank">
                     <TextBlock Text="https://doc.opensilver.net/documentation/in-depth-topics/call-javascript-from-csharp.html" TextWrapping="Wrap"/>
                 </HyperlinkButton>
                 <StackPanel Orientation="Horizontal" Margin="0,20,0,0" HorizontalAlignment="Center">
@@ -23,7 +23,7 @@
                 <Button Click="SendJavaScriptMessage"  Content="Send a JavaScript Alert" Margin="0,10,0,0" Width="170" HorizontalAlignment="Center"/>
             </StackPanel>
             <local:ViewSourceButton Grid.Row="2"
-                                    Background="#FF69C8FF">
+                                    Background="#FF33B4FF">
                 <local:ViewSourceButton.Sources>
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Interop_Samples/ExecuteJavaScript"
                                                 FileName="ExecuteJavaScript_Demo.xaml" />

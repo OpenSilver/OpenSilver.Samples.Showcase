@@ -10,9 +10,9 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="TransformToVisual" Foreground="#FF69C8FF" Background="#FFA1C3D7" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="TransformToVisual" Foreground="#FF33B4FF" Background="#FFA1C3D7" Style="{StaticResource HeaderControl_Style}"/>
             <local:ViewSourceButton Grid.Row="2"
-                                    Background="#FF69C8FF">
+                                    Background="#FF33B4FF">
                 <local:ViewSourceButton.Sources>
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/TransformToVisual"
                                                 FileName="TransformToVisual_Demo.xaml" />

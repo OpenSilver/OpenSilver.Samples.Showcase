@@ -10,7 +10,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="Calendar" Foreground="#FF13D7E3" Background="#FF91C3C5" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="Calendar" Foreground="#FF73AFB3" Background="#FF91C3C5" Style="{StaticResource HeaderControl_Style}"/>
             <Calendar Grid.Row="1"/>
             <local:ViewSourceButton Grid.Row="2"
                                 Background="#FF13D7E3">

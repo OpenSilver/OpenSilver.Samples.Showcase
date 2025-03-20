@@ -10,7 +10,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="WebView / WebBrowser" Foreground="#FF69C8FF" Background="#FFA1C3D7" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="WebView / WebBrowser" Foreground="#FF33B4FF" Background="#FFA1C3D7" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1" Orientation="Vertical">
                 <TextBlock Text="The WebView control - also known as 'WebControl' - lets you display an external website inside your app, embedded in an &lt;iframe&gt;." Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left"/>
                 <TextBlock Text="Please note that it only works if the website does not prevent embedding via the 'X-Frame-Options'." Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left" Margin="0,8,0,0"/>

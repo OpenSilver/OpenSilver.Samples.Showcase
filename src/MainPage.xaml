@@ -20,7 +20,7 @@ mc:Ignorable="d"
             <RowDefinition x:Name="RowThatContainsTheGridSplitter" Height="0"/>
             <RowDefinition x:Name="RowThatContainsTheSourceCodePane" Height="0"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="1" ClipToBounds="True">
+        <Grid Grid.Row="1" ClipToBounds="True" Background="{DynamicResource Theme_BackgroundBrush}">
             <Border x:Name="MenuBorder" Canvas.ZIndex="1" Background="{DynamicResource Theme_ControlBackgroundBrush}" Width="180" HorizontalAlignment="Left">
                 <Border.Resources>
                     <Style TargetType="Button">
@@ -238,28 +238,17 @@ Value="1" />
                 </Border.RenderTransform>
                 <Button Click="ButtonToHideOrShowMenu_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="{DynamicResource Theme_ContainerBackgroundBrush}" Padding="0">
                     <Path Fill="{DynamicResource Theme_TextBrush}" Width="46" Height="46" Data="M10 0A1 1 90 0010 15L90 15A1 1 90 0089 0L10 0M10 22.5A1 1 90 0010 37.5L90 37.5A1 1 90 0089 22.5L10 22.5M10 45A1 1 90 0010 60L90 60A1 1 90 0089 45L10 45" Stretch="Uniform"/>
-                    <!--<Image Source="other/MenuIcon.png" Width="50" Height="50" Stretch="Fill"/>-->
                 </Button>
             </Border>
             <ScrollViewer Grid.Row="1" x:Name="ScrollViewer1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Background="{DynamicResource Theme_BackgroundBrush}">
                 <sdk:Frame x:Name="PageContainer" JournalOwnership="Automatic" Margin="5,0,0,30" HorizontalContentAlignment="Stretch" Navigated="PageContainer_Navigated">
                     <sdk:Frame.UriMapper>
                         <sdk:UriMapper>
-                            <sdk:UriMapping
-                Uri="/Welcome"
-                MappedUri="/Samples/Welcome.xaml"/>
-                            <sdk:UriMapping
-                Uri="/Search"
-                MappedUri="/Samples/Search.xaml"/>
-                            <sdk:UriMapping
-                Uri="/Search/{searchTerms}"
-                MappedUri="/Samples/Search.xaml?SearchTerms={searchTerms}"/>
-                            <sdk:UriMapping
-                Uri="/Third_Party/{path}"
-                MappedUri="/Samples/Third_Party/{path}.xaml"/>
-                            <sdk:UriMapping
-                Uri="/{page_name}"
-                MappedUri="/Samples/{page_name}/{page_name}.xaml"/>
+                            <sdk:UriMapping Uri="/Welcome" MappedUri="/Samples/Welcome.xaml"/>
+                            <sdk:UriMapping Uri="/Search" MappedUri="/Samples/Search.xaml"/>
+                            <sdk:UriMapping Uri="/Search/{searchTerms}" MappedUri="/Samples/Search.xaml?SearchTerms={searchTerms}"/>
+                            <sdk:UriMapping Uri="/Third_Party/{path}" MappedUri="/Samples/Third_Party/{path}.xaml"/>
+                            <sdk:UriMapping Uri="/{page_name}" MappedUri="/Samples/{page_name}/{page_name}.xaml"/>
                         </sdk:UriMapper>
                     </sdk:Frame.UriMapper>
                     <sdk:Frame.RenderTransform>
@@ -268,11 +257,6 @@ Value="1" />
                 </sdk:Frame>
             </ScrollViewer>
         </Grid>
-        <Border Grid.Row="1" x:Name="LoadingMessage" Visibility="Collapsed" Background="#44FFFFFF" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-            <Border Background="#88000000" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="26,20" CornerRadius="20">
-                <TextBlock Text="Loading, please wait..." Foreground="White" FontSize="22"/>
-            </Border>
-        </Border>
         <GridSplitter Grid.Row="2" x:Name="GridSplitter1" Background="LightGray" Visibility="Collapsed" Cursor="SizeNS" Height="5" HorizontalAlignment="Stretch"/>
         <Grid Grid.Row="3" x:Name="SourceCodePane" Visibility="Collapsed" Background="{DynamicResource Theme_BorderBrush}">
             <TextBlock Text="Loading source code..." FontSize="14" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>

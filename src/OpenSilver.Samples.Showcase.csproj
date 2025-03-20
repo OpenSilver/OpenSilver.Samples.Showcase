@@ -212,7 +212,6 @@
     </Content>
     <Content Include="Other\Inter_VariableFont_slnt_wght.ttf" />
     <Content Include="Other\Logo.png" />
-    <Content Include="Other\MenuIcon.png" />
     <Content Include="Other\Planets\Earth.png" />
     <Content Include="Other\Planets\Jupiter.png" />
     <Content Include="Other\Planets\Mars.png" />

@@ -5,7 +5,7 @@
            Title="LoginWindow"
            Closing="LoginWindow_Closing"
            >
-    <Grid x:Name="LayoutRoot" Margin="2">
+    <Grid x:Name="LayoutRoot" Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition Height="Auto" />

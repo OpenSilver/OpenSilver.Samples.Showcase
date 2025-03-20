@@ -10,7 +10,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="TextBlock" Foreground="#FF3ED4B2" Background="#FF8FCBBE" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="TextBlock" Foreground="#FF89B8AD" Background="#FF8FCBBE" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1">
                 <TextBlock Text="Use a TextBlock to display some text." Foreground="#FF2DBF9E" FontSize="16" TextWrapping="Wrap" TextAlignment="Center"/>
                 <TextBlock Text="This one has Character spacing and LineHeight properties." Foreground="#FF2DBF9E" FontSize="16" TextWrapping="Wrap" TextAlignment="Center" CharacterSpacing="100" LineHeight="30" Margin="0,10"/>

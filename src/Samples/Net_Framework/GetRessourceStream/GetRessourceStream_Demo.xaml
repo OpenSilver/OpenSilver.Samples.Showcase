@@ -11,7 +11,7 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <ContentControl Content="GetRessourceStream"
-                            Foreground="#FF3ED4B2"
+                            Foreground="#FF89B8AD"
                             Background="#FF8FCBBE"
                             Style="{StaticResource HeaderControl_Style}" />
             <StackPanel Grid.Row="1"

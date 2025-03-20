@@ -14,7 +14,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="Virtualization" Foreground="#FF3ED4B2" Background="#FF8FCBBE" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="Virtualization" Foreground="#FF89B8AD" Background="#FF8FCBBE" Style="{StaticResource HeaderControl_Style}"/>
             <TextBlock Grid.Row="1" Foreground="Gray" FontSize="14" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top"
                        Text="For best performance, make sure to enable virtualization if you are working with a list, combobox, or a treeview that contains many items."/>
             <TextBlock Grid.Row="2" Text="Without Virtualization:"/>
