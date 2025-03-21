@@ -30,7 +30,7 @@
                 <StackPanel Orientation="Horizontal"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Bottom" Grid.Row="1">
-                    <Button Content="🗙" Click="OnClearInkPad" IsEnabled="{Binding CanClearStrokes, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+                    <Button Content="×" Click="OnClearInkPad" FontSize="20" Padding="5,-2,4,2" IsEnabled="{Binding CanClearStrokes, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
                     <Button Click="OnUndoLastStroke" IsEnabled="{Binding CanUndoStroke, RelativeSource={RelativeSource AncestorType=UserControl}}" Margin="2,0">
                         <Path Stroke="White" StrokeThickness="2" Data="M2,10 C7,0 12,0 22,10 M6,9 L2,10 0,7"/>
                     </Button>

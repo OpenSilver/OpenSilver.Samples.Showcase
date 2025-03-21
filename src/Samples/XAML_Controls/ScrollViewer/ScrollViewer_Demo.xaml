@@ -10,12 +10,12 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="ScrollViewer" Foreground="#FF73AFB3" Background="#FF91C3C5" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="ScrollViewer" Foreground="#FF3ADE8F" Background="#FF91C3C5" Style="{StaticResource HeaderControl_Style}"/>
             <ScrollViewer Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible" Height="120" >
                 <Image Source="ms-appx:/Other/Planets/Earth.png" Width="170" Height="170"/>
             </ScrollViewer>
             <local:ViewSourceButton Grid.Row="2"
-                                    Background="#FF13D7E3">
+                                    Background="#FF3ADE8F">
                 <local:ViewSourceButton.Sources>
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ScrollViewer"
                                                 FileName="ScrollViewer_Demo.xaml" />

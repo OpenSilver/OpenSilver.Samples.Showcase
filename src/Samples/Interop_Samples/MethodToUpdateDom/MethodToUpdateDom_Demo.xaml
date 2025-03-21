@@ -9,7 +9,7 @@
             <StackPanel Orientation="Vertical">
                 <TextBlock Text="Dependency properties and Attached properties allow you to specify a &quot;MethodToUpdateDom&quot; delegate that is called when the UI element is rendered in the HTML DOM." Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left"/>
                 <Border CornerRadius="10" Padding="16" Background="#FFD59851" Margin="0,10,0,5">
-                    <TextBlock local:AttachedPropertiesWithMethodToUpdateDom.AriaLabel="This is the aria label" Text="Here an attached property is used to set the 'Aria Label' accessibility property on the &lt;div&gt; used to render this text. You can verify this by opening the browser Developer Tools (F12) and inspecting the DOM tree." Foreground="White" FontWeight="Bold" FontSize="12" TextWrapping="Wrap"/>
+                    <TextBlock local:AttachedPropertiesWithMethodToUpdateDom.AriaLabel="This is the aria label" Text="Here an attached property is used to set the 'Aria Label' accessibility property on the &lt;div&gt; used to render this text. You can verify this by opening the browser Developer Tools (F12) and inspecting the DOM tree." Foreground="White" FontSize="12" TextWrapping="Wrap"/>
                 </Border>
             </StackPanel>
             <local:ViewSourceButton Background="#FFD59851">

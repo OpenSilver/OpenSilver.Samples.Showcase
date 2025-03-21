@@ -20,7 +20,7 @@
                 <StackPanel.Resources>
                     <Style x:Key="MyTextBlockStyle" TargetType="TextBlock">
                         <Style.Setters>
-                            <Setter Property="Foreground" Value="DarkBlue"/>
+                            <Setter Property="Foreground" Value="#FF5E5E96"/>
                             <Setter Property="TextWrapping" Value="Wrap"/>
                             <Setter Property="FontSize" Value="14"/>
                             <Setter Property="TextAlignment" Value="Center"/>

@@ -10,7 +10,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="PieSeries" Foreground="#FFFFC35B" Background="#FFD2BD9C" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="PieSeries" Foreground="#FFDEA542" Background="#FFD2BD9C" Style="{StaticResource HeaderControl_Style}"/>
             <Chart Grid.Row="1" Height="300">
                 <Chart.Series>
                     <PieSeries x:Name="CostsSeries" Title="Production costs"  DependentValuePath="Cost" 

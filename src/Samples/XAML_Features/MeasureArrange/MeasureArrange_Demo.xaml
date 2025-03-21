@@ -10,7 +10,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="Measure/Arrange" Foreground="#FFE6E166" Background="#FFC5B58B" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="Measure/Arrange" Foreground="#FFC7C228" Background="#FFC5B58B" Style="{StaticResource HeaderControl_Style}"/>
             <local:RadialPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="220" Height="150">
                 <TextBlock Text="one"/>
                 <TextBlock Text="two"/>
@@ -19,8 +19,7 @@
                 <TextBlock Text="five"/>
                 <TextBlock Text="six"/>
             </local:RadialPanel>
-            <local:ViewSourceButton Grid.Row="2"
-                                Background="#FFE6E166">
+            <local:ViewSourceButton Grid.Row="2" Background="#FFC7C228">
                 <local:ViewSourceButton.Sources>
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/MeasureArrange"
                                             FileName="RadialPanel.cs" />

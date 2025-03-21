@@ -20,9 +20,37 @@
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <Button Click="ButtonPlanet_Click" Background="Transparent" Padding="0" HorizontalContentAlignment="Stretch">
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="Button">
+                                            <Grid>                                                
+                                                <VisualStateManager.VisualStateGroups>
+                                                    <VisualStateGroup x:Name="CommonStates">
+                                                        <VisualState x:Name="MouseOver">
+                                                            <Storyboard>
+                                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Background" Storyboard.TargetProperty="Background">
+                                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{DynamicResource Theme_WatermarkBrush}"/>
+                                                                </ObjectAnimationUsingKeyFrames>
+                                                            </Storyboard>
+                                                        </VisualState>
+                                                        <VisualState x:Name="Normal" />
+                                                        <VisualState x:Name="Pressed">
+                                                            <Storyboard>
+                                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Background" Storyboard.TargetProperty="Background">
+                                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{DynamicResource Theme_WatermarkBrush}"/>
+                                                                </ObjectAnimationUsingKeyFrames>
+                                                            </Storyboard>
+                                                        </VisualState>
+                                                    </VisualStateGroup>
+                                                </VisualStateManager.VisualStateGroups>
+                                                <Border x:Name="Background" CornerRadius="5" Background="{TemplateBinding Background}"/>
+                                                <ContentPresenter x:Name="contentPresenter" Margin="{TemplateBinding Padding}"
+                                                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                            </Grid>
+                                        </ControlTemplate>
+                                    </Button.Template>
                                     <StackPanel Orientation="Horizontal" Margin="3,5,0,5">
                                         <Image Source="{Binding ImagePath}" Width="25" Height="25" Stretch="Fill" Margin="3,0,3,0"/>
-                                        <TextBlock Text="{Binding Path=Name}" VerticalAlignment="Center" Foreground="#FFCCCCCC"/>
+                                        <TextBlock Text="{Binding Path=Name}" VerticalAlignment="Center" Foreground="#FFE5E1E1"/>
                                     </StackPanel>
                                 </Button>
                             </DataTemplate>

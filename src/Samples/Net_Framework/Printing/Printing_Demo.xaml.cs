@@ -22,6 +22,7 @@ namespace OpenSilver.Samples.Showcase
                     TextWrapping = TextWrapping.Wrap,
                     FontSize = 12,
                 });
+                Root.Width = 245;
             }
         }
 

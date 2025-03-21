@@ -3,14 +3,14 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
-    <ContentControl Style="{StaticResource Card_Style}" Width="255">
+    <ContentControl Style="{StaticResource Card_Style}" Width="260">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="InitParams" Foreground="#FFFFC35B" Background="#FFD2BD9C" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="InitParams" Foreground="#FFDEA542" Background="#FFD2BD9C" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1" >
                 <TextBlock Foreground="Gray" FontSize="14" TextWrapping="Wrap" TextAlignment="Center" Margin="0,5" HorizontalAlignment="Center">
                     You can set the InitParams in the browser by adding a param tag in index.html in the Browser project like follows: <LineBreak/>
@@ -20,7 +20,7 @@
                 <TextBlock Foreground="Gray" FontSize="14" TextWrapping="Wrap" TextAlignment="Center" Margin="0,5" HorizontalAlignment="Center"
                     Text="For the Simulator project, in Startup.cs, set the &quot;parameters&quot; argument of SimulatorLauncher.Start to an instance of SimulatorLaunchParameters with its InitParams property set:"/>
                 <TextBlock FontSize="14" TextWrapping="Wrap" TextAlignment="Center" Margin="0,5" HorizontalAlignment="Center">
-                    <Run Foreground="DarkBlue">launchParameters</Run>.InitParams =  <Run Foreground="Firebrick">"Key1=Value1,Key2=Value2"</Run>;
+                    <Run Foreground="#FF5E5E96">launchParameters</Run>.InitParams =  <Run Foreground="Firebrick">"Key1=Value1,Key2=Value2"</Run>;
                 </TextBlock>
                 <Button Content="Show the InitParams in a MessageBox" FontSize="12" Margin="0,10" HorizontalAlignment="Center" Click="ButtonShowInitParams_Click"/>
             </StackPanel>

@@ -14,7 +14,7 @@ namespace OpenSilver.Samples.Showcase
 
         private void ButtonSetCSS_Click(object sender, RoutedEventArgs e)
         {
-            var div = Interop.GetDiv(this);
+            var div = Interop.GetDiv(text);
 
             Interop.ExecuteJavaScript("$0.style.textDecoration = 'line-through'", div);
 

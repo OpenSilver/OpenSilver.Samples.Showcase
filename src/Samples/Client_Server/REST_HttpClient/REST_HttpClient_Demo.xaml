@@ -14,20 +14,29 @@
             <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <TextBlock Text="You can use the &quot;HttpClient&quot; class to communicate with REST web services." Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left"/>
                 <TextBlock Text="REST DEMO - CREATE A NEW TO-DO:" Margin="0,20,0,0" HorizontalAlignment="Left"/>
-                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                    <TextBox x:Name="RestToDoTextBox" Width="140" Text="Enter your To-Do here"/>
-                    <Button Content="Create" Click="ButtonAddRestToDo_Click" Margin="5,0,0,0"/>
-                </StackPanel>
+                <Grid Margin="0,10,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="RestToDoTextBox" Text="Enter your To-Do here"/>
+                    <Button Grid.Column="1" Content="Create" Click="ButtonAddRestToDo_Click" Margin="5,0,0,0"/>
+                </Grid>
                 <TextBlock Text="LIST OF TODO's:" Margin="0,20,0,0" HorizontalAlignment="Left"/>
                 <ScrollViewer Height="50" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
                     <ItemsControl x:Name="RestToDosItemsControl" HorizontalAlignment="Left">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                                    <TextBlock Text="{Binding Description}"/>
-                                    <Button Content="Delete" Click="ButtonDeleteRestToDo_Click" Margin="5,0,0,0"/>
-                                    <Button Content="Update" Click="ButtonUpdateRestToDo_Click" Margin="5,0,0,0"/>
-                                </StackPanel>
+                                <Grid HorizontalAlignment="Left">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="{Binding Description}" TextTrimming="CharacterEllipsis"/>
+                                    <Button Grid.Column="1" Content="Delete" Click="ButtonDeleteRestToDo_Click" Margin="5,0,0,0"/>
+                                    <Button Grid.Column="2" Content="Update" Click="ButtonUpdateRestToDo_Click" Margin="5,0,0,0"/>
+                                </Grid>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>

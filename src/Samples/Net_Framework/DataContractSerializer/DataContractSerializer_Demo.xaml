@@ -16,7 +16,7 @@
                     <TextBlock Text="Sample serializable class:"/>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text=" - Text field: "/>
-                        <TextBox Text="{Binding TextField, Mode=TwoWay}" TextWrapping="Wrap" Margin="5,0,0,0" Width="60"/>
+                        <TextBox Text="{Binding TextField, Mode=TwoWay}" TextWrapping="Wrap" Margin="5,0,0,0" Width="100"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text=" - Date field: "/>

@@ -11,7 +11,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="DragAndDrop" Foreground="#FFE6E166" Background="#FFC5B58B" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="DragAndDrop" Foreground="#FFC7C228" Background="#FFC5B58B" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <TextBlock Text="Drag the following rectangle to move it on the canvas." Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left"/>
                 <TextBlock Text="Note: performance in the browser is better than in the Simulator due to the debugger of the Simulator." Foreground="#FF808080" Margin="0,10,0,0" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left"/>
@@ -21,8 +21,7 @@
                     </Canvas>
                 </Border>
             </StackPanel>
-            <local:ViewSourceButton Grid.Row="2"
-                                    Background="#FFE6E166">
+            <local:ViewSourceButton Grid.Row="2" Background="#FFC7C228">
                 <local:ViewSourceButton.Sources>
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/Drag_And_Drop"
                                                 FileName="Drag_And_Drop_Demo_Silverlight.xaml" />

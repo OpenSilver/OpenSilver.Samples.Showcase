@@ -22,8 +22,12 @@
             </Grid.RowDefinitions>
             <ContentControl Content="ResourceDictionary" Foreground="#FF6F7DFF" Background="#FF9A9FCE" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1">
-                <Button Style="{StaticResource ButtonStyle1}" Margin="5" Content="Button using ButtonStyle1 from Style1.xaml"/>
-                <Button Style="{StaticResource ButtonStyle2}" Margin="5" Content="Button using ButtonStyle2 from Style2.xaml"/>
+                <Button Style="{StaticResource ButtonStyle1}" Margin="5">
+                    <TextBlock Text="Button using ButtonStyle1 from Style1.xaml" TextWrapping="Wrap"/>
+                </Button>
+                <Button Style="{StaticResource ButtonStyle2}" Margin="5">
+                    <TextBlock Text="Button using ButtonStyle2 from Style2.xaml" TextWrapping="Wrap"/>
+                </Button>
             </StackPanel>
             <local:ViewSourceButton Grid.Row="2"
                                     Background="#FF6F7DFF">
