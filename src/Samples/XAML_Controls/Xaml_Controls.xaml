@@ -13,7 +13,7 @@
                 <Border Width="30"/>
             </WrapPanel>
         </Grid>
-        <controlskit:StaggeredPanel ProgressiveRenderingChunkSize="2">
+        <controlskit:StaggeredPanel Name="SamplesPanel" ProgressiveRenderingChunkSize="2">
             <local:Grid_Demo HorizontalAlignment="Center"/>
             <local:StackPanel_Demo HorizontalAlignment="Center"/>
             <local:TreeView_Demo HorizontalAlignment="Center"/>

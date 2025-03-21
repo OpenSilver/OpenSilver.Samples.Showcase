@@ -1,0 +1,125 @@
+﻿<UserControl x:Class="OpenSilver.Samples.Showcase.DataGridGrouping"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:OpenSilver.Samples.Showcase"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <ContentControl Width="350" Style="{StaticResource Card_Style}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <ContentControl Background="#FF8D73FF"
+                            Content="DataGrid with Grouping"
+                            Foreground="#FF8D73FF"
+                            Style="{StaticResource HeaderControl_Style}"/>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <!--<StackPanel Grid.Column="0">
+                    <CheckBox Margin="4"
+                              Content="AreRowDetailsFrozen"
+                              IsChecked="{Binding AreRowDetailsFrozen, ElementName=dataGrid, Mode=TwoWay}"/>
+                    <CheckBox Margin="4"
+                              Content="AreRowGroupHeadersFrozen"
+                              IsChecked="{Binding AreRowGroupHeadersFrozen, ElementName=dataGrid, Mode=TwoWay}"/>
+                    <CheckBox Margin="4"
+                              Content="CanUserReorderColumns"
+                              IsChecked="{Binding CanUserReorderColumns, ElementName=dataGrid, Mode=TwoWay}"/>
+                    <CheckBox Margin="4"
+                              Content="CanUserResizeColumns"
+                              IsChecked="{Binding CanUserResizeColumns, ElementName=dataGrid, Mode=TwoWay}"/>
+                    <CheckBox Margin="4"
+                              Content="CanUserSortColumns"
+                              IsChecked="{Binding CanUserSortColumns, ElementName=dataGrid, Mode=TwoWay}"/>
+                    <StackPanel Margin="4" Orientation="Horizontal">
+                        <TextBlock VerticalAlignment="Center"
+                                   FontWeight="Bold"
+                                   Text="FrozenColumnCount"/>
+                        <NumericUpDown Margin="4"
+                                       VerticalAlignment="Center"
+                                       Minimum="0"
+                                       Value="{Binding FrozenColumnCount, ElementName=dataGrid, Mode=TwoWay}"/>
+                    </StackPanel>
+                    <CheckBox Margin="4"
+                              Content="IsReadOnly"
+                              IsChecked="{Binding IsReadOnly, ElementName=dataGrid, Mode=TwoWay}"/>
+                    <CheckBox Margin="4"
+                              Content="IsValid"
+                              IsChecked="{Binding IsValid, ElementName=dataGrid, Mode=TwoWay}"/>
+                    <StackPanel Margin="4" Orientation="Horizontal">
+                        <TextBlock VerticalAlignment="Center"
+                                   FontWeight="Bold"
+                                   Text="RowDetailsVisibilityMode"/>
+                        <ComboBox Margin="4"
+                                  SelectedIndex="2"
+                                  SelectedItem="{Binding RowDetailsVisibilityMode, ElementName=dataGrid, Mode=TwoWay}">
+                            <sys:String>Collapsed</sys:String>
+                            <sys:String>Visible</sys:String>
+                            <sys:String>VisibleWhenSelected</sys:String>
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Margin="4" Orientation="Horizontal">
+                        <TextBlock VerticalAlignment="Center"
+                                   FontWeight="Bold"
+                                   Text="SelectionMode"/>
+                        <ComboBox Margin="4"
+                                  SelectedIndex="1"
+                                  SelectedItem="{Binding SelectionMode, ElementName=dataGrid, Mode=TwoWay}">
+                            <sys:String>Single</sys:String>
+                            <sys:String>Extended</sys:String>
+                        </ComboBox>
+                    </StackPanel>
+                    <TextBlock MaxWidth="400"
+                               Margin="4"
+                               TextWrapping="Wrap">
+                        <LineBreak/>
+                        Things to try:<LineBreak/><LineBreak/>
+                        1. Sort by clicking a column header.<LineBreak/>
+                        2. Sort by multiple columns by holding Shift and clicking column headers.<LineBreak/>
+                        3. Reorganize columns by clicking and dragging the column header.<LineBreak/>
+                        4. Resize columns by clicking and dragging the edge of the column header.<LineBreak/>
+                        5. Enter edit mode for a cell by double-clicking or selecting it and hitting F2.<LineBreak/>
+                        6. Hit the escape key to cancel editing of a cell.  Hit escape twice to cancel editing the entire row.<LineBreak/>
+                        7. Double click a group header to expand or collapse the group.<LineBreak/>
+                        8. Enter an invalid phone number or remove a contact's name to see a validation error.</TextBlock>
+                </StackPanel>-->
+                <DataGrid x:Name="dataGrid"
+                          Grid.Column="1"
+                          MaxHeight="200"
+                          Margin="4"
+                          HorizontalAlignment="Stretch"
+                          VerticalAlignment="Top">
+                    <DataGrid.RowDetailsTemplate>
+                        <DataTemplate>
+                            <StackPanel Background="{DynamicResource Theme_ContainerBackgroundBrush}">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="This item has details."/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Here is some data: "/>
+                                    <TextBlock Text="{Binding FirstName}"/>
+                                    <TextBlock Text=" "/>
+                                    <TextBlock Text="{Binding LastName}"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGrid.RowDetailsTemplate>
+                </DataGrid>
+            </Grid>
+
+            <local:ViewSourceButton Grid.Row="2" Background="#FF8D73FF">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo FileName="DataGridGrouping.xaml" RelativePath="src/Samples/XAML_Controls/DataGrid"/>
+                    <local:ViewSourceButtonInfo FileName="DataGridGrouping.xaml.cs" RelativePath="src/Samples/XAML_Controls/DataGrid"/>
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
+</UserControl>
