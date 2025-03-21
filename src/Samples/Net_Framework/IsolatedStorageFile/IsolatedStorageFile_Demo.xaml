@@ -11,7 +11,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="IsolatedStorageFile" Foreground="#FFA967E5" Background="#FFA995BC" Style="{StaticResource HeaderControl_Style}"/>
-            <StackPanel Orientation="Vertical" Grid.Row="1" HorizontalAlignment="Center">
+            <StackPanel Name="LayoutRoot" Orientation="Vertical" Grid.Row="1" HorizontalAlignment="Center">
                 <TextBox x:Name="TextBoxFileStorageDemo" Text="Enter some text" Margin="0,15,0,0" FontSize="16" />
                 <StackPanel Orientation="Horizontal" Margin="0,10,0,0" HorizontalAlignment="Center">
                 <Button Content="Save File" Click="ButtonSaveToIsolatedStorageFile_Click"/>

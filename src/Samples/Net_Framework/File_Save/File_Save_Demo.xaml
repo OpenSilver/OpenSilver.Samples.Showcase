@@ -11,7 +11,9 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="Save a File" Foreground="#FFB3CE00" Background="#FFB2BD69" Style="{StaticResource HeaderControl_Style}"/>
-            <Button Grid.Row="1" HorizontalAlignment="Center" Content="Click to Save a File" Click="ButtonSave_Click"/>
+            <Grid Name="LayoutRoot" Grid.Row="1">
+                <Button HorizontalAlignment="Center" Content="Click to Save a File" Click="ButtonSave_Click"/>
+            </Grid>
             <local:ViewSourceButton Grid.Row="2"
                                     Background="#FFB3CE00">
                 <local:ViewSourceButton.Sources>
