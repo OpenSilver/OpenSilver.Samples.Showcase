@@ -18,10 +18,14 @@
                             Style="{StaticResource HeaderControl_Style}"/>
 
             <Grid Grid.Row="1">
-                <Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <!--<Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
+                </Grid.ColumnDefinitions>-->
                 <!--<StackPanel Grid.Column="0">
                     <CheckBox Margin="4"
                               Content="AreRowDetailsFrozen"
@@ -38,15 +42,6 @@
                     <CheckBox Margin="4"
                               Content="CanUserSortColumns"
                               IsChecked="{Binding CanUserSortColumns, ElementName=dataGrid, Mode=TwoWay}"/>
-                    <StackPanel Margin="4" Orientation="Horizontal">
-                        <TextBlock VerticalAlignment="Center"
-                                   FontWeight="Bold"
-                                   Text="FrozenColumnCount"/>
-                        <NumericUpDown Margin="4"
-                                       VerticalAlignment="Center"
-                                       Minimum="0"
-                                       Value="{Binding FrozenColumnCount, ElementName=dataGrid, Mode=TwoWay}"/>
-                    </StackPanel>
                     <CheckBox Margin="4"
                               Content="IsReadOnly"
                               IsChecked="{Binding IsReadOnly, ElementName=dataGrid, Mode=TwoWay}"/>
@@ -91,11 +86,11 @@
                         8. Enter an invalid phone number or remove a contact's name to see a validation error.</TextBlock>
                 </StackPanel>-->
                 <DataGrid x:Name="dataGrid"
-                          Grid.Column="1"
                           MaxHeight="200"
                           Margin="4"
                           HorizontalAlignment="Stretch"
-                          VerticalAlignment="Top">
+                          VerticalAlignment="Top"
+                          AreRowDetailsFrozen="True">
                     <DataGrid.RowDetailsTemplate>
                         <DataTemplate>
                             <StackPanel Background="{DynamicResource Theme_ContainerBackgroundBrush}">
@@ -112,6 +107,19 @@
                         </DataTemplate>
                     </DataGrid.RowDetailsTemplate>
                 </DataGrid>
+                <StackPanel Grid.Row="1"
+                            Margin="4,0,0,0"
+                            Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center"
+                               FontWeight="Bold"
+                               Text="FrozenColumnCount"/>
+                    <NumericUpDown Height="24"
+                                   Margin="4"
+                                   VerticalAlignment="Center"
+                                   Maximum="10"
+                                   Minimum="0"
+                                   Value="{Binding FrozenColumnCount, ElementName=dataGrid, Mode=TwoWay}"/>
+                </StackPanel>
             </Grid>
 
             <local:ViewSourceButton Grid.Row="2" Background="#FF8D73FF">

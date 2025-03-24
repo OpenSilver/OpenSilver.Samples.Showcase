@@ -9,11 +9,13 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="Calendar" Foreground="#FF73AFB3" Background="#FF91C3C5" Style="{StaticResource HeaderControl_Style}"/>
-            <Calendar Grid.Row="1"/>
-            <local:ViewSourceButton Grid.Row="2"
-                                Background="#FF13D7E3">
+            <Calendar Grid.Row="1" x:Name="sampleCalendar"/>
+            <CheckBox x:Name="chkPastDateSelection" Grid.Row="2" Content="Allow the past be selectable" Margin="18,10,0,0"
+                      IsChecked="True" Checked="OnPastDatesChanged" Unchecked="OnPastDatesChanged"/>
+            <local:ViewSourceButton Grid.Row="3" Background="#FF13D7E3">
                 <local:ViewSourceButton.Sources>
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Calendar"
                                             FileName="Calendar_Demo.xaml" />

@@ -8,28 +8,31 @@ namespace OpenSilver.Samples.Showcase
     [SearchKeywords("layout", "window", "popup", "nonmodal", "non-modal", "dialog")]
     public partial class NonModalChildWindow_Demo : UserControl
     {
-        int _n;
+        private int _n = 1;
+
         public NonModalChildWindow_Demo()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
 
         private void ButtonTestChildWindow_Modal_Click(object sender, RoutedEventArgs e)
         {
-            SmallChildWindow childWindow = new SmallChildWindow();
-            childWindow.Title = "ChildWindow (Modal)" + _n++;
-#if !OPENSILVER
-            childWindow.IsModal = true; 
-#endif
+            var childWindow = new SmallChildWindow
+            {
+                Title = $"ChildWindow (Modal) #{_n++}",
+                IsModal = true
+            };
             childWindow.Show();
         }
+
         private void ButtonTestChildWindow_NonModal_Click(object sender, RoutedEventArgs e)
         {
-            SmallChildWindow childWindow = new SmallChildWindow();
-            childWindow.Title = "ChildWindow (Non-modal)" + _n++;
-#if !OPENSILVER
-            childWindow.IsModal = false; 
-#endif
+            var childWindow = new SmallChildWindow
+            {
+                Title = $"ChildWindow (Non-Modal) #{_n++}",
+                IsModal = false,
+            };
+            childWindow.optionsStack.Visibility = Visibility.Collapsed;
             childWindow.Show();
         }
     }

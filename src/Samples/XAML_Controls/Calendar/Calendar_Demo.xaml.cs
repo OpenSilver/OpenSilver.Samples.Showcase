@@ -1,15 +1,6 @@
 ﻿using OpenSilver.Samples.Showcase.Search;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
-using System.Windows.Data;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Navigation;
 
 namespace OpenSilver.Samples.Showcase
 {
@@ -18,7 +9,31 @@ namespace OpenSilver.Samples.Showcase
     {
         public Calendar_Demo()
         {
-            this.InitializeComponent();
+            InitializeComponent();
+        }
+
+        private void OnPastDatesChanged(object sender, RoutedEventArgs e)
+        {
+            if (sampleCalendar == null)
+            {
+                return;
+            }
+
+            if ((bool)chkPastDateSelection.IsChecked)
+            {
+                sampleCalendar.BlackoutDates.Clear();
+            }
+            else
+            {
+                try
+                {
+                    sampleCalendar.BlackoutDates.AddDatesInPast();
+                }
+                catch
+                {
+                    chkPastDateSelection.IsChecked = true;
+                }
+            }
         }
     }
 }

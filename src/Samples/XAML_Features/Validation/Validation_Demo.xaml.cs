@@ -6,7 +6,7 @@ using System.Windows.Data;
 
 namespace OpenSilver.Samples.Showcase
 {
-    [SearchKeywords("input", "form", "data entry", "error handling", "UI")]
+    [SearchKeywords("input", "form", "data entry", "error handling", "UI", "validationsummary")]
     public partial class Validation_Demo : UserControl
     {
         public Validation_Demo()

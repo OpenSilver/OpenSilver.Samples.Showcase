@@ -9,6 +9,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="GridSplitter" Foreground="#BF6CEE" Background="#FFB390CA" Style="{StaticResource HeaderControl_Style}"/>
             <Grid Grid.Row="1" Width="150" Height="100" HorizontalAlignment="Center">
@@ -20,13 +21,13 @@
                 <Border Background="#FFEE6CED" CornerRadius="2" Margin="2">
                     <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Foreground="White">Left side</TextBlock>
                 </Border>
-                <GridSplitter Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
+                <GridSplitter Grid.Column="1" Name="gridSplitter" HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
                 <Border Grid.Column="2" Background="#FF9A6CEE" CornerRadius="2" Margin="2">
                     <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Foreground="White">Right side</TextBlock>
                 </Border>
             </Grid>
-            <local:ViewSourceButton Grid.Row="2"
-                                    Background="#BF6CEE">
+            <CheckBox Grid.Row="2" Content="ShowsPreview" IsChecked="{Binding ShowsPreview, ElementName=gridSplitter, Mode=TwoWay}" FontSize="12" Margin="18,0,0,0"/>
+            <local:ViewSourceButton Grid.Row="3" Background="#BF6CEE">
                 <local:ViewSourceButton.Sources>
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/GridSplitter"
                                                 FileName="GridSplitter_Demo.xaml" />

@@ -14,7 +14,7 @@
             <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Button Content="Open popup" Click="OpenPopupButton_Click"/>
                 <Popup x:Name="MyPopup">
-                    <Border CornerRadius="10" BorderThickness="2" BorderBrush="Black">
+                    <Border CornerRadius="10" Background="{DynamicResource Theme_BackgroundBrush}" BorderThickness="2" BorderBrush="{DynamicResource Theme_BorderBrush}">
                         <StackPanel>
                             <TextBlock Margin="20" Grid.Row="0" Text="This is a popup!"/>
                             <Button Margin="5" Padding="5" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Content="Close" Click="PopupButtonClose_Click" />

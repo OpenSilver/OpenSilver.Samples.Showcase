@@ -12,11 +12,10 @@
             </Grid.RowDefinitions>
             <ContentControl Content="ChildWindow" Foreground="#FFFF7065" Background="#FFD5928F" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Button Content="Show Login Child Window" Click="ButtonTestChildWindow_Click"/>
-                <TextBlock Margin="0,10,0,0" TextAlignment="Center" Name="TextBlockForTestingChildWindow" Text="TextBlock" />
+                <Button Content="Show Login ChildWindow" Click="ButtonTestChildWindow_Click"/>
+                <TextBlock Margin="0,10,0,0" TextAlignment="Center" Name="TextBlockForTestingChildWindow" Text="" />
             </StackPanel>
-            <local:ViewSourceButton Grid.Row="2"
-                                    Background="#FFFF7065">
+            <local:ViewSourceButton Grid.Row="2" Background="#FFFF7065">
                 <local:ViewSourceButton.Sources>
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ChildWindow"
                                                 FileName="ChildWindow_Demo.xaml" />
