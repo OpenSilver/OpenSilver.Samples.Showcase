@@ -7,7 +7,7 @@ using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase
 {
-    [SearchKeywords("maui", "hybrid", "device", "native", "screen", "information", "pixel", "display")]
+    [SearchKeywords("maui", "hybrid", "device", "native", "screen", "information", "pixel", "display", "size")]
     public partial class DisplayInfo_Demo : UserControl
     {
         public DisplayInfo_Demo()

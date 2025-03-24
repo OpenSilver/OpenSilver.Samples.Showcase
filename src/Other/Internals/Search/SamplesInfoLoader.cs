@@ -1,9 +1,7 @@
-﻿using OpenSilver.Samples.Showcase.Search;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Microsoft.Maui.Devices;
 
 namespace OpenSilver.Samples.Showcase.Search
 {
@@ -24,8 +22,6 @@ namespace OpenSilver.Samples.Showcase.Search
             {
                 var attribute = type.GetCustomAttribute<SearchKeywordsAttribute>();
                 var name = type.Name;
-                bool ignoreType = DeviceInfo.Current.Platform == DevicePlatform.Unknown && attribute?.Keywords.Contains("maui") == true;
-                if (!ignoreType)
                 controls.Add(new SearchableItem
                 {
                     Name = name,
