@@ -6,7 +6,7 @@ namespace OpenSilver.Samples.Showcase
     {
         public Charts()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
     }
 }

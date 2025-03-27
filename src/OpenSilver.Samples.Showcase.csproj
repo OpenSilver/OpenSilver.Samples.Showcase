@@ -34,6 +34,9 @@
     <Page Include="Samples\Charts\BubbleSeries\BubbleSeries_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\Charts\ChartDemo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\Charts\Charts.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -159,6 +162,7 @@
     <Compile Include="Samples\Charts\AreaSeries\AreaSeries_Demo.xaml.cs" />
     <Compile Include="Samples\Charts\BarSeries\BarSeries_Demo.xaml.cs" />
     <Compile Include="Samples\Charts\BubbleSeries\BubbleSeries_Demo.xaml.cs" />
+    <Compile Include="Samples\Charts\ChartDemo.xaml.cs" />
     <Compile Include="Samples\Charts\Charts.xaml.cs" />
     <Compile Include="Samples\Charts\ColumnSeries\ColumnSeries_Demo.xaml.cs" />
     <Compile Include="Samples\Charts\LineSeries\LineSeries_Demo.xaml.cs" />

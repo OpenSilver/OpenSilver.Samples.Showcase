@@ -1,15 +1,14 @@
 ﻿using OpenSilver.Samples.Showcase.Other;
 using OpenSilver.Samples.Showcase.Search;
-using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase
 {
     [SearchKeywords("chart", "data", "visualization", "graph", "plot", "line", "points")]
-    public partial class LineSeries_Demo : UserControl
+    public partial class LineSeries_Demo : ChartDemo
     {
         public LineSeries_Demo()
         {
-            this.InitializeComponent();
+            InitializeComponent();
 
             ChairsSeries.ItemsSource = Sales.Chairs;
             TablesSeries.ItemsSource = Sales.Tables;

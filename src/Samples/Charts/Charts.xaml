@@ -1,14 +1,16 @@
-﻿<UserControl
-    x:Class="OpenSilver.Samples.Showcase.Charts"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:controlskit="clr-namespace:OpenSilver.ControlsKit;assembly=OpenSilver.ControlsKit.Controls"
-    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+﻿<UserControl x:Class="OpenSilver.Samples.Showcase.Charts"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controlskit="clr-namespace:OpenSilver.ControlsKit;assembly=OpenSilver.ControlsKit.Controls"
+             xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+    
     <StackPanel>
         <Grid>
-            <TextBlock Text="Charts" Style="{StaticResource PageHeader_Style}"/>
-            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <TextBlock Text="Charts" Style="{StaticResource PageHeader_Style}" Foreground="Transparent"/>
+            <TextBlock Style="{StaticResource PageHeader_Style}" Text="Charts"/>
+            <WrapPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                <TextBlock Foreground="Transparent"
+                           Style="{StaticResource PageHeader_Style}"
+                           Text="Charts"/>
                 <local:SearchControl HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
                 <Border Width="30"/>
             </WrapPanel>
@@ -21,8 +23,7 @@
             <local:LineSeries_Demo/>
             <local:PieSeries_Demo/>
             <local:ScatterSeries_Demo/>
-            <!--<local:Stacked100AreaSeries_Demo/>-->
-            
+            <local:Stacked100AreaSeries_Demo/>
         </controlskit:StaggeredPanel>
     </StackPanel>
 </UserControl>

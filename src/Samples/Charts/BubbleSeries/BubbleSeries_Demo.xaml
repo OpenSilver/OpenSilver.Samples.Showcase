@@ -1,43 +1,41 @@
-﻿<UserControl
-    x:Class="OpenSilver.Samples.Showcase.BubbleSeries_Demo"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
-    <ContentControl Style="{StaticResource Card_Style}" Width="645">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <ContentControl Content="BubbleSeries" Foreground="#FFDEA542" Background="#FFD2BD9C" Style="{StaticResource HeaderControl_Style}"/>
-            <Chart Grid.Row="1" Height="300">
-                <Chart.Axes>
-                    <CategoryAxis Orientation="X" Title="Period"/>
-                    <CategoryAxis Orientation="Y" Title="Sales"/>
-                </Chart.Axes>
-                <Chart.Series>
-                    <BubbleSeries x:Name="ChairsSeries" Title="Chairs"  DependentValuePath="Sales" 
-                    IndependentValuePath="Month">
-                    </BubbleSeries>
-                    <BubbleSeries x:Name="TablesSeries" Title="Tables" DependentValuePath="Sales" 
-IndependentValuePath="Month">
-                    </BubbleSeries>
-                </Chart.Series>
-            </Chart>
-            <local:ViewSourceButton Grid.Row="2"
-                          Background="#FCAB54">
-                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Charts/BubbleSeries"
-                                      FileName="BubbleSeries_Demo.xaml" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Charts/BubbleSeries"
-                                      FileName="BubbleSeries_Demo.xaml.cs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Charts/BubbleSeries"
-                                      FileName="BubbleSeries_Demo.xaml.vb" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Charts/BubbleSeries"
-                                      FileName="BubbleSeries_Demo.xaml.fs" />
-                </local:ViewSourceButton.Sources>
-            </local:ViewSourceButton>
-        </Grid>
-    </ContentControl>
-</UserControl>
+﻿<local:ChartDemo x:Class="OpenSilver.Samples.Showcase.BubbleSeries_Demo"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <ContentControl Background="#FFD2BD9C"
+                        Content="BubbleSeries"
+                        Foreground="#FFDEA542"
+                        Style="{StaticResource HeaderControl_Style}"/>
+        <Chart Grid.Row="1">
+            <Chart.Axes>
+                <CategoryAxis Title="Period" Orientation="X"/>
+                <CategoryAxis Title="Sales" Orientation="Y"/>
+            </Chart.Axes>
+            <Chart.Series>
+                <BubbleSeries x:Name="ChairsSeries"
+                              Title="Chairs"
+                              DependentValuePath="Sales"
+                              IndependentValuePath="Month"/>
+                <BubbleSeries x:Name="TablesSeries"
+                              Title="Tables"
+                              DependentValuePath="Sales"
+                              IndependentValuePath="Month"/>
+            </Chart.Series>
+        </Chart>
+        <local:ViewSourceButton Grid.Row="2" Background="#FCAB54">
+            <local:ViewSourceButton.Sources>
+                <local:ViewSourceButtonInfo FileName="BubbleSeries_Demo.xaml" RelativePath="src/Samples/Charts/BubbleSeries"/>
+                <local:ViewSourceButtonInfo FileName="BubbleSeries_Demo.xaml.cs" RelativePath="src/Samples/Charts/BubbleSeries"/>
+                <local:ViewSourceButtonInfo FileName="BubbleSeries_Demo.xaml.vb" RelativePath="src/Samples/Charts/BubbleSeries"/>
+                <local:ViewSourceButtonInfo FileName="BubbleSeries_Demo.xaml.fs" RelativePath="src/Samples/Charts/BubbleSeries"/>
+            </local:ViewSourceButton.Sources>
+        </local:ViewSourceButton>
+    </Grid>
+</local:ChartDemo>
