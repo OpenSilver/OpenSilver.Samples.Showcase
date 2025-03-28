@@ -32,12 +32,8 @@
             </TabControl>
             <StackPanel Grid.Row="2" Orientation="Horizontal">
                 <TextBlock Text="TabStripPlacement" VerticalAlignment="Center" Margin="5,0"/>
-                <ComboBox SelectedItem="{Binding TabStripPlacement, ElementName=MyTabControl, Mode=TwoWay}">
-                    <Dock>Left</Dock>
-                    <Dock>Top</Dock>
-                    <Dock>Right</Dock>
-                    <Dock>Bottom</Dock>
-                </ComboBox>
+                <ComboBox SelectedItem="{Binding TabStripPlacement, ElementName=MyTabControl, Mode=TwoWay}"
+                          ItemsSource="{Binding Converter={StaticResource EnumToListConverter}, ConverterParameter={x:Type Dock}}"/>
             </StackPanel>
             <local:ViewSourceButton Grid.Row="3" Background="#FF3ED4B2">
                 <local:ViewSourceButton.Sources>

@@ -14,20 +14,12 @@
             </Grid.RowDefinitions>
             <ContentControl Content="DataForm" Foreground="#FFE45EE2" Background="#FFE45EE2" Style="{StaticResource HeaderControl_Style}"/>
 
-            <DataForm x:Name="DataForm1" Grid.Row="1" CommandButtonsVisibility="{x:Null}"/>
+            <DataForm x:Name="DataForm1" Grid.Row="1"/>
             
             <StackPanel Grid.Row="2">
                 <TextBlock Text="CommandButtonsVisibility" Margin="0,5,0,0"/>
-                <ComboBox SelectedItem="{Binding CommandButtonsVisibility, ElementName=DataForm1, Mode=TwoWay}" FontSize="12" Height="Auto">
-                    <DataFormCommandButtonsVisibility>None</DataFormCommandButtonsVisibility>
-                    <DataFormCommandButtonsVisibility>Add</DataFormCommandButtonsVisibility>
-                    <DataFormCommandButtonsVisibility>Delete</DataFormCommandButtonsVisibility>
-                    <DataFormCommandButtonsVisibility>Edit</DataFormCommandButtonsVisibility>
-                    <DataFormCommandButtonsVisibility>Navigation</DataFormCommandButtonsVisibility>
-                    <DataFormCommandButtonsVisibility>Commit</DataFormCommandButtonsVisibility>
-                    <DataFormCommandButtonsVisibility>Cancel</DataFormCommandButtonsVisibility>
-                    <DataFormCommandButtonsVisibility>All</DataFormCommandButtonsVisibility>
-                </ComboBox>
+                <ComboBox SelectedItem="{Binding CommandButtonsVisibility, ElementName=DataForm1, Mode=TwoWay}" FontSize="12" Height="Auto"
+                          ItemsSource="{Binding Converter={StaticResource EnumToListConverter}, ConverterParameter={x:Static DataForm.CommandButtonsVisibilityProperty}}"/>
             </StackPanel>
 
             <local:ViewSourceButton Grid.Row="3" Background="#FFE45EE2">

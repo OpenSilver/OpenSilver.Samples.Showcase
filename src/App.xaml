@@ -3,7 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:mt="http://opensilver.net/themes/modern"
-    xmlns:local="using:MaterialDesign_Styles_Kit">
+    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
 
     <Application.Resources>
         <ResourceDictionary>
@@ -24,8 +24,11 @@
                 <ResourceDictionary Source="Other/MaterialDesign_Styles_Kit/MaterialDesign_TabControl_Styles.xaml"/>
                 <ResourceDictionary Source="Other/MaterialDesign_Styles_Kit/MaterialDesign_TextBox_Styles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+
+            <local:EnumToListConverter x:Key="EnumToListConverter"/>
         </ResourceDictionary>
     </Application.Resources>
+    
     <Application.Theme>
         <mt:ModernTheme CurrentPalette="Light">
             <mt:ModernTheme.DarkPalette>

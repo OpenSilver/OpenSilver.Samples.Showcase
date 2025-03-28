@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+    
     <ContentControl Style="{StaticResource Card_Style}" Width="200">
         <Grid>
             <Grid.RowDefinitions>
@@ -14,7 +15,13 @@
             <ContentControl Content="AutoCompleteBox" Foreground="#FFFF81E3" Background="#FFCB9DC1" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1">
                 <TextBlock Text="Enter text:" Foreground="#FF808080" FontSize="14" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <sdk:AutoCompleteBox x:Name="autoCompleteBox" />
+                <sdk:AutoCompleteBox x:Name="autoCompleteBox"/>
+
+                <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                    <TextBlock Text="FilterMode" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                    <ComboBox SelectedItem="{Binding FilterMode, ElementName=autoCompleteBox, Mode=TwoWay}" FontSize="12" Height="Auto"
+                              ItemsSource="{Binding Converter={StaticResource EnumToListConverter}, ConverterParameter={x:Type AutoCompleteFilterMode}}"/>
+                </StackPanel>
             </StackPanel>
             <local:ViewSourceButton Grid.Row="2" Background="#FFFF81E3">
                 <local:ViewSourceButton.Sources>

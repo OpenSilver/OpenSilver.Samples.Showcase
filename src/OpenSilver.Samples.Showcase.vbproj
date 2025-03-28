@@ -151,6 +151,7 @@
     <Page Include="Samples\Interop_Samples\WebView\WebBrowser_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Compile Include="Other\Converters\EnumToListConverter.vb" />
     <Compile Include="Other\Elements.vb" />
     <Compile Include="Other\Internals\Search\ControlSearch.vb" />
     <Compile Include="Other\Internals\Search\SamplesInfoLoader.vb" />

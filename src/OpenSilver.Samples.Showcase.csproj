@@ -7,6 +7,7 @@
     <OutputPath>bin/$(Configuration)_cs</OutputPath>
     <IntermediateOutputPath>obj/$(Configuration)_cs</IntermediateOutputPath>
     <DefineTrace>true</DefineTrace>
+    <LangVersion>12</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -149,6 +150,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Compile Include="Other\Contact.cs" />
+    <Compile Include="Other\Converters\EnumToListConverter.cs" />
     <Compile Include="Other\Elements.cs" />
     <Compile Include="Other\Internals\Search\SamplesInfoLoader.cs" />
     <Compile Include="Other\Internals\Search\ControlSearch.cs" />
