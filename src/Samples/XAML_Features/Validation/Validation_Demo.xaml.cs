@@ -6,12 +6,12 @@ using System.Windows.Data;
 
 namespace OpenSilver.Samples.Showcase
 {
-    [SearchKeywords("input", "form", "data entry", "error handling", "UI", "validationsummary")]
+    [SearchKeywords("input", "form", "data entry", "error handling", "UI", "validationsummary", "descriptionviewer", "label")]
     public partial class Validation_Demo : UserControl
     {
         public Validation_Demo()
         {
-            this.InitializeComponent();
+            InitializeComponent();
             ValidationBorder.DataContext = new Person();
         }
 

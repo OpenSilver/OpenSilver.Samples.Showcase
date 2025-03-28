@@ -9,11 +9,11 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="DataGrid &amp; DataPager" Foreground="#FFE45EE2" Background="#FFE45EE2" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1">
-            <!--DataGrid-->
-            <DataGrid x:Name="DataGrid1" Grid.Row="1" AutoGenerateColumns="False">
+                <DataGrid x:Name="DataGrid1" Grid.Row="1" AutoGenerateColumns="False">
                 <DataGrid.Columns>
                     <DataGridTemplateColumn Header="Name" Width="3*">
                         <DataGridTemplateColumn.CellTemplate>
@@ -31,14 +31,23 @@
                     <DataGridTextColumn Binding="{Binding Symbol}" Header="Symbol" Width="2*"/>
                 </DataGrid.Columns>
             </DataGrid>
-            <DataPager
-                       DisplayMode="FirstLastPreviousNextNumeric" PageSize="10"
-                       NumericButtonCount="3" Height="24"
-                       HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-                       Source="{Binding ItemsSource, ElementName=DataGrid1}" />
+                <DataPager Name="dataPager" DisplayMode="FirstLastPreviousNextNumeric" PageSize="10"
+                           NumericButtonCount="3"
+                           HorizontalAlignment="Center" VerticalAlignment="Stretch"
+                           Source="{Binding ItemsSource, ElementName=DataGrid1}"/>
             </StackPanel>
-            <local:ViewSourceButton Grid.Row="2"
-                                    Background="#FFE45EE2">
+            <StackPanel Grid.Row="2">
+                <TextBlock Text="DataPager DisplayMode" Margin="0,5,0,0"/>
+                <ComboBox SelectedItem="{Binding DisplayMode, ElementName=dataPager, Mode=TwoWay}" FontSize="12" Height="Auto">
+                    <PagerDisplayMode>FirstLastNumeric</PagerDisplayMode>
+                    <PagerDisplayMode>FirstLastPreviousNext</PagerDisplayMode>
+                    <PagerDisplayMode>FirstLastPreviousNextNumeric</PagerDisplayMode>
+                    <PagerDisplayMode>Numeric</PagerDisplayMode>
+                    <PagerDisplayMode>PreviousNext</PagerDisplayMode>
+                    <PagerDisplayMode>PreviousNextNumeric</PagerDisplayMode>
+                </ComboBox>
+            </StackPanel>
+            <local:ViewSourceButton Grid.Row="3" Background="#FFE45EE2">
                 <local:ViewSourceButton.Sources>
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/DataGrid"
                                                 FileName="DataGrid_Demo.xaml" />

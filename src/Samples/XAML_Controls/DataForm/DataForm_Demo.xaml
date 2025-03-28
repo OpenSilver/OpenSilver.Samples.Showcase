@@ -3,23 +3,34 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+    
     <ContentControl Style="{StaticResource Card_Style}" Width="240">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="DataForm" Foreground="#FFE45EE2" Background="#FFE45EE2" Style="{StaticResource HeaderControl_Style}"/>
 
-            <!--DataGrid-->
-            <DataForm x:Name="DataForm1" Grid.Row="1" >
+            <DataForm x:Name="DataForm1" Grid.Row="1" CommandButtonsVisibility="{x:Null}"/>
+            
+            <StackPanel Grid.Row="2">
+                <TextBlock Text="CommandButtonsVisibility" Margin="0,5,0,0"/>
+                <ComboBox SelectedItem="{Binding CommandButtonsVisibility, ElementName=DataForm1, Mode=TwoWay}" FontSize="12" Height="Auto">
+                    <DataFormCommandButtonsVisibility>None</DataFormCommandButtonsVisibility>
+                    <DataFormCommandButtonsVisibility>Add</DataFormCommandButtonsVisibility>
+                    <DataFormCommandButtonsVisibility>Delete</DataFormCommandButtonsVisibility>
+                    <DataFormCommandButtonsVisibility>Edit</DataFormCommandButtonsVisibility>
+                    <DataFormCommandButtonsVisibility>Navigation</DataFormCommandButtonsVisibility>
+                    <DataFormCommandButtonsVisibility>Commit</DataFormCommandButtonsVisibility>
+                    <DataFormCommandButtonsVisibility>Cancel</DataFormCommandButtonsVisibility>
+                    <DataFormCommandButtonsVisibility>All</DataFormCommandButtonsVisibility>
+                </ComboBox>
+            </StackPanel>
 
-                
-            </DataForm>
-
-            <local:ViewSourceButton Grid.Row="2"
-                                Background="#FFE45EE2">
+            <local:ViewSourceButton Grid.Row="3" Background="#FFE45EE2">
                 <local:ViewSourceButton.Sources>
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/DataForm"
                                             FileName="DataForm_Demo.xaml" />

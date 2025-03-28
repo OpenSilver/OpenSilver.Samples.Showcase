@@ -1,9 +1,9 @@
 ﻿using System;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace OpenSilver.Samples.Showcase
 {
-    //Validation:
     public class Person : INotifyPropertyChanged
     {
         private string _name;
@@ -22,6 +22,7 @@ namespace OpenSilver.Samples.Showcase
         }
 
         private int _age = 1;
+        [Display(Name = "Age", Description = "Age as positive number")]
         public int Age
         {
             get { return _age; }
@@ -36,10 +37,29 @@ namespace OpenSilver.Samples.Showcase
             }
         }
 
+        private string _email;
+        [RegularExpression(@"^([a-zA-Z0-9\!\%\$\%\*\/\?\|\^\{\}\`\~\&\'\+\-\=_]\.?)*[a-zA-Z0-9\!\%\$\%\*\/\?\|\^\{\}\`\~\&\'\+\-\=_]@((([a-zA-Z0-9\!\%\$\%\*\/\?\|\^\{\}\`\~\&\'\+\-\=_]\.?)*[a-zA-Z0-9\!\%\$\%\*\/\?\|\^\{\}\`\~\&\'\+\-\=_])|(\[\d+\.\d+\.\d+\.\d+\]))$", ErrorMessage = "Not a valid e-mail address.")]
+        [Display(Name = "Email", Description = "An e-mail address of the form <name>@<domain>, such as john@johndoe.com")]
+        [Required]
+        public string Email
+        {
+            get => _email;
+            set
+            {
+                if (value != _email)
+                {
+                    Validator.ValidateProperty(value, new ValidationContext(this, null, null) { MemberName = "Email" });
+                    _email = value;
+                    RaisePropertyChanged(nameof(Email));
+                }
+            }
+        }
+
         private void RaisePropertyChanged(string propertyName)
         {
             PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
+
         public event PropertyChangedEventHandler PropertyChanged;
     }
 }
