@@ -3,7 +3,6 @@ using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Navigation;
 
 namespace OpenSilver.Samples.Showcase.Samples
 {
@@ -14,6 +13,7 @@ namespace OpenSilver.Samples.Showcase.Samples
             InitializeComponent();
 
             SearchField.Loaded += OnSearchFieldLoaded;
+            SearchField.AddHandler(KeyDownEvent, new KeyEventHandler(SearchField_KeyDown), true);
         }
 
         private void OnSearchFieldLoaded(object sender, RoutedEventArgs e)
@@ -36,13 +36,11 @@ namespace OpenSilver.Samples.Showcase.Samples
             }
         }
 
-
         private void ButtonSearch_Click(object sender, RoutedEventArgs e)
         {
             string searchText = SearchField.Text;
             PerformSearch(searchText);
         }
-
 
         private void SearchField_KeyDown(object sender, KeyEventArgs e)
         {

@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
-using System.Windows.Data;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Navigation;
 
 namespace OpenSilver.Samples.Showcase
 {
@@ -16,7 +8,9 @@ namespace OpenSilver.Samples.Showcase
     {
         public SearchControl()
         {
-            this.InitializeComponent();
+            InitializeComponent();
+
+            SearchField.AddHandler(KeyDownEvent, new KeyEventHandler(SearchField_KeyDown), true);
         }
 
         public void ButtonSearch_Click(object sender, RoutedEventArgs e)
@@ -26,11 +20,12 @@ namespace OpenSilver.Samples.Showcase
 
         private void SearchField_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.Key == Key.Enter)
+            if (e.Key == Key.Enter)
             {
                 StartSearch(SearchField.Text);
             }
         }
+
         public void StartSearch(string searchTerms)
         {
             if (!string.IsNullOrWhiteSpace(searchTerms))
