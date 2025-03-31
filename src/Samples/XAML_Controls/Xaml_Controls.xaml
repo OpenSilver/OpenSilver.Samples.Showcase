@@ -22,6 +22,7 @@
             <local:Canvas_Demo HorizontalAlignment="Center"/>
             <local:InkPresenter_Demo/>
             <local:Button_Demo HorizontalAlignment="Center"/>
+            <local:ButtonSpinner_Demo/>
             <local:TextBox_Demo HorizontalAlignment="Center"/>
             <local:CheckBox_Demo HorizontalAlignment="Center"/>
             <local:RadioButton_Demo HorizontalAlignment="Center"/>

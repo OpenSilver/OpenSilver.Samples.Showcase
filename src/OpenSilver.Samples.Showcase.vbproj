@@ -130,6 +130,9 @@
     <Page Include="Samples\XAML_Controls\BusyIndicator\BusyIndicator_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\XAML_Controls\ButtonSpinner\ButtonSpinner_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\XAML_Controls\Calendar\Calendar_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -199,6 +202,7 @@
     <Compile Include="Samples\Performance\Virtualization\Virtualization_Demo.xaml.vb" />
     <Compile Include="Samples\Search.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\BusyIndicator\BusyIndicator_Demo.xaml.vb" />
+    <Compile Include="Samples\XAML_Controls\ButtonSpinner\ButtonSpinner_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\Calendar\Calendar_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\DataForm\DataForm_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\InkPresenter\InkPresenter_Demo.xaml.vb" />

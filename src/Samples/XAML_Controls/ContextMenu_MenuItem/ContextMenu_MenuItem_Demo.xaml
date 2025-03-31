@@ -23,6 +23,7 @@
                                 <Image Source="ms-appx:/Other/Logo.png" Width="20" Height="20" Stretch="Fill"/>
                             </MenuItem.Icon>
                         </MenuItem>
+                        <Separator/>
                         <MenuItem Header="Menu Item 3 (longer name)" Click="MenuItem3_Click">
                             <MenuItem.Icon>
                                 <Image Source="ms-appx:/Other/Logo.png" Width="20" Height="20" Stretch="Fill"/>
@@ -33,8 +34,7 @@
                 <TextBlock Text="Right-click to display menu with icons" TextWrapping="Wrap" TextAlignment="Center"/>
             </Border>
             <ContentControl Content="MenuItem" Foreground="#FFEF75C3" Background="#FFCD93B8" Style="{StaticResource HeaderControl_Style}"/>
-            <local:ViewSourceButton Grid.Row="2"
-                                    Background="#FFEF75C3">
+            <local:ViewSourceButton Grid.Row="2" Background="#FFEF75C3">
                 <local:ViewSourceButton.Sources>
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ContextMenu_MenuItem"
                                                 FileName="ContextMenu_MenuItem_Demo.xaml" />

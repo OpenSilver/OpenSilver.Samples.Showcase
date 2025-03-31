@@ -16,13 +16,13 @@
                     <ContextMenu>
                         <MenuItem Header="Menu Item 1" Click="MenuItem1_Click"/>
                         <MenuItem Header="Menu Item 2" Click="MenuItem2_Click"/>
+                        <Separator/>
                         <MenuItem Header="Menu Item 3" Click="MenuItem3_Click"/>
                     </ContextMenu>
                 </Border.ContextMenu>
                 <TextBlock Text="Right-click here to display the context menu." Foreground="Gray" TextWrapping="Wrap" Width="130" TextAlignment="Center" FontSize="14"/>
             </Border>
-            <local:ViewSourceButton Grid.Row="2"
-                                    Background="#FFFF65A3">
+            <local:ViewSourceButton Grid.Row="2" Background="#FFFF65A3">
                 <local:ViewSourceButton.Sources>
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ContextMenu"
                                                 FileName="ContextMenu_Demo.xaml" />

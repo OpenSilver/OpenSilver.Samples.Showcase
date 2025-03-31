@@ -4,12 +4,12 @@ using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase
 {
-    [SearchKeywords("menu", "context", "right-click", "items", "commands", "options", "control")]
+    [SearchKeywords("menu", "context", "right-click", "items", "commands", "options", "control", "separator")]
     public partial class ContextMenu_MenuItem_Demo : UserControl
     {
         public ContextMenu_MenuItem_Demo()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
 
         private void MenuItem1_Click(object sender, RoutedEventArgs e)
