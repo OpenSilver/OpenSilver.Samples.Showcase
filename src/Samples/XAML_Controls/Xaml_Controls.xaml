@@ -37,6 +37,7 @@
             <local:ToolTip_Demo HorizontalAlignment="Center"/>
             <local:HyperlinkButton_Demo HorizontalAlignment="Center"/>
             <local:NumericUpDown_Demo HorizontalAlignment="Center"/>
+            <local:DomainUpDown_Demo/>
             <local:ComboBox_Demo x:Name="ComboBoxDemo" HorizontalAlignment="Center"/>
             <local:RepeatButton_Demo HorizontalAlignment="Center"/>
             <local:GridSplitter_Demo HorizontalAlignment="Center"/>
