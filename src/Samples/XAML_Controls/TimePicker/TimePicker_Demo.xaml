@@ -1,0 +1,79 @@
+﻿<ContentControl x:Class="OpenSilver.Samples.Showcase.TimePicker_Demo"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:local="clr-namespace:OpenSilver.Samples.Showcase"
+                xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                Width="200"
+                Style="{StaticResource Card_Style}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <ContentControl Content="TimePicker"
+                        Foreground="#FFA05BFF"
+                        Style="{StaticResource HeaderControl_Style}"/>
+
+        <TimePicker Name="timePicker"
+                    Grid.Row="1"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"/>
+
+        <StackPanel Grid.Row="2" Margin="0,10,0,0">
+            <StackPanel Margin="0,0,0,2" Orientation="Horizontal">
+                <TextBlock VerticalAlignment="Center" Text="Popup Mode "/>
+                <ComboBox Name="popupModes"
+                          Width="114"
+                          Height="24"
+                          DisplayMemberPath="Name"
+                          FontSize="12"
+                          SelectedValue="{Binding Path=Popup, ElementName=timePicker, Mode=TwoWay}"
+                          SelectedValuePath="Popup"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock VerticalAlignment="Center" Text="TimeSelectionMode "/>
+                <ComboBox Height="24"
+                          MaxWidth="77"
+                          FontSize="12"
+                          ItemsSource="{Binding Converter={StaticResource EnumToListConverter}, ConverterParameter={x:Type PopupTimeSelectionMode}}"
+                          SelectedValue="{Binding Path=PopupTimeSelectionMode, ElementName=timePicker, Mode=TwoWay}"/>
+            </StackPanel>
+            <StackPanel Margin="0,2" Orientation="Horizontal">
+                <TextBlock VerticalAlignment="Center" Text="MinutesInterval "/>
+                <NumericUpDown Width="100"
+                               Height="24"
+                               MinWidth="0"
+                               FontSize="12"
+                               Value="{Binding Path=PopupMinutesInterval, ElementName=timePicker, Mode=TwoWay}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock VerticalAlignment="Center" Text="SecondsInterval "/>
+                <NumericUpDown Width="97"
+                               Height="24"
+                               MinWidth="0"
+                               FontSize="12"
+                               Value="{Binding Path=PopupSecondsInterval, ElementName=timePicker, Mode=TwoWay}"/>
+            </StackPanel>
+            <StackPanel Margin="0,2" Orientation="Horizontal">
+                <TextBlock VerticalAlignment="Center" Text="ButtonMode "/>
+                <ComboBox Width="116"
+                          Height="24"
+                          FontSize="12"
+                          ItemsSource="{Binding Converter={StaticResource EnumToListConverter}, ConverterParameter={x:Type ClickMode}}"
+                          SelectedValue="{Binding Path=PopupButtonMode, ElementName=timePicker, Mode=TwoWay}"/>
+            </StackPanel>
+        </StackPanel>
+
+        <local:ViewSourceButton Grid.Row="3" Background="#FFA05BFF">
+            <local:ViewSourceButton.Sources>
+                <local:ViewSourceButtonInfo FileName="Rating_Demo.xaml" RelativePath="src/Samples/XAML_Controls/Rating"/>
+                <local:ViewSourceButtonInfo FileName="Rating_Demo.xaml.cs" RelativePath="src/Samples/XAML_Controls/Rating"/>
+                <local:ViewSourceButtonInfo FileName="Rating_Demo.xaml.vb" RelativePath="src/Samples/XAML_Controls/Rating"/>
+            </local:ViewSourceButton.Sources>
+        </local:ViewSourceButton>
+    </Grid>
+</ContentControl>

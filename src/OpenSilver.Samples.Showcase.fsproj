@@ -595,11 +595,11 @@
     <Compile Include="Samples\XAML_Controls\DataGrid\DataGrid_Demo.xaml.fs">
       <DependentUpon>Samples\XAML_Controls\DataGrid\DataGrid_Demo.xaml</DependentUpon>
     </Compile>
-    <Page Include="Samples\XAML_Controls\DateAndTimePicker\DateAndTimePicker_Demo.xaml">
+    <Page Include="Samples\XAML_Controls\DatePicker\DatePicker_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Compile Include="Samples\XAML_Controls\DateAndTimePicker\DateAndTimePicker_Demo.xaml.fs">
-      <DependentUpon>Samples\XAML_Controls\DateAndTimePicker\DateAndTimePicker_Demo.xaml</DependentUpon>
+    <Compile Include="Samples\XAML_Controls\DatePicker\DatePicker_Demo.xaml.fs">
+      <DependentUpon>Samples\XAML_Controls\DatePicker\DatePicker_Demo.xaml</DependentUpon>
     </Compile>
     <Page Include="Samples\XAML_Controls\DockPanel\DockPanel_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>

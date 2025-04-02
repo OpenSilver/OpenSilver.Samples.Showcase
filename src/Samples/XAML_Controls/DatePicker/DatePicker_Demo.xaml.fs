@@ -3,8 +3,8 @@
 open System.Windows
 open System.Windows.Controls
 
-type DateAndTimePicker_Demo() as this =
-    inherit DateAndTimePicker_DemoXaml()
+type DatePicker_Demo() as this =
+    inherit DatePicker_DemoXaml()
 
     do
         this.InitializeComponent()

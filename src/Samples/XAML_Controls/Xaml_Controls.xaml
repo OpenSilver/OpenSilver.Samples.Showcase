@@ -62,7 +62,8 @@
             <local:Viewbox_Demo HorizontalAlignment="Center"/>
             <local:Frame_Demo x:Name="FrameDemo" HorizontalAlignment="Center"/>
             <local:Shapes_Demo HorizontalAlignment="Center"/>
-            <local:DateAndTimePicker_Demo x:Name="DateAndTimePickerDemo" HorizontalAlignment="Center"/>
+            <local:DatePicker_Demo x:Name="DatePickerDemo" HorizontalAlignment="Center"/>
+            <local:TimePicker_Demo/>
             <local:Calendar_Demo />
             <local:Rating_Demo/>
         </controlskit:StaggeredPanel>
