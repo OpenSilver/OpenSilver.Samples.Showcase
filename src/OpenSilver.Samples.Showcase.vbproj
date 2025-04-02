@@ -148,6 +148,9 @@
     <Page Include="Samples\XAML_Controls\ProgressBar\ProgressBar_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\XAML_Controls\Rating\Rating_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\XAML_Controls\TreeView\TreeView_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -211,6 +214,7 @@
     <Compile Include="Samples\XAML_Controls\DomainUpDown\DomainUpDown_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\InkPresenter\InkPresenter_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\ProgressBar\ProgressBar_Demo.xaml.vb" />
+    <Compile Include="Samples\XAML_Controls\Rating\Rating_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\TreeView\TreeView_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Features\Drag_And_Drop\Drag_And_Drop_Demo_Silverlight.xaml.vb" />
     <Compile Include="Samples\Interop_Samples\WebView\WebBrowser_Demo.xaml.vb" />
@@ -511,9 +515,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Controls\NumericUpDown\NumericUpDown_Demo.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Samples\XAML_Controls\NumericUpDown\Styles\DefaultNumericUpDownStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Controls\PasswordBox\PasswordBox_Demo.xaml">
@@ -828,5 +829,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>SampleResourceFileVB.Designer.vb</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Samples\XAML_Controls\NumericUpDown\Styles\**" />
   </ItemGroup>
 </Project>

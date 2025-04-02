@@ -664,9 +664,6 @@
     <Page Include="Samples\XAML_Controls\NumericUpDown\NumericUpDown_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\XAML_Controls\NumericUpDown\Styles\DefaultNumericUpDownStyle.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Samples\XAML_Controls\PasswordBox\PasswordBox_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1027,5 +1024,9 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Other\Internals\ChildWindowHelper.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Samples\XAML_Controls\NumericUpDown\Styles\**" />
   </ItemGroup>
 </Project>

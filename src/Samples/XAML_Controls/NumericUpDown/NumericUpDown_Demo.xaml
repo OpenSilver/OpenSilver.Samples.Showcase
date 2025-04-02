@@ -1,30 +1,63 @@
-﻿<UserControl
-    x:Class="OpenSilver.Samples.Showcase.NumericUpDown_Demo"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
-    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
-    <ContentControl Style="{StaticResource Card_Style}" Width="200">
+﻿<UserControl x:Class="OpenSilver.Samples.Showcase.NumericUpDown_Demo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+
+    <ContentControl Width="200" Style="{StaticResource Card_Style}">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="NumericUpDown" Foreground="#FF3ADE8F" Background="#75B595" Style="{StaticResource HeaderControl_Style}"/>
-            <NumericUpDown Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="130" Minimum="0" Maximum="100" />
-            <local:ViewSourceButton Grid.Row="2"
-                                    Background="#FF3ADE8F">
+            <ContentControl Background="#75B595"
+                            Content="NumericUpDown"
+                            Foreground="#FF3ADE8F"
+                            Style="{StaticResource HeaderControl_Style}"/>
+
+            <NumericUpDown Name="numericUpDown"
+                           Grid.Row="1"
+                           Width="130"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Maximum="100"
+                           Minimum="0"/>
+
+            <Grid Grid.Row="2" Margin="0,10,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="2"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Label Margin="0,0,2,0" Content="DecimalPlaces"/>
+                <NumericUpDown Grid.Column="1"
+                               Height="24"
+                               MinWidth="0"
+                               FontSize="12"
+                               Value="{Binding DecimalPlaces, ElementName=numericUpDown, Mode=TwoWay}"/>
+
+                <Label Grid.Row="2" Content="Increment"/>
+                <NumericUpDown Grid.Row="2"
+                               Grid.Column="1"
+                               Height="24"
+                               MinWidth="0"
+                               FontSize="12"
+                               Minimum="1"
+                               Value="{Binding Increment, ElementName=numericUpDown, Mode=TwoWay}"/>
+            </Grid>
+
+            <local:ViewSourceButton Grid.Row="3" Background="#FF3ADE8F">
                 <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/NumericUpDown"
-                                                FileName="NumericUpDown_Demo.xaml" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/NumericUpDown"
-                                                FileName="NumericUpDown_Demo.xaml.cs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/NumericUpDown"
-                                                FileName="NumericUpDown_Demo.xaml.vb" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/NumericUpDown"
-                                                FileName="NumericUpDown_Demo.xaml.fs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/NumericUpDown/Styles"
-                                                FileName="DefaultNumericUpDownStyle.xaml" />
+                    <local:ViewSourceButtonInfo FileName="NumericUpDown_Demo.xaml" RelativePath="src/Samples/XAML_Controls/NumericUpDown"/>
+                    <local:ViewSourceButtonInfo FileName="NumericUpDown_Demo.xaml.cs" RelativePath="src/Samples/XAML_Controls/NumericUpDown"/>
+                    <local:ViewSourceButtonInfo FileName="NumericUpDown_Demo.xaml.vb" RelativePath="src/Samples/XAML_Controls/NumericUpDown"/>
+                    <local:ViewSourceButtonInfo FileName="NumericUpDown_Demo.xaml.fs" RelativePath="src/Samples/XAML_Controls/NumericUpDown"/>
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>
