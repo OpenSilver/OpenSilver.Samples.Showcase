@@ -119,7 +119,7 @@
     <Page Include="Samples\Performance\Virtualization\Virtualization_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\Search.xaml">
+    <Page Include="Samples\SearchPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Controls\Accordion\Accordion_Demo.xaml">
@@ -216,7 +216,7 @@
     <Compile Include="Samples\Performance\AOTCompilation\AOT_Demo.xaml.cs" />
     <Compile Include="Samples\Performance\Progressive_Loading\ProgressiveLoading_Demo.xaml.cs" />
     <Compile Include="Samples\Performance\Virtualization\Virtualization_Demo.xaml.cs" />
-    <Compile Include="Samples\Search.xaml.cs" />
+    <Compile Include="Samples\SearchPage.xaml.cs" />
     <Compile Include="Samples\XAML_Controls\Accordion\Accordion_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Controls\BusyIndicator\BusyIndicator_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Controls\ButtonSpinner\ButtonSpinner_Demo.xaml.cs" />

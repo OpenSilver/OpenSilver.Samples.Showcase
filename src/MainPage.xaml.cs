@@ -14,6 +14,7 @@ namespace OpenSilver.Samples.Showcase
         {
             InitializeComponent();
 
+
             //#if OPENSILVER
             //            ThirdPartyButton.Visibility = Visibility.Collapsed;
             //            ThirdPartyHomeButton.Visibility = Visibility.Visible;
@@ -45,7 +46,6 @@ namespace OpenSilver.Samples.Showcase
             // Navigate to the "Welcome" page by default:
             if (!HtmlPage.Document.DocumentUri.OriginalString.Contains("#"))
             {
-
                 MenuListBox.SelectedItem = PageInfo.LandingPageInfo;
             }
         }

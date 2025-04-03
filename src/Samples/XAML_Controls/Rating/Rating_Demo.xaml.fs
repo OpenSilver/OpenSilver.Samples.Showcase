@@ -3,9 +3,9 @@
 open System.Windows.Controls
 open OpenSilver.Samples.Showcase.Search
 
-[<SearchKeywords("input", "selection", "calendar")>]
-type public DatePicker_Demo() as this =
-    inherit DatePicker_DemoXaml()
+[<SearchKeywords("input", "stars", "control")>]
+type public Rating_Demo() as this =
+    inherit Rating_DemoXaml()
 
     do
         this.InitializeComponent()

@@ -1,31 +1,31 @@
 ﻿namespace OpenSilver.Samples.Showcase
 
-open PreviewOnWinRT
+open System
 open System.Windows
 open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
+open PreviewOnWinRT
 
-type NonModalChildWindow_Demo() as this =
+[<SearchKeywords("layout", "window", "popup", "nonmodal", "non-modal", "dialog")>]
+type public NonModalChildWindow_Demo() as this =
     inherit NonModalChildWindow_DemoXaml()
 
-    let mutable _n = 0
+    let mutable n = 1
 
     do
         this.InitializeComponent()
 
-    member private this.ButtonTestChildWindow_Modal_Click(sender : obj, e : RoutedEventArgs) =
-        let childWindow = SmallChildWindow()
-        childWindow.Title <- "ChildWindow (Modal)" + string _n
-        _n <- _n + 1
-#if !OPENSILVER
-        childWindow.IsModal <- true
-#endif
-        childWindow.Show()
+    member private this.ButtonTestChildWindow_Modal_Click(_sender: obj, _e: RoutedEventArgs) =
+        let cw = SmallChildWindow()
+        cw.Title <- $"ChildWindow (Modal) #{n}"
+        cw.IsModal <- true
+        cw.Show()
+        n <- n + 1
 
-    member private this. ButtonTestChildWindow_NonModal_Click(sender : obj, e : RoutedEventArgs) =
-        let childWindow = SmallChildWindow()
-        childWindow.Title <- "ChildWindow (Non-modal)" + string _n
-        _n <- _n + 1
-#if !OPENSILVER
-        childWindow.IsModal <- false
-#endif
-        childWindow.Show()
+    member private this.ButtonTestChildWindow_NonModal_Click(_sender: obj, _e: RoutedEventArgs) =
+        let cw = SmallChildWindow()
+        cw.Title <- $"ChildWindow (Non-Modal) #{n}"
+        cw.IsModal <- false
+        cw.optionsStack.Visibility <- Visibility.Collapsed
+        cw.Show()
+        n <- n + 1

@@ -124,7 +124,7 @@ Value="1" />
                                                                         <DoubleAnimation Duration="0"
                                          Storyboard.TargetName="Root"
                                          Storyboard.TargetProperty="Opacity"
-                                         To=".7" />
+                                         To="0.7" />
                                                                     </Storyboard>
                                                                 </VisualState>
                                                             </VisualStateGroup>
@@ -245,8 +245,8 @@ Value="1" />
                     <sdk:Frame.UriMapper>
                         <sdk:UriMapper>
                             <sdk:UriMapping Uri="/Welcome" MappedUri="/Samples/Welcome.xaml"/>
-                            <sdk:UriMapping Uri="/Search" MappedUri="/Samples/Search.xaml"/>
-                            <sdk:UriMapping Uri="/Search/{searchTerms}" MappedUri="/Samples/Search.xaml?SearchTerms={searchTerms}"/>
+                            <sdk:UriMapping Uri="/Search" MappedUri="/Samples/SearchPage.xaml"/>
+                            <sdk:UriMapping Uri="/Search/{searchTerms}" MappedUri="/Samples/SearchPage.xaml?SearchTerms={searchTerms}"/>
                             <sdk:UriMapping Uri="/Third_Party/{path}" MappedUri="/Samples/Third_Party/{path}.xaml"/>
                             <sdk:UriMapping Uri="/{page_name}" MappedUri="/Samples/{page_name}/{page_name}.xaml"/>
                         </sdk:UriMapper>

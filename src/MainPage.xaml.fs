@@ -16,6 +16,8 @@ type MainPage() as this =
     inherit MainPageXaml()
 
     let mutable currentState : CurrentState = CurrentState.Unset
+    let mutable _skipMenuListBox_SelectionChanged = false
+    let mutable _nativeApiButtonBackgroundBrush: SolidColorBrush = null
 
     do
         this.InitializeComponent()
@@ -24,6 +26,8 @@ type MainPage() as this =
 
         this.Loaded.Add(fun _ -> this.MainPage_Loaded())
         this.SizeChanged.Add(fun args -> this.MainPage_SizeChanged(args))
+        this.MenuListBox.ItemsSource <- PageInfo.Pages
+        this.MenuListBox.SelectionChanged.Add(fun args -> this.MenuListBox_SelectionChanged(this.MenuListBox, args))
 
 #if OPENSILVER
         this.TitleImage.Visibility <- Visibility.Collapsed
@@ -46,58 +50,8 @@ type MainPage() as this =
     member private this.MainPage_Loaded() =
         // Navigate to the "Welcome" page by default:
         if not (HtmlPage.Document.DocumentUri.OriginalString.Contains("#")) then
-            this.NavigateToPage("/Welcome")
+            this.MenuListBox.SelectedItem <- PageInfo.LandingPageInfo
 
-    member this.ButtonXamlControls_Click(sender: obj, e: RoutedEventArgs) =
-        this.NavigateToPage("/XAML_Controls")
-
-    member this.ButtonXamlFeatures_Click(sender: obj, e: RoutedEventArgs) =
-        this.NavigateToPage("/XAML_Features")
-
-    member this.ButtonNetFramework_Click(sender: obj, e: RoutedEventArgs) =
-        this.NavigateToPage("/Net_Framework")
-
-    member this.ButtonClientServer_Click(sender: obj, e: RoutedEventArgs) =
-        this.NavigateToPage("/Client_Server")
-
-    member this.ButtonInterop_Click(sender: obj, e: RoutedEventArgs) =
-        this.NavigateToPage("/Interop_Samples")
-
-    member this.ButtonCharts_Click(sender: obj, e: RoutedEventArgs) =
-        this.NavigateToPage("/Charts")
-
-    member this.ButtonPerformance_Click(sender: obj, e: RoutedEventArgs) =
-        this.NavigateToPage("/Performance")
-
-    member this.ButtonMaterialDesign_Click(sender: obj, e: RoutedEventArgs) =
-        this.NavigateToPage("/Material_Design")
-
-    member this.ButtonPlotlyCharts_Click(sender: obj, e: RoutedEventArgs) =
-        this.NavigateToPage("/Third_Party/Plotly_Charts/Plotly_Charts_Demo")
-
-    member this.ButtonSyncfusionEssentialJS1Spreadsheet_Click(sender: obj, e: RoutedEventArgs) =
-        this.NavigateToPage("/Third_Party/Syncfusion_EssentialJS1/Spreadsheet/Spreadsheet_Demo")
-
-    member this.ButtonSyncfusionEssentialJS1RichTextEditor_Click(sender: obj, e: RoutedEventArgs) =
-        this.NavigateToPage("/Third_Party/Syncfusion_EssentialJS1/RichTextEditor/RichTextEditor_Demo")
-
-    member this.ButtonTelerikKendoUIGrid_Click(sender: obj, e: RoutedEventArgs) =
-        this.NavigateToPage("/Third_Party/Telerik_KendoUI/Grid/Grid_Demo")
-
-    member this.ButtonTelerikKendoUIEditor_Click(sender: obj, e: RoutedEventArgs) =
-        this.NavigateToPage("/Third_Party/Telerik_KendoUI/Editor/Editor_Demo")
-
-    member this.ButtonDevExtremeDataGrid_Click(sender: obj, e: RoutedEventArgs) =
-        this.NavigateToPage("/Third_Party/DevExtreme/DataGrid/DataGrid_Demo")
-
-    member this.ButtonHome_Click(sender: obj, e: RoutedEventArgs) =
-        this.NavigateToPage("/Welcome")
-
-    member this.ThirdParty_Click(sender: obj, e: RoutedEventArgs) =
-        this.NavigateToPage("/Third_Party")
-
-    member this.MauiHybrid_Click(sender: obj, e: RoutedEventArgs) =
-        this.NavigateToPage("/Maui_Hybrid")
 
     member private this.ButtonBackwards_Click(sender: obj, e: RoutedEventArgs) =
         if this.PageContainer.CanGoBack then
@@ -110,6 +64,19 @@ type MainPage() as this =
     member private this.PageContainer_Navigated(sender: obj, e: System.Windows.Navigation.NavigationEventArgs) =
         this.ButtonBackwards.IsEnabled <- this.PageContainer.CanGoBack
         this.ButtonForward.IsEnabled <- this.PageContainer.CanGoForward
+
+    member private this.MenuListBox_SelectionChanged(sender: obj, e: SelectionChangedEventArgs) =
+        if not (_skipMenuListBox_SelectionChanged && (isNull e.AddedItems || e.AddedItems.Count = 0)) then
+            match e.AddedItems.[0] with
+            | :? PageInfo as page when page <> null ->
+                this.NavigateToPage(page.Path)
+            | _ -> ()
+
+    member internal this.StartSearch(searchTerms: string) =
+        _skipMenuListBox_SelectionChanged <- true
+        this.MenuListBox.SelectedItem <- PageInfo.SearchPageInfo
+        this.NavigateToPage($"/Search/{Uri.EscapeUriString(searchTerms)}")
+        _skipMenuListBox_SelectionChanged <- false
 
 //#region Show/hide source code
 
@@ -209,3 +176,42 @@ type MainPage() as this =
             // Not supposed to happen because the button is not visible when in large resolution mode.
             ()
 //#endregion
+
+
+    member this.NativeApiButtonBackgroundBrush
+        with get() =
+            if isNull _nativeApiButtonBackgroundBrush then
+                _nativeApiButtonBackgroundBrush <-
+                    this.Resources.["NativeApiButtonBackground"] :?> SolidColorBrush
+            _nativeApiButtonBackgroundBrush
+
+
+    member private this.ToggleThemeButton_Click(sender: obj, _e: RoutedEventArgs) =
+        let isDark =
+            match sender with
+            | :? Controls.Primitives.ToggleButton as toggle -> toggle.IsChecked.HasValue && toggle.IsChecked.Value
+            | _ -> false
+
+        match Application.Current.Theme with
+        | :? OpenSilver.Themes.Modern.ModernTheme as theme ->
+            let nativeBrush = this.NativeApiButtonBackgroundBrush
+            if isDark then
+                nativeBrush.Color <- Color.FromRgb(60uy, 60uy, 60uy)
+                theme.CurrentPalette <- OpenSilver.Themes.Modern.ModernTheme.Palettes.Dark
+            else
+                nativeBrush.Color <- Color.FromRgb(221uy, 221uy, 221uy)
+                theme.CurrentPalette <- OpenSilver.Themes.Modern.ModernTheme.Palettes.Light
+
+            if this.SourceCodePane.Visibility = Visibility.Visible then
+                match this.PlaceWhereSourceCodeWillBeDisplayed.Child with
+                | :? TabControl as tabControl ->
+                    match tabControl.SelectedItem with
+                    | :? TabItem as tabItem ->
+                        match tabItem.Content with
+                        | :? ControlToDisplayCodeHostedOnGitHub as githubControl ->
+                            githubControl.Refresh()
+                        | _ -> ()
+                    | _ -> ()
+                | _ -> ()
+        | _ -> ()
+

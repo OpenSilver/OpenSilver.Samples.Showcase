@@ -24,9 +24,14 @@ type ControlToDisplayCodeHostedOnGitHub() as this =
 
     member private this.GetHtmlString(filePath : string) =
         let embedJs = INTERNAL_UriHelper.ConvertToHtml5Path("ms-appx:/Other/embed.js")
+        let themeMode =
+            match Application.Current.Theme with
+            | :? OpenSilver.Themes.Modern.ModernTheme as theme when theme.CurrentPalette = OpenSilver.Themes.Modern.ModernTheme.Palettes.Dark ->
+                "dark"
+            | _ -> "github"
         sprintf
-            "<script src=\"%s?target=%s&style=github&showBorder=on&showLineNumbers=on&showCopy=on\"></script>"
-            embedJs (HttpUtility.UrlEncode(filePath))
+            "<script src=\"%s?target=%s&style=%s&showBorder=on&showLineNumbers=on&showCopy=on\"></script>"
+            embedJs (HttpUtility.UrlEncode(filePath)) themeMode
 
     member private this.OnLoaded(sender : obj, e : RoutedEventArgs) =
         if not (String.IsNullOrEmpty _filePathOnGitHub) then
@@ -48,3 +53,8 @@ type ControlToDisplayCodeHostedOnGitHub() as this =
                 let htmlString = this.GetHtmlString this.FilePathOnGitHub
                 if htmlString <> _displayedHtmlString then
                     this.DisplayHtmlString(htmlString)
+
+    member this.Refresh() =
+        if not (String.IsNullOrEmpty(_filePathOnGitHub)) && this.IsLoaded then
+            let htmlString = this.GetHtmlString(_filePathOnGitHub)
+            this.DisplayHtmlString(htmlString)

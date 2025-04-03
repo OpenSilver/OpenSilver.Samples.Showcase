@@ -4,11 +4,11 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
-namespace OpenSilver.Samples.Showcase.Samples
+namespace OpenSilver.Samples.Showcase
 {
-    public partial class Search : UserControl
+    public partial class SearchPage : UserControl
     {
-        public Search()
+        public SearchPage()
         {
             InitializeComponent();
 

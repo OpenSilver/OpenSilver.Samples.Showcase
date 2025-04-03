@@ -66,14 +66,14 @@
                             </StackPanel>
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
-                    <SolidColorBrush Opacity=".7" Color="White"/>
-                    <SolidColorBrush Opacity=".7" Color="Black"/>
-                    <SolidColorBrush Opacity=".7" Color="Blue"/>
-                    <SolidColorBrush Opacity=".7" Color="Yellow"/>
-                    <SolidColorBrush Opacity=".7" Color="Pink"/>
-                    <SolidColorBrush Opacity=".7" Color="Orange"/>
-                    <SolidColorBrush Opacity=".7" Color="Green"/>
-                    <SolidColorBrush Opacity=".7" Color="Red"/>
+                    <SolidColorBrush Opacity="0.7" Color="White"/>
+                    <SolidColorBrush Opacity="0.7" Color="Black"/>
+                    <SolidColorBrush Opacity="0.7" Color="Blue"/>
+                    <SolidColorBrush Opacity="0.7" Color="Yellow"/>
+                    <SolidColorBrush Opacity="0.7" Color="Pink"/>
+                    <SolidColorBrush Opacity="0.7" Color="Orange"/>
+                    <SolidColorBrush Opacity="0.7" Color="Green"/>
+                    <SolidColorBrush Opacity="0.7" Color="Red"/>
                 </ComboBox>
             </Grid>
         </StackPanel>

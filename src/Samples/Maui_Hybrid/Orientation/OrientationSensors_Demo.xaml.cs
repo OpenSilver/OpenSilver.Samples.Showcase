@@ -58,7 +58,7 @@ namespace OpenSilver.Samples.Showcase
 
                 if (unsupportedFeatures.Any())
                 {
-                    UnsupportedTextBlock.Text = $"The following sections of this have been hidden because this device does not support them: \r\n - {string.Join(",\r\n - ", unsupportedFeatures)}.";
+                    UnsupportedTextBlock.Text = $"The following sections of this sample have been hidden because this device does not support them: \r\n - {string.Join(",\r\n - ", unsupportedFeatures)}.";
                     UnsupportedTextBlock.Visibility = Visibility.Visible;
                 }
             }
