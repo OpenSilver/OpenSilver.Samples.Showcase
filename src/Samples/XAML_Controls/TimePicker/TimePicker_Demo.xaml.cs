@@ -3,7 +3,7 @@ using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase;
 
-[SearchKeywords("input", "selection")]
+[SearchKeywords("input", "selection", "range")]
 public partial class TimePicker_Demo : ContentControl
 {
     public TimePicker_Demo()
