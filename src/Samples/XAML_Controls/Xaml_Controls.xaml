@@ -1,18 +1,21 @@
-﻿<UserControl
-    x:Class="OpenSilver.Samples.Showcase.Xaml_Controls"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:controlskit="clr-namespace:OpenSilver.ControlsKit;assembly=OpenSilver.ControlsKit.Controls"
-    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
-  <StackPanel>
+﻿<UserControl x:Class="OpenSilver.Samples.Showcase.Xaml_Controls"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controlskit="clr-namespace:OpenSilver.ControlsKit;assembly=OpenSilver.ControlsKit.Controls"
+             xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+
+    <StackPanel>
         <Grid>
-            <TextBlock Text="Panels &amp; Controls" Style="{StaticResource PageHeader_Style}"/>
-            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <TextBlock Text="Panels &amp; Controls" Style="{StaticResource PageHeader_Style}" Foreground="Transparent"/>
+            <TextBlock Style="{StaticResource PageHeader_Style}" Text="Panels &amp; Controls"/>
+            <WrapPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                <TextBlock Foreground="Transparent"
+                           Style="{StaticResource PageHeader_Style}"
+                           Text="Panels &amp; Controls"/>
                 <local:SearchControl HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
                 <Border Width="30"/>
             </WrapPanel>
         </Grid>
+
         <controlskit:StaggeredPanel Name="SamplesPanel" ProgressiveRenderingChunkSize="2">
             <local:Grid_Demo HorizontalAlignment="Center"/>
             <local:StackPanel_Demo HorizontalAlignment="Center"/>
@@ -27,7 +30,7 @@
             <local:CheckBox_Demo HorizontalAlignment="Center"/>
             <local:RadioButton_Demo HorizontalAlignment="Center"/>
             <local:TextBlock_Demo HorizontalAlignment="Center"/>
-            <local:Label_Demo HorizontalAlignment="Center" />
+            <local:Label_Demo HorizontalAlignment="Center"/>
             <local:Path_Demo HorizontalAlignment="Center"/>
             <local:ProgressBar_Demo/>
             <local:DataForm_Demo HorizontalAlignment="Center"/>
@@ -66,9 +69,9 @@
             <local:Shapes_Demo HorizontalAlignment="Center"/>
             <local:DatePicker_Demo x:Name="DatePickerDemo" HorizontalAlignment="Center"/>
             <local:TimePicker_Demo/>
-            <local:Calendar_Demo />
+            <local:Calendar_Demo/>
             <local:Rating_Demo/>
+            <local:LayoutTransformer_Demo/>
         </controlskit:StaggeredPanel>
     </StackPanel>
-
 </UserControl>
