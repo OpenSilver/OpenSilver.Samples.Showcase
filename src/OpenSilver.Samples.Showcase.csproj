@@ -122,6 +122,10 @@
     <Page Include="Samples\Search.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\XAML_Controls\Accordion\Accordion_Demo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\XAML_Controls\BusyIndicator\BusyIndicator_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -209,6 +213,7 @@
     <Compile Include="Samples\Performance\Progressive_Loading\ProgressiveLoading_Demo.xaml.cs" />
     <Compile Include="Samples\Performance\Virtualization\Virtualization_Demo.xaml.cs" />
     <Compile Include="Samples\Search.xaml.cs" />
+    <Compile Include="Samples\XAML_Controls\Accordion\Accordion_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Controls\BusyIndicator\BusyIndicator_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Controls\ButtonSpinner\ButtonSpinner_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Controls\Calendar\Calendar_Demo.xaml.cs" />

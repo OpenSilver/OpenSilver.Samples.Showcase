@@ -50,6 +50,7 @@
             <local:ContextMenu_MenuItem_Demo x:Name="MenuItemDemo" HorizontalAlignment="Center"/>
             <local:ToggleButton_Demo HorizontalAlignment="Center"/>
             <local:Expander_Demo HorizontalAlignment="Center"/>
+            <local:Accordion_Demo/>
             <local:PasswordBox_Demo HorizontalAlignment="Center"/>
             <local:ContextMenu_Demo x:Name="ContextMenuDemo" HorizontalAlignment="Center"/>
             <local:Image_Demo x:Name="ImageDemo" HorizontalAlignment="Center"/>
