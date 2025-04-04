@@ -29,6 +29,7 @@ namespace OpenSilver.Samples.Showcase
                     _pageInfos.Add(new PageInfo("Performance", "/Performance"));
                     _pageInfos.Add(new PageInfo("Native APIs", "/Maui_Hybrid"));
                     _pageInfos.Add(new PageInfo("Third-Party", "/Third_Party"));
+                    _pageInfos.Add(new PageInfo("Radzen Components", "/Blazor_Radzen"));
                     _pageInfos.Add(LandingPageInfo);
                     _pageInfos.Add(SearchPageInfo);
                 }

@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\OpenSilver.Samples.Showcase.Radzen\OpenSilver.Samples.Showcase.Radzen.csproj" />
     <ProjectReference Include="..\src\OpenSilver.Samples.Showcase.csproj" />
   </ItemGroup>
 

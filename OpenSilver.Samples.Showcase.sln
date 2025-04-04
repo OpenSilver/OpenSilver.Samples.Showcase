@@ -36,6 +36,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".Solution Items", ".Solutio
 		Nuget.Config = Nuget.Config
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenSilver.Samples.Showcase.Radzen", "OpenSilver.Samples.Showcase.Radzen\OpenSilver.Samples.Showcase.Radzen.csproj", "{56DFE8D6-1E7C-C4F1-8A03-D48D21ECEB6F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,10 @@ Global
 		{38341787-EF8D-7D12-1752-F3E105279816}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{38341787-EF8D-7D12-1752-F3E105279816}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38341787-EF8D-7D12-1752-F3E105279816}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56DFE8D6-1E7C-C4F1-8A03-D48D21ECEB6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56DFE8D6-1E7C-C4F1-8A03-D48D21ECEB6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56DFE8D6-1E7C-C4F1-8A03-D48D21ECEB6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56DFE8D6-1E7C-C4F1-8A03-D48D21ECEB6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -98,6 +104,7 @@ Global
 		{1EB57F2E-2B23-46E6-9C15-08433222F444} = {B5C67797-9D37-4990-B00E-D0DD1F3725DE}
 		{A1FCF43B-99E1-4387-AA9B-A92D16F2E92E} = {B5C67797-9D37-4990-B00E-D0DD1F3725DE}
 		{38341787-EF8D-7D12-1752-F3E105279816} = {119B9FBC-4843-4625-AAD2-1B1411C26E17}
+		{56DFE8D6-1E7C-C4F1-8A03-D48D21ECEB6F} = {119B9FBC-4843-4625-AAD2-1B1411C26E17}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {487C6C1E-8943-483B-89FE-84ACF0ECB68D}

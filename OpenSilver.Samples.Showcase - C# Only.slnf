@@ -3,8 +3,9 @@
     "path": "OpenSilver.Samples.Showcase.sln",
     "projects": [
       "src\\OpenSilver.Samples.Showcase.csproj",
-	  "OpenSilver.Samples.Showcase.Browser\\OpenSilver.Samples.Showcase.Browser.csproj",
-	  "OpenSilver.Samples.Showcase.Simulator\\OpenSilver.Samples.Showcase.Simulator.csproj"
+      "OpenSilver.Samples.Showcase.Radzen\\OpenSilver.Samples.Showcase.Radzen.csproj",
+      "OpenSilver.Samples.Showcase.Browser\\OpenSilver.Samples.Showcase.Browser.csproj",
+      "OpenSilver.Samples.Showcase.Simulator\\OpenSilver.Samples.Showcase.Simulator.csproj"
     ]
   }
 }

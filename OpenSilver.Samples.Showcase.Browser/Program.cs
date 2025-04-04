@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using Microsoft.Extensions.DependencyInjection;
+using OpenSilver.Blazor;
+using OpenSilver.Samples.Showcase;
 
 namespace OpenSilver.Samples.Showcase.Browser
 {
@@ -10,6 +11,11 @@ namespace OpenSilver.Samples.Showcase.Browser
         {
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.RootComponents.Add<App>("#app");
+
+            // For blazor components
+            builder.UseBlazorForOpenSilver();
+            builder.Services.AddRadzenSamples();
+
             var host = builder.Build();
             await host.RunAsync();
         }

@@ -26,6 +26,9 @@
     <Page Include="Other\Internals\Search\SearchControl.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\Blazor_Radzen\Blazor_Radzen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\Charts\AreaSeries\AreaSeries_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -189,6 +192,7 @@
     <Compile Include="Other\PageInfo.cs" />
     <Compile Include="Other\Sales.cs" />
     <Compile Include="Other\SampleResourceFile.Designer.cs" />
+    <Compile Include="Samples\Blazor_Radzen\Blazor_Radzen.xaml.cs" />
     <Compile Include="Samples\Charts\AreaSeries\AreaSeries_Demo.xaml.cs" />
     <Compile Include="Samples\Charts\BarSeries\BarSeries_Demo.xaml.cs" />
     <Compile Include="Samples\Charts\BubbleSeries\BubbleSeries_Demo.xaml.cs" />
