@@ -34,6 +34,8 @@
                 <local:ViewSourceButtonInfo FileName="UpDownBase_Demo.xaml" RelativePath="src/Samples/XAML_Controls/UpDownBase"/>
                 <local:ViewSourceButtonInfo FileName="UpDownBase_Demo.xaml.cs" RelativePath="src/Samples/XAML_Controls/UpDownBase"/>
                 <local:ViewSourceButtonInfo FileName="UpDownBase_Demo.xaml.vb" RelativePath="src/Samples/XAML_Controls/UpDownBase"/>
+                <local:ViewSourceButtonInfo FileName="UpDownBase_Demo.xaml.fs" RelativePath="src/Samples/XAML_Controls/UpDownBase"/>
+                <local:ViewSourceButtonInfo FileName="CustomUpDowns.fs" RelativePath="src/Samples/XAML_Controls/UpDownBase"/>
             </local:ViewSourceButton.Sources>
         </local:ViewSourceButton>
     </Grid>

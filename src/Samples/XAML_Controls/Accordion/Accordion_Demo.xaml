@@ -87,6 +87,7 @@
                 <local:ViewSourceButtonInfo FileName="Accordion_Demo.xaml" RelativePath="src/Samples/XAML_Controls/Accordion"/>
                 <local:ViewSourceButtonInfo FileName="Accordion_Demo.xaml.cs" RelativePath="src/Samples/XAML_Controls/Accordion"/>
                 <local:ViewSourceButtonInfo FileName="Accordion_Demo.xaml.vb" RelativePath="src/Samples/XAML_Controls/Accordion"/>
+                <local:ViewSourceButtonInfo FileName="Accordion_Demo.xaml.fs" RelativePath="src/Samples/XAML_Controls/Accordion"/>
             </local:ViewSourceButton.Sources>
         </local:ViewSourceButton>
     </Grid>

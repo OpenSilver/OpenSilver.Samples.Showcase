@@ -73,6 +73,7 @@
                 <local:ViewSourceButtonInfo FileName="TimePicker_Demo.xaml" RelativePath="src/Samples/XAML_Controls/TimePicker"/>
                 <local:ViewSourceButtonInfo FileName="TimePicker_Demo.xaml.cs" RelativePath="src/Samples/XAML_Controls/TimePicker"/>
                 <local:ViewSourceButtonInfo FileName="TimePicker_Demo.xaml.vb" RelativePath="src/Samples/XAML_Controls/TimePicker"/>
+                <local:ViewSourceButtonInfo FileName="TimePicker_Demo.xaml.fs" RelativePath="src/Samples/XAML_Controls/TimePicker"/>
             </local:ViewSourceButton.Sources>
         </local:ViewSourceButton>
     </Grid>

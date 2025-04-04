@@ -47,6 +47,7 @@
                 <local:ViewSourceButtonInfo FileName="TransitioningContentControl_Demo.xaml" RelativePath="src/Samples/XAML_Controls/TransitioningContentControl"/>
                 <local:ViewSourceButtonInfo FileName="TransitioningContentControl_Demo.xaml.cs" RelativePath="src/Samples/XAML_Controls/TransitioningContentControl"/>
                 <local:ViewSourceButtonInfo FileName="TransitioningContentControl_Demo.xaml.vb" RelativePath="src/Samples/XAML_Controls/TransitioningContentControl"/>
+                <local:ViewSourceButtonInfo FileName="TransitioningContentControl_Demo.xaml.fs" RelativePath="src/Samples/XAML_Controls/TransitioningContentControl"/>
             </local:ViewSourceButton.Sources>
         </local:ViewSourceButton>
     </Grid>
