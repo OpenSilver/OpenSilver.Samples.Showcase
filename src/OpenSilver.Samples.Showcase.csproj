@@ -30,25 +30,13 @@
     <Page Include="Other\Internals\Search\SearchControl.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\Blazor_Radzen\Blazor_Radzen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Other\Internals\ViewSourcePanel.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Other\Internals\Menu\MenuStyle.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Samples\Blazor_Blazorise\Blazor_Blazorise.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Samples\Blazor_DevExpress\Blazor_DevExpress.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Samples\Blazor_MudBlazor\Blazor_MudBlazor.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Samples\Blazor_Radzen\Blazor_Radzen.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Samples\Blazor_Syncfusion\Blazor_Syncfusion.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\Charts\AreaSeries\AreaSeries_Demo.xaml">
@@ -310,11 +298,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>SampleResourceFile.resx</DependentUpon>
     </Compile>
-    <Compile Include="Samples\Blazor_Blazorise\Blazor_Blazorise.xaml.cs" />
-    <Compile Include="Samples\Blazor_DevExpress\Blazor_DevExpress.xaml.cs" />
-    <Compile Include="Samples\Blazor_MudBlazor\Blazor_MudBlazor.xaml.cs" />
     <Compile Include="Samples\Blazor_Radzen\Blazor_Radzen.xaml.cs" />
-    <Compile Include="Samples\Blazor_Syncfusion\Blazor_Syncfusion.xaml.cs" />
     <Compile Include="Samples\Charts\AreaSeries\AreaSeries_Demo.xaml.cs" />
     <Compile Include="Samples\Charts\BarSeries\BarSeries_Demo.xaml.cs" />
     <Compile Include="Samples\Charts\BubbleSeries\BubbleSeries_Demo.xaml.cs" />
