@@ -72,6 +72,7 @@
             <local:Calendar_Demo/>
             <local:Rating_Demo/>
             <local:LayoutTransformer_Demo/>
+            <local:TransitioningContentControl_Demo/>
         </controlskit:StaggeredPanel>
     </StackPanel>
 </UserControl>

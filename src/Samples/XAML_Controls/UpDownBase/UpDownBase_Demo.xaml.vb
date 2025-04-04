@@ -88,9 +88,6 @@ Namespace OpenSilver.Samples.Showcase
     Friend Class StringUpDown
         Inherits UpDownBase(Of String)
 
-        '''<summary>
-        ''' Internal constructor.
-        '''</summary>
         Friend Sub New()
             Value = "0"
         End Sub
@@ -99,26 +96,26 @@ Namespace OpenSilver.Samples.Showcase
         ''' Called by OnSpin when the spin direction is SpinDirection.Increase.
         '''</summary>
         Protected Overrides Sub OnIncrement()
-            Dim value As String = If(String.IsNullOrEmpty(value), "0", value)
+            Dim value As String = If(String.IsNullOrEmpty(Me.Value), "0", Me.Value)
             If value.Length >= 10 Then
                 value = "0"
             Else
                 value &= value.Length.ToString(CultureInfo.CurrentCulture)
             End If
-            value = value
+            Me.Value = value
         End Sub
 
         '''<summary>
         ''' Called by OnSpin when the spin direction is SpinDirection.Decrease.
         '''</summary>
         Protected Overrides Sub OnDecrement()
-            Dim value As String = If(String.IsNullOrEmpty(value), "0", value)
+            Dim value As String = If(String.IsNullOrEmpty(Me.Value), "0", Me.Value)
             If value.Length <= 1 Then
                 value = "0123456789"
             Else
                 value = value.Substring(0, value.Length - 1)
             End If
-            value = value
+            Me.Value = value
         End Sub
 
         '''<summary>

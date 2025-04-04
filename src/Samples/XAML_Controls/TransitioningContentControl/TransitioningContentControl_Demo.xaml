@@ -1,0 +1,53 @@
+﻿<ContentControl x:Class="OpenSilver.Samples.Showcase.TransitioningContentControl_Demo"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:local="clr-namespace:OpenSilver.Samples.Showcase"
+                xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                Width="220"
+                Style="{StaticResource Card_Style}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <ContentControl Content="TransitioningContentControl"
+                        Foreground="#FFD972AA"
+                        Style="{StaticResource HeaderControl_Style}"/>
+
+        <TransitioningContentControl Name="defaultTCC"
+                                     Grid.Row="1"
+                                     HorizontalAlignment="Center"
+                                     VerticalAlignment="Center"
+                                     Content="Press buttons to change content"
+                                     FontSize="12"/>
+
+        <StackPanel Grid.Row="2"
+                    Margin="0,10,0,0"
+                    HorizontalAlignment="Center">
+            <Button Grid.Column="1"
+                    Margin="3"
+                    Click="ChangeContentWithDefaultTransition"
+                    Content="Default"/>
+            <Button Grid.Column="2"
+                    Margin="3"
+                    Click="ChangeContentWithUpTransition"
+                    Content="Up"/>
+            <Button Grid.Column="3"
+                    Margin="3"
+                    Click="ChangeContentWithDownTransition"
+                    Content="Down"/>
+        </StackPanel>
+
+        <local:ViewSourceButton Grid.Row="3" Background="#FFD972AA">
+            <local:ViewSourceButton.Sources>
+                <local:ViewSourceButtonInfo FileName="TransitioningContentControl_Demo.xaml" RelativePath="src/Samples/XAML_Controls/TransitioningContentControl"/>
+                <local:ViewSourceButtonInfo FileName="TransitioningContentControl_Demo.xaml.cs" RelativePath="src/Samples/XAML_Controls/TransitioningContentControl"/>
+                <local:ViewSourceButtonInfo FileName="TransitioningContentControl_Demo.xaml.vb" RelativePath="src/Samples/XAML_Controls/TransitioningContentControl"/>
+            </local:ViewSourceButton.Sources>
+        </local:ViewSourceButton>
+    </Grid>
+</ContentControl>

@@ -161,6 +161,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\XAML_Controls\TransitioningContentControl\TransitioningContentControl_Demo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\XAML_Controls\TreeView\TreeView_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -229,6 +233,7 @@
     <Compile Include="Samples\XAML_Controls\ProgressBar\ProgressBar_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Controls\Rating\Rating_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Controls\TimePicker\TimePicker_Demo.xaml.cs" />
+    <Compile Include="Samples\XAML_Controls\TransitioningContentControl\TransitioningContentControl_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Controls\TreeView\TreeView_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Controls\UpDownBase\UpDownBase_Demo.xaml.cs" />
 

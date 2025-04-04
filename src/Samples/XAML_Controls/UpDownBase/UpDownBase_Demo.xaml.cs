@@ -55,14 +55,6 @@ internal class IntUpDown : UpDownBase<int>
 internal class DateTimeUpDown : UpDownBase<DateTime>
 {
     ///<summary>
-    /// Internal constructor.
-    ///</summary>
-    //internal DateTimeUpDown()
-    //{
-    //    Value = DateTime.Now;
-    //}
-
-    ///<summary>
     /// Called by OnSpin when the spin direction is SpinDirection.Increase.
     ///</summary>
     protected override void OnIncrement()
@@ -114,9 +106,6 @@ internal class DateTimeUpDown : UpDownBase<DateTime>
 
 internal class StringUpDown : UpDownBase<string>
 {
-    ///<summary>
-    /// Internal constructor.
-    ///</summary>
     internal StringUpDown()
     {
         Value = "0";

@@ -160,6 +160,9 @@
     <Page Include="Samples\XAML_Controls\TimePicker\TimePicker_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\XAML_Controls\TransitioningContentControl\TransitioningContentControl_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\XAML_Controls\TreeView\TreeView_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -230,6 +233,7 @@
     <Compile Include="Samples\XAML_Controls\ProgressBar\ProgressBar_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\Rating\Rating_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\TimePicker\TimePicker_Demo.xaml.vb" />
+    <Compile Include="Samples\XAML_Controls\TransitioningContentControl\TransitioningContentControl_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\TreeView\TreeView_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\UpDownBase\UpDownBase_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Features\Drag_And_Drop\Drag_And_Drop_Demo_Silverlight.xaml.vb" />
