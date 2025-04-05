@@ -247,8 +247,8 @@ Value="1" />
                             <sdk:UriMapping Uri="/Welcome" MappedUri="/Samples/Welcome.xaml"/>
                             <sdk:UriMapping Uri="/Search" MappedUri="/Samples/SearchPage.xaml"/>
                             <sdk:UriMapping Uri="/Search/{searchTerms}" MappedUri="/Samples/SearchPage.xaml?SearchTerms={searchTerms}"/>
-                            <sdk:UriMapping Uri="/Third_Party/{path}" MappedUri="/Samples/Third_Party/{path}.xaml"/>
                             <sdk:UriMapping Uri="/{page_name}" MappedUri="/Samples/{page_name}/{page_name}.xaml"/>
+                            <sdk:UriMapping Uri="/{page_name}/{demo_name}" MappedUri="/Samples/{page_name}/{demo_name}/{demo_name}_Demo.xaml"/>
                         </sdk:UriMapper>
                     </sdk:Frame.UriMapper>
                     <sdk:Frame.RenderTransform>
