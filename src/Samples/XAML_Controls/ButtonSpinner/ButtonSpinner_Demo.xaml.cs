@@ -4,7 +4,7 @@ using System.Windows.Controls;
 namespace OpenSilver.Samples.Showcase;
 
 [SearchKeywords("updown")]
-public partial class ButtonSpinner_Demo : ContentControl
+public partial class ButtonSpinner_Demo : UserControl
 {
     private readonly string[] _months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 

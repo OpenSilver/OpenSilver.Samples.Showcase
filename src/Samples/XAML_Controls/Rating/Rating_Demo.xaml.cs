@@ -4,7 +4,7 @@ using System.Windows.Controls;
 namespace OpenSilver.Samples.Showcase;
 
 [SearchKeywords("input", "stars", "control")]
-public partial class Rating_Demo : ContentControl
+public partial class Rating_Demo : UserControl
 {
     public Rating_Demo()
     {

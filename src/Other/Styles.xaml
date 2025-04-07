@@ -26,6 +26,7 @@
     <Style x:Key="Card_Style" TargetType="ContentControl">
         <Style.Setters>
             <Setter Property="Margin" Value="22,22,7,5"/>
+            <Setter Property="VerticalAlignment" Value="Center" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ContentControl">

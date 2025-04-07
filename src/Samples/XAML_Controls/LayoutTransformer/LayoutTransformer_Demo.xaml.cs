@@ -5,7 +5,7 @@ using System.Windows.Controls;
 namespace OpenSilver.Samples.Showcase;
 
 [SearchKeywords("transformation", "scale", "rotate", "skew")]
-public partial class LayoutTransformer_Demo : ContentControl
+public partial class LayoutTransformer_Demo : UserControl
 {
     public LayoutTransformer_Demo()
     {
