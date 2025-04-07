@@ -6,7 +6,7 @@ Namespace OpenSilver.Samples.Showcase
 
     <SearchKeywords("transformation")>
     Partial Public Class LayoutTransformer_Demo
-        Inherits ContentControl
+        Inherits UserControl
 
         Public Sub New()
             InitializeComponent()

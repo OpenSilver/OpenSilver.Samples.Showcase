@@ -6,7 +6,7 @@ Namespace OpenSilver.Samples.Showcase
 
     <SearchKeywords("animation")>
     Partial Public Class TransitioningContentControl_Demo
-        Inherits ContentControl
+        Inherits UserControl
 
         Public Sub New()
             InitializeComponent()

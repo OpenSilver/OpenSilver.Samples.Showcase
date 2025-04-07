@@ -12,7 +12,6 @@ Namespace Global.OpenSilver.Samples.Showcase
 #End If
             Me.ScrollBarDemo.Visibility = Visibility.Collapsed
             Me.ThumbDemo.Visibility = Visibility.Collapsed
-            Me.FrameDemo.Visibility = Visibility.Collapsed ' The Showcase already uses a Frame to change pages anyway
         End Sub
     End Class
 End Namespace

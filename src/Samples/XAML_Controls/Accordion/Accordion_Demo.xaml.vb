@@ -5,7 +5,7 @@ Namespace OpenSilver.Samples.Showcase
 
     <SearchKeywords("items", "expander", "list")>
     Partial Public Class Accordion_Demo
-        Inherits ContentControl
+        Inherits UserControl
 
         Public Sub New()
             InitializeComponent()

@@ -5,7 +5,7 @@ Namespace OpenSilver.Samples.Showcase
 
     <SearchKeywords("input", "stars", "control")>
     Partial Public Class Rating_Demo
-        Inherits ContentControl
+        Inherits UserControl
 
         Public Sub New()
             InitializeComponent()
