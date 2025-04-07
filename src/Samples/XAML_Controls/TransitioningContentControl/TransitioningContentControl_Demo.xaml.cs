@@ -6,7 +6,7 @@ using System.Windows.Controls;
 namespace OpenSilver.Samples.Showcase;
 
 [SearchKeywords("animation")]
-public partial class TransitioningContentControl_Demo : ContentControl
+public partial class TransitioningContentControl_Demo : UserControl
 {
     public TransitioningContentControl_Demo()
     {

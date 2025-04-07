@@ -1,28 +1,37 @@
-﻿<UserControl
-    x:Class="OpenSilver.Samples.Showcase.Frame_Demo"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
-    <ContentControl Style="{StaticResource Card_Style}" Width="200">
+﻿<UserControl x:Class="OpenSilver.Samples.Showcase.Frame_Demo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+
+    <ContentControl Width="200" Style="{StaticResource Card_Style}">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="Frame" Foreground="#FF73AFB3" Background="#FF91C3C5" Style="{StaticResource HeaderControl_Style}"/>
-            <TextBlock Grid.Row="1" Text="(Demo under construction)" Foreground="DarkGray" FontSize="12" Margin="0,25,0,20" HorizontalAlignment="Center"/>
-            <local:ViewSourceButton Grid.Row="2"
-                                    Background="#FF13D7E3">
+
+            <ContentControl Background="#FF91C3C5"
+                            Content="Frame"
+                            Foreground="#FF73AFB3"
+                            Style="{StaticResource HeaderControl_Style}"/>
+
+            <TextBlock Grid.Row="1"
+                       Margin="0,25,0,20"
+                       FontSize="14"
+                       Text="The Showcase uses a Frame control to navigate between pages. For example, refer to the source code of MainPage and SearchPage."
+                       TextWrapping="Wrap"/>
+
+            <local:ViewSourceButton Grid.Row="2" Background="#FF13D7E3">
                 <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Frame"
-                                                FileName="Frame_Demo.xaml" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Frame"
-                                                FileName="Frame_Demo.xaml.cs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Frame"
-                                                FileName="Frame_Demo.xaml.vb" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Frame"
-                                                FileName="Frame_Demo.xaml.fs" />
+                    <local:ViewSourceButtonInfo FileName="MainPage.xaml" RelativePath="src"/>
+                    <local:ViewSourceButtonInfo FileName="MainPage.xaml.cs" RelativePath="src"/>
+                    <local:ViewSourceButtonInfo FileName="MainPage.xaml.vb" RelativePath="src"/>
+                    <local:ViewSourceButtonInfo FileName="MainPage.xaml.fs" RelativePath="src"/>
+                    <local:ViewSourceButtonInfo FileName="SearchPage.xaml" RelativePath="src/Samples"/>
+                    <local:ViewSourceButtonInfo FileName="SearchPage.xaml.cs" RelativePath="src/Samples"/>
+                    <local:ViewSourceButtonInfo FileName="SearchPage.xaml.vb" RelativePath="src/Samples"/>
+                    <local:ViewSourceButtonInfo FileName="SearchPage.xaml.fs" RelativePath="src/Samples"/>
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

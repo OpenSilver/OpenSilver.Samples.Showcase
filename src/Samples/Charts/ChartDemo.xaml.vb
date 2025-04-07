@@ -3,7 +3,7 @@ Imports System.Windows.Controls
 
 Namespace OpenSilver.Samples.Showcase
     Partial Public Class ChartDemo
-        Inherits ContentControl
+        Inherits UserControl
 
         Private Const MinLargeWidth As Integer = 700
         Private Const CardMargin As Integer = 50
@@ -43,9 +43,14 @@ Namespace OpenSilver.Samples.Showcase
 
         Private Sub UpdateCardSize(cardWidth As Double, cardHeight As Double)
             _lastCardWidth = cardWidth
-            Width = cardWidth
-            Height = cardHeight
+
+            Dim contentElement As FrameworkElement = TryCast(Content, FrameworkElement)
+            If contentElement IsNot Nothing Then
+                contentElement.Width = cardWidth
+                contentElement.Height = cardHeight
+            End If
         End Sub
+
 
     End Class
 End Namespace

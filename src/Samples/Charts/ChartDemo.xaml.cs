@@ -4,7 +4,7 @@ using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase
 {
-    public partial class ChartDemo : ContentControl
+    public partial class ChartDemo : UserControl
     {
         private const int MinLargeWidth = 700;
         private const int CardMargin = 50;
@@ -54,8 +54,8 @@ namespace OpenSilver.Samples.Showcase
         {
             _lastCardWidth = cardWidth;
 
-            Width = cardWidth;
-            Height = cardHeight;
+            (Content as FrameworkElement).Width = cardWidth;
+            (Content as FrameworkElement).Height = cardHeight;
         }
     }
 }

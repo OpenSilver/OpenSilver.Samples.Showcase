@@ -6,7 +6,7 @@ Namespace OpenSilver.Samples.Showcase
 
     <SearchKeywords("input", "counter", "control", "buttonspinner")>
     Partial Public Class UpDownBase_Demo
-        Inherits ContentControl
+        Inherits UserControl
 
         Public Sub New()
             InitializeComponent()

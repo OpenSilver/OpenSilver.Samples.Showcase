@@ -5,7 +5,7 @@ Namespace OpenSilver.Samples.Showcase
 
     <SearchKeywords("updown")>
     Partial Public Class ButtonSpinner_Demo
-        Inherits ContentControl
+        Inherits UserControl
 
         Private ReadOnly _months As String() = {
             "January", "February", "March", "April", "May", "June",

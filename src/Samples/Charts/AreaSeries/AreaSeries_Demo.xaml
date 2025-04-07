@@ -3,39 +3,41 @@
                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                  xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-        <ContentControl Background="#FFD2BD9C"
-                        Content="AreaSeries"
-                        Foreground="#FFDEA542"
-                        Style="{StaticResource HeaderControl_Style}"/>
-        <Chart Grid.Row="1">
-            <Chart.Axes>
-                <CategoryAxis Title="Period" Orientation="X"/>
-                <CategoryAxis Title="Sales" Orientation="Y"/>
-            </Chart.Axes>
-            <Chart.Series>
-                <AreaSeries x:Name="ChairsSeries"
-                            Title="Chairs"
-                            DependentValuePath="Sales"
-                            IndependentValuePath="Month"/>
-                <AreaSeries x:Name="TablesSeries"
-                            Title="Tables"
-                            DependentValuePath="Sales"
-                            IndependentValuePath="Month"/>
-            </Chart.Series>
-        </Chart>
-        <local:ViewSourceButton Grid.Row="2" Background="#FCAB54">
-            <local:ViewSourceButton.Sources>
-                <local:ViewSourceButtonInfo FileName="AreaSeries_Demo.xaml" RelativePath="src/Samples/Charts/AreaSeries"/>
-                <local:ViewSourceButtonInfo FileName="AreaSeries_Demo.xaml.cs" RelativePath="src/Samples/Charts/AreaSeries"/>
-                <local:ViewSourceButtonInfo FileName="AreaSeries_Demo.xaml.vb" RelativePath="src/Samples/Charts/AreaSeries"/>
-                <local:ViewSourceButtonInfo FileName="AreaSeries_Demo.xaml.fs" RelativePath="src/Samples/Charts/AreaSeries"/>
-            </local:ViewSourceButton.Sources>
-        </local:ViewSourceButton>
-    </Grid>
+    <ContentControl Style="{StaticResource Card_Style}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl Background="#FFD2BD9C"
+                            Content="AreaSeries"
+                            Foreground="#FFDEA542"
+                            Style="{StaticResource HeaderControl_Style}"/>
+            <Chart Grid.Row="1">
+                <Chart.Axes>
+                    <CategoryAxis Title="Period" Orientation="X"/>
+                    <CategoryAxis Title="Sales" Orientation="Y"/>
+                </Chart.Axes>
+                <Chart.Series>
+                    <AreaSeries x:Name="ChairsSeries"
+                                Title="Chairs"
+                                DependentValuePath="Sales"
+                                IndependentValuePath="Month"/>
+                    <AreaSeries x:Name="TablesSeries"
+                                Title="Tables"
+                                DependentValuePath="Sales"
+                                IndependentValuePath="Month"/>
+                </Chart.Series>
+            </Chart>
+            <local:ViewSourceButton Grid.Row="2" Background="#FCAB54">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo FileName="AreaSeries_Demo.xaml" RelativePath="src/Samples/Charts/AreaSeries"/>
+                    <local:ViewSourceButtonInfo FileName="AreaSeries_Demo.xaml.cs" RelativePath="src/Samples/Charts/AreaSeries"/>
+                    <local:ViewSourceButtonInfo FileName="AreaSeries_Demo.xaml.vb" RelativePath="src/Samples/Charts/AreaSeries"/>
+                    <local:ViewSourceButtonInfo FileName="AreaSeries_Demo.xaml.fs" RelativePath="src/Samples/Charts/AreaSeries"/>
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
 </local:ChartDemo>

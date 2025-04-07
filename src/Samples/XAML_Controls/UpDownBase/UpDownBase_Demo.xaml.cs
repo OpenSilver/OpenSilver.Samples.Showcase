@@ -6,7 +6,7 @@ using System.Windows.Controls;
 namespace OpenSilver.Samples.Showcase;
 
 [SearchKeywords("input", "counter", "control", "buttonspinner")]
-public partial class UpDownBase_Demo : ContentControl
+public partial class UpDownBase_Demo : UserControl
 {
     public UpDownBase_Demo()
     {

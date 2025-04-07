@@ -2,32 +2,34 @@
                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                  xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
-    
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-        <ContentControl Background="#FFD2BD9C"
-                        Content="PieSeries"
-                        Foreground="#FFDEA542"
-                        Style="{StaticResource HeaderControl_Style}"/>
-        <Chart Grid.Row="1">
-            <Chart.Series>
-                <PieSeries x:Name="CostsSeries"
-                           Title="Production costs"
-                           DependentValuePath="Cost"
-                           IndependentValuePath="Name"/>
-            </Chart.Series>
-        </Chart>
-        <local:ViewSourceButton Grid.Row="2" Background="#FCAB54">
-            <local:ViewSourceButton.Sources>
-                <local:ViewSourceButtonInfo FileName="PieSeries_Demo.xaml" RelativePath="src/Samples/Charts/PieSeries"/>
-                <local:ViewSourceButtonInfo FileName="PieSeries_Demo.xaml.cs" RelativePath="src/Samples/Charts/PieSeries"/>
-                <local:ViewSourceButtonInfo FileName="PieSeries_Demo.xaml.vb" RelativePath="src/Samples/Charts/PieSeries"/>
-                <local:ViewSourceButtonInfo FileName="PieSeries_Demo.xaml.fs" RelativePath="src/Samples/Charts/PieSeries"/>
-            </local:ViewSourceButton.Sources>
-        </local:ViewSourceButton>
-    </Grid>
+
+    <ContentControl Style="{StaticResource Card_Style}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl Background="#FFD2BD9C"
+                            Content="PieSeries"
+                            Foreground="#FFDEA542"
+                            Style="{StaticResource HeaderControl_Style}"/>
+            <Chart Grid.Row="1">
+                <Chart.Series>
+                    <PieSeries x:Name="CostsSeries"
+                               Title="Production costs"
+                               DependentValuePath="Cost"
+                               IndependentValuePath="Name"/>
+                </Chart.Series>
+            </Chart>
+            <local:ViewSourceButton Grid.Row="2" Background="#FCAB54">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo FileName="PieSeries_Demo.xaml" RelativePath="src/Samples/Charts/PieSeries"/>
+                    <local:ViewSourceButtonInfo FileName="PieSeries_Demo.xaml.cs" RelativePath="src/Samples/Charts/PieSeries"/>
+                    <local:ViewSourceButtonInfo FileName="PieSeries_Demo.xaml.vb" RelativePath="src/Samples/Charts/PieSeries"/>
+                    <local:ViewSourceButtonInfo FileName="PieSeries_Demo.xaml.fs" RelativePath="src/Samples/Charts/PieSeries"/>
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
 </local:ChartDemo>

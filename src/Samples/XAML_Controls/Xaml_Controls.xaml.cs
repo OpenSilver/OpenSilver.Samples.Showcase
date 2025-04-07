@@ -14,7 +14,6 @@ namespace OpenSilver.Samples.Showcase
 #endif
             ScrollBarDemo.Visibility = Visibility.Collapsed;
             ThumbDemo.Visibility = Visibility.Collapsed;
-            FrameDemo.Visibility = Visibility.Collapsed; // The Showcase already uses a Frame to change pages anyway
 
             var dataGridDemoIndex = SamplesPanel.Children.IndexOf(DataGridDemo);
             SamplesPanel.Children.Insert(dataGridDemoIndex, new DataGridGrouping());

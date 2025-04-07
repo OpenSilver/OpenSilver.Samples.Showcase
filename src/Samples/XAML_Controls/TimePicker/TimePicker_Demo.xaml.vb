@@ -5,7 +5,7 @@ Namespace OpenSilver.Samples.Showcase
 
     <SearchKeywords("input", "selection")>
     Partial Public Class TimePicker_Demo
-        Inherits ContentControl
+        Inherits UserControl
 
         Public Sub New()
             InitializeComponent()
