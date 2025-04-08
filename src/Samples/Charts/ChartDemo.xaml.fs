@@ -44,5 +44,8 @@ type public ChartDemo() as this =
 
     member private this.UpdateCardSize(cardWidth: float, cardHeight: float) =
         lastCardWidth <- cardWidth
-        this.Width <- cardWidth
-        this.Height <- cardHeight
+        match this.Content with
+        | :? FrameworkElement as fe ->
+            fe.Width <- cardWidth
+            fe.Height <- cardHeight
+        | _ -> ()

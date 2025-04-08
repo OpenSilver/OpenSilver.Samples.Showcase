@@ -1,9 +1,10 @@
 ﻿namespace OpenSilver.Samples.Showcase
 
 open System.Windows
-open System.Windows.Controls
 open System.Windows.Browser
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("HTML", "browser", "web", "host")>]
 type HtmlPage_Demo() as this =
     inherit HtmlPage_DemoXaml()
 

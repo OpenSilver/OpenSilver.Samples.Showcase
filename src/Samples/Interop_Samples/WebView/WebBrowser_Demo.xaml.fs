@@ -2,8 +2,9 @@
 
 open System
 open System.Windows
-open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("WebBrowser", "browser", "embed", "web content", "UI")>]
 type WebView_Demo() as this =
     inherit WebView_DemoXaml()
     

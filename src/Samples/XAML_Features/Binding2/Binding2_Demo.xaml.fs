@@ -1,7 +1,8 @@
 ﻿namespace OpenSilver.Samples.Showcase
 
-open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("data", "MVVM", "binding", "UI")>]
 type Binding2_Demo() as this =
     inherit Binding2_DemoXaml()
 

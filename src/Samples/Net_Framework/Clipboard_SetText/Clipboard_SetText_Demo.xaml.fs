@@ -1,8 +1,9 @@
 ﻿namespace OpenSilver.Samples.Showcase
 
 open System.Windows
-open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("clipboard", "copy", "paste", "text", "interaction")>]
 type Clipboard_SetText_Demo() as this =
     inherit Clipboard_SetText_DemoXaml()
 

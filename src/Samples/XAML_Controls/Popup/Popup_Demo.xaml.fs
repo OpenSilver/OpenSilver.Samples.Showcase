@@ -1,8 +1,9 @@
 ﻿namespace OpenSilver.Samples.Showcase
 
 open System.Windows
-open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("popup", "modal", "window", "overlay", "UI")>]
 type Popup_Demo() as this =
     inherit Popup_DemoXaml()
     

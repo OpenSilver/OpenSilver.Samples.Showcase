@@ -1,10 +1,10 @@
 ﻿namespace OpenSilver.Samples.Showcase
 
 // open ServiceReference1
-open System.ServiceModel
 open System.Windows
-open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("WCF", "SOAP", "web", "service", "communication", "network")>]
 type WCF_SOAP_Demo() as this = 
     inherit WCF_SOAP_DemoXaml()
 

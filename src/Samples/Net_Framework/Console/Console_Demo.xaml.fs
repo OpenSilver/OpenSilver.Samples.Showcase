@@ -1,7 +1,8 @@
 ﻿namespace OpenSilver.Samples.Showcase
 
-open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("console", "output", "debugging", "logging")>]
 type Console_Demo() as this =
     inherit Console_DemoXaml()
 

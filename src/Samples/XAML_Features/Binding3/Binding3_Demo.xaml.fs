@@ -3,11 +3,13 @@
 open System.Collections.ObjectModel
 open System.Windows
 open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
 type Person3() =
     member val FirstName = "" with get, set
     member val LastName = "" with get, set
 
+[<SearchKeywords("data", "MVVM", "binding", "UI")>]
 type Binding3_Demo() as this =
     inherit Binding3_DemoXaml()
 

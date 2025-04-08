@@ -3,7 +3,9 @@
 open System.Windows
 open System.Windows.Controls
 open System.Windows.Input
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("interaction", "drag", "drop", "UI")>]
 type Drag_And_Drop_Demo() as this =
     inherit Drag_And_Drop_DemoXaml()
 

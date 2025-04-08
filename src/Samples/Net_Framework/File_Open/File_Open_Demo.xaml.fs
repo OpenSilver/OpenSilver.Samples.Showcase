@@ -1,8 +1,9 @@
 ﻿namespace OpenSilver.Samples.Showcase
 
 open System.Windows
-open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("file", "open", "dialog", "filesystem", "load")>]
 type File_Open_Demo() as this =
     inherit File_Open_DemoXaml()
 

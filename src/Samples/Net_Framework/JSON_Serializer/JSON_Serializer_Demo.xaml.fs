@@ -3,8 +3,9 @@
 open Newtonsoft.Json
 open System
 open System.Windows
-open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("JSON", "serialization", "deserialization", "serialize")>]
 type Product() =
     member val Name = "" with get, set
     //member val ProductType = ProductType.B2C with get, set

@@ -5,9 +5,10 @@ open System.IO
 open System.IO.IsolatedStorage
 open System.Text
 open System.Windows
-open System.Windows.Controls
 open OpenSilver
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("storage", "file system", "sandbox", "local files", "persistence")>]
 type IsolatedStorageFile_Demo() as this =
     inherit IsolatedStorageFile_DemoXaml()
 

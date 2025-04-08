@@ -1,8 +1,9 @@
 ﻿namespace OpenSilver.Samples.Showcase
 
 open System.Windows
-open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("fullscreen", "UI", "display", "window", "maximize")>]
 type FullScreen_Demo() as this =
     inherit FullScreen_DemoXaml()
 

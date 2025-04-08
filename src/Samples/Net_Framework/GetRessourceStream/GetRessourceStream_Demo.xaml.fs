@@ -3,8 +3,9 @@
 open System
 open System.IO
 open System.Windows
-open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("resource", "stream", "file access", "embedded resources", "load")>]
 type GetRessourceStream_Demo() as this =
     inherit GetRessourceStream_DemoXaml()
     

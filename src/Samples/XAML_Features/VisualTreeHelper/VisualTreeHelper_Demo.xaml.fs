@@ -2,9 +2,10 @@
 
 open System.Text
 open System.Windows
-open System.Windows.Controls
 open System.Windows.Media
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("visual tree", "UI elements", "XAML", "hierarchy", "UI")>]
 type VisualTreeHelper_Demo() as this =
     inherit VisualTreeHelper_DemoXaml()
 

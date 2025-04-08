@@ -2,9 +2,10 @@
 
 open System
 open System.Windows
-open System.Windows.Controls
 open System.Windows.Threading
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("timer", "interval", "event", "clock")>]
 type DispatcherTimer_Demo() as this =
     inherit DispatcherTimer_DemoXaml()
 

@@ -1,9 +1,9 @@
 ﻿namespace OpenSilver.Samples.Showcase
 
-open System.Windows.Controls
 open System.Windows.Controls.Primitives
+open OpenSilver.Samples.Showcase.Search
 
-
+[<SearchKeywords("scroll", "bar", "navigation", "UI", "container")>]
 type ScrollBar_Demo() as this =
     inherit ScrollBar_DemoXaml()
 

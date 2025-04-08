@@ -2,7 +2,9 @@
 
 open System.Windows
 open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("click", "interaction", "command")>]
 type Button_Demo() as this =
     inherit Button_DemoXaml()
 

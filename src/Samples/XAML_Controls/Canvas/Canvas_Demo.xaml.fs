@@ -1,7 +1,8 @@
 ﻿namespace OpenSilver.Samples.Showcase
 
-open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("layout", "canvas", "absolute positioning", "drawing", "graphics")>]
 type Canvas_Demo() as this =
     inherit Canvas_DemoXaml()
     

@@ -1,7 +1,8 @@
 ﻿namespace OpenSilver.Samples.Showcase
 
-open System.Windows.Controls
-    
+open OpenSilver.Samples.Showcase.Search
+
+[<SearchKeywords("navigation", "frame", "content", "view", "container")>]
 type Frame_Demo() as this =
     inherit Frame_DemoXaml()
 

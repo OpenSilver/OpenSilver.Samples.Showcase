@@ -7,7 +7,9 @@ open System.Windows
 open System.Windows.Controls
 open System.Windows.Ink
 open System.Windows.Input
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("drawing", "inking", "pen input", "sketch", "graphics")>]
 type InkPresenter_Demo() as this =
     inherit InkPresenter_DemoXaml()
 

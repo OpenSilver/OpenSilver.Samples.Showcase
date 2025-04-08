@@ -1,8 +1,9 @@
 ﻿namespace OpenSilver.Samples.Showcase
 
 open System.Windows
-open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("media", "video", "audio", "multimedia", "playback", "play")>]
 type MediaElement_Demo() as this =
     inherit MediaElement_DemoXaml()
     

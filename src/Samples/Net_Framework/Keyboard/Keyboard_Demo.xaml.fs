@@ -2,9 +2,10 @@
 
 open System
 open System.Windows
-open System.Windows.Controls
 open System.Windows.Input
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("input", "keypress", "event", "interaction")>]
 type Keyboard_Demo() as this =
     inherit Keyboard_DemoXaml()
 

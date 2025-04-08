@@ -3,7 +3,9 @@
 open System.Windows.Controls
 open System.Windows.Input
 open System.Windows.Media
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("coordinates", "mouse", "hit test", "interaction")>]
 type FindElementsInHostCoordinates_Demo() as this =
     inherit FindElementsInHostCoordinates_DemoXaml()
 

@@ -2,7 +2,9 @@
 
 open System.Windows
 open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("HTML", "interop", "rendering", "web", "UI")>]
 type Interop_HtmlPresenter_Demo() as this =
     inherit Interop_HtmlPresenter_DemoXaml()
 

@@ -1,9 +1,10 @@
 ﻿namespace OpenSilver.Samples.Showcase
 
 open System.Windows
-open System.Windows.Controls
 open System.Windows.Media.Animation
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("animation", "effects", "motion", "behavior")>]
 type Animations_Demo() as this =
     inherit Animations_DemoXaml()
 

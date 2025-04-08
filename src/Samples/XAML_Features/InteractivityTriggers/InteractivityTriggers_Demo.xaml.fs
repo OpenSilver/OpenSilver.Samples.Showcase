@@ -3,7 +3,8 @@
 open System
 open System.Windows.Input
 open System.Windows
-open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
+
 
 type InteractivityTestViewModel() =
     let testCommand = InteractivityTestICommandClass()
@@ -22,6 +23,7 @@ and InteractivityTestICommandClass() =
         [<CLIEvent>]
         member this.CanExecuteChanged = canExecuteChanged.Publish        
 
+[<SearchKeywords("interaction", "triggers", "behavior", "events", "UI")>]
 type InteractivityTriggers_Demo() as this =
     inherit InteractivityTriggers_DemoXaml()
 

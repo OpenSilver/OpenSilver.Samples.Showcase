@@ -10,7 +10,9 @@ open System.Runtime.Serialization
 open System.Text
 open System.Windows
 open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("REST", "API", "HttpClient", "HTTP", "web", "service")>]
 type REST_HttpClient_Demo() as this =
     inherit REST_HttpClient_DemoXaml()
 

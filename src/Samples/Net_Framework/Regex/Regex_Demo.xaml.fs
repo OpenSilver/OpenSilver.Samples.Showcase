@@ -2,8 +2,9 @@
 
 open System.Text.RegularExpressions
 open System.Windows
-open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("regular expressions", "pattern", "match", "string processing", "search", "validation")>]
 type Regex_Demo() as this =
     inherit Regex_DemoXaml()
 

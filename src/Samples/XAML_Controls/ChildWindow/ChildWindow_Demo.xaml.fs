@@ -4,7 +4,9 @@ open PreviewOnWinRT
 open System
 open System.Windows
 open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("layout", "window", "popup", "modal", "dialog")>]
 type ChildWindow_Demo() as this =
     inherit ChildWindow_DemoXaml()
 

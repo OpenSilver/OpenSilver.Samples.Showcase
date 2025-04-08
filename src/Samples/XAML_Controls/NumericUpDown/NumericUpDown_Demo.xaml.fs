@@ -1,7 +1,8 @@
 ﻿namespace OpenSilver.Samples.Showcase
 
-open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("input", "numeric", "updown", "spinner", "counter", "control", "buttonspinner")>]
 type NumericUpDown_Demo() as this =
     inherit NumericUpDown_DemoXaml()
     

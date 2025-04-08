@@ -2,9 +2,10 @@
 
 open System
 open System.Windows
-open System.Windows.Controls
 open System.Windows.Media
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("input", "repeat", "button", "click", "control")>]
 type RepeatButton_Demo() as this =
     inherit RepeatButton_DemoXaml()
     

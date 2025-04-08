@@ -1,22 +1,12 @@
 ﻿namespace OpenSilver.Samples.Showcase
 
-open  System
-open  System.Collections.Generic
-open  System.Diagnostics
 open  System.IO
-open  System.Linq
-open  System.Runtime.InteropServices.ComTypes
-open  System.Security
 open  System.Text
 open  System.Windows
-open  System.Windows.Controls
-open  System.Windows.Controls.Primitives
-open  System.Windows.Data
-open  System.Windows.Input
-open  System.Windows.Media
-open  System.Windows.Navigation
 open  OpenSilver.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("file", "dialog", "filesystem", "browse")>]
 type OpenFileDialog_Demo() as this =
     inherit OpenFileDialog_DemoXaml()
 

@@ -3,9 +3,8 @@
 open System
 open System.IO
 open System.Runtime.Serialization
-open System.Text
 open System.Windows
-open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
 [<DataContract>]
 type ClassToSerialize() =
@@ -18,6 +17,7 @@ type ClassToSerialize() =
     [<field: DataMember>]
     member val BooleanField = false with get, set
 
+[<SearchKeywords("serialization", "deserialization", "data contract", "XML", "data exchange")>]
 type DataContractSerializer_Demo() as this =
     inherit DataContractSerializer_DemoXaml()
 

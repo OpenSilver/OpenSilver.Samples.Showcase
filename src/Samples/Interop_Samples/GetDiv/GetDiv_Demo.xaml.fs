@@ -3,7 +3,9 @@
 open OpenSilver
 open System.Windows
 open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("HTML", "DOM", "JavaScript", "interop")>]
 type GetDiv_Demo() as this =
     inherit GetDiv_DemoXaml()
     

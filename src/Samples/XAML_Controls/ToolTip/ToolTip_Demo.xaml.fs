@@ -1,7 +1,8 @@
 ﻿namespace OpenSilver.Samples.Showcase
 
-open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("tooltip", "hover", "info", "help", "UI")>]
 type ToolTip_Demo() as this =
     inherit ToolTip_DemoXaml()
     

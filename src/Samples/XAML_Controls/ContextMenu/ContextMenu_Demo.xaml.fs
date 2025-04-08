@@ -1,8 +1,9 @@
 ﻿namespace OpenSilver.Samples.Showcase
 
 open System.Windows
-open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("menu", "context", "right-click", "items", "commands", "options", "control", "separator")>]
 type ContextMenu_Demo() as this =
     inherit ContextMenu_DemoXaml()
 

@@ -5,7 +5,9 @@ open System
 open System.Windows
 open System.Windows.Controls
 open System.Threading.Tasks
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("performance", "HTML canvas", "sprites", "FPS", "graphics")>]
 type HtmlCanvas_Demo() as this =
     inherit HtmlCanvas_DemoXaml()
 

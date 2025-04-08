@@ -1,7 +1,8 @@
 ﻿namespace OpenSilver.Samples.Showcase
 
-open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("layout", "wrap", "panel", "container", "arrangement", "orientation", "items")>]
 type WrapPanel_Demo() as this =
     inherit WrapPanel_DemoXaml()
     

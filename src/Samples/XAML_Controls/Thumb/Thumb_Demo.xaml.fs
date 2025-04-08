@@ -1,7 +1,8 @@
 ﻿namespace OpenSilver.Samples.Showcase
 
-open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("drag", "thumb", "slider", "scroll", "UI")>]
 type Thumb_Demo() as this =
     inherit Thumb_DemoXaml()
     

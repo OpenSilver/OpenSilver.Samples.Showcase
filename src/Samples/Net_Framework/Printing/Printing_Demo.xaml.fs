@@ -1,8 +1,9 @@
 ﻿namespace OpenSilver.Samples.Showcase
 
 open System.Windows
-open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("print", "document", "preview")>]
 type Printing_Demo() as this =
     inherit Printing_DemoXaml()
 

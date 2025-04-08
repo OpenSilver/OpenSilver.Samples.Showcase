@@ -2,7 +2,9 @@
 
 open System.Windows
 open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("data", "MVVM", "binding", "UI")>]
 type Binding1_Demo() as this =
     inherit Binding1_DemoXaml()
 

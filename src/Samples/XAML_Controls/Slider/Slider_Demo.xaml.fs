@@ -1,7 +1,8 @@
 ﻿namespace OpenSilver.Samples.Showcase
 
-open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("input", "slider", "range", "selection", "control")>]
 type Slider_Demo() as this =
     inherit Slider_DemoXaml()
     

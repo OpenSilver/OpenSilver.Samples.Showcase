@@ -3,7 +3,9 @@
 open OpenSilver
 open System.Windows
 open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("DOM", "JavaScript", "update", "HTML", "interop")>]
 type MethodToUpdateDom_Demo() as this =
     inherit MethodToUpdateDom_DemoXaml()
 

@@ -2,8 +2,9 @@
 
 open System
 open System.Windows
-open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("window", "resize", "event", "UI")>]
 type Window_SizeChanged_Demo() as this =
     inherit Window_SizeChanged_DemoXaml()
 

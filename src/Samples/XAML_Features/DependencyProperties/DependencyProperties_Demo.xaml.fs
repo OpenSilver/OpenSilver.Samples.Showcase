@@ -1,8 +1,9 @@
 ﻿namespace OpenSilver.Samples.Showcase
 
 open System.Windows
-open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("properties", "dependency property", "binding", "XAML", "UI")>]
 type DependencyProperties_Demo() as this =
     inherit DependencyProperties_DemoXaml()
 

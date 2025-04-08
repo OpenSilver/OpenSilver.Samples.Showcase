@@ -1,7 +1,8 @@
 ﻿namespace OpenSilver.Samples.Showcase
 
-open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("input", "toggle", "switch", "boolean", "button", "control")>]
 type ToggleButton_Demo() as this =
     inherit ToggleButton_DemoXaml()
     

@@ -1,7 +1,8 @@
 ﻿namespace OpenSilver.Samples.Showcase
 
-open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("navigation", "tab", "interface", "section", "control")>]
 type TabControl_Demo() as this =
     inherit TabControl_DemoXaml()
     

@@ -1,7 +1,8 @@
 ﻿namespace OpenSilver.Samples.Showcase
 
-open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("media", "image", "picture", "graphics", "display")>]
 type Image_Demo() as this =
     inherit Image_DemoXaml()
 

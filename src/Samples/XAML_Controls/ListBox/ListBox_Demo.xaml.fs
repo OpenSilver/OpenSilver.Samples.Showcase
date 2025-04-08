@@ -1,7 +1,8 @@
 ﻿namespace OpenSilver.Samples.Showcase
 
-open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("input", "selection", "list", "items", "choices")>]
 type ListBox_Demo() as this =
     inherit ListBox_DemoXaml()
     

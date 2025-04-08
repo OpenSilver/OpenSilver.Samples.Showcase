@@ -1,8 +1,9 @@
 ﻿namespace OpenSilver.Samples.Showcase
 
-open System.Windows.Controls
 open System.Windows.Input
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("mouse", "scrolling", "interaction", "input", "event")>]
 type MouseWheel_Demo() as this =
     inherit MouseWheel_DemoXaml()
 

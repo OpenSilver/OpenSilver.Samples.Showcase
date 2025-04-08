@@ -2,8 +2,9 @@
 
 open System
 open System.Windows
-open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("query", "queries", "data processing", "collections")>]
 type Linq_Demo() as this =
     inherit Linq_DemoXaml()
     

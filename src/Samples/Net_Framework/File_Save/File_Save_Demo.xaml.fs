@@ -1,9 +1,10 @@
 ﻿namespace OpenSilver.Samples.Showcase
 
 open System.Windows
-open System.Windows.Controls
 open OpenSilver.Extensions.FileSystem
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("file", "save")>]
 type File_Save_Demo() as this =
     inherit File_Save_DemoXaml()
 

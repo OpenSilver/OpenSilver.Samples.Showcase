@@ -2,8 +2,9 @@
 
 open System.Windows
 open System.Windows.Controls
-open System.Windows.Data
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("input", "form", "data entry", "error handling", "UI", "validationsummary", "descriptionviewer", "label")>]
 type Validation_Demo() as this =
     inherit Validation_DemoXaml()
 

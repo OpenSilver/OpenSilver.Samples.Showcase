@@ -1,8 +1,9 @@
 ﻿namespace OpenSilver.Samples.Showcase
 
 open System.Windows
-open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("WebSockets", "network", "communication", "web")>]
 type WebSockets_Demo() as this =
     inherit WebSockets_DemoXaml()
     

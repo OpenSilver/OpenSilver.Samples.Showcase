@@ -1,8 +1,9 @@
 ﻿namespace OpenSilver.Samples.Showcase
 
 open System.Collections.Generic
-open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("input", "autocomplete", "auto-complete", "text", "entry", "search")>]
 type AutoCompleteBox_Demo() as this =
     inherit AutoCompleteBox_DemoXaml()
 

@@ -1,7 +1,8 @@
 ﻿namespace OpenSilver.Samples.Showcase
 
-open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("scaling", "resize", "zoom", "layout", "UI")>]
 type Viewbox_Demo() as this =
     inherit Viewbox_DemoXaml()
     

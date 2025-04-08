@@ -2,7 +2,9 @@
 
 open System.Windows
 open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("input", "toggle", "boolean", "selection", "form")>]
 type CheckBox_Demo() as this =
     inherit CheckBox_DemoXaml()
     

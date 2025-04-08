@@ -3,7 +3,9 @@
 open OpenSilver
 open System.Windows
 open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("JavaScript", "interop", "browser", "script")>]
 type ExecuteJavaScript_Demo() as this =
     inherit ExecuteJavaScript_DemoXaml()
     

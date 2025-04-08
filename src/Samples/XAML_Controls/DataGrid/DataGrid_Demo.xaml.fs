@@ -1,7 +1,8 @@
 ﻿namespace OpenSilver.Samples.Showcase
 
-open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("data", "display", "grid", "table", "binding", "datapager")>]
 type DataGrid_Demo() as this =
     inherit DataGrid_DemoXaml()
 

@@ -3,7 +3,9 @@
 open System.Windows
 open System.Windows.Controls
 open System.Threading.Tasks
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("asynchronous", "await", "task", "thread")>]
 type AsyncAwait_Demo() as this =
     inherit AsyncAwait_DemoXaml()
     

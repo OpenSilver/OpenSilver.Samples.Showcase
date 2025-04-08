@@ -3,8 +3,9 @@
 open OpenSilver.Extensions.FileSystem
 open Ionic.Zip
 open System.Windows
-open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("compression", "zip", "file", "archive")>]
 type Zip_Demo() as this =
     inherit Zip_DemoXaml()
 

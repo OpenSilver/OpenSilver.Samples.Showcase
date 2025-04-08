@@ -1,7 +1,8 @@
 ﻿namespace OpenSilver.Samples.Showcase
 
-open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("graphics", "shapes", "drawing", "vector", "UI")>]
 type Shapes_Demo() as this =
     inherit Shapes_DemoXaml()
     

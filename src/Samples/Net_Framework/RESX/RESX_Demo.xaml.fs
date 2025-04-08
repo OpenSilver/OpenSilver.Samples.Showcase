@@ -1,10 +1,11 @@
 ﻿namespace OpenSilver.Samples.Showcase
 
 open System.Windows
-open System.Windows.Controls
 open System.Resources
 open System.Reflection
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("resources", "localization", "RESX", "translation")>]
 type RESX_Demo() as this =
     inherit RESX_DemoXaml()
 

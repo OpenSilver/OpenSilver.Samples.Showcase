@@ -1,8 +1,9 @@
 ﻿namespace OpenSilver.Samples.Showcase
 
 open System.Windows
-open System.Windows.Controls
+open OpenSilver.Samples.Showcase.Search
 
+[<SearchKeywords("input", "password", "text", "entry", "form")>]
 type PasswordBox_Demo() as this =
     inherit PasswordBox_DemoXaml()
 
