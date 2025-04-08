@@ -1,33 +1,22 @@
 ﻿using OpenSilver.Samples.Showcase.Search;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
-using System.Windows.Data;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Navigation;
 using System.Windows.Threading;
 
 namespace OpenSilver.Samples.Showcase
 {
-    [SearchKeywords("loading", "busy", "indicator", "status", "UI")]
+    [SearchKeywords("loading", "busy", "indicator", "status", "loading", "progress")]
     public partial class BusyIndicator_Demo : UserControl
     {
-        DispatcherTimer timer;
-
+        private readonly DispatcherTimer timer;
 
         public BusyIndicator_Demo()
         {
-            this.InitializeComponent();
+            InitializeComponent();
             timer = new DispatcherTimer() { Interval = new TimeSpan(0, 0, 3) };
             timer.Tick += StopBusyIndicator;
         }
-
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
