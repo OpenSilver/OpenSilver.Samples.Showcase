@@ -45,16 +45,14 @@
             <local:ViewSourceButton Grid.Row="3"
                                 Background="#FCAB54">
                 <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Button"
-                                            FileName="Button_Demo.xaml" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Button"
-                                            FileName="Button_Demo.xaml.cs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Button"
-                                            FileName="Button_Demo.xaml.vb" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Button"
-                                            FileName="Button_Demo.xaml.fs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Button/Styles"
-                                            FileName="DefaultButtonStyle.xaml" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/TreeView"
+                                                FileName="TreeView_Demo.xaml" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/TreeView"
+                                                FileName="TreeView_Demo.xaml.cs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/TreeView"
+                                                FileName="TreeView_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/TreeView"
+                                                FileName="TreeView_Demo.xaml.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

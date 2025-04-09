@@ -16,7 +16,7 @@ type ProductionCostData(name: string, cost: int) =
     member val Cost = cost with get, set
     member val Name = name with get, set
 
-type internal Sales() =
+type Sales() =
     static member Tables = Sales.GetListOfTables()
     static member private GetListOfTables() =
         ObservableCollection<SalesData>(
