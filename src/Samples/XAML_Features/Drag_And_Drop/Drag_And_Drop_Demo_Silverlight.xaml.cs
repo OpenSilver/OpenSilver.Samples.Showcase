@@ -5,7 +5,7 @@ using System.Windows.Input;
 
 namespace OpenSilver.Samples.Showcase
 {
-    [SearchKeywords("interaction", "drag", "drop", "UI")]
+    [SearchKeywords("interaction", "drag", "drop", "UI", "dragdroptarget")]
     public partial class Drag_And_Drop_Demo : UserControl
     {
         bool _isPointerCaptured;
@@ -16,7 +16,7 @@ namespace OpenSilver.Samples.Showcase
 
         public Drag_And_Drop_Demo()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
 
         void DragAndDropItem_PointerPressed(object sender, MouseButtonEventArgs e)
