@@ -752,6 +752,12 @@
 		<Compile Include="Samples\XAML_Controls\Frame\Frame_Demo.xaml.fs">
 			<DependentUpon>Samples\XAML_Controls\Frame\Frame_Demo.xaml</DependentUpon>
 		</Compile>
+		<Page Include="Samples\XAML_Controls\GlobalCalendar\GlobalCalendar_Demo.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</Page>
+    <Compile Include="Samples\XAML_Controls\GlobalCalendar\GlobalCalendar_Demo.xaml.fs">
+      <DependentUpon>Samples\XAML_Controls\GlobalCalendar\GlobalCalendar_Demo.xaml</DependentUpon>
+    </Compile>
 		<Page Include="Samples\XAML_Controls\Grid\Grid_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>

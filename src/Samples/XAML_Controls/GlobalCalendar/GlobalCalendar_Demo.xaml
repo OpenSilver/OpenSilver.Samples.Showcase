@@ -1,0 +1,88 @@
+﻿<UserControl x:Class="OpenSilver.Samples.Showcase.GlobalCalendar_Demo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+
+    <ContentControl Width="350" Style="{StaticResource Card_Style}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <ContentControl Background="#FF91C3C5"
+                            Content="GlobalCalendar"
+                            Foreground="#FF73AFB3"
+                            Style="{StaticResource HeaderControl_Style}"/>
+
+            <GlobalCalendar x:Name="globalCalendar" Grid.Row="1"/>
+
+            <Grid Grid.Row="2" Margin="18,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="2"
+                           Margin="0,1,2,0"
+                           VerticalAlignment="Center"
+                           FontSize="12"
+                           Text="Culture"/>
+                <ComboBox Name="culturesCombo"
+                          Grid.Row="2"
+                          Grid.Column="1"
+                          Height="24"
+                          Margin="0,1"
+                          FontSize="12"
+                          SelectionChanged="OnCultureChanged">
+                    <ComboBoxItem Content="Arabic (Egypt)" Tag="ar-EG"/>
+                    <ComboBoxItem Content="Chinese (Simplified)" Tag="zh-Hans"/>
+                    <ComboBoxItem Content="Czech (Czech Republic)" Tag="cs-CZ"/>
+                    <ComboBoxItem Content="Danish (Denmark)" Tag="da-DK"/>
+                    <ComboBoxItem Content="Dutch (Netherlands)" Tag="nl-NL"/>
+                    <ComboBoxItem Content="English (United States)" Tag="en-US"/>
+                    <ComboBoxItem Content="Finnish (Finland)" Tag="fi-FI"/>
+                    <ComboBoxItem Content="French (France)" Tag="fr-FR"/>
+                    <ComboBoxItem Content="German (Germany)" Tag="de-DE"/>
+                    <ComboBoxItem Content="Greek (Greece)" Tag="el-GR"/>
+                    <ComboBoxItem Content="Hebrew (Israel)" Tag="he-IL"/>
+                    <ComboBoxItem Content="Hindi (India)" Tag="hi-IN"/>
+                    <ComboBoxItem Content="Hungarian (Hungary)" Tag="hu-HU"/>
+                    <ComboBoxItem Content="Indonesian (Indonesia)" Tag="id-ID"/>
+                    <ComboBoxItem Content="Irish (Ireland)" Tag="ga-IE"/>
+                    <ComboBoxItem Content="Italian (Italy)" Tag="it-IT"/>
+                    <ComboBoxItem Content="Japanese (Japan)" Tag="ja-JP"/>
+                    <ComboBoxItem Content="Korean (Korea)" Tag="ko-KR"/>
+                    <ComboBoxItem Content="Malay (Malaysia)" Tag="ms-MY"/>
+                    <ComboBoxItem Content="Mongolian (Cyrillic, Mongolia)" Tag="mn-MN"/>
+                    <ComboBoxItem Content="Norwegian, Bokmål (Norway)" Tag="nb-NO"/>
+                    <ComboBoxItem Content="Persian" Tag="fa-IR"/>
+                    <ComboBoxItem Content="Polish (Poland)" Tag="pl-PL"/>
+                    <ComboBoxItem Content="Portuguese (Brazil)" Tag="pt-BR"/>
+                    <ComboBoxItem Content="Romanian (Romania)" Tag="ro-RO"/>
+                    <ComboBoxItem Content="Russian (Russia)" Tag="ru-RU"/>
+                    <ComboBoxItem Content="Spanish (Mexico)" Tag="es-MX"/>
+                    <ComboBoxItem Content="Swedish (Sweden)" Tag="sv-SE"/>
+                    <ComboBoxItem Content="Thai (Thailand)" Tag="th-TH"/>
+                    <ComboBoxItem Content="Turkish (Turkey)" Tag="tr-TR"/>
+                    <ComboBoxItem Content="Ukrainian (Ukraine)" Tag="uk-UA"/>
+                    <ComboBoxItem Content="Vietnamese (Vietnam)" Tag="vi-VN"/>
+                </ComboBox>
+            </Grid>
+
+            <local:ViewSourceButton Grid.Row="3" Background="#FF13D7E3">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo FileName="GlobalCalendar_Demo.xaml" RelativePath="src/Samples/XAML_Controls/GlobalCalendar"/>
+                    <local:ViewSourceButtonInfo FileName="GlobalCalendar_Demo.xaml.cs" RelativePath="src/Samples/XAML_Controls/GlobalCalendar"/>
+                    <local:ViewSourceButtonInfo FileName="GlobalCalendar_Demo.xaml.vb" RelativePath="src/Samples/XAML_Controls/GlobalCalendar"/>
+                    <local:ViewSourceButtonInfo FileName="GlobalCalendar_Demo.xaml.fs" RelativePath="src/Samples/XAML_Controls/GlobalCalendar"/>
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
+</UserControl>
