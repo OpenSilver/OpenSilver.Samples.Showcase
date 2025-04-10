@@ -402,15 +402,7 @@ namespace ServiceReference1
         {
             if ((endpointConfiguration == EndpointConfiguration.BasicHttpBinding_IService1))
             {
-#if OPENSILVER
                 return new System.ServiceModel.Channels.CustomBinding();
-#endif
-                System.ServiceModel.BasicHttpBinding result = new System.ServiceModel.BasicHttpBinding();
-                result.MaxBufferSize = int.MaxValue;
-                result.ReaderQuotas = System.Xml.XmlDictionaryReaderQuotas.Max;
-                result.MaxReceivedMessageSize = int.MaxValue;
-                result.AllowCookies = true;
-                return result;
             }
             if ((endpointConfiguration == EndpointConfiguration.BasicHttpsBinding_IService1))
             {

@@ -9,9 +9,8 @@ namespace OpenSilver.Samples.Showcase
         {
             InitializeComponent();
 
-#if OPENSILVER
+            // todo:
             NonModalChildWindow.Visibility = Visibility.Collapsed;
-#endif
             ScrollBarDemo.Visibility = Visibility.Collapsed;
             ThumbDemo.Visibility = Visibility.Collapsed;
 

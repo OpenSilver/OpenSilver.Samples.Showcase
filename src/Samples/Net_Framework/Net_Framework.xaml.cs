@@ -1,5 +1,5 @@
-﻿using System.Windows.Controls;
-using System.Windows;
+﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase
 {
@@ -7,19 +7,12 @@ namespace OpenSilver.Samples.Showcase
     {
         public Net_Framework()
         {
-            this.InitializeComponent();
+            InitializeComponent();
 
-#if OPENSILVER
-            //File_OpenDemo.Visibility = Visibility.Collapsed;
-            //File_SaveDemo.Visibility = Visibility.Collapsed;
-            //ZipDemo.Visibility = Visibility.Collapsed;
-            //IsolatedStorageFileDemo.Visibility = Visibility.Collapsed;
-            //IsolatedStorageSettingsDemo.Visibility = Visibility.Collapsed;
+            // todo:
             JSON_SerializerDemo.Visibility = Visibility.Collapsed;
             GetRessourceStreamDemo.Visibility = Visibility.Collapsed;
-            //FullScreenDemo.Visibility = Visibility.Collapsed;
             ConsoleDemo.Visibility = Visibility.Collapsed;
-#endif
             RESXDemo.Visibility = Visibility.Collapsed;
         }
     }

@@ -1,5 +1,4 @@
-﻿using Microsoft.Maui.Devices;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase
 {
@@ -7,10 +6,7 @@ namespace OpenSilver.Samples.Showcase
     {
         public Welcome()
         {
-            this.InitializeComponent();
-#if OPENSILVER
-            IntroductionTextBlock.Text = "This app was written in standard C# and XAML, and compiled to WebAssembly using OpenSilver.";
-#endif
+            InitializeComponent();
         }
     }
 }

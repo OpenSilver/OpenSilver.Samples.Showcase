@@ -5,13 +5,11 @@ Namespace Global.OpenSilver.Samples.Showcase
     Public Partial Class Xaml_Controls
         Inherits UserControl
         Public Sub New()
-            Me.InitializeComponent()
+            InitializeComponent()
 
-#If OPENSILVER
-            Me.NonModalChildWindow.Visibility = Visibility.Collapsed
-#End If
-            Me.ScrollBarDemo.Visibility = Visibility.Collapsed
-            Me.ThumbDemo.Visibility = Visibility.Collapsed
+            NonModalChildWindow.Visibility = Visibility.Collapsed
+            ScrollBarDemo.Visibility = Visibility.Collapsed
+            ThumbDemo.Visibility = Visibility.Collapsed
         End Sub
     End Class
 End Namespace

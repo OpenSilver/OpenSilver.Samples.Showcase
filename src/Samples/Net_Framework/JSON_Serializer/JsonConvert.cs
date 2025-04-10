@@ -74,20 +74,14 @@ namespace Newtonsoft.Json
                 string json = Convert.ToString(Interop.ExecuteJavaScript("$0.toJSON()", jsDate));
                 return json;
             }
-            else if (cSharpObject is string
-#if !BRIDGE
- || (cSharpObject != null && cSharpObject.GetType().IsValueType)
-#endif
-)
+            else if (cSharpObject is string)
             {
                 return cSharpObject;
             }
-#if BRIDGE
             else if (cSharpObject != null && cSharpObject.GetType().IsValueType)
             {
                 return Interop.ExecuteJavaScript("$0", InteropHelper.Unbox(cSharpObject)); //todo: merge this and the "if (cShrapObject is string)" above.
-            } 
-#endif
+            }
             else if (cSharpObject is IEnumerable && !(cSharpObject is string))
             {
                 //----------------
@@ -289,11 +283,7 @@ namespace Newtonsoft.Json
                     Type itemsType = resultType.GetElementType();
 
                     // Create a new list that we will then convert to an array:
-#if BRIDGE
                     var list = new List<object>();
-#else
-                    var list = new ArrayList();
-#endif
 
                     // Add the items to the ArrayList:
                     foreach (var item in (IEnumerable)cSharpNestedDictionariesAndLists)
@@ -304,18 +294,14 @@ namespace Newtonsoft.Json
                     }
 
                     // Convert the list to the expected array type:
-#if BRIDGE
                     Array array = Array.CreateInstance(itemsType, list.Count);
                     int i = 0;
-                    foreach(object element in list)
+                    foreach (object element in list)
                     {
                         array.SetValue(element, i);
                         ++i;
                     }
                     result = array;
-#else
-                    result = list.ToArray(itemsType);
-#endif
                 }
                 else if (resultType.IsGenericType
                     && (genericArguments = resultType.GetGenericArguments()).Length > 0
@@ -329,16 +315,9 @@ namespace Newtonsoft.Json
                     Type itemsType = genericArguments[0];
 
                     // Create a temporary List<T> in order to add items to it. Later we will convert it to the final type if needed.
-#if BRIDGE
                     var typeOfList = typeof(List<>);
                     var list = Activator.CreateInstance(typeOfList.MakeGenericType(new Type[] { itemsType }));
                     //var list = Activator.CreateInstance(typeof(List<>).MakeGenericType(new Type[] { itemsType })); //Note: For some reason, this doesn't work in a single line in the Simulator for the Bridge Version (V2) so we have to do as above.
-#else
-                    var list = typeof(JsonConvert)
-                        .GetMethod("CreateNewInstanceOfGenericList", BindingFlags.NonPublic | BindingFlags.Static)
-                        .MakeGenericMethod(itemsType)
-                        .Invoke(null, new object[] { });
-#endif
 
                     // Note: in the code above, we call the method "CreateNewInstanceOfGenericList" instead of
                     // calling "var list = Activator.CreateInstance(typeof(List<>).MakeGenericType(itemsType))"

@@ -167,12 +167,7 @@ Value="1" />
                             </StackPanel>
                         </Grid>
                         <Grid Margin="5,10,5,5">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <Image x:Name="TitleImage" Grid.Column="0" Source="/Other/Logo.png" Width="52" Height="60" Stretch="Fill" VerticalAlignment="Center"/>
-                            <TextBlock x:Name="TitleTextBlock" Grid.Column="1" TextAlignment="Left" TextWrapping="Wrap" Margin="5,0,0,0" VerticalAlignment="Center" Foreground="#FF00C6D2" FontSize="18" Text="OpenSilver Showcase"/>
+                            <TextBlock x:Name="TitleTextBlock" Grid.Column="1" TextAlignment="Left" TextWrapping="Wrap" Margin="5,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF00C6D2" FontSize="18" Text="OPENSILVER SHOWCASE"/>
                         </Grid>
                         <ListBox x:Name="MenuListBox" SelectionChanged="MenuListBox_SelectionChanged" Background="Transparent" BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Hidden">
                             <ListBox.ItemContainerStyle>

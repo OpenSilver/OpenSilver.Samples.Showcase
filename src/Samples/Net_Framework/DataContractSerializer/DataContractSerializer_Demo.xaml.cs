@@ -44,7 +44,6 @@ namespace OpenSilver.Samples.Showcase
         {
             // Serialize:
             var dataContractSerializer = new DataContractSerializer(typeof(ClassToSerialize));
-#if OPENSILVER
             string xml = null;
             MemoryStream stream1 = new MemoryStream();
             dataContractSerializer.WriteObject(stream1, _classToSerialize);
@@ -54,20 +53,13 @@ namespace OpenSilver.Samples.Showcase
             {
                 xml = streamReader.ReadToEnd();
             }
-#else
-            var xml = dataContractSerializer.SerializeToString(_classToSerialize);
-#endif
 
             // Display the result of the serialization:
             MessageBox.Show("Result of the serialization:" + Environment.NewLine + Environment.NewLine + xml);
 
             // Deserialize:
             dataContractSerializer = new DataContractSerializer(typeof(ClassToSerialize));
-#if OPENSILVER
             ClassToSerialize deserializedObject = (ClassToSerialize)dataContractSerializer.ReadObject(new MemoryStream(System.Text.Encoding.UTF8.GetBytes(xml)));
-#else
-            ClassToSerialize deserializedObject = (ClassToSerialize)dataContractSerializer.DeserializeFromString(xml); 
-#endif
 
             // Display the result of the deserialization:
             SerializationDestinationPanel.DataContext = deserializedObject;

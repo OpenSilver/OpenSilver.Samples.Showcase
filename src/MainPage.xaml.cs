@@ -14,29 +14,11 @@ namespace OpenSilver.Samples.Showcase
         {
             InitializeComponent();
 
-
-            //#if OPENSILVER
-            //            ThirdPartyButton.Visibility = Visibility.Collapsed;
-            //            ThirdPartyHomeButton.Visibility = Visibility.Visible;
-            //#endif
-
             Current = this;
             Loaded += MainPage_Loaded;
             SizeChanged += MainPage_SizeChanged;
-            Theming.Theme th = new Themes.Modern.ModernTheme();
-
-#if OPENSILVER
-            TitleImage.Visibility = Visibility.Collapsed;
-            TitleTextBlock.Text = "OPENSILVER SHOWCASE";
-            TitleTextBlock.HorizontalAlignment = HorizontalAlignment.Center;
-#endif
 
             MenuListBox.ItemsSource = PageInfo.Pages;
-
-            //if (DeviceInfo.Current.Platform == DevicePlatform.Unknown)
-            //{
-            //    MauiHybridButton.Visibility = Visibility.Collapsed;
-            //}
         }
 
         public static MainPage Current { get; private set; }

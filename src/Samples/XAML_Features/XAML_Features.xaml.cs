@@ -7,10 +7,9 @@ namespace OpenSilver.Samples.Showcase
     {
         public Xaml_Features()
         {
-            this.InitializeComponent();
-#if OPENSILVER
-            //Binding1Demo.Visibility = Visibility.Collapsed;
-#endif
+            InitializeComponent();
+
+            // todo:
             MarkupExtensionsDemo.Visibility = Visibility.Collapsed;
         }
     }

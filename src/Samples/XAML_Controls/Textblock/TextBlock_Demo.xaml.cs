@@ -3,12 +3,12 @@ using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase
 {
-    [SearchKeywords("text", "display", "label", "content", "UI")]
+    [SearchKeywords("text", "display", "label", "content", "UI", "textelement", "run")]
     public partial class TextBlock_Demo : UserControl
     {
         public TextBlock_Demo()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
     }
 }

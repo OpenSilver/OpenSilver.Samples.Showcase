@@ -1,11 +1,11 @@
-﻿Imports DotNetForHtml5.Showcase.SampleRestWebService.Models
-Imports OpenSilver.Samples.Showcase.Search
-Imports System.IO
+﻿Imports System.IO
 Imports System.Net
 Imports System.Runtime.Serialization
 Imports System.Text
 Imports System.Windows
 Imports System.Windows.Controls
+Imports DotNetForHtml5.Showcase.SampleRestWebService.Models
+Imports OpenSilver.Samples.Showcase.Search
 
 Namespace Global.OpenSilver.Samples.Showcase
     <SearchKeywords("REST", "API", "HttpClient", "HTTP", "web", "service")>
@@ -22,16 +22,7 @@ Namespace Global.OpenSilver.Samples.Showcase
 
         Private Async Function RefreshRestToDos() As Task
             Try
-#If Not OPENSILVER Then
-                var webClient = new WebClient();
-                webClient.Encoding = Encoding.UTF8;
-                webClient.Headers[HttpRequestHeader.Accept] = "application/xml";
-                string response = await webClient.DownloadStringTaskAsync("http://cshtml5-rest-sample.azurewebsites.net/api/Todo?OwnerId=" + _ownerId.ToString());
-                var dataContractSerializer = new DataContractSerializer(typeof(List<ToDoItem>));
-                List<ToDoItem> toDoItems = (List<ToDoItem>)dataContractSerializer.DeserializeFromString(response);
-                RestToDosItemsControl.ItemsSource = toDoItems;
-#Else
-                'Note: it seems WebClient is not supported (despite existing) in Blazor so we use HttpClient instead
+                'Note: WebClient is not supported in WebAssembly so we use HttpClient instead
                 Dim httpClient = New Http.HttpClient()
                 httpClient.DefaultRequestHeaders.Accept.Clear()
                 httpClient.DefaultRequestHeaders.Accept.Add(Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/xml"))
@@ -49,7 +40,6 @@ Namespace Global.OpenSilver.Samples.Showcase
                         Dim toDoItems = CType(dataContractSerializer.ReadObject(stream), List(Of ToDoItem))
                         Me.RestToDosItemsControl.ItemsSource = toDoItems
                     End Using
-#End If
                 End Using
             Catch ex As Exception
                 Call MessageBox.Show("ERROR: " & ex.ToString())
@@ -74,16 +64,10 @@ Namespace Global.OpenSilver.Samples.Showcase
 
             Try
                 Dim data As String = String.Format("{{""OwnerId"": ""{0}"",""Id"": ""{1}"",""Description"": ""{2}""}}", _ownerId, Guid.NewGuid(), Me.RestToDoTextBox.Text.Replace("""", "'"))
-#If Not OPENSILVER Then
-                var webClient = new WebClient();
-                webClient.Headers[HttpRequestHeader.ContentType] = "application/json";
-                webClient.Encoding = Encoding.UTF8;
-                await webClient.UploadStringTaskAsync("http://cshtml5-rest-sample.azurewebsites.net/api/Todo/", "POST", data);
-#Else
-                'Note: it seems WebClient is not supported (despite existing) in Blazor so we use HttpClient instead
+
+                'Note: WebClient is not supported in WebAssembly so we use HttpClient instead
                 Dim httpClient = New Http.HttpClient()
                 Await httpClient.PostAsync("https://cshtml5-rest-sample.azurewebsites.net/api/Todo/", New Http.StringContent(data, Encoding.UTF8, "application/json"))
-#End If
                 Await RefreshRestToDos()
             Catch ex As Exception
                 Call MessageBox.Show("ERROR: " & ex.ToString())
@@ -100,14 +84,10 @@ Namespace Global.OpenSilver.Samples.Showcase
 
             Try
                 Dim todo = CType(button.DataContext, ToDoItem)
-#If Not OPENSILVER Then
-                var webClient = new WebClient();
-                string response = await webClient.UploadStringTaskAsync("http://cshtml5-rest-sample.azurewebsites.net/api/Todo/" + todo.Id.ToString() + "?OwnerId=" + _ownerId.ToString(), "DELETE", "");
-#Else
-                'Note: it seems WebClient is not supported (despite existing) in Blazor so we use HttpClient instead
+
+                'Note: WebClient is not supported in WebAssembly so we use HttpClient instead
                 Dim httpClient = New Http.HttpClient()
                 Await httpClient.DeleteAsync("https://cshtml5-rest-sample.azurewebsites.net/api/Todo/" & todo.Id.ToString() & "?OwnerId=" & _ownerId.ToString())
-#End If
 
                 Await RefreshRestToDos()
             Catch ex As Exception
@@ -135,16 +115,10 @@ Namespace Global.OpenSilver.Samples.Showcase
 
             Try
                 Dim data = String.Format("{{""OwnerId"": ""{0}"",""Id"": ""{1}"",""Description"": ""{2}""}}", _ownerId, todo.Id, Me.RestToDoTextBox.Text.Replace("""", "'"))
-#If Not OPENSILVER Then
-                var webClient = new WebClient();
-                webClient.Headers[HttpRequestHeader.ContentType] = "application/json";
-                webClient.Encoding = Encoding.UTF8;
-                string response = await webClient.UploadStringTaskAsync("http://cshtml5-rest-sample.azurewebsites.net/api/Todo/" + todo.Id.ToString(), "PUT", data);
-#Else
-                'Note: it seems WebClient is not supported (despite existing) in Blazor so we use HttpClient instead
+
+                'Note: WebClient is not supported in WebAssembly so we use HttpClient instead
                 Dim httpClient = New Http.HttpClient()
                 Await httpClient.PutAsync("https://cshtml5-rest-sample.azurewebsites.net/api/Todo/" & todo.Id.ToString(), New Http.StringContent(data, Encoding.UTF8, "application/json"))
-#End If
 
                 Await RefreshRestToDos()
             Catch ex As Exception

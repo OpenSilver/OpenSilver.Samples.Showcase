@@ -1,8 +1,8 @@
-﻿Imports OpenSilver.Samples.Showcase.Search
-Imports ServiceReference1
-Imports System.ServiceModel
+﻿Imports System.ServiceModel
 Imports System.Windows
 Imports System.Windows.Controls
+Imports OpenSilver.Samples.Showcase.Search
+Imports ServiceReference1
 
 Namespace Global.OpenSilver.Samples.Showcase
     <SearchKeywords("WCF", "SOAP", "web", "service", "communication", "network")>
@@ -21,13 +21,8 @@ Namespace Global.OpenSilver.Samples.Showcase
 
         Private Async Function RefreshSoapToDos() As Task
             Try
-#If OPENSILVER Then
                 Dim soapClient As Service1Client = New Service1Client(EndpointConfig)
                 Dim result = Await soapClient.GetToDosAsync(_ownerId.ToString())
-#Else
-                Service1Client soapClient = new Service1Client();
-                var result = await soapClient.GetToDosAsync(_ownerId);
-#End If
                 Dim todos = result.Body.GetToDosResult
                 Me.SoapToDosItemsControl.ItemsSource = todos
             Catch ex As Exception
@@ -52,25 +47,13 @@ Namespace Global.OpenSilver.Samples.Showcase
             button.IsEnabled = False
 
             Try
-#If OPENSILVER Then
                 Dim todo As ToDoItem = New ToDoItem() With {
     .Description = Me.SoapToDoTextBox.Text,
     .Id = Guid.NewGuid().ToString(),
     .OwnerId = _ownerId.ToString()
     }
-#Else
-                Dim todo As ToDoItem = New ToDoItem() With {
-                .Description = Me.SoapToDoTextBox.Text,
-                   .Id = Guid.NewGuid(),
-                    .OwnerId = _ownerId
-                }
-#End If
 
-#If OPENSILVER Then
                 Dim soapClient As Service1Client = New Service1Client(EndpointConfig)
-#Else
-                Dim soapClient As New Service1Client()
-#End If
 
                 Await soapClient.AddOrUpdateToDoAsync(todo)
 
@@ -91,11 +74,7 @@ Namespace Global.OpenSilver.Samples.Showcase
             Try
                 Dim todo = CType(CType(sender, Button).DataContext, ToDoItem)
 
-#If OPENSILVER Then
                 Dim soapClient As Service1Client = New Service1Client(EndpointConfig)
-#Else
-                Service1Client soapClient = new Service1Client();
-#End If
 
                 Await soapClient.DeleteToDoAsync(todo)
 

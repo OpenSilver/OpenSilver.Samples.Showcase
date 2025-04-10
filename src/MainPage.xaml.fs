@@ -29,12 +29,6 @@ type MainPage() as this =
         this.MenuListBox.ItemsSource <- PageInfo.Pages
         this.MenuListBox.SelectionChanged.Add(fun args -> this.MenuListBox_SelectionChanged(this.MenuListBox, args))
 
-#if OPENSILVER
-        this.TitleImage.Visibility <- Visibility.Collapsed
-        this.TitleTextBlock.Text <- "OPENSILVER SHOWCASE (F#)";
-        this.TitleTextBlock.HorizontalAlignment <- HorizontalAlignment.Center
-#endif
-
     member this.NavigateToPage(targetUri: string) =
         //Hide the menu:
         if currentState = CurrentState.SmallResolution_ShowMenu then

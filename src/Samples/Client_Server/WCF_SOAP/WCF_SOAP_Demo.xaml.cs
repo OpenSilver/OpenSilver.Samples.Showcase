@@ -18,7 +18,7 @@ namespace OpenSilver.Samples.Showcase
 
         public WCF_SOAP_Demo()
         {
-            this.InitializeComponent();
+            InitializeComponent();
 
             // The "Owner ID" ensures that every person that uses the Showcase App has its own list of To-Do's:
             _ownerId = Guid.NewGuid();
@@ -28,13 +28,9 @@ namespace OpenSilver.Samples.Showcase
         {
             try
             {
-#if OPENSILVER
                 Service1Client soapClient = new Service1Client(EndpointConfig);
                 var result = await soapClient.GetToDosAsync(_ownerId.ToString());
-#else
-                Service1Client soapClient = new Service1Client();
-                var result = await soapClient.GetToDosAsync(_ownerId);
-#endif
+
                 ToDoItem[] todos = result.Body.GetToDosResult;
                 SoapToDosItemsControl.ItemsSource = todos;
             }
@@ -67,19 +63,11 @@ namespace OpenSilver.Samples.Showcase
                 ToDoItem todo = new ToDoItem()
                 {
                     Description = SoapToDoTextBox.Text,
-#if OPENSILVER
                     Id = Guid.NewGuid().ToString(),
                     OwnerId = _ownerId.ToString()
-#else
-                    Id = Guid.NewGuid(),
-                    OwnerId = _ownerId
-#endif
                 };
-#if OPENSILVER
+
                 Service1Client soapClient = new Service1Client(EndpointConfig);
-#else
-                Service1Client soapClient = new Service1Client();
-#endif
 
                 await soapClient.AddOrUpdateToDoAsync(todo);
 
@@ -105,11 +93,7 @@ namespace OpenSilver.Samples.Showcase
             {
                 ToDoItem todo = (ToDoItem)((Button)sender).DataContext;
 
-#if OPENSILVER
                 Service1Client soapClient = new Service1Client(EndpointConfig);
-#else
-                Service1Client soapClient = new Service1Client();
-#endif
 
                 await soapClient.DeleteToDoAsync(todo);
 

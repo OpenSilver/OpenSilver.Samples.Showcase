@@ -1,10 +1,9 @@
-﻿Imports OpenSilver.Themes.Modern
-Imports System
-Imports System.Windows
+﻿Imports System.Windows
 Imports System.Windows.Browser
 Imports System.Windows.Controls
 Imports System.Windows.Controls.Primitives
 Imports System.Windows.Media
+Imports OpenSilver.Themes.Modern
 
 Namespace OpenSilver.Samples.Showcase
     Partial Public Class MainPage
@@ -13,28 +12,11 @@ Namespace OpenSilver.Samples.Showcase
         Public Sub New()
             InitializeComponent()
 
-            ' #If OPENSILVER
-            ' ThirdPartyButton.Visibility = Visibility.Collapsed
-            ' ThirdPartyHomeButton.Visibility = Visibility.Visible
-            ' #End If
-
             Current = Me
             AddHandler Loaded, AddressOf MainPage_Loaded
             AddHandler SizeChanged, AddressOf MainPage_SizeChanged
 
-            Dim th As New Themes.Modern.ModernTheme()
-
-#If OPENSILVER Then
-            TitleImage.Visibility = Visibility.Collapsed
-            TitleTextBlock.Text = "OPENSILVER SHOWCASE"
-            TitleTextBlock.HorizontalAlignment = HorizontalAlignment.Center
-#End If
-
             MenuListBox.ItemsSource = PageInfo.Pages
-
-            ' If DeviceInfo.Current.Platform = DevicePlatform.Unknown Then
-            ' MauiHybridButton.Visibility = Visibility.Collapsed
-            ' End If
         End Sub
 
         Public Shared Property Current As MainPage

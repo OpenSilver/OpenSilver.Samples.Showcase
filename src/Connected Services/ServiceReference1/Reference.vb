@@ -346,15 +346,7 @@ Namespace Global.ServiceReference1
 
         Private Shared Function GetBindingForEndpoint(ByVal endpointConfiguration As EndpointConfiguration) As ServiceModel.Channels.Binding
             If endpointConfiguration = EndpointConfiguration.BasicHttpBinding_IService1 Then
-#If OPENSILVER Then
                 Return New ServiceModel.Channels.CustomBinding()
-#End If
-                Dim result As ServiceModel.BasicHttpBinding = New ServiceModel.BasicHttpBinding()
-                result.MaxBufferSize = Integer.MaxValue
-                result.ReaderQuotas = Xml.XmlDictionaryReaderQuotas.Max
-                result.MaxReceivedMessageSize = Integer.MaxValue
-                result.AllowCookies = True
-                Return result
             End If
             If endpointConfiguration = EndpointConfiguration.BasicHttpsBinding_IService1 Then
                 Dim result As ServiceModel.BasicHttpBinding = New ServiceModel.BasicHttpBinding()

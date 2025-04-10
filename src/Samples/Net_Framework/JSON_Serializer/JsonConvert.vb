@@ -1,5 +1,5 @@
-﻿Imports CSHTML5
-Imports System.Reflection
+﻿Imports System.Reflection
+Imports CSHTML5
 
 
 '------------------------------------
@@ -58,16 +58,13 @@ Namespace Global.Newtonsoft.Json
                 Dim jsDate = Interop.ExecuteJavaScript("new Date($0)", millisecondsSince1970)
                 Dim json = Convert.ToString(Interop.ExecuteJavaScript("$0.toJSON()", jsDate))
                 Return json
-#If Not BRIDGE Then
-            ElseIf TypeOf cSharpObject Is String OrElse (cSharpObject IsNot Nothing AndAlso cSharpObject.GetType().IsValueType) Then
-#Else
+
             ElseIf TypeOf cSharpObject Is String Then
-#End If
                 Return cSharpObject
-#If BRIDGE Then
+
             ElseIf cSharpObject IsNot Nothing AndAlso cSharpObject.GetType().IsValueType Then
                 Return Interop.ExecuteJavaScript("$0", Unbox(cSharpObject)) 'todo: merge this and the "if (cShrapObject is string)" above.
-#End If
+
             ElseIf TypeOf cSharpObject Is IEnumerable AndAlso Not (TypeOf cSharpObject Is String) Then
                 '----------------
                 ' ARRAY
@@ -225,11 +222,7 @@ Namespace Global.Newtonsoft.Json
                     Dim itemsType As Type = resultType.GetElementType()
 
                     ' Create a new list that we will then convert to an array:
-#If BRIDGE Then
                     Dim list = New List(Of Object)()
-#Else
-                    Dim list = New ArrayList()
-#End If
 
                     ' Add the items to the ArrayList:
                     For Each item In CType(cSharpNestedDictionariesAndLists, IEnumerable)
@@ -239,17 +232,13 @@ Namespace Global.Newtonsoft.Json
                     Next
 
                     ' Convert the list to the expected array type:
-#If BRIDGE Then
-                    Dim array = Array.CreateInstance(itemsType, list.Count)
+                    Dim array = System.Array.CreateInstance(itemsType, list.Count)
                     Dim i = 0
                     For Each element In list
                         array.SetValue(element, i)
                         Threading.Interlocked.Increment(i)
                     Next
                     result = array
-#Else
-                    result = list.ToArray(itemsType)
-#End If
 
                 ElseIf resultType.IsGenericType AndAlso (CSharpImpl.__Assign(genericArguments, resultType.GetGenericArguments())).Length > 0 AndAlso IsAssignableToGenericEnumerable(resultType, genericArguments(0)) Then
                     '--------
@@ -260,13 +249,9 @@ Namespace Global.Newtonsoft.Json
                     Dim itemsType = genericArguments(0)
 
                     ' Create a temporary List<T> in order to add items to it. Later we will convert it to the final type if needed.
-#If BRIDGE Then
                     Dim typeOfList = GetType(List(Of))
                     Dim list = Activator.CreateInstance(typeOfList.MakeGenericType(New Type() {itemsType}))
                     'var list = Activator.CreateInstance(typeof(List<>).MakeGenericType(new Type[] { itemsType })); //Note: For some reason, this doesn't work in a single line in the Simulator for the Bridge Version (V2) so we have to do as above.
-#Else
-                    Dim list = GetType(JsonConvert).GetMethod("CreateNewInstanceOfGenericList", BindingFlags.NonPublic Or BindingFlags.Static).MakeGenericMethod(itemsType).Invoke(Nothing, New Object() {})
-#End If
 
                     ' Note: in the code above, we call the method "CreateNewInstanceOfGenericList" instead of
                     ' calling "var list = Activator.CreateInstance(typeof(List<>).MakeGenericType(itemsType))"

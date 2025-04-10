@@ -1,9 +1,9 @@
-﻿Imports OpenSilver.Samples.Showcase.Search
-Imports System.IO
+﻿Imports System.IO
 Imports System.Runtime.Serialization
 Imports System.Text
 Imports System.Windows
 Imports System.Windows.Controls
+Imports OpenSilver.Samples.Showcase.Search
 
 Namespace Global.OpenSilver.Samples.Showcase
     <SearchKeywords("serialization", "deserialization", "data contract", "XML", "data exchange")>
@@ -39,7 +39,6 @@ Namespace Global.OpenSilver.Samples.Showcase
         Private Sub ButtonSerializeDeserialize_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
             ' Serialize:
             Dim dataContractSerializer = New DataContractSerializer(GetType(ClassToSerialize))
-#If OPENSILVER Then
             Dim xml As String = Nothing
             Dim stream1 As MemoryStream = New MemoryStream()
             dataContractSerializer.WriteObject(stream1, _classToSerialize)
@@ -48,20 +47,13 @@ Namespace Global.OpenSilver.Samples.Showcase
             Using streamReader = New StreamReader(stream1)
                 xml = streamReader.ReadToEnd()
             End Using
-#Else
-            var xml = dataContractSerializer.SerializeToString(_classToSerialize);
-#End If
 
             ' Display the result of the serialization:
             MessageBox.Show("Result of the serialization:" & Environment.NewLine & Environment.NewLine & xml)
 
             ' Deserialize:
             dataContractSerializer = New DataContractSerializer(GetType(ClassToSerialize))
-#If OPENSILVER Then
             Dim deserializedObject As ClassToSerialize = CType(dataContractSerializer.ReadObject(New MemoryStream(Encoding.UTF8.GetBytes(xml))), ClassToSerialize)
-#Else
-            ClassToSerialize deserializedObject = (ClassToSerialize)dataContractSerializer.DeserializeFromString(xml); 
-#End If
 
             ' Display the result of the deserialization:
             Me.SerializationDestinationPanel.DataContext = deserializedObject

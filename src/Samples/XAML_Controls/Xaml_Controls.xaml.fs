@@ -8,8 +8,6 @@ type Xaml_Controls() as this =
     do
         this.InitializeComponent()
 
-#if OPENSILVER
         this.NonModalChildWindow.Visibility <- Visibility.Collapsed
-#endif
         this.ScrollBarDemo.Visibility <- Visibility.Collapsed
         this.ThumbDemo.Visibility <- Visibility.Collapsed

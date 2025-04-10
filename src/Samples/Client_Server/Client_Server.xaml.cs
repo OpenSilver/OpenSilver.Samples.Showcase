@@ -6,11 +6,7 @@ namespace OpenSilver.Samples.Showcase
     {
         public Client_Server()
         {
-            this.InitializeComponent();
-
-#if OPENSILVER
-            //REST_WebClientDemo.Visibility = System.Windows.Visibility.Collapsed;
-#endif
+            InitializeComponent();
         }
     }
 }
