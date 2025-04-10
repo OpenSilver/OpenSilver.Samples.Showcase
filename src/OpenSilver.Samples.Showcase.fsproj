@@ -1137,6 +1137,12 @@
 		<Compile Include="Samples\XAML_Features\Styles\Styles_Demo.xaml.fs">
 			<DependentUpon>Samples\XAML_Features\Styles\Styles_Demo.xaml</DependentUpon>
 		</Compile>
+		<Page Include="Samples\XAML_Features\Themes\Themes_Demo.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</Page>
+    <Compile Include="Samples\XAML_Features\Themes\Themes_Demo.xaml.fs">
+      <DependentUpon>Samples\XAML_Features\Themes\Themes_Demo.xaml</DependentUpon>
+    </Compile>
 		<Page Include="Samples\XAML_Features\TransformToVisual\TransformToVisual_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>

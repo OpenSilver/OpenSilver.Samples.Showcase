@@ -55,7 +55,7 @@
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/Styles"
                                             FileName="Styles_Demo.xaml" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/Styles"
-                                            FileName="TextBlock_Demo.xaml.cs" />
+                                            FileName="Styles_Demo.xaml.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/Styles"
                                             FileName="Styles_Demo.xaml.vb" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/Styles"
