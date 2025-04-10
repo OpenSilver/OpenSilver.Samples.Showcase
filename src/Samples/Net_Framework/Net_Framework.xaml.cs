@@ -10,8 +10,6 @@ namespace OpenSilver.Samples.Showcase
             InitializeComponent();
 
             // todo:
-            JSON_SerializerDemo.Visibility = Visibility.Collapsed;
-            GetRessourceStreamDemo.Visibility = Visibility.Collapsed;
             ConsoleDemo.Visibility = Visibility.Collapsed;
             RESXDemo.Visibility = Visibility.Collapsed;
         }

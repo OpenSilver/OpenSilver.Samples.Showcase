@@ -11,7 +11,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="Border" Foreground="#FF73AFB3" Background="#FF91C3C5" Style="{StaticResource HeaderControl_Style}"/>
-            <Border Grid.Row="1" CornerRadius="10" Padding="16" Background="#FF73AFB3" HorizontalAlignment="Center">
+            <Border Grid.Row="1" CornerRadius="10" Padding="16" Background="#FF73AFB3" HorizontalAlignment="Center" BorderBrush="#FFB57979" BorderThickness="3">
                 <TextBlock Text="Unlike a Rectangle, a Border can contain a child element (such as this text)." Foreground="White" FontSize="12" Width="120" TextWrapping="Wrap"/>
             </Border>
             <local:ViewSourceButton Grid.Row="2"

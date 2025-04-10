@@ -144,13 +144,6 @@
 		<!--End of Charts-->
 
 		<!--Client_Server-->
-		<Compile Include="Samples\Client_Server\jQuery.ajax\jQueryAjaxHelper.fs" />
-		<Page Include="Samples\Client_Server\jQuery.ajax\jQueryAjax_Demo.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</Page>
-		<Compile Include="Samples\Client_Server\jQuery.ajax\jQueryAjax_Demo.xaml.fs">
-			<DependentUpon>Samples\Client_Server\jQuery.ajax\jQueryAjax_Demo.xaml</DependentUpon>
-		</Compile>
 		<Page Include="Samples\Client_Server\JSONP\JSONP_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
@@ -170,12 +163,6 @@
 		</Page>
 		<Compile Include="Samples\Client_Server\RIAServices\RIAServices_Demo.xaml.fs">
 			<DependentUpon>Samples\Client_Server\RIAServices\RIAServices_Demo.xaml</DependentUpon>
-		</Compile>
-		<Page Include="Samples\Client_Server\SignalR\SignalR_Demo.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</Page>
-		<Compile Include="Samples\Client_Server\SignalR\SignalR_Demo.xaml.fs">
-			<DependentUpon>Samples\Client_Server\SignalR\SignalR_Demo.xaml</DependentUpon>
 		</Compile>
 
 		<Page Include="Samples\Client_Server\WCF_SOAP\WCF_SOAP_Demo.xaml">
@@ -371,11 +358,11 @@
 		<Compile Include="Samples\Net_Framework\FullScreen\FullScreen_Demo.xaml.fs">
 			<DependentUpon>Samples\Net_Framework\FullScreen\FullScreen_Demo.xaml</DependentUpon>
 		</Compile>
-		<Page Include="Samples\Net_Framework\GetRessourceStream\GetRessourceStream_Demo.xaml">
+		<Page Include="Samples\Net_Framework\GetResourceStream\GetResourceStream_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
-		<Compile Include="Samples\Net_Framework\GetRessourceStream\GetRessourceStream_Demo.xaml.fs">
-			<DependentUpon>Samples\Net_Framework\GetRessourceStream\GetRessourceStream_Demo.xaml</DependentUpon>
+		<Compile Include="Samples\Net_Framework\GetResourceStream\GetResourceStream_Demo.xaml.fs">
+			<DependentUpon>Samples\Net_Framework\GetResourceStream\GetResourceStream_Demo.xaml</DependentUpon>
 		</Compile>
 		<Page Include="Samples\Net_Framework\HtmlPage\HtmlPage_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
@@ -401,8 +388,6 @@
 		<Compile Include="Samples\Net_Framework\IsolatedStorageSettings\IsolatedStorageSettings_Demo.xaml.fs">
 			<DependentUpon>Samples\Net_Framework\IsolatedStorageSettings\IsolatedStorageSettings_Demo.xaml</DependentUpon>
 		</Compile>
-		<Compile Include="Samples\Net_Framework\JSON_Serializer\InteropHelper.fs" />
-		<Compile Include="Samples\Net_Framework\JSON_Serializer\JsonConvert.fs" />
 		<Page Include="Samples\Net_Framework\JSON_Serializer\JSON_Serializer_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>

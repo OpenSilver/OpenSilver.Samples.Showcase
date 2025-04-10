@@ -7,8 +7,6 @@ Namespace Global.OpenSilver.Samples.Showcase
         Public Sub New()
             InitializeComponent()
 
-            JSON_SerializerDemo.Visibility = Visibility.Collapsed
-            GetRessourceStreamDemo.Visibility = Visibility.Collapsed
             ConsoleDemo.Visibility = Visibility.Collapsed
             RESXDemo.Visibility = Visibility.Collapsed
         End Sub

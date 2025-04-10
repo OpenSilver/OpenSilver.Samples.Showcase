@@ -1,7 +1,7 @@
-﻿using Newtonsoft.Json;
-using OpenSilver.Samples.Showcase.Search;
+﻿using OpenSilver.Samples.Showcase.Search;
 using System;
 using System.Collections.Generic;
+using System.Text.Json;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -10,12 +10,12 @@ namespace OpenSilver.Samples.Showcase
     [SearchKeywords("JSON", "serialization", "deserialization", "serialize")]
     public partial class JSON_Serializer_Demo : UserControl
     {
+        private readonly Product _product;
         private string _json;
-        private Product _product;
 
         public JSON_Serializer_Demo()
         {
-            this.InitializeComponent();
+            InitializeComponent();
 
             _product = new Product()
             {
@@ -24,27 +24,22 @@ namespace OpenSilver.Samples.Showcase
                 Price = 12.50,
                 Count = 341,
                 IsAvailable = true,
-                Sizes = new string[] { "Small", "Medium", "Large" },
-                Features = new List<Feature>()
-                {
+                Sizes = ["Small", "Medium", "Large"],
+                Features =
+                [
                     new Feature() { Name = "TestFeature1" },
                     new Feature() { Name = "TestFeature2" },
                     new Feature() { Name = "TestFeature3" }
-                },
+                ],
                 ReleaseDate = DateTime.Now
             };
         }
 
         private void Button_Click_Serialization(object sender, RoutedEventArgs e)
         {
-            // Serialize:
-            _json = JsonConvert.SerializeObject(_product);
+            _json = JsonSerializer.Serialize(_product, new JsonSerializerOptions { WriteIndented = true });
 
-            // Indent:
-            string indentedJson = _json.Replace(",", ",\n");
-
-            // Display the result:
-            MessageBox.Show(indentedJson);
+            MessageBox.Show(_json);
 
             /*
             // Expected Result:
@@ -75,18 +70,19 @@ namespace OpenSilver.Samples.Showcase
             */
         }
 
-        private async void Button_Click_StronglyTypedDeserialization(object sender, RoutedEventArgs e)
+        private void Button_Click_StronglyTypedDeserialization(object sender, RoutedEventArgs e)
         {
             if (!string.IsNullOrEmpty(_json))
             {
-                Product deserializedProduct = await JsonConvert.DeserializeObject<Product>(_json);
+                Product deserializedProduct = JsonSerializer.Deserialize<Product>(_json);
 
-                MessageBox.Show("Name of the second feature: " + deserializedProduct.Features[1].Name);
-                MessageBox.Show("Name of the third available size: " + deserializedProduct.Sizes[2]);
-                MessageBox.Show("Release date: " + deserializedProduct.ReleaseDate.ToString());
+                MessageBox.Show("Name of the second feature: " + deserializedProduct.Features[1].Name +
+                "\nName of the third available size: " + deserializedProduct.Sizes[2] +
+                "\nRelease date: " + deserializedProduct.ReleaseDate.ToString());
 
                 // Expected Result: "Name of the second feature: TestFeature2"
-                // Expected Result: "Name of the third available size: Large"
+                //                  "Name of the third available size: Large"
+                //                  "Release date: 2017-04-10T16:26:41.754Z"
             }
             else
             {
@@ -94,19 +90,19 @@ namespace OpenSilver.Samples.Showcase
             }
         }
 
-        private async void Button_Click_DynamicDeserialization(object sender, RoutedEventArgs e)
+        private void Button_Click_DynamicDeserialization(object sender, RoutedEventArgs e)
         {
             if (!string.IsNullOrEmpty(_json))
             {
-                IJsonType deserializedObject = await JsonConvert.DeserializeObject(_json);
+                var deserializedObject = JsonDocument.Parse(_json).RootElement;
 
-                MessageBox.Show("Product name: " + deserializedObject["Name"].Value.ToString());
-                MessageBox.Show("Name of the second feature: " + deserializedObject["Features"][1]["Name"].Value.ToString());
-                MessageBox.Show("Name of the third available size: " + deserializedObject["Sizes"][2].Value.ToString());
+                MessageBox.Show("Product name: " + deserializedObject.GetProperty("Name").GetString() +
+                "\nName of the second feature: " + deserializedObject.GetProperty("Features")[1].GetProperty("Name").GetString() +
+                "\nName of the third available size: " + deserializedObject.GetProperty("Sizes")[2].GetString());
 
                 // Expected Result: "Product name: TestProduct"
-                // Expected Result: "Name of the second feature: TestFeature2"
-                // Expected Result: "Name of the third available size: Large"
+                //                  "Name of the second feature: TestFeature2"
+                //                  "Name of the third available size: Large"
             }
             else
             {
