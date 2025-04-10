@@ -291,48 +291,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_Button_Styles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_Card_Styles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_CheckBox_Styles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_ChildWindow_Styles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_ComboBox_Styles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_CommonResources.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_ContextMenu_Styles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_DatePicker_Styles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_Expander_Styles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_PasswordBox_Styles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_Popup_Styles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_RadioButton_Styles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_TabControl_Styles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_TextBox_Styles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Other\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -370,12 +328,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\Interop_Samples\MethodToUpdateDom\MethodToUpdateDom_Demo.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Samples\Material_Design\Material_Design.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Samples\Material_Design\SampleMaterialChildWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\Net_Framework\AsyncAwait\AsyncAwait_Demo.xaml">
@@ -737,9 +689,6 @@
     <Compile Include="Other\Internals\ViewSourceButtonHelper.cs" />
     <Compile Include="Other\Internals\ViewSourceButtonInfo.cs" />
     <Compile Include="Other\Internals\WrapPanelWithProgressiveLoading.cs" />
-    <Compile Include="Other\MaterialDesign_Styles_Kit\AccentColorConverter.cs" />
-    <Compile Include="Other\MaterialDesign_Styles_Kit\DoubleToCornerRadiusConverter.cs" />
-    <Compile Include="Other\MaterialDesign_Styles_Kit\TextToPlaceholderTextVisibilityConverter.cs" />
     <Compile Include="Other\Planet.cs" />
     <Compile Include="Samples\Client_Server\Client_Server.xaml.cs" />
     <Compile Include="Samples\Client_Server\jQuery.ajax\jQueryAjaxHelper.cs" />
@@ -758,8 +707,6 @@
     <Compile Include="Samples\Interop_Samples\Interop_Samples.xaml.cs" />
     <Compile Include="Samples\Interop_Samples\MethodToUpdateDom\AttachedPropertiesWithMethodToUpdateDom.cs" />
     <Compile Include="Samples\Interop_Samples\MethodToUpdateDom\MethodToUpdateDom_Demo.xaml.cs" />
-    <Compile Include="Samples\Material_Design\Material_Design.xaml.cs" />
-    <Compile Include="Samples\Material_Design\SampleMaterialChildWindow.xaml.cs" />
     <Compile Include="Samples\Net_Framework\AsyncAwait\AsyncAwait_Demo.xaml.cs" />
     <Compile Include="Samples\Net_Framework\Clipboard_SetText\Clipboard_SetText_Demo.xaml.cs" />
     <Compile Include="Samples\Net_Framework\Console\Console_Demo.xaml.cs" />

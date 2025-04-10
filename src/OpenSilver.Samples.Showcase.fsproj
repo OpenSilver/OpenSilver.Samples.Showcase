@@ -50,9 +50,6 @@
 		<Content Include="Other\SplashScreen1.png" />
 		<Content Include="Properties\launchSettings.json" />
 		<Compile Include="Other\Internals\ControlToDisplayCodeHostedOnGitHub.fs" />
-		<Compile Include="Other\MaterialDesign_Styles_Kit\AccentColorConverter.fs" />
-		<Compile Include="Other\MaterialDesign_Styles_Kit\DoubleToCornerRadiusConverter.fs" />
-		<Compile Include="Other\MaterialDesign_Styles_Kit\TextToPlaceholderTextVisibilityConverter.fs" />
 		<Compile Include="Other\Internals\Search\SearchKeywordAttribute.fs" />
 		<Compile Include="Other\Internals\Search\SearchableItem.fs" />
 		<Compile Include="Other\Internals\Search\SamplesInfoLoader.fs" />
@@ -66,48 +63,6 @@
 		</EmbeddedResource>
 
 		<Page Include="Other\Internals\Search\SearchControl.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</Page>
-		<Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_CommonResources.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</Page>
-		<Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_Button_Styles.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</Page>
-		<Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_Card_Styles.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</Page>
-		<Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_CheckBox_Styles.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</Page>
-		<Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_ChildWindow_Styles.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</Page>
-		<Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_ComboBox_Styles.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</Page>
-		<Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_TextBox_Styles.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</Page>
-		<Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_ContextMenu_Styles.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</Page>
-		<Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_DatePicker_Styles.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</Page>
-		<Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_Expander_Styles.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</Page>
-		<Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_PasswordBox_Styles.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</Page>
-		<Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_Popup_Styles.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</Page>
-		<Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_RadioButton_Styles.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</Page>
-		<Page Include="Other\MaterialDesign_Styles_Kit\MaterialDesign_TabControl_Styles.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
 		<Page Include="Other\Styles.xaml">
@@ -286,18 +241,6 @@
 		<!--End of Interop_Samples-->
 
 		<!--Material_Design-->
-		<Page Include="Samples\Material_Design\SampleMaterialChildWindow.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</Page>
-		<Compile Include="Samples\Material_Design\SampleMaterialChildWindow.xaml.fs">
-			<DependentUpon>Samples\Material_Design\SampleMaterialChildWindow.xaml</DependentUpon>
-		</Compile>
-		<Page Include="Samples\Material_Design\Material_Design.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</Page>
-		<Compile Include="Samples\Material_Design\Material_Design.xaml.fs">
-			<DependentUpon>Samples\Material_Design\Material_Design.xaml</DependentUpon>
-		</Compile>
 		<!--End of Material_Design-->
 
 		<!--Maui_Hybrid-->
