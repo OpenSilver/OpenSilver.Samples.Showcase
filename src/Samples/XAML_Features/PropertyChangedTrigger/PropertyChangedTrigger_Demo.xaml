@@ -5,7 +5,7 @@
     xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
     xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
-    <ContentControl Style="{StaticResource Card_Style}" Width="245">
+    <ContentControl Style="{StaticResource Card_Style}" Width="250">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>

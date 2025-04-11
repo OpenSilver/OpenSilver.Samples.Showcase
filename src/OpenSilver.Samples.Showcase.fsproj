@@ -28,7 +28,11 @@
 			<Generator>MSBuild:Compile</Generator>
 		</Content>
 		<Compile Include="Other\Converters\EnumToListConverter.fs" />
+		<Compile Include="Other\MarkupExtensions\ResxExtension.fs" />
+		<Compile Include="Other\ObservableObject.fs" />
 		<Compile Include="Other\PageInfo.fs" />
+		<Compile Include="Other\RelayCommand.fs" />
+		<Compile Include="Samples\XAML_Features\Command\CommandDemoViewModel.fs" />
 		<Content Include="Other\embed.js">
 			<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
 			<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
@@ -980,11 +984,11 @@
 		<Compile Include="Samples\XAML_Features\ClipToBounds\ClipToBounds_Demo.xaml.fs">
 			<DependentUpon>Samples\XAML_Features\ClipToBounds\ClipToBounds_Demo.xaml</DependentUpon>
 		</Compile>
-		<Page Include="Samples\XAML_Features\Commanding\Commanding_Demo.xaml">
+		<Page Include="Samples\XAML_Features\Command\Command_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
-		<Compile Include="Samples\XAML_Features\Commanding\Commanding_Demo.xaml.fs">
-			<DependentUpon>Samples\XAML_Features\Commanding\Commanding_Demo.xaml</DependentUpon>
+		<Compile Include="Samples\XAML_Features\Command\Command_Demo.xaml.fs">
+			<DependentUpon>Samples\XAML_Features\Command\Command_Demo.xaml</DependentUpon>
 		</Compile>
 		<Page Include="Samples\XAML_Features\DependencyProperties\DependencyProperties_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>

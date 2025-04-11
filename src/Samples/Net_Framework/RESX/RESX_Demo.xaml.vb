@@ -1,18 +1,25 @@
-﻿Imports OpenSilver.Samples.Showcase.Search
-Imports System.Windows
+﻿Imports System.Windows
 Imports System.Windows.Controls
+Imports OpenSilver.Samples.Showcase.Search
 
 Namespace OpenSilver.Samples.Showcase
+
     <SearchKeywords("resources", "localization", "RESX", "translation")>
     Partial Public Class RESX_Demo
         Inherits UserControl
 
         Public Sub New()
-            Me.InitializeComponent()
+            InitializeComponent()
         End Sub
 
-        Private Sub ButtonReadResource_Click(ByVal sender As Object, ByVal e As System.Windows.RoutedEventArgs)
-            MessageBox.Show(SampleResourceFileVB.InfoMessage)
+        Private Sub ButtonReadResource_Click(sender As Object, e As RoutedEventArgs)
+            MessageBox.Show($"SampleResourceFile.InfoMessage: {SampleResourceFileVB.InfoMessage}")
         End Sub
+
+        Private Sub Hyperlink_Click(sender As Object, e As RoutedEventArgs)
+            MainPage.Current.PageContainer.Navigate(New Uri("/XAML_Features/MarkupExtensions", UriKind.Relative))
+        End Sub
+
     End Class
+
 End Namespace

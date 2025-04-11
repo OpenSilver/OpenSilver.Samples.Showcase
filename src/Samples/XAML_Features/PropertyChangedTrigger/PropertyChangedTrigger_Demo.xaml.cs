@@ -1,18 +1,19 @@
-﻿using System.Windows;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System.Windows;
 using System.Windows.Controls;
 
-namespace OpenSilver.Samples.Showcase
-{
-    public partial class PropertyChangedTrigger_Demo : UserControl
-    {
-        public PropertyChangedTrigger_Demo()
-        {
-            this.InitializeComponent(); 
-        }
+namespace OpenSilver.Samples.Showcase;
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            borderText.Text = borderText.Text == "Yellow" ? "Orange" : "Yellow";
-        }
+[SearchKeywords("interaction", "interactivity", "triggers", "behavior", "events", "UI")]
+public partial class PropertyChangedTrigger_Demo : UserControl
+{
+    public PropertyChangedTrigger_Demo()
+    {
+        InitializeComponent();
+    }
+
+    private void Button_Click(object sender, RoutedEventArgs e)
+    {
+        borderText.Text = borderText.Text == "Yellow" ? "Orange" : "Yellow";
     }
 }

@@ -1,13 +1,13 @@
 ﻿using OpenSilver.Samples.Showcase.Search;
 using System.Windows.Controls;
 
-namespace OpenSilver.Samples.Showcase
+namespace OpenSilver.Samples.Showcase;
+
+[SearchKeywords("resources", "resx", "static")]
+public partial class MarkupExtensions_Demo : UserControl
 {
-    public partial class MarkupExtensions_Demo : UserControl
+    public MarkupExtensions_Demo()
     {
-        public MarkupExtensions_Demo()
-        {
-            this.InitializeComponent();
-        }
+        InitializeComponent();
     }
 }

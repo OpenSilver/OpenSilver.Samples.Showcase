@@ -195,7 +195,10 @@
     <Compile Include="Other\Internals\Search\SearchControl.xaml.cs" />
     <Compile Include="Other\Internals\Search\SearchKeywordAttribute.cs" />
     <Compile Include="Other\Leagues\League.cs" />
+    <Compile Include="Other\MarkupExtensions\ResxExtension.cs" />
+    <Compile Include="Other\ObservableObject.cs" />
     <Compile Include="Other\PageInfo.cs" />
+    <Compile Include="Other\RelayCommand.cs" />
     <Compile Include="Other\Sales.cs" />
     <Compile Include="Other\SampleResourceFile.Designer.cs" />
     <Compile Include="Samples\Charts\AreaSeries\AreaSeries_Demo.xaml.cs" />
@@ -248,6 +251,7 @@
     <Compile Include="Samples\XAML_Controls\TreeMap\TreeMap_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Controls\TreeView\TreeView_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Controls\UpDownBase\UpDownBase_Demo.xaml.cs" />
+    <Compile Include="Samples\XAML_Features\Command\CommandDemoViewModel.cs" />
 
     <Compile Include="Samples\XAML_Features\Drag_And_Drop\Drag_And_Drop_Demo_Silverlight.xaml.cs" />
     <Compile Include="Samples\Interop_Samples\WebView\WebBrowser_Demo.xaml.cs" />
@@ -606,7 +610,7 @@
     <Page Include="Samples\XAML_Features\InteractivityTriggers\InteractivityTriggers_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\XAML_Features\Commanding\Commanding_Demo.xaml">
+    <Page Include="Samples\XAML_Features\Command\Command_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Features\DependencyProperties\DependencyProperties_Demo.xaml">
@@ -782,7 +786,7 @@
     <Compile Include="Samples\XAML_Features\ClipToBounds\ClipToBounds_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Features\PropertyChangedTrigger\PropertyChangedTrigger_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Features\InteractivityTriggers\InteractivityTriggers_Demo.xaml.cs" />
-    <Compile Include="Samples\XAML_Features\Commanding\Commanding_Demo.xaml.cs" />
+    <Compile Include="Samples\XAML_Features\Command\Command_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Features\DependencyProperties\DependencyProperties_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Features\DropShadowEffect\DropShadowEffect_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Features\FindElementsInHostCoordinates\FindElementsInHostCoordinates_Demo.xaml.cs" />
