@@ -1,42 +1,49 @@
-﻿<UserControl
-    x:Class="OpenSilver.Samples.Showcase.ScrollBar_Demo"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
-    <ContentControl Style="{StaticResource Card_Style}" Width="200">
+﻿<UserControl x:Class="OpenSilver.Samples.Showcase.ScrollBar_Demo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+
+    <ContentControl Width="200" Style="{StaticResource Card_Style}">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="ScrollBar" Foreground="#FF56D3F2" Background="#FF97C7D1" Style="{StaticResource HeaderControl_Style}"/>
-            <Grid Grid.Row="1" Height="200">
+
+            <ContentControl Background="#FF97C7D1"
+                            Content="ScrollBar"
+                            Foreground="#FF56D3F2"
+                            Style="{StaticResource HeaderControl_Style}"/>
+
+            <Grid Grid.Row="1" Height="100">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
 
                 <StackPanel Grid.Column="0" VerticalAlignment="Center">
-                    <TextBlock Text="Scroll position:" TextAlignment="Center" />
-                    <TextBlock x:Name="TextDisplay" TextAlignment="Center" />
+                    <TextBlock FontSize="12"
+                               Text="Scroll position:"
+                               TextAlignment="Center"/>
+                    <TextBlock FontSize="14"
+                               FontWeight="Bold"
+                               Text="{Binding Value, ElementName=Scrollbar, StringFormat={}{0:F2}}"
+                               TextAlignment="Center"/>
                 </StackPanel>
 
-                <ScrollBar x:Name="Scrollbar" Grid.Column="1" Scroll="ScrollBar_Scroll" Width="17"/>
+                <ScrollBar x:Name="Scrollbar"
+                           Grid.Column="1"
+                           Width="17"/>
             </Grid>
-            <local:ViewSourceButton Grid.Row="2"
-                                    Background="#FF56D3F2">
+
+            <local:ViewSourceButton Grid.Row="2" Background="#FF56D3F2">
                 <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ScrollBar"
-                                                FileName="ScrollBar_Demo.xaml" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ScrollBar"
-                                                FileName="ScrollBar_Demo.xaml.cs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ScrollBar"
-                                                FileName="ScrollBar_Demo.xaml.vb" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ScrollBar"
-                                                FileName="ScrollBar_Demo.xaml.fs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ScrollBar/Styles"
-                                                FileName="DefaultScrollBarStyle.xaml" />
+                    <local:ViewSourceButtonInfo FileName="ScrollBar_Demo.xaml" RelativePath="src/Samples/XAML_Controls/ScrollBar"/>
+                    <local:ViewSourceButtonInfo FileName="ScrollBar_Demo.xaml.cs" RelativePath="src/Samples/XAML_Controls/ScrollBar"/>
+                    <local:ViewSourceButtonInfo FileName="ScrollBar_Demo.xaml.vb" RelativePath="src/Samples/XAML_Controls/ScrollBar"/>
+                    <local:ViewSourceButtonInfo FileName="ScrollBar_Demo.xaml.fs" RelativePath="src/Samples/XAML_Controls/ScrollBar"/>
+                    <local:ViewSourceButtonInfo FileName="DefaultScrollBarStyle.xaml" RelativePath="src/Samples/XAML_Controls/ScrollBar/Styles"/>
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

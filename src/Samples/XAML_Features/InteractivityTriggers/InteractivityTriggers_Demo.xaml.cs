@@ -1,19 +1,19 @@
-﻿using System;
-using System.Windows.Input;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System;
 using System.Windows;
 using System.Windows.Controls;
-using OpenSilver.Samples.Showcase.Search;
+using System.Windows.Input;
 
 namespace OpenSilver.Samples.Showcase
 {
-    [SearchKeywords("interaction", "triggers", "behavior", "events", "UI")]
+    [SearchKeywords("interaction", "triggers", "behavior", "events", "UI", "invokecommandaction", "command")]
     public partial class InteractivityTriggers_Demo : UserControl
     {
         public InteractivityTriggers_Demo()
         {
-            this.InitializeComponent();
+            InitializeComponent();
 
-            this.DataContext = new TestViewModel();
+            DataContext = new TestViewModel();
         }
 
         public class TestViewModel

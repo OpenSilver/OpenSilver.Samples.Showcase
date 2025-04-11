@@ -7,8 +7,6 @@ Namespace Global.OpenSilver.Samples.Showcase
         Public Sub New()
             InitializeComponent()
 
-            NonModalChildWindow.Visibility = Visibility.Collapsed
-            ScrollBarDemo.Visibility = Visibility.Collapsed
             ThumbDemo.Visibility = Visibility.Collapsed
         End Sub
     End Class

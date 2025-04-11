@@ -1,12 +1,30 @@
-﻿using System.Windows.Controls;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System.Windows;
+using System.Windows.Controls;
 
-namespace OpenSilver.Samples.Showcase
+namespace OpenSilver.Samples.Showcase;
+
+[SearchKeywords("position", "relative")]
+public partial class TransformToVisual_Demo : UserControl
 {
-    public partial class TransformToVisual_Demo : UserControl
+    public TransformToVisual_Demo()
     {
-        public TransformToVisual_Demo()
-        {
-            this.InitializeComponent();
-        }
+        InitializeComponent();
+
+        Loaded += OnLoaded;
+        Application.Current.MainWindow.SizeChanged += (_, _) => CalculatePosition();
+    }
+
+    private void OnLoaded(object sender, RoutedEventArgs e)
+    {
+        (Parent as FrameworkElement).LayoutUpdated += (_, _) => CalculatePosition();
+    }
+
+    private void CalculatePosition()
+    {
+        var transform = TransformToVisual(Application.Current.MainWindow);
+        var topLeft = transform.Transform(new Point());
+
+        resultTextBlock.Text = $"X: {topLeft.X:N1}  Y: {topLeft.Y:N1}";
     }
 }

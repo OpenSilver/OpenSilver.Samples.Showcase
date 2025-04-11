@@ -34,6 +34,7 @@
             <local:ImageBrush_Demo/>
             <local:Window_SizeChanged_Demo HorizontalAlignment="Center"/>
             <local:FindElementsInHostCoordinates_Demo HorizontalAlignment="Center"/>
+            <local:TransformToVisual_Demo/>
             <local:ClipToBounds_Demo HorizontalAlignment="Center"/>
             <local:Validation_Demo HorizontalAlignment="Center"/>
             <local:MouseWheel_Demo HorizontalAlignment="Center"/>

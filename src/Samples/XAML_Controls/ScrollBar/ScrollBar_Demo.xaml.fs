@@ -1,6 +1,5 @@
 ﻿namespace OpenSilver.Samples.Showcase
 
-open System.Windows.Controls.Primitives
 open OpenSilver.Samples.Showcase.Search
 
 [<SearchKeywords("scroll", "bar", "navigation", "UI", "container")>]
@@ -9,7 +8,3 @@ type ScrollBar_Demo() as this =
 
     do
         this.InitializeComponent()
-        this.TextDisplay.Text <- this.Scrollbar.Value.ToString("0.000")
-
-    member private this.ScrollBar_Scroll(sender : obj, e : ScrollEventArgs) =
-        this.TextDisplay.Text <- e.NewValue.ToString("0.000")
