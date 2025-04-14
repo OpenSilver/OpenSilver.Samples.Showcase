@@ -5,12 +5,12 @@ using System.Windows.Media.Animation;
 
 namespace OpenSilver.Samples.Showcase
 {
-    [SearchKeywords("animation", "effects", "motion", "behavior")]
+    [SearchKeywords("animation", "effects", "motion", "behavior", "storyboard")]
     public partial class Animations_Demo : UserControl
     {
         public Animations_Demo()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
 
         void ButtonToStartAnimationOpen_Click(object sender, RoutedEventArgs e)
