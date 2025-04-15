@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="OpenSilver.Samples.Showcase.Localization_Demo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+
+    <ContentControl Width="245" Style="{StaticResource Card_Style}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <ContentControl Content="Localization"
+                            Foreground="#FFD46DB7"
+                            Style="{StaticResource HeaderControl_Style}"/>
+
+            <TextBlock Name="message"
+                       Grid.Row="1"
+                       Margin="0,10,0,0"
+                       HorizontalAlignment="Center"
+                       FontSize="14"
+                       Text="{local:Resx Key=GreetingMessage}"/>
+
+            <TextBlock Name="dateTextBlock"
+                       Grid.Row="2"
+                       Margin="0,10,0,20"
+                       HorizontalAlignment="Center"
+                       FontSize="14"/>
+
+            <ComboBox Name="allCulturesCombo"
+                      Grid.Row="3"
+                      DisplayMemberPath="DisplayName"
+                      FontSize="12"
+                      SelectionChanged="OnCulturesComboBoxSelectionChanged"/>
+
+            <local:ViewSourceButton Grid.Row="4" Background="#FFD46DB7">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo FileName="Localization_Demo.xaml" RelativePath="src/Samples/Net_Framework/Localization"/>
+                    <local:ViewSourceButtonInfo FileName="Localization_Demo.xaml.cs" RelativePath="src/Samples/Net_Framework/Localization"/>
+                    <local:ViewSourceButtonInfo FileName="Localization_Demo.xaml.vb" RelativePath="src/Samples/Net_Framework/Localization"/>
+                    <local:ViewSourceButtonInfo FileName="Localization_Demo.xaml.fs" RelativePath="src/Samples/Net_Framework/Localization"/>
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
+</UserControl>

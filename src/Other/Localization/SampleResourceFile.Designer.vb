@@ -25,7 +25,7 @@ Namespace OpenSilver.Samples.Showcase
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0"),
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
      Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute()>
-    Friend Class SampleResourceFileVB
+    Friend Class SampleResourceFile
 
         Private Shared resourceMan As Global.System.Resources.ResourceManager
 
@@ -43,7 +43,7 @@ Namespace OpenSilver.Samples.Showcase
         Friend Shared ReadOnly Property ResourceManager() As Global.System.Resources.ResourceManager
             Get
                 If Object.ReferenceEquals(resourceMan, Nothing) Then
-                    Dim temp As Global.System.Resources.ResourceManager = New Global.System.Resources.ResourceManager("SampleResourceFileVB", GetType(SampleResourceFileVB).Assembly)
+                    Dim temp As Global.System.Resources.ResourceManager = New Global.System.Resources.ResourceManager("SampleResourceFile", GetType(SampleResourceFile).Assembly)
                     resourceMan = temp
                 End If
                 Return resourceMan
@@ -65,7 +65,16 @@ Namespace OpenSilver.Samples.Showcase
         End Property
 
         '''<summary>
-        '''  Looks up a localized string similar to This text was read from SampleResourceFileVB.resx.
+        '''  Looks up a localized string similar to Hello, World!.
+        '''</summary>
+        Friend Shared ReadOnly Property GreetingMessage() As String
+            Get
+                Return ResourceManager.GetString("GreetingMessage", resourceCulture)
+            End Get
+        End Property
+
+        '''<summary>
+        '''  Looks up a localized string similar to This text was read from SampleResourceFile.resx.
         '''</summary>
         Friend Shared ReadOnly Property InfoMessage() As String
             Get

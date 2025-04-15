@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:controlskit="clr-namespace:OpenSilver.ControlsKit;assembly=OpenSilver.ControlsKit.Controls"
              xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
-    
+
     <StackPanel>
         <Grid>
             <TextBlock Style="{StaticResource PageHeader_Style}" Text=".NET Framework"/>
@@ -37,6 +37,7 @@
             <local:Console_Demo x:Name="ConsoleDemo" HorizontalAlignment="Center"/>
             <local:GetResourceStream_Demo x:Name="GetRessourceStreamDemo" HorizontalAlignment="Center"/>
             <local:RESX_Demo/>
+            <local:Localization_Demo/>
             <local:Clipboard_SetText_Demo HorizontalAlignment="Center"/>
             <local:FullScreen_Demo x:Name="FullScreenDemo" HorizontalAlignment="Center"/>
         </controlskit:StaggeredPanel>

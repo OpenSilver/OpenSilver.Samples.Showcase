@@ -101,6 +101,9 @@
     <Page Include="Samples\Net_Framework\InitParams\InitParams_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\Net_Framework\Localization\Localization_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\Net_Framework\OpenFileDialog\OpenFileDialog_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -200,7 +203,11 @@
     <Compile Include="Other\PageInfo.cs" />
     <Compile Include="Other\RelayCommand.cs" />
     <Compile Include="Other\Sales.cs" />
-    <Compile Include="Other\SampleResourceFile.Designer.cs" />
+    <Compile Include="Other\Localization\SampleResourceFile.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SampleResourceFile.resx</DependentUpon>
+    </Compile>
     <Compile Include="Samples\Charts\AreaSeries\AreaSeries_Demo.xaml.cs" />
     <Compile Include="Samples\Charts\BarSeries\BarSeries_Demo.xaml.cs" />
     <Compile Include="Samples\Charts\BubbleSeries\BubbleSeries_Demo.xaml.cs" />
@@ -226,6 +233,7 @@
     <Compile Include="Samples\Maui_Hybrid\Shake\Shake_Demo.xaml.cs" />
     <Compile Include="Samples\Maui_Hybrid\Vibration\Vibration_Demo.xaml.cs" />
     <Compile Include="Samples\Net_Framework\InitParams\InitParams_Demo.xaml.cs" />
+    <Compile Include="Samples\Net_Framework\Localization\Localization_Demo.xaml.cs" />
     <Compile Include="Samples\Net_Framework\OpenFileDialog\OpenFileDialog_Demo.xaml.cs" />
     <Compile Include="Samples\Net_Framework\UnhandledException\UnhandledException_Demo.xaml.cs" />
     <Compile Include="Samples\Net_Framework\WriteableBitmap\WriteableBitmap_Demo.xaml.cs" />
@@ -805,6 +813,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Other\SampleResourceFile.resx" />
+    <EmbeddedResource Include="Other\Localization\SampleResourceFile.es.resx" />
+    <EmbeddedResource Include="Other\Localization\SampleResourceFile.fr.resx" />
+    <EmbeddedResource Include="Other\Localization\SampleResourceFile.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SampleResourceFile.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other\Localization\SampleResourceFile.ru.resx" />
   </ItemGroup>
 </Project>

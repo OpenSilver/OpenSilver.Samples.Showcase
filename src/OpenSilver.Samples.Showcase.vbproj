@@ -106,6 +106,9 @@
     <Page Include="Samples\Net_Framework\InitParams\InitParams_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\Net_Framework\Localization\Localization_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\Net_Framework\OpenFileDialog\OpenFileDialog_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -197,10 +200,10 @@
     <Compile Include="Other\PageInfo.vb" />
     <Compile Include="Other\RelayCommand.vb" />
     <Compile Include="Other\Sales.vb" />
-    <Compile Include="Other\SampleResourceFileVB.Designer.vb">
+    <Compile Include="Other\Localization\SampleResourceFile.Designer.vb">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>SampleResourceFileVB.resx</DependentUpon>
+      <DependentUpon>SampleResourceFile.resx</DependentUpon>
     </Compile>
     <Compile Include="Samples\Charts\AreaSeries\AreaSeries_Demo.xaml.vb" />
     <Compile Include="Samples\Charts\BarSeries\BarSeries_Demo.xaml.vb" />
@@ -227,6 +230,7 @@
     <Compile Include="Samples\Maui_Hybrid\Shake\Shake_Demo.xaml.vb" />
     <Compile Include="Samples\Maui_Hybrid\Vibration\Vibration_Demo.xaml.vb" />
     <Compile Include="Samples\Net_Framework\InitParams\InitParams_Demo.xaml.vb" />
+    <Compile Include="Samples\Net_Framework\Localization\Localization_Demo.xaml.vb" />
     <Compile Include="Samples\Net_Framework\OpenFileDialog\OpenFileDialog_Demo.xaml.vb" />
     <Compile Include="Samples\Net_Framework\UnhandledException\UnhandledException_Demo.xaml.vb" />
     <Compile Include="Samples\Net_Framework\WriteableBitmap\WriteableBitmap_Demo.xaml.vb" />
@@ -801,10 +805,13 @@
     <Compile Include="Samples\XAML_Features\XAML_Resource_Dictionary\XAML_Resource_Dictionary_Demo.xaml.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Other\SampleResourceFileVB.resx">
+    <EmbeddedResource Include="Other\Localization\SampleResourceFile.es.resx" />
+    <EmbeddedResource Include="Other\Localization\SampleResourceFile.fr.resx" />
+    <EmbeddedResource Include="Other\Localization\SampleResourceFile.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>SampleResourceFileVB.Designer.vb</LastGenOutput>
+      <LastGenOutput>SampleResourceFile.Designer.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Other\Localization\SampleResourceFile.ru.resx" />
   </ItemGroup>
   <ItemGroup>
     <UpToDateCheckInput Remove="Samples\XAML_Controls\NumericUpDown\Styles\**" />

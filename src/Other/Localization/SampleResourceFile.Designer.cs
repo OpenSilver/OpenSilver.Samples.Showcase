@@ -39,7 +39,7 @@ namespace OpenSilver.Samples.Showcase {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("OpenSilver.Samples.Showcase.Other.SampleResourceFile", typeof(SampleResourceFile).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("OpenSilver.Samples.Showcase.Other.Localization.SampleResourceFile", typeof(SampleResourceFile).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,6 +57,15 @@ namespace OpenSilver.Samples.Showcase {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hello, World!.
+        /// </summary>
+        internal static string GreetingMessage {
+            get {
+                return ResourceManager.GetString("GreetingMessage", resourceCulture);
             }
         }
         

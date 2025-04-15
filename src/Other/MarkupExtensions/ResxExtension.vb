@@ -9,7 +9,7 @@ Namespace OpenSilver.Samples.Showcase
         Public Property Key As String
 
         Public Overrides Function ProvideValue(serviceProvider As IServiceProvider) As Object
-            Return SampleResourceFileVB.ResourceManager.GetString(Key)
+            Return SampleResourceFile.ResourceManager.GetString(Key)
         End Function
     End Class
 

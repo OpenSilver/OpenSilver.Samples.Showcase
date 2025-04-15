@@ -62,7 +62,7 @@
 		<Compile Include="Other\Elements.fs" />
 		<Compile Include="Other\Sales.fs" />
 		<Compile Include="Other\Leagues\League.fs" />
-		<EmbeddedResource Include="Other\SampleResourceFileFS.resx">
+		<EmbeddedResource Include="Other\Localization\SampleResourceFile.resx">
 			<Generator>ResXFileCodeGenerator</Generator>
 		</EmbeddedResource>
 
@@ -410,6 +410,12 @@
 		<Compile Include="Samples\Net_Framework\Linq\Linq_Demo.xaml.fs">
 			<DependentUpon>Samples\Net_Framework\Linq\Linq_Demo.xaml</DependentUpon>
 		</Compile>
+		<Page Include="Samples\Net_Framework\Localization\Localization_Demo.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</Page>
+    <Compile Include="Samples\Net_Framework\Localization\Localization_Demo.xaml.fs">
+      <DependentUpon>Samples\Net_Framework\Localization\Localization_Demo.xaml</DependentUpon>
+    </Compile>
 		<Page Include="Samples\Net_Framework\OpenFileDialog\OpenFileDialog_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>

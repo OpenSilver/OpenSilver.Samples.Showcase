@@ -13,7 +13,7 @@ Namespace OpenSilver.Samples.Showcase
         End Sub
 
         Private Sub ButtonReadResource_Click(sender As Object, e As RoutedEventArgs)
-            MessageBox.Show($"SampleResourceFile.InfoMessage: {SampleResourceFileVB.InfoMessage}")
+            MessageBox.Show($"SampleResourceFile.InfoMessage: {SampleResourceFile.InfoMessage}")
         End Sub
 
         Private Sub Hyperlink_Click(sender As Object, e As RoutedEventArgs)
