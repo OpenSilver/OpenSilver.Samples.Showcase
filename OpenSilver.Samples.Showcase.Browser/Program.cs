@@ -15,7 +15,7 @@ namespace OpenSilver.Samples.Showcase.Browser
             // For blazor components
             builder.UseBlazorForOpenSilver();
             builder.Services.AddRadzenSamples();
-
+            builder.Services.AddMudBlazorSamples();
             var host = builder.Build();
             await host.RunAsync();
         }

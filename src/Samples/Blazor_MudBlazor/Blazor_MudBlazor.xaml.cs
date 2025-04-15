@@ -1,22 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
-using System.Windows.Data;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Navigation;
 
-namespace OpenSilver.Samples.Showcase.Samples.Blazor_MudBlazor
+namespace OpenSilver.Samples.Showcase
 {
     public partial class Blazor_MudBlazor : UserControl
     {
         public Blazor_MudBlazor()
         {
             this.InitializeComponent();
+
+            LoadContent();
+        }
+
+        private void LoadContent()
+        {
+            try
+            {
+                Assembly assemblySample = AppDomain.CurrentDomain
+                    .GetAssemblies()
+                    .FirstOrDefault(a => a.GetName().Name == "OpenSilver.Samples.Showcase.MudBlazor");
+                Type type = assemblySample.GetType("OpenSilver.Samples.Showcase.MudBlazor_Sample");
+                object content = Activator.CreateInstance(type);
+                Content = (UIElement)content;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw new TargetInvocationException(ex);
+            }
         }
     }
 }
