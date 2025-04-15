@@ -134,6 +134,9 @@
     <Page Include="Samples\Maui_Hybrid\Vibration\Vibration_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\Blazor_MudBlazor\Blazor_MudBlazor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\Net_Framework\InitParams\InitParams_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -321,6 +324,7 @@
     <Compile Include="Samples\Maui_Hybrid\Orientation\OrientationSensors_Demo.xaml.cs" />
     <Compile Include="Samples\Maui_Hybrid\Shake\Shake_Demo.xaml.cs" />
     <Compile Include="Samples\Maui_Hybrid\Vibration\Vibration_Demo.xaml.cs" />
+    <Compile Include="Samples\Blazor_MudBlazor\Blazor_MudBlazor.xaml.cs" />
     <Compile Include="Samples\Net_Framework\InitParams\InitParams_Demo.xaml.cs" />
     <Compile Include="Samples\Net_Framework\Localization\Localization_Demo.xaml.cs" />
     <Compile Include="Samples\Net_Framework\MVVM\Movie.cs" />

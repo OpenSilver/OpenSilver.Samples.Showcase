@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Windows;
@@ -6,9 +7,9 @@ using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase
 {
-    public partial class Blazor_Radzen : UserControl
+    public partial class Blazor_MudBlazor : UserControl
     {
-        public Blazor_Radzen()
+        public Blazor_MudBlazor()
         {
             this.InitializeComponent();
 
@@ -21,9 +22,8 @@ namespace OpenSilver.Samples.Showcase
             {
                 Assembly assemblySample = AppDomain.CurrentDomain
                     .GetAssemblies()
-                    .FirstOrDefault(a => a.GetName().Name == "OpenSilver.Samples.Showcase.Radzen");
-
-                Type type = assemblySample.GetType("OpenSilver.Samples.Showcase.Radzen_Sample");
+                    .FirstOrDefault(a => a.GetName().Name == "OpenSilver.Samples.Showcase.MudBlazor");
+                Type type = assemblySample.GetType("OpenSilver.Samples.Showcase.MudBlazor_Sample");
                 object content = Activator.CreateInstance(type);
                 Content = (UIElement)content;
             }
