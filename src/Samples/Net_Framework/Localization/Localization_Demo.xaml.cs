@@ -63,8 +63,8 @@ public partial class Localization_Demo : UserControl
 
             if (resourceAssembly == null)
             {
-                var baseAddress = new Uri(Interop.ExecuteJavaScriptGetResult<string>("window.location.origin + window.location.pathname + '_framework/'"));
-                using var httpClient = new HttpClient { BaseAddress = baseAddress };
+                var baseAddress = Interop.ExecuteJavaScriptGetResult<string>("window.location.origin + window.location.pathname").TrimEnd('/');
+                using var httpClient = new HttpClient { BaseAddress = new Uri($"{baseAddress}/_framework/") };
 
                 // find dll name with hash
                 var bootJson = await httpClient.GetStringAsync("blazor.boot.json");

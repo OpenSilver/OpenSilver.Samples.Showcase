@@ -23,4 +23,8 @@
     <ProjectReference Include="..\src\OpenSilver.Samples.Showcase.fsproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <TrimmerRootAssembly Include="mscorlib"/>
+  </ItemGroup>
+
 </Project>
