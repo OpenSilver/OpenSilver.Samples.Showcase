@@ -5,7 +5,9 @@ using System.Linq;
 using System.Net.Http;
 using System.Reflection;
 using System.Resources;
+using System.Text.Json;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase;
@@ -24,16 +26,12 @@ public partial class Localization_Demo : UserControl
     {
         InitializeComponent();
 
-        var currentCulture = CultureInfo.CurrentUICulture;
-        CultureInfo[] cultures = [new CultureInfo("en-US"), currentCulture, .. _supportedCultures, .. CultureInfo.GetCultures(CultureTypes.NeutralCultures)];
-
-        allCulturesCombo.ItemsSource = cultures.Distinct();
-        allCulturesCombo.SelectedItem = currentCulture;
+        allCulturesCombo.SelectedItem = allCulturesCombo.Items.FirstOrDefault(x => (x as FrameworkElement).Tag.ToString() == CultureInfo.CurrentUICulture.TwoLetterISOLanguageName);
     }
 
     private async void OnCulturesComboBoxSelectionChanged(object sender, SelectionChangedEventArgs e)
     {
-        var selectedCulture = allCulturesCombo.SelectedItem as CultureInfo;
+        var selectedCulture = new CultureInfo(((FrameworkElement)allCulturesCombo.SelectedItem).Tag.ToString());
 
         CultureInfo.CurrentCulture = selectedCulture;
         CultureInfo.CurrentUICulture = selectedCulture;
@@ -65,11 +63,25 @@ public partial class Localization_Demo : UserControl
 
             if (resourceAssembly == null)
             {
-                var baseAddress = new Uri(Interop.ExecuteJavaScriptGetResult<string>("window.location.origin + window.location.pathname"));
+                var baseAddress = new Uri(Interop.ExecuteJavaScriptGetResult<string>("window.location.origin + window.location.pathname + '_framework/'"));
                 using var httpClient = new HttpClient { BaseAddress = baseAddress };
-                var response = await httpClient.GetAsync($"_framework/{languageCode}/{assemblyName}.resources.dll");
-                var bytes = await response.Content.ReadAsByteArrayAsync();
-                resourceAssembly = Assembly.Load(bytes);
+
+                // find dll name with hash
+                var bootJson = await httpClient.GetStringAsync("blazor.boot.json");
+                if (JsonDocument.Parse(bootJson).RootElement.TryGetProperty("resources", out var resources) &&
+                    resources.TryGetProperty("satelliteResources", out var satelliteResources) &&
+                    satelliteResources.TryGetProperty(languageCode, out var cultureSection))
+                {
+                    foreach (var property in cultureSection.EnumerateObject())
+                    {
+                        if (property.Name.StartsWith($"{assemblyName}.resources"))
+                        {
+                            var bytes = await httpClient.GetByteArrayAsync($"{languageCode}/{property.Name}");
+                            resourceAssembly = Assembly.Load(bytes);
+                            break;
+                        }
+                    }
+                }
             }
 
             var resourceManager = new ResourceManager($"{assemblyName}.Other.Localization.{nameof(SampleResourceFile)}.{languageCode}", resourceAssembly);

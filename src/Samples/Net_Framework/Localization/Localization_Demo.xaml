@@ -34,7 +34,40 @@
                       Grid.Row="3"
                       DisplayMemberPath="DisplayName"
                       FontSize="12"
-                      SelectionChanged="OnCulturesComboBoxSelectionChanged"/>
+                      SelectionChanged="OnCulturesComboBoxSelectionChanged">
+                <ComboBoxItem Content="English" Tag="en"/>
+                <ComboBoxItem Content="French" Tag="fr"/>
+                <ComboBoxItem Content="Russian" Tag="ru"/>
+                <ComboBoxItem Content="Spanish" Tag="es"/>
+                <ComboBoxItem Content="Arabic (Egypt)" Tag="ar-EG"/>
+                <ComboBoxItem Content="Chinese (Simplified)" Tag="zh-Hans"/>
+                <ComboBoxItem Content="Czech (Czech Republic)" Tag="cs-CZ"/>
+                <ComboBoxItem Content="Danish (Denmark)" Tag="da-DK"/>
+                <ComboBoxItem Content="Dutch (Netherlands)" Tag="nl-NL"/>
+                <ComboBoxItem Content="Finnish (Finland)" Tag="fi-FI"/>
+                <ComboBoxItem Content="German (Germany)" Tag="de-DE"/>
+                <ComboBoxItem Content="Greek (Greece)" Tag="el-GR"/>
+                <ComboBoxItem Content="Hebrew (Israel)" Tag="he-IL"/>
+                <ComboBoxItem Content="Hindi (India)" Tag="hi-IN"/>
+                <ComboBoxItem Content="Hungarian (Hungary)" Tag="hu-HU"/>
+                <ComboBoxItem Content="Indonesian (Indonesia)" Tag="id-ID"/>
+                <ComboBoxItem Content="Irish (Ireland)" Tag="ga-IE"/>
+                <ComboBoxItem Content="Italian (Italy)" Tag="it-IT"/>
+                <ComboBoxItem Content="Japanese (Japan)" Tag="ja-JP"/>
+                <ComboBoxItem Content="Korean (Korea)" Tag="ko-KR"/>
+                <ComboBoxItem Content="Malay (Malaysia)" Tag="ms-MY"/>
+                <ComboBoxItem Content="Mongolian (Cyrillic, Mongolia)" Tag="mn-MN"/>
+                <ComboBoxItem Content="Norwegian, Bokmål (Norway)" Tag="nb-NO"/>
+                <ComboBoxItem Content="Persian" Tag="fa-IR"/>
+                <ComboBoxItem Content="Polish (Poland)" Tag="pl-PL"/>
+                <ComboBoxItem Content="Portuguese (Brazil)" Tag="pt-BR"/>
+                <ComboBoxItem Content="Romanian (Romania)" Tag="ro-RO"/>
+                <ComboBoxItem Content="Swedish (Sweden)" Tag="sv-SE"/>
+                <ComboBoxItem Content="Thai (Thailand)" Tag="th-TH"/>
+                <ComboBoxItem Content="Turkish (Turkey)" Tag="tr-TR"/>
+                <ComboBoxItem Content="Ukrainian (Ukraine)" Tag="uk-UA"/>
+                <ComboBoxItem Content="Vietnamese (Vietnam)" Tag="vi-VN"/>
+            </ComboBox>
 
             <local:ViewSourceButton Grid.Row="4" Background="#FFD46DB7">
                 <local:ViewSourceButton.Sources>
