@@ -166,6 +166,12 @@
     <Page Include="Samples\XAML_Controls\Rating\Rating_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\XAML_Controls\RichTextBlock\RichTextBlock_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\XAML_Controls\RichTextBox\RichTextBox_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\XAML_Controls\TimePicker\TimePicker_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -250,6 +256,8 @@
     <Compile Include="Samples\XAML_Controls\LayoutTransformer\LayoutTransformer_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\ProgressBar\ProgressBar_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\Rating\Rating_Demo.xaml.vb" />
+    <Compile Include="Samples\XAML_Controls\RichTextBlock\RichTextBlock_Demo.xaml.vb" />
+    <Compile Include="Samples\XAML_Controls\RichTextBox\RichTextBox_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\TimePicker\TimePicker_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\TransitioningContentControl\TransitioningContentControl_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\TreeMap\TreeMap_Demo.xaml.vb" />

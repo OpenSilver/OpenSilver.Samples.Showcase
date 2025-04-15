@@ -32,6 +32,8 @@
             <local:RadioButton_Demo HorizontalAlignment="Center"/>
             <local:TextBlock_Demo HorizontalAlignment="Center"/>
             <local:Label_Demo HorizontalAlignment="Center"/>
+            <local:RichTextBlock_Demo/>
+            <local:RichTextBox_Demo/>
             <local:Path_Demo HorizontalAlignment="Center"/>
             <local:ProgressBar_Demo/>
             <local:DataForm_Demo HorizontalAlignment="Center"/>

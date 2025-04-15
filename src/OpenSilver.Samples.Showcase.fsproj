@@ -813,6 +813,18 @@
 		<Compile Include="Samples\XAML_Controls\RepeatButton\RepeatButton_Demo.xaml.fs">
 			<DependentUpon>Samples\XAML_Controls\RepeatButton\RepeatButton_Demo.xaml</DependentUpon>
 		</Compile>
+		<Page Include="Samples\XAML_Controls\RichTextBlock\RichTextBlock_Demo.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</Page>
+    <Compile Include="Samples\XAML_Controls\RichTextBlock\RichTextBlock_Demo.xaml.fs">
+      <DependentUpon>Samples\XAML_Controls\RichTextBlock\RichTextBlock_Demo.xaml</DependentUpon>
+    </Compile>
+		<Page Include="Samples\XAML_Controls\RichTextBox\RichTextBox_Demo.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</Page>
+    <Compile Include="Samples\XAML_Controls\RichTextBox\RichTextBox_Demo.xaml.fs">
+      <DependentUpon>Samples\XAML_Controls\RichTextBox\RichTextBox_Demo.xaml</DependentUpon>
+    </Compile>
 		<Page Include="Samples\XAML_Controls\ScrollBar\Styles\DefaultScrollBarStyle.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>

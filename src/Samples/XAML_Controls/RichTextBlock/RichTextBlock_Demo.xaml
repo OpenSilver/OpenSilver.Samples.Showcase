@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="OpenSilver.Samples.Showcase.RichTextBlock_Demo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+
+    <ContentControl Width="200" Style="{StaticResource Card_Style}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <ContentControl Content="RichTextBlock"
+                            Foreground="#FFCF673E"
+                            Style="{StaticResource HeaderControl_Style}"/>
+
+            <RichTextBlock Grid.Row="1"
+                           Margin="10,20"
+                           FontSize="14"
+                           TextWrapping="Wrap">
+                <Paragraph>
+                    <Run Text="This is a sample RichTextBlock. You can format text, insert images, and more."/>
+                </Paragraph>
+                <Paragraph>
+                    <Bold>
+                        This text is bold.
+                    </Bold>
+                    <Italic>
+                        This text is italic.
+                    </Italic>
+                </Paragraph>
+                <Paragraph>
+                    <Hyperlink NavigateUri="http://opensilver.net" TargetName="_blank">
+                        Click me to visit opensilver.net
+                    </Hyperlink>
+                </Paragraph>
+                <Paragraph>
+                    <InlineImageContainer Height="40" Source="/OpenSilver.Samples.Showcase;component/Other/Planets/Earth.png"/>
+                </Paragraph>
+            </RichTextBlock>
+
+            <local:ViewSourceButton Grid.Row="2" Background="#FFCF673E">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo FileName="RichTextBlock_Demo.xaml" RelativePath="src/Samples/XAML_Controls/RichTextBlock"/>
+                    <local:ViewSourceButtonInfo FileName="RichTextBlock_Demo.xaml.cs" RelativePath="src/Samples/XAML_Controls/RichTextBlock"/>
+                    <local:ViewSourceButtonInfo FileName="RichTextBlock_Demo.xaml.vb" RelativePath="src/Samples/XAML_Controls/RichTextBlock"/>
+                    <local:ViewSourceButtonInfo FileName="RichTextBlock_Demo.xaml.fs" RelativePath="src/Samples/XAML_Controls/RichTextBlock"/>
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
+</UserControl>
