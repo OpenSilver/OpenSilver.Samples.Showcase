@@ -51,7 +51,6 @@
 		<Content Include="Other\smallBall.png" />
 		<Content Include="Other\SampleVideo.mp4" />
 		<Content Include="Other\SampleAudio.mp3" />
-		<Content Include="Other\SplashScreen1.png" />
 		<Content Include="Properties\launchSettings.json" />
 		<Compile Include="Other\Internals\ControlToDisplayCodeHostedOnGitHub.fs" />
 		<Compile Include="Other\Internals\Search\SearchKeywordAttribute.fs" />
@@ -1172,11 +1171,6 @@
 		<!--End of XAML_Features-->
 
 
-		<Compile Include="Other\Internals\MasonryPanel.fs" />
-		<Compile Include="Other\Internals\MasonryPanelWithProgressiveLoading.fs" />
-		<Compile Include="Other\Internals\WrapPanelWithProgressiveLoading.fs" />
-
-
 
 		<Page Include="Samples\SearchPage.xaml">
 			<Generator>MSBuild:Compile</Generator>
@@ -1218,7 +1212,6 @@
 		<Compile Include="App.xaml.fs">
 			<DependentUpon>App.xaml</DependentUpon>
 		</Compile>
-		<Compile Include="Other\Internals\ChildWindowHelper.fs" />
 	</ItemGroup>
 
 	<ItemGroup>

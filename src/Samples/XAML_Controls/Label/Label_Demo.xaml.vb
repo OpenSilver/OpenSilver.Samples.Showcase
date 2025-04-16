@@ -1,21 +1,14 @@
-﻿Imports OpenSilver.Samples.Showcase.Search
-Imports System.Windows
-Imports System.Windows.Controls
+﻿Imports System.Windows.Controls
+Imports OpenSilver.Samples.Showcase.Search
 
 Namespace Global.OpenSilver.Samples.Showcase
     <SearchKeywords("text", "label", "description", "content", "UI")>
     Partial Public Class Label_Demo
         Inherits UserControl
+
         Public Sub New()
-            Me.InitializeComponent()
+            InitializeComponent()
         End Sub
 
-        Private Sub ButtonViewMore_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            'ChildWindowHelper.ShowChildWindow(new Button_Demo_More());
-        End Sub
-
-        Private Sub Button_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            MessageBox.Show("You clicked the button!")
-        End Sub
     End Class
 End Namespace

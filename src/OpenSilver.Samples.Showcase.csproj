@@ -305,7 +305,6 @@
     <Content Include="Other\smallBall.png" />
     <Content Include="Other\SampleVideo.mp4" />
     <Content Include="Other\SampleAudio.mp3" />
-    <Content Include="Other\SplashScreen1.png" />
     <Content Include="Properties\launchSettings.json" />
     <Page Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -695,14 +694,10 @@
     <Compile Include="App.xaml.cs" />
     <Compile Include="Connected Services\ServiceReference1\Reference.cs" />
     <Compile Include="MainPage.xaml.cs" />
-    <Compile Include="Other\Internals\ChildWindowHelper.cs" />
     <Compile Include="Other\Internals\ViewSourceButton.cs" />
     <Compile Include="Other\Internals\ControlToDisplayCodeHostedOnGitHub.cs" />
-    <Compile Include="Other\Internals\MasonryPanel.cs" />
-    <Compile Include="Other\Internals\MasonryPanelWithProgressiveLoading.cs" />
     <Compile Include="Other\Internals\ViewSourceButtonHelper.cs" />
     <Compile Include="Other\Internals\ViewSourceButtonInfo.cs" />
-    <Compile Include="Other\Internals\WrapPanelWithProgressiveLoading.cs" />
     <Compile Include="Other\Planet.cs" />
     <Compile Include="Samples\Client_Server\Client_Server.xaml.cs" />
     <Compile Include="Samples\Client_Server\JSONP\JSONP_Demo.xaml.cs" />
