@@ -7,12 +7,12 @@
 
     <StackPanel>
         <Grid>
-            <TextBlock Text="Performance" Style="{StaticResource PageHeader_Style}"/>
-            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <ContentControl Content="Performance" Style="{StaticResource PageHeader_Style}"/>
+            <!--<WrapPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <TextBlock Text="Performance" Style="{StaticResource PageHeader_Style}" Foreground="Transparent"/>
                 <local:SearchControl HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
                 <Border Width="30"/>
-            </WrapPanel>
+            </WrapPanel>-->
         </Grid>
         <controlskit:StaggeredPanel ProgressiveRenderingChunkSize="2" DesiredColumnWidth="330">
             <local:Virtualization_Demo/>
