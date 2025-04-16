@@ -80,5 +80,5 @@ type Localization_Demo() as this =
             //    | None -> return null
             //with ex ->
             //    Console.WriteLine(ex.Message)
-            //    return null
+                return null
         }

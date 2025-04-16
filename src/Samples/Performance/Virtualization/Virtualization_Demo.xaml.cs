@@ -7,14 +7,14 @@ using System.Windows.Media;
 
 namespace OpenSilver.Samples.Showcase
 {
-    [SearchKeywords("performance", "virtualization", "lazy loading", "memory optimization", "UI")]
+    [SearchKeywords("performance", "virtualizingstackpanel", "lazy loading", "memory optimization", "UI")]
     public partial class Virtualization_Demo : UserControl
     {
         public List<Tuple<string, string>> colors = GetColorList();
         public Virtualization_Demo()
         {
-            this.InitializeComponent();
-            this.DataContext = colors;
+            InitializeComponent();
+            DataContext = colors;
         }
 
         static List<Tuple<string, string>> GetColorList()
@@ -36,7 +36,5 @@ namespace OpenSilver.Samples.Showcase
 
             return colorList;
         }
-
-
     }
 }

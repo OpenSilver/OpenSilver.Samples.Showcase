@@ -11,6 +11,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
             <ContentControl Content="Localization"
@@ -69,7 +70,15 @@
                 <ComboBoxItem Content="Vietnamese (Vietnam)" Tag="vi-VN"/>
             </ComboBox>
 
-            <local:ViewSourceButton Grid.Row="4" Background="#FFD46DB7">
+            <HyperlinkButton Grid.Row="4"
+                             Margin="0,20,0,0"
+                             HorizontalAlignment="Center"
+                             NavigateUri="https://doc.opensilver.net/documentation/in-depth-topics/localization.html"
+                             TargetName="_blank">
+                Read documentation
+            </HyperlinkButton>
+
+            <local:ViewSourceButton Grid.Row="5" Background="#FFD46DB7">
                 <local:ViewSourceButton.Sources>
                     <local:ViewSourceButtonInfo FileName="Localization_Demo.xaml" RelativePath="src/Samples/Net_Framework/Localization"/>
                     <local:ViewSourceButtonInfo FileName="Localization_Demo.xaml.cs" RelativePath="src/Samples/Net_Framework/Localization"/>

@@ -186,6 +186,9 @@
     <Page Include="Samples\XAML_Controls\TreeView\TreeView_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\XAML_Controls\UniformGrid\UniformGrid_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\XAML_Controls\UpDownBase\UpDownBase_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -266,6 +269,7 @@
     <Compile Include="Samples\XAML_Controls\TransitioningContentControl\TransitioningContentControl_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Controls\TreeMap\TreeMap_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Controls\TreeView\TreeView_Demo.xaml.cs" />
+    <Compile Include="Samples\XAML_Controls\UniformGrid\UniformGrid_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Controls\UpDownBase\UpDownBase_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Features\Command\CommandDemoViewModel.cs" />
 

@@ -18,6 +18,7 @@
 
         <controlskit:StaggeredPanel Name="SamplesPanel" ProgressiveRenderingChunkSize="2">
             <local:Grid_Demo HorizontalAlignment="Center"/>
+            <local:UniformGrid_Demo/>
             <local:StackPanel_Demo HorizontalAlignment="Center"/>
             <local:TreeView_Demo HorizontalAlignment="Center"/>
             <local:TreeMap_Demo/>
