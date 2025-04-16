@@ -6,12 +6,12 @@
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
     <StackPanel>
         <Grid>
-            <TextBlock Text="Interop" Style="{StaticResource PageHeader_Style}"/>
-            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <ContentControl Content="Interop" Style="{StaticResource PageHeader_Style}"/>
+            <!--<WrapPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <TextBlock Text="Interop" Style="{StaticResource PageHeader_Style}" Foreground="Transparent"/>
                 <local:SearchControl HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
                 <Border Width="30"/>
-            </WrapPanel>
+            </WrapPanel>-->
         </Grid>
         <controlskit:StaggeredPanel DesiredColumnWidth="280" ProgressiveRenderingChunkSize="2">
             <local:ExecuteJavaScript_Demo HorizontalAlignment="Center"/>

@@ -6,14 +6,14 @@
 
     <StackPanel>
         <Grid>
-            <TextBlock Style="{StaticResource PageHeader_Style}" Text="XAML Features"/>
-            <WrapPanel HorizontalAlignment="Right" Orientation="Horizontal">
+            <ContentControl Style="{StaticResource PageHeader_Style}" Content="XAML Features"/>
+            <!--<WrapPanel HorizontalAlignment="Right" Orientation="Horizontal">
                 <TextBlock Foreground="Transparent"
                            Style="{StaticResource PageHeader_Style}"
                            Text="XAML Features"/>
                 <local:SearchControl HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
                 <Border Width="30"/>
-            </WrapPanel>
+            </WrapPanel>-->
         </Grid>
 
         <controlskit:StaggeredPanel DesiredColumnWidth="280" ProgressiveRenderingChunkSize="2">

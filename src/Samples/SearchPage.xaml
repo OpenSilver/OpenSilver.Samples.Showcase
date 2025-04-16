@@ -7,20 +7,20 @@
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
 
     <StackPanel>
-        <Grid>
-            <TextBlock Text="Search" Style="{StaticResource PageHeader_Style}"/>
-            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <TextBlock Text="Search" Style="{StaticResource PageHeader_Style}" Foreground="Transparent"/>
-                <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
+        <StackPanel>
+            <ContentControl Content="Search" Style="{StaticResource PageHeader_Style}"/>
+            <!--<WrapPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Text="Search" Style="{StaticResource PageHeader_Style}" Foreground="Transparent"/>-->
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Margin="20">
                     <AutoCompleteBox x:Name="SearchField" ItemsSource="{x:Static search:ControlSearch.SearchKeywords}" FilterMode="Contains" MinimumPopulateDelay="500"
                                      MinimumPrefixLength="2" MinWidth="200" Margin="0,0,5,0" BorderBrush="#858585"/>
                     <Button Click="ButtonSearch_Click" Width="32" Height="32" Background="#858585">
                         <Path Stroke="White" Data="M 17 17 A 1 1 0 0 0 -17 -17 A 1 1 0 0 0 17 17 L 52 54" StrokeThickness="2" Stretch="Uniform"/>
                     </Button>
                 </StackPanel>
-                <Border Width="30"/>
-            </WrapPanel>
-        </Grid>
+                <!--<Border Width="30"/>
+            </WrapPanel>-->
+        </StackPanel>
         <!--<TextBlock Text="Search" Style="{StaticResource PageHeader_Style}"/>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
             <TextBox x:Name="SearchField" MinWidth="200" Margin="0,0,5,0" KeyDown="SearchField_KeyDown"/>

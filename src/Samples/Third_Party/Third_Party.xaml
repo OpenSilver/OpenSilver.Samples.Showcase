@@ -11,12 +11,12 @@
         
         <StackPanel Margin="0,0,20,20">
             <Grid>
-                <TextBlock Text="Third-Party Components" Foreground="#FF2299A1" Style="{StaticResource PageHeader_Style}"/>
-                <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <ContentControl Content="Third-Party Components" Foreground="#FF2299A1" Style="{StaticResource PageHeader_Style}"/>
+                <!--<WrapPanel Orientation="Horizontal" HorizontalAlignment="Right">
                     <TextBlock Text="Third-Party Components" Style="{StaticResource PageHeader_Style}" Foreground="Transparent"/>
                     <local:SearchControl HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
                     <Border Width="30"/>
-                </WrapPanel>
+                </WrapPanel>-->
             </Grid>
 
             <StackPanel Margin="30,5,0,0">
