@@ -25,6 +25,8 @@ async function onInstall(event) {
         .filter(asset => !offlineAssetsExclude.some(pattern => pattern.test(asset.url)))
         .map(asset => new Request(asset.url, { integrity: asset.hash, cache: 'no-cache' }));
     await caches.open(cacheName).then(cache => cache.addAll(assetsRequests));
+
+    self.skipWaiting(); // required for update detection
 }
 
 async function onActivate(event) {
@@ -35,6 +37,8 @@ async function onActivate(event) {
     await Promise.all(cacheKeys
         .filter(key => key.startsWith(cacheNamePrefix) && key !== cacheName)
         .map(key => caches.delete(key)));
+
+    event.waitUntil(clients.claim()); // activate immediately
 }
 
 async function onFetch(event) {
