@@ -28,6 +28,9 @@
             document.head.appendChild(script);
         })();
     </script>
+    <link href="manifest.webmanifest" rel="manifest"/>
+    <link rel="icon" type="image/png" href="favicon.png"/>
+    <link rel="apple-touch-icon" sizes="256x256" href="favicon.png"/>
 </head>
 <body>
     <div id="app">
@@ -60,6 +63,7 @@
                 scriptWebAssembly.setAttribute('type', 'application/javascript');
                 scriptWebAssembly.setAttribute('src', '_framework/blazor.webassembly.js?date=' + new Date().toISOString());
                 document.body.appendChild(scriptWebAssembly);
+                navigator.serviceWorker.register('service-worker.js');
             });
             document.body.appendChild(script);
         })();
