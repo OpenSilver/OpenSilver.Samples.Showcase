@@ -64,6 +64,9 @@
     <Page Include="Samples\Client_Server\RIAServices\RIAServices_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\Interop_Samples\PWA\PWA_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\Maui_Hybrid\Barometer\Barometer_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -225,6 +228,7 @@
     <Compile Include="Samples\Charts\ScatterSeries\ScatterSeries_Demo.xaml.vb" />
     <Compile Include="Samples\Charts\Stacked100AreaSeries\Stacked100AreaSeries_Demo.xaml.vb" />
     <Compile Include="Samples\Client_Server\RIAServices\RIAServices_Demo.xaml.vb" />
+    <Compile Include="Samples\Interop_Samples\PWA\PWA_Demo.xaml.vb" />
     <Compile Include="Samples\Maui_Hybrid\Barometer\Barometer_Demo.xaml.vb" />
     <Compile Include="Samples\Maui_Hybrid\Battery\Battery_Demo.xaml.vb" />
     <Compile Include="Samples\Maui_Hybrid\Camera\Camera_Demo.xaml.vb" />

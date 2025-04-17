@@ -216,6 +216,12 @@
 		<Compile Include="Samples\Interop_Samples\MethodToUpdateDom\MethodToUpdateDom_Demo.xaml.fs">
 			<DependentUpon>Samples\Interop_Samples\MethodToUpdateDom\MethodToUpdateDom_Demo.xaml</DependentUpon>
 		</Compile>
+		<Page Include="Samples\Interop_Samples\PWA\PWA_Demo.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</Page>
+    <Compile Include="Samples\Interop_Samples\PWA\PWA_Demo.xaml.fs">
+      <DependentUpon>Samples\Interop_Samples\PWA\PWA_Demo.xaml</DependentUpon>
+    </Compile>
 		<Page Include="Samples\Interop_Samples\WebView\WebBrowser_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
