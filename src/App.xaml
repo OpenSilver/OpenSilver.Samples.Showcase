@@ -19,7 +19,7 @@
                 <mt:LightPalette BackgroundColor="#FFECECEC" ContainerBackgroundColor="#FFFFFFFF" ControlBackgroundColor="#FFFFFFFF" />
             </mt:ModernTheme.LightPalette>
             <mt:ModernTheme.DarkPalette>
-                <mt:DarkPalette ContainerBackgroundColor="#FF212121" />
+                <mt:DarkPalette BackgroundColor="#FF313131" ContainerBackgroundColor="#FF000000" />
             </mt:ModernTheme.DarkPalette>
         </mt:ModernTheme>
     </Application.Theme>
