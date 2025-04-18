@@ -12,6 +12,7 @@ mc:Ignorable="d"
     FontFamily="{StaticResource InterFontFamily}">
     <Page.Resources>
         <SolidColorBrush x:Key="NativeApiButtonBackground" Color="#dddddd"/>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
     </Page.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -22,62 +23,6 @@ mc:Ignorable="d"
         </Grid.RowDefinitions>
         <Grid Grid.Row="1" ClipToBounds="True" Background="{DynamicResource Theme_BackgroundBrush}">
             <Border x:Name="MenuBorder" Canvas.ZIndex="1" Background="{DynamicResource Theme_ControlBackgroundBrush}" Width="180" HorizontalAlignment="Left">
-                <Border.Resources>
-                    <Style TargetType="Button">
-                        <Setter Property="Foreground" Value="#FFDDDDDD" />
-                        <Setter Property="BorderThickness" Value="0"/>
-                        <Setter Property="BorderBrush" Value="#FF718597" />
-                        <Setter Property="Padding" Value="3" />
-                        <Setter Property="Cursor" Value="Hand" />
-                        <Setter Property="HorizontalContentAlignment" Value="Left" />
-                        <Setter Property="VerticalContentAlignment" Value="Center" />
-                        <Setter Property="FontSize" Value="16"/>
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="Button">
-                                    <Grid>
-                                        <VisualStateManager.VisualStateGroups>
-                                            <VisualStateGroup Name="CommonStates">
-                                                <VisualState Name="Normal">
-                                                    <Storyboard>
-                                                        <DoubleAnimation Duration="0" Storyboard.TargetName="Background" Storyboard.TargetProperty="Opacity" To="0"/>
-                                                    </Storyboard>
-                                                </VisualState>
-                                                <VisualState Name="MouseOver">
-                                                    <Storyboard>
-                                                        <DoubleAnimation Duration="0" Storyboard.TargetName="Background" Storyboard.TargetProperty="Opacity" To="0.1"/>
-                                                    </Storyboard>
-                                                </VisualState>
-                                                <VisualState Name="Pressed">
-                                                    <Storyboard>
-                                                        <Storyboard>
-                                                            <DoubleAnimation Duration="0" Storyboard.TargetName="Background" Storyboard.TargetProperty="Opacity" To="0.2"/>
-                                                        </Storyboard>
-                                                    </Storyboard>
-                                                </VisualState>
-                                            </VisualStateGroup>
-                                        </VisualStateManager.VisualStateGroups>
-                                        <Border
-                      x:Name="Background"
-                      Opacity="0"
-                      CornerRadius="0"
-                      Background="White"
-                      BorderThickness="{TemplateBinding BorderThickness}"
-                      BorderBrush="{TemplateBinding BorderBrush}">
-                                        </Border>
-                                        <ContentPresenter
-                          x:Name="ContentPresenter"
-                          ContentTemplate="{TemplateBinding ContentTemplate}"
-                          Content="{TemplateBinding Content}"
-                          Margin="{TemplateBinding Padding}"
-                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
-                                    </Grid>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                    </Style>
-                </Border.Resources>
                 <Border.RenderTransform>
                     <TranslateTransform/>
                 </Border.RenderTransform>
@@ -161,21 +106,23 @@ Value="1" />
                             </ToggleButton.Style>
                         </ToggleButton>
                         <StackPanel Orientation="Horizontal" Grid.Column="2">
-                            <Button x:Name="ButtonBackwards" Content="←" FontSize="22" Click="ButtonBackwards_Click"/>
-                            <Button x:Name="ButtonForward" Content="→" FontSize="22" Click="ButtonForward_Click"/>
+                            <Button x:Name="ButtonBackwards" Content="←" FontSize="22" Click="ButtonBackwards_Click" Style="{StaticResource ButtonTransparentBackground_Style}"/>
+                            <Button x:Name="ButtonForward" Content="→" FontSize="22" Click="ButtonForward_Click" Style="{StaticResource ButtonTransparentBackground_Style}"/>
                         </StackPanel>
                     </Grid>
                     <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
                         <StackPanel>
                             <Image Source="/OpenSilver.Samples.Showcase;component/other/logo-opensilver.png" Margin="10,10,10,0" />
                             <Image Source="/OpenSilver.Samples.Showcase;component/other/logo-showcase.png" Margin="10,0,10,0" />
+                            <local:SearchControl Margin="10,20,10,20"/>
                             <ListBox x:Name="MenuListBox" SelectionChanged="MenuListBox_SelectionChanged" Background="Transparent" BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Hidden">
                                 <ListBox.ItemContainerStyle>
                                     <Style TargetType="ListBoxItem">
                                         <Setter Property="Template">
                                             <Setter.Value>
                                                 <ControlTemplate TargetType="ListBoxItem">
-                                                    <Border x:Name="Root" Opacity="1" Background="Transparent" Padding="10,5,5,5">
+                                                    <Border x:Name="Root" Opacity="1" Background="Transparent" Padding="12,5,5,5"
+                                                            Visibility="{Binding IsVisibleInMenu, Converter={StaticResource BooleanToVisibilityConverter}}">
                                                         <VisualStateManager.VisualStateGroups>
                                                             <VisualStateGroup x:Name="CommonStates">
                                                                 <VisualState x:Name="Normal" />

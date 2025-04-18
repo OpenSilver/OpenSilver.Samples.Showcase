@@ -8,7 +8,7 @@ namespace OpenSilver.Samples.Showcase
 {
     public class PageInfo
     {
-        public PageInfo(string name, string path) => (Name, Path) = (name, path);
+        public PageInfo(string name, string path, bool isVisibleInMenu) => (Name, Path, IsVisibleInMenu) = (name, path, isVisibleInMenu);
 
         static List<PageInfo> _pageInfos;
         static PageInfo _landingPageInfo;
@@ -20,15 +20,15 @@ namespace OpenSilver.Samples.Showcase
                 if (_pageInfos == null)
                 {
                     _pageInfos = new List<PageInfo>();
-                    _pageInfos.Add(new PageInfo("Panels & Controls", "/XAML_Controls"));
-                    _pageInfos.Add(new PageInfo("Xaml Features", "/XAML_Features"));
-                    _pageInfos.Add(new PageInfo(".NET Framework", "/Net_Framework"));
-                    _pageInfos.Add(new PageInfo("Client / Server", "/Client_Server"));
-                    _pageInfos.Add(new PageInfo("Interop", "/Interop_Samples"));
-                    _pageInfos.Add(new PageInfo("Charts", "/Charts"));
-                    _pageInfos.Add(new PageInfo("Performance", "/Performance"));
-                    _pageInfos.Add(new PageInfo("Native APIs", "/Maui_Hybrid"));
-                    _pageInfos.Add(new PageInfo("Third-Party", "/Third_Party"));
+                    _pageInfos.Add(new PageInfo("Panels & Controls", "/XAML_Controls", true));
+                    _pageInfos.Add(new PageInfo("Xaml Features", "/XAML_Features", true));
+                    _pageInfos.Add(new PageInfo(".NET Framework", "/Net_Framework", true));
+                    _pageInfos.Add(new PageInfo("Client / Server", "/Client_Server", true));
+                    _pageInfos.Add(new PageInfo("Interop", "/Interop_Samples", true));
+                    _pageInfos.Add(new PageInfo("Charts", "/Charts", true));
+                    _pageInfos.Add(new PageInfo("Performance", "/Performance", true));
+                    _pageInfos.Add(new PageInfo("Native APIs", "/Maui_Hybrid", true));
+                    _pageInfos.Add(new PageInfo("Third-Party", "/Third_Party", true));
                     _pageInfos.Add(LandingPageInfo);
                     _pageInfos.Add(SearchPageInfo);
                 }
@@ -43,7 +43,7 @@ namespace OpenSilver.Samples.Showcase
             {
                 if (_landingPageInfo == null)
                 {
-                    _landingPageInfo = new PageInfo("Home", "/Welcome");
+                    _landingPageInfo = new PageInfo("Home", "/Welcome", false);
                 }
                 return _landingPageInfo;
             }
@@ -55,7 +55,7 @@ namespace OpenSilver.Samples.Showcase
             {
                 if (_searchPageInfo == null)
                 {
-                    _searchPageInfo = new PageInfo("Search", "/Search");
+                    _searchPageInfo = new PageInfo("Search", "/Search", false);
                 }
                 return _searchPageInfo;
             }
@@ -64,5 +64,6 @@ namespace OpenSilver.Samples.Showcase
 
         public string Name { get; set; }
         public string Path { get; set; }
+        public bool IsVisibleInMenu { get; set; }
     }
 }
