@@ -15,42 +15,42 @@ namespace OpenSilver.Samples.Showcase
         {
             InitializeComponent();
 
-            SearchField.Loaded += OnSearchFieldLoaded;
-            SearchField.AddHandler(KeyDownEvent, new KeyEventHandler(SearchField_KeyDown), true);
+            //SearchField.Loaded += OnSearchFieldLoaded;
+            //SearchField.AddHandler(KeyDownEvent, new KeyEventHandler(SearchField_KeyDown), true);
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             if (NavigationContext.QueryString.TryGetValue(SearchArgName, out var searchTerms) && !string.IsNullOrWhiteSpace(searchTerms))
             {
-                SearchField.Text = searchTerms;
+                //SearchField.Text = searchTerms;
                 PerformSearch(searchTerms);
             }
         }
 
-        private void OnSearchFieldLoaded(object sender, RoutedEventArgs e)
-        {
-            SearchField.Focus();
-        }
+        //private void OnSearchFieldLoaded(object sender, RoutedEventArgs e)
+        //{
+        //    SearchField.Focus();
+        //}
 
-        private void ButtonSearch_Click(object sender, RoutedEventArgs e)
-        {
-            NavigateToSearch();
-        }
+        //private void ButtonSearch_Click(object sender, RoutedEventArgs e)
+        //{
+        //    NavigateToSearch();
+        //}
 
-        private void SearchField_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Enter)
-            {
-                NavigateToSearch();
-            }
-        }
+        //private void SearchField_KeyDown(object sender, KeyEventArgs e)
+        //{
+        //    if (e.Key == Key.Enter)
+        //    {
+        //        NavigateToSearch();
+        //    }
+        //}
 
-        private void NavigateToSearch()
-        {
-            string searchText = SearchField.Text;
-            NavigationService.Navigate(new Uri($"/Search/{searchText}", UriKind.Relative));
-        }
+        //private void NavigateToSearch()
+        //{
+        //    string searchText = SearchField.Text;
+        //    NavigationService.Navigate(new Uri($"/Search/{searchText}", UriKind.Relative));
+        //}
 
         internal void PerformSearch(string searchText)
         {
