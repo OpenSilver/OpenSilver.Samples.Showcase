@@ -17,7 +17,6 @@ namespace OpenSilver.Samples.Showcase
             Current = this;
             Loaded += MainPage_Loaded;
             SizeChanged += MainPage_SizeChanged;
-
             MenuListBox.ItemsSource = PageInfo.Pages;
         }
 
