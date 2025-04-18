@@ -22,6 +22,7 @@
             <local:Binding1_Demo x:Name="Binding1Demo" HorizontalAlignment="Center"/>
             <local:Binding2_Demo HorizontalAlignment="Center"/>
             <local:Binding3_Demo HorizontalAlignment="Center"/>
+            <local:MultiBinding_Demo/>
             <local:Command_Demo/>
             <local:Gradients_Demo HorizontalAlignment="Center"/>
             <local:Styles_Demo/>

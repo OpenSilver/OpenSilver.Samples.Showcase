@@ -200,6 +200,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Compile Include="Other\Converters\EnumToListConverter.vb" />
+    <Compile Include="Other\Converters\RgbToBrushConverter.vb" />
     <Compile Include="Other\Elements.vb" />
     <Compile Include="Other\Internals\Search\ControlSearch.vb" />
     <Compile Include="Other\Internals\Search\SamplesInfoLoader.vb" />
@@ -277,6 +278,7 @@
     <Compile Include="Samples\XAML_Features\ImageBrush\ImageBrush_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Features\MeasureArrange\MeasureArrange_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Features\MeasureArrange\RadialPanel.vb" />
+    <Compile Include="Samples\XAML_Features\MultiBinding\MultiBinding_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Features\Styles\Styles_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Features\Themes\Themes_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Features\Triggers\Triggers_Demo.xaml.vb" />
@@ -619,6 +621,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Features\MeasureArrange\MeasureArrange_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\XAML_Features\MultiBinding\MultiBinding_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Features\PropertyChangedTrigger\PropertyChangedTrigger_Demo.xaml">

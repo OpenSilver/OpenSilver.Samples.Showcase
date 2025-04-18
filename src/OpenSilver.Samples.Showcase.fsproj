@@ -28,6 +28,7 @@
 			<Generator>MSBuild:Compile</Generator>
 		</Content>
 		<Compile Include="Other\Converters\EnumToListConverter.fs" />
+		<Compile Include="Other\Converters\RgbToBrushConverter.fs" />
 		<Compile Include="Other\MarkupExtensions\ResxExtension.fs" />
 		<Compile Include="Other\ObservableObject.fs" />
 		<Compile Include="Other\PageInfo.fs" />
@@ -1080,6 +1081,12 @@
 		<Compile Include="Samples\XAML_Features\MouseWheel\MouseWheel_Demo.xaml.fs">
 			<DependentUpon>Samples\XAML_Features\MouseWheel\MouseWheel_Demo.xaml</DependentUpon>
 		</Compile>
+		<Page Include="Samples\XAML_Features\MultiBinding\MultiBinding_Demo.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</Page>
+    <Compile Include="Samples\XAML_Features\MultiBinding\MultiBinding_Demo.xaml.fs">
+      <DependentUpon>Samples\XAML_Features\MultiBinding\MultiBinding_Demo.xaml</DependentUpon>
+    </Compile>
 		<Page Include="Samples\XAML_Features\PropertyChangedTrigger\PropertyChangedTrigger_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>

@@ -203,6 +203,7 @@
     </Page>
     <Compile Include="Other\Contact.cs" />
     <Compile Include="Other\Converters\EnumToListConverter.cs" />
+    <Compile Include="Other\Converters\RgbToBrushConverter.cs" />
     <Compile Include="Other\Elements.cs" />
     <Compile Include="Other\Internals\Search\SamplesInfoLoader.cs" />
     <Compile Include="Other\Internals\Search\ControlSearch.cs" />
@@ -286,6 +287,10 @@
     <Compile Include="Samples\XAML_Features\Themes\Themes_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Features\Triggers\Triggers_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Features\XamlReader\XamlReader_Demo.xaml.cs" />
+    <Page Include="Samples\XAML_Features\MultiBinding\MultiBinding_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="Samples\XAML_Features\MultiBinding\MultiBinding_Demo.xaml.cs" />
   </ItemGroup>
 
   <ItemGroup>
