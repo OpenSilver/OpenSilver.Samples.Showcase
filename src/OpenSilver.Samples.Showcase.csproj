@@ -304,6 +304,8 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
     <Content Include="Other\Inter_VariableFont_slnt_wght.ttf" />
+    <Content Include="Other\Logo-OpenSilver.png" />
+    <Content Include="Other\Logo-Showcase.png" />
     <Content Include="Other\Logo.png" />
     <Content Include="Other\Planets\Earth.png" />
     <Content Include="Other\Planets\Jupiter.png" />
