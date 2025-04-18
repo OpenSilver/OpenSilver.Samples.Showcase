@@ -60,7 +60,7 @@
                     <ControlTemplate TargetType="ContentControl">
                         <Border Background="{DynamicResource Theme_ContainerBackgroundBrush}" CornerRadius="16">
                             <Border.Effect>
-                                <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="30" Opacity="0.2" />
+                                <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="30" Opacity="0.15" />
                             </Border.Effect>
                             <ContentPresenter Margin="16,8,16,8"/>
                         </Border>
@@ -78,7 +78,7 @@
                         <Border Background="{TemplateBinding Foreground}"
                                 Margin="-24,-16,-24,16"
                                 Padding="14,8,16,8"
-                                CornerRadius="16"
+                                CornerRadius="32"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Top">
                             <Border.Effect>

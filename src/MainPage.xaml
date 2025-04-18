@@ -27,7 +27,7 @@ mc:Ignorable="d"
                     <TranslateTransform/>
                 </Border.RenderTransform>
                 <Border.Effect>
-                    <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="14" Opacity="0.2" />
+                    <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="14" Opacity="0.15" />
                 </Border.Effect>
                 <DockPanel LastChildFill="True">
                     <Grid Margin="10,10,10,10" DockPanel.Dock="Bottom">
