@@ -112,8 +112,8 @@ Value="1" />
                     </Grid>
                     <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
                         <StackPanel>
-                            <Image Source="/OpenSilver.Samples.Showcase;component/other/logo-opensilver.png" Margin="10,10,10,0" />
-                            <Image Source="/OpenSilver.Samples.Showcase;component/other/logo-showcase.png" Margin="10,0,10,0" />
+                            <Image Source="/OpenSilver.Samples.Showcase;component/other/logo-opensilver.png" Margin="10,10,10,0" Cursor="Hand" MouseLeftButtonDown="Logo_MouseLeftButtonDown" />
+                            <Image Source="/OpenSilver.Samples.Showcase;component/other/logo-showcase.png" Margin="10,0,10,0" Cursor="Hand" MouseLeftButtonDown="Logo_MouseLeftButtonDown" />
                             <local:SearchControl Margin="10,20,10,20"/>
                             <ListBox x:Name="MenuListBox" SelectionChanged="MenuListBox_SelectionChanged" Background="Transparent" BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Hidden">
                                 <ListBox.ItemContainerStyle>

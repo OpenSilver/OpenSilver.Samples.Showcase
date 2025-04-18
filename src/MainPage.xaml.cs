@@ -74,6 +74,12 @@ namespace OpenSilver.Samples.Showcase
                 PageContainer.GoForward();
             }
         }
+        private void Logo_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            // Go to the homepage:
+            MenuListBox.SelectedItem = PageInfo.LandingPageInfo;
+            //NavigateToPage("");
+        }
 
         private void PageContainer_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
         {
@@ -274,5 +280,7 @@ namespace OpenSilver.Samples.Showcase
             }
         }
         #endregion
+
+        
     }
 }
