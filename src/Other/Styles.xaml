@@ -78,7 +78,7 @@
                         <Border Background="{TemplateBinding Foreground}"
                                 Margin="-24,-16,-24,16"
                                 Padding="14,8,16,8"
-                                CornerRadius="16"
+                                CornerRadius="32"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Top">
                             <Border.Effect>

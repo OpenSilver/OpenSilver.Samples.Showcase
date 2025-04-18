@@ -16,7 +16,6 @@ namespace OpenSilver.Samples.Showcase
 
             Current = this;
             Loaded += MainPage_Loaded;
-            SizeChanged += MainPage_SizeChanged;
             MenuListBox.ItemsSource = PageInfo.Pages;
         }
 
@@ -47,9 +46,8 @@ namespace OpenSilver.Samples.Showcase
 
         void NavigateToPage(string targetUri)
         {
-            //Hide the menu:
-            if (_currentState == CurrentState.SmallResolution_ShowMenu)
-                GoToState(CurrentState.SmallResolution_HideMenu);
+            // Collapse the menu if on mobile:
+            responsiveSidePanel.CollapseIfMobile();
 
             // Navigate to the target page:
             Uri uri = new Uri(targetUri, UriKind.Relative);
@@ -120,113 +118,6 @@ namespace OpenSilver.Samples.Showcase
             RowThatContainsThePage.Height = new GridLength(1d, GridUnitType.Star);
             RowThatContainsTheGridSplitter.Height = new GridLength(0d);
             RowThatContainsTheSourceCodePane.Height = new GridLength(0d);
-        }
-
-        #endregion
-
-        #region States management
-
-        //This region contains all that we use to make the menu on the left disappear when the screen is too small.
-
-        enum CurrentState
-        {
-            Unset, // Initial value
-            LargeResolution_SeeBothMenuAndPage, // This corresponds to tablets and other devices with high resolution. In this case we see both the menu and the page.
-            SmallResolution_ShowMenu, // This corresponds to smartphones and other devices with low resolution. In this case we see the menu.
-            SmallResolution_HideMenu // This corresponds to smartphones and other devices with low resolution. In this case we do not see the menu.
-        }
-
-        CurrentState _currentState;
-
-        void GoToState(CurrentState newState)
-        {
-            if (newState != _currentState)
-            {
-                if (newState == CurrentState.LargeResolution_SeeBothMenuAndPage)
-                {
-                    // Hide the button to hide/show the menu:
-                    ButtonToHideOrShowMenu.Visibility = Visibility.Collapsed;
-                    PageContainer.Margin = new Thickness(20, 0, 0, 30);
-
-                    // Set the translation of the frame to 0:
-                    ((TranslateTransform)PageContainer.RenderTransform).X = 0;
-
-                    // Increase the margin of the frame to the width of the menu
-                    Thickness margin = PageContainer.Margin;
-                    margin.Left += MenuBorder.Width;
-                    PageContainer.Margin = margin;
-
-                    // Set the translation of the border to 0:
-                    ((TranslateTransform)MenuBorder.RenderTransform).X = 0;
-                }
-                else
-                {
-                    // Revert the changes that are specific to the CurrentState.LargeResolution_SeeBothMenuAndPage state.
-
-                    // Show the button to hide/show the menu:
-                    ButtonToHideOrShowMenu.Visibility = Visibility.Visible;
-                    PageContainer.Margin = new Thickness(0, 50, 0, 30);
-
-                    Thickness margin = PageContainer.Margin;
-                    margin.Left = 0;
-                    PageContainer.Margin = margin;
-
-                    if (newState == CurrentState.SmallResolution_ShowMenu)
-                    {
-                        // Show the menu:
-                        ((TranslateTransform)PageContainer.RenderTransform).X = 180;
-                        ((TranslateTransform)ButtonToHideOrShowMenu.RenderTransform).X = 180;
-                        ((TranslateTransform)MenuBorder.RenderTransform).X = 0;
-                    }
-                    else
-                    {
-                        // Hide the menu:
-                        ((TranslateTransform)PageContainer.RenderTransform).X = 0;
-                        ((TranslateTransform)ButtonToHideOrShowMenu.RenderTransform).X = 0;
-                        ((TranslateTransform)MenuBorder.RenderTransform).X = -180;
-                    }
-                }
-                _currentState = newState;
-            }
-        }
-
-        private void MainPage_SizeChanged(object sender, SizeChangedEventArgs e)
-        {
-            UpdateMenuDispositionBasedOnDisplaySize();
-        }
-
-        private void UpdateMenuDispositionBasedOnDisplaySize()
-        {
-            //note: another way to get the display width is commented below:
-            //Rect windowBounds = Window.Current.Bounds;
-            //double displayWidth = windowBounds.Width;
-
-            double actualWidth = this.ActualWidth;
-            if (!double.IsNaN(actualWidth) && actualWidth > 560d)
-            {
-                GoToState(CurrentState.LargeResolution_SeeBothMenuAndPage);
-            }
-            else if (_currentState == CurrentState.LargeResolution_SeeBothMenuAndPage
-                || _currentState == CurrentState.Unset)
-            {
-                GoToState(CurrentState.SmallResolution_HideMenu);
-            }
-        }
-
-        void ButtonToHideOrShowMenu_Click(object sender, RoutedEventArgs e)
-        {
-            if (_currentState == CurrentState.SmallResolution_ShowMenu)
-            {
-                GoToState(CurrentState.SmallResolution_HideMenu);
-            }
-            else if (_currentState == CurrentState.SmallResolution_HideMenu)
-            {
-                GoToState(CurrentState.SmallResolution_ShowMenu);
-            }
-            else
-            {
-                // Not supposed to happen because the button is not visible when in large resolution mode.
-            }
         }
 
         #endregion

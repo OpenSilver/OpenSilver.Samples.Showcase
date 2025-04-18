@@ -26,6 +26,9 @@
     <Page Include="Other\Internals\Search\SearchControl.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Other\ResponsiveSidePanel\ResponsiveSidePanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\Charts\AreaSeries\AreaSeries_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -211,6 +214,7 @@
     <Compile Include="Other\ObservableObject.cs" />
     <Compile Include="Other\PageInfo.cs" />
     <Compile Include="Other\RelayCommand.cs" />
+    <Compile Include="Other\ResponsiveSidePanel\ResponsiveSidePanel.xaml.cs" />
     <Compile Include="Other\Sales.cs" />
     <Compile Include="Other\Localization\SampleResourceFile.Designer.cs">
       <DesignTime>True</DesignTime>
