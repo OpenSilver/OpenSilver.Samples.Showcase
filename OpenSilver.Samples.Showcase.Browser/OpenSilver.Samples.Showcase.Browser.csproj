@@ -13,6 +13,7 @@
     <BlazorWebAssemblyLoadAllGlobalizationData>true</BlazorWebAssemblyLoadAllGlobalizationData>
     <WasmEnableWebcil>false</WasmEnableWebcil>
     <ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
+    <PublishIISAssets>true</PublishIISAssets>
   </PropertyGroup>
 
   <ItemGroup>
