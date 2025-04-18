@@ -30,6 +30,9 @@
     <Page Include="Other\Internals\Search\SearchControl.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\Blazor_Blazorise\Blazor_Blazorise.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\Blazor_Radzen\Blazor_Radzen.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -286,6 +289,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>SampleResourceFile.resx</DependentUpon>
     </Compile>
+    <Compile Include="Samples\Blazor_Blazorise\Blazor_Blazorise.xaml.cs" />
     <Compile Include="Samples\Blazor_Radzen\Blazor_Radzen.xaml.cs" />
     <Compile Include="Samples\Charts\AreaSeries\AreaSeries_Demo.xaml.cs" />
     <Compile Include="Samples\Charts\BarSeries\BarSeries_Demo.xaml.cs" />

@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<EnableDefaultItems>false</EnableDefaultItems>
+		<DefineSilverlight>true</DefineSilverlight>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Include="Samples\Blazorise_Sample.xaml.cs" />
+	  <Compile Include="Samples\Button\BlazoriseButton_Demo.xaml.cs" />
+	  <Compile Include="Samples\ColorPicker\BlazoriseColorPicker_Demo.xaml.cs" />
+	  <Compile Include="Samples\DatePicker\BlazoriseDatePicker_Demo.xaml.cs" />
+	  <Compile Include="Samples\Table\BlazoriseTable_Demo.xaml.cs" />
+	  <Compile Include="Samples\Table\Employees.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\src\OpenSilver.Samples.Showcase.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Blazorise.Bootstrap5" Version="1.7.5" />
+		<PackageReference Include="Blazorise.Icons.FontAwesome" Version="1.7.5" />
+		<PackageReference Include="OpenSilver" Version="[$(OpenSilverVersion)]" />
+		<PackageReference Include="OpenSilver.ControlsKit" Version="[$(OpenSilverControlsKitVersion)]" />
+		<PackageReference Include="OpenSilver.Blazor" Version="3.2.0-preview-1" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Page Include="Samples\Blazorise_Sample.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </Page>
+	  <Page Include="Samples\Button\BlazoriseButton_Demo.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </Page>
+	  <Page Include="Samples\ColorPicker\BlazoriseColorPicker_Demo.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </Page>
+	  <Page Include="Samples\DatePicker\BlazoriseDatePicker_Demo.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </Page>
+	  <Page Include="Samples\Table\BlazoriseTable_Demo.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </Page>
+	</ItemGroup>
+
+</Project>
