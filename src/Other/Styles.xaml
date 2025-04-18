@@ -26,12 +26,14 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ContentControl">
-                        <Border Background="{DynamicResource Theme_ContainerBackgroundBrush}" CornerRadius="50">
-                            <Border.Effect>
-                                <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="30" Opacity="0.2" />
-                            </Border.Effect>
-                            <ContentPresenter Margin="40,12,40,12"/>
-                        </Border>
+                        <Viewbox Stretch="Uniform" StretchDirection="DownOnly" HorizontalAlignment="Stretch">
+                            <Border Background="{DynamicResource Theme_ContainerBackgroundBrush}" CornerRadius="50">
+                                <Border.Effect>
+                                    <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="30" Opacity="0.2" />
+                                </Border.Effect>
+                                <ContentPresenter Margin="40,12,40,12"/>
+                            </Border>
+                        </Viewbox>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
