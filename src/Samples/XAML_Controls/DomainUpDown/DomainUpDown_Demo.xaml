@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:OpenSilver.Samples.Showcase"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
-             Width="200">
+             Width="220">
 
     <ContentControl Style="{StaticResource Card_Style}">
         <Grid>

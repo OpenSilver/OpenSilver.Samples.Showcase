@@ -21,7 +21,7 @@
             </Grid.RowDefinitions>
             <ContentControl x:Name="TitleContentControl" Content="Triggers" Foreground="#FF6FA9FF" Background="#FF95ABCB" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <StackPanel Width="240">
+                <StackPanel>
                     <TextBlock TextWrapping="Wrap" Text="Below, we set Border.Triggers with an EventTrigger which starts a Storyboard with a repeating color animation." Margin="5,0,5,5" TextAlignment="Center"/>
                     <Border x:Name="MyBorder" Width="50" Height="50" Background="DarkRed">
                         <Border.Triggers>

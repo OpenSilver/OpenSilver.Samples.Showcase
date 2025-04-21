@@ -11,7 +11,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="Open map App" Foreground="#d30091" Background="#FF92BEAC" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="Open Map" Foreground="#d30091" Background="#FF92BEAC" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel x:Name="SampleContainer" Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Button Content="Open map Application" Click="OpenMapAppButton_Click" Height="32" Foreground="#d30091" Background="{DynamicResource NativeApiButtonBackground}" FontWeight="Bold"/>
             </StackPanel>

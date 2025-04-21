@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:OpenSilver.Samples.Showcase"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
-             Width="200">
+             Width="220">
 
     <ContentControl Style="{StaticResource Card_Style}">
         <Grid>
@@ -36,7 +36,7 @@
                 <StackPanel Margin="0,2" Orientation="Horizontal">
                     <TextBlock VerticalAlignment="Center" Text="SelectionMode "/>
                     <ComboBox Height="24"
-                              MaxWidth="102"
+                              MaxWidth="78"
                               FontSize="12"
                               ItemsSource="{Binding Converter={StaticResource EnumToListConverter}, ConverterParameter={x:Type RatingSelectionMode}}"
                               SelectedValue="{Binding Path=SelectionMode, ElementName=rating, Mode=TwoWay}"/>
@@ -45,6 +45,8 @@
                     <TextBlock VerticalAlignment="Center" Text="ItemCount "/>
                     <NumericUpDown Height="24"
                                    FontSize="12"
+                                   MinWidth="0"
+                                   Width="101"
                                    Maximum="5"
                                    Minimum="1"
                                    Value="{Binding Path=ItemCount, ElementName=rating, Mode=TwoWay}"/>

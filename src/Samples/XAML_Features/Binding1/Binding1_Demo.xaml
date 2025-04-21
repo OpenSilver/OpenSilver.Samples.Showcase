@@ -3,7 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
-    <ContentControl Style="{StaticResource Card_Style}" Width="245">
+    <ContentControl Style="{StaticResource Card_Style}" Width="255">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -12,9 +12,9 @@
             </Grid.RowDefinitions>
             <ContentControl Content="Binding (1 of 3)" Foreground="#FFF78069" Background="#FFDCA59C" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1" Orientation="Vertical">
-                <TextBlock Text="DataTemplate, ItemsControl, and ContentControl:" FontSize="16" TextWrapping="Wrap" Width="300" HorizontalAlignment="Left"/>
-                <TextBlock Text="Below is a Master/Details sample. The list of planets is an ItemsControl that has a List&lt;Planet&gt; in its ItemsSource. The detailed view is a ContentControl with a DataTemplate." Foreground="#FF808080" Margin="0,10,0,0" TextWrapping="Wrap" Width="220" FontSize="12" HorizontalAlignment="Left"/>
-                <TextBlock Text="Click a planet to see the detailed view:" Foreground="#FF808080" Margin="0,10,0,0" TextWrapping="Wrap" Width="220" FontSize="12" HorizontalAlignment="Left"/>
+                <TextBlock Text="DataTemplate, ItemsControl, and ContentControl:" FontSize="16" TextWrapping="Wrap" HorizontalAlignment="Left"/>
+                <TextBlock Text="Below is a Master/Details sample. The list of planets is an ItemsControl that has a List&lt;Planet&gt; in its ItemsSource. The detailed view is a ContentControl with a DataTemplate." Foreground="#FF808080" Margin="0,10,0,0" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left"/>
+                <TextBlock Text="Click a planet to see the detailed view:" Foreground="#FF808080" Margin="0,10,0,0" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left"/>
                 <StackPanel Orientation="Horizontal" Background="Black" Margin="0,10,0,0" HorizontalAlignment="Left">
                     <ItemsControl x:Name="ItemsControl1" Width="95" VerticalAlignment="Top" Margin="0,5,0,5">
                         <ItemsControl.ItemTemplate>

@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:OpenSilver.Samples.Showcase"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
-             Width="200">
+             Width="230">
 
     <ContentControl Style="{StaticResource Card_Style}">
         <Grid>
@@ -27,7 +27,7 @@
                 <StackPanel Margin="0,0,0,2" Orientation="Horizontal">
                     <TextBlock VerticalAlignment="Center" Text="Popup Mode "/>
                     <ComboBox Name="popupModes"
-                              Width="114"
+                              Width="99"
                               Height="24"
                               DisplayMemberPath="Name"
                               FontSize="12"
@@ -37,14 +37,14 @@
                 <StackPanel Orientation="Horizontal">
                     <TextBlock VerticalAlignment="Center" Text="TimeSelectionMode "/>
                     <ComboBox Height="24"
-                              MaxWidth="77"
+                              MaxWidth="62"
                               FontSize="12"
                               ItemsSource="{Binding Converter={StaticResource EnumToListConverter}, ConverterParameter={x:Type PopupTimeSelectionMode}}"
                               SelectedValue="{Binding Path=PopupTimeSelectionMode, ElementName=timePicker, Mode=TwoWay}"/>
                 </StackPanel>
                 <StackPanel Margin="0,2" Orientation="Horizontal">
                     <TextBlock VerticalAlignment="Center" Text="MinutesInterval "/>
-                    <NumericUpDown Width="100"
+                    <NumericUpDown Width="85"
                                    Height="24"
                                    MinWidth="0"
                                    FontSize="12"
@@ -52,7 +52,7 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock VerticalAlignment="Center" Text="SecondsInterval "/>
-                    <NumericUpDown Width="97"
+                    <NumericUpDown Width="82"
                                    Height="24"
                                    MinWidth="0"
                                    FontSize="12"
@@ -60,7 +60,7 @@
                 </StackPanel>
                 <StackPanel Margin="0,2" Orientation="Horizontal">
                     <TextBlock VerticalAlignment="Center" Text="ButtonMode "/>
-                    <ComboBox Width="116"
+                    <ComboBox Width="101"
                               Height="24"
                               FontSize="12"
                               ItemsSource="{Binding Converter={StaticResource EnumToListConverter}, ConverterParameter={x:Type ClickMode}}"

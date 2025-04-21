@@ -10,7 +10,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="DataContractSerializer" Foreground="#FFF79B69" Background="#FFD3A287" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="DataContract Serializer" Foreground="#FFF79B69" Background="#FFD3A287" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1" HorizontalAlignment="Center">
                 <StackPanel x:Name="SerializationSourcePanel" Margin="10,0,0,0">
                     <TextBlock Text="Sample serializable class:"/>
