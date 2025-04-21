@@ -15,37 +15,37 @@ type SearchPage() as this =
     do
         this.InitializeComponent()
 
-        this.SearchField.Loaded.AddHandler(
-            RoutedEventHandler(fun sender args ->
-                this.OnSearchFieldLoaded(sender, args)
-            )
-        )
+        //this.SearchField.Loaded.AddHandler(
+        //    RoutedEventHandler(fun sender args ->
+        //        this.OnSearchFieldLoaded(sender, args)
+        //    )
+        //)
 
-        this.SearchField.AddHandler(
-            UIElement.KeyDownEvent,
-            KeyEventHandler(fun sender e -> this.SearchField_KeyDown(sender, e)),
-            true
-        )
+        //this.SearchField.AddHandler(
+        //    UIElement.KeyDownEvent,
+        //    KeyEventHandler(fun sender e -> this.SearchField_KeyDown(sender, e)),
+        //    true
+        //)
 
     override this.OnNavigatedTo(e: NavigationEventArgs) =
         let found, searchTerms = this.NavigationContext.QueryString.TryGetValue(searchArgName)
         if found && not (String.IsNullOrWhiteSpace searchTerms) then
-            this.SearchField.Text <- searchTerms
+            //this.SearchField.Text <- searchTerms
             this.PerformSearch(searchTerms)
 
-    member private this.OnSearchFieldLoaded(_sender: obj, _e: RoutedEventArgs) =
-        this.SearchField.Focus() |> ignore
+    //member private this.OnSearchFieldLoaded(_sender: obj, _e: RoutedEventArgs) =
+    //    this.SearchField.Focus() |> ignore
 
-    member private this.ButtonSearch_Click(_sender: obj, _e: RoutedEventArgs) =
-        this.NavigateToSearch()
+    //member private this.ButtonSearch_Click(_sender: obj, _e: RoutedEventArgs) =
+    //    this.NavigateToSearch()
 
-    member private this.SearchField_KeyDown(_sender: obj, e: KeyEventArgs) =
-        if e.Key = Key.Enter then
-            this.NavigateToSearch()
+    //member private this.SearchField_KeyDown(_sender: obj, e: KeyEventArgs) =
+    //    if e.Key = Key.Enter then
+    //        this.NavigateToSearch()
 
-    member private this.NavigateToSearch() =
-        let searchText = this.SearchField.Text
-        this.NavigationService.Navigate(Uri($"/Search/{searchText}", UriKind.Relative)) |> ignore
+    //member private this.NavigateToSearch() =
+    //    let searchText = this.SearchField.Text
+    //    this.NavigationService.Navigate(Uri($"/Search/{searchText}", UriKind.Relative)) |> ignore
 
     member internal this.PerformSearch(searchText: string) =
         this.SamplesContainer.Children.Clear()

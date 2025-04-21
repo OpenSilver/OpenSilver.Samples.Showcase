@@ -299,6 +299,8 @@
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+    <Content Include="Other\Logo-OpenSilver.png" />
+    <Content Include="Other\Logo-Showcase.png" />
     <Content Include="Other\Logo.png" />
     <Content Include="Other\Planets\Earth.png" />
     <Content Include="Other\Planets\Jupiter.png" />

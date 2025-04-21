@@ -23,10 +23,6 @@
 
 	<ItemGroup>
 		<Content Include="Connected Services\ServiceReference1\ConnectedService.json" />
-		<Content Include="MainPage.xaml">
-			<SubType>Designer</SubType>
-			<Generator>MSBuild:Compile</Generator>
-		</Content>
 		<Compile Include="Other\Converters\EnumToListConverter.fs" />
 		<Compile Include="Other\Converters\RgbToBrushConverter.fs" />
 		<Compile Include="Other\MarkupExtensions\ResxExtension.fs" />
@@ -38,6 +34,8 @@
 			<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
 			<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
 		</Content>
+		<Content Include="Other\Logo-OpenSilver.png" />
+		<Content Include="Other\Logo-Showcase.png" />
 		<Content Include="Other\Logo.png" />
 		<Content Include="Other\Planets\Earth.png" />
 		<Content Include="Other\Planets\Jupiter.png" />
@@ -57,7 +55,6 @@
 		<Compile Include="Other\Internals\Search\SearchKeywordAttribute.fs" />
 		<Compile Include="Other\Internals\Search\SearchableItem.fs" />
 		<Compile Include="Other\Internals\Search\SamplesInfoLoader.fs" />
-		<Compile Include="Other\Internals\Search\ControlSearch.fs" />
 		<Compile Include="Other\Planet.fs" />
 		<Compile Include="Other\Elements.fs" />
 		<Compile Include="Other\Sales.fs" />
@@ -66,23 +63,25 @@
 			<Generator>ResXFileCodeGenerator</Generator>
 		</EmbeddedResource>
 
-		<Page Include="Other\Internals\Search\SearchControl.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</Page>
+    <Compile Include="Other\Internals\ViewSourceButtonInfo.fs" />
+    <Compile Include="Other\Internals\ViewSourceButtonHelper.fs" />
+    <Compile Include="Other\Internals\ViewSourceButton.fs" />
+    <Compile Include="Other\Internals\Search\ControlSearch.fs" />
+    <Page Include="Other\Internals\Search\SearchControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="Other\Internals\Search\SearchControl.xaml.fs">
+      <DependentUpon>Other\Internals\Search\SearchControl.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="MainPage.xaml.fs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
 		<Page Include="Other\Styles.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
-		<Compile Include="Other\Internals\ViewSourceButtonInfo.fs" />
-		<Compile Include="Other\Internals\ViewSourceButtonHelper.fs" />
-		<Compile Include="Other\Internals\ViewSourceButton.fs" />
-
-		<Compile Include="MainPage.xaml.fs">
-			<DependentUpon>MainPage.xaml</DependentUpon>
-		</Compile>
-		<Compile Include="Other\Internals\Search\SearchControl.xaml.fs">
-			<DependentUpon>Other\Internals\Search\SearchControl.xaml</DependentUpon>
-		</Compile>
-		
 		
 		<!--Charts-->
 		<Page Include="Samples\Charts\ChartDemo.xaml">
@@ -515,21 +514,6 @@
 		<!--End of Performance-->
 
 		<!--Third_Party-->
-		<Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\InteropHelper.fs" />
-		<Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Font.fs" />
-		<Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\TraceMode.fs" />
-		<Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\TraceType.fs" />
-		<Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Annotation.fs" />
-		<Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Axis.fs" />
-		<Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\BarMode.fs" />
-		<Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Line.fs" />
-		<Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Marker.fs" />
-		<Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Domain.fs" />
-		<Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Trace.fs" />
-		<Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Data.fs" />
-		<Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Legend.fs" />
-		<Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\Layout.fs" />
-		<Compile Include="Samples\Third_Party\Plotly_Charts\ChartControl\ChartControl.fs" />
 		<Page Include="Samples\Third_Party\Third_Party.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
@@ -1240,11 +1224,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Update="FSharp.Core" Version="9.0.0.0" />
+	  <PackageReference Update="FSharp.Core" Version="9.0.100" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <UpToDateCheckInput Remove="Samples\XAML_Controls\DateAndTimePicker\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <UpToDateCheckInput Remove="Samples\Third_Party\Plotly_Charts\**" />
 	</ItemGroup>
 
 </Project>

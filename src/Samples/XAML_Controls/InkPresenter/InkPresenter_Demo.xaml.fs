@@ -52,7 +52,7 @@ type InkPresenter_Demo() as this =
 
     //A new stroke object named MyStroke is created. MyStroke is added to the StrokeCollection of the InkPresenter named MyIP
     member private this.OnIP_MouseLeftButtonDown(sender: obj, e: MouseButtonEventArgs) =
-        this.InkPad.CaptureMouse()
+        this.InkPad.CaptureMouse()|> ignore
         let myStylusPointCollection = new StylusPointCollection()
         myStylusPointCollection.Add(e.StylusDevice.GetStylusPoints(this.InkPad))
 

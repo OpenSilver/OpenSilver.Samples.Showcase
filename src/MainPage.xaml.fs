@@ -55,6 +55,9 @@ type MainPage() as this =
         if this.PageContainer.CanGoForward then
             this.PageContainer.GoForward()
 
+    member private this.Logo_MouseLeftButtonDown(sender: obj, e: System.Windows.Input.MouseButtonEventArgs) =
+        this.MenuListBox.SelectedItem <- PageInfo.LandingPageInfo;
+
     member private this.PageContainer_Navigated(sender: obj, e: System.Windows.Navigation.NavigationEventArgs) =
         this.ButtonBackwards.IsEnabled <- this.PageContainer.CanGoBack
         this.ButtonForward.IsEnabled <- this.PageContainer.CanGoForward

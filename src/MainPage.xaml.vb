@@ -65,7 +65,11 @@ Namespace OpenSilver.Samples.Showcase
             End If
         End Sub
 
-        Private Sub PageContainer_Navigated(sender As Object, e As System.Windows.Navigation.NavigationEventArgs)
+        Private Sub Logo_MouseLeftButtonDown(sender As Object, e As Input.MouseButtonEventArgs)
+            MenuListBox.SelectedItem = PageInfo.LandingPageInfo
+        End Sub
+
+        Private Sub PageContainer_Navigated(sender As Object, e As Navigation.NavigationEventArgs)
             ButtonBackwards.IsEnabled = PageContainer.CanGoBack
             ButtonForward.IsEnabled = PageContainer.CanGoForward
         End Sub

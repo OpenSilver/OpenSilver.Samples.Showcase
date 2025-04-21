@@ -24,8 +24,8 @@ type SearchControl() as this =
         if e.Key = Key.Enter then
             this.StartSearch(this.SearchField.Text)
 
-    member this.StartSearch(searchTerms: string) =
-        if not (String.IsNullOrWhiteSpace(searchTerms)) then
-            match Application.Current.RootVisual with
-            | :? MainPage as mainPage -> mainPage.StartSearch(searchTerms)
-            | _ -> ()
+    member this.StartSearch(searchTerms: string) = Console.WriteLine("not implemented")
+        //if not (String.IsNullOrWhiteSpace(searchTerms)) then
+            //match Application.Current.RootVisual with
+            //| :? MainPage as mainPage -> mainPage.StartSearch(searchTerms)
+            //| _ -> ()

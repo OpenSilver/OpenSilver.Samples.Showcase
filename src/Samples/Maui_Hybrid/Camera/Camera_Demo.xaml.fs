@@ -112,7 +112,7 @@ type public Camera_Demo() as this =
         this.FeatureNotAllowedTextBlock.Visibility <- Visibility.Visible
 
     member private this.StopWatchingCamera() =
-        Interop.ExecuteJavaScriptAsync("""let v = document.getElementById("video"); v.srcObject = null;""")
+        Interop.ExecuteJavaScriptAsync("""let v = document.getElementById("video"); v.srcObject = null;""")|> ignore
         _isWatching <- false
 
     member private this.AcceptButton_Click(_sender: obj, _e: RoutedEventArgs) =
