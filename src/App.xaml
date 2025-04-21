@@ -13,11 +13,13 @@
             <local:EnumToListConverter x:Key="EnumToListConverter"/>
         </ResourceDictionary>
     </Application.Resources>
-
     <Application.Theme>
         <mt:ModernTheme CurrentPalette="Light">
+            <mt:ModernTheme.LightPalette>
+                <mt:LightPalette BackgroundColor="#FFECECEC" ContainerBackgroundColor="#FFFFFFFF" ControlBackgroundColor="#FFFFFFFF" />
+            </mt:ModernTheme.LightPalette>
             <mt:ModernTheme.DarkPalette>
-                <mt:DarkPalette ContainerBackgroundColor="#FF212121"/>
+                <mt:DarkPalette BackgroundColor="#FF313131" ContainerBackgroundColor="#FF000000" />
             </mt:ModernTheme.DarkPalette>
         </mt:ModernTheme>
     </Application.Theme>

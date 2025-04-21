@@ -11,7 +11,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="RenderTransforms" Foreground="#FF73AFB3" Background="#FF91C3C5" Style="{StaticResource HeaderControl_Style}"/>
-            <Canvas Grid.Row="1" Height="140" Width="140" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Canvas Grid.Row="1" Height="150" Width="180" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <TextBox Text="ScaleTransform" BorderThickness="2" BorderBrush="Black">
                     <TextBox.RenderTransform>
                         <ScaleTransform ScaleX="1.5" ScaleY="3"/>

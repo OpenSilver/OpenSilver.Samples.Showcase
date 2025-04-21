@@ -11,7 +11,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="Barometer status" Foreground="#bde567" Background="#FF92BEAC" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="Barometer Status" Foreground="#bde567" Background="#FF92BEAC" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel x:Name="SampleContainer" Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <ToggleButton Content="Barometer on/off" Click="BarometerToggleButton_Click" Height="32" Foreground="#bde567" Background="{DynamicResource NativeApiButtonBackground}" FontWeight="Bold"/>
                 <TextBlock x:Name="BarometerTextBlock" TextWrapping="Wrap"/>

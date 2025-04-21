@@ -14,7 +14,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <ContentControl Content="LayoutTransformer"
+            <ContentControl Content="Layout Transformer"
                             Foreground="#FF42BD55"
                             Style="{StaticResource HeaderControl_Style}"/>
 

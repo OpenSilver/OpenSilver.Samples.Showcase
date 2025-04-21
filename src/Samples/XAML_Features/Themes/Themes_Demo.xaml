@@ -21,7 +21,7 @@
                        FontSize="14"
                        TextAlignment="Center"
                        TextWrapping="Wrap">
-                This app uses a modern theme. You can switch between light and dark mode by clicking the toggle in the top-left corner.<LineBreak/><LineBreak/>
+                This app uses a modern theme. You can switch between light and dark mode by clicking the toggle in the bottom-left corner.<LineBreak/><LineBreak/>
                 Learn more <Hyperlink NavigateUri="https://doc.opensilver.net/documentation/how-to-topics/theme-handling.html" TargetName="_blank">here</Hyperlink>.
             </TextBlock>
 

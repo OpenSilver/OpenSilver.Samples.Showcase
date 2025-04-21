@@ -4,12 +4,40 @@
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
 
     <FontFamily x:Key="InterFontFamily">ms-appx:///OpenSilver.Samples.Showcase/Other/Inter_VariableFont_slnt_wght.ttf</FontFamily>
-    <Style x:Key="PageHeader_Style" TargetType="TextBlock">
-        <Setter Property="FontSize" Value="36"/>
-        <Setter Property="TextWrapping" Value="Wrap"/>
-        <Setter Property="FontFamily" Value="{StaticResource InterFontFamily}"/>
-        <Setter Property="Margin" Value="21,20,10,0"/>
-        <Setter Property="Foreground" Value="Gray"/>
+    <Style x:Key="PageHeader_Style" TargetType="ContentControl">
+        <Style.Setters>
+            <Setter Property="FontSize" Value="60"/>
+            <Setter Property="FontWeight" Value="Black"/>
+            <Setter Property="FontFamily" Value="{StaticResource InterFontFamily}"/>
+            <Setter Property="Margin" Value="21,20,10,20"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Foreground">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Offset="0" Color="#FF3288F1"/>
+                        <GradientStop Offset="0.2" Color="#FF9442FD"/>
+                        <GradientStop Offset="0.4" Color="#FFC534CD"/>
+                        <GradientStop Offset="0.6" Color="#FFEE3881"/>
+                        <GradientStop Offset="0.8" Color="#FFFB7434"/>
+                        <GradientStop Offset="1" Color="#FFFFB200"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ContentControl">
+                        <Viewbox Stretch="Uniform" StretchDirection="DownOnly" HorizontalAlignment="Stretch">
+                            <Border Background="{DynamicResource Theme_ContainerBackgroundBrush}" CornerRadius="50">
+                                <Border.Effect>
+                                    <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="30" Opacity="0.2" />
+                                </Border.Effect>
+                                <ContentPresenter Margin="40,12,40,12"/>
+                            </Border>
+                        </Viewbox>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
     </Style>
     <Style x:Key="CardHeader_Style" TargetType="TextBlock">
         <Setter Property="FontSize" Value="24"/>
@@ -30,11 +58,11 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ContentControl">
-                        <Border Background="{DynamicResource Theme_ContainerBackgroundBrush}" CornerRadius="6">
+                        <Border Background="{DynamicResource Theme_ContainerBackgroundBrush}" CornerRadius="16">
                             <Border.Effect>
-                                <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="10" Opacity="0.1" />
+                                <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="30" Opacity="0.15" />
                             </Border.Effect>
-                            <ContentPresenter Margin="8,8,8,8"/>
+                            <ContentPresenter Margin="16,8,16,8"/>
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>
@@ -43,18 +71,18 @@
     </Style>
     <Style x:Key="HeaderControl_Style" TargetType="ContentControl">
         <Style.Setters>
-            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontSize" Value="22"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ContentControl">
                         <Border Background="{TemplateBinding Foreground}"
-                                Margin="-16,-16,-10,16"
-                                Padding="12,2,12,4"
-                                CornerRadius="2"
+                                Margin="-24,-16,-24,16"
+                                Padding="14,8,16,8"
+                                CornerRadius="32"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Top">
                             <Border.Effect>
-                                <DropShadowEffect ShadowDepth="3" Color="{Binding Background.Color, RelativeSource={RelativeSource Mode=TemplatedParent}}" BlurRadius="10" Opacity="0.3" />
+                                <DropShadowEffect ShadowDepth="3" Color="{Binding Foreground.Color, RelativeSource={RelativeSource Mode=TemplatedParent}}" BlurRadius="20" Opacity="0.5" />
                             </Border.Effect>
                             <TextBlock Text="{TemplateBinding Content}"
                                        Foreground="White"
@@ -66,6 +94,60 @@
                 </Setter.Value>
             </Setter>
         </Style.Setters>
+    </Style>
+    <Style x:Key="ButtonTransparentBackground_Style" TargetType="Button">
+        <Setter Property="Foreground" Value="#FFDDDDDD" />
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="BorderBrush" Value="#FF718597" />
+        <Setter Property="Padding" Value="3" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup Name="CommonStates">
+                                <VisualState Name="Normal">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" Storyboard.TargetName="Background" Storyboard.TargetProperty="Opacity" To="0"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" Storyboard.TargetName="Background" Storyboard.TargetProperty="Opacity" To="0.1"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState Name="Pressed">
+                                    <Storyboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0" Storyboard.TargetName="Background" Storyboard.TargetProperty="Opacity" To="0.2"/>
+                                        </Storyboard>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border
+                              x:Name="Background"
+                              Opacity="0"
+                              CornerRadius="0"
+                              Background="White"
+                              BorderThickness="{TemplateBinding BorderThickness}"
+                              BorderBrush="{TemplateBinding BorderBrush}">
+                        </Border>
+                        <ContentPresenter
+                              x:Name="ContentPresenter"
+                              ContentTemplate="{TemplateBinding ContentTemplate}"
+                              Content="{TemplateBinding Content}"
+                              Margin="{TemplateBinding Padding}"
+                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
     <Style x:Key="ButtonViewSource_Style" TargetType="Button">
         <Setter Property="Content" Value="VIEW SOURCE..." />

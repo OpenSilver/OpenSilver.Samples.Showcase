@@ -6,14 +6,14 @@
     
     <StackPanel>
         <Grid>
-            <TextBlock Style="{StaticResource PageHeader_Style}" Text="Charts"/>
-            <WrapPanel HorizontalAlignment="Right" Orientation="Horizontal">
+            <ContentControl Style="{StaticResource PageHeader_Style}" Content="Charts"/>
+            <!--<WrapPanel HorizontalAlignment="Right" Orientation="Horizontal">
                 <TextBlock Foreground="Transparent"
                            Style="{StaticResource PageHeader_Style}"
                            Text="Charts"/>
                 <local:SearchControl HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
                 <Border Width="30"/>
-            </WrapPanel>
+            </WrapPanel>-->
         </Grid>
         <controlskit:StaggeredPanel DesiredColumnWidth="700" ProgressiveRenderingChunkSize="2">
             <local:AreaSeries_Demo/>

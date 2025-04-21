@@ -12,7 +12,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="PropertyChangedTrigger" Foreground="#ff70db70" Background="#FFB2BD69" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="PropertyChanged Trigger" Foreground="#ff70db70" Background="#FFB2BD69" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1">
                 <TextBlock Text="The sample below uses a TextBlock inside a Border. The PropertyChangedTrigger is configured to change the background color of the Border based on the text value in the TextBlock." Foreground="#FF808080" Margin="0,0,0,10" TextWrapping="Wrap" Width="220" FontSize="12" HorizontalAlignment="Left"/>
                 <TextBlock Text="Click on the button to toggle the TextBlock text." Foreground="#FF808080" Margin="0,0,0,10" TextWrapping="Wrap" Width="220" FontSize="12" HorizontalAlignment="Left"/>

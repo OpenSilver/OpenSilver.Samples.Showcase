@@ -11,7 +11,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="DependencyProperties" Foreground="#FFFFCC33" Background="#FFC5B58B" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="Dependency Properties" Foreground="#FFFFCC33" Background="#FFC5B58B" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1">
                 <TextBlock xml:space="preserve" Text=" A dependency property enables animations, style, binding, etc. 
                            Use the &quot;propdp&quot; code snippet to facilitate the creation of a dependecy property"  Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left"/>

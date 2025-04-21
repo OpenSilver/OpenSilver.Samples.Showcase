@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:OpenSilver.Samples.Showcase"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
-             Width="220">
+             Width="240">
 
     <ContentControl Style="{StaticResource Card_Style}">
         <Grid>
@@ -23,7 +23,7 @@
                        HorizontalAlignment="Center"
                        VerticalAlignment="Center">
                 <AccordionItem Header="Item 1">
-                    <ScrollViewer MaxWidth="150" MaxHeight="120">
+                    <ScrollViewer MaxWidth="180" MaxHeight="120">
                         <TextBlock FontSize="12" TextWrapping="Wrap">
                             The Accordion is a control that allows you to provide multiple panes and display them.<LineBreak/>
                             There are several selection modes, so you can decide if only one pane can be open,<LineBreak/>
@@ -47,7 +47,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
