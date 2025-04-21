@@ -291,6 +291,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Compile Include="Samples\XAML_Features\MultiBinding\MultiBinding_Demo.xaml.cs" />
+    <Page Include="Samples\XAML_Controls\ItemsControl\ItemsControl_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="Samples\XAML_Controls\ItemsControl\ItemsControl_Demo.xaml.cs" />
   </ItemGroup>
 
   <ItemGroup>

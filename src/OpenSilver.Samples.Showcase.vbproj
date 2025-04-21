@@ -160,6 +160,9 @@
     <Page Include="Samples\XAML_Controls\InkPresenter\InkPresenter_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\XAML_Controls\ItemsControl\ItemsControl_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\XAML_Controls\LayoutTransformer\LayoutTransformer_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -261,6 +264,7 @@
     <Compile Include="Samples\XAML_Controls\GlobalCalendar\GlobalCalendar_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\HeaderedContentControl\HeaderedContentControl_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\InkPresenter\InkPresenter_Demo.xaml.vb" />
+    <Compile Include="Samples\XAML_Controls\ItemsControl\ItemsControl_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\LayoutTransformer\LayoutTransformer_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\ProgressBar\ProgressBar_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\Rating\Rating_Demo.xaml.vb" />

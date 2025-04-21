@@ -747,6 +747,12 @@
 		<Compile Include="Samples\XAML_Controls\Image\Image_Demo.xaml.fs">
 			<DependentUpon>Samples\XAML_Controls\Image\Image_Demo.xaml</DependentUpon>
 		</Compile>
+		<Page Include="Samples\XAML_Controls\ItemsControl\ItemsControl_Demo.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</Page>
+    <Compile Include="Samples\XAML_Controls\ItemsControl\ItemsControl_Demo.xaml.fs">
+      <DependentUpon>Samples\XAML_Controls\ItemsControl\ItemsControl_Demo.xaml</DependentUpon>
+    </Compile>
 		<Page Include="Samples\XAML_Controls\Label\Label_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>

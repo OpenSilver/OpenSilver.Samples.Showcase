@@ -50,6 +50,7 @@
             <local:RepeatButton_Demo HorizontalAlignment="Center"/>
             <local:GridSplitter_Demo HorizontalAlignment="Center"/>
             <local:ListBox_Demo x:Name="ListBoxDemo" HorizontalAlignment="Center"/>
+            <local:ItemsControl_Demo/>
             <local:Slider_Demo HorizontalAlignment="Center"/>
             <local:TabControl_Demo HorizontalAlignment="Center"/>
             <local:ChildWindow_Demo HorizontalAlignment="Center"/>
