@@ -40,7 +40,7 @@
 
                 <TextBlock Grid.Row="2" Text="MinimumPrefixLength" VerticalAlignment="Center"/>
                 <NumericUpDown Grid.Row="2" Grid.Column="1" Value="{Binding MinimumPrefixLength, ElementName=autoCompleteBox, Mode=TwoWay}"
-                               Minimum="1" Maximum="10" MinWidth="20" Height="24" FontSize="12"/>
+                               Minimum="1" Maximum="10" MinWidth="20" FontSize="12"/>
             </Grid>
             <local:ViewSourceButton Grid.Row="3" Background="#FFFF81E3">
                 <local:ViewSourceButton.Sources>

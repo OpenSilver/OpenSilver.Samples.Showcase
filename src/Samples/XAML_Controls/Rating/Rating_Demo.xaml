@@ -43,8 +43,7 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock VerticalAlignment="Center" Text="ItemCount "/>
-                    <NumericUpDown Height="24"
-                                   FontSize="12"
+                    <NumericUpDown FontSize="12"
                                    MinWidth="0"
                                    Width="101"
                                    Maximum="5"

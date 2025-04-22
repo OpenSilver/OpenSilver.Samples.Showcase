@@ -11,15 +11,30 @@
             </ResourceDictionary.MergedDictionaries>
 
             <local:EnumToListConverter x:Key="EnumToListConverter"/>
+
+            <!-- Set a larger Height for most controls -->
+            <Style TargetType="Button">
+                <Setter Property="Padding" Value="8,6,8,6"/>
+            </Style>
+            <Style TargetType="ToggleButton">
+                <Setter Property="MinHeight" Value="32"/>
+                <Setter Property="Padding" Value="8,6,8,6"/>
+            </Style>
+            <Style TargetType="ComboBox">
+                <Setter Property="MinHeight" Value="32"/>
+            </Style>
+            <Style TargetType="NumericUpDown">
+                <Setter Property="MinHeight" Value="32"/>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
     <Application.Theme>
         <mt:ModernTheme CurrentPalette="Light">
             <mt:ModernTheme.LightPalette>
-                <mt:LightPalette BackgroundColor="#FFECECEC" ContainerBackgroundColor="#FFFFFFFF" ControlBackgroundColor="#FFFFFFFF" />
+                <mt:LightPalette BackgroundColor="#FFECECEC" ContainerBackgroundColor="#FFFFFFFF" PrimaryColor="#FF656565" />
             </mt:ModernTheme.LightPalette>
             <mt:ModernTheme.DarkPalette>
-                <mt:DarkPalette BackgroundColor="#FF313131" ContainerBackgroundColor="#FF000000" />
+                <mt:DarkPalette BackgroundColor="#FF313131" ContainerBackgroundColor="#FF000000" PrimaryColor="#FF3C3C3C" />
             </mt:ModernTheme.DarkPalette>
         </mt:ModernTheme>
     </Application.Theme>

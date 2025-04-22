@@ -45,7 +45,6 @@
                 <StackPanel Margin="0,2" Orientation="Horizontal">
                     <TextBlock VerticalAlignment="Center" Text="MinutesInterval "/>
                     <NumericUpDown Width="85"
-                                   Height="24"
                                    MinWidth="0"
                                    FontSize="12"
                                    Value="{Binding Path=PopupMinutesInterval, ElementName=timePicker, Mode=TwoWay}"/>
@@ -53,7 +52,6 @@
                 <StackPanel Orientation="Horizontal">
                     <TextBlock VerticalAlignment="Center" Text="SecondsInterval "/>
                     <NumericUpDown Width="82"
-                                   Height="24"
                                    MinWidth="0"
                                    FontSize="12"
                                    Value="{Binding Path=PopupSecondsInterval, ElementName=timePicker, Mode=TwoWay}"/>

@@ -11,9 +11,9 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="RadioButton" Foreground="#FFB3CE00" Background="#FFB2BD69" Style="{StaticResource HeaderControl_Style}"/>
-            <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <RadioButton x:Name="RadioButton1" Content="Option 1" Foreground="#FF869A00" FontWeight="Bold" Click="RadioButton_Click"/>
-                <RadioButton x:Name="RadioButton2" Content="Option 2" Margin="10,0,0,0" Foreground="#FF869A00" FontWeight="Bold" Click="RadioButton_Click"/>
+                <RadioButton x:Name="RadioButton2" Content="Option 2" Foreground="#FF869A00" FontWeight="Bold" Click="RadioButton_Click"/>
             </StackPanel>
             <local:ViewSourceButton Grid.Row="2"
                                     Background="#FFB3CE00">
