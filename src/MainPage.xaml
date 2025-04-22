@@ -115,50 +115,46 @@ Value="1" />
                             <Image Source="/OpenSilver.Samples.Showcase;component/other/logo-opensilver.png" Margin="10,10,10,0" Cursor="Hand" MouseLeftButtonDown="Logo_MouseLeftButtonDown" />
                             <Image Source="/OpenSilver.Samples.Showcase;component/other/logo-showcase.png" Margin="10,0,10,0" Cursor="Hand" MouseLeftButtonDown="Logo_MouseLeftButtonDown" />
                             <local:SearchControl Margin="10,20,10,20"/>
-                            <ListBox x:Name="MenuListBox" SelectionChanged="MenuListBox_SelectionChanged" Background="Transparent" BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+                            <ListBox x:Name="MenuListBox" SelectionChanged="MenuListBox_SelectionChanged" Background="Transparent" Margin="10,0,0,0" BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Hidden">
                                 <ListBox.ItemContainerStyle>
                                     <Style TargetType="ListBoxItem">
                                         <Setter Property="Template">
                                             <Setter.Value>
                                                 <ControlTemplate TargetType="ListBoxItem">
-                                                    <Border x:Name="Root" Opacity="1" Background="Transparent" Padding="12,5,5,5"
-                                                            Visibility="{Binding IsVisibleInMenu, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                                    <Grid Background="Transparent" Visibility="{Binding IsVisibleInMenu, Converter={StaticResource BooleanToVisibilityConverter}}">
                                                         <VisualStateManager.VisualStateGroups>
                                                             <VisualStateGroup x:Name="CommonStates">
                                                                 <VisualState x:Name="Normal" />
-                                                                <VisualState x:Name="MouseOver">
-                                                                    <Storyboard>
-                                                                        <DoubleAnimation Storyboard.TargetName="Root"
-                                                                                         Storyboard.TargetProperty="(Border.Opacity)"
-                                                                                         To="0.8"
-                                                                                         Duration="0"/>
-                                                                    </Storyboard>
-                                                                </VisualState>
                                                             </VisualStateGroup>
                                                             <VisualStateGroup x:Name="SelectionStates">
                                                                 <VisualState x:Name="Unselected"/>
                                                                 <VisualState x:Name="Selected">
                                                                     <Storyboard>
-                                                                        <DoubleAnimation Storyboard.TargetName="Presenter"
-                                                                                        Storyboard.TargetProperty="(Border.Opacity)"
-                                                                                        To="1"
-                                                                                        Duration="0"/>
-                                                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Presenter"
+                                                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="SelectedBorder" 
+                                                                                                   Storyboard.TargetProperty="(Border.Background)" 
+                                                                                                   Duration="0">
+                                                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{DynamicResource Theme_PrimaryBrush}"/>
+                                                                        </ObjectAnimationUsingKeyFrames>
+                                                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContainerBorder" 
+                                                                                                   Storyboard.TargetProperty="(TextBlock.Foreground)" 
+                                                                                                   Duration="0">
+                                                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{DynamicResource Theme_TextOnPrimaryBrush}"/>
+                                                                        </ObjectAnimationUsingKeyFrames>
+                                                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContainerBorder"
                                                                                                    Storyboard.TargetProperty="(TextBlock.FontWeight)"
                                                                                                    Duration="0">
                                                                             <DiscreteObjectKeyFrame KeyTime="0" Value="SemiBold" />
-                                                                        </ObjectAnimationUsingKeyFrames>
-                                                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Presenter"
-                                                                                                   Storyboard.TargetProperty="(FrameworkElement.Cursor)"
-                                                                                                   Duration="0">
-                                                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Cursors.Arrow}" />
                                                                         </ObjectAnimationUsingKeyFrames>
                                                                     </Storyboard>
                                                                 </VisualState>
                                                             </VisualStateGroup>
                                                         </VisualStateManager.VisualStateGroups>
-                                                        <ContentPresenter x:Name="Presenter" Opacity="0.5" Cursor="Hand"/>
-                                                    </Border>
+                                                        <Border x:Name="SelectedBorder" Background="Transparent" CornerRadius="20" HorizontalAlignment="Left">
+                                                            <Border x:Name="ContainerBorder" Background="Transparent" Grid.Column="1" Margin="10,5,10,5" TextBlock.FontSize="16" TextBlock.Foreground="{DynamicResource Theme_TextBrush}">
+                                                                <ContentPresenter x:Name="Presenter" TextBlock.Foreground="{Binding (TextBlock.Foreground), ElementName=ContainerBorder}"/>
+                                                            </Border>
+                                                        </Border>
+                                                    </Grid>
                                                 </ControlTemplate>
                                             </Setter.Value>
                                         </Setter>
@@ -166,11 +162,12 @@ Value="1" />
                                 </ListBox.ItemContainerStyle>
                                 <ListBox.ItemTemplate>
                                     <DataTemplate>
-                                        <TextBlock Text="{Binding Name}" FontSize="16"/>
+                                        <Grid Cursor="Hand">
+                                            <TextBlock Text="{Binding Name}"/>
+                                        </Grid>
                                     </DataTemplate>
                                 </ListBox.ItemTemplate>
                             </ListBox>
-
                         </StackPanel>
                     </ScrollViewer>
                 </DockPanel>
