@@ -201,6 +201,9 @@
     <Page Include="Samples\Interop_Samples\WebView\WebBrowser_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\XAML_Features\FlowDirection\FlowDirection_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Compile Include="Other\Contact.cs" />
     <Compile Include="Other\Converters\EnumToListConverter.cs" />
     <Compile Include="Other\Converters\RgbToBrushConverter.cs" />
@@ -283,6 +286,7 @@
     <Compile Include="Samples\XAML_Features\ImageBrush\ImageBrush_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Features\MeasureArrange\MeasureArrange_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Features\MeasureArrange\RadialPanel.cs" />
+    <Compile Include="Samples\XAML_Features\FlowDirection\FlowDirection_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Features\Styles\Styles_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Features\Themes\Themes_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Features\Triggers\Triggers_Demo.xaml.cs" />

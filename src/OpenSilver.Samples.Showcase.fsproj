@@ -1046,6 +1046,12 @@
 		<Compile Include="Samples\XAML_Features\FindElementsInHostCoordinates\FindElementsInHostCoordinates_Demo.xaml.fs">
 			<DependentUpon>Samples\XAML_Features\FindElementsInHostCoordinates\FindElementsInHostCoordinates_Demo.xaml</DependentUpon>
 		</Compile>
+		<Page Include="Samples\XAML_Features\FlowDirection\FlowDirection_Demo.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</Page>
+    <Compile Include="Samples\XAML_Features\FlowDirection\FlowDirection_Demo.xaml.fs">
+      <DependentUpon>Samples\XAML_Features\FlowDirection\FlowDirection_Demo.xaml</DependentUpon>
+    </Compile>
 		<Page Include="Samples\XAML_Features\Gradients\Gradients_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>

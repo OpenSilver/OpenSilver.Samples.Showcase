@@ -7,13 +7,6 @@
     <StackPanel>
         <Grid>
             <ContentControl Style="{StaticResource PageHeader_Style}" Content="XAML Features"/>
-            <!--<WrapPanel HorizontalAlignment="Right" Orientation="Horizontal">
-                <TextBlock Foreground="Transparent"
-                           Style="{StaticResource PageHeader_Style}"
-                           Text="XAML Features"/>
-                <local:SearchControl HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
-                <Border Width="30"/>
-            </WrapPanel>-->
         </Grid>
 
         <controlskit:StaggeredPanel DesiredColumnWidth="280" ProgressiveRenderingChunkSize="2">
@@ -49,6 +42,7 @@
             <local:PropertyChangedTrigger_Demo HorizontalAlignment="Center"/>
             <local:Clipping_Demo/>
             <local:Cursor_Demo/>
+            <local:FlowDirection_Demo/>
         </controlskit:StaggeredPanel>
     </StackPanel>
 </UserControl>
