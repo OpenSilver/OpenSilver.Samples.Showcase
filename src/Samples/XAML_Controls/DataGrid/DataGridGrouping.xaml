@@ -113,8 +113,7 @@
                     <TextBlock VerticalAlignment="Center"
                                FontWeight="Bold"
                                Text="FrozenColumnCount"/>
-                    <NumericUpDown Height="24"
-                                   Margin="4"
+                    <NumericUpDown Margin="4"
                                    VerticalAlignment="Center"
                                    Maximum="10"
                                    Minimum="0"
