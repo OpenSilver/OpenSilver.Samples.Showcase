@@ -1,0 +1,38 @@
+﻿<ChildWindow x:Class="OpenSilver.Samples.Showcase.TreeViewerWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:OpenSilver.Samples.Showcase"
+             Title="Tree Viewer"
+             MaxWidth="600"
+             MaxHeight="400">
+
+    <ChildWindow.Resources>
+        <HierarchicalDataTemplate x:Key="TreeItemTemplate"
+                                  DataType="{x:Type local:TreeNode}"
+                                  ItemsSource="{Binding Children}">
+            <TextBlock Text="{Binding Name}"/>
+        </HierarchicalDataTemplate>
+    </ChildWindow.Resources>
+
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0">
+            <TextBlock Margin="0,0,0,5"
+                       FontWeight="Bold"
+                       Text="Visual Tree"/>
+            <TreeView x:Name="VisualTreeView" ItemTemplate="{StaticResource TreeItemTemplate}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="2">
+            <TextBlock Margin="0,0,0,5"
+                       FontWeight="Bold"
+                       Text="Logical Tree"/>
+            <TreeView x:Name="LogicalTreeView" ItemTemplate="{StaticResource TreeItemTemplate}"/>
+        </StackPanel>
+    </Grid>
+</ChildWindow>

@@ -1,42 +1,22 @@
-﻿Imports OpenSilver.Samples.Showcase.Search
-Imports System.Text
-Imports System.Windows
+﻿Imports System.Windows
 Imports System.Windows.Controls
-Imports System.Windows.Media
+Imports OpenSilver.Samples.Showcase.Search
 
 Namespace OpenSilver.Samples.Showcase
-    <SearchKeywords("visual tree", "UI elements", "XAML", "hierarchy", "UI")>
+
+    <SearchKeywords("logicaltreehelper", "UI elements", "XAML", "hierarchy", "UI", "treeview")>
     Partial Public Class VisualTreeHelper_Demo
         Inherits UserControl
+
         Public Sub New()
-            Me.InitializeComponent()
+            InitializeComponent()
         End Sub
 
-        Private Sub RevealTree_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            Dim finalVisualTree = GetVisualTree(Me)
-            MessageBox.Show(finalVisualTree)
+        Private Sub RevealTree_Click(sender As Object, e As RoutedEventArgs)
+            Dim viewer As New TreeViewerWindow(Me)
+            viewer.Show()
         End Sub
 
-        Public Shared Function GetVisualTree(ByVal parent As DependencyObject) As String
-            Dim visualTreeStringBuilder As StringBuilder = New StringBuilder("Visual Tree : " & Environment.NewLine & Environment.NewLine)
-            GetChildren(parent, visualTreeStringBuilder)
-            Return visualTreeStringBuilder.ToString()
-        End Function
-
-        Private Shared Sub GetChildren(ByVal parent As DependencyObject, ByVal visualTreeStringBuilder As StringBuilder, ByVal Optional indentation As Integer = 0)
-            Dim childrenCount = VisualTreeHelper.GetChildrenCount(parent)
-
-            If childrenCount > 0 Then
-                For i = 0 To childrenCount - 1
-                    For e = 0 To indentation - 1
-                        visualTreeStringBuilder.Append("    ")
-                    Next
-
-                    Dim currentChild = VisualTreeHelper.GetChild(parent, i)
-                    visualTreeStringBuilder.AppendLine(currentChild.ToString())
-                    GetChildren(currentChild, visualTreeStringBuilder, indentation + 1)
-                Next
-            End If
-        End Sub
     End Class
+
 End Namespace

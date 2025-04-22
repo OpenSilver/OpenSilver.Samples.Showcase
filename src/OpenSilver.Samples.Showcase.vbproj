@@ -286,6 +286,7 @@
     <Compile Include="Samples\XAML_Features\Styles\Styles_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Features\Themes\Themes_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Features\Triggers\Triggers_Demo.xaml.vb" />
+    <Compile Include="Samples\XAML_Features\VisualTreeHelper\TreeViewerWindow.xaml.vb" />
     <Compile Include="Samples\XAML_Features\XamlReader\XamlReader_Demo.xaml.vb" />
   </ItemGroup>
   
@@ -678,6 +679,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Features\Validation\Validation_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\XAML_Features\VisualTreeHelper\TreeViewerWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Features\VisualTreeHelper\VisualTreeHelper_Demo.xaml">

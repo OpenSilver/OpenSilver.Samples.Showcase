@@ -1126,6 +1126,13 @@
 		<Compile Include="Samples\XAML_Features\Validation\Validation_Demo.xaml.fs">
 			<DependentUpon>Samples\XAML_Features\Validation\Validation_Demo.xaml</DependentUpon>
 		</Compile>
+    <Compile Include="Samples\XAML_Features\VisualTreeHelper\TreeNode.fs" />
+		<Page Include="Samples\XAML_Features\VisualTreeHelper\TreeViewerWindow.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</Page>
+    <Compile Include="Samples\XAML_Features\VisualTreeHelper\TreeViewerWindow.xaml.fs">
+      <DependentUpon>Samples\XAML_Features\VisualTreeHelper\TreeViewerWindow.xaml</DependentUpon>
+    </Compile>
 		<Page Include="Samples\XAML_Features\VisualTreeHelper\VisualTreeHelper_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
