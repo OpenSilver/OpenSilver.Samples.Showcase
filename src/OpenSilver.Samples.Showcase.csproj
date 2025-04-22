@@ -300,6 +300,11 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Compile Include="Samples\XAML_Features\Clipping\Clipping_Demo.xaml.cs" />
+    <Compile Include="Samples\XAML_Features\Cursor\Cursor_Demo.xaml.cs" />
+    <Page Include="Samples\XAML_Features\Cursor\Cursor_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
 
   <ItemGroup>

@@ -48,6 +48,7 @@
             <local:UriMapper_Demo HorizontalAlignment="Center"/>
             <local:PropertyChangedTrigger_Demo HorizontalAlignment="Center"/>
             <local:Clipping_Demo/>
+            <local:Cursor_Demo/>
         </controlskit:StaggeredPanel>
     </StackPanel>
 </UserControl>

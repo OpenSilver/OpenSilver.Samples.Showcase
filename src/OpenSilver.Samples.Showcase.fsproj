@@ -1016,6 +1016,12 @@
 		<Compile Include="Samples\XAML_Features\Command\Command_Demo.xaml.fs">
 			<DependentUpon>Samples\XAML_Features\Command\Command_Demo.xaml</DependentUpon>
 		</Compile>
+		<Page Include="Samples\XAML_Features\Cursor\Cursor_Demo.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</Page>
+    <Compile Include="Samples\XAML_Features\Cursor\Cursor_Demo.xaml.fs">
+      <DependentUpon>Samples\XAML_Features\Cursor\Cursor_Demo.xaml</DependentUpon>
+    </Compile>
 		<Page Include="Samples\XAML_Features\DependencyProperties\DependencyProperties_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
