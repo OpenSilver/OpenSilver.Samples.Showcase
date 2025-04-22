@@ -31,10 +31,10 @@
     <Application.Theme>
         <mt:ModernTheme CurrentPalette="Light">
             <mt:ModernTheme.LightPalette>
-                <mt:LightPalette BackgroundColor="#FFECECEC" ContainerBackgroundColor="#FFFFFFFF" ControlBackgroundColor="#FFFFFFFF" />
+                <mt:LightPalette BackgroundColor="#FFECECEC" ContainerBackgroundColor="#FFFFFFFF" PrimaryColor="#FF656565" />
             </mt:ModernTheme.LightPalette>
             <mt:ModernTheme.DarkPalette>
-                <mt:DarkPalette BackgroundColor="#FF313131" ContainerBackgroundColor="#FF000000" />
+                <mt:DarkPalette BackgroundColor="#FF313131" ContainerBackgroundColor="#FF000000" PrimaryColor="#FF3C3C3C" />
             </mt:ModernTheme.DarkPalette>
         </mt:ModernTheme>
     </Application.Theme>
