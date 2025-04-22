@@ -998,6 +998,12 @@
 		<Compile Include="Samples\XAML_Features\Binding3\Binding3_Demo.xaml.fs">
 			<DependentUpon>Samples\XAML_Features\Binding3\Binding3_Demo.xaml</DependentUpon>
 		</Compile>
+		<Page Include="Samples\XAML_Features\Clipping\Clipping_Demo.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</Page>
+    <Compile Include="Samples\XAML_Features\Clipping\Clipping_Demo.xaml.fs">
+      <DependentUpon>Samples\XAML_Features\Clipping\Clipping_Demo.xaml</DependentUpon>
+    </Compile>
 		<Page Include="Samples\XAML_Features\ClipToBounds\ClipToBounds_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
