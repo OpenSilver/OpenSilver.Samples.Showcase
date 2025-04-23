@@ -16,14 +16,16 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="20"/>
                     <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="40"/>
                     <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Border Grid.Row="0" Grid.Column="0" Background="#FFFF99A7"/>
-                <Border Grid.Row="1" Grid.Column="0" Background="#FFF169B3"/>
-                <Border Grid.Row="1" Grid.Column="1" Background="#FFFF99EB"/>
+                <Border Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" Background="#FFF169B3"/>
+                <Border Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Background="#FFFF99EB"/>
                 <Border Grid.Row="0" Grid.Column="1" Background="#FFFF359E"/>
             </Grid>
             <local:ViewSourceButton Grid.Row="2"

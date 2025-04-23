@@ -1,31 +1,45 @@
-﻿<UserControl
-    x:Class="OpenSilver.Samples.Showcase.RadioButton_Demo"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
-    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
-    <ContentControl Style="{StaticResource Card_Style}" Width="200">
+﻿<UserControl x:Class="OpenSilver.Samples.Showcase.RadioButton_Demo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+
+    <ContentControl Width="200" Style="{StaticResource Card_Style}">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="RadioButton" Foreground="#FFB3CE00" Background="#FFB2BD69" Style="{StaticResource HeaderControl_Style}"/>
-            <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <RadioButton x:Name="RadioButton1" Content="Option 1" Foreground="#FF869A00" FontWeight="Bold" Click="RadioButton_Click"/>
-                <RadioButton x:Name="RadioButton2" Content="Option 2" Foreground="#FF869A00" FontWeight="Bold" Click="RadioButton_Click"/>
+
+            <ContentControl Content="RadioButton"
+                            Foreground="#FFB3CE00"
+                            Style="{StaticResource HeaderControl_Style}"/>
+
+            <StackPanel Grid.Row="1"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Orientation="Vertical">
+                <StackPanel.Resources>
+                    <Style TargetType="RadioButton">
+                        <Setter Property="Foreground" Value="#FF869A00"/>
+                    </Style>
+                </StackPanel.Resources>
+
+                <TextBlock Text="Select an option:"/>
+                <RadioButton Content="Option 1"/>
+                <RadioButton Content="Option 2"/>
+                <TextBlock Margin="0,10,0,0" Text="Another group:"/>
+                <RadioButton Content="Option 3" GroupName="Group1"/>
+                <RadioButton Content="Option 4" GroupName="Group1"/>
+                <RadioButton Content="Option 5" GroupName="Group1"/>
             </StackPanel>
-            <local:ViewSourceButton Grid.Row="2"
-                                    Background="#FFB3CE00">
+
+            <local:ViewSourceButton Grid.Row="2" Background="#FFB3CE00">
                 <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/RadioButton"
-                                                FileName="RadioButton_Demo.xaml" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/RadioButton"
-                                                FileName="RadioButton_Demo.xaml.cs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/RadioButton"
-                                                FileName="RadioButton_Demo.xaml.vb" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/RadioButton"
-                                                FileName="RadioButton_Demo.xaml.fs" />
+                    <local:ViewSourceButtonInfo FileName="RadioButton_Demo.xaml" RelativePath="src/Samples/XAML_Controls/RadioButton"/>
+                    <local:ViewSourceButtonInfo FileName="RadioButton_Demo.xaml.cs" RelativePath="src/Samples/XAML_Controls/RadioButton"/>
+                    <local:ViewSourceButtonInfo FileName="RadioButton_Demo.xaml.vb" RelativePath="src/Samples/XAML_Controls/RadioButton"/>
+                    <local:ViewSourceButtonInfo FileName="RadioButton_Demo.xaml.fs" RelativePath="src/Samples/XAML_Controls/RadioButton"/>
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

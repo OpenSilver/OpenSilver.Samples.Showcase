@@ -23,36 +23,42 @@
 
                 <StackPanel x:Name="DemoPanel" Margin="0,20,0,0">
                     <TextBlock Margin="0,0,0,10"
-                               Text="The FlowDirection property affects:"
+                               Text="The FlowDirection property affects alignment and items order:"
                                TextWrapping="Wrap"/>
 
-                    <Border Margin="0,0,0,10"
-                            Padding="5"
-                            BorderBrush="Gray"
-                            BorderThickness="1">
-                        <StackPanel>
-                            <TextBlock Text="• Text alignment"/>
-                            <TextBox Margin="0,5" Text="Type some text here"/>
-                        </StackPanel>
-                    </Border>
-
-                    <Border Padding="5"
-                            BorderBrush="Gray"
-                            BorderThickness="1">
-                        <StackPanel>
-                            <TextBlock Text="• List items order"/>
-                            <ListBox Margin="0,5" ScrollViewer.VerticalScrollBarVisibility="Auto">
-                                <ListBox.ItemsPanel>
-                                    <ItemsPanelTemplate>
-                                        <WrapPanel/>
-                                    </ItemsPanelTemplate>
-                                </ListBox.ItemsPanel>
-                                <ListBoxItem Content="Item 1"/>
-                                <ListBoxItem Content="Item 2"/>
-                                <ListBoxItem Content="Item 3"/>
-                            </ListBox>
-                        </StackPanel>
-                    </Border>
+                    <StackPanel>
+                        <TextBox Margin="0,5" Text="TextBox"/>
+                        <CheckBox Margin="0,5" Content="CheckBox"/>
+                        <NumericUpDown Value="10"/>
+                        <ComboBox Margin="0,5" SelectedIndex="0">
+                            <ComboBoxItem>Item 1</ComboBoxItem>
+                            <ComboBoxItem>Item 2</ComboBoxItem>
+                        </ComboBox>
+                        <Slider Value="2"/>
+                        <ListBox Margin="0,5" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                            <ListBox.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel/>
+                                </ItemsPanelTemplate>
+                            </ListBox.ItemsPanel>
+                            <ListBoxItem Content="Item 1"/>
+                            <ListBoxItem Content="Item 2"/>
+                            <ListBoxItem Content="Item 3"/>
+                        </ListBox>
+                        <TabControl>
+                            <TabItem Header="Tab 1"/>
+                            <TabItem Header="Tab 2"/>
+                        </TabControl>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Button Content="Column 1"/>
+                            <Button Grid.Column="2" Content="Column 2"/>
+                        </Grid>
+                    </StackPanel>
                 </StackPanel>
             </StackPanel>
 
