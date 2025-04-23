@@ -215,6 +215,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Compile Include="Other\Contact.cs" />
+    <Compile Include="Other\Controls\SvgImage.cs" />
     <Compile Include="Other\Converters\EnumToListConverter.cs" />
     <Compile Include="Other\Converters\RgbToBrushConverter.cs" />
     <Compile Include="Other\Elements.cs" />
@@ -870,5 +871,10 @@
       <LastGenOutput>SampleResourceFile.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Other\Localization\SampleResourceFile.ru.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Other\Icons\DarkTheme.svg" />
+    <Content Include="Other\Icons\LightTheme.svg" />
   </ItemGroup>
 </Project>

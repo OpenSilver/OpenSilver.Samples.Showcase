@@ -237,7 +237,7 @@ namespace OpenSilver.Samples.Showcase
 
         #endregion
 
-        #region themes switch related code
+        #region Themes switch related code
         SolidColorBrush _nativeApiButtonBackgroundBrush;
         public SolidColorBrush NativeApiButtonBackgroundBrush
         {
@@ -254,9 +254,9 @@ namespace OpenSilver.Samples.Showcase
         Color lightColor = Color.FromRgb(221, 221, 221);
         Color darkColor = Color.FromRgb(60, 60, 60);
 
-        private void ToggleThemeButton_Click(object sender, RoutedEventArgs e)
+        private void ThemeToggle_RadioButton_Checked(object sender, RoutedEventArgs e)
         {
-            bool isDark = (sender as ToggleButton)?.IsChecked == true;
+            bool isDark = (DarkThemeRadioButton.IsChecked == true);
             if (Application.Current.Theme is ModernTheme theme)
             {
                 if (isDark)
@@ -279,8 +279,8 @@ namespace OpenSilver.Samples.Showcase
                 }
             }
         }
+
         #endregion
 
-        
     }
 }

@@ -13,6 +13,97 @@ mc:Ignorable="d"
     <Page.Resources>
         <SolidColorBrush x:Key="NativeApiButtonBackground" Color="#dddddd"/>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+
+        <Style TargetType="RadioButton">
+            <Setter Property="Foreground" Value="{DynamicResource Theme_TextBrush}" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RadioButton" xmlns:system="clr-namespace:System;assembly=mscorlib">
+                        <Grid Margin="{TemplateBinding Padding}">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <!--<VisualStateGroup.Transitions>
+                                        <VisualTransition GeneratedDuration="00:00:00.1"
+                                                          To="MouseOver" />
+                                        <VisualTransition From="MouseOver"
+                                                          GeneratedDuration="00:00:00.1" />
+                                    </VisualStateGroup.Transitions>-->
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="scaleTransform"
+                                                             Storyboard.TargetProperty="ScaleX"
+                                                             To="1.05"
+                                                             Duration="00:00:00.1"/>
+                                            <DoubleAnimation Storyboard.TargetName="scaleTransform"
+                                                             Storyboard.TargetProperty="ScaleY"
+                                                             To="1.05"
+                                                             Duration="00:00:00.1"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="scaleTransform"
+                                                             Storyboard.TargetProperty="ScaleX"
+                                                             To="0.95"
+                                                             Duration="00:00:00.1"/>
+                                            <DoubleAnimation Storyboard.TargetName="scaleTransform"
+                                                             Storyboard.TargetProperty="ScaleY"
+                                                             To="0.95"
+                                                             Duration="00:00:00.1"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled"/>
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="CheckStates">
+                                    <VisualState x:Name="Checked">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
+                                                                       Storyboard.TargetName="border"
+                                                                       Storyboard.TargetProperty="(UIElement.Background)">
+                                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                                        Value="{DynamicResource Theme_ContainerBackgroundBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Unchecked">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
+                                                             Storyboard.TargetName="border"
+                                                             Storyboard.TargetProperty="(UIElement.Effect)">
+                                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                             Value="{x:Null}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="FocusStates">
+                                    <VisualState x:Name="Focused" />
+                                    <VisualState x:Name="Unfocused" />
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border x:Name="border" Background="Transparent" CornerRadius="5" RenderTransformOrigin="0.5,0.5">
+                                <Border.Effect>
+                                    <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="5" Opacity="0.3" />
+                                </Border.Effect>
+                                <Border.RenderTransform>
+                                    <ScaleTransform x:Name="scaleTransform"/>
+                                </Border.RenderTransform>
+                                <ContentControl x:Name="contentPresenter"
+                                                Foreground="{DynamicResource Theme_TextBrush}"
+                                                Margin="8,6,8,6"
+                                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                Content="{TemplateBinding Content}"
+                                                ContentTemplate="{TemplateBinding ContentTemplate}" />
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Page.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -30,86 +121,26 @@ mc:Ignorable="d"
                     <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="14" Opacity="0.15" />
                 </Border.Effect>
                 <DockPanel LastChildFill="True">
-                    <Grid Margin="10,10,10,10" DockPanel.Dock="Bottom">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="Auto"/>
-                        </Grid.ColumnDefinitions>
-                        <ToggleButton Margin="5,0" Click="ToggleThemeButton_Click">
-                            <ToggleButton.Style>
-                                <Style TargetType="ToggleButton">
-                                    <Setter Property="Width" Value="40"/>
-                                    <Setter Property="Template">
-                                        <Setter.Value>
-                                            <ControlTemplate TargetType="ToggleButton">
-                                                <Grid x:Name="Root" Background="Transparent">
-                                                    <VisualStateManager.VisualStateGroups>
-                                                        <VisualStateGroup x:Name="CommonStates">
-                                                            <VisualState x:Name="Normal" />
-                                                            <VisualState x:Name="MouseOver">
-                                                                <Storyboard>
-                                                                    <DoubleAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                       Storyboard.TargetName="LightEllipse"
-                                                       Storyboard.TargetProperty="(Shape.StrokeThickness)">
-                                                                        <SplineDoubleKeyFrame KeyTime="0"
-                                                  Value="1" />
-                                                                    </DoubleAnimationUsingKeyFrames>
-                                                                    <DoubleAnimationUsingKeyFrames Duration="00:00:00.001"
-     Storyboard.TargetName="DarkEllipse"
-     Storyboard.TargetProperty="(Shape.StrokeThickness)">
-                                                                        <SplineDoubleKeyFrame KeyTime="0"
-Value="1" />
-                                                                    </DoubleAnimationUsingKeyFrames>
-                                                                </Storyboard>
-                                                            </VisualState>
-                                                            <VisualState x:Name="Disabled">
-                                                                <Storyboard>
-                                                                    <DoubleAnimation Duration="0"
-                                         Storyboard.TargetName="Root"
-                                         Storyboard.TargetProperty="Opacity"
-                                         To="0.7" />
-                                                                </Storyboard>
-                                                            </VisualState>
-                                                        </VisualStateGroup>
-                                                        <VisualStateGroup x:Name="CheckStates">
-                                                            <VisualState x:Name="Unchecked" />
-                                                            <VisualState x:Name="Checked">
-                                                                <Storyboard>
-                                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Light" Storyboard.TargetProperty="Visibility">
-                                                                        <DiscreteObjectKeyFrame Value="Collapsed" KeyTime="0"/>
-                                                                    </ObjectAnimationUsingKeyFrames>
-                                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Dark" Storyboard.TargetProperty="Visibility">
-                                                                        <DiscreteObjectKeyFrame Value="Visible" KeyTime="0"/>
-                                                                    </ObjectAnimationUsingKeyFrames>
-                                                                </Storyboard>
-                                                            </VisualState>
-                                                        </VisualStateGroup>
-                                                    </VisualStateManager.VisualStateGroups>
-
-                                                    <Border Width="30" Height="10" CornerRadius="5" Background="{DynamicResource Theme_BorderBrush}" BorderBrush="{DynamicResource Theme_PrimaryBrush}"/>
-                                                    <Grid x:Name="Light" HorizontalAlignment="Left">
-                                                        <Ellipse x:Name="LightEllipse" Width="20" Height="20" Fill="#FFEBE7E7" StrokeThickness="0" Stroke="{DynamicResource Theme_BorderBrush}"/>
-                                                        <Path Width="15" Height="15" Stroke="Black" Margin="2,0" StrokeThickness="0.5" Stretch="Uniform"
-                                                              Data="M 0 -5 A 5 5 0 1 0 0.001 -5 M 0 -6 L 0 -9 M 4.308 -4.389 L 7 -7 M 6 0 L 9 0 M 4.308 4.448 L 7 7 M 0 6 L 0 9 M -4.366 4.394 L -7 7 M -6 0 L -9 0 M -4.311 -4.498 L -7 -7" />
-                                                    </Grid>
-                                                    <Grid x:Name="Dark" HorizontalAlignment="Right" Visibility="Collapsed">
-                                                        <Ellipse x:Name="DarkEllipse" Width="20" Height="20" Fill="#FF544F4F" StrokeThickness="0" Stroke="{DynamicResource Theme_BorderBrush}"/>
-                                                        <Path Width="20" Height="15" Fill="White" Margin="2,0,0,1" StrokeThickness="0" Stretch="Uniform"
-                                                              Data="M -35 -25 A 40 40 90 1 1 -35 25 A 30 30 90 1 0 -35 -25" />
-                                                    </Grid>
-                                                </Grid>
-                                            </ControlTemplate>
-                                        </Setter.Value>
-                                    </Setter>
-                                </Style>
-                            </ToggleButton.Style>
-                        </ToggleButton>
-                        <StackPanel Orientation="Horizontal" Grid.Column="2">
-                            <Button x:Name="ButtonBackwards" Content="←" FontSize="22" Click="ButtonBackwards_Click" Style="{StaticResource ButtonTransparentBackground_Style}"/>
-                            <Button x:Name="ButtonForward" Content="→" FontSize="22" Click="ButtonForward_Click" Style="{StaticResource ButtonTransparentBackground_Style}"/>
+                    <Border DockPanel.Dock="Bottom" Margin="10,10,10,17" Padding="3" CornerRadius="7" HorizontalAlignment="Center" Background="{DynamicResource Theme_BackgroundBrush}">
+                        <StackPanel Orientation="Horizontal">
+                            <RadioButton x:Name="LightThemeRadioButton" IsChecked="True" Checked="ThemeToggle_RadioButton_Checked">
+                                <StackPanel Orientation="Horizontal">
+                                    <local:SvgImage Width="20" Height="20" FillColor="{Binding Path=Foreground.(SolidColorBrush.Color), RelativeSource={RelativeSource AncestorType=ContentControl}}" Source="/Other/Icons/LightTheme.svg"/>
+                                    <TextBlock Margin="3" VerticalAlignment="Center" FontSize="11" Text="Light" Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"/>
+                                </StackPanel>
+                            </RadioButton>
+                            <RadioButton x:Name="DarkThemeRadioButton" Margin="4,0,0,0" Checked="ThemeToggle_RadioButton_Checked">
+                                <StackPanel Orientation="Horizontal">
+                                    <local:SvgImage Width="20" Height="20" FillColor="{Binding Path=Foreground.(SolidColorBrush.Color), RelativeSource={RelativeSource AncestorType=ContentControl}}" Source="/Other/Icons/DarkTheme.svg"/>
+                                    <TextBlock Margin="3" VerticalAlignment="Center" FontSize="11" Text="Dark" Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"/>
+                                </StackPanel>
+                            </RadioButton>
                         </StackPanel>
-                    </Grid>
+                    </Border>
+                    <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Margin="16,5,0,0">
+                        <Button x:Name="ButtonBackwards" Content="←" FontSize="22" Click="ButtonBackwards_Click" Style="{StaticResource ButtonTransparentBackground_Style}"/>
+                        <Button x:Name="ButtonForward" Content="→" FontSize="22" Click="ButtonForward_Click" Style="{StaticResource ButtonTransparentBackground_Style}"/>
+                    </StackPanel>
                     <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
                         <StackPanel>
                             <Image Source="/OpenSilver.Samples.Showcase;component/other/logo-opensilver.png" Margin="10,10,10,0" Width="110" HorizontalAlignment="Left" Cursor="Hand" MouseLeftButtonDown="Logo_MouseLeftButtonDown" />
