@@ -10,6 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
     <PackageReference Include="OpenSilver.ControlsKit" Version="[$(OpenSilverControlsKitVersion)]" />
     <PackageReference Include="OpenSilver.Themes.Modern" Version="[$(OpenSilverModernThemeVersion)]" />
     <PackageReference Include="Microsoft.Maui.Essentials" Version="8.0.100" />
@@ -26,9 +27,9 @@
 		<Compile Include="Other\Converters\EnumToListConverter.fs" />
 		<Compile Include="Other\Converters\RgbToBrushConverter.fs" />
 		<Compile Include="Other\MarkupExtensions\ResxExtension.fs" />
-		<Compile Include="Other\ObservableObject.fs" />
 		<Compile Include="Other\PageInfo.fs" />
-		<Compile Include="Other\RelayCommand.fs" />
+		<Compile Include="Samples\Net_Framework\MVVM\Movie.fs" />
+		<Compile Include="Samples\Net_Framework\MVVM\MoviesViewModel.fs" />
 		<Compile Include="Samples\XAML_Features\Command\CommandDemoViewModel.fs" />
 		<Content Include="Other\embed.js">
 			<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
@@ -420,6 +421,12 @@
 		</Page>
     <Compile Include="Samples\Net_Framework\Localization\Localization_Demo.xaml.fs">
       <DependentUpon>Samples\Net_Framework\Localization\Localization_Demo.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Samples\Net_Framework\MVVM\MVVM_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="Samples\Net_Framework\MVVM\MVVM_Demo.xaml.fs">
+      <DependentUpon>Samples\Net_Framework\MVVM\MVVM_Demo.xaml</DependentUpon>
     </Compile>
 		<Page Include="Samples\Net_Framework\OpenFileDialog\OpenFileDialog_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>

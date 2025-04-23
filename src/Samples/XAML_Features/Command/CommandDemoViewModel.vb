@@ -1,4 +1,6 @@
 ﻿Imports System.Windows
+Imports CommunityToolkit.Mvvm.ComponentModel
+Imports CommunityToolkit.Mvvm.Input
 
 Namespace OpenSilver.Samples.Showcase
 

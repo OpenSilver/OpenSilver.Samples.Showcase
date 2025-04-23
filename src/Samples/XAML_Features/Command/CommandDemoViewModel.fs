@@ -2,6 +2,8 @@
 
 open System
 open System.Windows
+open CommunityToolkit.Mvvm.ComponentModel
+open CommunityToolkit.Mvvm.Input
 
 type CommandDemoViewModel() as this =
     inherit ObservableObject()

@@ -6,14 +6,7 @@
 
     <StackPanel>
         <Grid>
-            <ContentControl Style="{StaticResource PageHeader_Style}" Content=".NET Framework"/>
-            <!--<WrapPanel HorizontalAlignment="Right" Orientation="Horizontal">
-                <TextBlock Foreground="Transparent"
-                           Style="{StaticResource PageHeader_Style}"
-                           Text=".NET Framework"/>
-                <local:SearchControl HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
-                <Border Width="30"/>
-            </WrapPanel>-->
+            <ContentControl Content=".NET Framework" Style="{StaticResource PageHeader_Style}"/>
         </Grid>
         <controlskit:StaggeredPanel DesiredColumnWidth="280" ProgressiveRenderingChunkSize="2">
             <local:DispatcherTimer_Demo HorizontalAlignment="Center"/>
@@ -40,6 +33,7 @@
             <local:Localization_Demo/>
             <local:Clipboard_SetText_Demo HorizontalAlignment="Center"/>
             <local:FullScreen_Demo x:Name="FullScreenDemo" HorizontalAlignment="Center"/>
+            <local:MVVM_Demo/>
         </controlskit:StaggeredPanel>
     </StackPanel>
 </UserControl>

@@ -16,6 +16,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
     <PackageReference Include="OpenSilver.ControlsKit" Version="[$(OpenSilverControlsKitVersion)]" />
     <PackageReference Include="OpenSilver.Themes.Modern" Version="[$(OpenSilverModernThemeVersion)]" />
     <PackageReference Include="Microsoft.Maui.Essentials" Version="8.0.100" />
@@ -110,6 +111,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\Net_Framework\Localization\Localization_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Net_Framework\MVVM\MVVM_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\Net_Framework\OpenFileDialog\OpenFileDialog_Demo.xaml">
@@ -221,9 +225,7 @@
     <Compile Include="Other\Internals\Search\SearchKeywordAttribute.vb" />
     <Compile Include="Other\Leagues\Leagues.vb" />
     <Compile Include="Other\MarkupExtensions\ResxExtension.vb" />
-    <Compile Include="Other\ObservableObject.vb" />
     <Compile Include="Other\PageInfo.vb" />
-    <Compile Include="Other\RelayCommand.vb" />
     <Compile Include="Other\Sales.vb" />
     <Compile Include="Other\Localization\SampleResourceFile.Designer.vb">
       <DesignTime>True</DesignTime>
@@ -257,6 +259,9 @@
     <Compile Include="Samples\Maui_Hybrid\Vibration\Vibration_Demo.xaml.vb" />
     <Compile Include="Samples\Net_Framework\InitParams\InitParams_Demo.xaml.vb" />
     <Compile Include="Samples\Net_Framework\Localization\Localization_Demo.xaml.vb" />
+    <Compile Include="Samples\Net_Framework\MVVM\Movie.vb" />
+    <Compile Include="Samples\Net_Framework\MVVM\MoviesViewModel.vb" />
+    <Compile Include="Samples\Net_Framework\MVVM\MVVM_Demo.xaml.vb" />
     <Compile Include="Samples\Net_Framework\OpenFileDialog\OpenFileDialog_Demo.xaml.vb" />
     <Compile Include="Samples\Net_Framework\UnhandledException\UnhandledException_Demo.xaml.vb" />
     <Compile Include="Samples\Net_Framework\WriteableBitmap\WriteableBitmap_Demo.xaml.vb" />
