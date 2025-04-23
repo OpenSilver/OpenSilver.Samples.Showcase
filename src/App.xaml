@@ -34,7 +34,7 @@
                 <mt:LightPalette BackgroundColor="#FFECECEC" ContainerBackgroundColor="#FFFFFFFF" PrimaryColor="#FF656565" />
             </mt:ModernTheme.LightPalette>
             <mt:ModernTheme.DarkPalette>
-                <mt:DarkPalette BackgroundColor="#FF313131" ContainerBackgroundColor="#FF000000" PrimaryColor="#FF3C3C3C" />
+                <mt:DarkPalette BackgroundColor="#FF313131" ContainerBackgroundColor="#FF000000" PrimaryColor="#FF3C3C3C" BorderColor="#FF4A4444" />
             </mt:ModernTheme.DarkPalette>
         </mt:ModernTheme>
     </Application.Theme>
