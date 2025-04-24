@@ -173,6 +173,9 @@
     <Page Include="Samples\XAML_Controls\ProgressBar\ProgressBar_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\XAML_Controls\RadioButton\RadioButtonStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\XAML_Controls\Rating\Rating_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -180,6 +183,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Controls\RichTextBox\RichTextBox_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\XAML_Controls\TextBox\TextBoxStyles.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Controls\TimePicker\TimePicker_Demo.xaml">
@@ -455,7 +461,7 @@
     <Page Include="Samples\XAML_Controls\Button\Button_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\XAML_Controls\Button\Styles\DefaultButtonStyle.xaml">
+    <Page Include="Samples\XAML_Controls\Button\Styles\ButtonStyles.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Controls\Canvas\Canvas_Demo.xaml">
@@ -599,7 +605,7 @@
     <Page Include="Samples\XAML_Controls\Thumb\Thumb_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\XAML_Controls\ToggleButton\Styles\DefaultToggleButtonStyle.xaml">
+    <Page Include="Samples\XAML_Controls\ToggleButton\Styles\ToggleButtonStyles.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Controls\ToggleButton\ToggleButton_Demo.xaml">

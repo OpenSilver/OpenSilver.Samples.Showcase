@@ -2,19 +2,18 @@
 using System.Windows;
 using System.Windows.Controls;
 
-namespace OpenSilver.Samples.Showcase
-{
-    [SearchKeywords("click", "interaction", "command")]
-    public partial class Button_Demo : UserControl
-    {
-        public Button_Demo()
-        {
-            this.InitializeComponent();
-        }
+namespace OpenSilver.Samples.Showcase;
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("You clicked the button!");
-        }
+[SearchKeywords("click", "interaction", "command", "style", "template", "icon")]
+public partial class Button_Demo : UserControl
+{
+    public Button_Demo()
+    {
+        InitializeComponent();
+    }
+
+    private void Button_Click(object sender, RoutedEventArgs e)
+    {
+        MessageBox.Show("You clicked the button!");
     }
 }

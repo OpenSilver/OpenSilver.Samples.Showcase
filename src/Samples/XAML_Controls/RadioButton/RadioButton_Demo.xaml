@@ -3,6 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
 
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="RadioButtonStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
     <ContentControl Width="200" Style="{StaticResource Card_Style}">
         <Grid>
             <Grid.RowDefinitions>
@@ -28,10 +36,17 @@
                 <TextBlock Text="Select an option:"/>
                 <RadioButton Content="Option 1"/>
                 <RadioButton Content="Option 2"/>
+
                 <TextBlock Margin="0,10,0,0" Text="Another group:"/>
-                <RadioButton Content="Option 3" GroupName="Group1"/>
-                <RadioButton Content="Option 4" GroupName="Group1"/>
-                <RadioButton Content="Option 5" GroupName="Group1"/>
+                <RadioButton Content="Option 3"
+                             GroupName="Group1"
+                             Style="{StaticResource RadioButtonStyle}"/>
+                <RadioButton Content="Option 4"
+                             GroupName="Group1"
+                             Style="{StaticResource RadioButtonStyle}"/>
+                <RadioButton Content="Option 5"
+                             GroupName="Group1"
+                             Style="{StaticResource RadioButtonStyle}"/>
             </StackPanel>
 
             <local:ViewSourceButton Grid.Row="2" Background="#FFB3CE00">
@@ -40,6 +55,7 @@
                     <local:ViewSourceButtonInfo FileName="RadioButton_Demo.xaml.cs" RelativePath="src/Samples/XAML_Controls/RadioButton"/>
                     <local:ViewSourceButtonInfo FileName="RadioButton_Demo.xaml.vb" RelativePath="src/Samples/XAML_Controls/RadioButton"/>
                     <local:ViewSourceButtonInfo FileName="RadioButton_Demo.xaml.fs" RelativePath="src/Samples/XAML_Controls/RadioButton"/>
+                    <local:ViewSourceButtonInfo FileName="RadioButtonStyles.xaml" RelativePath="src/Samples/XAML_Controls/RadioButton"/>
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

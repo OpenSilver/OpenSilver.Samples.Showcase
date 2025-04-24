@@ -1,14 +1,13 @@
 ﻿using OpenSilver.Samples.Showcase.Search;
 using System.Windows.Controls;
 
-namespace OpenSilver.Samples.Showcase
+namespace OpenSilver.Samples.Showcase;
+
+[SearchKeywords("input", "toggle", "switch", "boolean", "button", "control", "style", "template", "icon")]
+public partial class ToggleButton_Demo : UserControl
 {
-    [SearchKeywords("input", "toggle", "switch", "boolean", "button", "control")]
-    public partial class ToggleButton_Demo : UserControl
+    public ToggleButton_Demo()
     {
-        public ToggleButton_Demo()
-        {
-            this.InitializeComponent();
-        }
+        InitializeComponent();
     }
 }

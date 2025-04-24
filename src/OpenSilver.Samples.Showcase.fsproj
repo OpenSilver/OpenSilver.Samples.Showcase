@@ -554,7 +554,7 @@
 		<Compile Include="Samples\XAML_Controls\BusyIndicator\BusyIndicator_Demo.xaml.fs">
 			<DependentUpon>Samples\XAML_Controls\BusyIndicator\BusyIndicator_Demo.xaml</DependentUpon>
 		</Compile>
-		<Page Include="Samples\XAML_Controls\Button\Styles\DefaultButtonStyle.xaml">
+		<Page Include="Samples\XAML_Controls\Button\Styles\ButtonStyles.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
 		<Page Include="Samples\XAML_Controls\Button\Button_Demo.xaml">
@@ -798,6 +798,9 @@
 		<Compile Include="Samples\XAML_Controls\ProgressBar\ProgressBar_Demo.xaml.fs">
 			<DependentUpon>Samples\XAML_Controls\ProgressBar\ProgressBar_Demo.xaml</DependentUpon>
 		</Compile>
+		<Page Include="Samples\XAML_Controls\RadioButton\RadioButtonStyles.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</Page>
 		<Page Include="Samples\XAML_Controls\RadioButton\RadioButton_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
@@ -879,6 +882,9 @@
 		<Compile Include="Samples\XAML_Controls\Textblock\TextBlock_Demo.xaml.fs">
 			<DependentUpon>Samples\XAML_Controls\Textblock\TextBlock_Demo.xaml</DependentUpon>
 		</Compile>
+		<Page Include="Samples\XAML_Controls\TextBox\TextBoxStyles.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</Page>
 		<Page Include="Samples\XAML_Controls\TextBox\TextBox_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
@@ -900,7 +906,7 @@
 		<Compile Include="Samples\XAML_Controls\TimePicker\TimePicker_Demo.xaml.fs">
 			<DependentUpon>Samples\XAML_Controls\TimePicker\TimePicker_Demo.xaml</DependentUpon>
 		</Compile>
-		<Page Include="Samples\XAML_Controls\ToggleButton\Styles\DefaultToggleButtonStyle.xaml">
+		<Page Include="Samples\XAML_Controls\ToggleButton\Styles\ToggleButtonStyles.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
 		<Page Include="Samples\XAML_Controls\ToggleButton\ToggleButton_Demo.xaml">

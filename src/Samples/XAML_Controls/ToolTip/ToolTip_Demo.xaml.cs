@@ -1,14 +1,13 @@
 ﻿using OpenSilver.Samples.Showcase.Search;
 using System.Windows.Controls;
 
-namespace OpenSilver.Samples.Showcase
+namespace OpenSilver.Samples.Showcase;
+
+[SearchKeywords("tooltip", "hover", "info", "help", "UI", "style", "template", "image")]
+public partial class ToolTip_Demo : UserControl
 {
-    [SearchKeywords("tooltip", "hover", "info", "help", "UI")]
-    public partial class ToolTip_Demo : UserControl
+    public ToolTip_Demo()
     {
-        public ToolTip_Demo()
-        {
-            this.InitializeComponent();
-        }
+        InitializeComponent();
     }
 }

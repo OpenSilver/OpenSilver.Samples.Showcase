@@ -17,7 +17,8 @@
             <PasswordBox x:Name="passwordBox"/>
         </StackPanel>
 
-        <Button x:Name="CancelButton" Content="Cancel" Click="CancelButton_Click" Width="75" HorizontalAlignment="Right" Margin="0,12,0,0" Grid.Row="1" />
+        <Button x:Name="CancelButton" Content="Cancel" Click="CancelButton_Click" Width="75" HorizontalAlignment="Right" Margin="0,12,0,0" Grid.Row="1"
+                Foreground="{DynamicResource Theme_PrimaryBrush}" Background="{DynamicResource Theme_ContainerBackgroundBrush}" />
         <Button x:Name="OKButton" Content="OK" Click="OKButton_Click" Width="75" HorizontalAlignment="Right" Margin="0,12,79,0" Grid.Row="1" />
     </Grid>
 </ChildWindow>

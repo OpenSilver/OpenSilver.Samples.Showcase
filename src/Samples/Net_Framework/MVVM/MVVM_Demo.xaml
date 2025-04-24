@@ -27,8 +27,17 @@
                 <Button Grid.Row="1"
                         Margin="5"
                         HorizontalAlignment="Left"
-                        Command="{Binding AddCommand}"
-                        Content="Add Movie"/>
+                        Command="{Binding AddCommand}">
+                    <StackPanel Orientation="Horizontal">
+                        <Path Width="16"
+                              Height="16"
+                              VerticalAlignment="Center"
+                              Data="M 9,0 L 11,0 11,9 20,9 20,11 11,11 11,20 9,20 9,11 0,11 0,9 9,9Z"
+                              Fill="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=Button}}"
+                              Stretch="Fill"/>
+                        <TextBlock Margin="5,0,0,0" Text="Add Movie"/>
+                    </StackPanel>
+                </Button>
             </StackPanel>
 
             <DataGrid Name="dataGrid"
