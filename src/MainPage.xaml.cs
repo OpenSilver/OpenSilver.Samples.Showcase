@@ -3,6 +3,7 @@ using System;
 using System.Windows;
 using System.Windows.Browser;
 using System.Windows.Controls;
+using System.Windows.Markup;
 using System.Windows.Media;
 
 namespace OpenSilver.Samples.Showcase
@@ -277,6 +278,7 @@ namespace OpenSilver.Samples.Showcase
                 {
                     gitHubControl.Refresh();
                 }
+                BackgroundLayer.Background = Theme_LoadBackgroundGradient();
             }
 
             UpdateThemeToggleFillColor();
@@ -285,6 +287,20 @@ namespace OpenSilver.Samples.Showcase
         private void UpdateThemeToggleFillColor()
         {
             lightThemeImage.FillColor = darkThemeImage.FillColor = (DarkThemeRadioButton.Foreground as SolidColorBrush)?.Color;
+        }
+
+        private Brush Theme_LoadBackgroundGradient()
+        {
+            //todo: this workaround will no longer be needed when the following Commit goes into the release of OpenSilver: https://github.com/OpenSilver/OpenSilver/commit/2823c3da2fcc75c856ebedd6ade1bedc4b6e7365
+            Brush gradient = (Brush)XamlReader.Load(@"
+                    <LinearGradientBrush xmlns=""http://schemas.microsoft.com/winfx/2006/xaml/presentation"" StartPoint=""0.5,0"" EndPoint=""0.5,1"">
+                        <GradientStop Color=""{DynamicResource Theme_ContainerBackgroundColor}"" Offset=""0""/>
+                        <GradientStop Color=""{DynamicResource Theme_BackgroundColor}"" Offset=""0.45""/>
+                        <GradientStop Color=""{DynamicResource Theme_BackgroundColor}"" Offset=""0.55""/>
+                        <GradientStop Color=""{DynamicResource Theme_ContainerBackgroundColor}"" Offset=""1""/>
+                    </LinearGradientBrush>
+                ");
+            return gradient;
         }
 
         #endregion
