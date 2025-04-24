@@ -28,6 +28,7 @@ type MainPage() as this =
         this.SizeChanged.Add(fun args -> this.MainPage_SizeChanged(args))
         this.MenuListBox.ItemsSource <- PageInfo.Pages
         this.MenuListBox.SelectionChanged.Add(fun args -> this.MenuListBox_SelectionChanged(this.MenuListBox, args))
+        this.UpdateThemeToggleFillColor()
 
     member this.NavigateToPage(targetUri: string) =
         //Hide the menu:
@@ -183,11 +184,8 @@ type MainPage() as this =
             _nativeApiButtonBackgroundBrush
 
 
-    member private this.ToggleThemeButton_Click(sender: obj, _e: RoutedEventArgs) =
-        let isDark =
-            match sender with
-            | :? Controls.Primitives.ToggleButton as toggle -> toggle.IsChecked.HasValue && toggle.IsChecked.Value
-            | _ -> false
+    member private this.ThemeToggle_RadioButton_Checked(sender: obj, _e: RoutedEventArgs) =
+        let isDark = (this.DarkThemeRadioButton.IsChecked = Nullable(true))
 
         match Application.Current.Theme with
         | :? OpenSilver.Themes.Modern.ModernTheme as theme ->
@@ -198,6 +196,8 @@ type MainPage() as this =
             else
                 nativeBrush.Color <- Color.FromRgb(221uy, 221uy, 221uy)
                 theme.CurrentPalette <- OpenSilver.Themes.Modern.ModernTheme.Palettes.Light
+
+            this.UpdateThemeToggleFillColor()
 
             if this.SourceCodePane.Visibility = Visibility.Visible then
                 match this.PlaceWhereSourceCodeWillBeDisplayed.Child with
@@ -212,3 +212,8 @@ type MainPage() as this =
                 | _ -> ()
         | _ -> ()
 
+    member this.UpdateThemeToggleFillColor() =
+        let brush = this.DarkThemeRadioButton.Foreground :?> SolidColorBrush
+        let color = if isNull brush then Nullable() else Nullable(brush.Color)
+        this.darkThemeImage.FillColor <- color
+        this.lightThemeImage.FillColor <- color

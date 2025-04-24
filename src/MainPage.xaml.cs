@@ -3,7 +3,6 @@ using System;
 using System.Windows;
 using System.Windows.Browser;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
 using System.Windows.Media;
 
 namespace OpenSilver.Samples.Showcase
@@ -18,6 +17,7 @@ namespace OpenSilver.Samples.Showcase
             Loaded += MainPage_Loaded;
             SizeChanged += MainPage_SizeChanged;
             MenuListBox.ItemsSource = PageInfo.Pages;
+            UpdateThemeToggleFillColor();
         }
 
         public static MainPage Current { get; private set; }
@@ -237,7 +237,7 @@ namespace OpenSilver.Samples.Showcase
 
         #endregion
 
-        #region themes switch related code
+        #region Themes switch related code
         SolidColorBrush _nativeApiButtonBackgroundBrush;
         public SolidColorBrush NativeApiButtonBackgroundBrush
         {
@@ -254,9 +254,9 @@ namespace OpenSilver.Samples.Showcase
         Color lightColor = Color.FromRgb(221, 221, 221);
         Color darkColor = Color.FromRgb(60, 60, 60);
 
-        private void ToggleThemeButton_Click(object sender, RoutedEventArgs e)
+        private void ThemeToggle_RadioButton_Checked(object sender, RoutedEventArgs e)
         {
-            bool isDark = (sender as ToggleButton)?.IsChecked == true;
+            bool isDark = (DarkThemeRadioButton.IsChecked == true);
             if (Application.Current.Theme is ModernTheme theme)
             {
                 if (isDark)
@@ -278,9 +278,16 @@ namespace OpenSilver.Samples.Showcase
                     gitHubControl.Refresh();
                 }
             }
+
+            UpdateThemeToggleFillColor();
         }
+
+        private void UpdateThemeToggleFillColor()
+        {
+            lightThemeImage.FillColor = darkThemeImage.FillColor = (DarkThemeRadioButton.Foreground as SolidColorBrush)?.Color;
+        }
+
         #endregion
 
-        
     }
 }
