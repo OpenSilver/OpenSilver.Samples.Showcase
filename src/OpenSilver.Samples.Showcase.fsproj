@@ -24,6 +24,7 @@
 
 	<ItemGroup>
 		<Content Include="Connected Services\ServiceReference1\ConnectedService.json" />
+		<Compile Include="Other\Controls\SvgImage.fs" />
 		<Compile Include="Other\Converters\EnumToListConverter.fs" />
 		<Compile Include="Other\Converters\RgbToBrushConverter.fs" />
 		<Compile Include="Other\MarkupExtensions\ResxExtension.fs" />
@@ -1271,6 +1272,11 @@
 
 	<ItemGroup>
 	  <UpToDateCheckInput Remove="Samples\Third_Party\Plotly_Charts\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="Other\Icons\DarkTheme.svg" />
+	  <Content Include="Other\Icons\LightTheme.svg" />
 	</ItemGroup>
 
 </Project>

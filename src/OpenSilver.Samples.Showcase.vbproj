@@ -221,6 +221,7 @@
     <Page Include="Samples\XAML_Features\FlowDirection\FlowDirection_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Compile Include="Other\Controls\SvgImage.vb" />
     <Compile Include="Other\Converters\EnumToListConverter.vb" />
     <Compile Include="Other\Converters\RgbToBrushConverter.vb" />
     <Compile Include="Other\Elements.vb" />
@@ -864,5 +865,9 @@
   </ItemGroup>
   <ItemGroup>
     <UpToDateCheckInput Remove="Samples\XAML_Controls\NumericUpDown\Styles\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Other\Icons\DarkTheme.svg" />
+    <Content Include="Other\Icons\LightTheme.svg" />
   </ItemGroup>
 </Project>

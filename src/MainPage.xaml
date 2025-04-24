@@ -125,13 +125,13 @@ mc:Ignorable="d"
                         <StackPanel Orientation="Horizontal">
                             <RadioButton x:Name="LightThemeRadioButton" IsChecked="True" Checked="ThemeToggle_RadioButton_Checked">
                                 <StackPanel Orientation="Horizontal">
-                                    <local:SvgImage Width="20" Height="20" FillColor="{Binding Path=Foreground.(SolidColorBrush.Color), RelativeSource={RelativeSource AncestorType=ContentControl}}" Source="/Other/Icons/LightTheme.svg"/>
+                                    <local:SvgImage x:Name="lightThemeImage" Width="20" Height="20" Source="/Other/Icons/LightTheme.svg"/>
                                     <TextBlock Margin="3" VerticalAlignment="Center" FontSize="11" Text="Light" Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"/>
                                 </StackPanel>
                             </RadioButton>
                             <RadioButton x:Name="DarkThemeRadioButton" Margin="4,0,0,0" Checked="ThemeToggle_RadioButton_Checked">
                                 <StackPanel Orientation="Horizontal">
-                                    <local:SvgImage Width="20" Height="20" FillColor="{Binding Path=Foreground.(SolidColorBrush.Color), RelativeSource={RelativeSource AncestorType=ContentControl}}" Source="/Other/Icons/DarkTheme.svg"/>
+                                    <local:SvgImage x:Name="darkThemeImage" Width="20" Height="20" Source="/Other/Icons/DarkTheme.svg"/>
                                     <TextBlock Margin="3" VerticalAlignment="Center" FontSize="11" Text="Dark" Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"/>
                                 </StackPanel>
                             </RadioButton>

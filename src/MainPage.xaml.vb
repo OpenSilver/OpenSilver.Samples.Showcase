@@ -1,7 +1,6 @@
 ﻿Imports System.Windows
 Imports System.Windows.Browser
 Imports System.Windows.Controls
-Imports System.Windows.Controls.Primitives
 Imports System.Windows.Media
 Imports OpenSilver.Themes.Modern
 
@@ -17,6 +16,7 @@ Namespace OpenSilver.Samples.Showcase
             AddHandler SizeChanged, AddressOf MainPage_SizeChanged
 
             MenuListBox.ItemsSource = PageInfo.Pages
+            UpdateThemeToggleFillColor()
         End Sub
 
         Public Shared Property Current As MainPage
@@ -193,13 +193,20 @@ Namespace OpenSilver.Samples.Showcase
         Private ReadOnly lightColor As Color = Color.FromRgb(221, 221, 221)
         Private ReadOnly darkColor As Color = Color.FromRgb(60, 60, 60)
 
-        Private Sub ToggleThemeButton_Click(sender As Object, e As RoutedEventArgs)
-            Dim isDark As Boolean = CType(sender, ToggleButton)?.IsChecked = True
+        Private Sub ThemeToggle_RadioButton_Checked(sender As Object, e As RoutedEventArgs)
+            Dim isDark As Boolean = DarkThemeRadioButton.IsChecked = True
             Dim theme As ModernTheme = TryCast(Application.Current.Theme, ModernTheme)
             If theme IsNot Nothing Then
                 NativeApiButtonBackgroundBrush.Color = If(isDark, darkColor, lightColor)
                 theme.CurrentPalette = If(isDark, ModernTheme.Palettes.Dark, ModernTheme.Palettes.Light)
             End If
+            UpdateThemeToggleFillColor()
+        End Sub
+
+        Private Sub UpdateThemeToggleFillColor()
+            Dim color As Color? = TryCast(DarkThemeRadioButton.Foreground, SolidColorBrush)?.Color
+            darkThemeImage.FillColor = color
+            lightThemeImage.FillColor = color
         End Sub
 
 #End Region

@@ -3,7 +3,6 @@ using System;
 using System.Windows;
 using System.Windows.Browser;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
 using System.Windows.Media;
 
 namespace OpenSilver.Samples.Showcase
@@ -18,6 +17,7 @@ namespace OpenSilver.Samples.Showcase
             Loaded += MainPage_Loaded;
             SizeChanged += MainPage_SizeChanged;
             MenuListBox.ItemsSource = PageInfo.Pages;
+            UpdateThemeToggleFillColor();
         }
 
         public static MainPage Current { get; private set; }
@@ -278,6 +278,13 @@ namespace OpenSilver.Samples.Showcase
                     gitHubControl.Refresh();
                 }
             }
+
+            UpdateThemeToggleFillColor();
+        }
+
+        private void UpdateThemeToggleFillColor()
+        {
+            lightThemeImage.FillColor = darkThemeImage.FillColor = (DarkThemeRadioButton.Foreground as SolidColorBrush)?.Color;
         }
 
         #endregion
