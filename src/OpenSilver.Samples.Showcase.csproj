@@ -226,6 +226,7 @@
     <Compile Include="Other\Contact.cs" />
     <Compile Include="Other\Controls\SvgImage.cs" />
     <Compile Include="Other\Converters\EnumToListConverter.cs" />
+    <Compile Include="Other\Converters\StringEmptyToVisibilityConverter.cs" />
     <Compile Include="Other\Converters\RgbToBrushConverter.cs" />
     <Compile Include="Other\Elements.cs" />
     <Compile Include="Other\Internals\Search\SamplesInfoLoader.cs" />

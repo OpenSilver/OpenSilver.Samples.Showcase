@@ -16,6 +16,7 @@ namespace OpenSilver.Samples.Showcase
         public void ButtonSearch_Click(object sender, RoutedEventArgs e)
         {
             StartSearch(SearchField.Text);
+            SearchField.Focus();
         }
 
         private void SearchField_KeyDown(object sender, KeyEventArgs e)
