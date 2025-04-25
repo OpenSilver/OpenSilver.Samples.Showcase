@@ -25,6 +25,7 @@ namespace OpenSilver.Samples.Showcase
                     _pageInfos.Add(new PageInfo(".NET Framework", "/Net_Framework", true));
                     _pageInfos.Add(new PageInfo("Client / Server", "/Client_Server", true));
                     _pageInfos.Add(new PageInfo("Interop", "/Interop_Samples", true));
+                    _pageInfos.Add(new PageInfo("JS Libs", "/JS_Libs", true));
                     _pageInfos.Add(new PageInfo("Charts", "/Charts", true));
                     _pageInfos.Add(new PageInfo("Performance", "/Performance", true));
                     _pageInfos.Add(new PageInfo("Native APIs", "/Maui_Hybrid", true));

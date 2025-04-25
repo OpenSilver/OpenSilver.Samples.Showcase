@@ -1,4 +1,4 @@
-﻿using CSHTML5;
+﻿using OpenSilver;
 using System;
 using System.Threading.Tasks;
 
@@ -118,10 +118,9 @@ namespace Ionic.Zip
         }
     }
 
-
     public class ZipEntry
     {
-        object _referenceToJSZipFile;
+        private readonly object _referenceToJSZipFile;
 
         public ZipEntry(object referenceToJSZipFile)
         {
@@ -130,13 +129,12 @@ namespace Ionic.Zip
 
         public string ExtractToString()
         {
-            return (string)Interop.ExecuteJavaScript(@"$0.asText()", _referenceToJSZipFile);
+            return Interop.ExecuteJavaScriptGetResult<string>($"{_referenceToJSZipFile}.asText()");
         }
 
-        public Byte[] ExtractToByteArray()
+        public byte[] ExtractToByteArray()
         {
-            return (Byte[])Interop.ExecuteJavaScript(@"$0.asUint8Array()", _referenceToJSZipFile);
-
+            return Interop.ExecuteJavaScriptGetResult<byte[]>($"{_referenceToJSZipFile}.asUint8Array()");
         }
 
         public object ExtractToJavaScriptArrayBuffer()
@@ -144,12 +142,6 @@ namespace Ionic.Zip
             return Interop.ExecuteJavaScript(@"$0.asArrayBuffer()", _referenceToJSZipFile);
         }
 
-        public string FileName
-        {
-            get
-            {
-                return (string)Interop.ExecuteJavaScript(@"$0.name", _referenceToJSZipFile);
-            }
-        }
+        public string FileName => Interop.ExecuteJavaScriptGetResult<string>($"{_referenceToJSZipFile}.name");
     }
 }

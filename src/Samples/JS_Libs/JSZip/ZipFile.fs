@@ -93,16 +93,16 @@ type ZipFile() =
         if this._referenceToJavaScriptZipInstance = null then
             this._referenceToJavaScriptZipInstance <- Interop.ExecuteJavaScript("new JSZip()")
 
-and ZipEntry(referenceToJSZipFile : obj) =
-    member this.ExtractToString() =
-        Interop.ExecuteJavaScript(@"$0.asText()", referenceToJSZipFile)
+and ZipEntry(referenceToJSZipFile: obj) =
+    member this.ExtractToString() : string =
+        Interop.ExecuteJavaScriptGetResult<string>($"{referenceToJSZipFile}.asText()")
 
-    member this.ExtractToByteArray() =
-        Interop.ExecuteJavaScript(@"$0.asUint8Array()", referenceToJSZipFile)
+    member this.ExtractToByteArray() : byte[] =
+        Interop.ExecuteJavaScriptGetResult<byte[]>($"{referenceToJSZipFile}.asUint8Array()")
 
-    member this.ExtractToJavaScriptArrayBuffer() =
-        Interop.ExecuteJavaScript(@"$0.asArrayBuffer()", referenceToJSZipFile)
+    member this.ExtractToJavaScriptArrayBuffer() : obj =
+        Interop.ExecuteJavaScript("$0.asArrayBuffer()", referenceToJSZipFile)
 
-    member this.FileName =
-        Interop.ExecuteJavaScript(@"$0.name", referenceToJSZipFile)
+    member this.FileName : string =
+        Interop.ExecuteJavaScriptGetResult<string>($"{referenceToJSZipFile}.name")
 

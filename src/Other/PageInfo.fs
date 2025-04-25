@@ -23,6 +23,7 @@ type PageInfo(name: string, path: string) =
                 PageInfo(".NET Framework", "/Net_Framework")
                 PageInfo("Client / Server", "/Client_Server")
                 PageInfo("Interop", "/Interop_Samples")
+                PageInfo("JS Libs", "/JS_Libs")
                 PageInfo("Charts", "/Charts")
                 PageInfo("Performance", "/Performance")
                 PageInfo("Native APIs", "/Maui_Hybrid")

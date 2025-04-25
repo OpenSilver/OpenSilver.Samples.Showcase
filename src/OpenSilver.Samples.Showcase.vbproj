@@ -68,6 +68,12 @@
     <Page Include="Samples\Interop_Samples\PWA\PWA_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\JS_Libs\JSZip\JSZip_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\JS_Libs\JS_Libs.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\Maui_Hybrid\Barometer\Barometer_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -251,6 +257,9 @@
     <Compile Include="Samples\Charts\Stacked100AreaSeries\Stacked100AreaSeries_Demo.xaml.vb" />
     <Compile Include="Samples\Client_Server\RIAServices\RIAServices_Demo.xaml.vb" />
     <Compile Include="Samples\Interop_Samples\PWA\PWA_Demo.xaml.vb" />
+    <Compile Include="Samples\JS_Libs\JSZip\JSZip_Demo.xaml.vb" />
+    <Compile Include="Samples\JS_Libs\JSZip\ZipFile.vb" />
+    <Compile Include="Samples\JS_Libs\JS_Libs.xaml.vb" />
     <Compile Include="Samples\Maui_Hybrid\Barometer\Barometer_Demo.xaml.vb" />
     <Compile Include="Samples\Maui_Hybrid\Battery\Battery_Demo.xaml.vb" />
     <Compile Include="Samples\Maui_Hybrid\Camera\Camera_Demo.xaml.vb" />
@@ -775,7 +784,6 @@
     <Compile Include="Samples\Net_Framework\Printing\Printing_Demo.xaml.vb" />
     <Compile Include="Samples\Net_Framework\Regex\Regex_Demo.xaml.vb" />
     <Compile Include="Samples\Net_Framework\RESX\RESX_Demo.xaml.vb" />
-    <Compile Include="Samples\Net_Framework\Zip\ZipFile.vb" />
     <Compile Include="Samples\Net_Framework\Zip\Zip_Demo.xaml.vb" />
     <Compile Include="Samples\Performance\HtmlCanvas\HtmlCanvas_Demo.xaml.vb" />
     <Compile Include="Samples\Performance\HtmlCanvas\MainSprite.vb" />

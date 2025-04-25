@@ -1,27 +1,44 @@
-﻿using OpenSilver.Extensions.FileSystem;
-using Ionic.Zip;
+﻿using OpenSilver.Samples.Showcase.Search;
+using System.IO;
+using System.IO.Compression;
 using System.Windows;
 using System.Windows.Controls;
-using OpenSilver.Samples.Showcase.Search;
 
-namespace OpenSilver.Samples.Showcase
+namespace OpenSilver.Samples.Showcase;
+
+[SearchKeywords("compression", "file", "archive", "savefiledialog")]
+public partial class Zip_Demo : UserControl
 {
-    [SearchKeywords("compression", "zip", "file", "archive")]
-    public partial class Zip_Demo : UserControl
+    public Zip_Demo()
     {
-        public Zip_Demo()
+        InitializeComponent();
+    }
+
+    private async void ButtonGenerateZip_Click(object sender, RoutedEventArgs e)
+    {
+        using var memoryStream = new MemoryStream();
+
+        using (var archive = new ZipArchive(memoryStream, ZipArchiveMode.Create))
         {
-            this.InitializeComponent();
+            var zipEntry = archive.CreateEntry("SampleText.txt", CompressionLevel.Optimal);
+            using var entryStream = zipEntry.Open();
+            using var writer = new StreamWriter(entryStream);
+            writer.Write("Hello World!");
         }
 
-        private async void ButtonGenerateZip_Click(object sender, RoutedEventArgs e)
+        var dialog = new Controls.SaveFileDialog
         {
-            using (ZipFile zipFile = new ZipFile())
-            {
-                await zipFile.AddFile("SampleText.txt", "Hello World!");
-                var jsBlob = await zipFile.SaveToJavaScriptBlob();
-                await FileSaver.SaveJavaScriptBlobToFile(jsBlob, "MyTestFile.zip");
-            }
+            DefaultExt = ".zip",
+            Filter = "Zip files (*.zip)|*.zip|All files (*.*)|*.*",
+            DefaultFileName = "MyTestFile"
+        };
+
+        if (await dialog.ShowDialogAsync() == true)
+        {
+            var data = memoryStream.ToArray();
+            using var saveFileStream = await dialog.OpenFileAsync();
+            await saveFileStream.WriteAsync(data, 0, data.Length);
+            await saveFileStream.FlushAsync();
         }
     }
 }

@@ -29,6 +29,7 @@
 		<Compile Include="Other\Converters\RgbToBrushConverter.fs" />
 		<Compile Include="Other\MarkupExtensions\ResxExtension.fs" />
 		<Compile Include="Other\PageInfo.fs" />
+		<Compile Include="Samples\JS_Libs\JSZip\ZipFile.fs" />
 		<Compile Include="Samples\Net_Framework\MVVM\Movie.fs" />
 		<Compile Include="Samples\Net_Framework\MVVM\MoviesViewModel.fs" />
 		<Compile Include="Samples\XAML_Features\Command\CommandDemoViewModel.fs" />
@@ -236,10 +237,23 @@
 		<Compile Include="Samples\Interop_Samples\Interop_Samples.xaml.fs">
 			<DependentUpon>Samples\Interop_Samples\Interop_Samples.xaml</DependentUpon>
 		</Compile>
-		<!--End of Interop_Samples-->
+    <!--End of Interop_Samples-->
 
-		<!--Material_Design-->
-		<!--End of Material_Design-->
+    <!--JS_Libs-->
+    <Compile Include="Samples\Net_Framework\File_Save\FileSaver.fs" />
+		<Page Include="Samples\JS_Libs\JSZip\JSZip_Demo.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</Page>
+    <Compile Include="Samples\JS_Libs\JSZip\JSZip_Demo.xaml.fs">
+      <DependentUpon>Samples\JS_Libs\JSZip\JSZip_Demo.xaml</DependentUpon>
+    </Compile>
+		<Page Include="Samples\JS_Libs\JS_Libs.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</Page>
+    <Compile Include="Samples\JS_Libs\JS_Libs.xaml.fs">
+      <DependentUpon>Samples\JS_Libs\JS_Libs.xaml</DependentUpon>
+    </Compile>		
+		<!--End of JS_Libs-->
 
 		<!--Maui_Hybrid-->
 		<Page Include="Samples\Maui_Hybrid\Barometer\Barometer_Demo.xaml">
@@ -350,7 +364,6 @@
 			<DependentUpon>Samples\Net_Framework\DispatcherTimer\DispatcherTimer_Demo.xaml</DependentUpon>
 		</Compile>
 		<Compile Include="Samples\Net_Framework\File_Open\FileOpenDialog.fs" />
-		<Compile Include="Samples\Net_Framework\File_Save\FileSaver.fs" />
 		<Page Include="Samples\Net_Framework\File_Open\File_Open_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
@@ -471,7 +484,6 @@
 		<Compile Include="Samples\Net_Framework\WriteableBitmap\WriteableBitmap_Demo.xaml.fs">
 			<DependentUpon>Samples\Net_Framework\WriteableBitmap\WriteableBitmap_Demo.xaml</DependentUpon>
 		</Compile>
-		<Compile Include="Samples\Net_Framework\Zip\ZipFile.fs" />
 		<Page Include="Samples\Net_Framework\Zip\Zip_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>

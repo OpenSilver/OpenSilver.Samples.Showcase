@@ -1,32 +1,46 @@
-﻿Imports OpenSilver.Extensions.FileSystem
-Imports OpenSilver.Samples.Showcase.Search
-Imports Ionic.Zip
+﻿Imports OpenSilver.Samples.Showcase.Search
+Imports System.IO
+Imports System.IO.Compression
 Imports System.Windows
 Imports System.Windows.Controls
 
-Namespace Global.OpenSilver.Samples.Showcase
-    <SearchKeywords("compression", "zip", "file", "archive")>
+Namespace OpenSilver.Samples.Showcase
+
+    <SearchKeywords("compression", "file", "archive", "savefiledialog")>
     Partial Public Class Zip_Demo
         Inherits UserControl
+
         Public Sub New()
-            Me.InitializeComponent()
+            InitializeComponent()
         End Sub
 
-        Private Async Sub ButtonGenerateZip_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-            Using zipFile As ZipFile = New ZipFile()
-                Await zipFile.AddFile("SampleText.txt", "Hello World!")
-                Dim jsBlob = Await zipFile.SaveToJavaScriptBlob()
-                Await FileSaver.SaveJavaScriptBlobToFile(jsBlob, "MyTestFile.zip")
+        Private Async Sub ButtonGenerateZip_Click(sender As Object, e As RoutedEventArgs)
+            Using memoryStream As New MemoryStream()
+                Using archive As New ZipArchive(memoryStream, ZipArchiveMode.Create)
+                    Dim zipEntry = archive.CreateEntry("SampleText.txt", CompressionLevel.Optimal)
+                    Using entryStream = zipEntry.Open()
+                        Using writer As New StreamWriter(entryStream)
+                            writer.Write("Hello World!")
+                        End Using
+                    End Using
+                End Using
+
+                Dim dialog As New Controls.SaveFileDialog With {
+                    .DefaultExt = ".zip",
+                    .Filter = "Zip files (*.zip)|*.zip|All files (*.*)|*.*",
+                    .DefaultFileName = "MyTestFile"
+                }
+
+                If Await dialog.ShowDialogAsync() = True Then
+                    Dim data = memoryStream.ToArray()
+                    Using saveFileStream = Await dialog.OpenFileAsync()
+                        Await saveFileStream.WriteAsync(data, 0, data.Length)
+                        Await saveFileStream.FlushAsync()
+                    End Using
+                End If
             End Using
         End Sub
 
-        'async void OnFileOpened(object sender, OpenSilver.Extensions.FileOpenDialog.FileOpenedEventArgs e)
-        '{
-        '    var javaScriptBlob = e.JavaScriptBlob;
-        '    ZipFile zipFile = await ZipFile.Read(javaScriptBlob);
-        '    ZipEntry entry = zipFile["MyTestFileInsideTheZIP.txt"];
-        '    string content = entry.ExtractToString();
-        '    MessageBox.Show(content);
-        '}
     End Class
+
 End Namespace

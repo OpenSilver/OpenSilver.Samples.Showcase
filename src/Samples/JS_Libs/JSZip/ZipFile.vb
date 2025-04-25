@@ -1,4 +1,4 @@
-﻿Imports CSHTML5
+﻿Imports OpenSilver
 
 '------------------------------------
 ' This is an extension for C#/XAML for OpenSilver (https://opensilver.net)
@@ -103,21 +103,19 @@ Namespace Global.Ionic.Zip
         End Property
     End Class
 
-
     Public Class ZipEntry
-        Private _referenceToJSZipFile As Object
+        Private ReadOnly _referenceToJSZipFile As Object
 
-        Public Sub New(ByVal referenceToJSZipFile As Object)
+        Public Sub New(referenceToJSZipFile As Object)
             _referenceToJSZipFile = referenceToJSZipFile
         End Sub
 
         Public Function ExtractToString() As String
-            Return CStr(Interop.ExecuteJavaScript("$0.asText()", _referenceToJSZipFile))
+            Return Interop.ExecuteJavaScriptGetResult(Of String)($"{_referenceToJSZipFile}.asText()")
         End Function
 
         Public Function ExtractToByteArray() As Byte()
-            Return CType(Interop.ExecuteJavaScript("$0.asUint8Array()", _referenceToJSZipFile), Byte())
-
+            Return Interop.ExecuteJavaScriptGetResult(Of Byte())($"{_referenceToJSZipFile}.asUint8Array()")
         End Function
 
         Public Function ExtractToJavaScriptArrayBuffer() As Object
@@ -126,8 +124,9 @@ Namespace Global.Ionic.Zip
 
         Public ReadOnly Property FileName As String
             Get
-                Return CStr(Interop.ExecuteJavaScript("$0.name", _referenceToJSZipFile))
+                Return Interop.ExecuteJavaScriptGetResult(Of String)($"{_referenceToJSZipFile}.name")
             End Get
         End Property
     End Class
+
 End Namespace
