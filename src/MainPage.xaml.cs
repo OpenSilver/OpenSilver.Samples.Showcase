@@ -264,11 +264,15 @@ namespace OpenSilver.Samples.Showcase
                 {
                     NativeApiButtonBackgroundBrush.Color = darkColor;
                     theme.CurrentPalette = ModernTheme.Palettes.Dark;
+                    LogoBackgroundDark.Opacity = 1;
+                    LogoBackgroundLight.Opacity = 0;
                 }
                 else
                 {
                     NativeApiButtonBackgroundBrush.Color = lightColor;
                     theme.CurrentPalette = ModernTheme.Palettes.Light;
+                    LogoBackgroundLight.Opacity = 1;
+                    LogoBackgroundDark.Opacity = 0;
                 }
 
                 if (SourceCodePane.Visibility == Visibility.Visible &&
