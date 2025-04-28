@@ -1,6 +1,7 @@
 ﻿Imports System.Windows
 Imports System.Windows.Browser
 Imports System.Windows.Controls
+Imports System.Windows.Markup
 Imports System.Windows.Media
 Imports OpenSilver.Themes.Modern
 
@@ -10,11 +11,9 @@ Namespace OpenSilver.Samples.Showcase
 
         Public Sub New()
             InitializeComponent()
-
             Current = Me
             AddHandler Loaded, AddressOf MainPage_Loaded
             AddHandler SizeChanged, AddressOf MainPage_SizeChanged
-
             MenuListBox.ItemsSource = PageInfo.Pages
             UpdateThemeToggleFillColor()
         End Sub
@@ -40,7 +39,6 @@ Namespace OpenSilver.Samples.Showcase
         End Sub
 
         Private Sub NavigateToPage(targetUri As String)
-            ' Hide the menu:
             If _currentState = CurrentState.SmallResolution_ShowMenu Then
                 GoToState(CurrentState.SmallResolution_HideMenu)
             End If
@@ -181,6 +179,7 @@ Namespace OpenSilver.Samples.Showcase
 #Region "Themes Switch"
 
         Private _nativeApiButtonBackgroundBrush As SolidColorBrush
+
         Public ReadOnly Property NativeApiButtonBackgroundBrush As SolidColorBrush
             Get
                 If _nativeApiButtonBackgroundBrush Is Nothing Then
@@ -194,21 +193,59 @@ Namespace OpenSilver.Samples.Showcase
         Private ReadOnly darkColor As Color = Color.FromRgb(60, 60, 60)
 
         Private Sub ThemeToggle_RadioButton_Checked(sender As Object, e As RoutedEventArgs)
-            Dim isDark As Boolean = DarkThemeRadioButton.IsChecked = True
-            Dim theme As ModernTheme = TryCast(Application.Current.Theme, ModernTheme)
-            If theme IsNot Nothing Then
-                NativeApiButtonBackgroundBrush.Color = If(isDark, darkColor, lightColor)
-                theme.CurrentPalette = If(isDark, ModernTheme.Palettes.Dark, ModernTheme.Palettes.Light)
+            Dim isDark As Boolean = (DarkThemeRadioButton.IsChecked = True)
+            If TypeOf Application.Current.Theme Is ModernTheme Then
+                Dim theme = DirectCast(Application.Current.Theme, ModernTheme)
+                If isDark Then
+                    NativeApiButtonBackgroundBrush.Color = darkColor
+                    theme.CurrentPalette = ModernTheme.Palettes.Dark
+                    LogoBackgroundDark.Opacity = 1
+                    LogoBackgroundLight.Opacity = 0
+                Else
+                    NativeApiButtonBackgroundBrush.Color = lightColor
+                    theme.CurrentPalette = ModernTheme.Palettes.Light
+                    LogoBackgroundLight.Opacity = 1
+                    LogoBackgroundDark.Opacity = 0
+                End If
+
+                If SourceCodePane.Visibility = Visibility.Visible Then
+                    Dim tabControl = TryCast(PlaceWhereSourceCodeWillBeDisplayed.Child, TabControl)
+                    If tabControl IsNot Nothing Then
+                        Dim tabItem = TryCast(tabControl.SelectedItem, TabItem)
+                        If tabItem IsNot Nothing Then
+                            Dim gitHubControl = TryCast(tabItem.Content, ControlToDisplayCodeHostedOnGitHub)
+                            gitHubControl?.Refresh()
+                        End If
+                    End If
+                End If
+
+                BackgroundLayer.Background = Theme_LoadBackgroundGradient()
             End If
+
             UpdateThemeToggleFillColor()
         End Sub
 
         Private Sub UpdateThemeToggleFillColor()
-            Dim color As Color? = TryCast(DarkThemeRadioButton.Foreground, SolidColorBrush)?.Color
-            darkThemeImage.FillColor = color
-            lightThemeImage.FillColor = color
+            Dim colorBrush As SolidColorBrush = TryCast(DarkThemeRadioButton.Foreground, SolidColorBrush)
+            If colorBrush IsNot Nothing Then
+                lightThemeImage.FillColor = colorBrush.Color
+                darkThemeImage.FillColor = colorBrush.Color
+            End If
+
         End Sub
 
+        Private Function Theme_LoadBackgroundGradient() As Brush
+            Return CType(XamlReader.Load(
+                "<LinearGradientBrush xmlns='http://schemas.microsoft.com/winfx/2006/xaml/presentation' StartPoint='0.5,0' EndPoint='0.5,1'>" &
+                "<GradientStop Color='{DynamicResource Theme_ContainerBackgroundColor}' Offset='0'/>" &
+                "<GradientStop Color='{DynamicResource Theme_BackgroundColor}' Offset='0.45'/>" &
+                "<GradientStop Color='{DynamicResource Theme_BackgroundColor}' Offset='0.55'/>" &
+                "<GradientStop Color='{DynamicResource Theme_ContainerBackgroundColor}' Offset='1'/>" &
+                "</LinearGradientBrush>"
+            ), Brush)
+        End Function
+
 #End Region
+
     End Class
 End Namespace

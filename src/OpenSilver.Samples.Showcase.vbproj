@@ -233,6 +233,7 @@
     <Compile Include="Other\Controls\SvgImage.vb" />
     <Compile Include="Other\Converters\EnumToListConverter.vb" />
     <Compile Include="Other\Converters\RgbToBrushConverter.vb" />
+    <Compile Include="Other\Converters\StringEmptyToVisibilityConverter.vb" />
     <Compile Include="Other\Elements.vb" />
     <Compile Include="Other\Internals\Search\ControlSearch.vb" />
     <Compile Include="Other\Internals\Search\SamplesInfoLoader.vb" />
@@ -338,8 +339,10 @@
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Other\Logo-OpenSilver.png" />
-    <Content Include="Other\Logo-Showcase.png" />
+    <Content Include="Other\Images\LogoBackgroundDark.jpg" />
+    <Content Include="Other\Images\LogoBackgroundLight.jpg" />
+    <Content Include="Other\Images\Logo-OpenSilver.png" />
+    <Content Include="Other\Images\Logo-Showcase.png" />
     <Content Include="Other\Logo.png" />
     <Content Include="Other\Planets\Earth.png" />
     <Content Include="Other\Planets\Jupiter.png" />

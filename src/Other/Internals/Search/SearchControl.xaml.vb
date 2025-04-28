@@ -17,6 +17,7 @@ Namespace OpenSilver.Samples.Showcase
         Private Sub SearchField_KeyDown(sender As Object, e As KeyEventArgs)
             If e.Key = Key.Enter Then
                 StartSearch(SearchField.Text)
+                SearchField.Focus()
             End If
         End Sub
 

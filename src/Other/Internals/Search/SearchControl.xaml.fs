@@ -19,6 +19,7 @@ type SearchControl() as this =
 
     member this.ButtonSearch_Click(_sender: obj, _e: RoutedEventArgs) =
         this.StartSearch(this.SearchField.Text)
+        this.SearchField.Focus()
 
     member private this.SearchField_KeyDown(_sender: obj, e: KeyEventArgs) =
         if e.Key = Key.Enter then
