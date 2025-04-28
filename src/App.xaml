@@ -11,7 +11,8 @@
             </ResourceDictionary.MergedDictionaries>
 
             <local:EnumToListConverter x:Key="EnumToListConverter"/>
-
+            <local:StringEmptyToVisibilityConverter x:Key="StringEmptyToVisibilityConverter"/>
+            
             <!-- Set a larger Height for most controls -->
             <Style TargetType="Button">
                 <Setter Property="Padding" Value="8,6,8,6"/>

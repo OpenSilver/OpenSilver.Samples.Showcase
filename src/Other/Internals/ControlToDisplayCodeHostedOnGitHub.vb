@@ -56,5 +56,12 @@ Namespace Global.OpenSilver.Samples.Showcase
             End Set
         End Property
 
+        Public Sub Refresh()
+            If Not String.IsNullOrEmpty(_filePathOnGitHub) AndAlso IsLoaded Then
+                Dim htmlString As String = GetHtmlString(_filePathOnGitHub)
+                DisplayHtmlString(htmlString)
+            End If
+        End Sub
+
     End Class
 End Namespace

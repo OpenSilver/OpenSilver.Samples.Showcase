@@ -27,6 +27,7 @@
 		<Compile Include="Other\Controls\SvgImage.fs" />
 		<Compile Include="Other\Converters\EnumToListConverter.fs" />
 		<Compile Include="Other\Converters\RgbToBrushConverter.fs" />
+		<Compile Include="Other\Converters\StringEmptyToVisibilityConverter.fs" />
 		<Compile Include="Other\MarkupExtensions\ResxExtension.fs" />
 		<Compile Include="Other\PageInfo.fs" />
 		<Compile Include="Samples\JS_Libs\JSZip\ZipFile.fs" />
@@ -37,8 +38,10 @@
 			<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
 			<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
 		</Content>
-		<Content Include="Other\Logo-OpenSilver.png" />
-		<Content Include="Other\Logo-Showcase.png" />
+    <Content Include="Other\Images\LogoBackgroundDark.jpg" />
+    <Content Include="Other\Images\LogoBackgroundLight.jpg" />
+		<Content Include="Other\Images\Logo-OpenSilver.png" />
+		<Content Include="Other\Images\Logo-Showcase.png" />
 		<Content Include="Other\Logo.png" />
 		<Content Include="Other\Planets\Earth.png" />
 		<Content Include="Other\Planets\Jupiter.png" />
