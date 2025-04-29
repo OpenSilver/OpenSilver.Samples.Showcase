@@ -6,7 +6,7 @@ using System.Windows.Threading;
 
 namespace OpenSilver.Samples.Showcase
 {
-    [SearchKeywords("loading", "busy", "indicator", "status", "loading", "progress")]
+    [SearchKeywords("loading", "busy", "indicator", "status", "loading", "progress", "style", "template")]
     public partial class BusyIndicator_Demo : UserControl
     {
         private readonly DispatcherTimer timer;

@@ -3,14 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
 
-    <ContentControl Width="210" Style="{StaticResource Card_Style}">
+    <ContentControl Width="230" Style="{StaticResource Card_Style}">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
+
             <ContentControl Background="#FFE45EE2"
                             Content="BusyIndicator"
                             Foreground="#FFE45EE2"
@@ -36,9 +39,59 @@
                         Content="Show for 3 seconds"/>
             </StackPanel>
 
-            <BusyIndicator x:Name="MyBusyIndicator" Grid.Row="2"/>
+            <BusyIndicator x:Name="MyBusyIndicator" Grid.Row="2">
+                <ContentControl HorizontalContentAlignment="Center" Content="Some Content"/>
+            </BusyIndicator>
 
-            <local:ViewSourceButton Grid.Row="3" Background="#FFE45EE2">
+            <Separator Grid.Row="3" Margin="0,20"/>
+
+            <StackPanel Grid.Row="4">
+                <TextBlock Text="BusyIndicator with custom content:"
+                           TextAlignment="Center"
+                           TextWrapping="Wrap"/>
+                <BusyIndicator DisplayAfter="0" IsBusy="True">
+                    <BusyIndicator.BusyContentTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="4">
+                                <TextBlock HorizontalAlignment="Center"
+                                           FontWeight="Bold"
+                                           Text="Downloading Email"/>
+                                <StackPanel Margin="4">
+                                    <TextBlock Text="Downloading message 4/10..."/>
+                                    <ProgressBar Height="15" Value="40"/>
+                                </StackPanel>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Button Grid.Column="0"
+                                            Margin="0,0,2,0"
+                                            HorizontalAlignment="Right"
+                                            Content="Pause"/>
+                                    <Button Grid.Column="1"
+                                            Margin="2,0,0,0"
+                                            HorizontalAlignment="Left"
+                                            Content="Cancel"/>
+                                </Grid>
+                            </StackPanel>
+                        </DataTemplate>
+                    </BusyIndicator.BusyContentTemplate>
+                    <BusyIndicator.OverlayStyle>
+                        <Style TargetType="Rectangle">
+                            <Setter Property="Fill" Value="#82E8C0C0"/>
+                        </Style>
+                    </BusyIndicator.OverlayStyle>
+                    <BusyIndicator.ProgressBarStyle>
+                        <Style TargetType="ProgressBar">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                        </Style>
+                    </BusyIndicator.ProgressBarStyle>
+                    <ContentControl HorizontalContentAlignment="Center" Content="Some Content"/>
+                </BusyIndicator>
+            </StackPanel>
+
+            <local:ViewSourceButton Grid.Row="5" Background="#FFE45EE2">
                 <local:ViewSourceButton.Sources>
                     <local:ViewSourceButtonInfo FileName="BusyIndicator_Demo.xaml" RelativePath="src/Samples/XAML_Controls/BusyIndicator"/>
                     <local:ViewSourceButtonInfo FileName="BusyIndicator_Demo.xaml.cs" RelativePath="src/Samples/XAML_Controls/BusyIndicator"/>
