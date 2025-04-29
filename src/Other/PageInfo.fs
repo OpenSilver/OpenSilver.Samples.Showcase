@@ -18,7 +18,8 @@ type PageInfo(name: string, path: string) =
         | Some list -> list
         | None ->
             let pages = [
-                PageInfo("Panels & Controls", "/XAML_Controls")
+                PageInfo("Controls", "/XAML_Controls")
+                PageInfo("Panels", "/XAML_Panels")
                 PageInfo("Xaml Features", "/XAML_Features")
                 PageInfo(".NET Framework", "/Net_Framework")
                 PageInfo("Client / Server", "/Client_Server")

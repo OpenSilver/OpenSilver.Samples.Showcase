@@ -6,25 +6,19 @@
 
     <StackPanel>
         <Grid>
-            <ContentControl Style="{StaticResource PageHeader_Style}" Content="Panels &amp; Controls"/>
+            <ContentControl Style="{StaticResource PageHeader_Style}" Content="Controls"/>
             <!--<WrapPanel HorizontalAlignment="Right" Orientation="Horizontal">
                 <TextBlock Foreground="Transparent"
                            Style="{StaticResource PageHeader_Style}"
-                           Text="Panels &amp; Controls"/>
+                           Text="XAML Controls"/>
                 <local:SearchControl HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
                 <Border Width="30"/>
             </WrapPanel>-->
         </Grid>
 
         <controlskit:StaggeredPanel Name="SamplesPanel" ProgressiveRenderingChunkSize="2">
-            <local:Grid_Demo HorizontalAlignment="Center"/>
-            <local:UniformGrid_Demo/>
-            <local:StackPanel_Demo HorizontalAlignment="Center"/>
             <local:TreeView_Demo HorizontalAlignment="Center"/>
             <local:TreeMap_Demo/>
-            <local:DockPanel_Demo HorizontalAlignment="Center"/>
-            <local:WrapPanel_Demo HorizontalAlignment="Center"/>
-            <local:Canvas_Demo HorizontalAlignment="Center"/>
             <local:InkPresenter_Demo/>
             <local:Button_Demo HorizontalAlignment="Center"/>
             <local:ButtonSpinner_Demo/>

@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="OpenSilver.Samples.Showcase.Xaml_Panels"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controlskit="clr-namespace:OpenSilver.ControlsKit;assembly=OpenSilver.ControlsKit.Controls"
+             xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+
+    <StackPanel>
+        <Grid>
+            <ContentControl Style="{StaticResource PageHeader_Style}" Content="Panels"/>
+            <!--<WrapPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                <TextBlock Foreground="Transparent"
+                           Style="{StaticResource PageHeader_Style}"
+                           Text="XAML Panels"/>
+                <local:SearchControl HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                <Border Width="30"/>
+            </WrapPanel>-->
+        </Grid>
+
+        <controlskit:StaggeredPanel Name="SamplesPanel" ProgressiveRenderingChunkSize="2">
+            <local:Grid_Demo HorizontalAlignment="Center"/>
+            <local:UniformGrid_Demo/>
+            <local:StackPanel_Demo HorizontalAlignment="Center"/>
+            <local:DockPanel_Demo HorizontalAlignment="Center"/>
+            <local:WrapPanel_Demo HorizontalAlignment="Center"/>
+            <local:Canvas_Demo HorizontalAlignment="Center"/>
+            <local:MeasureArrange_Demo/>
+        </controlskit:StaggeredPanel>
+    </StackPanel>
+</UserControl>

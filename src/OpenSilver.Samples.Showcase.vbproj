@@ -214,9 +214,6 @@
     <Page Include="Samples\XAML_Controls\TreeView\TreeView_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\XAML_Controls\UniformGrid\UniformGrid_Demo.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Samples\XAML_Controls\UpDownBase\UpDownBase_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -318,7 +315,6 @@
     <Compile Include="Samples\XAML_Controls\TransitioningContentControl\TransitioningContentControl_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\TreeMap\TreeMap_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\TreeView\TreeView_Demo.xaml.vb" />
-    <Compile Include="Samples\XAML_Controls\UniformGrid\UniformGrid_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\UpDownBase\UpDownBase_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Features\Clipping\Clipping_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Features\Command\CommandDemoViewModel.vb" />
@@ -327,14 +323,21 @@
     <Compile Include="Samples\Interop_Samples\WebView\WebBrowser_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Features\FlowDirection\FlowDirection_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Features\ImageBrush\ImageBrush_Demo.xaml.vb" />
-    <Compile Include="Samples\XAML_Features\MeasureArrange\MeasureArrange_Demo.xaml.vb" />
-    <Compile Include="Samples\XAML_Features\MeasureArrange\RadialPanel.vb" />
     <Compile Include="Samples\XAML_Features\MultiBinding\MultiBinding_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Features\Styles\Styles_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Features\Themes\Themes_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Features\Triggers\Triggers_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Features\VisualTreeHelper\TreeViewerWindow.xaml.vb" />
     <Compile Include="Samples\XAML_Features\XamlReader\XamlReader_Demo.xaml.vb" />
+    <Compile Include="Samples\XAML_Panels\Canvas\Canvas_Demo.xaml.vb" />
+    <Compile Include="Samples\XAML_Panels\DockPanel\DockPanel_Demo.xaml.vb" />
+    <Compile Include="Samples\XAML_Panels\Grid\Grid_Demo.xaml.vb" />
+    <Compile Include="Samples\XAML_Panels\MeasureArrange\MeasureArrange_Demo.xaml.vb" />
+    <Compile Include="Samples\XAML_Panels\MeasureArrange\RadialPanel.vb" />
+    <Compile Include="Samples\XAML_Panels\StackPanel\StackPanel_Demo.xaml.vb" />
+    <Compile Include="Samples\XAML_Panels\UniformGrid\UniformGrid_Demo.xaml.vb" />
+    <Compile Include="Samples\XAML_Panels\WrapPanel\WrapPanel_Demo.xaml.vb" />
+    <Compile Include="Samples\XAML_Panels\Xaml_Panels.xaml.vb" />
   </ItemGroup>
   
   <ItemGroup>
@@ -490,9 +493,6 @@
     <Page Include="Samples\XAML_Controls\Button\Styles\ButtonStyles.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\XAML_Controls\Canvas\Canvas_Demo.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Samples\XAML_Controls\CheckBox\CheckBox_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -535,9 +535,6 @@
     <Page Include="Samples\XAML_Controls\DatePicker\DatePicker_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\XAML_Controls\DockPanel\DockPanel_Demo.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Samples\XAML_Controls\Expander\Expander_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -551,9 +548,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Controls\GridSplitter\Styles\DefaultGridSplitterStyle.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Samples\XAML_Controls\Grid\Grid_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Controls\HtmlPresenter\HtmlPresenter_Demo.xaml">
@@ -607,9 +601,6 @@
     <Page Include="Samples\XAML_Controls\Slider\Slider_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\XAML_Controls\StackPanel\StackPanel_Demo.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Samples\XAML_Controls\TabControl\Styles\DefaultTabControlStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -649,9 +640,6 @@
     <Page Include="Samples\XAML_Controls\Viewbox\Viewbox_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\XAML_Controls\WrapPanel\WrapPanel_Demo.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Samples\XAML_Controls\Xaml_Controls.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -674,9 +662,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Features\ImageBrush\ImageBrush_Demo.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Samples\XAML_Features\MeasureArrange\MeasureArrange_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Features\MultiBinding\MultiBinding_Demo.xaml">
@@ -754,6 +739,30 @@
     <Page Include="Samples\XAML_Features\XAML_Resource_Dictionary\XAML_Resource_Dictionary_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\XAML_Panels\Canvas\Canvas_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\XAML_Panels\DockPanel\DockPanel_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\XAML_Panels\Grid\Grid_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\XAML_Panels\MeasureArrange\MeasureArrange_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\XAML_Panels\StackPanel\StackPanel_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\XAML_Panels\UniformGrid\UniformGrid_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\XAML_Panels\WrapPanel\WrapPanel_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\XAML_Panels\Xaml_Panels.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.vb" />
@@ -809,7 +818,6 @@
     <Compile Include="Samples\XAML_Controls\AutoCompleteBox\AutoCompleteBox_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\Border\Border_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\Button\Button_Demo.xaml.vb" />
-    <Compile Include="Samples\XAML_Controls\Canvas\Canvas_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\CheckBox\CheckBox_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\ChildWindow2\NonModalChildWindow_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\ChildWindow2\SmallChildWindow.xaml.vb" />
@@ -820,11 +828,9 @@
     <Compile Include="Samples\XAML_Controls\ContextMenu_MenuItem\ContextMenu_MenuItem_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\DataGrid\DataGrid_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\DatePicker\DatePicker_Demo.xaml.vb" />
-    <Compile Include="Samples\XAML_Controls\DockPanel\DockPanel_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\Expander\Expander_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\Frame\Frame_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\GridSplitter\GridSplitter_Demo.xaml.vb" />
-    <Compile Include="Samples\XAML_Controls\Grid\Grid_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\HtmlPresenter\HtmlPresenter_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\HyperlinkButton\HyperlinkButton.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\Image\Image_Demo.xaml.vb" />
@@ -841,7 +847,6 @@
     <Compile Include="Samples\XAML_Controls\ScrollViewer\ScrollViewer_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\Shapes\Shapes_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\Slider\Slider_Demo.xaml.vb" />
-    <Compile Include="Samples\XAML_Controls\StackPanel\StackPanel_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\TabControl\TabControl_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\Textblock\TextBlock_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\TextBox\TextBox_Demo.xaml.vb" />
@@ -849,7 +854,6 @@
     <Compile Include="Samples\XAML_Controls\ToggleButton\ToggleButton_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\ToolTip\ToolTip_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\Viewbox\Viewbox_Demo.xaml.vb" />
-    <Compile Include="Samples\XAML_Controls\WrapPanel\WrapPanel_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\Xaml_Controls.xaml.vb" />
     <Compile Include="Samples\XAML_Features\Animations\Animations_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Features\AttachedProperties\AttachedProperties_Demo.xaml.vb" />
@@ -893,5 +897,30 @@
   <ItemGroup>
     <Content Include="Other\Icons\DarkTheme.svg" />
     <Content Include="Other\Icons\LightTheme.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Samples\XAML_Panels\MeasureArrange\RadialPanel.cs" />
+    <None Include="Samples\XAML_Panels\MeasureArrange\RadialPanel.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Samples\XAML_Controls\Canvas\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Samples\XAML_Controls\DockPanel\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Samples\XAML_Controls\Grid\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Samples\XAML_Controls\StackPanel\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Samples\XAML_Controls\UniformGrid\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Samples\XAML_Controls\WrapPanel\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Samples\XAML_Features\MeasureArrange\**" />
   </ItemGroup>
 </Project>

@@ -22,7 +22,6 @@
             <local:Themes_Demo/>
             <local:Triggers_Demo/>
             <local:XamlReader_Demo/>
-            <local:MeasureArrange_Demo/>
             <local:Animations_Demo HorizontalAlignment="Center"/>
             <local:DropShadowEffect_Demo HorizontalAlignment="Center"/>
             <local:ImageBrush_Demo/>

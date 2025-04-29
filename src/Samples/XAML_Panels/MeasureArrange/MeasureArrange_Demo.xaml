@@ -10,7 +10,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="Measure/Arrange" Foreground="#FFC7C228" Background="#FFC5B58B" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="Custom Panels with Measure &amp; Arrange" Foreground="#FFC7C228" Background="#FFC5B58B" Style="{StaticResource HeaderControl_Style}"/>
             <local:RadialPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="220" Height="150">
                 <TextBlock Text="one"/>
                 <TextBlock Text="two"/>
