@@ -88,10 +88,10 @@
 
             <local:ViewSourceButton Grid.Row="3" Background="#FFD66DED">
                 <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo FileName="DockPanel_Demo.xaml" RelativePath="src/Samples/XAML_Controls/DockPanel"/>
-                    <local:ViewSourceButtonInfo FileName="DockPanel_Demo.xaml.cs" RelativePath="src/Samples/XAML_Controls/DockPanel"/>
-                    <local:ViewSourceButtonInfo FileName="DockPanel_Demo.xaml.vb" RelativePath="src/Samples/XAML_Controls/DockPanel"/>
-                    <local:ViewSourceButtonInfo FileName="DockPanel_Demo.xaml.fs" RelativePath="src/Samples/XAML_Controls/DockPanel"/>
+                    <local:ViewSourceButtonInfo FileName="DockPanel_Demo.xaml" RelativePath="src/Samples/XAML_Panels/DockPanel"/>
+                    <local:ViewSourceButtonInfo FileName="DockPanel_Demo.xaml.cs" RelativePath="src/Samples/XAML_Panels/DockPanel"/>
+                    <local:ViewSourceButtonInfo FileName="DockPanel_Demo.xaml.vb" RelativePath="src/Samples/XAML_Panels/DockPanel"/>
+                    <local:ViewSourceButtonInfo FileName="DockPanel_Demo.xaml.fs" RelativePath="src/Samples/XAML_Panels/DockPanel"/>
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

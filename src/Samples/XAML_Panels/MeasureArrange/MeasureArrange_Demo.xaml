@@ -10,7 +10,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ContentControl Content="Measure/Arrange" Foreground="#FFC7C228" Background="#FFC5B58B" Style="{StaticResource HeaderControl_Style}"/>
+            <ContentControl Content="Custom Panels with Measure &amp; Arrange" Foreground="#FFC7C228" Background="#FFC5B58B" Style="{StaticResource HeaderControl_Style}"/>
             <local:RadialPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="220" Height="150">
                 <TextBlock Text="one"/>
                 <TextBlock Text="two"/>
@@ -21,16 +21,16 @@
             </local:RadialPanel>
             <local:ViewSourceButton Grid.Row="2" Background="#FFC7C228">
                 <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/MeasureArrange"
-                                            FileName="RadialPanel.cs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/MeasureArrange"
-                                            FileName="MeasureArrange_Demo.xaml" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/MeasureArrange"
-                                            FileName="MeasureArrange_Demo.xaml.cs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/MeasureArrange"
-                                            FileName="MeasureArrange_Demo.xaml.vb" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/MeasureArrange"
-                                            FileName="MeasureArrange_Demo.xaml.fs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Panels/MeasureArrange"
+                                                FileName="RadialPanel.cs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Panels/MeasureArrange"
+                                                FileName="MeasureArrange_Demo.xaml" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Panels/MeasureArrange"
+                                                FileName="MeasureArrange_Demo.xaml.cs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Panels/MeasureArrange"
+                                                FileName="MeasureArrange_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Panels/MeasureArrange"
+                                                FileName="MeasureArrange_Demo.xaml.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>
