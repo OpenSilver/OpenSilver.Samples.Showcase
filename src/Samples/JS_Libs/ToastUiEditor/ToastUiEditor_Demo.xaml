@@ -1,0 +1,43 @@
+<UserControl x:Class="OpenSilver.Samples.Showcase.ToastUiEditor_Demo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+
+    <ContentControl Width="290" Style="{StaticResource Card_Style}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <ContentControl Content="Toast UI Editor"
+                            Foreground="#FF458B3C"
+                            Style="{StaticResource HeaderControl_Style}"/>
+
+            <TextBlock Grid.Row="1"
+                       Margin="0,0,0,10"
+                       TextWrapping="Wrap">
+                <Hyperlink NavigateUri="https://ui.toast.com/tui-editor" TargetName="_blank">Toast UI Editor</Hyperlink>
+                -
+                a powerful markdown WYSIWYG editor.</TextBlock>
+
+            <local:ToastUiEditor Name="toastUiEditor"
+                                 Grid.Row="2"
+                                 Height="320"/>
+
+            <local:ViewSourceButton Grid.Row="3" Background="#FF458B3C">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo FileName="ToastUiEditor_Demo.xaml" RelativePath="src/Samples/JS_Libs/ToastUiEditor"/>
+                    <local:ViewSourceButtonInfo FileName="ToastUiEditor_Demo.xaml.cs" RelativePath="src/Samples/JS_Libs/ToastUiEditor"/>
+                    <local:ViewSourceButtonInfo FileName="ToastUiEditor_Demo.xaml.vb" RelativePath="src/Samples/JS_Libs/ToastUiEditor"/>
+                    <local:ViewSourceButtonInfo FileName="ToastUiEditor_Demo.xaml.fs" RelativePath="src/Samples/JS_Libs/ToastUiEditor"/>
+                    <local:ViewSourceButtonInfo FileName="ToastUiEditor.cs" RelativePath="src/Samples/JS_Libs/ToastUiEditor"/>
+                    <local:ViewSourceButtonInfo FileName="ToastUiEditor.vb" RelativePath="src/Samples/JS_Libs/ToastUiEditor"/>
+                    <local:ViewSourceButtonInfo FileName="ToastUiEditor.fs" RelativePath="src/Samples/JS_Libs/ToastUiEditor"/>
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
+</UserControl>

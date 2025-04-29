@@ -263,6 +263,13 @@
     <Compile Include="Samples\JS_Libs\MonacoEditor\MonacoEditor_Demo.xaml.fs">
       <DependentUpon>Samples\JS_Libs\MonacoEditor\MonacoEditor_Demo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Samples\JS_Libs\ToastUiEditor\ToastUiEditor.fs" />
+    <Page Include="Samples\JS_Libs\ToastUiEditor\ToastUiEditor_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="Samples\JS_Libs\ToastUiEditor\ToastUiEditor_Demo.xaml.fs">
+      <DependentUpon>Samples\JS_Libs\ToastUiEditor\ToastUiEditor_Demo.xaml</DependentUpon>
+    </Compile>
 		<Page Include="Samples\JS_Libs\JS_Libs.xaml">
 		  <Generator>MSBuild:Compile</Generator>
 		</Page>

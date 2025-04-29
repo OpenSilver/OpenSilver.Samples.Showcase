@@ -3,13 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:controlskit="clr-namespace:OpenSilver.ControlsKit;assembly=OpenSilver.ControlsKit.Controls"
              xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
-
+    
     <StackPanel>
-        <ContentControl Content="JS Libs" Style="{StaticResource PageHeader_Style}"/>        
+        <ContentControl Content="JS Libs" Style="{StaticResource PageHeader_Style}"/>
         <controlskit:StaggeredPanel DesiredColumnWidth="280" ProgressiveRenderingChunkSize="2">
             <local:JSZip_Demo/>
             <local:ColorPicker_Demo/>
             <local:MonacoEditor_Demo/>
+            <local:ToastUiEditor_Demo/>
         </controlskit:StaggeredPanel>
     </StackPanel>
 </UserControl>

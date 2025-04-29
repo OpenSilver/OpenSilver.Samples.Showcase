@@ -74,6 +74,9 @@
     <Page Include="Samples\JS_Libs\MonacoEditor\MonacoEditor_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\JS_Libs\ToastUiEditor\ToastUiEditor_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\Maui_Hybrid\Barometer\Barometer_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -263,6 +266,8 @@
     <Compile Include="Samples\JS_Libs\ColorPicker\ColorPicker_Demo.xaml.cs" />
     <Compile Include="Samples\JS_Libs\MonacoEditor\MonacoEditor.cs" />
     <Compile Include="Samples\JS_Libs\MonacoEditor\MonacoEditor_Demo.xaml.cs" />
+    <Compile Include="Samples\JS_Libs\ToastUiEditor\ToastUiEditor.cs" />
+    <Compile Include="Samples\JS_Libs\ToastUiEditor\ToastUiEditor_Demo.xaml.cs" />
     <Compile Include="Samples\Maui_Hybrid\Barometer\Barometer_Demo.xaml.cs" />
     <Compile Include="Samples\Maui_Hybrid\Battery\Battery_Demo.xaml.cs" />
     <Compile Include="Samples\Maui_Hybrid\Camera\Camera_Demo.xaml.cs" />
