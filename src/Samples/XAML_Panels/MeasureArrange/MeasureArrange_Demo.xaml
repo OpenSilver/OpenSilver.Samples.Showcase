@@ -21,16 +21,16 @@
             </local:RadialPanel>
             <local:ViewSourceButton Grid.Row="2" Background="#FFC7C228">
                 <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/MeasureArrange"
-                                            FileName="RadialPanel.cs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/MeasureArrange"
-                                            FileName="MeasureArrange_Demo.xaml" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/MeasureArrange"
-                                            FileName="MeasureArrange_Demo.xaml.cs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/MeasureArrange"
-                                            FileName="MeasureArrange_Demo.xaml.vb" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Features/MeasureArrange"
-                                            FileName="MeasureArrange_Demo.xaml.fs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Panels/MeasureArrange"
+                                                FileName="RadialPanel.cs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Panels/MeasureArrange"
+                                                FileName="MeasureArrange_Demo.xaml" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Panels/MeasureArrange"
+                                                FileName="MeasureArrange_Demo.xaml.cs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Panels/MeasureArrange"
+                                                FileName="MeasureArrange_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Panels/MeasureArrange"
+                                                FileName="MeasureArrange_Demo.xaml.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

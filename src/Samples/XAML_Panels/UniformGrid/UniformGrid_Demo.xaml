@@ -84,10 +84,10 @@
 
             <local:ViewSourceButton Grid.Row="3" Background="#FFE65969">
                 <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo FileName="UniformGrid_Demo.xaml" RelativePath="src/Samples/XAML_Controls/UniformGrid"/>
-                    <local:ViewSourceButtonInfo FileName="UniformGrid_Demo.xaml.cs" RelativePath="src/Samples/XAML_Controls/UniformGrid"/>
-                    <local:ViewSourceButtonInfo FileName="UniformGrid_Demo.xaml.vb" RelativePath="src/Samples/XAML_Controls/UniformGrid"/>
-                    <local:ViewSourceButtonInfo FileName="UniformGrid_Demo.xaml.fs" RelativePath="src/Samples/XAML_Controls/UniformGrid"/>
+                    <local:ViewSourceButtonInfo FileName="UniformGrid_Demo.xaml" RelativePath="src/Samples/XAML_Panels/UniformGrid"/>
+                    <local:ViewSourceButtonInfo FileName="UniformGrid_Demo.xaml.cs" RelativePath="src/Samples/XAML_Panels/UniformGrid"/>
+                    <local:ViewSourceButtonInfo FileName="UniformGrid_Demo.xaml.vb" RelativePath="src/Samples/XAML_Panels/UniformGrid"/>
+                    <local:ViewSourceButtonInfo FileName="UniformGrid_Demo.xaml.fs" RelativePath="src/Samples/XAML_Panels/UniformGrid"/>
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

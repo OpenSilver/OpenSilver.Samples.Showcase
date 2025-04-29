@@ -75,10 +75,10 @@
 
             <local:ViewSourceButton Grid.Row="4" Background="#FFBDE567">
                 <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo FileName="WrapPanel_Demo.xaml" RelativePath="src/Samples/XAML_Controls/WrapPanel"/>
-                    <local:ViewSourceButtonInfo FileName="WrapPanel_Demo.xaml.cs" RelativePath="src/Samples/XAML_Controls/WrapPanel"/>
-                    <local:ViewSourceButtonInfo FileName="WrapPanel_Demo.xaml.vb" RelativePath="src/Samples/XAML_Controls/WrapPanel"/>
-                    <local:ViewSourceButtonInfo FileName="WrapPanel_Demo.xaml.fs" RelativePath="src/Samples/XAML_Controls/WrapPanel"/>
+                    <local:ViewSourceButtonInfo FileName="WrapPanel_Demo.xaml" RelativePath="src/Samples/XAML_Panels/WrapPanel"/>
+                    <local:ViewSourceButtonInfo FileName="WrapPanel_Demo.xaml.cs" RelativePath="src/Samples/XAML_Panels/WrapPanel"/>
+                    <local:ViewSourceButtonInfo FileName="WrapPanel_Demo.xaml.vb" RelativePath="src/Samples/XAML_Panels/WrapPanel"/>
+                    <local:ViewSourceButtonInfo FileName="WrapPanel_Demo.xaml.fs" RelativePath="src/Samples/XAML_Panels/WrapPanel"/>
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

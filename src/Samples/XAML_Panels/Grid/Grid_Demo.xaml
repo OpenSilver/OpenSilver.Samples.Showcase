@@ -31,13 +31,13 @@
             <local:ViewSourceButton Grid.Row="2"
                                     Background="#FFFE7484">
                 <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Grid"
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Panels/Grid"
                                                 FileName="Grid_Demo.xaml" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Grid"
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Panels/Grid"
                                                 FileName="Grid_Demo.xaml.cs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Grid"
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Panels/Grid"
                                                 FileName="Grid_Demo.xaml.vb" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Grid"
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Panels/Grid"
                                                 FileName="Grid_Demo.xaml.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>

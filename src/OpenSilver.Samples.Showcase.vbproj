@@ -902,25 +902,4 @@
     <None Include="Samples\XAML_Panels\MeasureArrange\RadialPanel.cs" />
     <None Include="Samples\XAML_Panels\MeasureArrange\RadialPanel.fs" />
   </ItemGroup>
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Samples\XAML_Controls\Canvas\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Samples\XAML_Controls\DockPanel\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Samples\XAML_Controls\Grid\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Samples\XAML_Controls\StackPanel\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Samples\XAML_Controls\UniformGrid\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Samples\XAML_Controls\WrapPanel\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Samples\XAML_Features\MeasureArrange\**" />
-  </ItemGroup>
 </Project>

@@ -30,13 +30,13 @@
             <local:ViewSourceButton Grid.Row="2"
                                     Background="#FF3ED4C8">
                 <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/StackPanel"
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Panels/StackPanel"
                                                 FileName="StackPanel_Demo.xaml" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/StackPanel"
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Panels/StackPanel"
                                                 FileName="StackPanel_Demo.xaml.cs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/StackPanel"
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Panels/StackPanel"
                                                 FileName="StackPanel_Demo.xaml.vb" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/StackPanel"
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Panels/StackPanel"
                                                 FileName="StackPanel_Demo.xaml.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
