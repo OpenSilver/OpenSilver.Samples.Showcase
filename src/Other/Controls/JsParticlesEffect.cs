@@ -75,7 +75,7 @@ public class JsParticlesEffect : HtmlPresenter
                     velocityY: 0,
                     friction: 0.95,
                     onMouseMove: null,
-                    onResize: null,
+                    resizeObserver: null,
 
                     // Start the particle effect in the specified div
                     startEffect(div) {{
@@ -180,12 +180,16 @@ public class JsParticlesEffect : HtmlPresenter
                         document.addEventListener('mousemove', this.onMouseMove);
 
                         // Resize handler
-                        this.onResize = () => {{
-                            this.camera.aspect = div.clientWidth / div.clientHeight;
-                            this.camera.updateProjectionMatrix();
-                            this.renderer.setSize(div.clientWidth, div.clientHeight);
-                        }};
-                        window.addEventListener('resize', this.onResize);
+                        this.resizeObserver = new ResizeObserver(entries => {{
+                            for (let entry of entries) {{
+                                if (entry.target === div) {{
+                                    this.camera.aspect = entry.contentRect.width / entry.contentRect.height;
+                                    this.camera.updateProjectionMatrix();
+                                    this.renderer.setSize(entry.contentRect.width, entry.contentRect.height);
+                                }}
+                            }}
+                        }});
+                        this.resizeObserver.observe(div);
 
                         // Animation loop
                         const animate = () => {{
@@ -240,9 +244,9 @@ public class JsParticlesEffect : HtmlPresenter
                             document.removeEventListener('mousemove', this.onMouseMove);
                             this.onMouseMove = null;
                         }}
-                        if (this.onResize) {{
-                            window.removeEventListener('resize', this.onResize);
-                            this.onResize = null;
+                        if (this.resizeObserver) {{
+                            this.resizeObserver.disconnect();
+                            this.resizeObserver = null;
                         }}
 
                         // Dispose of Three.js resources

@@ -7,7 +7,7 @@
         <local:JsParticlesEffect/>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
             <ContentControl Content="Welcome!" HorizontalAlignment="Center" Style="{StaticResource PageHeader_Style}"/>
-            <Border Background="{DynamicResource Theme_ContainerBackgroundBrush}" CornerRadius="30" MaxWidth="510" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,0,40,20">
+            <Border Background="{DynamicResource Theme_ContainerBackgroundBrush}" CornerRadius="30" MaxWidth="530" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,0,40,20">
                 <Border.Effect>
                     <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="20" Opacity="0.2" />
                 </Border.Effect>
