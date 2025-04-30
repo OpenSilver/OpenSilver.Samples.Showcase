@@ -142,17 +142,13 @@ mc:Ignorable="d"
                                 </RadioButton>
                             </StackPanel>
                         </Border>
-                        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Margin="45,5,0,0">
-                            <Button x:Name="ButtonBackwards" Content="←" FontSize="22" Click="ButtonBackwards_Click" Style="{StaticResource ButtonTransparentBackground_Style}"/>
-                            <Button x:Name="ButtonForward" Content="→" FontSize="22" Click="ButtonForward_Click" Style="{StaticResource ButtonTransparentBackground_Style}"/>
-                        </StackPanel>
                         <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Padding="0">
                             <StackPanel >
                                 <Grid Margin="30,12,40,0" HorizontalAlignment="Stretch">
                                     <Image Source="/OpenSilver.Samples.Showcase;component/Other/Images/LogoOpenSilverDark.png" x:Name="LogoOpenSilverDark" Opacity="0" Cursor="Hand" MouseLeftButtonDown="Logo_MouseLeftButtonDown" />
                                     <Image Source="/OpenSilver.Samples.Showcase;component/Other/Images/LogoOpenSilverLight.png" x:Name="LogoOpenSilverLight" Cursor="Hand" MouseLeftButtonDown="Logo_MouseLeftButtonDown" />
                                 </Grid>
-                                <Image Source="/OpenSilver.Samples.Showcase;component/Other/Images/logo-showcase.png" Margin="90,-8,25,0" Cursor="Hand" MouseLeftButtonDown="Logo_MouseLeftButtonDown" />
+                                <Image Source="/OpenSilver.Samples.Showcase;component/Other/Images/logo-showcase.png" Margin="85,-3,55,0" Cursor="Hand" MouseLeftButtonDown="Logo_MouseLeftButtonDown" />
                                 <local:SearchControl Margin="32,60,30,20"/>
                                 <ListBox x:Name="MenuListBox" SelectionChanged="MenuListBox_SelectionChanged" Background="Transparent" Margin="30,0,0,0" BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Hidden">
                                     <ListBox.ItemContainerStyle>
@@ -221,7 +217,7 @@ mc:Ignorable="d"
                 </Button>
             </Border>
             <ScrollViewer Grid.Row="1" x:Name="ScrollViewer1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-                <sdk:Frame x:Name="PageContainer" JournalOwnership="Automatic" Margin="15,0,0,0" HorizontalContentAlignment="Stretch" Navigated="PageContainer_Navigated">
+                <sdk:Frame x:Name="PageContainer" JournalOwnership="Automatic" Margin="15,0,0,0" HorizontalContentAlignment="Stretch">
                     <sdk:Frame.UriMapper>
                         <sdk:UriMapper>
                             <sdk:UriMapping Uri="/Welcome" MappedUri="/Samples/Welcome.xaml"/>

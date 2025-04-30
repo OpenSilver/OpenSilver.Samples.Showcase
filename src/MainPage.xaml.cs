@@ -60,32 +60,11 @@ namespace OpenSilver.Samples.Showcase
             ScrollViewer1.ScrollToVerticalOffset(0d);
         }
 
-        private void ButtonBackwards_Click(object sender, RoutedEventArgs e)
-        {
-            if (PageContainer.CanGoBack)
-            {
-                PageContainer.GoBack();
-            }
-        }
-
-        private void ButtonForward_Click(object sender, RoutedEventArgs e)
-        {
-            if (PageContainer.CanGoForward)
-            {
-                PageContainer.GoForward();
-            }
-        }
         private void Logo_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             // Go to the homepage:
             MenuListBox.SelectedItem = PageInfo.LandingPageInfo;
             //NavigateToPage("");
-        }
-
-        private void PageContainer_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
-        {
-            ButtonBackwards.IsEnabled = PageContainer.CanGoBack;
-            ButtonForward.IsEnabled = PageContainer.CanGoForward;
         }
 
         bool _skipMenuListBox_SelectionChanged = false;
