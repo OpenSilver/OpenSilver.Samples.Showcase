@@ -360,6 +360,8 @@
     </Content>
     <Content Include="Other\Images\LogoBackgroundDark.jpg" />
     <Content Include="Other\Images\LogoBackgroundLight.jpg" />
+    <Content Include="Other\Images\BackgroundImageDark.jpg" />
+    <Content Include="Other\Images\BackgroundImageLight.jpg" />
     <Content Include="Other\Inter_VariableFont_slnt_wght.ttf" />
     <Content Include="Other\Images\Logo-OpenSilver.png" />
     <Content Include="Other\Images\Logo-Showcase.png" />
