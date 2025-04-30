@@ -11,7 +11,7 @@ using OpenSilver.Animations.Internal;
 
 namespace OpenSilver.Animations
 {
-    public class FadeAndScale : MarkupExtension, IAnimationType
+    public class Fade : MarkupExtension, IAnimationType
     {
         /// <summary>
         /// Delay in milliseconds
@@ -34,8 +34,7 @@ namespace OpenSilver.Animations
                 elementToAnimate: elementToAnimate,
                 duration: Duration,
                 delay: Delay,
-                includeFade: true,
-                includeScale: true);
+                includeFade: true);
         }
     }
 }

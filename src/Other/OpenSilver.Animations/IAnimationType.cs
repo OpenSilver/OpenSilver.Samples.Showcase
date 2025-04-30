@@ -9,7 +9,7 @@ namespace OpenSilver.Animations
     [TypeConverter(typeof(AnimationTypeConverter))]
     public interface IAnimationType
     {
-        void AnimateElementIn(FrameworkElement element);
+        void AnimateElementIn(FrameworkElement elementToAnimate);
 
         /// <summary>
         /// Delay in milliseconds

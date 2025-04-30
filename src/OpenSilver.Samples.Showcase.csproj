@@ -244,7 +244,9 @@
     <Compile Include="Other\MarkupExtensions\ResxExtension.cs" />
     <Compile Include="Other\OpenSilver.Animations\Animation.cs" />
     <Compile Include="Other\OpenSilver.Animations\AnimationTypeConverter.cs" />
+    <Compile Include="Other\OpenSilver.Animations\AnimationTypes\Fade.cs" />
     <Compile Include="Other\OpenSilver.Animations\AnimationTypes\FadeAndScale.cs" />
+    <Compile Include="Other\OpenSilver.Animations\Internal\StoryboardsHelper.cs" />
     <Compile Include="Other\OpenSilver.Animations\IAnimationType.cs" />
     <Compile Include="Other\PageInfo.cs" />
     <Compile Include="Other\Sales.cs" />

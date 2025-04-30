@@ -5,10 +5,10 @@
     xmlns:animations="clr-namespace:OpenSilver.Animations"
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
     <Grid Margin="-30,0,0,0">
-        <local:JsParticlesEffect/>
+        <local:JsParticlesEffect animations:Animation.OnAppear="{animations:FadeAndScale Delay=500, Duration=1000}"/>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <ContentControl Content="Welcome!" animations:Animation.OnAppear="FadeAndScale" HorizontalAlignment="Center" Style="{StaticResource PageHeader_Style}"/>
-            <Border animations:Animation.OnAppear="{animations:FadeAndScale Delay=1000}" Background="{DynamicResource Theme_ContainerBackgroundBrush}" CornerRadius="30" MaxWidth="530" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,0,40,20">
+            <ContentControl Content="Welcome!" animations:Animation.OnAppear="{animations:FadeAndScale Delay=500, Duration=500}" HorizontalAlignment="Center" Style="{StaticResource PageHeader_Style}"/>
+            <Border animations:Animation.OnAppear="{animations:FadeAndScale Delay=1000, Duration=500}" Background="{DynamicResource Theme_ContainerBackgroundBrush}" CornerRadius="30" MaxWidth="530" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,0,40,20">
                 <Border.Effect>
                     <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="20" Opacity="0.2" />
                 </Border.Effect>

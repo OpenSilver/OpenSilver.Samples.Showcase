@@ -6,7 +6,8 @@ xmlns:local="clr-namespace:OpenSilver.Samples.Showcase"
 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
-Background="#FFF0F0F0"
+xmlns:animations="clr-namespace:OpenSilver.Animations"
+Background="White"
 mc:Ignorable="d"
     Foreground="{DynamicResource Theme_TextBrush}"
     FontFamily="{StaticResource InterFontFamily}">
@@ -112,9 +113,11 @@ mc:Ignorable="d"
             <RowDefinition x:Name="RowThatContainsTheGridSplitter" Height="0"/>
             <RowDefinition x:Name="RowThatContainsTheSourceCodePane" Height="0"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="1" ClipToBounds="True" Background="{DynamicResource Theme_BackgroundBrush}">
-            <Image Source="/Other/Images/BackgroundImageDark.jpg" x:Name="BackgroundImageDark" Opacity="0" Stretch="Fill" />
-            <Image Source="/Other/Images/BackgroundImageLight.jpg" x:Name="BackgroundImageLight" Stretch="Fill" />
+        <Grid Grid.Row="1" ClipToBounds="True" Background="White">
+            <Grid x:Name="BackgroundImagesContainer" animations:Animation.OnAppear="{animations:Fade Delay=1000, Duration=1000}">
+                <Image Source="/Other/Images/BackgroundImageDark.jpg" x:Name="BackgroundImageDark" Opacity="0" Stretch="Fill" />
+                <Image Source="/Other/Images/BackgroundImageLight.jpg" x:Name="BackgroundImageLight" Stretch="Fill" />
+            </Grid>
             <Border x:Name="MenuBorder" Canvas.ZIndex="1" Background="{DynamicResource Theme_ControlBackgroundBrush}" Width="240" HorizontalAlignment="Left">
                 <Border.RenderTransform>
                     <TranslateTransform/>
