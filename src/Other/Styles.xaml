@@ -96,9 +96,8 @@
         </Style.Setters>
     </Style>
     <Style x:Key="ButtonTransparentBackground_Style" TargetType="Button">
-        <Setter Property="Foreground" Value="#FFDDDDDD" />
+        <Setter Property="Foreground" Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="BorderBrush" Value="#FF718597" />
         <Setter Property="Padding" Value="3" />
         <Setter Property="Cursor" Value="Hand" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
@@ -117,14 +116,19 @@
                                 </VisualState>
                                 <VisualState Name="MouseOver">
                                     <Storyboard>
-                                        <DoubleAnimation Duration="0" Storyboard.TargetName="Background" Storyboard.TargetProperty="Opacity" To="0.1"/>
+                                        <DoubleAnimation Duration="0" Storyboard.TargetName="Background" Storyboard.TargetProperty="Opacity" To="0.5"/>
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState Name="Pressed">
                                     <Storyboard>
                                         <Storyboard>
-                                            <DoubleAnimation Duration="0" Storyboard.TargetName="Background" Storyboard.TargetProperty="Opacity" To="0.2"/>
+                                            <DoubleAnimation Duration="0" Storyboard.TargetName="Background" Storyboard.TargetProperty="Opacity" To="0.6"/>
                                         </Storyboard>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="Opacity" To="0.4"/>
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
@@ -133,7 +137,7 @@
                               x:Name="Background"
                               Opacity="0"
                               CornerRadius="0"
-                              Background="White"
+                              Background="{DynamicResource Theme_BackgroundBrush}"
                               BorderThickness="{TemplateBinding BorderThickness}"
                               BorderBrush="{TemplateBinding BorderBrush}">
                         </Border>
