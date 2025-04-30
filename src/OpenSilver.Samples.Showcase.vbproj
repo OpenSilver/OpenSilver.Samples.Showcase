@@ -232,6 +232,7 @@
     <Page Include="Samples\XAML_Features\FlowDirection\FlowDirection_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Compile Include="Other\Controls\JsParticlesEffect.vb" />
     <Compile Include="Other\Controls\SvgImage.vb" />
     <Compile Include="Other\Converters\EnumToListConverter.vb" />
     <Compile Include="Other\Converters\RgbToBrushConverter.vb" />
@@ -350,6 +351,8 @@
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+    <Content Include="Other\Images\BackgroundImageDark.jpg" />
+    <Content Include="Other\Images\BackgroundImageLight.jpg" />
     <Content Include="Other\Images\LogoBackgroundDark.jpg" />
     <Content Include="Other\Images\LogoBackgroundLight.jpg" />
     <Content Include="Other\Images\Logo-OpenSilver.png" />

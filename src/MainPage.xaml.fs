@@ -5,7 +5,6 @@ open System.Windows.Browser
 open System.Windows
 open System.Windows.Controls
 open System.Windows.Media
-open System.Windows.Markup
 
 type CurrentState =
     | Unset                     // Initial value
@@ -113,7 +112,7 @@ type MainPage() as this =
             | LargeResolution_SeeBothMenuAndPage ->
                 // Hide the button to hide/show the menu:
                 this.ButtonToHideOrShowMenu.Visibility <- Visibility.Collapsed
-                this.PageContainer.Margin <- new Thickness(0.0, 0.0, 0.0, 30.0)
+                this.PageContainer.Margin <- new Thickness(20.0, 0.0, 0.0, 0.0)
 
                 // Set the translation of the frame to 0:
                 (this.PageContainer.RenderTransform :?> TranslateTransform).X <- 0.0
@@ -196,13 +195,15 @@ type MainPage() as this =
                 theme.CurrentPalette <- OpenSilver.Themes.Modern.ModernTheme.Palettes.Dark
                 this.LogoBackgroundDark.Opacity <- 1
                 this.LogoBackgroundLight.Opacity <- 0
+                this.BackgroundImageDark.Opacity <- 1
+                this.BackgroundImageLight.Opacity <- 0
             else
                 nativeBrush.Color <- Color.FromRgb(221uy, 221uy, 221uy)
                 theme.CurrentPalette <- OpenSilver.Themes.Modern.ModernTheme.Palettes.Light
                 this.LogoBackgroundLight.Opacity <- 1
                 this.LogoBackgroundDark.Opacity <- 0
-
-            this.BackgroundLayer.Background <- this.Theme_LoadBackgroundGradient()
+                this.BackgroundImageLight.Opacity <- 1
+                this.BackgroundImageDark.Opacity <- 0                
 
             this.UpdateThemeToggleFillColor()
 
@@ -224,13 +225,3 @@ type MainPage() as this =
         let color = if isNull brush then Nullable() else Nullable(brush.Color)
         this.darkThemeImage.FillColor <- color
         this.lightThemeImage.FillColor <- color
-
-    member private this.Theme_LoadBackgroundGradient() : Brush =
-        let xamlString = @"
-            <LinearGradientBrush xmlns=""http://schemas.microsoft.com/winfx/2006/xaml/presentation"" StartPoint=""0.5,0"" EndPoint=""0.5,1"">
-                <GradientStop Color=""{DynamicResource Theme_ContainerBackgroundColor}"" Offset=""0""/>
-                <GradientStop Color=""{DynamicResource Theme_BackgroundColor}"" Offset=""0.45""/>
-                <GradientStop Color=""{DynamicResource Theme_BackgroundColor}"" Offset=""0.55""/>
-                <GradientStop Color=""{DynamicResource Theme_ContainerBackgroundColor}"" Offset=""1""/>
-            </LinearGradientBrush>"
-        XamlReader.Load(xamlString) :?> Brush

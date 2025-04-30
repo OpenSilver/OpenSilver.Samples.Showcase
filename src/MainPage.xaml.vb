@@ -1,7 +1,6 @@
 ﻿Imports System.Windows
 Imports System.Windows.Browser
 Imports System.Windows.Controls
-Imports System.Windows.Markup
 Imports System.Windows.Media
 Imports OpenSilver.Themes.Modern
 
@@ -126,7 +125,7 @@ Namespace OpenSilver.Samples.Showcase
             If newState <> _currentState Then
                 If newState = CurrentState.LargeResolution_SeeBothMenuAndPage Then
                     ButtonToHideOrShowMenu.Visibility = Visibility.Collapsed
-                    PageContainer.Margin = New Thickness(20, 0, 0, 30)
+                    PageContainer.Margin = New Thickness(20, 0, 0, 0)
                     CType(PageContainer.RenderTransform, TranslateTransform).X = 0
                     Dim margin As Thickness = PageContainer.Margin
                     margin.Left += MenuBorder.Width
@@ -201,11 +200,15 @@ Namespace OpenSilver.Samples.Showcase
                     theme.CurrentPalette = ModernTheme.Palettes.Dark
                     LogoBackgroundDark.Opacity = 1
                     LogoBackgroundLight.Opacity = 0
+                    BackgroundImageDark.Opacity = 1
+                    BackgroundImageLight.Opacity = 0
                 Else
                     NativeApiButtonBackgroundBrush.Color = lightColor
                     theme.CurrentPalette = ModernTheme.Palettes.Light
                     LogoBackgroundLight.Opacity = 1
                     LogoBackgroundDark.Opacity = 0
+                    BackgroundImageLight.Opacity = 1
+                    BackgroundImageDark.Opacity = 0
                 End If
 
                 If SourceCodePane.Visibility = Visibility.Visible Then
@@ -218,8 +221,6 @@ Namespace OpenSilver.Samples.Showcase
                         End If
                     End If
                 End If
-
-                BackgroundLayer.Background = Theme_LoadBackgroundGradient()
             End If
 
             UpdateThemeToggleFillColor()
@@ -233,17 +234,6 @@ Namespace OpenSilver.Samples.Showcase
             End If
 
         End Sub
-
-        Private Function Theme_LoadBackgroundGradient() As Brush
-            Return CType(XamlReader.Load(
-                "<LinearGradientBrush xmlns='http://schemas.microsoft.com/winfx/2006/xaml/presentation' StartPoint='0.5,0' EndPoint='0.5,1'>" &
-                "<GradientStop Color='{DynamicResource Theme_ContainerBackgroundColor}' Offset='0'/>" &
-                "<GradientStop Color='{DynamicResource Theme_BackgroundColor}' Offset='0.45'/>" &
-                "<GradientStop Color='{DynamicResource Theme_BackgroundColor}' Offset='0.55'/>" &
-                "<GradientStop Color='{DynamicResource Theme_ContainerBackgroundColor}' Offset='1'/>" &
-                "</LinearGradientBrush>"
-            ), Brush)
-        End Function
 
 #End Region
 
