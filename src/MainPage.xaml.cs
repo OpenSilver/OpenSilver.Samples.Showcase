@@ -243,8 +243,6 @@ namespace OpenSilver.Samples.Showcase
                 {
                     NativeApiButtonBackgroundBrush.Color = darkColor;
                     theme.CurrentPalette = ModernTheme.Palettes.Dark;
-                    LogoBackgroundDark.Opacity = 0.4;
-                    LogoBackgroundLight.Opacity = 0;
                     LogoOpenSilverDark.Opacity = 1;
                     LogoOpenSilverLight.Opacity = 0;
                     BackgroundImageDark.Opacity = 1;
@@ -254,8 +252,6 @@ namespace OpenSilver.Samples.Showcase
                 {
                     NativeApiButtonBackgroundBrush.Color = lightColor;
                     theme.CurrentPalette = ModernTheme.Palettes.Light;
-                    LogoBackgroundLight.Opacity = 0.4;
-                    LogoBackgroundDark.Opacity = 0;
                     LogoOpenSilverLight.Opacity = 1;
                     LogoOpenSilverDark.Opacity = 0;
                     BackgroundImageLight.Opacity = 1;

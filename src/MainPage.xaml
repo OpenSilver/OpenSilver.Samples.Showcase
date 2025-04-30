@@ -122,91 +122,87 @@ mc:Ignorable="d"
                 <Border.Effect>
                     <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="14" Opacity="0.15" />
                 </Border.Effect>
-                <Grid>
-                    <Image Source="/Other/Images/LogoBackgroundDark.jpg" x:Name="LogoBackgroundDark" Opacity="0" Width="450" Stretch="Uniform" Margin="-80,-140,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" />
-                    <Image Source="/Other/Images/LogoBackgroundLight.jpg" x:Name="LogoBackgroundLight" Width="450" Stretch="Uniform" Margin="-80,-140,0,0" Opacity="0.4" VerticalAlignment="Top" HorizontalAlignment="Left" />
-                    <DockPanel LastChildFill="True">
-                        <Border DockPanel.Dock="Bottom" Margin="0,10,0,20" Padding="3" CornerRadius="7" HorizontalAlignment="Center" Background="{DynamicResource Theme_BackgroundBrush}">
-                            <StackPanel Orientation="Horizontal">
-                                <RadioButton x:Name="LightThemeRadioButton" IsChecked="True" Checked="ThemeToggle_RadioButton_Checked">
-                                    <StackPanel Orientation="Horizontal">
-                                        <local:SvgImage x:Name="lightThemeImage" Width="20" Height="20" Source="/Other/Icons/LightTheme.svg"/>
-                                        <TextBlock Margin="3" VerticalAlignment="Center" FontSize="11" Text="Light" Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"/>
-                                    </StackPanel>
-                                </RadioButton>
-                                <RadioButton x:Name="DarkThemeRadioButton" Margin="4,0,0,0" Checked="ThemeToggle_RadioButton_Checked">
-                                    <StackPanel Orientation="Horizontal">
-                                        <local:SvgImage x:Name="darkThemeImage" Width="20" Height="20" Source="/Other/Icons/DarkTheme.svg"/>
-                                        <TextBlock Margin="3" VerticalAlignment="Center" FontSize="11" Text="Dark" Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"/>
-                                    </StackPanel>
-                                </RadioButton>
-                            </StackPanel>
-                        </Border>
-                        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Padding="0">
-                            <StackPanel >
-                                <Grid Margin="30,12,40,0" HorizontalAlignment="Stretch">
-                                    <Image Source="/OpenSilver.Samples.Showcase;component/Other/Images/LogoOpenSilverDark.png" x:Name="LogoOpenSilverDark" Opacity="0" Cursor="Hand" MouseLeftButtonDown="Logo_MouseLeftButtonDown" />
-                                    <Image Source="/OpenSilver.Samples.Showcase;component/Other/Images/LogoOpenSilverLight.png" x:Name="LogoOpenSilverLight" Cursor="Hand" MouseLeftButtonDown="Logo_MouseLeftButtonDown" />
-                                </Grid>
-                                <Image Source="/OpenSilver.Samples.Showcase;component/Other/Images/logo-showcase.png" Margin="85,-3,55,0" Cursor="Hand" MouseLeftButtonDown="Logo_MouseLeftButtonDown" />
-                                <local:SearchControl Margin="32,60,30,20"/>
-                                <ListBox x:Name="MenuListBox" SelectionChanged="MenuListBox_SelectionChanged" Background="Transparent" Margin="30,0,0,0" BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Hidden">
-                                    <ListBox.ItemContainerStyle>
-                                        <Style TargetType="ListBoxItem">
-                                            <Setter Property="Template">
-                                                <Setter.Value>
-                                                    <ControlTemplate TargetType="ListBoxItem">
-                                                        <Grid Background="Transparent" Visibility="{Binding IsVisibleInMenu, Converter={StaticResource BooleanToVisibilityConverter}}">
-                                                            <VisualStateManager.VisualStateGroups>
-                                                                <VisualStateGroup x:Name="CommonStates">
-                                                                    <VisualState x:Name="Normal" />
-                                                                </VisualStateGroup>
-                                                                <VisualStateGroup x:Name="SelectionStates">
-                                                                    <VisualState x:Name="Unselected"/>
-                                                                    <VisualState x:Name="Selected">
-                                                                        <Storyboard>
-                                                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="SelectedBorder" 
-                                                                                                       Storyboard.TargetProperty="(Border.Background)" 
-                                                                                                       Duration="0">
-                                                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{DynamicResource Theme_PrimaryBrush}"/>
-                                                                            </ObjectAnimationUsingKeyFrames>
-                                                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContainerBorder" 
-                                                                                                       Storyboard.TargetProperty="(TextBlock.Foreground)" 
-                                                                                                       Duration="0">
-                                                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{DynamicResource Theme_TextOnPrimaryBrush}"/>
-                                                                            </ObjectAnimationUsingKeyFrames>
-                                                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContainerBorder"
-                                                                                                       Storyboard.TargetProperty="(TextBlock.FontWeight)"
-                                                                                                       Duration="0">
-                                                                                <DiscreteObjectKeyFrame KeyTime="0" Value="SemiBold" />
-                                                                            </ObjectAnimationUsingKeyFrames>
-                                                                        </Storyboard>
-                                                                    </VisualState>
-                                                                </VisualStateGroup>
-                                                            </VisualStateManager.VisualStateGroups>
-                                                            <Border x:Name="SelectedBorder" Background="Transparent" CornerRadius="20" HorizontalAlignment="Left">
-                                                                <Border x:Name="ContainerBorder" Background="Transparent" Grid.Column="1" Margin="10,5,10,5" TextBlock.FontSize="16" TextBlock.Foreground="{DynamicResource Theme_TextBrush}">
-                                                                    <ContentPresenter x:Name="Presenter" TextBlock.Foreground="{Binding (TextBlock.Foreground), ElementName=ContainerBorder}"/>
-                                                                </Border>
+                <DockPanel LastChildFill="True">
+                    <Border DockPanel.Dock="Bottom" Margin="0,10,0,20" Padding="3" CornerRadius="7" HorizontalAlignment="Center" Background="{DynamicResource Theme_BackgroundBrush}">
+                        <StackPanel Orientation="Horizontal">
+                            <RadioButton x:Name="LightThemeRadioButton" IsChecked="True" Checked="ThemeToggle_RadioButton_Checked">
+                                <StackPanel Orientation="Horizontal">
+                                    <local:SvgImage x:Name="lightThemeImage" Width="20" Height="20" Source="/Other/Icons/LightTheme.svg"/>
+                                    <TextBlock Margin="3" VerticalAlignment="Center" FontSize="11" Text="Light" Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"/>
+                                </StackPanel>
+                            </RadioButton>
+                            <RadioButton x:Name="DarkThemeRadioButton" Margin="4,0,0,0" Checked="ThemeToggle_RadioButton_Checked">
+                                <StackPanel Orientation="Horizontal">
+                                    <local:SvgImage x:Name="darkThemeImage" Width="20" Height="20" Source="/Other/Icons/DarkTheme.svg"/>
+                                    <TextBlock Margin="3" VerticalAlignment="Center" FontSize="11" Text="Dark" Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"/>
+                                </StackPanel>
+                            </RadioButton>
+                        </StackPanel>
+                    </Border>
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Padding="0">
+                        <StackPanel >
+                            <Grid Margin="30,32,40,0" HorizontalAlignment="Stretch">
+                                <Image Source="/OpenSilver.Samples.Showcase;component/Other/Images/LogoOpenSilverDark.png" x:Name="LogoOpenSilverDark" Opacity="0" Cursor="Hand" MouseLeftButtonDown="Logo_MouseLeftButtonDown" />
+                                <Image Source="/OpenSilver.Samples.Showcase;component/Other/Images/LogoOpenSilverLight.png" x:Name="LogoOpenSilverLight" Cursor="Hand" MouseLeftButtonDown="Logo_MouseLeftButtonDown" />
+                            </Grid>
+                            <Image Source="/OpenSilver.Samples.Showcase;component/Other/Images/logo-showcase.png" Margin="85,-3,55,0" Cursor="Hand" MouseLeftButtonDown="Logo_MouseLeftButtonDown" />
+                            <local:SearchControl Margin="32,40,30,20"/>
+                            <ListBox x:Name="MenuListBox" SelectionChanged="MenuListBox_SelectionChanged" Background="Transparent" Margin="30,0,0,0" BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+                                <ListBox.ItemContainerStyle>
+                                    <Style TargetType="ListBoxItem">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="ListBoxItem">
+                                                    <Grid Background="Transparent" Visibility="{Binding IsVisibleInMenu, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                                        <VisualStateManager.VisualStateGroups>
+                                                            <VisualStateGroup x:Name="CommonStates">
+                                                                <VisualState x:Name="Normal" />
+                                                            </VisualStateGroup>
+                                                            <VisualStateGroup x:Name="SelectionStates">
+                                                                <VisualState x:Name="Unselected"/>
+                                                                <VisualState x:Name="Selected">
+                                                                    <Storyboard>
+                                                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="SelectedBorder" 
+                                                                                                    Storyboard.TargetProperty="(Border.Background)" 
+                                                                                                    Duration="0">
+                                                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{DynamicResource Theme_PrimaryBrush}"/>
+                                                                        </ObjectAnimationUsingKeyFrames>
+                                                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContainerBorder" 
+                                                                                                    Storyboard.TargetProperty="(TextBlock.Foreground)" 
+                                                                                                    Duration="0">
+                                                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{DynamicResource Theme_TextOnPrimaryBrush}"/>
+                                                                        </ObjectAnimationUsingKeyFrames>
+                                                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContainerBorder"
+                                                                                                    Storyboard.TargetProperty="(TextBlock.FontWeight)"
+                                                                                                    Duration="0">
+                                                                            <DiscreteObjectKeyFrame KeyTime="0" Value="SemiBold" />
+                                                                        </ObjectAnimationUsingKeyFrames>
+                                                                    </Storyboard>
+                                                                </VisualState>
+                                                            </VisualStateGroup>
+                                                        </VisualStateManager.VisualStateGroups>
+                                                        <Border x:Name="SelectedBorder" Background="Transparent" CornerRadius="20" HorizontalAlignment="Left">
+                                                            <Border x:Name="ContainerBorder" Background="Transparent" Grid.Column="1" Margin="10,5,10,5" TextBlock.FontSize="16" TextBlock.Foreground="{DynamicResource Theme_TextBrush}">
+                                                                <ContentPresenter x:Name="Presenter" TextBlock.Foreground="{Binding (TextBlock.Foreground), ElementName=ContainerBorder}"/>
                                                             </Border>
-                                                        </Grid>
-                                                    </ControlTemplate>
-                                                </Setter.Value>
-                                            </Setter>
-                                        </Style>
-                                    </ListBox.ItemContainerStyle>
-                                    <ListBox.ItemTemplate>
-                                        <DataTemplate>
-                                            <Grid Cursor="Hand">
-                                                <TextBlock Text="{Binding Name}"/>
-                                            </Grid>
-                                        </DataTemplate>
-                                    </ListBox.ItemTemplate>
-                                </ListBox>
-                            </StackPanel>
-                        </ScrollViewer>
-                    </DockPanel>
-                </Grid>
+                                                        </Border>
+                                                    </Grid>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </ListBox.ItemContainerStyle>
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid Cursor="Hand">
+                                            <TextBlock Text="{Binding Name}"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </StackPanel>
+                    </ScrollViewer>
+                </DockPanel>
             </Border>
             <Border Grid.Row="1" x:Name="ButtonToHideOrShowMenu" Canvas.ZIndex="2" Padding="2" Visibility="Collapsed" Width="60" Height="50" Margin="5" VerticalAlignment="Top" HorizontalAlignment="Left">
                 <Border.RenderTransform>
