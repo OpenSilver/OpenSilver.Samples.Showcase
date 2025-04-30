@@ -153,7 +153,7 @@ namespace OpenSilver.Samples.Showcase
                 {
                     // Hide the button to hide/show the menu:
                     ButtonToHideOrShowMenu.Visibility = Visibility.Collapsed;
-                    PageContainer.Margin = new Thickness(20, 0, 0, 30);
+                    PageContainer.Margin = new Thickness(20, 0, 0, 0);
 
                     // Set the translation of the frame to 0:
                     ((TranslateTransform)PageContainer.RenderTransform).X = 0;

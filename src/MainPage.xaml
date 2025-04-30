@@ -226,7 +226,7 @@ mc:Ignorable="d"
                 </Border.Background>
             </Border>
             <ScrollViewer Grid.Row="1" x:Name="ScrollViewer1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-                <sdk:Frame x:Name="PageContainer" JournalOwnership="Automatic" Margin="5,0,0,30" HorizontalContentAlignment="Stretch" Navigated="PageContainer_Navigated">
+                <sdk:Frame x:Name="PageContainer" JournalOwnership="Automatic" Margin="5,0,0,0" HorizontalContentAlignment="Stretch" Navigated="PageContainer_Navigated">
                     <sdk:Frame.UriMapper>
                         <sdk:UriMapper>
                             <sdk:UriMapping Uri="/Welcome" MappedUri="/Samples/Welcome.xaml"/>
