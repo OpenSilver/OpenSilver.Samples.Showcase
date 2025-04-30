@@ -153,8 +153,8 @@ Namespace OpenSilver.Samples.Showcase
                             this.velocityY = (newMouseY - this.mouseY) * 0.1;
                             this.mouseX = newMouseX;
                             this.mouseY = newMouseY;
-                            this.targetRotationY = this.mouseX * Math.PI * 0.5;
-                            this.targetRotationX = this.mouseY * Math.PI * 0.5;
+                            this.targetRotationY = this.mouseX * Math.PI * 0.1;
+                            this.targetRotationX = this.mouseY * Math.PI * 0.1;
                             this.isMouseMoving = true;
                             this.lastMouseMoveTime = Date.now();
                         }};
