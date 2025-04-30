@@ -242,6 +242,10 @@
     <Compile Include="Other\Internals\Search\SearchKeywordAttribute.cs" />
     <Compile Include="Other\Leagues\League.cs" />
     <Compile Include="Other\MarkupExtensions\ResxExtension.cs" />
+    <Compile Include="Other\OpenSilver.Animations\Animation.cs" />
+    <Compile Include="Other\OpenSilver.Animations\AnimationTypeConverter.cs" />
+    <Compile Include="Other\OpenSilver.Animations\AnimationTypes\FadeAndScale.cs" />
+    <Compile Include="Other\OpenSilver.Animations\IAnimationType.cs" />
     <Compile Include="Other\PageInfo.cs" />
     <Compile Include="Other\Sales.cs" />
     <Compile Include="Other\Localization\SampleResourceFile.Designer.cs">
