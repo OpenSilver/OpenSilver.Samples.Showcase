@@ -2,7 +2,7 @@
 
 namespace OpenSilver.Samples.Showcase
 {
-    public partial class Maui_Hybrid : UserControl
+    public partial class Maui_Hybrid : Page
     {
         public Maui_Hybrid()
         {

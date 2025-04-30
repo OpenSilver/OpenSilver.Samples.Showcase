@@ -2,7 +2,7 @@
 
 namespace OpenSilver.Samples.Showcase
 {
-    public partial class Interop_Samples : UserControl
+    public partial class Interop_Samples : Page
     {
         public Interop_Samples()
         {

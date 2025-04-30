@@ -2,7 +2,7 @@
 
 namespace OpenSilver.Samples.Showcase
 {
-    public partial class Welcome : UserControl
+    public partial class Welcome : Page
     {
         public Welcome()
         {

@@ -2,7 +2,7 @@
 
 namespace OpenSilver.Samples.Showcase
 {
-    public partial class Client_Server : UserControl
+    public partial class Client_Server : Page
     {
         public Client_Server()
         {
