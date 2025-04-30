@@ -153,7 +153,7 @@ namespace OpenSilver.Samples.Showcase
                 {
                     // Hide the button to hide/show the menu:
                     ButtonToHideOrShowMenu.Visibility = Visibility.Collapsed;
-                    PageContainer.Margin = new Thickness(20, 0, 0, 0);
+                    PageContainer.Margin = new Thickness(30, 0, 0, 0);
 
                     // Set the translation of the frame to 0:
                     ((TranslateTransform)PageContainer.RenderTransform).X = 0;
@@ -181,8 +181,8 @@ namespace OpenSilver.Samples.Showcase
                     if (newState == CurrentState.SmallResolution_ShowMenu)
                     {
                         // Show the menu:
-                        ((TranslateTransform)PageContainer.RenderTransform).X = 180;
-                        ((TranslateTransform)ButtonToHideOrShowMenu.RenderTransform).X = 180;
+                        ((TranslateTransform)PageContainer.RenderTransform).X = 240;
+                        ((TranslateTransform)ButtonToHideOrShowMenu.RenderTransform).X = 240;
                         ((TranslateTransform)MenuBorder.RenderTransform).X = 0;
                     }
                     else
@@ -190,7 +190,7 @@ namespace OpenSilver.Samples.Showcase
                         // Hide the menu:
                         ((TranslateTransform)PageContainer.RenderTransform).X = 0;
                         ((TranslateTransform)ButtonToHideOrShowMenu.RenderTransform).X = 0;
-                        ((TranslateTransform)MenuBorder.RenderTransform).X = -180;
+                        ((TranslateTransform)MenuBorder.RenderTransform).X = -240;
                     }
                 }
                 _currentState = newState;
@@ -264,8 +264,10 @@ namespace OpenSilver.Samples.Showcase
                 {
                     NativeApiButtonBackgroundBrush.Color = darkColor;
                     theme.CurrentPalette = ModernTheme.Palettes.Dark;
-                    LogoBackgroundDark.Opacity = 1;
+                    LogoBackgroundDark.Opacity = 0.4;
                     LogoBackgroundLight.Opacity = 0;
+                    LogoOpenSilverDark.Opacity = 1;
+                    LogoOpenSilverLight.Opacity = 0;
                     BackgroundImageDark.Opacity = 1;
                     BackgroundImageLight.Opacity = 0;
                 }
@@ -273,8 +275,10 @@ namespace OpenSilver.Samples.Showcase
                 {
                     NativeApiButtonBackgroundBrush.Color = lightColor;
                     theme.CurrentPalette = ModernTheme.Palettes.Light;
-                    LogoBackgroundLight.Opacity = 1;
+                    LogoBackgroundLight.Opacity = 0.4;
                     LogoBackgroundDark.Opacity = 0;
+                    LogoOpenSilverLight.Opacity = 1;
+                    LogoOpenSilverDark.Opacity = 0;
                     BackgroundImageLight.Opacity = 1;
                     BackgroundImageDark.Opacity = 0;
                 }

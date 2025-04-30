@@ -115,43 +115,46 @@ mc:Ignorable="d"
         <Grid Grid.Row="1" ClipToBounds="True" Background="{DynamicResource Theme_BackgroundBrush}">
             <Image Source="/Other/Images/BackgroundImageDark.jpg" x:Name="BackgroundImageDark" Opacity="0" Stretch="Fill" />
             <Image Source="/Other/Images/BackgroundImageLight.jpg" x:Name="BackgroundImageLight" Stretch="Fill" />
-            <Border x:Name="MenuBorder" Canvas.ZIndex="1" Background="{DynamicResource Theme_ControlBackgroundBrush}" Width="180" HorizontalAlignment="Left">
+            <Border x:Name="MenuBorder" Canvas.ZIndex="1" Background="{DynamicResource Theme_ControlBackgroundBrush}" Width="240" HorizontalAlignment="Left">
                 <Border.RenderTransform>
                     <TranslateTransform/>
                 </Border.RenderTransform>
                 <Border.Effect>
                     <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="14" Opacity="0.15" />
                 </Border.Effect>
-                <DockPanel LastChildFill="True">
-                    <Border DockPanel.Dock="Bottom" Margin="10,10,10,17" Padding="3" CornerRadius="7" HorizontalAlignment="Center" Background="{DynamicResource Theme_BackgroundBrush}">
-                        <StackPanel Orientation="Horizontal">
-                            <RadioButton x:Name="LightThemeRadioButton" IsChecked="True" Checked="ThemeToggle_RadioButton_Checked">
-                                <StackPanel Orientation="Horizontal">
-                                    <local:SvgImage x:Name="lightThemeImage" Width="20" Height="20" Source="/Other/Icons/LightTheme.svg"/>
-                                    <TextBlock Margin="3" VerticalAlignment="Center" FontSize="11" Text="Light" Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"/>
-                                </StackPanel>
-                            </RadioButton>
-                            <RadioButton x:Name="DarkThemeRadioButton" Margin="4,0,0,0" Checked="ThemeToggle_RadioButton_Checked">
-                                <StackPanel Orientation="Horizontal">
-                                    <local:SvgImage x:Name="darkThemeImage" Width="20" Height="20" Source="/Other/Icons/DarkTheme.svg"/>
-                                    <TextBlock Margin="3" VerticalAlignment="Center" FontSize="11" Text="Dark" Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"/>
-                                </StackPanel>
-                            </RadioButton>
+                <Grid>
+                    <Image Source="/Other/Images/LogoBackgroundDark.jpg" x:Name="LogoBackgroundDark" Opacity="0" Width="450" Stretch="Uniform" Margin="-80,-140,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                    <Image Source="/Other/Images/LogoBackgroundLight.jpg" x:Name="LogoBackgroundLight" Width="450" Stretch="Uniform" Margin="-80,-140,0,0" Opacity="0.4" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                    <DockPanel LastChildFill="True">
+                        <Border DockPanel.Dock="Bottom" Margin="0,10,0,20" Padding="3" CornerRadius="7" HorizontalAlignment="Center" Background="{DynamicResource Theme_BackgroundBrush}">
+                            <StackPanel Orientation="Horizontal">
+                                <RadioButton x:Name="LightThemeRadioButton" IsChecked="True" Checked="ThemeToggle_RadioButton_Checked">
+                                    <StackPanel Orientation="Horizontal">
+                                        <local:SvgImage x:Name="lightThemeImage" Width="20" Height="20" Source="/Other/Icons/LightTheme.svg"/>
+                                        <TextBlock Margin="3" VerticalAlignment="Center" FontSize="11" Text="Light" Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"/>
+                                    </StackPanel>
+                                </RadioButton>
+                                <RadioButton x:Name="DarkThemeRadioButton" Margin="4,0,0,0" Checked="ThemeToggle_RadioButton_Checked">
+                                    <StackPanel Orientation="Horizontal">
+                                        <local:SvgImage x:Name="darkThemeImage" Width="20" Height="20" Source="/Other/Icons/DarkTheme.svg"/>
+                                        <TextBlock Margin="3" VerticalAlignment="Center" FontSize="11" Text="Dark" Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"/>
+                                    </StackPanel>
+                                </RadioButton>
+                            </StackPanel>
+                        </Border>
+                        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Margin="45,5,0,0">
+                            <Button x:Name="ButtonBackwards" Content="←" FontSize="22" Click="ButtonBackwards_Click" Style="{StaticResource ButtonTransparentBackground_Style}"/>
+                            <Button x:Name="ButtonForward" Content="→" FontSize="22" Click="ButtonForward_Click" Style="{StaticResource ButtonTransparentBackground_Style}"/>
                         </StackPanel>
-                    </Border>
-                    <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Margin="16,5,0,0">
-                        <Button x:Name="ButtonBackwards" Content="←" FontSize="22" Click="ButtonBackwards_Click" Style="{StaticResource ButtonTransparentBackground_Style}"/>
-                        <Button x:Name="ButtonForward" Content="→" FontSize="22" Click="ButtonForward_Click" Style="{StaticResource ButtonTransparentBackground_Style}"/>
-                    </StackPanel>
-                    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Padding="0">
-                        <Grid>
-                            <Image Source="/Other/Images/LogoBackgroundDark.jpg" x:Name="LogoBackgroundDark" Opacity="0" Width="450" Stretch="Uniform" Margin="-60,-140,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" />
-                            <Image Source="/Other/Images/LogoBackgroundLight.jpg" x:Name="LogoBackgroundLight" Width="450" Stretch="Uniform" Margin="-60,-140,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" />
-                            <StackPanel>
-                                <Image Source="/OpenSilver.Samples.Showcase;component/Other/Images/logo-opensilver.png" Margin="15,10,13,0" HorizontalAlignment="Stretch" Cursor="Hand" MouseLeftButtonDown="Logo_MouseLeftButtonDown" />
-                                <Image Source="/OpenSilver.Samples.Showcase;component/Other/Images/logo-showcase.png" Margin="70,0,15,0" Cursor="Hand" MouseLeftButtonDown="Logo_MouseLeftButtonDown" />
-                                <local:SearchControl Margin="12,40,10,20"/>
-                                <ListBox x:Name="MenuListBox" SelectionChanged="MenuListBox_SelectionChanged" Background="Transparent" Margin="10,0,0,0" BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+                        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Padding="0">
+                            <StackPanel >
+                                <Grid Margin="30,12,40,0" HorizontalAlignment="Stretch">
+                                    <Image Source="/OpenSilver.Samples.Showcase;component/Other/Images/LogoOpenSilverDark.png" x:Name="LogoOpenSilverDark" Opacity="0" Cursor="Hand" MouseLeftButtonDown="Logo_MouseLeftButtonDown" />
+                                    <Image Source="/OpenSilver.Samples.Showcase;component/Other/Images/LogoOpenSilverLight.png" x:Name="LogoOpenSilverLight" Cursor="Hand" MouseLeftButtonDown="Logo_MouseLeftButtonDown" />
+                                </Grid>
+                                <Image Source="/OpenSilver.Samples.Showcase;component/Other/Images/logo-showcase.png" Margin="90,-8,25,0" Cursor="Hand" MouseLeftButtonDown="Logo_MouseLeftButtonDown" />
+                                <local:SearchControl Margin="32,60,30,20"/>
+                                <ListBox x:Name="MenuListBox" SelectionChanged="MenuListBox_SelectionChanged" Background="Transparent" Margin="30,0,0,0" BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Hidden">
                                     <ListBox.ItemContainerStyle>
                                         <Style TargetType="ListBoxItem">
                                             <Setter Property="Template">
@@ -205,9 +208,9 @@ mc:Ignorable="d"
                                     </ListBox.ItemTemplate>
                                 </ListBox>
                             </StackPanel>
-                        </Grid>
-                    </ScrollViewer>
-                </DockPanel>
+                        </ScrollViewer>
+                    </DockPanel>
+                </Grid>
             </Border>
             <Border Grid.Row="1" x:Name="ButtonToHideOrShowMenu" Canvas.ZIndex="2" Padding="2" Visibility="Collapsed" Width="60" Height="50" Margin="5" VerticalAlignment="Top" HorizontalAlignment="Left">
                 <Border.RenderTransform>
@@ -218,7 +221,7 @@ mc:Ignorable="d"
                 </Button>
             </Border>
             <ScrollViewer Grid.Row="1" x:Name="ScrollViewer1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-                <sdk:Frame x:Name="PageContainer" JournalOwnership="Automatic" Margin="5,0,0,0" HorizontalContentAlignment="Stretch" Navigated="PageContainer_Navigated">
+                <sdk:Frame x:Name="PageContainer" JournalOwnership="Automatic" Margin="15,0,0,0" HorizontalContentAlignment="Stretch" Navigated="PageContainer_Navigated">
                     <sdk:Frame.UriMapper>
                         <sdk:UriMapper>
                             <sdk:UriMapping Uri="/Welcome" MappedUri="/Samples/Welcome.xaml"/>
