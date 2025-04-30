@@ -229,6 +229,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Compile Include="Other\Contact.cs" />
+    <Compile Include="Other\Controls\JsParticlesEffect.cs" />
     <Compile Include="Other\Controls\SvgImage.cs" />
     <Compile Include="Other\Converters\EnumToListConverter.cs" />
     <Compile Include="Other\Converters\StringEmptyToVisibilityConverter.cs" />
@@ -359,6 +360,8 @@
     </Content>
     <Content Include="Other\Images\LogoBackgroundDark.jpg" />
     <Content Include="Other\Images\LogoBackgroundLight.jpg" />
+    <Content Include="Other\Images\BackgroundImageDark.jpg" />
+    <Content Include="Other\Images\BackgroundImageLight.jpg" />
     <Content Include="Other\Inter_VariableFont_slnt_wght.ttf" />
     <Content Include="Other\Images\Logo-OpenSilver.png" />
     <Content Include="Other\Images\Logo-Showcase.png" />

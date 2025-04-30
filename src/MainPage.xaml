@@ -113,6 +113,8 @@ mc:Ignorable="d"
             <RowDefinition x:Name="RowThatContainsTheSourceCodePane" Height="0"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="1" ClipToBounds="True" Background="{DynamicResource Theme_BackgroundBrush}">
+            <Image Source="/Other/Images/BackgroundImageDark.jpg" x:Name="BackgroundImageDark" Opacity="0" Stretch="Fill" />
+            <Image Source="/Other/Images/BackgroundImageLight.jpg" x:Name="BackgroundImageLight" Stretch="Fill" />
             <Border x:Name="MenuBorder" Canvas.ZIndex="1" Background="{DynamicResource Theme_ControlBackgroundBrush}" Width="180" HorizontalAlignment="Left">
                 <Border.RenderTransform>
                     <TranslateTransform/>
@@ -215,18 +217,8 @@ mc:Ignorable="d"
                     <Path Fill="{DynamicResource Theme_TextBrush}" Opacity="0.5" Width="46" Height="46" Data="M10 0A1 1 90 0010 15L90 15A1 1 90 0089 0L10 0M10 22.5A1 1 90 0010 37.5L90 37.5A1 1 90 0089 22.5L10 22.5M10 45A1 1 90 0010 60L90 60A1 1 90 0089 45L10 45" Stretch="Uniform" HorizontalAlignment="Center"/>
                 </Button>
             </Border>
-            <Border x:Name="BackgroundLayer" Grid.Row="1" Opacity="0.5">
-                <Border.Background>
-                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                        <GradientStop Color="{DynamicResource Theme_ContainerBackgroundColor}" Offset="0"/>
-                        <GradientStop Color="{DynamicResource Theme_BackgroundColor}" Offset="0.45"/>
-                        <GradientStop Color="{DynamicResource Theme_BackgroundColor}" Offset="0.55"/>
-                        <GradientStop Color="{DynamicResource Theme_ContainerBackgroundColor}" Offset="1"/>
-                    </LinearGradientBrush>
-                </Border.Background>
-            </Border>
             <ScrollViewer Grid.Row="1" x:Name="ScrollViewer1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-                <sdk:Frame x:Name="PageContainer" JournalOwnership="Automatic" Margin="5,0,0,30" HorizontalContentAlignment="Stretch" Navigated="PageContainer_Navigated">
+                <sdk:Frame x:Name="PageContainer" JournalOwnership="Automatic" Margin="5,0,0,0" HorizontalContentAlignment="Stretch" Navigated="PageContainer_Navigated">
                     <sdk:Frame.UriMapper>
                         <sdk:UriMapper>
                             <sdk:UriMapping Uri="/Welcome" MappedUri="/Samples/Welcome.xaml"/>

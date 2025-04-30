@@ -24,6 +24,7 @@
 
 	<ItemGroup>
 		<Content Include="Connected Services\ServiceReference1\ConnectedService.json" />
+		<Compile Include="Other\Controls\JsParticlesEffect.fs" />
 		<Compile Include="Other\Controls\SvgImage.fs" />
 		<Compile Include="Other\Converters\EnumToListConverter.fs" />
 		<Compile Include="Other\Converters\RgbToBrushConverter.fs" />
@@ -38,6 +39,8 @@
 			<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
 			<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
 		</Content>
+		<Content Include="Other\Images\BackgroundImageDark.jpg" />
+		<Content Include="Other\Images\BackgroundImageLight.jpg" />
     <Content Include="Other\Images\LogoBackgroundDark.jpg" />
     <Content Include="Other\Images\LogoBackgroundLight.jpg" />
 		<Content Include="Other\Images\Logo-OpenSilver.png" />
