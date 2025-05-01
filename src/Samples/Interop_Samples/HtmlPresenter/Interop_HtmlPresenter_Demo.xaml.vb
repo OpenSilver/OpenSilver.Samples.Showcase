@@ -1,13 +1,13 @@
-﻿Imports OpenSilver.Samples.Showcase.Search
-Imports System.Windows
+﻿Imports System.Windows
 Imports System.Windows.Controls
+Imports OpenSilver.Samples.Showcase.Search
 
 Namespace Global.OpenSilver.Samples.Showcase
-    <SearchKeywords("HTML", "interop", "rendering", "web", "UI")>
+    <SearchKeywords("HTML", "interop", "js", "numeric", "colorpicker")>
     Partial Public Class Interop_HtmlPresenter_Demo
         Inherits UserControl
         Public Sub New()
-            Me.InitializeComponent()
+            InitializeComponent()
         End Sub
 
         Private Sub ButtonClickHere_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)

@@ -260,6 +260,7 @@
     <Compile Include="Samples\Charts\ScatterSeries\ScatterSeries_Demo.xaml.cs" />
     <Compile Include="Samples\Charts\Stacked100AreaSeries\Stacked100AreaSeries_Demo.xaml.cs" />
     <Compile Include="Samples\Client_Server\RIAServices\RIAServices_Demo.xaml.cs" />
+    <Compile Include="Samples\Interop_Samples\HtmlPresenter\HtmlColorPicker.cs" />
     <Compile Include="Samples\Interop_Samples\PWA\PWA_Demo.xaml.cs" />
     <Compile Include="Samples\JS_Libs\JS_Libs.xaml.cs" />
     <Compile Include="Samples\JS_Libs\JSZip\ZipFile.cs" />

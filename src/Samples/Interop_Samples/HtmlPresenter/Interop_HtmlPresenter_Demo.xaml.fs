@@ -1,10 +1,9 @@
 ﻿namespace OpenSilver.Samples.Showcase
 
 open System.Windows
-open System.Windows.Controls
 open OpenSilver.Samples.Showcase.Search
 
-[<SearchKeywords("HTML", "interop", "rendering", "web", "UI")>]
+[<SearchKeywords("HTML", "interop", "js", "numeric", "colorpicker")>]
 type Interop_HtmlPresenter_Demo() as this =
     inherit Interop_HtmlPresenter_DemoXaml()
 

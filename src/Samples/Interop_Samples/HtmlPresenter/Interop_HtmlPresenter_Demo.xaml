@@ -23,6 +23,16 @@
                     <controlns:NumericTextBox x:Name="NumericTextBox1" Value="100" Margin="10,0,10,0" Width="110" VerticalAlignment="Center" ScrollMode="Disabled" />
                 </StackPanel>
                 <Button Content="Then click here" Click="ButtonClickHere_Click" Margin="0,10,0,0" HorizontalAlignment="Center"/>
+
+                <TextBlock Text="Color Picker using &lt;input type='color'&gt; HTML tag:" Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" Margin="0,30,0,0"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+                    <local:HtmlColorPicker Name="ColorPicker" Color="#FF8567E8" Width="50"/>
+                    <Border Width="50" Margin="10,0,0,0">
+                        <Border.Background>
+                            <SolidColorBrush Color="{Binding Color, ElementName=ColorPicker}"/>
+                        </Border.Background>
+                    </Border>
+                </StackPanel>
             </StackPanel>
             <local:ViewSourceButton Grid.Row="2"
                                     Background="#FFF78069">
@@ -41,6 +51,12 @@
                                                 FileName="NumericTextBox.vb" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/Interop_Samples/HtmlPresenter"
                                                 FileName="NumericTextBox.fs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Interop_Samples/HtmlPresenter"
+                                                FileName="HtmlColorPicker.cs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Interop_Samples/HtmlPresenter"
+                                                FileName="HtmlColorPicker.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Interop_Samples/HtmlPresenter"
+                                                FileName="HtmlColorPicker.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>
