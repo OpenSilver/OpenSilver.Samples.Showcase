@@ -2,7 +2,7 @@
 
 Namespace Global.OpenSilver.Samples.Showcase
     Partial Public Class Xaml_Features
-        Inherits UserControl
+        Inherits Page
         Public Sub New()
             InitializeComponent()
         End Sub

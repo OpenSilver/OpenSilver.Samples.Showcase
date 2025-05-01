@@ -2,9 +2,9 @@
 
 Namespace Global.OpenSilver.Samples.Showcase
     Public Partial Class Interop_Samples
-        Inherits UserControl
+        Inherits Page
         Public Sub New()
-            Me.InitializeComponent()
+            InitializeComponent()
         End Sub
     End Class
 End Namespace

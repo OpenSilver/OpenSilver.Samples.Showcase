@@ -3,7 +3,7 @@
 Namespace OpenSilver.Samples.Showcase
 
     Partial Public Class JS_Libs
-        Inherits UserControl
+        Inherits Page
 
         Public Sub New()
             InitializeComponent()

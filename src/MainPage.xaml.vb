@@ -50,25 +50,8 @@ Namespace OpenSilver.Samples.Showcase
             ScrollViewer1.ScrollToVerticalOffset(0)
         End Sub
 
-        Private Sub ButtonBackwards_Click(sender As Object, e As RoutedEventArgs)
-            If PageContainer.CanGoBack Then
-                PageContainer.GoBack()
-            End If
-        End Sub
-
-        Private Sub ButtonForward_Click(sender As Object, e As RoutedEventArgs)
-            If PageContainer.CanGoForward Then
-                PageContainer.GoForward()
-            End If
-        End Sub
-
         Private Sub Logo_MouseLeftButtonDown(sender As Object, e As Input.MouseButtonEventArgs)
             MenuListBox.SelectedItem = PageInfo.LandingPageInfo
-        End Sub
-
-        Private Sub PageContainer_Navigated(sender As Object, e As Navigation.NavigationEventArgs)
-            ButtonBackwards.IsEnabled = PageContainer.CanGoBack
-            ButtonForward.IsEnabled = PageContainer.CanGoForward
         End Sub
 
         Private _skipMenuListBox_SelectionChanged As Boolean
@@ -125,7 +108,7 @@ Namespace OpenSilver.Samples.Showcase
             If newState <> _currentState Then
                 If newState = CurrentState.LargeResolution_SeeBothMenuAndPage Then
                     ButtonToHideOrShowMenu.Visibility = Visibility.Collapsed
-                    PageContainer.Margin = New Thickness(20, 0, 0, 0)
+                    PageContainer.Margin = New Thickness(30, 0, 0, 0)
                     CType(PageContainer.RenderTransform, TranslateTransform).X = 0
                     Dim margin As Thickness = PageContainer.Margin
                     margin.Left += MenuBorder.Width
@@ -139,13 +122,13 @@ Namespace OpenSilver.Samples.Showcase
                     PageContainer.Margin = margin
 
                     If newState = CurrentState.SmallResolution_ShowMenu Then
-                        CType(PageContainer.RenderTransform, TranslateTransform).X = 180
-                        CType(ButtonToHideOrShowMenu.RenderTransform, TranslateTransform).X = 180
+                        CType(PageContainer.RenderTransform, TranslateTransform).X = 240
+                        CType(ButtonToHideOrShowMenu.RenderTransform, TranslateTransform).X = 240
                         CType(MenuBorder.RenderTransform, TranslateTransform).X = 0
                     Else
                         CType(PageContainer.RenderTransform, TranslateTransform).X = 0
                         CType(ButtonToHideOrShowMenu.RenderTransform, TranslateTransform).X = 0
-                        CType(MenuBorder.RenderTransform, TranslateTransform).X = -180
+                        CType(MenuBorder.RenderTransform, TranslateTransform).X = -240
                     End If
                 End If
                 _currentState = newState
@@ -198,15 +181,15 @@ Namespace OpenSilver.Samples.Showcase
                 If isDark Then
                     NativeApiButtonBackgroundBrush.Color = darkColor
                     theme.CurrentPalette = ModernTheme.Palettes.Dark
-                    LogoBackgroundDark.Opacity = 1
-                    LogoBackgroundLight.Opacity = 0
+                    LogoOpenSilverDark.Opacity = 1
+                    LogoOpenSilverLight.Opacity = 0
                     BackgroundImageDark.Opacity = 1
                     BackgroundImageLight.Opacity = 0
                 Else
                     NativeApiButtonBackgroundBrush.Color = lightColor
                     theme.CurrentPalette = ModernTheme.Palettes.Light
-                    LogoBackgroundLight.Opacity = 1
-                    LogoBackgroundDark.Opacity = 0
+                    LogoOpenSilverLight.Opacity = 1
+                    LogoOpenSilverDark.Opacity = 0
                     BackgroundImageLight.Opacity = 1
                     BackgroundImageDark.Opacity = 0
                 End If

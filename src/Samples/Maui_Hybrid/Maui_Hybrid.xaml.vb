@@ -1,11 +1,10 @@
-﻿Imports System.Windows
-Imports System.Windows.Controls
+﻿Imports System.Windows.Controls
 
 Namespace Global.OpenSilver.Samples.Showcase
     Public Partial Class Maui_Hybrid
-        Inherits UserControl
+        Inherits Page
         Public Sub New()
-            Me.InitializeComponent()
+            InitializeComponent()
         End Sub
     End Class
 End Namespace

@@ -1,9 +1,8 @@
-﻿Imports System.Windows
-Imports System.Windows.Controls
+﻿Imports System.Windows.Controls
 
 Namespace Global.OpenSilver.Samples.Showcase
     Partial Public Class Xaml_Panels
-        Inherits UserControl
+        Inherits Page
         Public Sub New()
             InitializeComponent()
         End Sub

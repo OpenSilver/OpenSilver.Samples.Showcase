@@ -2,11 +2,10 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using System.Windows.Navigation;
 
 namespace OpenSilver.Samples.Showcase;
 
-[SearchKeywords("navigation", "navigationservice", "page", "content", "view", "container", "query", "urimapping", "urimapper", "url","back","forward")]
+[SearchKeywords("navigation", "navigationservice", "page", "content", "view", "container", "query", "urimapping", "urimapper", "url", "back", "forward")]
 public partial class Frame_Demo : UserControl
 {
     Page _page;
@@ -15,7 +14,7 @@ public partial class Frame_Demo : UserControl
     {
         InitializeComponent();
 
-        this.Loaded += OnLoaded;
+        Loaded += OnLoaded;
     }
 
     private void OnLoaded(object sender, RoutedEventArgs e)
@@ -55,7 +54,7 @@ public partial class Frame_Demo : UserControl
     private static Page GetParentPage(DependencyObject child)
     {
         DependencyObject parent = child;
-        while (parent != null && !(parent is Page))
+        while (parent is not null and not Page)
         {
             parent = VisualTreeHelper.GetParent(parent);
         }
