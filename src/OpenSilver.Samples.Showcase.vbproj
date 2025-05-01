@@ -644,8 +644,11 @@
     </Page>
     <Page Include="Samples\XAML_Controls\Xaml_Controls.xaml">
       <Generator>MSBuild:Compile</Generator>
-    </Page>
+    </Page>    
     <Page Include="Samples\XAML_Features\Animations\Animations_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\XAML_Features\AnimationTool\AnimationTool_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Features\AttachedProperties\AttachedProperties_Demo.xaml">
@@ -856,8 +859,9 @@
     <Compile Include="Samples\XAML_Controls\ToggleButton\ToggleButton_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\ToolTip\ToolTip_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\Viewbox\Viewbox_Demo.xaml.vb" />
-    <Compile Include="Samples\XAML_Controls\Xaml_Controls.xaml.vb" />
+    <Compile Include="Samples\XAML_Controls\Xaml_Controls.xaml.vb" />    
     <Compile Include="Samples\XAML_Features\Animations\Animations_Demo.xaml.vb" />
+    <Compile Include="Samples\XAML_Features\AnimationTool\AnimationTool_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Features\AttachedProperties\AttachedProperties_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Features\AttachedProperties\SampleAttachedProperties.vb" />
     <Compile Include="Samples\XAML_Features\Binding1\Binding1_Demo.xaml.vb" />

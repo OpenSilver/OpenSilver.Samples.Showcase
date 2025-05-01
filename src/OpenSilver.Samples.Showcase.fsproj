@@ -1031,13 +1031,19 @@
 		</Compile>
 		<!--End of XAML_Panels-->
 		
-		<!--XAML_Features-->
-		<Page Include="Samples\XAML_Features\Animations\Animations_Demo.xaml">
+		<!--XAML_Features-->		
+    <Page Include="Samples\XAML_Features\Animations\Animations_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
 		<Compile Include="Samples\XAML_Features\Animations\Animations_Demo.xaml.fs">
 			<DependentUpon>Samples\XAML_Features\Animations\Animations_Demo.xaml</DependentUpon>
 		</Compile>
+    <Page Include="Samples\XAML_Features\AnimationTool\AnimationTool_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="Samples\XAML_Features\AnimationTool\AnimationTool_Demo.xaml.fs">
+      <DependentUpon>Samples\XAML_Features\AnimationTool\AnimationTool_Demo.xaml</DependentUpon>
+    </Compile>
 		<Compile Include="Samples\XAML_Features\AttachedProperties\SampleAttachedProperties.fs" />
 		<Page Include="Samples\XAML_Features\AttachedProperties\AttachedProperties_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
