@@ -16,14 +16,28 @@
                             Foreground="#FF73AFB3"
                             Style="{StaticResource HeaderControl_Style}"/>
 
-            <TextBlock Grid.Row="1"
-                       Margin="0,25,0,20"
-                       FontSize="14"
-                       Text="The Showcase uses a Frame control to navigate between pages. For example, refer to the source code of MainPage and SearchPage."
-                       TextWrapping="Wrap"/>
-
+            <StackPanel Grid.Row="1">
+                <TextBlock 
+                           FontSize="14"
+                           Text="The Showcase uses a Frame control to navigate between pages. For example, refer to the source code of MainPage and SearchPage."
+                           TextWrapping="Wrap"/>
+                <TextBlock
+                           Margin="0,15,0,20"
+                           FontSize="14"
+                           Text="The arrows below show how to programmatically navigate back and forward:"
+                           TextWrapping="Wrap"/>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="ButtonBackwards" Content="← Back" Click="ButtonBackwards_Click"/>
+                    <Button x:Name="ButtonForward" Content="→ Forward" Click="ButtonForward_Click" Margin="4,0,0,0" IsEnabled="False"/>
+                </StackPanel>
+            </StackPanel>
+            
             <local:ViewSourceButton Grid.Row="2" Background="#FF13D7E3">
                 <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo FileName="Frame_Demo.xaml" RelativePath="src/Samples/XAML_Controls/Frame"/>
+                    <local:ViewSourceButtonInfo FileName="Frame_Demo.xaml.cs" RelativePath="src/Samples/XAML_Controls/Frame"/>
+                    <local:ViewSourceButtonInfo FileName="Frame_Demo.xaml.vb" RelativePath="src/Samples/XAML_Controls/Frame"/>
+                    <local:ViewSourceButtonInfo FileName="Frame_Demo.xaml.fs" RelativePath="src/Samples/XAML_Controls/Frame"/>
                     <local:ViewSourceButtonInfo FileName="MainPage.xaml" RelativePath="src"/>
                     <local:ViewSourceButtonInfo FileName="MainPage.xaml.cs" RelativePath="src"/>
                     <local:ViewSourceButtonInfo FileName="MainPage.xaml.vb" RelativePath="src"/>

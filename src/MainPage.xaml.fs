@@ -7,7 +7,7 @@ open System.Windows.Controls
 open System.Windows.Media
 
 type CurrentState =
-    | Unset                     // Initial value
+    | Unset                                 // Initial value
     | LargeResolution_SeeBothMenuAndPage    // This corresponds to tablets and other devices with high resolution. In this case we see both the menu and the page.
     | SmallResolution_ShowMenu              // This corresponds to smartphones and other devices with low resolution. In this case we see the menu.
     | SmallResolution_HideMenu              // This corresponds to smartphones and other devices with low resolution. In this case we do not see the menu.
@@ -47,21 +47,8 @@ type MainPage() as this =
         if not (HtmlPage.Document.DocumentUri.OriginalString.Contains("#")) then
             this.MenuListBox.SelectedItem <- PageInfo.LandingPageInfo
 
-
-    member private this.ButtonBackwards_Click(sender: obj, e: RoutedEventArgs) =
-        if this.PageContainer.CanGoBack then
-            this.PageContainer.GoBack()
-
-    member private this.ButtonForward_Click(sender: obj, e: RoutedEventArgs) =
-        if this.PageContainer.CanGoForward then
-            this.PageContainer.GoForward()
-
     member private this.Logo_MouseLeftButtonDown(sender: obj, e: System.Windows.Input.MouseButtonEventArgs) =
         this.MenuListBox.SelectedItem <- PageInfo.LandingPageInfo;
-
-    member private this.PageContainer_Navigated(sender: obj, e: System.Windows.Navigation.NavigationEventArgs) =
-        this.ButtonBackwards.IsEnabled <- this.PageContainer.CanGoBack
-        this.ButtonForward.IsEnabled <- this.PageContainer.CanGoForward
 
     member private this.MenuListBox_SelectionChanged(sender: obj, e: SelectionChangedEventArgs) =
         if not (_skipMenuListBox_SelectionChanged && (isNull e.AddedItems || e.AddedItems.Count = 0)) then
@@ -112,7 +99,7 @@ type MainPage() as this =
             | LargeResolution_SeeBothMenuAndPage ->
                 // Hide the button to hide/show the menu:
                 this.ButtonToHideOrShowMenu.Visibility <- Visibility.Collapsed
-                this.PageContainer.Margin <- new Thickness(20.0, 0.0, 0.0, 0.0)
+                this.PageContainer.Margin <- new Thickness(30.0, 0.0, 0.0, 0.0)
 
                 // Set the translation of the frame to 0:
                 (this.PageContainer.RenderTransform :?> TranslateTransform).X <- 0.0
@@ -139,15 +126,15 @@ type MainPage() as this =
                 match newState with
                 | SmallResolution_ShowMenu ->
                     // Show the menu:
-                    (this.PageContainer.RenderTransform :?> TranslateTransform).X <- 180.0
-                    (this.ButtonToHideOrShowMenu.RenderTransform :?> TranslateTransform).X <- 180.0
+                    (this.PageContainer.RenderTransform :?> TranslateTransform).X <- 240.0
+                    (this.ButtonToHideOrShowMenu.RenderTransform :?> TranslateTransform).X <- 240.0
                     (this.MenuBorder.RenderTransform :?> TranslateTransform).X <- 0.0
 
                 | _ ->
                     // Hide the menu:
                     (this.PageContainer.RenderTransform :?> TranslateTransform).X <- 0.0
                     (this.ButtonToHideOrShowMenu.RenderTransform :?> TranslateTransform).X <- 0.0
-                    (this.MenuBorder.RenderTransform :?> TranslateTransform).X <- -180.0
+                    (this.MenuBorder.RenderTransform :?> TranslateTransform).X <- -240.0
 
             currentState <- newState
 
@@ -193,15 +180,15 @@ type MainPage() as this =
             if isDark then
                 nativeBrush.Color <- Color.FromRgb(60uy, 60uy, 60uy)
                 theme.CurrentPalette <- OpenSilver.Themes.Modern.ModernTheme.Palettes.Dark
-                this.LogoBackgroundDark.Opacity <- 1
-                this.LogoBackgroundLight.Opacity <- 0
+                this.LogoOpenSilverDark.Opacity <- 1
+                this.LogoOpenSilverLight.Opacity <- 0
                 this.BackgroundImageDark.Opacity <- 1
                 this.BackgroundImageLight.Opacity <- 0
             else
                 nativeBrush.Color <- Color.FromRgb(221uy, 221uy, 221uy)
                 theme.CurrentPalette <- OpenSilver.Themes.Modern.ModernTheme.Palettes.Light
-                this.LogoBackgroundLight.Opacity <- 1
-                this.LogoBackgroundDark.Opacity <- 0
+                this.LogoOpenSilverLight.Opacity <- 1
+                this.LogoOpenSilverDark.Opacity <- 0
                 this.BackgroundImageLight.Opacity <- 1
                 this.BackgroundImageDark.Opacity <- 0                
 

@@ -2,7 +2,7 @@
 
 namespace OpenSilver.Samples.Showcase
 {
-    public partial class Performance : UserControl
+    public partial class Performance : Page
     {
         public Performance()
         {

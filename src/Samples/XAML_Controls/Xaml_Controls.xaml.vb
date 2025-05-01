@@ -3,7 +3,7 @@ Imports System.Windows.Controls
 
 Namespace Global.OpenSilver.Samples.Showcase
     Public Partial Class Xaml_Controls
-        Inherits UserControl
+        Inherits Page
         Public Sub New()
             InitializeComponent()
 

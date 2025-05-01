@@ -2,7 +2,7 @@
 
 namespace OpenSilver.Samples.Showcase;
 
-public partial class JS_Libs : UserControl
+public partial class JS_Libs : Page
 {
     public JS_Libs()
     {

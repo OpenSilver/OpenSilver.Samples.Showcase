@@ -2,7 +2,7 @@
 
 namespace OpenSilver.Samples.Showcase
 {
-    public partial class Third_Party : UserControl
+    public partial class Third_Party : Page
     {
         public Third_Party()
         {

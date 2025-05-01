@@ -2,7 +2,7 @@
 
 namespace OpenSilver.Samples.Showcase;
 
-public partial class Net_Framework : UserControl
+public partial class Net_Framework : Page
 {
     public Net_Framework()
     {

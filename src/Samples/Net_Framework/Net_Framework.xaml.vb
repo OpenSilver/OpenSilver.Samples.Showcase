@@ -2,7 +2,7 @@
 
 Namespace Global.OpenSilver.Samples.Showcase
     Public Partial Class Net_Framework
-        Inherits UserControl
+        Inherits Page
         Public Sub New()
             InitializeComponent()
         End Sub

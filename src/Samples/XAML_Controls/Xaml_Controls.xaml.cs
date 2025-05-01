@@ -2,7 +2,7 @@
 
 namespace OpenSilver.Samples.Showcase;
 
-public partial class Xaml_Controls : UserControl
+public partial class Xaml_Controls : Page
 {
     public Xaml_Controls()
     {

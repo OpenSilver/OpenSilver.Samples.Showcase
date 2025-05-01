@@ -353,9 +353,8 @@
     </Content>
     <Content Include="Other\Images\BackgroundImageDark.jpg" />
     <Content Include="Other\Images\BackgroundImageLight.jpg" />
-    <Content Include="Other\Images\LogoBackgroundDark.jpg" />
-    <Content Include="Other\Images\LogoBackgroundLight.jpg" />
-    <Content Include="Other\Images\Logo-OpenSilver.png" />
+    <Content Include="Other\Images\LogoOpenSilverDark.png" />
+    <Content Include="Other\Images\LogoOpenSilverLight.png" />
     <Content Include="Other\Images\Logo-Showcase.png" />
     <Content Include="Other\Logo.png" />
     <Content Include="Other\Planets\Earth.png" />

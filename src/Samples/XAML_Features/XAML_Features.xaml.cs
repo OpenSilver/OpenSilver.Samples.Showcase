@@ -2,7 +2,7 @@
 
 namespace OpenSilver.Samples.Showcase;
 
-public partial class Xaml_Features : UserControl
+public partial class Xaml_Features : Page
 {
     public Xaml_Features()
     {
