@@ -25,7 +25,7 @@
                     <TextBlock TextWrapping="Wrap" Text="Below, we set Border.Triggers with an EventTrigger which starts a Storyboard with a repeating color animation." Margin="5,0,5,5" TextAlignment="Center"/>
                     <Border x:Name="MyBorder" Width="50" Height="50" Background="DarkRed">
                         <Border.Triggers>
-                            <EventTrigger RoutedEvent="FrameworkElement.LoadedEvent">
+                            <EventTrigger RoutedEvent="FrameworkElement.Loaded">
                                 <BeginStoryboard>
                                     <Storyboard>
                                         <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="Background.Color" Storyboard.TargetName="MyBorder" RepeatBehavior="Forever" Duration="0:0:1">
