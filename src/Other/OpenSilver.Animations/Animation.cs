@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenSilver.Animations.Internal;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
@@ -58,5 +59,11 @@ namespace OpenSilver.Animations
         //    Console.WriteLine(text);
         //    MessageBox.Show(text);
         //}
+
+        public static double SlowDownAnimationsForDebugging
+        {
+            get => StoryboardsHelper.SlowDownAnimationsForDebugging;
+            set => StoryboardsHelper.SlowDownAnimationsForDebugging = value;
+        }
     }
 }

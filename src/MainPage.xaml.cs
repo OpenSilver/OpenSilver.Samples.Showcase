@@ -19,6 +19,8 @@ namespace OpenSilver.Samples.Showcase
             SizeChanged += MainPage_SizeChanged;
             MenuListBox.ItemsSource = PageInfo.Pages;
             UpdateThemeToggleFillColor();
+
+            //Animations.Animation.SlowDownAnimationsForDebugging = 3.0;
         }
 
         public static MainPage Current { get; private set; }
