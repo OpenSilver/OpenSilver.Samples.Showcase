@@ -141,7 +141,7 @@
             Value="False" />
             <Setter Property="Template">
                 <Setter.Value>
-                    <ControlTemplate TargetType="input:AutoCompleteBox">
+                    <ControlTemplate TargetType="AutoCompleteBox">
                         <Grid>
                             <VisualStateManager.VisualStateGroups>
                                 <VisualStateGroup x:Name="PopupStates">
