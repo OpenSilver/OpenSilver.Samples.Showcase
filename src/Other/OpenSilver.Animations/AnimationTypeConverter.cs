@@ -1,4 +1,16 @@
-﻿using System;
+﻿
+/*===================================================================================
+* 
+*   Copyright (c) Userware/OpenSilver.net
+*      
+*   This file is part of OpenSilver (https://opensilver.net), which is
+*   licensed under the MIT license: https://opensource.org/licenses/MIT
+*   
+*   IMPORTANT: Make sure to preserve this copyright notice on all copies of this code.
+*  
+\*====================================================================================*/
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
