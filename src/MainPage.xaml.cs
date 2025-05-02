@@ -59,7 +59,7 @@ namespace OpenSilver.Samples.Showcase
             PageContainer.Source = uri;
 
             // Scroll to top:
-            ScrollViewer1.ScrollToVerticalOffset(0d);
+            PageScrollViewer.ScrollToVerticalOffset(0d);
         }
 
         private void Logo_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -134,15 +134,18 @@ namespace OpenSilver.Samples.Showcase
                 {
                     // Hide the button to hide/show the menu:
                     ButtonToHideOrShowMenu.Visibility = Visibility.Collapsed;
-                    PageContainer.Margin = new Thickness(30, 0, 0, 0);
+
+                    // Remove the top margin of the page (it's for the menu button on mobile):
+                    PageContainer.Margin = new Thickness(0, 0, 0, 0);
+
+                    // Ensure the page stays in the second column, to the right of the menu:
+                    Grid.SetColumn(PageScrollViewer, 1);
+                    Grid.SetColumnSpan(PageScrollViewer, 1);
+                    Grid.SetColumn(PageScrollViewer, 1);
+                    Grid.SetColumnSpan(PageScrollViewer, 1);
 
                     // Set the translation of the frame to 0:
                     ((TranslateTransform)PageContainer.RenderTransform).X = 0;
-
-                    // Increase the margin of the frame to the width of the menu
-                    Thickness margin = PageContainer.Margin;
-                    margin.Left += MenuBorder.Width;
-                    PageContainer.Margin = margin;
 
                     // Set the translation of the border to 0:
                     ((TranslateTransform)MenuBorder.RenderTransform).X = 0;
@@ -153,25 +156,29 @@ namespace OpenSilver.Samples.Showcase
 
                     // Show the button to hide/show the menu:
                     ButtonToHideOrShowMenu.Visibility = Visibility.Visible;
-                    PageContainer.Margin = new Thickness(0, 50, 0, 30);
 
-                    Thickness margin = PageContainer.Margin;
-                    margin.Left = 0;
-                    PageContainer.Margin = margin;
+                    // Add some top margin to the page for the menu button:
+                    PageContainer.Margin = new Thickness(0, 50, 0, 0);
+
+                    // Ensure the page is shown full-screen, not the right of the menu:
+                    Grid.SetColumn(PageScrollViewer, 0);
+                    Grid.SetColumnSpan(PageScrollViewer, 2);
 
                     if (newState == CurrentState.SmallResolution_ShowMenu)
                     {
                         // Show the menu:
+                        MenuContainer.Visibility = Visibility.Visible;
+
+                        // Translate the page to the right, for a nicer effect:
                         ((TranslateTransform)PageContainer.RenderTransform).X = 240;
-                        ((TranslateTransform)ButtonToHideOrShowMenu.RenderTransform).X = 240;
-                        ((TranslateTransform)MenuBorder.RenderTransform).X = 0;
                     }
                     else
                     {
                         // Hide the menu:
+                        MenuContainer.Visibility = Visibility.Collapsed;
+
+                        // Translate the page back to its original position:
                         ((TranslateTransform)PageContainer.RenderTransform).X = 0;
-                        ((TranslateTransform)ButtonToHideOrShowMenu.RenderTransform).X = 0;
-                        ((TranslateTransform)MenuBorder.RenderTransform).X = -240;
                     }
                 }
                 _currentState = newState;
