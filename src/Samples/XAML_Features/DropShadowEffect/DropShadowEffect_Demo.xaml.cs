@@ -1,14 +1,13 @@
-﻿using OpenSilver.Samples.Showcase.Search;
+using OpenSilver.Samples.Showcase.Search;
 using System.Windows.Controls;
 
-namespace OpenSilver.Samples.Showcase
+namespace OpenSilver.Samples.Showcase;
+
+[SearchKeywords("graphics", "shadow", "effect", "blur", "UI")]
+public partial class DropShadowEffect_Demo : UserControl
 {
-    [SearchKeywords("graphics", "shadow", "effect", "blur", "UI")]
-    public partial class DropShadowEffect_Demo : UserControl
+    public DropShadowEffect_Demo()
     {
-        public DropShadowEffect_Demo()
-        {
-            this.InitializeComponent();
-        }
+        InitializeComponent();
     }
 }
