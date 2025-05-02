@@ -126,7 +126,7 @@ mc:Ignorable="d"
             </Grid>
 
             <!-- Menu -->
-            <animations:AnimatedContentControl x:Name="MenuContainer" animations:Animation.OnAppear="{animations:FadeAndScale Delay=2000}" HorizontalAlignment="Left">
+            <animations:AnimatedContentControl x:Name="MenuContainer" animations:Animation.OnAppear="{animations:FadeAndSlide Delay=2000, Direction=LeftToRight, Duration=500}" HorizontalAlignment="Left">
                 <Border x:Name="MenuBorder" Canvas.ZIndex="1" Width="240" Background="{DynamicResource Theme_ControlBackgroundBrush}">
                     <Border.Effect>
                         <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="14" Opacity="0.15" />

@@ -20,7 +20,7 @@ namespace OpenSilver.Samples.Showcase
             MenuListBox.ItemsSource = PageInfo.Pages;
             UpdateThemeToggleFillColor();
 
-            //Animations.Animation.SlowDownAnimationsForDebugging = 3.0;
+            //Animations.Animation.SlowDownAnimationsForDebugging = 10.0;
         }
 
         public static MainPage Current { get; private set; }

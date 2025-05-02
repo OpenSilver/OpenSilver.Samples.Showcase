@@ -17,6 +17,7 @@ using System.Text;
 using System.Windows.Media.Animation;
 using System.Windows.Media;
 using System.Windows;
+using System.Windows.Threading;
 
 namespace OpenSilver.Animations.Internal
 {
@@ -26,8 +27,43 @@ namespace OpenSilver.Animations.Internal
             int duration,
             int delay,
             double bounciness = 0.0,
+            Direction direction = Direction.DownToUp,
             bool includeFade = false,
-            bool includeScale = false)
+            bool includeScale = false,
+            bool includeSlide = false)
+        {
+            RunAfterDispatcherBeginInvokeIfTrue(
+                IsActualElementMeasureNeeded(elementToAnimate, includeSlide, direction),
+                elementToAnimate.Dispatcher,
+                () =>
+                {
+                    if (IsActualElementMeasureNeeded(elementToAnimate, includeSlide, direction))
+                    {
+                        // We enter here if the element is not yet measured (it means that the Dispatched.BeginInvoke call was insufficient).
+                        return;
+                    }
+
+                    // All good, we can animate the element now:
+                    ApplyAnimateElement(
+                            elementToAnimate: elementToAnimate,
+                            duration: duration,
+                            delay: delay,
+                            bounciness: bounciness,
+                            direction: direction,
+                            includeFade: includeFade,
+                            includeScale: includeScale,
+                            includeSlide: includeSlide);
+                });
+        }
+
+        public static void ApplyAnimateElement(FrameworkElement elementToAnimate,
+            int duration,
+            int delay,
+            double bounciness = 0.0,
+            Direction direction = Direction.DownToUp,
+            bool includeFade = false,
+            bool includeScale = false,
+            bool includeSlide = false)
         {
             if (elementToAnimate == null) return;
 
@@ -40,6 +76,10 @@ namespace OpenSilver.Animations.Internal
 
             // Create storyboard
             var storyboard = new Storyboard();
+
+            //-------------------------------------------------
+            // FADE ANIMATION
+            //-------------------------------------------------
 
             if (includeFade)
             {
@@ -60,6 +100,10 @@ namespace OpenSilver.Animations.Internal
                 Storyboard.SetTargetProperty(opacityAnim, new PropertyPath(UIElement.OpacityProperty));
                 storyboard.Children.Add(opacityAnim);
             }
+
+            //-------------------------------------------------
+            // SCALE ANIMATION
+            //-------------------------------------------------
 
             if (includeScale)
             {
@@ -109,6 +153,73 @@ namespace OpenSilver.Animations.Internal
                 storyboard.Children.Add(scaleYAnim);
             }
 
+            //-------------------------------------------------
+            // SLIDE ANIMATION
+            //-------------------------------------------------
+
+            if (includeSlide)
+            {
+                // Ensure RenderTransform is a TranslateTransform (for sliding)
+                if (elementToAnimate.RenderTransform is not TranslateTransform)
+                {
+                    elementToAnimate.RenderTransform = new TranslateTransform();
+                }
+
+                if (direction == Direction.LeftToRight || direction == Direction.RightToLeft)
+                {
+                    double actualWidth = elementToAnimate.ActualWidth;
+
+                    if (!double.IsNaN(actualWidth) && actualWidth != 0.0)
+                    {
+                        // Translate X animation
+                        var translateXAnim = new DoubleAnimation
+                        {
+                            From = (direction == Direction.LeftToRight ? -actualWidth / 2 : actualWidth / 2),
+                            To = 0.0,
+                            Duration = TimeSpan.FromMilliseconds(duration),
+                            BeginTime = TimeSpan.FromMilliseconds(delay),
+                            FillBehavior = FillBehavior.HoldEnd,
+                            EasingFunction =
+                                bounciness > 0.0 ?
+                                new BackEase { Amplitude = bounciness, EasingMode = EasingMode.EaseOut } :
+                                new CubicEase { EasingMode = EasingMode.EaseOut }
+                        };
+                        Storyboard.SetTarget(translateXAnim, elementToAnimate);
+                        Storyboard.SetTargetProperty(translateXAnim, new PropertyPath("RenderTransform.X"));
+                        storyboard.Children.Add(translateXAnim);
+                    }
+                }
+
+                if (direction == Direction.DownToUp || direction == Direction.UpToDown)
+                {
+                    double actualHeight = elementToAnimate.ActualHeight;
+
+                    if (!double.IsNaN(actualHeight) && actualHeight != 0.0)
+                    {
+                        // Translate Y animation
+                        var translateYAnim = new DoubleAnimation
+                        {
+                            From = (direction == Direction.UpToDown ? -actualHeight / 2 : actualHeight / 2),
+                            To = 0.0,
+                            Duration = TimeSpan.FromMilliseconds(duration),
+                            BeginTime = TimeSpan.FromMilliseconds(delay),
+                            FillBehavior = FillBehavior.HoldEnd,
+                            EasingFunction =
+                                bounciness > 0.0 ?
+                                new BackEase { Amplitude = bounciness, EasingMode = EasingMode.EaseOut } :
+                                new CubicEase { EasingMode = EasingMode.EaseOut }
+                        };
+                        Storyboard.SetTarget(translateYAnim, elementToAnimate);
+                        Storyboard.SetTargetProperty(translateYAnim, new PropertyPath("RenderTransform.Y"));
+                        storyboard.Children.Add(translateYAnim);
+                    }
+                }
+            }
+
+            //-------------------------------------------------
+            // LAYOUT ANIMATION
+            //-------------------------------------------------
+
             // If we're animating an "AnimationContentControl", we can animate its layout too:
             if (elementToAnimate is AnimatedContentControl animatedContentControl)
             {
@@ -150,9 +261,41 @@ namespace OpenSilver.Animations.Internal
                 Storyboard.SetTargetProperty(heightAnim, new PropertyPath("HeightAsPercentageOfChild"));
                 storyboard.Children.Add(heightAnim);
             }
-            
+
             // Begin storyboard
             storyboard.Begin();
+        }
+
+        private static bool IsActualElementMeasureNeeded(FrameworkElement elementToAnimate, bool includeSlide, Direction direction)
+        {
+            if (includeSlide)
+            {
+                // Check if the element is not already measured
+                if (direction == Direction.LeftToRight || direction == Direction.RightToLeft)
+                {
+                    return elementToAnimate.ActualWidth == 0.0;
+                }
+                else if (direction == Direction.DownToUp || direction == Direction.UpToDown)
+                {
+                    return elementToAnimate.ActualHeight == 0.0;
+                }
+            }
+            return false;
+        }
+
+        private static void RunAfterDispatcherBeginInvokeIfTrue(bool value, Dispatcher dispatcher, Action action)
+        {
+            if (value)
+            {
+                dispatcher.BeginInvoke(() =>
+                {
+                    action();
+                });
+            }
+            else
+            {
+                action();
+            }
         }
 
         public static double SlowDownAnimationsForDebugging { get; set; } = 1.0;

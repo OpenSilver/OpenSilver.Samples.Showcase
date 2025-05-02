@@ -8,7 +8,7 @@
         <local:JsParticlesEffect a:Animation.OnAppear="{a:FadeAndScale Delay=500, Duration=1000}"/>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
             <ContentControl Content="Welcome!" a:Animation.OnAppear="{a:FadeAndScale Delay=500, Duration=1000, Bounciness=1}" HorizontalAlignment="Center" Style="{StaticResource PageHeader_Style}"/>
-            <a:AnimatedContentControl a:Animation.OnAppear="{a:FadeAndScale Delay=2200, Duration=250, Bounciness=0.3}">
+            <a:AnimatedContentControl a:Animation.OnAppear="{a:FadeAndScale Delay=2700, Duration=500, Bounciness=0.3}">
                 <Border Background="{DynamicResource Theme_ContainerBackgroundBrush}" CornerRadius="30" MaxWidth="530" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,0,40,20">
                     <Border.Effect>
                         <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="20" Opacity="0.2" />
