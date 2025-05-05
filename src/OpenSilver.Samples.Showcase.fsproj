@@ -74,7 +74,12 @@
 
     <Compile Include="Other\Internals\ViewSourceButtonInfo.fs" />
     <Compile Include="Other\Internals\ViewStyleSourceInfo.fs" />
-    <Compile Include="Other\Internals\ViewSourceButtonHelper.fs" />
+    <Page Include="Other\Internals\ViewSourcePanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="Other\Internals\ViewSourcePanel.xaml.fs">
+      <DependentUpon>Other\Internals\ViewSourcePanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Other\Internals\ViewSourceButton.fs" />
     <Compile Include="Other\Internals\Search\ControlSearch.fs" />
     <Page Include="Other\Internals\Search\SearchControl.xaml">

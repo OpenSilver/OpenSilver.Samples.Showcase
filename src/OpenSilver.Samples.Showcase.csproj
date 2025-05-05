@@ -27,6 +27,9 @@
     <Page Include="Other\Internals\Search\SearchControl.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Other\Internals\ViewSourcePanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\Charts\AreaSeries\AreaSeries_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -240,6 +243,7 @@
     <Compile Include="Other\Internals\Search\SearchableItem.cs" />
     <Compile Include="Other\Internals\Search\SearchControl.xaml.cs" />
     <Compile Include="Other\Internals\Search\SearchKeywordAttribute.cs" />
+    <Compile Include="Other\Internals\ViewSourcePanel.xaml.cs" />
     <Compile Include="Other\Internals\ViewStyleSourceInfo.cs" />
     <Compile Include="Other\Leagues\League.cs" />
     <Compile Include="Other\MarkupExtensions\ResxExtension.cs" />
@@ -744,7 +748,6 @@
     <Compile Include="MainPage.xaml.cs" />
     <Compile Include="Other\Internals\ViewSourceButton.cs" />
     <Compile Include="Other\Internals\ControlToDisplayCodeHostedOnGitHub.cs" />
-    <Compile Include="Other\Internals\ViewSourceButtonHelper.cs" />
     <Compile Include="Other\Internals\ViewSourceButtonInfo.cs" />
     <Compile Include="Other\Planet.cs" />
     <Compile Include="Samples\Client_Server\Client_Server.xaml.cs" />

@@ -14,4 +14,12 @@ type ViewSourceButton() as this =
 
     override this.OnClick() =
         base.OnClick()
-        ViewSourceButtonHelper.ViewSource(this.Sources)
+        ViewSourceButton.ViewSource(this.Sources)
+        
+    static member private ViewSource(sourcePaths: ICollection<ViewSourceButtonInfo>) =
+        if sourcePaths = null || sourcePaths.Count = 0 then
+            ()
+        else
+            let panel = new ViewSourcePanel()
+            panel.ViewSource(sourcePaths)
+            //MainPage.Current.ViewSourceCode(panel)

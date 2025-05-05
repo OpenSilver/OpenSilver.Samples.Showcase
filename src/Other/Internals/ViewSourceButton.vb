@@ -13,7 +13,17 @@ Namespace Global.OpenSilver.Samples.Showcase
 
         Protected Overrides Sub OnClick()
             MyBase.OnClick()
-            ViewSourceButtonHelper.ViewSource(Sources)
+            ViewSource(Sources)
+        End Sub
+
+        Private Shared Sub ViewSource(ByVal sourcePaths As ICollection(Of ViewSourceButtonInfo))
+            If sourcePaths Is Nothing OrElse sourcePaths.Count = 0 Then
+                Return
+            End If
+
+            Dim panel = New ViewSourcePanel()
+            panel.ViewSource(sourcePaths)
+            MainPage.Current.ViewSourceCode(panel)
         End Sub
     End Class
 End Namespace

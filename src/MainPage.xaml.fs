@@ -22,8 +22,6 @@ type MainPage() as this =
     do
         this.InitializeComponent()
         
-        ViewSourceButtonHelper.OnViewSourceRequested <- Some(this.ViewSourceCode)
-
         this.Loaded.Add(fun _ -> this.MainPage_Loaded())
         this.SizeChanged.Add(fun args -> this.MainPage_SizeChanged(args))
         this.MenuListBox.ItemsSource <- PageInfo.Pages

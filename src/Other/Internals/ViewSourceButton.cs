@@ -16,7 +16,19 @@ namespace OpenSilver.Samples.Showcase
         protected override void OnClick()
         {
             base.OnClick();
-            ViewSourceButtonHelper.ViewSource(Sources);
+            ViewSource(Sources);
+        }
+
+        private static void ViewSource(ICollection<ViewSourceButtonInfo> sourcePaths)
+        {
+            if (sourcePaths is null || sourcePaths.Count == 0)
+            {
+                return;
+            }
+
+            var panel = new ViewSourcePanel();
+            panel.ViewSource(sourcePaths);
+            MainPage.Current.ViewSourceCode(panel);
         }
     }
 }
