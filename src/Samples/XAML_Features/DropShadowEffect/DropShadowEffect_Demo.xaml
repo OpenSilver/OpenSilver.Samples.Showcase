@@ -119,11 +119,11 @@
                         <TextBlock Grid.Row="4"
                                    VerticalAlignment="Center"
                                    Text="Color"/>
-                        <local:HtmlColorPicker Grid.Row="4"
+                        <local:HtmlColorPicker Name="ColorPicker"
+                                               Grid.Row="4"
                                                Grid.Column="1"
                                                Margin="0,5"
-                                               HorizontalAlignment="Center"
-                                               Color="{Binding ElementName=RectangleShadow, Path=Color, Mode=TwoWay}"/>
+                                               HorizontalAlignment="Center"/>
                     </Grid>
                 </Border>
             </StackPanel>

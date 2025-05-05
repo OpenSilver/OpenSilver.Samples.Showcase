@@ -60,6 +60,8 @@ type HtmlColorPicker() as this =
             ))
         )
 
+    static member ColorProperty = colorProperty
+
     member this.Color
         with get() = this.GetValue(colorProperty) :?> Color
         and set(v: Color) = this.SetValue(colorProperty, v)

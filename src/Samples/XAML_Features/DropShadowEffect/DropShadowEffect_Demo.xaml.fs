@@ -8,3 +8,7 @@ type DropShadowEffect_Demo() as this =
     
     do
         this.InitializeComponent()
+
+        let binding = System.Windows.Data.Binding("Color", ElementName = nameof(this.RectangleShadow), Mode = System.Windows.Data.BindingMode.TwoWay)
+
+        this.ColorPicker.SetBinding(HtmlColorPicker.ColorProperty, binding) |> ignore
