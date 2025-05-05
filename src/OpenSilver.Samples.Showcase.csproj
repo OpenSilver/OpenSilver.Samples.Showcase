@@ -27,9 +27,6 @@
     <Page Include="Other\Internals\Search\SearchControl.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Other\OpenSilver.Animations\Controls\AnimatedContentControl.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Samples\Charts\AreaSeries\AreaSeries_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -245,16 +242,6 @@
     <Compile Include="Other\Internals\Search\SearchKeywordAttribute.cs" />
     <Compile Include="Other\Leagues\League.cs" />
     <Compile Include="Other\MarkupExtensions\ResxExtension.cs" />
-    <Compile Include="Other\OpenSilver.Animations\Animation.cs" />
-    <Compile Include="Other\OpenSilver.Animations\AnimationTypeConverter.cs" />
-    <Compile Include="Other\OpenSilver.Animations\Direction.cs" />
-    <Compile Include="Other\OpenSilver.Animations\AnimationTypes\FadeAndSlide.cs" />
-    <Compile Include="Other\OpenSilver.Animations\AnimationTypes\Fade.cs" />
-    <Compile Include="Other\OpenSilver.Animations\AnimationTypes\FadeAndScale.cs" />
-    <Compile Include="Other\OpenSilver.Animations\Controls\AnimatedContentControl.xaml.cs" />
-    <Compile Include="Other\OpenSilver.Animations\Controls\PercentagePanel.cs" />
-    <Compile Include="Other\OpenSilver.Animations\Internal\StoryboardsHelper.cs" />
-    <Compile Include="Other\OpenSilver.Animations\IAnimationType.cs" />
     <Compile Include="Other\PageInfo.cs" />
     <Compile Include="Other\Sales.cs" />
     <Compile Include="Other\Localization\SampleResourceFile.Designer.cs">
@@ -919,5 +906,9 @@
   <ItemGroup>
     <Content Include="Other\Icons\DarkTheme.svg" />
     <Content Include="Other\Icons\LightTheme.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Libraries\OpenSilver.Animations\OpenSilver.Animations.csproj" />
   </ItemGroup>
 </Project>

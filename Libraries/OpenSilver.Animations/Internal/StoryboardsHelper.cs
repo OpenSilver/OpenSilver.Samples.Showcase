@@ -10,7 +10,6 @@
 *  
 \*====================================================================================*/
 
-using OpenSilver.Samples.Showcase;
 using System;
 using System.Collections.Generic;
 using System.Text;

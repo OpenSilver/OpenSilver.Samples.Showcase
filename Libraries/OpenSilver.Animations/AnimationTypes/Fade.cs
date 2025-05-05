@@ -10,7 +10,6 @@
 *  
 \*====================================================================================*/
 
-using OpenSilver.Samples.Showcase;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -23,27 +22,17 @@ using OpenSilver.Animations.Internal;
 
 namespace OpenSilver.Animations
 {
-    public class FadeAndScale : MarkupExtension, IAnimationType
+    public class Fade : MarkupExtension, IAnimationType
     {
         /// <summary>
-        /// Delay in milliseconds.
-        /// Default is 0.
+        /// Delay in milliseconds
         /// </summary>
         public int Delay { get; set; } = 0;
 
         /// <summary>
-        /// Duration in milliseconds.
-        /// Default is 250.
+        /// Duration in milliseconds
         /// </summary>
-        public int Duration { get; set; } = 250;
-
-        /// <summary>
-        /// Determines the intensity of the elastic effect.
-        /// Higher values result in greater overshoot and oscillation,
-        /// simulating a more dynamic and spring-like motion.
-        /// Default is 0.0 (no bouncing).
-        /// </summary>
-        public double Bounciness { get; set; } = 0.0;
+        public int Duration { get; set; } = 150;
 
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
@@ -56,9 +45,7 @@ namespace OpenSilver.Animations
                 elementToAnimate: elementToAnimate,
                 duration: Duration,
                 delay: Delay,
-                bounciness: Bounciness,
-                includeFade: true,
-                includeScale: true);
+                includeFade: true);
         }
     }
 }

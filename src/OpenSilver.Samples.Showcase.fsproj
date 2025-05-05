@@ -1325,4 +1325,8 @@
 	  <Content Include="Other\Icons\LightTheme.svg" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\Libraries\OpenSilver.Animations\OpenSilver.Animations.csproj" />
+	</ItemGroup>
+
 </Project>
