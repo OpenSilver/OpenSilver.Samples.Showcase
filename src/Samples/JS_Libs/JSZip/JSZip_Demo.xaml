@@ -31,13 +31,13 @@
 
             <local:ViewSourceButton Grid.Row="2" Background="#FF6F7DFF">
                 <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo FileName="JSZip_Demo.xaml" RelativePath="src/Samples/JS_Libs/Zip"/>
-                    <local:ViewSourceButtonInfo FileName="JSZip_Demo.xaml.cs" RelativePath="src/Samples/JS_Libs/Zip"/>
-                    <local:ViewSourceButtonInfo FileName="JSZip_Demo.xaml.vb" RelativePath="src/Samples/JS_Libs/Zip"/>
-                    <local:ViewSourceButtonInfo FileName="JSZip_Demo.xaml.fs" RelativePath="src/Samples/JS_Libs/Zip"/>
-                    <local:ViewSourceButtonInfo FileName="ZipFile.cs" RelativePath="src/Samples/JS_Libs/Zip"/>
-                    <local:ViewSourceButtonInfo FileName="ZipFile.vb" RelativePath="src/Samples/JS_Libs/Zip"/>
-                    <local:ViewSourceButtonInfo FileName="ZipFile.fs" RelativePath="src/Samples/JS_Libs/Zip"/>
+                    <local:ViewSourceButtonInfo FileName="JSZip_Demo.xaml" RelativePath="src/Samples/JS_Libs/JSZip"/>
+                    <local:ViewSourceButtonInfo FileName="JSZip_Demo.xaml.cs" RelativePath="src/Samples/JS_Libs/JSZip"/>
+                    <local:ViewSourceButtonInfo FileName="JSZip_Demo.xaml.vb" RelativePath="src/Samples/JS_Libs/JSZip"/>
+                    <local:ViewSourceButtonInfo FileName="JSZip_Demo.xaml.fs" RelativePath="src/Samples/JS_Libs/JSZip"/>
+                    <local:ViewSourceButtonInfo FileName="ZipFile.cs" RelativePath="src/Samples/JS_Libs/JSZip"/>
+                    <local:ViewSourceButtonInfo FileName="ZipFile.vb" RelativePath="src/Samples/JS_Libs/JSZip"/>
+                    <local:ViewSourceButtonInfo FileName="ZipFile.fs" RelativePath="src/Samples/JS_Libs/JSZip"/>
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>
