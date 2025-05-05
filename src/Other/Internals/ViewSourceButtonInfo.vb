@@ -21,12 +21,14 @@ Namespace Global.OpenSilver.Samples.Showcase
 
         Public Property TabHeader As String
 
+        Public Property Fragment As String
+
         Public Function GetHeader() As String
             Return If(Not String.IsNullOrEmpty(TabHeader), TabHeader, FileName)
         End Function
 
         Public Function GetAbsoluteUrl() As String
-            Return $"https://github.com/{Owner}/{Repository}/blob/{Branch}/{RelativePath}/{FileName}"
+            Return $"https://github.com/{Owner}/{Repository}/blob/{Branch}/{RelativePath}/{FileName}{Fragment}"
         End Function
     End Class
 End Namespace

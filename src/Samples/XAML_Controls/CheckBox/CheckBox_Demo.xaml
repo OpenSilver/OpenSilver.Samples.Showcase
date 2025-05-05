@@ -23,6 +23,7 @@
                                                 FileName="CheckBox_Demo.xaml.vb" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/CheckBox"
                                                 FileName="CheckBox_Demo.xaml.fs" />
+                    <local:ViewStyleSourceInfo TabHeader="CheckBox Style" Fragment="#L436-L733" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

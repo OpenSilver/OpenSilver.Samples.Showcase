@@ -42,8 +42,7 @@
                                                 FileName="Viewbox_Demo.xaml.vb" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Viewbox"
                                                 FileName="Viewbox_Demo.xaml.fs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Viewbox/Styles"
-                                                FileName="DefaultViewboxStyle.xaml" />
+                    <local:ViewStyleSourceInfo TabHeader="Viewbox Style" Fragment="#L1850-L1866" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

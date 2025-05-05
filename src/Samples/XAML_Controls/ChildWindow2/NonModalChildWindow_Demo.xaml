@@ -33,8 +33,7 @@
                                                 FileName="SmallChildWindow.xaml.vb" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ChildWindow2"
                                                 FileName="SmallChildWindow.xaml.fs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ChildWindow/Styles"
-                                                FileName="DefaultChildWindowStyle.xaml" />
+                    <local:ViewStyleSourceInfo TabHeader="ChildWindow Style" Fragment="#L4267-L4696"/>
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

@@ -240,6 +240,7 @@
     <Compile Include="Other\Internals\Search\SearchableItem.cs" />
     <Compile Include="Other\Internals\Search\SearchControl.xaml.cs" />
     <Compile Include="Other\Internals\Search\SearchKeywordAttribute.cs" />
+    <Compile Include="Other\Internals\ViewStyleSourceInfo.cs" />
     <Compile Include="Other\Leagues\League.cs" />
     <Compile Include="Other\MarkupExtensions\ResxExtension.cs" />
     <Compile Include="Other\PageInfo.cs" />
@@ -522,25 +523,13 @@
     <Page Include="Samples\XAML_Controls\ChildWindow\LoginWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\XAML_Controls\ChildWindow\Styles\DefaultChildWindowStyle.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Samples\XAML_Controls\ChildWindow\Styles\ModernChildWindowStyle.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Samples\XAML_Controls\ComboBox\ComboBox_Demo.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Samples\XAML_Controls\ComboBox\Styles\DefaultComboBoxStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Controls\ContextMenu\ContextMenu_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Controls\ContextMenu_MenuItem\ContextMenu_MenuItem_Demo.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Samples\XAML_Controls\ContextMenu_MenuItem\Styles\DefaultMenuItemStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Controls\DataGrid\DataGrid_Demo.xaml">
@@ -555,16 +544,10 @@
     <Page Include="Samples\XAML_Controls\Expander\Expander_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\XAML_Controls\Expander\Styles\DefaultExpanderStyle.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Samples\XAML_Controls\Frame\Frame_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Controls\GridSplitter\GridSplitter_Demo.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Samples\XAML_Controls\GridSplitter\Styles\DefaultGridSplitterStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Panels\Grid\Grid_Demo.xaml">
@@ -609,9 +592,6 @@
     <Page Include="Samples\XAML_Controls\ScrollBar\ScrollBar_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\XAML_Controls\ScrollBar\Styles\DefaultScrollBarStyle.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Samples\XAML_Controls\ScrollViewer\ScrollViewer_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -624,12 +604,6 @@
     <Page Include="Samples\XAML_Panels\StackPanel\StackPanel_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\XAML_Controls\TabControl\Styles\DefaultTabControlStyle.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Samples\XAML_Controls\TabControl\Styles\DefaultTabItemStyle.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Samples\XAML_Controls\TabControl\TabControl_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -637,9 +611,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Controls\TextBox\TextBox_Demo.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Samples\XAML_Controls\Thumb\Styles\DefaultThumbStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Controls\Thumb\Thumb_Demo.xaml">
@@ -651,13 +622,7 @@
     <Page Include="Samples\XAML_Controls\ToggleButton\ToggleButton_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\XAML_Controls\ToolTip\Styles\DefaultToolTipStyle.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Samples\XAML_Controls\ToolTip\ToolTip_Demo.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Samples\XAML_Controls\Viewbox\Styles\DefaultViewboxStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Controls\Viewbox\Viewbox_Demo.xaml">

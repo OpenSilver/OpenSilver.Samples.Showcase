@@ -73,6 +73,7 @@
 		</EmbeddedResource>
 
     <Compile Include="Other\Internals\ViewSourceButtonInfo.fs" />
+    <Compile Include="Other\Internals\ViewStyleSourceInfo.fs" />
     <Compile Include="Other\Internals\ViewSourceButtonHelper.fs" />
     <Compile Include="Other\Internals\ViewSourceButton.fs" />
     <Compile Include="Other\Internals\Search\ControlSearch.fs" />
@@ -626,12 +627,6 @@
 		<Compile Include="Samples\XAML_Controls\ChildWindow\LoginWindow.xaml.fs">
 			<DependentUpon>Samples\XAML_Controls\ChildWindow\LoginWindow.xaml</DependentUpon>
 		</Compile>
-		<Page Include="Samples\XAML_Controls\ChildWindow\Styles\DefaultChildWindowStyle.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</Page>
-		<Page Include="Samples\XAML_Controls\ChildWindow\Styles\ModernChildWindowStyle.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</Page>
 		<Page Include="Samples\XAML_Controls\ChildWindow\ChildWindow_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
@@ -650,9 +645,6 @@
 		<Compile Include="Samples\XAML_Controls\ChildWindow2\NonModalChildWindow_Demo.xaml.fs">
 			<DependentUpon>Samples\XAML_Controls\ChildWindow2\NonModalChildWindow_Demo.xaml</DependentUpon>
 		</Compile>
-		<Page Include="Samples\XAML_Controls\ComboBox\Styles\DefaultComboBoxStyle.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</Page>
 		<Page Include="Samples\XAML_Controls\ComboBox\ComboBox_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
@@ -665,9 +657,6 @@
 		<Compile Include="Samples\XAML_Controls\ContextMenu\ContextMenu_Demo.xaml.fs">
 			<DependentUpon>Samples\XAML_Controls\ContextMenu\ContextMenu_Demo.xaml</DependentUpon>
 		</Compile>
-		<Page Include="Samples\XAML_Controls\ContextMenu_MenuItem\Styles\DefaultMenuItemStyle.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</Page>
 		<Page Include="Samples\XAML_Controls\ContextMenu_MenuItem\ContextMenu_MenuItem_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
@@ -698,9 +687,6 @@
 		<Compile Include="Samples\XAML_Controls\DomainUpDown\DomainUpDown_Demo.xaml.fs">
 			<DependentUpon>Samples\XAML_Controls\DomainUpDown\DomainUpDown_Demo.xaml</DependentUpon>
 		</Compile>
-		<Page Include="Samples\XAML_Controls\Expander\Styles\DefaultExpanderStyle.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</Page>
 		<Page Include="Samples\XAML_Controls\Expander\Expander_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
@@ -719,9 +705,6 @@
 		<Compile Include="Samples\XAML_Controls\GlobalCalendar\GlobalCalendar_Demo.xaml.fs">
 		  <DependentUpon>Samples\XAML_Controls\GlobalCalendar\GlobalCalendar_Demo.xaml</DependentUpon>
 		</Compile>
-		<Page Include="Samples\XAML_Controls\GridSplitter\Styles\DefaultGridSplitterStyle.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</Page>
 		<Page Include="Samples\XAML_Controls\GridSplitter\GridSplitter_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
@@ -851,9 +834,6 @@
 		<Compile Include="Samples\XAML_Controls\RichTextBox\RichTextBox_Demo.xaml.fs">
 		  <DependentUpon>Samples\XAML_Controls\RichTextBox\RichTextBox_Demo.xaml</DependentUpon>
 		</Compile>
-		<Page Include="Samples\XAML_Controls\ScrollBar\Styles\DefaultScrollBarStyle.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</Page>
 		<Page Include="Samples\XAML_Controls\ScrollBar\ScrollBar_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
@@ -878,12 +858,6 @@
 		<Compile Include="Samples\XAML_Controls\Slider\Slider_Demo.xaml.fs">
 			<DependentUpon>Samples\XAML_Controls\Slider\Slider_Demo.xaml</DependentUpon>
 		</Compile>
-		<Page Include="Samples\XAML_Controls\TabControl\Styles\DefaultTabControlStyle.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</Page>
-		<Page Include="Samples\XAML_Controls\TabControl\Styles\DefaultTabItemStyle.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</Page>
 		<Page Include="Samples\XAML_Controls\TabControl\TabControl_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
@@ -905,9 +879,6 @@
 		<Compile Include="Samples\XAML_Controls\TextBox\TextBox_Demo.xaml.fs">
 			<DependentUpon>Samples\XAML_Controls\TextBox\TextBox_Demo.xaml</DependentUpon>
 		</Compile>
-		<Page Include="Samples\XAML_Controls\Thumb\Styles\DefaultThumbStyle.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</Page>
 		<Page Include="Samples\XAML_Controls\Thumb\Thumb_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
@@ -929,9 +900,6 @@
 		<Compile Include="Samples\XAML_Controls\ToggleButton\ToggleButton_Demo.xaml.fs">
 			<DependentUpon>Samples\XAML_Controls\ToggleButton\ToggleButton_Demo.xaml</DependentUpon>
 		</Compile>
-		<Page Include="Samples\XAML_Controls\ToolTip\Styles\DefaultToolTipStyle.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</Page>
 		<Page Include="Samples\XAML_Controls\ToolTip\ToolTip_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
@@ -963,9 +931,6 @@
 		<Compile Include="Samples\XAML_Controls\UpDownBase\UpDownBase_Demo.xaml.fs">
 			<DependentUpon>Samples\XAML_Controls\UpDownBase\UpDownBase_Demo.xaml</DependentUpon>
 		</Compile>
-		<Page Include="Samples\XAML_Controls\Viewbox\Styles\DefaultViewboxStyle.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</Page>
 		<Page Include="Samples\XAML_Controls\Viewbox\Viewbox_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>

@@ -20,6 +20,7 @@ type ViewSourceButtonInfo() =
     member val Repository = "OpenSilver.Samples.Showcase" with get, set
     member val Owner = "OpenSilver" with get, set
     member val TabHeader = "" with get, set
+    member val Fragment = "" with get, set
     
     member public this.GetHeader() =
         if not (String.IsNullOrEmpty(this.TabHeader)) then
@@ -28,4 +29,4 @@ type ViewSourceButtonInfo() =
             this.FileName
 
     member public this.GetAbsoluteUrl() =
-        $"https://github.com/{this.Owner}/{this.Repository}/blob/{this.Branch}/{this.RelativePath}/{this.FileName}"
+        $"https://github.com/{this.Owner}/{this.Repository}/blob/{this.Branch}/{this.RelativePath}/{this.FileName}{this.Fragment}"

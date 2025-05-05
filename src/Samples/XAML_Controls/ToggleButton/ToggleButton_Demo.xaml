@@ -74,7 +74,7 @@
                     <local:ViewSourceButtonInfo FileName="ToggleButton_Demo.xaml.cs" RelativePath="src/Samples/XAML_Controls/ToggleButton"/>
                     <local:ViewSourceButtonInfo FileName="ToggleButton_Demo.xaml.vb" RelativePath="src/Samples/XAML_Controls/ToggleButton"/>
                     <local:ViewSourceButtonInfo FileName="ToggleButton_Demo.xaml.fs" RelativePath="src/Samples/XAML_Controls/ToggleButton"/>
-                    <local:ViewSourceButtonInfo FileName="ToggleButtonStyles.xaml" RelativePath="src/Samples/XAML_Controls/ToggleButton/Styles"/>
+                    <local:ViewStyleSourceInfo TabHeader="ToggleButton Style" Fragment="#L282-L434"/>
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

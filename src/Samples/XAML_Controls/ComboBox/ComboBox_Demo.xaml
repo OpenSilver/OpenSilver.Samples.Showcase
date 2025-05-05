@@ -26,8 +26,7 @@
                                                 FileName="ComboBox_Demo.xaml.vb" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ComboBox"
                                                 FileName="ComboBox_Demo.xaml.fs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ComboBox/Styles"
-                                                FileName="DefaultComboBoxStyle.xaml" />
+                    <local:ViewStyleSourceInfo TabHeader="ComboBox Style" Fragment="#L2199-L2406" />
                     <local:ViewSourceButtonInfo RelativePath="src/Other"
                                                 FileName="Planet.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Other"

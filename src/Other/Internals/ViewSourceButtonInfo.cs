@@ -22,8 +22,10 @@
 
         public string TabHeader { get; set; }
 
+        public string Fragment { get; set; }
+
         public string GetHeader() => !string.IsNullOrEmpty(TabHeader) ? TabHeader : FileName;
 
-        public string GetAbsoluteUrl() => $"https://github.com/{Owner}/{Repository}/blob/{Branch}/{RelativePath}/{FileName}";
+        public string GetAbsoluteUrl() => $"https://github.com/{Owner}/{Repository}/blob/{Branch}/{RelativePath}/{FileName}{Fragment}";
     }
 }

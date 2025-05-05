@@ -37,8 +37,7 @@
                                                 FileName="GridSplitter_Demo.xaml.vb" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/GridSplitter"
                                                 FileName="GridSplitter_Demo.xaml.fs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/GridSplitter/Styles"
-                                                FileName="DefaultGridSplitterStyle.xaml" />
+                    <local:ViewStyleSourceInfo TabHeader="GridSplitter Style" RelativePath="src/Runtime/Controls/Themes" Fragment="#L474-L604" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>
