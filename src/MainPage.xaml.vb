@@ -10,17 +10,19 @@ Namespace OpenSilver.Samples.Showcase
 
         Public Sub New()
             InitializeComponent()
+
             Current = Me
             AddHandler Loaded, AddressOf MainPage_Loaded
             AddHandler SizeChanged, AddressOf MainPage_SizeChanged
             MenuListBox.ItemsSource = PageInfo.Pages
             UpdateThemeToggleFillColor()
+
+            'Animations.Animation.SlowDownAnimationsForDebugging = 10.0
         End Sub
 
         Public Shared Property Current As MainPage
 
         Private Sub MainPage_Loaded(sender As Object, e As RoutedEventArgs)
-            ' Navigate to the "Welcome" page by default:
             If Not HtmlPage.Document.DocumentUri.OriginalString.Contains("#") Then
                 MenuListBox.SelectedItem = PageInfo.LandingPageInfo
             End If
@@ -30,7 +32,7 @@ Namespace OpenSilver.Samples.Showcase
 
         Private Sub MenuListBox_SelectionChanged(sender As Object, e As SelectionChangedEventArgs)
             If Not (_skipMenuListBox_SelectionChanged AndAlso (e.AddedItems?.Count = 0)) Then
-                Dim page As PageInfo = TryCast(e.AddedItems(0), PageInfo)
+                Dim page = TryCast(e.AddedItems(0), PageInfo)
                 If page IsNot Nothing Then
                     NavigateToPage(page.Path)
                 End If
@@ -42,15 +44,11 @@ Namespace OpenSilver.Samples.Showcase
                 GoToState(CurrentState.SmallResolution_HideMenu)
             End If
 
-            ' Navigate to the target page:
-            Dim uri As New Uri(targetUri, UriKind.Relative)
-            PageContainer.Source = uri
-
-            ' Scroll to top:
-            ScrollViewer1.ScrollToVerticalOffset(0)
+            PageContainer.Source = New Uri(targetUri, UriKind.Relative)
+            PageScrollViewer.ScrollToVerticalOffset(0)
         End Sub
 
-        Private Sub Logo_MouseLeftButtonDown(sender As Object, e As Input.MouseButtonEventArgs)
+        Private Sub Logo_MouseLeftButtonDown(sender As Object, e As System.Windows.Input.MouseButtonEventArgs)
             MenuListBox.SelectedItem = PageInfo.LandingPageInfo
         End Sub
 
@@ -65,10 +63,9 @@ Namespace OpenSilver.Samples.Showcase
 
 #End Region
 
-#Region "Show/hide source code"
+#Region "Source Code View"
 
-        Public Sub ViewSourceCode(controlThatDisplaysTheSourceCode As UIElement)
-            ' Open the Source Code Pane
+        Public Sub ViewSourceCode(control As UIElement)
             If SourceCodePane.Visibility = Visibility.Collapsed Then
                 RowThatContainsThePage.Height = New GridLength(0.5, GridUnitType.Star)
                 RowThatContainsTheGridSplitter.Height = New GridLength(5)
@@ -77,12 +74,10 @@ Namespace OpenSilver.Samples.Showcase
                 SourceCodePane.Visibility = Visibility.Visible
             End If
 
-            ' Display the source code
-            PlaceWhereSourceCodeWillBeDisplayed.Child = controlThatDisplaysTheSourceCode
+            PlaceWhereSourceCodeWillBeDisplayed.Child = control
         End Sub
 
         Private Sub ButtonToCloseSourceCode_Click(sender As Object, e As RoutedEventArgs)
-            ' Close the Source Code Pane
             PlaceWhereSourceCodeWillBeDisplayed.Child = Nothing
             GridSplitter1.Visibility = Visibility.Collapsed
             SourceCodePane.Visibility = Visibility.Collapsed
@@ -93,7 +88,7 @@ Namespace OpenSilver.Samples.Showcase
 
 #End Region
 
-#Region "States Management"
+#Region "Menu State"
 
         Private Enum CurrentState
             Unset
@@ -108,27 +103,24 @@ Namespace OpenSilver.Samples.Showcase
             If newState <> _currentState Then
                 If newState = CurrentState.LargeResolution_SeeBothMenuAndPage Then
                     ButtonToHideOrShowMenu.Visibility = Visibility.Collapsed
-                    PageContainer.Margin = New Thickness(30, 0, 0, 0)
+                    PageContainer.Margin = New Thickness(0)
+                    Grid.SetColumn(PageScrollViewer, 1)
+                    Grid.SetColumnSpan(PageScrollViewer, 1)
+                    MenuContainer.Visibility = Visibility.Visible
                     CType(PageContainer.RenderTransform, TranslateTransform).X = 0
-                    Dim margin As Thickness = PageContainer.Margin
-                    margin.Left += MenuBorder.Width
-                    PageContainer.Margin = margin
                     CType(MenuBorder.RenderTransform, TranslateTransform).X = 0
                 Else
                     ButtonToHideOrShowMenu.Visibility = Visibility.Visible
-                    PageContainer.Margin = New Thickness(0, 50, 0, 30)
-                    Dim margin As Thickness = PageContainer.Margin
-                    margin.Left = 0
-                    PageContainer.Margin = margin
+                    PageContainer.Margin = New Thickness(0, 50, 0, 0)
+                    Grid.SetColumn(PageScrollViewer, 0)
+                    Grid.SetColumnSpan(PageScrollViewer, 2)
 
                     If newState = CurrentState.SmallResolution_ShowMenu Then
+                        MenuContainer.Visibility = Visibility.Visible
                         CType(PageContainer.RenderTransform, TranslateTransform).X = 240
-                        CType(ButtonToHideOrShowMenu.RenderTransform, TranslateTransform).X = 240
-                        CType(MenuBorder.RenderTransform, TranslateTransform).X = 0
                     Else
+                        MenuContainer.Visibility = Visibility.Collapsed
                         CType(PageContainer.RenderTransform, TranslateTransform).X = 0
-                        CType(ButtonToHideOrShowMenu.RenderTransform, TranslateTransform).X = 0
-                        CType(MenuBorder.RenderTransform, TranslateTransform).X = -240
                     End If
                 End If
                 _currentState = newState
@@ -140,7 +132,7 @@ Namespace OpenSilver.Samples.Showcase
         End Sub
 
         Private Sub UpdateMenuDispositionBasedOnDisplaySize()
-            Dim actualWidth As Double = Me.ActualWidth
+            Dim actualWidth = Me.ActualWidth
             If Not Double.IsNaN(actualWidth) AndAlso actualWidth > 560 Then
                 GoToState(CurrentState.LargeResolution_SeeBothMenuAndPage)
             ElseIf _currentState = CurrentState.LargeResolution_SeeBothMenuAndPage OrElse _currentState = CurrentState.Unset Then
@@ -158,10 +150,9 @@ Namespace OpenSilver.Samples.Showcase
 
 #End Region
 
-#Region "Themes Switch"
+#Region "Theme Switching"
 
         Private _nativeApiButtonBackgroundBrush As SolidColorBrush
-
         Public ReadOnly Property NativeApiButtonBackgroundBrush As SolidColorBrush
             Get
                 If _nativeApiButtonBackgroundBrush Is Nothing Then
@@ -171,13 +162,13 @@ Namespace OpenSilver.Samples.Showcase
             End Get
         End Property
 
-        Private ReadOnly lightColor As Color = Color.FromRgb(221, 221, 221)
-        Private ReadOnly darkColor As Color = Color.FromRgb(60, 60, 60)
+        Private lightColor As Color = Color.FromRgb(221, 221, 221)
+        Private darkColor As Color = Color.FromRgb(60, 60, 60)
 
         Private Sub ThemeToggle_RadioButton_Checked(sender As Object, e As RoutedEventArgs)
-            Dim isDark As Boolean = (DarkThemeRadioButton.IsChecked = True)
-            If TypeOf Application.Current.Theme Is ModernTheme Then
-                Dim theme = DirectCast(Application.Current.Theme, ModernTheme)
+            Dim isDark = (DarkThemeRadioButton.IsChecked = True)
+            Dim theme = TryCast(Application.Current.Theme, ModernTheme)
+            If theme IsNot Nothing Then
                 If isDark Then
                     NativeApiButtonBackgroundBrush.Color = darkColor
                     theme.CurrentPalette = ModernTheme.Palettes.Dark
@@ -194,15 +185,11 @@ Namespace OpenSilver.Samples.Showcase
                     BackgroundImageDark.Opacity = 0
                 End If
 
-                If SourceCodePane.Visibility = Visibility.Visible Then
-                    Dim tabControl = TryCast(PlaceWhereSourceCodeWillBeDisplayed.Child, TabControl)
-                    If tabControl IsNot Nothing Then
-                        Dim tabItem = TryCast(tabControl.SelectedItem, TabItem)
-                        If tabItem IsNot Nothing Then
-                            Dim gitHubControl = TryCast(tabItem.Content, ControlToDisplayCodeHostedOnGitHub)
-                            gitHubControl?.Refresh()
-                        End If
-                    End If
+                If SourceCodePane.Visibility = Visibility.Visible AndAlso
+                    TypeOf PlaceWhereSourceCodeWillBeDisplayed.Child Is TabControl AndAlso
+                    TypeOf CType(PlaceWhereSourceCodeWillBeDisplayed.Child, TabControl).SelectedItem Is TabItem AndAlso
+                    TypeOf CType(CType(PlaceWhereSourceCodeWillBeDisplayed.Child, TabControl).SelectedItem, TabItem).Content Is ControlToDisplayCodeHostedOnGitHub Then
+                    CType(CType(CType(PlaceWhereSourceCodeWillBeDisplayed.Child, TabControl).SelectedItem, TabItem).Content, ControlToDisplayCodeHostedOnGitHub).Refresh()
                 End If
             End If
 
@@ -210,12 +197,9 @@ Namespace OpenSilver.Samples.Showcase
         End Sub
 
         Private Sub UpdateThemeToggleFillColor()
-            Dim colorBrush As SolidColorBrush = TryCast(DarkThemeRadioButton.Foreground, SolidColorBrush)
-            If colorBrush IsNot Nothing Then
-                lightThemeImage.FillColor = colorBrush.Color
-                darkThemeImage.FillColor = colorBrush.Color
-            End If
-
+            Dim color = TryCast(DarkThemeRadioButton.Foreground, SolidColorBrush)?.Color
+            lightThemeImage.FillColor = color
+            darkThemeImage.FillColor = color
         End Sub
 
 #End Region

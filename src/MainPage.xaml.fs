@@ -38,7 +38,7 @@ type MainPage() as this =
         this.PageContainer.Source <- uri;
 
         // Scroll to top:
-        this.ScrollViewer1.ScrollToVerticalOffset(0.0)
+        this.PageScrollViewer.ScrollToVerticalOffset(0.0)
 
     member private this.MainPage_Loaded() =
         // Navigate to the "Welcome" page by default:
@@ -97,15 +97,19 @@ type MainPage() as this =
             | LargeResolution_SeeBothMenuAndPage ->
                 // Hide the button to hide/show the menu:
                 this.ButtonToHideOrShowMenu.Visibility <- Visibility.Collapsed
-                this.PageContainer.Margin <- new Thickness(30.0, 0.0, 0.0, 0.0)
+                
+                // Remove the top margin of the page (it's for the menu button on mobile):
+                this.PageContainer.Margin <- new Thickness(0, 0, 0, 0)
+
+                // Ensure the page stays in the second column, to the right of the menu:
+                Grid.SetColumn(this.PageScrollViewer, 1)
+                Grid.SetColumnSpan(this.PageScrollViewer, 1)
+
+                // Show the menu:
+                this.MenuContainer.Visibility <- Visibility.Visible
 
                 // Set the translation of the frame to 0:
                 (this.PageContainer.RenderTransform :?> TranslateTransform).X <- 0.0
-
-                // Set the margin of the frame to 180 (which is the size of the menu):
-                let mutable margin = this.PageContainer.Margin
-                margin.Left <- 180.0
-                this.PageContainer.Margin <- margin
 
                 // Set the translation of the border to 0:
                 (this.MenuBorder.RenderTransform :?> TranslateTransform).X <- 0.0
@@ -115,7 +119,16 @@ type MainPage() as this =
 
                 // Show the button to hide/show the menu:
                 this.ButtonToHideOrShowMenu.Visibility <- Visibility.Visible
-                this.PageContainer.Margin <- new Thickness(0.0, 50.0, 0.0, 30.0)
+
+                // Add some top margin to the page for the menu button:
+                this.PageContainer.Margin <- new Thickness(0, 50, 0, 0)
+
+                // Ensure the page is shown full-screen, not the right of the menu:
+                Grid.SetColumn(this.PageScrollViewer, 0)
+                Grid.SetColumnSpan(this.PageScrollViewer, 2)
+
+                // Show the menu:
+                this.MenuContainer.Visibility <- Visibility.Visible
 
                 let mutable margin = this.PageContainer.Margin
                 margin.Left <- 0.0
@@ -124,15 +137,17 @@ type MainPage() as this =
                 match newState with
                 | SmallResolution_ShowMenu ->
                     // Show the menu:
+                    this.MenuContainer.Visibility <- Visibility.Visible
+
+                    // Translate the page to the right, for a nicer effect:
                     (this.PageContainer.RenderTransform :?> TranslateTransform).X <- 240.0
-                    (this.ButtonToHideOrShowMenu.RenderTransform :?> TranslateTransform).X <- 240.0
-                    (this.MenuBorder.RenderTransform :?> TranslateTransform).X <- 0.0
 
                 | _ ->
                     // Hide the menu:
+                    this.MenuContainer.Visibility <- Visibility.Collapsed
+
+                    // Translate the page back to its original position:
                     (this.PageContainer.RenderTransform :?> TranslateTransform).X <- 0.0
-                    (this.ButtonToHideOrShowMenu.RenderTransform :?> TranslateTransform).X <- 0.0
-                    (this.MenuBorder.RenderTransform :?> TranslateTransform).X <- -240.0
 
             currentState <- newState
 

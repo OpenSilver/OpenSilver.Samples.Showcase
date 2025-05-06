@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <DefineSilverlight>true</DefineSilverlight>
+	<LangVersion>12</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Animation.cs" />
+    <Compile Include="AnimationTypeConverter.cs" />
+    <Compile Include="AnimationTypes\Fade.cs" />
+    <Compile Include="AnimationTypes\FadeAndScale.cs" />
+    <Compile Include="AnimationTypes\FadeAndSlide.cs" />
+    <Compile Include="Controls\AnimatedContentControl.xaml.cs" />
+    <Compile Include="Controls\PercentagePanel.cs" />
+    <Compile Include="Direction.cs" />
+    <Compile Include="IAnimationType.cs" />
+    <Compile Include="Internal\StoryboardsHelper.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OpenSilver" Version="3.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="Controls\AnimatedContentControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+</Project>

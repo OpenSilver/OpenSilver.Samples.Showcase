@@ -6,7 +6,8 @@ xmlns:local="clr-namespace:OpenSilver.Samples.Showcase"
 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
-Background="#FFF0F0F0"
+xmlns:animations="clr-namespace:OpenSilver.Animations;assembly=OpenSilver.Animations"
+Background="White"
 mc:Ignorable="d"
     Foreground="{DynamicResource Theme_TextBrush}"
     FontFamily="{StaticResource InterFontFamily}">
@@ -112,108 +113,119 @@ mc:Ignorable="d"
             <RowDefinition x:Name="RowThatContainsTheGridSplitter" Height="0"/>
             <RowDefinition x:Name="RowThatContainsTheSourceCodePane" Height="0"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="1" ClipToBounds="True" Background="{DynamicResource Theme_BackgroundBrush}">
-            <Image Source="/Other/Images/BackgroundImageDark.jpg" x:Name="BackgroundImageDark" Opacity="0" Stretch="Fill" />
-            <Image Source="/Other/Images/BackgroundImageLight.jpg" x:Name="BackgroundImageLight" Stretch="Fill" />
-            <Border x:Name="MenuBorder" Canvas.ZIndex="1" Background="{DynamicResource Theme_ControlBackgroundBrush}" Width="240" HorizontalAlignment="Left">
-                <Border.RenderTransform>
-                    <TranslateTransform/>
-                </Border.RenderTransform>
-                <Border.Effect>
-                    <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="14" Opacity="0.15" />
-                </Border.Effect>
-                <DockPanel LastChildFill="True">
-                    <Border DockPanel.Dock="Bottom" Margin="0,10,0,20" Padding="3" CornerRadius="7" HorizontalAlignment="Center" Background="{DynamicResource Theme_BackgroundBrush}">
-                        <StackPanel Orientation="Horizontal">
-                            <RadioButton x:Name="LightThemeRadioButton" IsChecked="True" Checked="ThemeToggle_RadioButton_Checked">
-                                <StackPanel Orientation="Horizontal">
-                                    <local:SvgImage x:Name="lightThemeImage" Width="20" Height="20" Source="/Other/Icons/LightTheme.svg"/>
-                                    <TextBlock Margin="3" VerticalAlignment="Center" FontSize="11" Text="Light" Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"/>
-                                </StackPanel>
-                            </RadioButton>
-                            <RadioButton x:Name="DarkThemeRadioButton" Margin="4,0,0,0" Checked="ThemeToggle_RadioButton_Checked">
-                                <StackPanel Orientation="Horizontal">
-                                    <local:SvgImage x:Name="darkThemeImage" Width="20" Height="20" Source="/Other/Icons/DarkTheme.svg"/>
-                                    <TextBlock Margin="3" VerticalAlignment="Center" FontSize="11" Text="Dark" Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"/>
-                                </StackPanel>
-                            </RadioButton>
-                        </StackPanel>
-                    </Border>
-                    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Padding="0">
-                        <StackPanel >
-                            <Grid Margin="30,32,40,0" HorizontalAlignment="Stretch">
-                                <Image Source="/OpenSilver.Samples.Showcase;component/Other/Images/LogoOpenSilverDark.png" x:Name="LogoOpenSilverDark" Opacity="0" Cursor="Hand" MouseLeftButtonDown="Logo_MouseLeftButtonDown" />
-                                <Image Source="/OpenSilver.Samples.Showcase;component/Other/Images/LogoOpenSilverLight.png" x:Name="LogoOpenSilverLight" Cursor="Hand" MouseLeftButtonDown="Logo_MouseLeftButtonDown" />
-                            </Grid>
-                            <Image Source="/OpenSilver.Samples.Showcase;component/Other/Images/logo-showcase.png" Margin="85,-3,55,0" Cursor="Hand" MouseLeftButtonDown="Logo_MouseLeftButtonDown" />
-                            <local:SearchControl Margin="32,40,30,20"/>
-                            <ListBox x:Name="MenuListBox" SelectionChanged="MenuListBox_SelectionChanged" Background="Transparent" Margin="30,0,0,0" BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Hidden">
-                                <ListBox.ItemContainerStyle>
-                                    <Style TargetType="ListBoxItem">
-                                        <Setter Property="Template">
-                                            <Setter.Value>
-                                                <ControlTemplate TargetType="ListBoxItem">
-                                                    <Grid Background="Transparent" Visibility="{Binding IsVisibleInMenu, Converter={StaticResource BooleanToVisibilityConverter}}">
-                                                        <VisualStateManager.VisualStateGroups>
-                                                            <VisualStateGroup x:Name="CommonStates">
-                                                                <VisualState x:Name="Normal" />
-                                                            </VisualStateGroup>
-                                                            <VisualStateGroup x:Name="SelectionStates">
-                                                                <VisualState x:Name="Unselected"/>
-                                                                <VisualState x:Name="Selected">
-                                                                    <Storyboard>
-                                                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="SelectedBorder" 
+        <Grid Grid.Row="1" ClipToBounds="True" Background="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition x:Name="ColumnThatContainsTheMenu" Width="Auto"/>
+                <ColumnDefinition x:Name="ColumnThatContainsThePage" Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Background -->
+            <Grid x:Name="BackgroundImagesContainer" Grid.ColumnSpan="2" animations:Animation.OnAppear="{animations:Fade Delay=1000, Duration=1000}">
+                <Image Source="/Other/Images/BackgroundImageDark.jpg" x:Name="BackgroundImageDark" Opacity="0" Stretch="Fill" />
+                <Image Source="/Other/Images/BackgroundImageLight.jpg" x:Name="BackgroundImageLight" Stretch="Fill" />
+            </Grid>
+
+            <!-- Menu -->
+            <animations:AnimatedContentControl x:Name="MenuContainer" animations:Animation.OnAppear="{animations:FadeAndSlide Delay=2000, Direction=LeftToRight, Duration=500, Bounciness=0.3}" HorizontalAlignment="Left">
+                <Border x:Name="MenuBorder" Canvas.ZIndex="1" Width="240" Background="{DynamicResource Theme_ControlBackgroundBrush}">
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="14" Opacity="0.15" />
+                    </Border.Effect>
+                    <Border.RenderTransform>
+                        <TranslateTransform/>
+                    </Border.RenderTransform>
+                    <DockPanel LastChildFill="True" animations:Animation.OnAppear="{animations:FadeAndSlide Delay=2250, Direction=LeftToRight, Duration=500, Bounciness=0.3}">
+                        <Border DockPanel.Dock="Bottom" Margin="0,10,0,20" Padding="3" CornerRadius="7" HorizontalAlignment="Center" Background="{DynamicResource Theme_BackgroundBrush}">
+                            <StackPanel Orientation="Horizontal">
+                                <RadioButton x:Name="LightThemeRadioButton" IsChecked="True" Checked="ThemeToggle_RadioButton_Checked">
+                                    <StackPanel Orientation="Horizontal">
+                                        <local:SvgImage x:Name="lightThemeImage" Width="20" Height="20" Source="/Other/Icons/LightTheme.svg"/>
+                                        <TextBlock Margin="3" VerticalAlignment="Center" FontSize="11" Text="Light" Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"/>
+                                    </StackPanel>
+                                </RadioButton>
+                                <RadioButton x:Name="DarkThemeRadioButton" Margin="4,0,0,0" Checked="ThemeToggle_RadioButton_Checked">
+                                    <StackPanel Orientation="Horizontal">
+                                        <local:SvgImage x:Name="darkThemeImage" Width="20" Height="20" Source="/Other/Icons/DarkTheme.svg"/>
+                                        <TextBlock Margin="3" VerticalAlignment="Center" FontSize="11" Text="Dark" Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"/>
+                                    </StackPanel>
+                                </RadioButton>
+                            </StackPanel>
+                        </Border>
+                        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Padding="0">
+                            <StackPanel >
+                                <Grid Margin="30,32,40,0" HorizontalAlignment="Stretch">
+                                    <Image Source="/OpenSilver.Samples.Showcase;component/Other/Images/LogoOpenSilverDark.png" x:Name="LogoOpenSilverDark" Opacity="0" Cursor="Hand" MouseLeftButtonDown="Logo_MouseLeftButtonDown" />
+                                    <Image Source="/OpenSilver.Samples.Showcase;component/Other/Images/LogoOpenSilverLight.png" x:Name="LogoOpenSilverLight" Cursor="Hand" MouseLeftButtonDown="Logo_MouseLeftButtonDown" />
+                                </Grid>
+                                <Image Source="/OpenSilver.Samples.Showcase;component/Other/Images/logo-showcase.png" Margin="85,-3,55,0" Cursor="Hand" MouseLeftButtonDown="Logo_MouseLeftButtonDown" />
+                                <local:SearchControl Margin="32,40,30,20"/>
+                                <ListBox x:Name="MenuListBox" SelectionChanged="MenuListBox_SelectionChanged" Background="Transparent" Margin="30,0,0,0" BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+                                    <ListBox.ItemContainerStyle>
+                                        <Style TargetType="ListBoxItem">
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="ListBoxItem">
+                                                        <Grid Background="Transparent" Visibility="{Binding IsVisibleInMenu, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                                            <VisualStateManager.VisualStateGroups>
+                                                                <VisualStateGroup x:Name="CommonStates">
+                                                                    <VisualState x:Name="Normal" />
+                                                                </VisualStateGroup>
+                                                                <VisualStateGroup x:Name="SelectionStates">
+                                                                    <VisualState x:Name="Unselected"/>
+                                                                    <VisualState x:Name="Selected">
+                                                                        <Storyboard>
+                                                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="SelectedBorder" 
                                                                                                     Storyboard.TargetProperty="(Border.Background)" 
                                                                                                     Duration="0">
-                                                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{DynamicResource Theme_PrimaryBrush}"/>
-                                                                        </ObjectAnimationUsingKeyFrames>
-                                                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContainerBorder" 
+                                                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{DynamicResource Theme_PrimaryBrush}"/>
+                                                                            </ObjectAnimationUsingKeyFrames>
+                                                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContainerBorder" 
                                                                                                     Storyboard.TargetProperty="(TextBlock.Foreground)" 
                                                                                                     Duration="0">
-                                                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{DynamicResource Theme_TextOnPrimaryBrush}"/>
-                                                                        </ObjectAnimationUsingKeyFrames>
-                                                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContainerBorder"
+                                                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{DynamicResource Theme_TextOnPrimaryBrush}"/>
+                                                                            </ObjectAnimationUsingKeyFrames>
+                                                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContainerBorder"
                                                                                                     Storyboard.TargetProperty="(TextBlock.FontWeight)"
                                                                                                     Duration="0">
-                                                                            <DiscreteObjectKeyFrame KeyTime="0" Value="SemiBold" />
-                                                                        </ObjectAnimationUsingKeyFrames>
-                                                                    </Storyboard>
-                                                                </VisualState>
-                                                            </VisualStateGroup>
-                                                        </VisualStateManager.VisualStateGroups>
-                                                        <Border x:Name="SelectedBorder" Background="Transparent" CornerRadius="20" HorizontalAlignment="Left">
-                                                            <Border x:Name="ContainerBorder" Background="Transparent" Grid.Column="1" Margin="10,5,10,5" TextBlock.FontSize="16" TextBlock.Foreground="{DynamicResource Theme_TextBrush}">
-                                                                <ContentPresenter x:Name="Presenter" TextBlock.Foreground="{Binding (TextBlock.Foreground), ElementName=ContainerBorder}"/>
+                                                                                <DiscreteObjectKeyFrame KeyTime="0" Value="SemiBold" />
+                                                                            </ObjectAnimationUsingKeyFrames>
+                                                                        </Storyboard>
+                                                                    </VisualState>
+                                                                </VisualStateGroup>
+                                                            </VisualStateManager.VisualStateGroups>
+                                                            <Border x:Name="SelectedBorder" Background="Transparent" CornerRadius="20" HorizontalAlignment="Left">
+                                                                <Border x:Name="ContainerBorder" Background="Transparent" Grid.Column="1" Margin="10,5,10,5" TextBlock.FontSize="16" TextBlock.Foreground="{DynamicResource Theme_TextBrush}">
+                                                                    <ContentPresenter x:Name="Presenter" TextBlock.Foreground="{Binding (TextBlock.Foreground), ElementName=ContainerBorder}"/>
+                                                                </Border>
                                                             </Border>
-                                                        </Border>
-                                                    </Grid>
-                                                </ControlTemplate>
-                                            </Setter.Value>
-                                        </Setter>
-                                    </Style>
-                                </ListBox.ItemContainerStyle>
-                                <ListBox.ItemTemplate>
-                                    <DataTemplate>
-                                        <Grid Cursor="Hand">
-                                            <TextBlock Text="{Binding Name}"/>
-                                        </Grid>
-                                    </DataTemplate>
-                                </ListBox.ItemTemplate>
-                            </ListBox>
-                        </StackPanel>
-                    </ScrollViewer>
-                </DockPanel>
-            </Border>
-            <Border Grid.Row="1" x:Name="ButtonToHideOrShowMenu" Canvas.ZIndex="2" Padding="2" Visibility="Collapsed" Width="60" Height="50" Margin="5" VerticalAlignment="Top" HorizontalAlignment="Left">
-                <Border.RenderTransform>
-                    <TranslateTransform/>
-                </Border.RenderTransform>
-                <Button Click="ButtonToHideOrShowMenu_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="{DynamicResource Theme_BackgroundBrush}" Padding="0">
+                                                        </Grid>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </ListBox.ItemContainerStyle>
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid Cursor="Hand">
+                                                <TextBlock Text="{Binding Name}"/>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+                            </StackPanel>
+                        </ScrollViewer>
+                    </DockPanel>
+                </Border>
+            </animations:AnimatedContentControl>
+            <Border x:Name="ButtonToHideOrShowMenu" Grid.Column="1" Canvas.ZIndex="2" Padding="2" Visibility="Collapsed" Width="60" Height="50" Margin="5" VerticalAlignment="Top" HorizontalAlignment="Left">
+                <Button Click="ButtonToHideOrShowMenu_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" Padding="0">
                     <Path Fill="{DynamicResource Theme_TextBrush}" Opacity="0.5" Width="46" Height="46" Data="M10 0A1 1 90 0010 15L90 15A1 1 90 0089 0L10 0M10 22.5A1 1 90 0010 37.5L90 37.5A1 1 90 0089 22.5L10 22.5M10 45A1 1 90 0010 60L90 60A1 1 90 0089 45L10 45" Stretch="Uniform" HorizontalAlignment="Center"/>
                 </Button>
             </Border>
-            <ScrollViewer Grid.Row="1" x:Name="ScrollViewer1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-                <sdk:Frame x:Name="PageContainer" JournalOwnership="Automatic" Margin="15,0,0,0" HorizontalContentAlignment="Stretch">
+
+            <!-- Page -->
+            <ScrollViewer x:Name="PageScrollViewer" Grid.Column="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                <sdk:Frame x:Name="PageContainer" JournalOwnership="Automatic" HorizontalContentAlignment="Stretch">
                     <sdk:Frame.UriMapper>
                         <sdk:UriMapper>
                             <sdk:UriMapping Uri="/Welcome" MappedUri="/Samples/Welcome.xaml"/>

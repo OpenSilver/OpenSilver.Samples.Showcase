@@ -58,6 +58,15 @@ Namespace OpenSilver.Samples.Showcase
                     onMouseMove: null,
                     resizeObserver: null,
 
+                    // Debounce helper
+                    debounce(fn, wait) {{
+                        let timeout;
+                        return function(...args) {{
+                            clearTimeout(timeout);
+                            timeout = setTimeout(() => fn.apply(this, args), wait);
+                        }};
+                    }},
+
                     // Start the particle effect in the specified div
                     startEffect(div) {{
                         if (!(div instanceof HTMLElement)) {{
@@ -75,10 +84,20 @@ Namespace OpenSilver.Samples.Showcase
                         this.camera = new THREE.PerspectiveCamera(75, div.clientWidth / div.clientHeight, 0.1, 1000);
                         this.camera.position.z = 50;
 
+                        // Create the renderer
                         this.renderer = new THREE.WebGLRenderer({{ antialias: true, alpha: true }});
-                        this.renderer.setSize(div.clientWidth, div.clientHeight);
-                        this.renderer.setClearColor(0x000000, 0); // Transparent background
-                        div.appendChild(this.renderer.domElement);
+                        this.renderer.setClearColor(0x000000, 0);
+                        const canvas = this.renderer.domElement;
+
+                        // Add a smooth CSS transition on the canvas
+                        canvas.style.transition = ""width 150ms ease-in-out, height 150ms ease-in-out"";
+
+                        // Set its initial size via both pixel buffer and style
+                        this.renderer.setSize(div.clientWidth, div.clientHeight, false);
+                        canvas.style.width  = div.clientWidth  + ""px"";
+                        canvas.style.height = div.clientHeight + ""px"";
+
+                        div.appendChild(canvas);
 
                         // Create circular sprite texture
                         const createSpriteTexture = () => {{
@@ -160,17 +179,36 @@ Namespace OpenSilver.Samples.Showcase
                         }};
                         document.addEventListener('mousemove', this.onMouseMove);
 
+                        // Create a debounced resize handler
+                        const debouncedResize = this.debounce((width, height) => {{
+                            //this.camera.aspect = width / height;
+                            //this.camera.updateProjectionMatrix();
+                            //this.renderer.setSize(width, height);
+
+                            // update the camera
+                            this.camera.aspect = width / height;
+                            this.camera.updateProjectionMatrix();
+
+                            // resize the internal buffer, but do not clobber style
+                            this.renderer.setSize(width, height, false);
+
+                            // now gently transition the *display* size
+                            canvas.style.width  = width  + ""px"";
+                            canvas.style.height = height + ""px"";
+                        }}, 150);
+
+
                         // Resize handler
                         this.resizeObserver = new ResizeObserver(entries => {{
-                            for (let entry of entries) {{
-                                if (entry.target === div) {{
-                                    this.camera.aspect = entry.contentRect.width / entry.contentRect.height;
-                                    this.camera.updateProjectionMatrix();
-                                    this.renderer.setSize(entry.contentRect.width, entry.contentRect.height);
-                                }}
+                        for (let entry of entries) {{
+                            if (entry.target === div) {{
+                                const {{ width, height }} = entry.contentRect;
+                                debouncedResize(width, height);
                             }}
-                        }});
-                        this.resizeObserver.observe(div);
+                        }}
+                    }});
+                    this.resizeObserver.observe(div);
+
 
                         // Animation loop
                         const animate = () => {{
