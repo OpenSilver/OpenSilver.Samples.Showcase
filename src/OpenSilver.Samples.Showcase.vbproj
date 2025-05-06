@@ -877,4 +877,7 @@
     <None Include="Samples\XAML_Panels\MeasureArrange\RadialPanel.cs" />
     <None Include="Samples\XAML_Panels\MeasureArrange\RadialPanel.fs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Libraries\OpenSilver.Animations\OpenSilver.Animations.csproj" />
+  </ItemGroup>
 </Project>
