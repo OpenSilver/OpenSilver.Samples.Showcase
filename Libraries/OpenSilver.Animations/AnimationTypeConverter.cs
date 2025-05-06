@@ -37,7 +37,9 @@ namespace OpenSilver.Animations
 
                 return text switch
                 {
+                    "Fade" => new Fade(),
                     "FadeAndScale" => new FadeAndScale(),
+                    "FadeAndSlide" => new FadeAndSlide(),
                     _ => throw new FormatException($"'{value}' is not a valid token.")
                 };
             }
@@ -68,9 +70,11 @@ namespace OpenSilver.Animations
         {
             if (_standardValues is null)
             {
-                _standardValues = new StandardValuesCollection(new[]
+                _standardValues = new StandardValuesCollection(new IAnimationType[]
                 {
-                    new FadeAndScale()
+                    new Fade(),
+                    new FadeAndScale(),
+                    new FadeAndSlide()
                 });
             }
 

@@ -226,6 +226,10 @@ namespace OpenSilver.Animations.Internal
                 animatedContentControl.WidthAsPercentageOfChild = 0.0;
                 animatedContentControl.HeightAsPercentageOfChild = 0.0;
 
+                // Determine whether to apply "bounciness" on the layout animation (note: when using the Slide animation, the "bounciness" should only be applied in the direction of the Slide):
+                bool applyBouncinessOnWidthAnimation = (bounciness > 0.0 && !(includeSlide && (direction == Direction.UpToDown || direction == Direction.DownToUp)));
+                bool applyBouncinessOnHeight = (bounciness > 0.0 && !(includeSlide && (direction == Direction.LeftToRight || direction == Direction.RightToLeft)));
+
                 // Animate Width:
                 var widthAnim = new DoubleAnimation
                 {
@@ -235,7 +239,7 @@ namespace OpenSilver.Animations.Internal
                     BeginTime = TimeSpan.FromMilliseconds(delay),
                     FillBehavior = FillBehavior.HoldEnd,
                     EasingFunction =
-                        bounciness > 0.0 ?
+                        applyBouncinessOnWidthAnimation ?
                         new BackEase { Amplitude = bounciness, EasingMode = EasingMode.EaseOut } :
                         new CubicEase { EasingMode = EasingMode.EaseOut }
                 };
@@ -252,7 +256,7 @@ namespace OpenSilver.Animations.Internal
                     BeginTime = TimeSpan.FromMilliseconds(delay),
                     FillBehavior = FillBehavior.HoldEnd,
                     EasingFunction =
-                        bounciness > 0.0 ?
+                        applyBouncinessOnHeight ?
                         new BackEase { Amplitude = bounciness, EasingMode = EasingMode.EaseOut } :
                         new CubicEase { EasingMode = EasingMode.EaseOut }
                 };

@@ -32,12 +32,20 @@ namespace OpenSilver.Animations
         /// <summary>
         /// Duration in milliseconds
         /// </summary>
-        public int Duration { get; set; } = 150;
+        public int Duration { get; set; } = 250;
 
         /// <summary>
         /// Direction of the slide animation
         /// </summary>
         public Direction Direction { get; set; } = Direction.DownToUp;
+
+        /// <summary>
+        /// Determines the intensity of the elastic effect.
+        /// Higher values result in greater overshoot and oscillation,
+        /// simulating a more dynamic and spring-like motion.
+        /// Default is 0.0 (no bouncing).
+        /// </summary>
+        public double Bounciness { get; set; } = 0.0;
 
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
@@ -51,6 +59,7 @@ namespace OpenSilver.Animations
                 duration: Duration,
                 delay: Delay,
                 direction: Direction,
+                bounciness: Bounciness,
                 includeFade: true,
                 includeSlide: true);
         }

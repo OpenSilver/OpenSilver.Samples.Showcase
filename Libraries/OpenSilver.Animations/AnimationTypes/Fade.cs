@@ -32,7 +32,7 @@ namespace OpenSilver.Animations
         /// <summary>
         /// Duration in milliseconds
         /// </summary>
-        public int Duration { get; set; } = 150;
+        public int Duration { get; set; } = 250;
 
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
