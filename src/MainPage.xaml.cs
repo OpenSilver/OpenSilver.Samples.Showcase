@@ -141,8 +141,9 @@ namespace OpenSilver.Samples.Showcase
                     // Ensure the page stays in the second column, to the right of the menu:
                     Grid.SetColumn(PageScrollViewer, 1);
                     Grid.SetColumnSpan(PageScrollViewer, 1);
-                    Grid.SetColumn(PageScrollViewer, 1);
-                    Grid.SetColumnSpan(PageScrollViewer, 1);
+
+                    // Show the menu:
+                    MenuContainer.Visibility = Visibility.Visible;
 
                     // Set the translation of the frame to 0:
                     ((TranslateTransform)PageContainer.RenderTransform).X = 0;
