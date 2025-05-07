@@ -268,6 +268,8 @@ namespace OpenSilver.Samples.Showcase
                     BackgroundImageDark.Opacity = 0;
                 }
 
+                UpdateBackgroundGradient();
+
                 if (SourceCodePane.Visibility == Visibility.Visible &&
                     PlaceWhereSourceCodeWillBeDisplayed.Child is TabControl tabControl &&
                     tabControl.SelectedItem is TabItem tabItem &&
@@ -283,6 +285,29 @@ namespace OpenSilver.Samples.Showcase
         private void UpdateThemeToggleFillColor()
         {
             lightThemeImage.FillColor = darkThemeImage.FillColor = (DarkThemeRadioButton.Foreground as SolidColorBrush)?.Color;
+        }
+
+        private void UpdateBackgroundGradient()
+        {
+            if (Application.Current.Theme is ModernTheme theme)
+            {
+                // Construct a gradient from the background color to transparent:
+                Color backgroundColor = (Color)theme.Resources["Theme_BackgroundColor"];
+                Color transparentBackgroundColor = backgroundColor;
+                transparentBackgroundColor.A = 0;
+
+                var brush = new LinearGradientBrush
+                {
+                    StartPoint = new System.Windows.Point(0, 0),
+                    EndPoint = new System.Windows.Point(0, 1)
+                };
+
+                // Add gradient stops
+                brush.GradientStops.Add(new GradientStop() { Color = backgroundColor, Offset = 0 });
+                brush.GradientStops.Add(new GradientStop() { Color = transparentBackgroundColor, Offset = 1 });
+
+                Application.Current.Resources["GradientFromBackgroundColorToTransparent"] = brush;
+            }
         }
 
         #endregion

@@ -27,6 +27,13 @@
             <Style TargetType="NumericUpDown">
                 <Setter Property="MinHeight" Value="32"/>
             </Style>
+
+            <LinearGradientBrush x:Key="GradientFromBackgroundColorToTransparent" StartPoint="0,0" EndPoint="0,1">
+                <!-- Note: this resource is replaced in the method for switching between Light and Dark modes -->
+                <GradientStop Color="#FFFFFFFF" Offset="0"/>
+                <GradientStop Color="#00FFFFFF" Offset="1"/>
+            </LinearGradientBrush>
+
         </ResourceDictionary>
     </Application.Resources>
     <Application.Theme>
