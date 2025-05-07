@@ -70,19 +70,19 @@
                              FontSize="12"
                              ItemsSource="{x:Static local:Planet.Planets}"/>
                 </ListBoxDragDropTarget>
-                <TreeViewDragDropTarget Grid.Row="1"
-                                        Grid.Column="1"
-                                        HorizontalContentAlignment="Stretch"
-                                        VerticalContentAlignment="Stretch"
-                                        AllowDrop="True">
-                    <TreeView Background="{DynamicResource Theme_ControlBackgroundBrush}">
-                        <TreeView.ItemTemplate>
-                            <HierarchicalDataTemplate>
-                                <TextBlock FontSize="12" Text="{Binding Name}"/>
-                            </HierarchicalDataTemplate>
-                        </TreeView.ItemTemplate>
-                    </TreeView>
-                </TreeViewDragDropTarget>
+                <Border Grid.Row="1" Grid.Column="1" CornerRadius="4" Margin="4,0,0,0" BorderThickness="1" BorderBrush="{DynamicResource Theme_BorderBrush}">
+                    <TreeViewDragDropTarget HorizontalContentAlignment="Stretch"
+                                            VerticalContentAlignment="Stretch"
+                                            AllowDrop="True">
+                        <TreeView Background="{DynamicResource Theme_ControlBackgroundBrush}">
+                            <TreeView.ItemTemplate>
+                                <HierarchicalDataTemplate>
+                                    <TextBlock FontSize="12" Text="{Binding Name}"/>
+                                </HierarchicalDataTemplate>
+                            </TreeView.ItemTemplate>
+                        </TreeView>
+                    </TreeViewDragDropTarget>
+                </Border>
             </Grid>
 
             <local:ViewSourceButton Grid.Row="3" Background="#FFC7C228">

@@ -7,9 +7,9 @@
     <Grid>
         <local:JsParticlesEffect animations:Animation.OnAppear="{animations:FadeAndScale Delay=500, Duration=1000}"/>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <ContentControl Content="Welcome!" animations:Animation.OnAppear="{animations:FadeAndScale Delay=500, Duration=1000, Bounciness=1}" HorizontalAlignment="Center" Style="{StaticResource PageHeader_Style}"/>
+            <ContentControl Content="Welcome!" animations:Animation.OnAppear="{animations:FadeAndScale Delay=500, Duration=1000, Bounciness=1}" HorizontalAlignment="Center" Background="{DynamicResource Theme_ControlBackgroundBrush}" Style="{StaticResource WelcomeTitle_Style}"/>
             <animations:AnimatedContentControl animations:Animation.OnAppear="{animations:FadeAndScale Delay=2700, Duration=500, Bounciness=0.3}">
-                <Border Background="{DynamicResource Theme_ContainerBackgroundBrush}" CornerRadius="30" MaxWidth="530" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,0,40,20">
+                <Border Background="{DynamicResource Theme_ControlBackgroundBrush}" CornerRadius="30" MaxWidth="530" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,0,40,20">
                     <Border.Effect>
                         <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="20" Opacity="0.2" />
                     </Border.Effect>
