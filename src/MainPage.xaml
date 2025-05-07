@@ -153,11 +153,14 @@ mc:Ignorable="d"
                         </Border>
                         <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Padding="0">
                             <StackPanel >
-                                <Grid Margin="30,32,40,0" HorizontalAlignment="Stretch">
+                                <Grid Margin="50,32,55,0" HorizontalAlignment="Stretch">
                                     <Image Source="/OpenSilver.Samples.Showcase;component/Other/Images/LogoOpenSilverDark.png" x:Name="LogoOpenSilverDark" Opacity="0" Cursor="Hand" MouseLeftButtonDown="Logo_MouseLeftButtonDown" />
                                     <Image Source="/OpenSilver.Samples.Showcase;component/Other/Images/LogoOpenSilverLight.png" x:Name="LogoOpenSilverLight" Cursor="Hand" MouseLeftButtonDown="Logo_MouseLeftButtonDown" />
                                 </Grid>
-                                <Image Source="/OpenSilver.Samples.Showcase;component/Other/Images/logo-showcase.png" Margin="85,-3,55,0" Cursor="Hand" MouseLeftButtonDown="Logo_MouseLeftButtonDown" />
+                                <Border HorizontalAlignment="Center" VerticalAlignment="Bottom" Padding="6,1,6,2" Margin="0,2,0,4" CornerRadius="10" Cursor="Hand" MouseLeftButtonDown="Logo_MouseLeftButtonDown" Background="Transparent">
+                                    <TextBlock Text="WPF FOR THE MODERN WEB" Foreground="{DynamicResource Theme_TextBrush}" Opacity="0.7" FontWeight="Bold" FontSize="10"/>
+                                </Border>
+                                <Image Source="/OpenSilver.Samples.Showcase;component/Other/Images/logo-showcase.png" Margin="75,20,75,0" Cursor="Hand" MouseLeftButtonDown="Logo_MouseLeftButtonDown"/>
                                 <local:SearchControl Margin="32,40,30,20"/>
                                 <ListBox x:Name="MenuListBox" SelectionChanged="MenuListBox_SelectionChanged" Background="Transparent" Margin="30,0,0,0" BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Hidden">
                                     <ListBox.ItemContainerStyle>
