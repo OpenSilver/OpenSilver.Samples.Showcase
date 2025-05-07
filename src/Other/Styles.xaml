@@ -159,7 +159,6 @@
         <Setter Property="VerticalAlignment" Value="Top"/>
         <Setter Property="Background" Value="#FFE2E2E2"/>
         <Setter Property="Foreground" Value="White"/>
-        <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="Margin" Value="10,15,4,2"/>
         <Setter Property="Padding" Value="12,4,12,4"/>
         <Setter Property="Cursor" Value="Hand"/>
@@ -169,60 +168,61 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <Border x:Name="OuterBorder"
-                            CornerRadius="10"
-                            Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}">
+                    <Grid RenderTransformOrigin="0.5,0.5">
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup Name="CommonStates">
                                 <VisualState Name="Normal">
                                 </VisualState>
                                 <VisualState Name="MouseOver">
                                     <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="InnerBorder">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="#11000000"/>
-                                        </ObjectAnimationUsingKeyFrames>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="MainTextBlock">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="White"/>
-                                        </ObjectAnimationUsingKeyFrames>
+                                        <DoubleAnimation To="1" Duration="00:00:00.15" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="OnHoverBackground"/>
+                                        <DoubleAnimation To="0" Duration="00:00:00.15" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="NormalBackground"/>
+                                        <ColorAnimation To="White" Duration="00:00:00.15" Storyboard.TargetProperty="Foreground.(SolidColorBrush.Color)" Storyboard.TargetName="MainTextBlock"/>
+                                        <DoubleAnimation Storyboard.TargetName="scaleTransform"
+                                                             Storyboard.TargetProperty="ScaleX"
+                                                             To="1.05"
+                                                             Duration="00:00:00.15"/>
+                                        <DoubleAnimation Storyboard.TargetName="scaleTransform"
+                                                             Storyboard.TargetProperty="ScaleY"
+                                                             To="1.05"
+                                                             Duration="00:00:00.15"/>
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState Name="Pressed">
                                     <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="InnerBorder">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="#22000000"/>
-                                        </ObjectAnimationUsingKeyFrames>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="MainTextBlock">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="White"/>
-                                        </ObjectAnimationUsingKeyFrames>
+                                        <DoubleAnimation To="1" Duration="00:00:00.1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="OnHoverBackground"/>
+                                        <DoubleAnimation To="0" Duration="00:00:00.1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="NormalBackground"/>
+                                        <ColorAnimation To="White" Duration="00:00:00.1" Storyboard.TargetProperty="Foreground.(SolidColorBrush.Color)" Storyboard.TargetName="MainTextBlock"/>
+                                        <DoubleAnimation Storyboard.TargetName="scaleTransform"
+                                                             Storyboard.TargetProperty="ScaleX"
+                                                             To="0.95"
+                                                             Duration="00:00:00.1"/>
+                                        <DoubleAnimation Storyboard.TargetName="scaleTransform"
+                                                             Storyboard.TargetProperty="ScaleY"
+                                                             To="0.95"
+                                                             Duration="00:00:00.1"/>
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState Name="Disabled">
                                     <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="InnerBorder">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="#33FFFFFF"/>
-                                        </ObjectAnimationUsingKeyFrames>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="MainTextBlock">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="White"/>
-                                        </ObjectAnimationUsingKeyFrames>
+                                        <ColorAnimation To="Gray" Duration="0" Storyboard.TargetProperty="Foreground.(SolidColorBrush.Color)" Storyboard.TargetName="NormalBackground"/>
+                                        <ColorAnimation To="White" Duration="0" Storyboard.TargetProperty="Foreground.(SolidColorBrush.Color)" Storyboard.TargetName="MainTextBlock"/>
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
-                        <Border x:Name="InnerBorder"
+                        <Grid.RenderTransform>
+                            <ScaleTransform x:Name="scaleTransform"/>
+                        </Grid.RenderTransform>
+                        <Border x:Name="OnHoverBackground"
                                 CornerRadius="10"
-                                Margin="-1"
-                                Background="{DynamicResource Theme_ControlBackgroundBrush}">
-                            <TextBlock x:Name="MainTextBlock" Text="{TemplateBinding Content}" Foreground="{TemplateBinding Background}" Margin="{TemplateBinding Padding}" TextDecorations="Underline" FontWeight="Bold"/>
-                            <!--<ContentPresenter x:Name="ContentPresenter"
-                                                ContentTemplate="{TemplateBinding ContentTemplate}"
-                                                Content="{TemplateBinding Content}"
-                                                Margin="{TemplateBinding Padding}"
-                                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>-->
-                        </Border>
-                    </Border>
+                                Opacity="0"
+                                Background="{TemplateBinding Background}"/>
+                        <Border x:Name="NormalBackground"
+                                CornerRadius="10"
+                                Background="Transparent"/>
+                        <TextBlock x:Name="MainTextBlock" Text="{TemplateBinding Content}" Foreground="{TemplateBinding Background}" Margin="{TemplateBinding Padding}" TextDecorations="Underline" FontWeight="Bold"/>
+                    </Grid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -396,5 +396,41 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+    </Style>
+    <Style x:Key="WelcomeTitle_Style" TargetType="ContentControl">
+        <Style.Setters>
+            <Setter Property="FontSize" Value="60"/>
+            <Setter Property="FontWeight" Value="Black"/>
+            <Setter Property="FontFamily" Value="{StaticResource InterFontFamily}"/>
+            <Setter Property="Margin" Value="21,20,10,20"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Background" Value="{DynamicResource Theme_BackgroundBrush}"/>
+            <Setter Property="Foreground">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Offset="0" Color="#FF3288F1"/>
+                        <GradientStop Offset="0.2" Color="#FF9442FD"/>
+                        <GradientStop Offset="0.4" Color="#FFC534CD"/>
+                        <GradientStop Offset="0.6" Color="#FFEE3881"/>
+                        <GradientStop Offset="0.8" Color="#FFFB7434"/>
+                        <GradientStop Offset="1" Color="#FFFFB200"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ContentControl">
+                        <Viewbox Stretch="Uniform" StretchDirection="DownOnly" HorizontalAlignment="Stretch">
+                            <Border Background="{TemplateBinding Background}" CornerRadius="50">
+                                <Border.Effect>
+                                    <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="30" Opacity="0.2" />
+                                </Border.Effect>
+                                <ContentPresenter Margin="40,12,40,12"/>
+                            </Border>
+                        </Viewbox>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
     </Style>
 </ResourceDictionary>

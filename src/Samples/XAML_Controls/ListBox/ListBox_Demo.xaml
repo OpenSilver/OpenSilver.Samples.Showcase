@@ -13,7 +13,7 @@
             </Grid.RowDefinitions>
             <ContentControl Content="ListBox" Foreground="#FF6F7DFF" Background="#FF9A9FCE" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <ListBox x:Name="ListBox1" DisplayMemberPath="Name" SelectedValuePath="ImagePath" VerticalAlignment="Top" SelectionMode="Single" BorderThickness="1" BorderBrush="LightGray"/>
+                <ListBox x:Name="ListBox1" DisplayMemberPath="Name" SelectedValuePath="ImagePath" VerticalAlignment="Top" SelectionMode="Single" BorderThickness="1" BorderBrush="{DynamicResource Theme_BorderBrush}"/>
                 <Image Source="{Binding ElementName=ListBox1, Path=SelectedValue}" Width="60" Height="60" Margin="5,0,0,0" VerticalAlignment="Top"/>
             </StackPanel>
             <local:ViewSourceButton Grid.Row="2"
