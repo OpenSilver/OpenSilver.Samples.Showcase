@@ -2,19 +2,21 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:controlskit="clr-namespace:OpenSilver.ControlsKit;assembly=OpenSilver.ControlsKit.Controls"
-             xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+             xmlns:local="clr-namespace:OpenSilver.Samples.Showcase"
+             Style="{StaticResource Page_Style}">
 
     <StackPanel>
-        <Grid>
-            <ContentControl Style="{StaticResource PageHeader_Style}" Content="Controls"/>
-            <!--<WrapPanel HorizontalAlignment="Right" Orientation="Horizontal">
-                <TextBlock Foreground="Transparent"
-                           Style="{StaticResource PageHeader_Style}"
-                           Text="XAML Controls"/>
-                <local:SearchControl HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
-                <Border Width="30"/>
-            </WrapPanel>-->
-        </Grid>
+        <StackPanel>
+            <ContentControl Content="Controls" Style="{StaticResource PageTitle_Style}"/>
+            <TextBlock Style="{StaticResource PageIntroText_Style}">
+                    OpenSilver contains over 100 built-in XAML controls, some of which are shown below.
+                    In addition to those, you can also migrate WPF, Silverlight, and WinUI controls,
+                    and soon (in OpenSilver v3.3), you'll be able to also import Blazor components.
+                    Need more controls? Easily integrate any JavaScript control from the massive
+                    JS ecosystem via simple interop (see
+                    <Hyperlink NavigateUri="/JS_Libs" Foreground="{DynamicResource Theme_TextBrush}">examples</Hyperlink>).
+            </TextBlock>
+        </StackPanel>
 
         <controlskit:StaggeredPanel Name="SamplesPanel" ProgressiveRenderingChunkSize="2">
             <local:TreeView_Demo HorizontalAlignment="Center"/>

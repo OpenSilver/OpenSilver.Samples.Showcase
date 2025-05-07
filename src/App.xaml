@@ -27,6 +27,7 @@
             <Style TargetType="NumericUpDown">
                 <Setter Property="MinHeight" Value="32"/>
             </Style>
+
         </ResourceDictionary>
     </Application.Resources>
     <Application.Theme>
