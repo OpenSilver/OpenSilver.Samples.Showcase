@@ -4,7 +4,7 @@ using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase;
 
-[SearchKeywords("interaction", "interactivity", "triggers", "behavior", "events", "UI")]
+[SearchKeywords("interaction", "interactivity", "triggers", "behavior", "events", "conditionbehavior")]
 public partial class PropertyChangedTrigger_Demo : UserControl
 {
     public PropertyChangedTrigger_Demo()

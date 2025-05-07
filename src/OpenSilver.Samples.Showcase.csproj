@@ -671,6 +671,9 @@
     <Page Include="Samples\XAML_Features\InteractivityTriggers\InteractivityTriggers_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\XAML_Features\Behaviors\Behaviors_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\XAML_Features\Command\Command_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -848,6 +851,7 @@
     <Compile Include="Samples\XAML_Features\ClipToBounds\ClipToBounds_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Features\PropertyChangedTrigger\PropertyChangedTrigger_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Features\InteractivityTriggers\InteractivityTriggers_Demo.xaml.cs" />
+    <Compile Include="Samples\XAML_Features\Behaviors\Behaviors_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Features\Command\Command_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Features\DependencyProperties\DependencyProperties_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Features\DropShadowEffect\DropShadowEffect_Demo.xaml.cs" />

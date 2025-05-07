@@ -38,6 +38,7 @@
             <local:MarkupExtensions_Demo x:Name="MarkupExtensionsDemo" HorizontalAlignment="Center"/>
             <local:UriMapper_Demo HorizontalAlignment="Center"/>
             <local:PropertyChangedTrigger_Demo HorizontalAlignment="Center"/>
+            <local:Behaviors_Demo/>
             <local:Clipping_Demo/>
             <local:Cursor_Demo/>
             <local:FlowDirection_Demo/>

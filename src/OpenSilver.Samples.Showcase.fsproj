@@ -1110,8 +1110,14 @@
 		<Page Include="Samples\XAML_Features\InteractivityTriggers\InteractivityTriggers_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
-		<Compile Include="Samples\XAML_Features\InteractivityTriggers\InteractivityTriggers_Demo.xaml.fs">
+      <Compile Include="Samples\XAML_Features\InteractivityTriggers\InteractivityTriggers_Demo.xaml.fs">
 			<DependentUpon>Samples\XAML_Features\InteractivityTriggers\InteractivityTriggers_Demo.xaml</DependentUpon>
+		</Compile>
+		<Page Include="Samples\XAML_Features\Behaviors\Behaviors_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Compile Include="Samples\XAML_Features\Behaviors\Behaviors_Demo.xaml.fs">
+			<DependentUpon>Samples\XAML_Features\Behaviors\Behaviors_Demo.xaml</DependentUpon>
 		</Compile>
 		<Page Include="Samples\XAML_Features\MarkupExtensions\MarkupExtensions_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
