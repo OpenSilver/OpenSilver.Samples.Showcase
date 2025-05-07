@@ -56,6 +56,9 @@
                     <local:ViewSourceButtonInfo FileName="MultiBinding_Demo.xaml.cs" RelativePath="src/Samples/XAML_Features/MultiBinding"/>
                     <local:ViewSourceButtonInfo FileName="MultiBinding_Demo.xaml.vb" RelativePath="src/Samples/XAML_Features/MultiBinding"/>
                     <local:ViewSourceButtonInfo FileName="MultiBinding_Demo.xaml.fs" RelativePath="src/Samples/XAML_Features/MultiBinding"/>
+                    <local:ViewSourceButtonInfo FileName="RgbToBrushConverter.cs" RelativePath="src/Other/Converters"/>
+                    <local:ViewSourceButtonInfo FileName="RgbToBrushConverter.vb" RelativePath="src/Other/Converters"/>
+                    <local:ViewSourceButtonInfo FileName="RgbToBrushConverter.fs" RelativePath="src/Other/Converters"/>
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>
