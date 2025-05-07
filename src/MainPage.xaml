@@ -224,7 +224,7 @@ mc:Ignorable="d"
             </Border>
 
             <!-- Page -->
-            <ScrollViewer x:Name="PageScrollViewer" Grid.Column="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+            <ScrollViewer x:Name="PageScrollViewer" Grid.Column="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Padding="0">
                 <sdk:Frame x:Name="PageContainer" JournalOwnership="Automatic" HorizontalContentAlignment="Stretch">
                     <sdk:Frame.UriMapper>
                         <sdk:UriMapper>
