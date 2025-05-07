@@ -97,7 +97,8 @@
                     <local:ViewSourceButtonInfo FileName="BusyIndicator_Demo.xaml.cs" RelativePath="src/Samples/XAML_Controls/BusyIndicator"/>
                     <local:ViewSourceButtonInfo FileName="BusyIndicator_Demo.xaml.vb" RelativePath="src/Samples/XAML_Controls/BusyIndicator"/>
                     <local:ViewSourceButtonInfo FileName="BusyIndicator_Demo.xaml.fs" RelativePath="src/Samples/XAML_Controls/BusyIndicator"/>
-                    <local:ViewStyleSourceInfo TabHeader="BusyIndicator Style" RelativePath="src/Runtime/Controls.Toolkit/Themes" Fragment="#L14-L177"/>
+                    <local:ViewStyleSourceInfo TabHeader="Default BusyIndicator Style" RelativePath="src/Runtime/Controls.Toolkit/Themes" Fragment="#L14-L177"/>
+                    <local:ViewModernStyleSourceInfo FileName="OpenSilver.Controls.Toolkit.xaml" TabHeader="Modern BusyIndicator Style" Fragment="#L93-L257"/>
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

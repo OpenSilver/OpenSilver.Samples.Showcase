@@ -61,7 +61,8 @@
                     <local:ViewSourceButtonInfo FileName="TabControl_Demo.xaml.cs" RelativePath="src/Samples/XAML_Controls/TabControl"/>
                     <local:ViewSourceButtonInfo FileName="TabControl_Demo.xaml.vb" RelativePath="src/Samples/XAML_Controls/TabControl"/>
                     <local:ViewSourceButtonInfo FileName="TabControl_Demo.xaml.fs" RelativePath="src/Samples/XAML_Controls/TabControl"/>
-                    <local:ViewStyleSourceInfo TabHeader="TabControl Styles" RelativePath="src/Runtime/Controls/Themes" Fragment="#L606-L1491"/>
+                    <local:ViewStyleSourceInfo TabHeader="Default TabControl Styles" RelativePath="src/Runtime/Controls/Themes" Fragment="#L606-L1491"/>
+                    <local:ViewModernStyleSourceInfo TabHeader="Modern TabControl Styles" FileName="OpenSilver.Controls.xaml" Fragment="#L819-L1101"/>
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

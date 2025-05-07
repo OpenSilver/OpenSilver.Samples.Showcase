@@ -243,6 +243,7 @@
     <Compile Include="Other\Internals\Search\SearchableItem.cs" />
     <Compile Include="Other\Internals\Search\SearchControl.xaml.cs" />
     <Compile Include="Other\Internals\Search\SearchKeywordAttribute.cs" />
+    <Compile Include="Other\Internals\ViewModernStyleSourceInfo.cs" />
     <Compile Include="Other\Internals\ViewSourcePanel.xaml.cs" />
     <Compile Include="Other\Internals\ViewStyleSourceInfo.cs" />
     <Compile Include="Other\Leagues\League.cs" />

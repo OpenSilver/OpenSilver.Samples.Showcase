@@ -246,6 +246,7 @@
     <Compile Include="Other\Internals\Search\SearchableItem.vb" />
     <Compile Include="Other\Internals\Search\SearchControl.xaml.vb" />
     <Compile Include="Other\Internals\Search\SearchKeywordAttribute.vb" />
+    <Compile Include="Other\Internals\ViewModernStyleSourceInfo.vb" />
     <Compile Include="Other\Internals\ViewSourcePanel.xaml.vb" />
     <Compile Include="Other\Internals\ViewStyleSourceInfo.vb" />
     <Compile Include="Other\Leagues\Leagues.vb" />

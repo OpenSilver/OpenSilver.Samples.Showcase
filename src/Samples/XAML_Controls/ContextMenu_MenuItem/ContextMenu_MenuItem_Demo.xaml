@@ -44,7 +44,8 @@
                                                 FileName="ContextMenu_MenuItem_Demo.xaml.vb" />
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ContextMenu_MenuItem"
                                                 FileName="ContextMenu_MenuItem_Demo.xaml.fs" />
-                    <local:ViewStyleSourceInfo TabHeader="MenuItem Style" Fragment="#L4131-L4243" />
+                    <local:ViewStyleSourceInfo TabHeader="Default MenuItem Style" Fragment="#L4131-L4243" />
+                    <local:ViewModernStyleSourceInfo TabHeader="Modern MenuItem Style" Fragment="#L3429-L3515" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

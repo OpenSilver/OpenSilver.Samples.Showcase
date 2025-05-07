@@ -34,6 +34,7 @@
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ChildWindow2"
                                                 FileName="SmallChildWindow.xaml.fs" />
                     <local:ViewStyleSourceInfo TabHeader="ChildWindow Style" Fragment="#L4267-L4696"/>
+                    <local:ViewModernStyleSourceInfo TabHeader="Modern ChildWindow Style" Fragment="#L2973-L3220"/>
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>
