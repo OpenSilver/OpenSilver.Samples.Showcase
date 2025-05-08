@@ -777,6 +777,9 @@
 		<Compile Include="Samples\XAML_Controls\MediaElement\MediaElement_Demo.xaml.fs">
 			<DependentUpon>Samples\XAML_Controls\MediaElement\MediaElement_Demo.xaml</DependentUpon>
 		</Compile>
+    <Page Include="Samples\XAML_Controls\NumericUpDown\Styles\NumericUpDownStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
 		<Page Include="Samples\XAML_Controls\NumericUpDown\NumericUpDown_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>

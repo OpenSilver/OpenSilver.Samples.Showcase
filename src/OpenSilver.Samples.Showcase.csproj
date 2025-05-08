@@ -184,6 +184,9 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\XAML_Controls\NumericUpDown\Styles\NumericUpDownStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\XAML_Controls\ProgressBar\ProgressBar_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
