@@ -25,7 +25,8 @@ type ViewSourcePanel() as this =
         for viewSourceButtonInfo in sources do
             let tabItem = new TabItem(
                 Header = viewSourceButtonInfo.GetHeader(),
-                Content = new ControlToDisplayCodeHostedOnGitHub(FilePathOnGitHub = viewSourceButtonInfo.GetAbsoluteUrl())
+                Content = new ControlToDisplayCodeHostedOnGitHub(FilePathOnGitHub = viewSourceButtonInfo.GetAbsoluteUrl()),
+                DataContext = viewSourceButtonInfo
             )
             this.TabControl.Items.Add(tabItem)
 

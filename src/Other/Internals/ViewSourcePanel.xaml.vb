@@ -24,7 +24,8 @@ Namespace Global.OpenSilver.Samples.Showcase
             For Each viewSourceButtonInfo In sources
                 TabControl.Items.Add(New TabItem() With {
                     .Header = viewSourceButtonInfo.GetHeader(),
-                    .Content = New ControlToDisplayCodeHostedOnGitHub(viewSourceButtonInfo.GetAbsoluteUrl())
+                    .Content = New ControlToDisplayCodeHostedOnGitHub(viewSourceButtonInfo.GetAbsoluteUrl()),
+                    .DataContext = viewSourceButtonInfo
                 })
             Next
 

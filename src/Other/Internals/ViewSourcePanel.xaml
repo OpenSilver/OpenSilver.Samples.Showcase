@@ -9,18 +9,25 @@
 
     <TabControl Name="TabControl"/>
 
-    <Border Grid.Row="1"
-            Margin="20,0,0,5"
-            Padding="3"
-            HorizontalAlignment="Left"
-            Background="{DynamicResource Theme_BackgroundBrush}"
-            CornerRadius="7">
-        <StackPanel Orientation="Horizontal">
-            <RadioButton Name="cSharpButton"
-                         Checked="OnCSharpRadioButtonChecked"
-                         Content="C#"/>
-            <RadioButton Checked="OnVBNETRadioButtonChecked" Content="VB.NET"/>
-            <RadioButton Checked="OnFSharpRadioButtonChecked" Content="F#"/>
-        </StackPanel>
-    </Border>
+    <StackPanel Grid.Row="1"
+                Margin="20,0,0,5"
+                Orientation="Horizontal">
+        <Border Padding="3"
+                Background="{DynamicResource Theme_BackgroundBrush}"
+                CornerRadius="7">
+            <StackPanel Orientation="Horizontal">
+                <RadioButton Name="cSharpButton"
+                             Checked="OnCSharpRadioButtonChecked"
+                             Content="C#"/>
+                <RadioButton Checked="OnVBNETRadioButtonChecked" Content="VB.NET"/>
+                <RadioButton Checked="OnFSharpRadioButtonChecked" Content="F#"/>
+            </StackPanel>
+        </Border>
+
+        <TransitioningContentControl Margin="10,0,0,0"
+                                     VerticalAlignment="Center"
+                                     Content="{Binding ElementName=TabControl, Path=SelectedItem.DataContext.Notes}"
+                                     FontSize="14"
+                                     Foreground="{DynamicResource Theme_ErrorBrush}"/>
+    </StackPanel>
 </Grid>

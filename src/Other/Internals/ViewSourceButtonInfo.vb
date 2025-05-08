@@ -23,6 +23,8 @@ Namespace Global.OpenSilver.Samples.Showcase
 
         Public Property Fragment As String
 
+        Public Property Notes As String
+
         Public Function GetHeader() As String
             Return If(Not String.IsNullOrEmpty(TabHeader), TabHeader, FileName)
         End Function

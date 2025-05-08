@@ -1,10 +1,6 @@
 ﻿namespace OpenSilver.Samples.Showcase
 
 open System
-open System.Collections.Generic
-open System.Linq
-open System.Text
-open System.Threading.Tasks
 
 type ViewSourceButtonInfo() =
     private new(relativePath: string, fileName: string) as this =
@@ -21,6 +17,7 @@ type ViewSourceButtonInfo() =
     member val Owner = "OpenSilver" with get, set
     member val TabHeader = "" with get, set
     member val Fragment = "" with get, set
+    member val Notes = "" with get, set
     
     member public this.GetHeader() =
         if not (String.IsNullOrEmpty(this.TabHeader)) then

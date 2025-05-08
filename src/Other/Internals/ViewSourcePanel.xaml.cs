@@ -32,6 +32,7 @@ public partial class ViewSourcePanel : Grid
             {
                 Header = viewSourceButtonInfo.GetHeader(),
                 Content = new ControlToDisplayCodeHostedOnGitHub(viewSourceButtonInfo.GetAbsoluteUrl()),
+                DataContext = viewSourceButtonInfo
             });
         }
 
