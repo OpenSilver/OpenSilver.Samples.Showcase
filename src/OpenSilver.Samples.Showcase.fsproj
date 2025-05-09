@@ -950,63 +950,62 @@
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
 		<Compile Include="Samples\XAML_Controls\Xaml_Controls.xaml.fs">
-			<DependentUpon>Samples\XAML_Controls\Xaml_Controls.xaml</DependentUpon>
-		</Compile>
+			<DependentUpon>Samples\XAML_Controls\Xaml_Controls.xaml</DependentUpon>		</Compile>
 		<!--End of XAML_Controls-->
 
-		<!--XAML_Panels-->
-		<Page Include="Samples\XAML_Panels\Canvas\Canvas_Demo.xaml">
+		<!--XAML_Layout-->
+		<Page Include="Samples\XAML_Layout\Canvas\Canvas_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
-		<Compile Include="Samples\XAML_Panels\Canvas\Canvas_Demo.xaml.fs">
-			<DependentUpon>Samples\XAML_Panels\Canvas\Canvas_Demo.xaml</DependentUpon>
+		<Compile Include="Samples\XAML_Layout\Canvas\Canvas_Demo.xaml.fs">
+			<DependentUpon>Samples\XAML_Layout\Canvas\Canvas_Demo.xaml</DependentUpon>
 		</Compile>
-		<Page Include="Samples\XAML_Panels\DockPanel\DockPanel_Demo.xaml">
+		<Page Include="Samples\XAML_Layout\DockPanel\DockPanel_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
-		<Compile Include="Samples\XAML_Panels\DockPanel\DockPanel_Demo.xaml.fs">
-			<DependentUpon>Samples\XAML_Panels\DockPanel\DockPanel_Demo.xaml</DependentUpon>
+		<Compile Include="Samples\XAML_Layout\DockPanel\DockPanel_Demo.xaml.fs">
+			<DependentUpon>Samples\XAML_Layout\DockPanel\DockPanel_Demo.xaml</DependentUpon>
 		</Compile>
-		<Page Include="Samples\XAML_Panels\Grid\Grid_Demo.xaml">
+		<Page Include="Samples\XAML_Layout\Grid\Grid_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
-		<Compile Include="Samples\XAML_Panels\Grid\Grid_Demo.xaml.fs">
-			<DependentUpon>Samples\XAML_Panels\Grid\Grid_Demo.xaml</DependentUpon>
+		<Compile Include="Samples\XAML_Layout\Grid\Grid_Demo.xaml.fs">
+			<DependentUpon>Samples\XAML_Layout\Grid\Grid_Demo.xaml</DependentUpon>
 		</Compile>
-		<Compile Include="Samples\XAML_Panels\MeasureArrange\RadialPanel.fs" />
-		<Page Include="Samples\XAML_Panels\MeasureArrange\MeasureArrange_Demo.xaml">
+		<Compile Include="Samples\XAML_Layout\MeasureArrange\RadialPanel.fs" />
+		<Page Include="Samples\XAML_Layout\MeasureArrange\MeasureArrange_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
-		<Compile Include="Samples\XAML_Panels\MeasureArrange\MeasureArrange_Demo.xaml.fs">
-			<DependentUpon>Samples\XAML_Panels\MeasureArrange\MeasureArrange_Demo.xaml</DependentUpon>
+		<Compile Include="Samples\XAML_Layout\MeasureArrange\MeasureArrange_Demo.xaml.fs">
+			<DependentUpon>Samples\XAML_Layout\MeasureArrange\MeasureArrange_Demo.xaml</DependentUpon>
 		</Compile>
-		<Page Include="Samples\XAML_Panels\StackPanel\StackPanel_Demo.xaml">
+		<Page Include="Samples\XAML_Layout\StackPanel\StackPanel_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
-		<Compile Include="Samples\XAML_Panels\StackPanel\StackPanel_Demo.xaml.fs">
-			<DependentUpon>Samples\XAML_Panels\StackPanel\StackPanel_Demo.xaml</DependentUpon>
+		<Compile Include="Samples\XAML_Layout\StackPanel\StackPanel_Demo.xaml.fs">
+			<DependentUpon>Samples\XAML_Layout\StackPanel\StackPanel_Demo.xaml</DependentUpon>
 		</Compile>
-		<Page Include="Samples\XAML_Panels\UniformGrid\UniformGrid_Demo.xaml">
+		<Page Include="Samples\XAML_Layout\UniformGrid\UniformGrid_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
-		<Compile Include="Samples\XAML_Panels\UniformGrid\UniformGrid_Demo.xaml.fs">
-			<DependentUpon>Samples\XAML_Panels\UniformGrid\UniformGrid_Demo.xaml</DependentUpon>
+		<Compile Include="Samples\XAML_Layout\UniformGrid\UniformGrid_Demo.xaml.fs">
+			<DependentUpon>Samples\XAML_Layout\UniformGrid\UniformGrid_Demo.xaml</DependentUpon>
 		</Compile>
-		<Page Include="Samples\XAML_Panels\WrapPanel\WrapPanel_Demo.xaml">
+		<Page Include="Samples\XAML_Layout\WrapPanel\WrapPanel_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
-		<Compile Include="Samples\XAML_Panels\WrapPanel\WrapPanel_Demo.xaml.fs">
-			<DependentUpon>Samples\XAML_Panels\WrapPanel\WrapPanel_Demo.xaml</DependentUpon>
+		<Compile Include="Samples\XAML_Layout\WrapPanel\WrapPanel_Demo.xaml.fs">
+			<DependentUpon>Samples\XAML_Layout\WrapPanel\WrapPanel_Demo.xaml</DependentUpon>
 		</Compile>
-		<Page Include="Samples\XAML_Panels\Xaml_Panels.xaml">
+		<Page Include="Samples\XAML_Layout\Xaml_Layout.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
-		<Compile Include="Samples\XAML_Panels\Xaml_Panels.xaml.fs">
-			<DependentUpon>Samples\XAML_Panels\Xaml_Controls.xaml</DependentUpon>
+		<Compile Include="Samples\XAML_Layout\Xaml_Layout.xaml.fs">
+			<DependentUpon>Samples\XAML_Layout\Xaml_Layout.xaml</DependentUpon>
 		</Compile>
-		<!--End of XAML_Panels-->
+		<!--End of XAML_Layout-->
 		
-		<!--XAML_Features-->		
+		<!--XAML_Features-->
     <Page Include="Samples\XAML_Features\Animations\Animations_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>

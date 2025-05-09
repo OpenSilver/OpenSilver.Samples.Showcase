@@ -17,7 +17,7 @@
                 If _pageInfos Is Nothing Then
                     _pageInfos = New List(Of PageInfo) From {
                         New PageInfo("Controls", "/XAML_Controls", True),
-                        New PageInfo("Panels", "/XAML_Panels", True),
+                        New PageInfo("Layout", "/XAML_Layout", True),
                         New PageInfo("Xaml Features", "/XAML_Features", True),
                         New PageInfo(".NET Framework", "/Net_Framework", True),
                         New PageInfo("Client / Server", "/Client_Server", True),

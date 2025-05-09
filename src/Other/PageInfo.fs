@@ -19,7 +19,7 @@ type PageInfo(name: string, path: string) =
         | None ->
             let pages = [
                 PageInfo("Controls", "/XAML_Controls")
-                PageInfo("Panels", "/XAML_Panels")
+                PageInfo("Layout", "/XAML_Layout")
                 PageInfo("Xaml Features", "/XAML_Features")
                 PageInfo(".NET Framework", "/Net_Framework")
                 PageInfo("Client / Server", "/Client_Server")

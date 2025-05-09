@@ -2,9 +2,9 @@
 
 namespace OpenSilver.Samples.Showcase;
 
-public partial class Xaml_Panels : Page
+public partial class Xaml_Layout : Page
 {
-    public Xaml_Panels()
+    public Xaml_Layout()
     {
         InitializeComponent();
     }

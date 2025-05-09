@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="OpenSilver.Samples.Showcase.DockPanel_Demo"
+<UserControl x:Class="OpenSilver.Samples.Showcase.DockPanel_Demo"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
@@ -88,12 +88,13 @@
 
             <local:ViewSourceButton Grid.Row="3" Background="#FFD66DED">
                 <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo FileName="DockPanel_Demo.xaml" RelativePath="src/Samples/XAML_Panels/DockPanel"/>
-                    <local:ViewSourceButtonInfo FileName="DockPanel_Demo.xaml.cs" RelativePath="src/Samples/XAML_Panels/DockPanel"/>
-                    <local:ViewSourceButtonInfo FileName="DockPanel_Demo.xaml.vb" RelativePath="src/Samples/XAML_Panels/DockPanel"/>
-                    <local:ViewSourceButtonInfo FileName="DockPanel_Demo.xaml.fs" RelativePath="src/Samples/XAML_Panels/DockPanel"/>
+                    <local:ViewSourceButtonInfo FileName="DockPanel_Demo.xaml" RelativePath="src/Samples/XAML_Layout/DockPanel"/>
+                    <local:ViewSourceButtonInfo FileName="DockPanel_Demo.xaml.cs" RelativePath="src/Samples/XAML_Layout/DockPanel"/>
+                    <local:ViewSourceButtonInfo FileName="DockPanel_Demo.xaml.vb" RelativePath="src/Samples/XAML_Layout/DockPanel"/>
+                    <local:ViewSourceButtonInfo FileName="DockPanel_Demo.xaml.fs" RelativePath="src/Samples/XAML_Layout/DockPanel"/>
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>
+

@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -337,18 +337,17 @@
     <Compile Include="Samples\XAML_Features\MultiBinding\MultiBinding_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Features\Styles\Styles_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Features\Themes\Themes_Demo.xaml.vb" />
-    <Compile Include="Samples\XAML_Features\Triggers\Triggers_Demo.xaml.vb" />
-    <Compile Include="Samples\XAML_Features\VisualTreeHelper\TreeViewerWindow.xaml.vb" />
+    <Compile Include="Samples\XAML_Features\Triggers\Triggers_Demo.xaml.vb" />    <Compile Include="Samples\XAML_Features\VisualTreeHelper\TreeViewerWindow.xaml.vb" />
     <Compile Include="Samples\XAML_Features\XamlReader\XamlReader_Demo.xaml.vb" />
-    <Compile Include="Samples\XAML_Panels\Canvas\Canvas_Demo.xaml.vb" />
-    <Compile Include="Samples\XAML_Panels\DockPanel\DockPanel_Demo.xaml.vb" />
-    <Compile Include="Samples\XAML_Panels\Grid\Grid_Demo.xaml.vb" />
-    <Compile Include="Samples\XAML_Panels\MeasureArrange\MeasureArrange_Demo.xaml.vb" />
-    <Compile Include="Samples\XAML_Panels\MeasureArrange\RadialPanel.vb" />
-    <Compile Include="Samples\XAML_Panels\StackPanel\StackPanel_Demo.xaml.vb" />
-    <Compile Include="Samples\XAML_Panels\UniformGrid\UniformGrid_Demo.xaml.vb" />
-    <Compile Include="Samples\XAML_Panels\WrapPanel\WrapPanel_Demo.xaml.vb" />
-    <Compile Include="Samples\XAML_Panels\Xaml_Panels.xaml.vb" />
+    <Compile Include="Samples\XAML_Layout\Canvas\Canvas_Demo.xaml.vb" />
+    <Compile Include="Samples\XAML_Layout\DockPanel\DockPanel_Demo.xaml.vb" />
+    <Compile Include="Samples\XAML_Layout\Grid\Grid_Demo.xaml.vb" />
+    <Compile Include="Samples\XAML_Layout\MeasureArrange\MeasureArrange_Demo.xaml.vb" />
+    <Compile Include="Samples\XAML_Layout\MeasureArrange\RadialPanel.vb" />
+    <Compile Include="Samples\XAML_Layout\StackPanel\StackPanel_Demo.xaml.vb" />
+    <Compile Include="Samples\XAML_Layout\UniformGrid\UniformGrid_Demo.xaml.vb" />
+    <Compile Include="Samples\XAML_Layout\WrapPanel\WrapPanel_Demo.xaml.vb" />
+    <Compile Include="Samples\XAML_Layout\Xaml_Layout.xaml.vb" />
   </ItemGroup>
   
   <ItemGroup>
@@ -717,32 +716,31 @@
     </Page>
     <Page Include="Samples\XAML_Features\XAML_Resource_Dictionary\Dictionaries\Style2.xaml">
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Samples\XAML_Features\XAML_Resource_Dictionary\XAML_Resource_Dictionary_Demo.xaml">
+    </Page>    <Page Include="Samples\XAML_Features\XAML_Resource_Dictionary\XAML_Resource_Dictionary_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\XAML_Panels\Canvas\Canvas_Demo.xaml">
+    <Page Include="Samples\XAML_Layout\Canvas\Canvas_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\XAML_Panels\DockPanel\DockPanel_Demo.xaml">
+    <Page Include="Samples\XAML_Layout\DockPanel\DockPanel_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\XAML_Panels\Grid\Grid_Demo.xaml">
+    <Page Include="Samples\XAML_Layout\Grid\Grid_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\XAML_Panels\MeasureArrange\MeasureArrange_Demo.xaml">
+    <Page Include="Samples\XAML_Layout\MeasureArrange\MeasureArrange_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\XAML_Panels\StackPanel\StackPanel_Demo.xaml">
+    <Page Include="Samples\XAML_Layout\StackPanel\StackPanel_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\XAML_Panels\UniformGrid\UniformGrid_Demo.xaml">
+    <Page Include="Samples\XAML_Layout\UniformGrid\UniformGrid_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\XAML_Panels\WrapPanel\WrapPanel_Demo.xaml">
+    <Page Include="Samples\XAML_Layout\WrapPanel\WrapPanel_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\XAML_Panels\Xaml_Panels.xaml">
+    <Page Include="Samples\XAML_Layout\Xaml_Layout.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
@@ -882,8 +880,8 @@
     <Content Include="Other\Icons\LightTheme.svg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Samples\XAML_Panels\MeasureArrange\RadialPanel.cs" />
-    <None Include="Samples\XAML_Panels\MeasureArrange\RadialPanel.fs" />
+    <None Include="Samples\\XAML_Layout\\MeasureArrange\\RadialPanel.cs" />
+    <None Include="Samples\\XAML_Layout\\MeasureArrange\\RadialPanel.fs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Libraries\OpenSilver.Animations\OpenSilver.Animations.csproj" />

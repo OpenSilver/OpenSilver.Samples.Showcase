@@ -21,7 +21,7 @@ namespace OpenSilver.Samples.Showcase
                 {
                     _pageInfos = new List<PageInfo>();
                     _pageInfos.Add(new PageInfo("Controls", "/XAML_Controls", true));
-                    _pageInfos.Add(new PageInfo("Panels", "/XAML_Panels", true));
+                    _pageInfos.Add(new PageInfo("Layout", "/XAML_Layout", true));
                     _pageInfos.Add(new PageInfo("XAML Features", "/XAML_Features", true));
                     _pageInfos.Add(new PageInfo(".NET Framework", "/Net_Framework", true));
                     _pageInfos.Add(new PageInfo("Client / Server", "/Client_Server", true));
