@@ -20,11 +20,18 @@
             </TextBlock>
         </StackPanel>
 
-        <controlskit:StaggeredPanel ProgressiveRenderingChunkSize="2" DesiredColumnWidth="330">
+        <ItemsControl x:Name="SamplesPanel" local:ItemsControlLoadingBehavior.ShowLoadingOnGenerating="True">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <controlskit:StaggeredPanel DesiredColumnWidth="330" ProgressiveRenderingChunkSize="2"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            
             <local:Virtualization_Demo/>
             <local:ProgressiveLoading_Demo/>
             <local:AOT_Demo/>
             <local:HtmlCanvas_Demo HorizontalAlignment="Center"/>
-        </controlskit:StaggeredPanel>
+
+        </ItemsControl>
     </StackPanel>
 </Page>

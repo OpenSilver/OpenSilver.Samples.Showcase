@@ -17,11 +17,18 @@
             </TextBlock>
         </StackPanel>
 
-        <controlskit:StaggeredPanel DesiredColumnWidth="280" ProgressiveRenderingChunkSize="2">
+        <ItemsControl x:Name="SamplesPanel" local:ItemsControlLoadingBehavior.ShowLoadingOnGenerating="True">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <controlskit:StaggeredPanel DesiredColumnWidth="280" ProgressiveRenderingChunkSize="2"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+
             <local:JSZip_Demo/>
             <local:ColorPicker_Demo/>
             <local:MonacoEditor_Demo/>
             <local:ToastUiEditor_Demo/>
-        </controlskit:StaggeredPanel>
+            
+        </ItemsControl>
     </StackPanel>
 </Page>

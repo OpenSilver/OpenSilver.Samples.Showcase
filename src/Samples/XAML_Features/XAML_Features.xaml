@@ -16,8 +16,14 @@
                                                                     for integrated design tools.
             </TextBlock>
         </StackPanel>
+        
+        <ItemsControl x:Name="SamplesPanel" local:ItemsControlLoadingBehavior.ShowLoadingOnGenerating="True">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <controlskit:StaggeredPanel DesiredColumnWidth="280" ProgressiveRenderingChunkSize="2"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
 
-        <controlskit:StaggeredPanel DesiredColumnWidth="280" ProgressiveRenderingChunkSize="2">
             <local:RenderTransforms_Demo HorizontalAlignment="Center"/>
             <local:Drag_And_Drop_Demo HorizontalAlignment="Center"/>
             <local:Binding1_Demo x:Name="Binding1Demo" HorizontalAlignment="Center"/>
@@ -52,6 +58,7 @@
             <local:Clipping_Demo/>
             <local:Cursor_Demo/>
             <local:FlowDirection_Demo/>
-        </controlskit:StaggeredPanel>
+            
+        </ItemsControl>
     </StackPanel>
 </Page>

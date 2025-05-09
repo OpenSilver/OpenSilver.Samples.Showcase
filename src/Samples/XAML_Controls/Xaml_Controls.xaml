@@ -16,7 +16,13 @@
             </TextBlock>
         </StackPanel>
 
-        <controlskit:StaggeredPanel Name="SamplesPanel" ProgressiveRenderingChunkSize="2">
+        <ItemsControl x:Name="SamplesPanel" local:ItemsControlLoadingBehavior.ShowLoadingOnGenerating="True">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <controlskit:StaggeredPanel ProgressiveRenderingChunkSize="2"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            
             <local:TreeView_Demo HorizontalAlignment="Center"/>
             <local:TreeMap_Demo/>
             <local:InkPresenter_Demo/>
@@ -60,6 +66,7 @@
             <local:GlobalCalendar_Demo/>
             <local:Rating_Demo/>
             <local:ContextMenu_MenuItem_Demo x:Name="MenuItemDemo" HorizontalAlignment="Center"/>
-        </controlskit:StaggeredPanel>
+
+        </ItemsControl>
     </StackPanel>
 </Page>

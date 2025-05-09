@@ -56,7 +56,7 @@ namespace OpenSilver.Samples.Showcase
         {
             //todo: if multiple searches one after the other, increase efficiency by only looking at the changes between the current search and the previous search
             //for now, we just clear everything.
-            SamplesContainer.Children.Clear();
+            SamplesPanel.Items.Clear();
 
             if (!string.IsNullOrWhiteSpace(searchText))
             {
@@ -70,7 +70,7 @@ namespace OpenSilver.Samples.Showcase
 
                         if (controlInstance is UIElement uiElement)
                         {
-                            SamplesContainer.Children.Add(uiElement);
+                            SamplesPanel.Items.Add(uiElement);
                         }
                     }
                 }
