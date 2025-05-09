@@ -2,18 +2,22 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:controlskit="clr-namespace:OpenSilver.ControlsKit;assembly=OpenSilver.ControlsKit.Controls"
-             xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+             xmlns:local="clr-namespace:OpenSilver.Samples.Showcase"
+             Style="{StaticResource Page_Style}">
     
     <StackPanel>
-        <Grid>
-            <ContentControl Content="Interop" Style="{StaticResource PageHeader_Style}"/>
-            <!--<WrapPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <TextBlock Text="Interop" Style="{StaticResource PageHeader_Style}" Foreground="Transparent"/>
-                <local:SearchControl HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
-                <Border Width="30"/>
-            </WrapPanel>-->
-        </Grid>
-        
+        <StackPanel>
+            <ContentControl Content="Interop" Style="{StaticResource PageTitle_Style}"/>
+            <TextBlock Style="{StaticResource PageIntroText_Style}">As a browser-first platform, OpenSilver gives you the freedom to go 
+                                                                    beyond XAML and .NET limitations. You can directly leverage HTML, CSS
+                                                                    and JavaScript through simple interop, access low-level browser APIs,
+                                                                    and integrate with any JavaScript library or framework. Need to reach
+                                                                    mobile users? You can also publish OpenSilver apps as native mobile
+                                                                    apps using .NET MAUI Hybrid, extending your reach without rewriting
+                                                                    your code.
+            </TextBlock>
+        </StackPanel>
+
         <controlskit:StaggeredPanel DesiredColumnWidth="280" ProgressiveRenderingChunkSize="2">
             <local:ExecuteJavaScript_Demo HorizontalAlignment="Center"/>
             <local:Interop_HtmlPresenter_Demo HorizontalAlignment="Center"/>
