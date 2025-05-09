@@ -9,7 +9,7 @@
 
         <StackPanel>
             <ContentControl Content="Native APIs (Web or MAUI Hybrid)" Style="{StaticResource PageTitle_Style}"/>
-            <TextBlock Style="{StaticResource PageIntroText_Style}">While OpenSilver is browser-first, you can also publish apps as native iOS, Android, Windows,
+            <TextBlock Style="{StaticResource PageIntroText_Style}">While OpenSilver is web-first, you can also publish apps as native iOS, Android, Windows,
                                                                     Mac, or Linux applications using <Hyperlink NavigateUri="https://doc.opensilver.net/documentation/general/maui-hybrid-launcher.html" TargetName="_blank" Foreground="{DynamicResource Theme_TextBrush}">.NET MAUI-OpenSilver Hybrid</Hyperlink>.
                                                                     In this mode, your C# code compiles to native for direct access to platform APIs, while the
                                                                     UI renders through an embedded WebView, ensuring pixel-perfect visuals and full compatibility

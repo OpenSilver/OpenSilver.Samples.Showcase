@@ -12,8 +12,8 @@
                                                                     and adorners coming soon). This section highlights key XAML features.
                                                                     As a declarative language, XAML also supports a rich drag-and-drop design
                                                                     experience. Try it online at <Hyperlink NavigateUri="https://xaml.io" TargetName="_blank" Foreground="{DynamicResource Theme_TextBrush}">XAML.io</Hyperlink>
-                                                                    (no installation needed), or use the OpenSilver extension (VSIX) for Visual
-                                                                    Studio and VS Code for integrated design tools.
+                                                                    (no installation needed), or use the OpenSilver extension (VSIX) <Hyperlink NavigateUri="https://marketplace.visualstudio.com/items?itemName=userware.OpenSilverSDK" TargetName="_blank" Foreground="{DynamicResource Theme_TextBrush}">for Visual Studio</Hyperlink> and <Hyperlink NavigateUri="https://marketplace.visualstudio.com/items?itemName=userware.vscode-opensilver" TargetName="_blank" Foreground="{DynamicResource Theme_TextBrush}">for VS Code</Hyperlink>
+                                                                    for integrated design tools.
             </TextBlock>
         </StackPanel>
 

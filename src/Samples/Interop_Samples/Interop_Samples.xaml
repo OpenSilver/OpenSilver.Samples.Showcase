@@ -8,13 +8,13 @@
     <StackPanel>
         <StackPanel>
             <ContentControl Content="Interop" Style="{StaticResource PageTitle_Style}"/>
-            <TextBlock Style="{StaticResource PageIntroText_Style}">As a browser-first platform, OpenSilver gives you the freedom to go 
-                                                                    beyond XAML and .NET limitations. You can directly leverage HTML, CSS
+            <TextBlock Style="{StaticResource PageIntroText_Style}">As a web-first platform, OpenSilver gives you the freedom to go 
+                                                                    beyond XAML and .NET. You can directly leverage HTML, CSS
                                                                     and JavaScript through simple interop, access low-level browser APIs,
                                                                     and integrate with any JavaScript library or framework. Need to reach
                                                                     mobile users? You can also publish OpenSilver apps as native mobile
-                                                                    apps using .NET MAUI Hybrid, extending your reach without rewriting
-                                                                    your code.
+                                                                    apps using <Hyperlink NavigateUri="https://doc.opensilver.net/documentation/general/maui-hybrid-launcher.html" TargetName="_blank" Foreground="{DynamicResource Theme_TextBrush}">.NET MAUI-OpenSilver Hybrid</Hyperlink>,
+                                                                    extending your reach without rewriting your code.
             </TextBlock>
         </StackPanel>
 

@@ -8,9 +8,9 @@
     <StackPanel>
         <StackPanel>
             <ContentControl Content="Layout" Style="{StaticResource PageTitle_Style}"/>
-            <TextBlock Style="{StaticResource PageIntroText_Style}">Panels organize the layout of your UI. In OpenSilver, they work just
-                                                                    like in WPF. Use one of the built-in panels below, or create custom panel
-                                                                    by overriding the Measure and Arrange methods.
+            <TextBlock Style="{StaticResource PageIntroText_Style}">Organize your UI using built-in panels and layout controls.
+                                                                    Panels behave as in WPF, and you can create custom ones by
+                                                                    overriding the Measure and Arrange methods.
             </TextBlock>
         </StackPanel>
 

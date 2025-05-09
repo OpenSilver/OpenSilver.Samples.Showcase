@@ -11,8 +11,9 @@
             <TextBlock Style="{StaticResource PageIntroText_Style}">OpenSilver makes it easy to connect with server APIs using REST calls via
                                                                     HttpClient, WCF SOAP services through "Add Service Reference", WebSockets
                                                                     for real-time communication, and RIA Services for advanced scenarios.
-                                                                    Modern browser security requires enabling CORS and configuring the SameSite
-                                                                    cookie flag on your server to ensure smooth cross-origin communication.
+                                                                    Modern browser security requires <Hyperlink NavigateUri="https://doc.opensilver.net/documentation/in-depth-topics/wcf-and-webclient.html#adding-support-for-cross-domain-calls-cors" TargetName="_blank" Foreground="{DynamicResource Theme_TextBrush}">enabling CORS</Hyperlink>
+                                                                    and configuring the SameSite cookie flag on your server to ensure smooth
+                                                                    cross-origin communication.
             </TextBlock>
         </StackPanel>
         
