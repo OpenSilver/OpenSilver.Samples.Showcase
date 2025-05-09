@@ -40,12 +40,11 @@
                 </Border>
             </HeaderedContentControl>
 
-            <local:ViewSourceButton Grid.Row="2" Background="#FFA466BA">
-                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo FileName="HeaderedContentControl_Demo.xaml" RelativePath="src/Samples/XAML_Controls/HeaderedContentControl"/>
-                    <local:ViewSourceButtonInfo FileName="HeaderedContentControl_Demo.xaml.cs" RelativePath="src/Samples/XAML_Controls/HeaderedContentControl"/>
-                    <local:ViewSourceButtonInfo FileName="HeaderedContentControl_Demo.xaml.vb" RelativePath="src/Samples/XAML_Controls/HeaderedContentControl"/>
-                    <local:ViewSourceButtonInfo FileName="HeaderedContentControl_Demo.xaml.fs" RelativePath="src/Samples/XAML_Controls/HeaderedContentControl"/>
+            <local:ViewSourceButton Grid.Row="2" Background="#FFA466BA">                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo FileName="HeaderedContentControl_Demo.xaml" RelativePath="src/Samples/XAML_Layout/HeaderedContentControl"/>
+                    <local:ViewSourceButtonInfo FileName="HeaderedContentControl_Demo.xaml.cs" RelativePath="src/Samples/XAML_Layout/HeaderedContentControl"/>
+                    <local:ViewSourceButtonInfo FileName="HeaderedContentControl_Demo.xaml.vb" RelativePath="src/Samples/XAML_Layout/HeaderedContentControl"/>
+                    <local:ViewSourceButtonInfo FileName="HeaderedContentControl_Demo.xaml.fs" RelativePath="src/Samples/XAML_Layout/HeaderedContentControl"/>
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

@@ -15,23 +15,22 @@
                 <Button Content="Show Modal ChildWindow" Click="ButtonTestChildWindow_Modal_Click" Margin="0,5"/>
                 <Button Content="Show Non-Modal ChildWindow" Click="ButtonTestChildWindow_NonModal_Click"/>
             </StackPanel>
-            <local:ViewSourceButton Grid.Row="2" Background="#FFFF7065">
-                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ChildWindow2"
+            <local:ViewSourceButton Grid.Row="2" Background="#FFFF7065">                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Layout/ChildWindow2"
                                                 FileName="NonModalChildWindow_Demo.xaml" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ChildWindow2"
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Layout/ChildWindow2"
                                                 FileName="NonModalChildWindow_Demo.xaml.cs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ChildWindow2"
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Layout/ChildWindow2"
                                                 FileName="NonModalChildWindow_Demo.xaml.vb" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ChildWindow2"
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Layout/ChildWindow2"
                                                 FileName="NonModalChildWindow_Demo.xaml.fs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ChildWindow2"
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Layout/ChildWindow2"
                                                 FileName="SmallChildWindow.xaml" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ChildWindow2"
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Layout/ChildWindow2"
                                                 FileName="SmallChildWindow.xaml.cs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ChildWindow2"
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Layout/ChildWindow2"
                                                 FileName="SmallChildWindow.xaml.vb" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ChildWindow2"
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Layout/ChildWindow2"
                                                 FileName="SmallChildWindow.xaml.fs" />
                     <local:ViewStyleSourceInfo TabHeader="ChildWindow Style" Fragment="#L4267-L4696"/>
                     <local:ViewModernStyleSourceInfo TabHeader="Modern ChildWindow Style" Fragment="#L2973-L3220"/>

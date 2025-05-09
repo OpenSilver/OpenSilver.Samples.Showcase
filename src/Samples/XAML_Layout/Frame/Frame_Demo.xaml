@@ -32,12 +32,11 @@
                 </StackPanel>
             </StackPanel>
             
-            <local:ViewSourceButton Grid.Row="2" Background="#FF13D7E3">
-                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo FileName="Frame_Demo.xaml" RelativePath="src/Samples/XAML_Controls/Frame"/>
-                    <local:ViewSourceButtonInfo FileName="Frame_Demo.xaml.cs" RelativePath="src/Samples/XAML_Controls/Frame"/>
-                    <local:ViewSourceButtonInfo FileName="Frame_Demo.xaml.vb" RelativePath="src/Samples/XAML_Controls/Frame"/>
-                    <local:ViewSourceButtonInfo FileName="Frame_Demo.xaml.fs" RelativePath="src/Samples/XAML_Controls/Frame"/>
+            <local:ViewSourceButton Grid.Row="2" Background="#FF13D7E3">                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo FileName="Frame_Demo.xaml" RelativePath="src/Samples/XAML_Layout/Frame"/>
+                    <local:ViewSourceButtonInfo FileName="Frame_Demo.xaml.cs" RelativePath="src/Samples/XAML_Layout/Frame"/>
+                    <local:ViewSourceButtonInfo FileName="Frame_Demo.xaml.vb" RelativePath="src/Samples/XAML_Layout/Frame"/>
+                    <local:ViewSourceButtonInfo FileName="Frame_Demo.xaml.fs" RelativePath="src/Samples/XAML_Layout/Frame"/>
                     <local:ViewSourceButtonInfo FileName="MainPage.xaml" RelativePath="src"/>
                     <local:ViewSourceButtonInfo FileName="MainPage.xaml.cs" RelativePath="src"/>
                     <local:ViewSourceButtonInfo FileName="MainPage.xaml.vb" RelativePath="src"/>

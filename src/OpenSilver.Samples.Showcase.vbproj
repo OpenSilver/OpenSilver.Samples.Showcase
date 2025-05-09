@@ -154,7 +154,7 @@
     <Page Include="Samples\SearchPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\XAML_Controls\Accordion\Accordion_Demo.xaml">
+    <Page Include="Samples\\XAML_Layout\\Accordion\\Accordion_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Controls\BusyIndicator\BusyIndicator_Demo.xaml">
@@ -175,7 +175,7 @@
     <Page Include="Samples\XAML_Controls\GlobalCalendar\GlobalCalendar_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\XAML_Controls\HeaderedContentControl\HeaderedContentControl_Demo.xaml">
+    <Page Include="Samples\\XAML_Layout\\HeaderedContentControl\\HeaderedContentControl_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Controls\InkPresenter\InkPresenter_Demo.xaml">
@@ -184,7 +184,7 @@
     <Page Include="Samples\XAML_Controls\ItemsControl\ItemsControl_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\XAML_Controls\LayoutTransformer\LayoutTransformer_Demo.xaml">
+    <Page Include="Samples\\XAML_Layout\\LayoutTransformer\\LayoutTransformer_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Controls\NumericUpDown\Styles\NumericUpDownStyles.xaml">
@@ -211,7 +211,7 @@
     <Page Include="Samples\XAML_Controls\TimePicker\TimePicker_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\XAML_Controls\TransitioningContentControl\TransitioningContentControl_Demo.xaml">
+    <Page Include="Samples\\XAML_Layout\\TransitioningContentControl\\TransitioningContentControl_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Controls\TreeMap\TreeMap_Demo.xaml">
@@ -307,23 +307,23 @@
     <Compile Include="Samples\Performance\Progressive_Loading\ProgressiveLoading_Demo.xaml.vb" />
     <Compile Include="Samples\Performance\Virtualization\Virtualization_Demo.xaml.vb" />
     <Compile Include="Samples\SearchPage.xaml.vb" />
-    <Compile Include="Samples\XAML_Controls\Accordion\Accordion_Demo.xaml.vb" />
+    <Compile Include="Samples\\XAML_Layout\\Accordion\\Accordion_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\BusyIndicator\BusyIndicator_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\ButtonSpinner\ButtonSpinner_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\Calendar\Calendar_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\DataForm\DataForm_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\DomainUpDown\DomainUpDown_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\GlobalCalendar\GlobalCalendar_Demo.xaml.vb" />
-    <Compile Include="Samples\XAML_Controls\HeaderedContentControl\HeaderedContentControl_Demo.xaml.vb" />
+    <Compile Include="Samples\\XAML_Layout\\HeaderedContentControl\\HeaderedContentControl_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\InkPresenter\InkPresenter_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\ItemsControl\ItemsControl_Demo.xaml.vb" />
-    <Compile Include="Samples\XAML_Controls\LayoutTransformer\LayoutTransformer_Demo.xaml.vb" />
+    <Compile Include="Samples\\XAML_Layout\\LayoutTransformer\\LayoutTransformer_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\ProgressBar\ProgressBar_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\Rating\Rating_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\RichTextBlock\RichTextBlock_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\RichTextBox\RichTextBox_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\TimePicker\TimePicker_Demo.xaml.vb" />
-    <Compile Include="Samples\XAML_Controls\TransitioningContentControl\TransitioningContentControl_Demo.xaml.vb" />
+    <Compile Include="Samples\\XAML_Layout\\TransitioningContentControl\\TransitioningContentControl_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\TreeMap\TreeMap_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\TreeView\TreeView_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\UpDownBase\UpDownBase_Demo.xaml.vb" />
@@ -494,8 +494,7 @@
     </Page>
     <Page Include="Samples\XAML_Controls\AutoCompleteBox\AutoCompleteBox_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Samples\XAML_Controls\Border\Border_Demo.xaml">
+    </Page>    <Page Include="Samples\XAML_Layout\Border\Border_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Controls\Button\Button_Demo.xaml">
@@ -507,16 +506,16 @@
     <Page Include="Samples\XAML_Controls\CheckBox\CheckBox_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\XAML_Controls\ChildWindow2\NonModalChildWindow_Demo.xaml">
+    <Page Include="Samples\\XAML_Layout\\ChildWindow2\\NonModalChildWindow_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\XAML_Controls\ChildWindow2\SmallChildWindow.xaml">
+    <Page Include="Samples\\XAML_Layout\\ChildWindow2\\SmallChildWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\XAML_Controls\ChildWindow\ChildWindow_Demo.xaml">
+    <Page Include="Samples\\XAML_Layout\\ChildWindow\\ChildWindow_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\XAML_Controls\ChildWindow\LoginWindow.xaml">
+    <Page Include="Samples\\XAML_Layout\\ChildWindow\\LoginWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Controls\ComboBox\ComboBox_Demo.xaml">
@@ -534,13 +533,13 @@
     <Page Include="Samples\XAML_Controls\DatePicker\DatePicker_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\XAML_Controls\Expander\Expander_Demo.xaml">
+    <Page Include="Samples\\XAML_Layout\\Expander\\Expander_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\XAML_Controls\Frame\Frame_Demo.xaml">
+    <Page Include="Samples\\XAML_Layout\\Frame\\Frame_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\XAML_Controls\GridSplitter\GridSplitter_Demo.xaml">
+    <Page Include="Samples\\XAML_Layout\\GridSplitter\\GridSplitter_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Controls\HtmlPresenter\HtmlPresenter_Demo.xaml">
@@ -570,7 +569,7 @@
     <Page Include="Samples\XAML_Controls\Path\Path_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\XAML_Controls\Popup\Popup_Demo.xaml">
+    <Page Include="Samples\\XAML_Layout\\Popup\\Popup_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Controls\RadioButton\RadioButton_Demo.xaml">
@@ -581,8 +580,7 @@
     </Page>
     <Page Include="Samples\XAML_Controls\ScrollBar\ScrollBar_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Samples\XAML_Controls\ScrollViewer\ScrollViewer_Demo.xaml">
+    </Page>    <Page Include="Samples\XAML_Layout\ScrollViewer\ScrollViewer_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Controls\Shapes\Shapes_Demo.xaml">
@@ -591,7 +589,7 @@
     <Page Include="Samples\XAML_Controls\Slider\Slider_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\XAML_Controls\TabControl\TabControl_Demo.xaml">
+    <Page Include="Samples\\XAML_Layout\\TabControl\\TabControl_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Controls\Textblock\TextBlock_Demo.xaml">
@@ -612,7 +610,7 @@
     <Page Include="Samples\XAML_Controls\ToolTip\ToolTip_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\XAML_Controls\Viewbox\Viewbox_Demo.xaml">
+    <Page Include="Samples\\XAML_Layout\\Viewbox\\Viewbox_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Controls\Xaml_Controls.xaml">
@@ -795,21 +793,21 @@
     <Compile Include="Samples\Third_Party\Third_Party.xaml.vb" />
     <Compile Include="Samples\Welcome.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\AutoCompleteBox\AutoCompleteBox_Demo.xaml.vb" />
-    <Compile Include="Samples\XAML_Controls\Border\Border_Demo.xaml.vb" />
+    <Compile Include="Samples\XAML_Layout\Border\Border_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\Button\Button_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\CheckBox\CheckBox_Demo.xaml.vb" />
-    <Compile Include="Samples\XAML_Controls\ChildWindow2\NonModalChildWindow_Demo.xaml.vb" />
-    <Compile Include="Samples\XAML_Controls\ChildWindow2\SmallChildWindow.xaml.vb" />
-    <Compile Include="Samples\XAML_Controls\ChildWindow\ChildWindow_Demo.xaml.vb" />
-    <Compile Include="Samples\XAML_Controls\ChildWindow\LoginWindow.xaml.vb" />
+    <Compile Include="Samples\\XAML_Layout\\ChildWindow2\\NonModalChildWindow_Demo.xaml.vb" />
+    <Compile Include="Samples\\XAML_Layout\\ChildWindow2\\SmallChildWindow.xaml.vb" />
+    <Compile Include="Samples\\XAML_Layout\\ChildWindow\\ChildWindow_Demo.xaml.vb" />
+    <Compile Include="Samples\\XAML_Layout\\ChildWindow\\LoginWindow.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\ComboBox\ComboBox_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\ContextMenu\ContextMenu_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\ContextMenu_MenuItem\ContextMenu_MenuItem_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\DataGrid\DataGrid_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\DatePicker\DatePicker_Demo.xaml.vb" />
-    <Compile Include="Samples\XAML_Controls\Expander\Expander_Demo.xaml.vb" />
-    <Compile Include="Samples\XAML_Controls\Frame\Frame_Demo.xaml.vb" />
-    <Compile Include="Samples\XAML_Controls\GridSplitter\GridSplitter_Demo.xaml.vb" />
+    <Compile Include="Samples\\XAML_Layout\\Expander\\Expander_Demo.xaml.vb" />
+    <Compile Include="Samples\\XAML_Layout\\Frame\\Frame_Demo.xaml.vb" />
+    <Compile Include="Samples\\XAML_Layout\\GridSplitter\\GridSplitter_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\HtmlPresenter\HtmlPresenter_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\HyperlinkButton\HyperlinkButton.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\Image\Image_Demo.xaml.vb" />
@@ -819,20 +817,20 @@
     <Compile Include="Samples\XAML_Controls\NumericUpDown\NumericUpDown_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\PasswordBox\PasswordBox_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\Path\Path_Demo.xaml.vb" />
-    <Compile Include="Samples\XAML_Controls\Popup\Popup_Demo.xaml.vb" />
+    <Compile Include="Samples\\XAML_Layout\\Popup\\Popup_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\RadioButton\RadioButton_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\RepeatButton\RepeatButton_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\ScrollBar\ScrollBar_Demo.xaml.vb" />
-    <Compile Include="Samples\XAML_Controls\ScrollViewer\ScrollViewer_Demo.xaml.vb" />
+    <Compile Include="Samples\XAML_Layout\ScrollViewer\ScrollViewer_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\Shapes\Shapes_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\Slider\Slider_Demo.xaml.vb" />
-    <Compile Include="Samples\XAML_Controls\TabControl\TabControl_Demo.xaml.vb" />
+    <Compile Include="Samples\\XAML_Layout\\TabControl\\TabControl_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\Textblock\TextBlock_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\TextBox\TextBox_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\Thumb\Thumb_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\ToggleButton\ToggleButton_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\ToolTip\ToolTip_Demo.xaml.vb" />
-    <Compile Include="Samples\XAML_Controls\Viewbox\Viewbox_Demo.xaml.vb" />
+    <Compile Include="Samples\\XAML_Layout\\Viewbox\\Viewbox_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\Xaml_Controls.xaml.vb" />    
     <Compile Include="Samples\XAML_Features\Animations\Animations_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Features\AnimationTool\AnimationTool_Demo.xaml.vb" />

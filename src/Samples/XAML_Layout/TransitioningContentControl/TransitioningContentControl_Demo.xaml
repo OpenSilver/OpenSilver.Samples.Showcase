@@ -42,12 +42,11 @@
                         Content="Down"/>
             </StackPanel>
 
-            <local:ViewSourceButton Grid.Row="3" Background="#FFD972AA">
-                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo FileName="TransitioningContentControl_Demo.xaml" RelativePath="src/Samples/XAML_Controls/TransitioningContentControl"/>
-                    <local:ViewSourceButtonInfo FileName="TransitioningContentControl_Demo.xaml.cs" RelativePath="src/Samples/XAML_Controls/TransitioningContentControl"/>
-                    <local:ViewSourceButtonInfo FileName="TransitioningContentControl_Demo.xaml.vb" RelativePath="src/Samples/XAML_Controls/TransitioningContentControl"/>
-                    <local:ViewSourceButtonInfo FileName="TransitioningContentControl_Demo.xaml.fs" RelativePath="src/Samples/XAML_Controls/TransitioningContentControl"/>
+            <local:ViewSourceButton Grid.Row="3" Background="#FFD972AA">                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo FileName="TransitioningContentControl_Demo.xaml" RelativePath="src/Samples/XAML_Layout/TransitioningContentControl"/>
+                    <local:ViewSourceButtonInfo FileName="TransitioningContentControl_Demo.xaml.cs" RelativePath="src/Samples/XAML_Layout/TransitioningContentControl"/>
+                    <local:ViewSourceButtonInfo FileName="TransitioningContentControl_Demo.xaml.vb" RelativePath="src/Samples/XAML_Layout/TransitioningContentControl"/>
+                    <local:ViewSourceButtonInfo FileName="TransitioningContentControl_Demo.xaml.fs" RelativePath="src/Samples/XAML_Layout/TransitioningContentControl"/>
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

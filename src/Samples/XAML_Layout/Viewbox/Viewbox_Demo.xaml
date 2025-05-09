@@ -32,15 +32,14 @@
                 </Border>
             </Grid>
             <local:ViewSourceButton Grid.Row="2"
-                                    Background="#FF87C0FF">
-                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Viewbox"
+                                    Background="#FF87C0FF">                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Layout/Viewbox"
                                                 FileName="Viewbox_Demo.xaml" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Viewbox"
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Layout/Viewbox"
                                                 FileName="Viewbox_Demo.xaml.cs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Viewbox"
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Layout/Viewbox"
                                                 FileName="Viewbox_Demo.xaml.vb" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Viewbox"
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Layout/Viewbox"
                                                 FileName="Viewbox_Demo.xaml.fs" />
                     <local:ViewStyleSourceInfo TabHeader="Viewbox Style" Fragment="#L1850-L1866" />
                 </local:ViewSourceButton.Sources>

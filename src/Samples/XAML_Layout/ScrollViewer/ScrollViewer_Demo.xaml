@@ -15,15 +15,14 @@
                 <Image Source="ms-appx:/Other/Planets/Earth.png" Width="170" Height="170"/>
             </ScrollViewer>
             <local:ViewSourceButton Grid.Row="2"
-                                    Background="#FF3ADE8F">
-                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ScrollViewer"
+                                    Background="#FF3ADE8F">                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Layout/ScrollViewer"
                                                 FileName="ScrollViewer_Demo.xaml" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ScrollViewer"
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Layout/ScrollViewer"
                                                 FileName="ScrollViewer_Demo.xaml.cs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ScrollViewer"
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Layout/ScrollViewer"
                                                 FileName="ScrollViewer_Demo.xaml.vb" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ScrollViewer"
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Layout/ScrollViewer"
                                                 FileName="ScrollViewer_Demo.xaml.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>

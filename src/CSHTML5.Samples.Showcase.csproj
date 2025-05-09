@@ -307,8 +307,7 @@
       <DependentUpon>ComboBox_Demo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\XAML_Controls\ContextMenu\ContextMenu_Demo.xaml.cs">
-      <DependentUpon>ContextMenu_Demo.xaml</DependentUpon>
-    </Compile>
+      <DependentUpon>ContextMenu_Demo.xaml</DependentUpon>    </Compile>
     <Compile Include="Samples\XAML_Controls\ContextMenu_MenuItem\ContextMenu_MenuItem_Demo.xaml.cs">
       <DependentUpon>ContextMenu_MenuItem_Demo.xaml</DependentUpon>
     </Compile>
@@ -874,12 +873,7 @@
     <Page Include="Samples\XAML_Controls\ContextMenu\ContextMenu_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Samples\XAML_Controls\ContextMenu_MenuItem\ContextMenu_MenuItem_Demo.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Samples\XAML_Controls\ContextMenu_MenuItem\Styles\DefaultMenuItemStyle.xaml">
+    </Page>    <Page Include="Samples\XAML_Controls\ContextMenu_MenuItem\ContextMenu_MenuItem_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

@@ -15,23 +15,22 @@
                 <Button Content="Show Login ChildWindow" Click="ButtonTestChildWindow_Click"/>
                 <TextBlock Margin="0,10,0,0" TextAlignment="Center" Name="TextBlockForTestingChildWindow" Text="" />
             </StackPanel>
-            <local:ViewSourceButton Grid.Row="2" Background="#FFFF7065">
-                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ChildWindow"
+            <local:ViewSourceButton Grid.Row="2" Background="#FFFF7065">                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Layout/ChildWindow"
                                                 FileName="ChildWindow_Demo.xaml" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ChildWindow"
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Layout/ChildWindow"
                                                 FileName="ChildWindow_Demo.xaml.cs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ChildWindow"
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Layout/ChildWindow"
                                                 FileName="ChildWindow_Demo.xaml.vb" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ChildWindow"
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Layout/ChildWindow"
                                                 FileName="ChildWindow_Demo.xaml.fs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ChildWindow"
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Layout/ChildWindow"
                                                 FileName="LoginWindow.xaml" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ChildWindow"
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Layout/ChildWindow"
                                                 FileName="LoginWindow.xaml.cs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ChildWindow"
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Layout/ChildWindow"
                                                 FileName="LoginWindow.xaml.vb" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/ChildWindow"
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Layout/ChildWindow"
                                                 FileName="LoginWindow.xaml.fs" />
                     <local:ViewStyleSourceInfo TabHeader="Default ChildWindow Style" Fragment="#L4267-L4696"/>
                     <local:ViewModernStyleSourceInfo TabHeader="Modern ChildWindow Style" Fragment="#L2973-L3220"/>

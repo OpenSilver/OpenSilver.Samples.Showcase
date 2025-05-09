@@ -87,12 +87,11 @@
                 </Popup>
             </StackPanel>
 
-            <local:ViewSourceButton Grid.Row="2" Background="#FF3393FF">
-                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo FileName="Popup_Demo.xaml" RelativePath="src/Samples/XAML_Controls/Popup"/>
-                    <local:ViewSourceButtonInfo FileName="Popup_Demo.xaml.cs" RelativePath="src/Samples/XAML_Controls/Popup"/>
-                    <local:ViewSourceButtonInfo FileName="Popup_Demo.xaml.vb" RelativePath="src/Samples/XAML_Controls/Popup"/>
-                    <local:ViewSourceButtonInfo FileName="Popup_Demo.xaml.fs" RelativePath="src/Samples/XAML_Controls/Popup"/>
+            <local:ViewSourceButton Grid.Row="2" Background="#FF3393FF">                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo FileName="Popup_Demo.xaml" RelativePath="src/Samples/XAML_Layout/Popup"/>
+                    <local:ViewSourceButtonInfo FileName="Popup_Demo.xaml.cs" RelativePath="src/Samples/XAML_Layout/Popup"/>
+                    <local:ViewSourceButtonInfo FileName="Popup_Demo.xaml.vb" RelativePath="src/Samples/XAML_Layout/Popup"/>
+                    <local:ViewSourceButtonInfo FileName="Popup_Demo.xaml.fs" RelativePath="src/Samples/XAML_Layout/Popup"/>
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

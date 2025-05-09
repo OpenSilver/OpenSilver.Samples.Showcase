@@ -22,6 +22,20 @@
             <local:WrapPanel_Demo HorizontalAlignment="Center"/>
             <local:Canvas_Demo HorizontalAlignment="Center"/>
             <local:MeasureArrange_Demo/>
+            <local:Border_Demo HorizontalAlignment="Center"/>
+            <local:ScrollViewer_Demo x:Name="ScrollViewerDemo" HorizontalAlignment="Center"/>
+            <local:GridSplitter_Demo HorizontalAlignment="Center"/>
+            <local:TabControl_Demo HorizontalAlignment="Center"/>
+            <local:ChildWindow_Demo HorizontalAlignment="Center"/>
+            <local:NonModalChildWindow_Demo x:Name="NonModalChildWindow" HorizontalAlignment="Center"/>
+            <local:Expander_Demo HorizontalAlignment="Center"/>
+            <local:HeaderedContentControl_Demo/>
+            <local:Accordion_Demo/>
+            <local:Popup_Demo HorizontalAlignment="Center"/>
+            <local:Frame_Demo x:Name="FrameDemo" HorizontalAlignment="Center"/>
+            <local:Viewbox_Demo HorizontalAlignment="Center"/>
+            <local:TransitioningContentControl_Demo/>
+            <local:LayoutTransformer_Demo/>
         </controlskit:StaggeredPanel>
     </StackPanel>
 </Page>

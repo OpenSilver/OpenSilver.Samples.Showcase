@@ -15,15 +15,14 @@
                 <TextBlock Text="Unlike a Rectangle, a Border can contain a child element (such as this text)." Foreground="White" FontSize="12" Width="120" TextWrapping="Wrap"/>
             </Border>
             <local:ViewSourceButton Grid.Row="2"
-                                    Background="#FF13D7E3">
-                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Border"
+                                    Background="#FF13D7E3">                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Layout/Border"
                                                 FileName="Border_Demo.xaml" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Border"
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Layout/Border"
                                                 FileName="Border_Demo.xaml.cs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Border"
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Layout/Border"
                                                 FileName="Border_Demo.xaml.vb" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Border"
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Layout/Border"
                                                 FileName="Border_Demo.xaml.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
