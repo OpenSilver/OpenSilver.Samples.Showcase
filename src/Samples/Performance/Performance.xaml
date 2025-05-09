@@ -3,17 +3,23 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:controlskit="clr-namespace:OpenSilver.ControlsKit;assembly=OpenSilver.ControlsKit.Controls"
-    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase"
+    Style="{StaticResource Page_Style}">
 
     <StackPanel>
-        <Grid>
-            <ContentControl Content="Performance" Style="{StaticResource PageHeader_Style}"/>
-            <!--<WrapPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <TextBlock Text="Performance" Style="{StaticResource PageHeader_Style}" Foreground="Transparent"/>
-                <local:SearchControl HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
-                <Border Width="30"/>
-            </WrapPanel>-->
-        </Grid>
+        <StackPanel>
+            <ContentControl Content="Performance" Style="{StaticResource PageTitle_Style}"/>
+            <TextBlock Style="{StaticResource PageIntroText_Style}">Published OpenSilver builds are heavily optimized and significantly faster
+                                                                    than debug versions. You can further improve performance by applying
+                                                                    recommended code optimizations (read
+                                                                    <Hyperlink NavigateUri="https://doc.opensilver.net/documentation/in-depth-topics/performance-improvement.html"
+                                                                        TargetName="_blank"
+                                                                        Foreground="{DynamicResource Theme_TextBrush}">here</Hyperlink>
+                                                                    for tips). OpenSilver also gets faster with every release, so make sure
+                                                                    to stay updated with the latest version.
+            </TextBlock>
+        </StackPanel>
+
         <controlskit:StaggeredPanel ProgressiveRenderingChunkSize="2" DesiredColumnWidth="330">
             <local:Virtualization_Demo/>
             <local:ProgressiveLoading_Demo/>

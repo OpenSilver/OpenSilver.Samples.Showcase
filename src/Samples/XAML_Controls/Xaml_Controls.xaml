@@ -8,13 +8,11 @@
     <StackPanel>
         <StackPanel>
             <ContentControl Content="Controls" Style="{StaticResource PageTitle_Style}"/>
-            <TextBlock Style="{StaticResource PageIntroText_Style}">
-                    OpenSilver contains over 100 built-in XAML controls, some of which are shown below.
-                    In addition to those, you can also migrate WPF, Silverlight, and WinUI controls,
-                    and soon (in OpenSilver v3.3), you'll be able to also import Blazor components.
-                    Need more controls? Easily integrate any JavaScript control from the massive
-                    JS ecosystem via simple interop (see
-                    <Hyperlink NavigateUri="/JS_Libs" Foreground="{DynamicResource Theme_TextBrush}">examples</Hyperlink>).
+            <TextBlock Style="{StaticResource PageIntroText_Style}">OpenSilver contains over 100 built-in XAML controls, some of which are shown below.
+                                                                    In addition to those, you can also migrate WPF, Silverlight, and WinUI controls,
+                                                                    and soon (in OpenSilver v3.3), you'll be able to import Blazor components. Need
+                                                                    even more controls? Easily integrate any JavaScript control from the massive JS
+                                                                    ecosystem via simple interop (see <Hyperlink NavigateUri="/JS_Libs" Foreground="{DynamicResource Theme_TextBrush}">examples</Hyperlink>).
             </TextBlock>
         </StackPanel>
 

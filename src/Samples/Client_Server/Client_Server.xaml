@@ -2,19 +2,19 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:controlskit="clr-namespace:OpenSilver.ControlsKit;assembly=OpenSilver.ControlsKit.Controls"
-             xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+             xmlns:local="clr-namespace:OpenSilver.Samples.Showcase"
+             Style="{StaticResource Page_Style}">
     
     <StackPanel>
-        <Grid>
-            <ContentControl Style="{StaticResource PageHeader_Style}" Content="Client / Server"/>
-            <!--<WrapPanel HorizontalAlignment="Right" Orientation="Horizontal">
-                <TextBlock Foreground="Transparent"
-                           Style="{StaticResource PageHeader_Style}"
-                           Text="Client / Server"/>
-                <local:SearchControl HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
-                <Border Width="30"/>
-            </WrapPanel>-->
-        </Grid>
+        <StackPanel>
+            <ContentControl Content="Client / Server" Style="{StaticResource PageTitle_Style}"/>
+            <TextBlock Style="{StaticResource PageIntroText_Style}">OpenSilver makes it easy to connect with server APIs using REST calls via
+                                                                    HttpClient, WCF SOAP services through "Add Service Reference", WebSockets
+                                                                    for real-time communication, and RIA Services for advanced scenarios.
+                                                                    Modern browser security requires enabling CORS and configuring the SameSite
+                                                                    cookie flag on your server to ensure smooth cross-origin communication.
+            </TextBlock>
+        </StackPanel>
         
         <controlskit:StaggeredPanel DesiredColumnWidth="320" ProgressiveRenderingChunkSize="2">
             <local:WCF_SOAP_Demo HorizontalAlignment="Center"/>

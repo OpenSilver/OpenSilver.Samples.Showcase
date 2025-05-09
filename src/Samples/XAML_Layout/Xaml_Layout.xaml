@@ -2,17 +2,17 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:controlskit="clr-namespace:OpenSilver.ControlsKit;assembly=OpenSilver.ControlsKit.Controls"
-             xmlns:local="clr-namespace:OpenSilver.Samples.Showcase"><StackPanel>
-        <Grid>
-            <ContentControl Style="{StaticResource PageHeader_Style}" Content="Layout"/>
-            <!--<WrapPanel HorizontalAlignment="Right" Orientation="Horizontal">
-                <TextBlock Foreground="Transparent"
-                           Style="{StaticResource PageHeader_Style}"
-                           Text="XAML Panels"/>
-                <local:SearchControl HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
-                <Border Width="30"/>
-            </WrapPanel>-->
-        </Grid>
+             xmlns:local="clr-namespace:OpenSilver.Samples.Showcase"
+             Style="{StaticResource Page_Style}">
+
+    <StackPanel>
+        <StackPanel>
+            <ContentControl Content="Layout" Style="{StaticResource PageTitle_Style}"/>
+            <TextBlock Style="{StaticResource PageIntroText_Style}">Panels organize the layout of your UI. In OpenSilver, they work just
+                                                                    like in WPF. Use one of the built-in panels below, or create custom panel
+                                                                    by overriding the Measure and Arrange methods.
+            </TextBlock>
+        </StackPanel>
 
         <controlskit:StaggeredPanel Name="SamplesPanel" ProgressiveRenderingChunkSize="2">
             <local:Grid_Demo HorizontalAlignment="Center"/>

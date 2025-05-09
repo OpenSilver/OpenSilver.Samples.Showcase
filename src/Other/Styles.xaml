@@ -12,13 +12,14 @@
     <Style x:Key="PageIntroText_Style" TargetType="TextBlock">
         <Style.Setters>
             <Setter Property="Foreground" Value="{DynamicResource Theme_TextBrush}"/>
-            <Setter Property="Opacity" Value="0.7"/>
-            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Opacity" Value="0.8"/>
+            <Setter Property="FontSize" Value="14"/>
             <Setter Property="TextWrapping" Value="Wrap"/>
             <Setter Property="Margin" Value="30,10,10,20"/>
             <Setter Property="MaxWidth" Value="800"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
-            <Setter Property="LineHeight" Value="30"/>
+            <Setter Property="LineHeight" Value="24"/>
+            <Setter Property="FontWeight" Value="Bold"/>
         </Style.Setters>
     </Style>
     <Style x:Key="PageTitle_Style" TargetType="ContentControl">
@@ -26,7 +27,7 @@
             <Setter Property="FontSize" Value="60"/>
             <Setter Property="FontWeight" Value="Black"/>
             <Setter Property="FontFamily" Value="{StaticResource InterFontFamily}"/>
-            <Setter Property="Margin" Value="25,32,50,10"/>
+            <Setter Property="Margin" Value="27,32,50,10"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
             <Setter Property="Foreground">
                 <Setter.Value>
