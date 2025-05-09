@@ -15,8 +15,14 @@
                 <Path Stroke="White" Data="M 17 17 A 1 1 0 0 0 -17 -17 A 1 1 0 0 0 17 17 L 52 54" StrokeThickness="2" Stretch="Uniform"/>
             </Button>
         </StackPanel>-->
-        <controlskit:StaggeredPanel Grid.Row="1" ProgressiveRenderingChunkSize="2" x:Name="SamplesContainer">
 
-        </controlskit:StaggeredPanel>
+        <ItemsControl x:Name="SamplesPanel" local:ItemsControlLoadingBehavior.ShowLoadingOnGenerating="True">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <controlskit:StaggeredPanel ProgressiveRenderingChunkSize="2"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
+        
     </StackPanel>
 </Page>

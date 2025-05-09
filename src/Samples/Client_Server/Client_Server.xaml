@@ -4,7 +4,7 @@
              xmlns:controlskit="clr-namespace:OpenSilver.ControlsKit;assembly=OpenSilver.ControlsKit.Controls"
              xmlns:local="clr-namespace:OpenSilver.Samples.Showcase"
              Style="{StaticResource Page_Style}">
-    
+
     <StackPanel>
         <StackPanel>
             <ContentControl Content="Client / Server" Style="{StaticResource PageTitle_Style}"/>
@@ -15,13 +15,20 @@
                                                                     cookie flag on your server to ensure smooth cross-origin communication.
             </TextBlock>
         </StackPanel>
-        
-        <controlskit:StaggeredPanel DesiredColumnWidth="320" ProgressiveRenderingChunkSize="2">
+
+        <ItemsControl x:Name="SamplesPanel" local:ItemsControlLoadingBehavior.ShowLoadingOnGenerating="True">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <controlskit:StaggeredPanel DesiredColumnWidth="320" ProgressiveRenderingChunkSize="2"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+
             <local:WCF_SOAP_Demo HorizontalAlignment="Center"/>
             <local:REST_HttpClient_Demo x:Name="REST_WebClientDemo" HorizontalAlignment="Center"/>
             <local:WebSockets_Demo HorizontalAlignment="Center"/>
             <local:RIAServices_Demo HorizontalAlignment="Center"/>
             <local:JSONP_Demo HorizontalAlignment="Center"/>
-        </controlskit:StaggeredPanel>
+            
+        </ItemsControl>
     </StackPanel>
 </Page>

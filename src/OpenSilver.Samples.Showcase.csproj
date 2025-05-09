@@ -24,6 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Include="Other\Controls\LoadingControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Other\Internals\Search\SearchControl.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -236,11 +239,13 @@
     </Page>
     <Compile Include="Other\Contact.cs" />
     <Compile Include="Other\Controls\JsParticlesEffect.cs" />
+    <Compile Include="Other\Controls\LoadingControl.xaml.cs" />
     <Compile Include="Other\Controls\SvgImage.cs" />
     <Compile Include="Other\Converters\EnumToListConverter.cs" />
     <Compile Include="Other\Converters\StringEmptyToVisibilityConverter.cs" />
     <Compile Include="Other\Converters\RgbToBrushConverter.cs" />
     <Compile Include="Other\Elements.cs" />
+    <Compile Include="Other\Internals\ItemsControlLoadingBehavior.cs" />
     <Compile Include="Other\Internals\Search\SamplesInfoLoader.cs" />
     <Compile Include="Other\Internals\Search\ControlSearch.cs" />
     <Compile Include="Other\Internals\Search\SearchableItem.cs" />
