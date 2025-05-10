@@ -434,9 +434,9 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="ContentControl">
                         <Viewbox Stretch="Uniform" StretchDirection="DownOnly" HorizontalAlignment="Stretch">
-                            <Border Background="{TemplateBinding Background}" CornerRadius="50">
+                            <Border Background="{TemplateBinding Background}" CornerRadius="20">
                                 <Border.Effect>
-                                    <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="30" Opacity="0.2" />
+                                    <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="30" Opacity="0.3" />
                                 </Border.Effect>
                                 <ContentPresenter Margin="40,12,40,12"/>
                             </Border>
