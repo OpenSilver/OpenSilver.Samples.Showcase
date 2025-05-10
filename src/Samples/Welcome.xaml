@@ -17,11 +17,28 @@
                         <!--<animations:Animation.OnAppear>
                             <animations:FadeAndScale Delay="300"/>
                         </animations:Animation.OnAppear>-->
-                        <TextBlock x:Name="IntroductionTextBlock" Text="This app was written in XAML and C# (or VB.NET or F#), and compiled to WebAssembly using OpenSilver." FontSize="16" TextWrapping="Wrap" Margin="22,10,0,0"/>
-                        <TextBlock Text="The source code of this app is available at:" FontSize="16" TextWrapping="Wrap" Margin="22,10,0,0"/>
-                        <HyperlinkButton FontSize="16" Margin="22,10,0,0" NavigateUri="https://github.com/OpenSilver/OpenSilver.Samples.Showcase" TargetName="_blank" Cursor="Hand" HorizontalAlignment="Left">
-                            <TextBlock Text="https://github.com/OpenSilver/OpenSilver.Samples.Showcase" TextWrapping="Wrap" Foreground="Blue"/>
-                        </HyperlinkButton>
+                        <TextBlock FontSize="16" TextWrapping="Wrap" Margin="22,10,0,0">
+                            Welcome to the <Run FontWeight="Bold">OpenSilver Features Showcase!</Run>
+                            <LineBreak/>
+                            <LineBreak/><Run FontWeight="Bold">What is this?</Run>
+                            <LineBreak/>It's a collection of 200+ small samples that showcase the features of OpenSilver. This app was written in C# and XAML (note: VB.NET and F# snippets are provided too), so it's also a great way to learn XAML and other .NET UI concepts.
+                            <LineBreak/>
+                            <LineBreak/><Run FontWeight="Bold">What is OpenSilver?</Run>
+                            <LineBreak/>
+                            <Hyperlink NavigateUri="https://opensilver.net" TargetName="_blank" Foreground="{DynamicResource Theme_TextBrush}">OpenSilver.NET</Hyperlink> is a modern,
+                            <Hyperlink NavigateUri="https://github.com/OpenSilver/OpenSilver" TargetName="_blank" Foreground="{DynamicResource Theme_TextBrush}">open-source</Hyperlink>
+                            .NET UI framework that is backward-compatible with WPF and works cross-platform (Web, Android, iOS, Windows, Mac, and Linux).
+                            <LineBreak/>
+                            <LineBreak/><Run FontWeight="Bold">There are so many UI frameworks, what's unique about this one?</Run>
+                            <LineBreak/>
+                            - Compatible with WPF and Silverlight. This means you can reuse your WPF skills, and modernize existing WPF and Silverlight apps (note: more WPF features are added
+                            <Hyperlink NavigateUri="https://github.com/OpenSilver/OpenSilver/" TargetName="_blank" Foreground="{DynamicResource Theme_TextBrush}">every week</Hyperlink>).
+                            <LineBreak/>
+                            - The only web-first XAML framework. This means you can mix and match .NET and HTML/JS and tap into the huge Web ecosystem. Plus, apps will render pixel-perfect the same even when published to native platforms.
+                            <LineBreak/>
+                            - Comes with a powerful drag-and-drop XAML UI designer, available in the extension for VS and VS Code, and also fully online at XAML.io (no installation, no signup).
+                        </TextBlock>
+                        
                         <TextBlock Text="TIP: Use the menu on the left to navigate from page to page." FontSize="12" Foreground="#FF666666" TextWrapping="Wrap" Margin="22,8,0,0" FontStyle="Italic"/>
                     </StackPanel>
                 </Border>
