@@ -238,7 +238,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Compile Include="Other\Contact.cs" />
-    <Compile Include="Other\Controls\AdaptiveColumnsPanel.cs" />
     <Compile Include="Other\Controls\JsParticlesEffect.cs" />
     <Compile Include="Other\Controls\LoadingControl.xaml.cs" />
     <Compile Include="Other\Controls\SvgImage.cs" />
