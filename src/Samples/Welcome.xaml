@@ -24,7 +24,7 @@
                     <Border.Effect>
                         <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="20" Opacity="0.2" />
                     </Border.Effect>
-                    <StackPanel Margin="10,16,30,30">
+                    <StackPanel Margin="10,16,30,20">
                         <TextBlock FontSize="14" TextWrapping="Wrap" Margin="22,14,0,0" LineHeight="22" Opacity="0.8">This app contains over 200 small samples that demonstrate <Hyperlink NavigateUri="https://opensilver.net" TargetName="_blank" Foreground="{DynamicResource Theme_TextBrush}">OpenSilver</Hyperlink>’s features. Built with C# and XAML (with VB.NET and F# snippets included), it’s also a great way to learn XAML and explore .NET UI concepts.</TextBlock>
                         <TextBlock FontSize="14" TextWrapping="Wrap" Margin="22,30,0,0" FontWeight="Bold">What is OpenSilver and what&apos;s unique about it?</TextBlock>
                         <TextBlock FontSize="14" TextWrapping="Wrap" Margin="22,10,0,0" LineHeight="22" Opacity="0.8">
