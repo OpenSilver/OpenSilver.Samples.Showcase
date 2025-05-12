@@ -48,7 +48,7 @@ type SearchPage() as this =
     //    this.NavigationService.Navigate(Uri($"/Search/{searchText}", UriKind.Relative)) |> ignore
 
     member internal this.PerformSearch(searchText: string) =
-        this.SamplesContainer.Children.Clear()
+        this.SamplesPanel.Items.Clear()
 
         if not (String.IsNullOrWhiteSpace searchText) then
             let searchResult = ControlSearch.Search(searchText)
@@ -59,5 +59,5 @@ type SearchPage() as this =
                     let controlInstance = Activator.CreateInstance(sampleType)
                     match controlInstance with
                     | :? UIElement as uiElement ->
-                        this.SamplesContainer.Children.Add(uiElement)
+                        this.SamplesPanel.Items.Add(uiElement)
                     | _ -> ()
