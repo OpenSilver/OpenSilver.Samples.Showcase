@@ -1,6 +1,5 @@
 ﻿Imports System.Windows
 Imports System.Windows.Controls
-Imports System.Windows.Input
 Imports System.Windows.Navigation
 Imports OpenSilver.Samples.Showcase.Search
 
@@ -47,7 +46,7 @@ Namespace OpenSilver.Samples.Showcase
         Friend Sub PerformSearch(searchText As String)
             'todo: if multiple searches one after the other, increase efficiency by only looking at the changes between the current search and the previous search
             'for now, we just clear everything.
-            SamplesContainer.Children.Clear()
+            SamplesPanel.Items.Clear()
 
             If Not String.IsNullOrWhiteSpace(searchText) Then
                 Dim searchResult = ControlSearch.Search(searchText)
@@ -57,7 +56,7 @@ Namespace OpenSilver.Samples.Showcase
                         Dim controlInstance As Object = Activator.CreateInstance(sampleType)
 
                         If TypeOf controlInstance Is UIElement Then
-                            SamplesContainer.Children.Add(CType(controlInstance, UIElement))
+                            SamplesPanel.Items.Add(CType(controlInstance, UIElement))
                         End If
                     End If
                 Next

@@ -20,7 +20,13 @@
             </TextBlock>
         </StackPanel>
 
-        <controlskit:StaggeredPanel ProgressiveRenderingChunkSize="2">
+        <ItemsControl x:Name="SamplesPanel" local:ItemsControlLoadingBehavior.ShowLoadingOnGenerating="True">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <controlskit:StaggeredPanel ProgressiveRenderingChunkSize="2"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            
             <local:Geolocation HorizontalAlignment="Center"/>
             <local:Flashlight_Demo HorizontalAlignment="Center"/>
             <local:Vibration_Demo HorizontalAlignment="Center"/>
@@ -33,7 +39,8 @@
             <local:Connectivity_Demo HorizontalAlignment="Center"/>
             <local:OpenMapApp_Demo HorizontalAlignment="Center"/>
             <local:Camera_Demo HorizontalAlignment="Center"/>
-        </controlskit:StaggeredPanel>
+
+        </ItemsControl>
     </StackPanel>
 
 </Page>

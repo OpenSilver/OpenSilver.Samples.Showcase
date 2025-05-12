@@ -28,7 +28,7 @@
 		<Compile Include="Other\Controls\SvgImage.fs" />
 		<Compile Include="Other\Converters\EnumToListConverter.fs" />
 		<Compile Include="Other\Converters\RgbToBrushConverter.fs" />
-		<Compile Include="Other\Converters\StringEmptyToVisibilityConverter.fs" />		
+		<Compile Include="Other\Converters\StringEmptyToVisibilityConverter.fs" />	
 		<Compile Include="Other\MarkupExtensions\ResxExtension.fs" />
 		<Compile Include="Other\PageInfo.fs" />
 		<Compile Include="Samples\Interop_Samples\HtmlPresenter\HtmlColorPicker.fs" />
@@ -75,6 +75,13 @@
     <Compile Include="Other\Internals\ViewSourceButtonInfo.fs" />
     <Compile Include="Other\Internals\ViewStyleSourceInfo.fs" />
     <Compile Include="Other\Internals\ViewModernStyleSourceInfo.fs" />
+    <Page Include="Other\Controls\LoadingControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="Other\Controls\LoadingControl.xaml.fs">
+      <DependentUpon>Other\Controls\LoadingControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Other\Internals\ItemsControlLoadingBehavior.fs" />
     <Page Include="Other\Internals\ViewSourcePanel.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>

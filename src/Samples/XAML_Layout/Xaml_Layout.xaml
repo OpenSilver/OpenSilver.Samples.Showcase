@@ -14,7 +14,13 @@
             </TextBlock>
         </StackPanel>
 
-        <controlskit:StaggeredPanel Name="SamplesPanel" ProgressiveRenderingChunkSize="2">
+        <ItemsControl x:Name="SamplesPanel" local:ItemsControlLoadingBehavior.ShowLoadingOnGenerating="True">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <controlskit:StaggeredPanel ProgressiveRenderingChunkSize="2"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+
             <local:Grid_Demo HorizontalAlignment="Center"/>
             <local:UniformGrid_Demo/>
             <local:StackPanel_Demo HorizontalAlignment="Center"/>
@@ -36,6 +42,7 @@
             <local:Viewbox_Demo HorizontalAlignment="Center"/>
             <local:TransitioningContentControl_Demo/>
             <local:LayoutTransformer_Demo/>
-        </controlskit:StaggeredPanel>
+
+        </ItemsControl>
     </StackPanel>
 </Page>
