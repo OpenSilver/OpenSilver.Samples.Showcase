@@ -5,7 +5,7 @@
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase"
     Style="{StaticResource Page_Style}">
     
-    <Border Background="{DynamicResource Theme_ContainerBackgroundBrush}" CornerRadius="6" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="22,22,0,0">
+    <Border Background="{DynamicResource Theme_ContainerBackgroundBrush}" CornerRadius="6" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="22,22,22,0">
         <Border.Effect>
             <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="10" Opacity="0.1" />
         </Border.Effect>

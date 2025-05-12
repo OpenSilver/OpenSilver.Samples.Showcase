@@ -5,6 +5,7 @@ open System.Windows.Browser
 open System.Windows
 open System.Windows.Controls
 open System.Windows.Media
+open System.Windows.Navigation
 
 type CurrentState =
     | Unset                                 // Initial value
@@ -44,6 +45,16 @@ type MainPage() as this =
         // Navigate to the "Welcome" page by default:
         if not (HtmlPage.Document.DocumentUri.OriginalString.Contains("#")) then
             this.MenuListBox.SelectedItem <- PageInfo.LandingPageInfo
+            
+    member private this.PageContainer_Navigated (sender: obj) (e: NavigationEventArgs) =
+        _skipMenuListBox_SelectionChanged <- true
+        let selectedPage = this.MenuListBox.SelectedItem :?> PageInfo
+        let navigatedPage = PageInfo.Pages |> Seq.tryFind (fun x -> x.Path = e.Uri.OriginalString)
+        match navigatedPage with
+        | Some page when not (obj.ReferenceEquals(page, selectedPage)) ->
+            this.MenuListBox.SelectedItem <- page
+        | _ -> ()
+        _skipMenuListBox_SelectionChanged <- false
 
     member private this.Logo_MouseLeftButtonDown(sender: obj, e: System.Windows.Input.MouseButtonEventArgs) =
         this.MenuListBox.SelectedItem <- PageInfo.LandingPageInfo;

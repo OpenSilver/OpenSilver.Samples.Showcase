@@ -1,7 +1,9 @@
 ﻿Imports System.Windows
 Imports System.Windows.Browser
 Imports System.Windows.Controls
+Imports System.Windows.Input
 Imports System.Windows.Media
+Imports System.Windows.Navigation
 Imports OpenSilver.Themes.Modern
 
 Namespace OpenSilver.Samples.Showcase
@@ -48,7 +50,19 @@ Namespace OpenSilver.Samples.Showcase
             PageScrollViewer.ScrollToVerticalOffset(0)
         End Sub
 
-        Private Sub Logo_MouseLeftButtonDown(sender As Object, e As System.Windows.Input.MouseButtonEventArgs)
+        Private Sub PageContainer_Navigated(sender As Object, e As NavigationEventArgs)
+            _skipMenuListBox_SelectionChanged = True
+            Dim selectedPage As PageInfo = TryCast(MenuListBox.SelectedItem, PageInfo)
+            Dim navigatedPage As PageInfo = PageInfo.Pages.FirstOrDefault(Function(x) x.Path = e.Uri.OriginalString)
+
+            If navigatedPage IsNot selectedPage Then
+                MenuListBox.SelectedItem = navigatedPage
+            End If
+
+            _skipMenuListBox_SelectionChanged = False
+        End Sub
+
+        Private Sub Logo_MouseLeftButtonDown(sender As Object, e As MouseButtonEventArgs)
             MenuListBox.SelectedItem = PageInfo.LandingPageInfo
         End Sub
 

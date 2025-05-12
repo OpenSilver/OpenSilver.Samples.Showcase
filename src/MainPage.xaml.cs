@@ -1,10 +1,12 @@
 ﻿using OpenSilver.Themes.Modern;
 using System;
+using System.Linq;
 using System.Windows;
 using System.Windows.Browser;
 using System.Windows.Controls;
-using System.Windows.Markup;
+using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Navigation;
 
 namespace OpenSilver.Samples.Showcase
 {
@@ -40,8 +42,7 @@ namespace OpenSilver.Samples.Showcase
         {
             if (!(_skipMenuListBox_SelectionChanged && (e.AddedItems?.Count == 0)))
             {
-                PageInfo page = e.AddedItems[0] as PageInfo;
-                if (page != null)
+                if (e.AddedItems[0] is PageInfo page)
                 {
                     NavigateToPage(page.Path);
                 }
@@ -62,7 +63,19 @@ namespace OpenSilver.Samples.Showcase
             PageScrollViewer.ScrollToVerticalOffset(0d);
         }
 
-        private void Logo_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void PageContainer_Navigated(object sender, NavigationEventArgs e)
+        {
+            _skipMenuListBox_SelectionChanged = true;
+            var selectedPage = MenuListBox.SelectedItem as PageInfo;
+            var navigatedPage = PageInfo.Pages.FirstOrDefault(x => x.Path == e.Uri.OriginalString);
+            if (navigatedPage != selectedPage)
+            {
+                MenuListBox.SelectedItem = navigatedPage;
+            }
+            _skipMenuListBox_SelectionChanged = false;
+        }
+
+        private void Logo_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             // Go to the homepage:
             MenuListBox.SelectedItem = PageInfo.LandingPageInfo;
@@ -286,6 +299,5 @@ namespace OpenSilver.Samples.Showcase
         }
 
         #endregion
-
     }
 }
