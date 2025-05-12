@@ -17,6 +17,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
             <ContentControl Background="#FFA9D4A4"
@@ -34,7 +35,7 @@
                         <Setter Property="Margin" Value="2"/>
                     </Style>
                 </StackPanel.Resources>
-                
+
                 <ToggleButton Content="One"/>
                 <ToggleButton Content="Two"/>
                 <ToggleButton Content="Three"/>
@@ -68,7 +69,9 @@
                 </ToggleButton>
             </StackPanel>
 
-            <local:ViewSourceButton Grid.Row="3" Background="#FF70B36B">
+            <ToggleButton Grid.Row="3" Template="{StaticResource SwitchToggleButtonTemplate}"/>
+
+            <local:ViewSourceButton Grid.Row="4" Background="#FF70B36B">
                 <local:ViewSourceButton.Sources>
                     <local:ViewSourceButtonInfo FileName="ToggleButton_Demo.xaml" RelativePath="src/Samples/XAML_Controls/ToggleButton"/>
                     <local:ViewSourceButtonInfo FileName="ToggleButton_Demo.xaml.cs" RelativePath="src/Samples/XAML_Controls/ToggleButton"/>

@@ -112,4 +112,58 @@
         </Setter>
     </Style>
 
+    <ControlTemplate x:Key="SwitchToggleButtonTemplate" TargetType="ToggleButton">
+        <Grid Width="60" Height="30">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CheckStates">
+                    <VisualState x:Name="Unchecked">
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetName="BackgroundBorder"
+                                            Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                            To="LightGray"
+                                            Duration="0:0:0.2"/>
+                            <DoubleAnimation Storyboard.TargetName="ThumbTransform"
+                                             Storyboard.TargetProperty="X"
+                                             To="2"
+                                             Duration="0:0:0.2"/>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Checked">
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetName="BackgroundBorder"
+                                            Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                            To="LimeGreen"
+                                            Duration="0:0:0.2"/>
+                            <DoubleAnimation Storyboard.TargetName="ThumbTransform"
+                                             Storyboard.TargetProperty="X"
+                                             To="32"
+                                             Duration="0:0:0.2"/>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Indeterminate"/>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+
+            <Border x:Name="BackgroundBorder"
+                    Background="LightGray"
+                    BorderBrush="Transparent"
+                    BorderThickness="1"
+                    CornerRadius="15"/>
+            <Border Width="22"
+                    Height="22"
+                    Margin="2"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Background="White"
+                    CornerRadius="11">
+                <Border.RenderTransform>
+                    <TranslateTransform x:Name="ThumbTransform"/>
+                </Border.RenderTransform>
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="1"/>
+                </Border.Effect>
+            </Border>
+        </Grid>
+    </ControlTemplate>
+
 </ResourceDictionary>

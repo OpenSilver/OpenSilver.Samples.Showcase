@@ -22,7 +22,8 @@
                 <Run Foreground="Purple" Text="Polyline"/> Shapes.
             </TextBlock>
             <Canvas Grid.Row="2" Height="125">
-                <Rectangle Fill="#FF9BFF91" Height="57" Canvas.Left="10" Width="150" Stroke="#FF1DE00A" StrokeThickness="5"/>
+                <Rectangle Fill="#FF9BFF91" Height="57" Canvas.Left="10" Width="150"
+                           Stroke="#FF1DE00A" StrokeThickness="5" StrokeLineJoin="Bevel" StrokeDashArray="20 10" StrokeDashCap="Round"/>
                 <Ellipse Fill="#FF879DFF" Height="100" Canvas.Top="20" Width="140" Stroke="#FF0023BF" StrokeThickness="5" Canvas.Left="10"/>
                 <Line Stroke="Red" X1="10" Y1="25" X2="140" Y2="65" StrokeThickness="2" />
                 <Polygon Points="0, 48 48, 0 48, 96" StrokeThickness="1" Stroke="Red" Fill="Peru" />

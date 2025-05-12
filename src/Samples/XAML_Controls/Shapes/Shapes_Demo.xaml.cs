@@ -1,14 +1,13 @@
 ﻿using OpenSilver.Samples.Showcase.Search;
 using System.Windows.Controls;
 
-namespace OpenSilver.Samples.Showcase
+namespace OpenSilver.Samples.Showcase;
+
+[SearchKeywords("graphics", "drawing", "vector", "canvas", "rectangle", "ellipse", "line", "polygon", "path", "polyline")]
+public partial class Shapes_Demo : UserControl
 {
-    [SearchKeywords("graphics", "shapes", "drawing", "vector", "UI")]
-    public partial class Shapes_Demo : UserControl
+    public Shapes_Demo()
     {
-        public Shapes_Demo()
-        {
-            this.InitializeComponent();
-        }
+        InitializeComponent();
     }
 }
