@@ -4,12 +4,30 @@
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
 
     <FontFamily x:Key="InterFontFamily">ms-appx:///OpenSilver.Samples.Showcase/Other/Inter_VariableFont_slnt_wght.ttf</FontFamily>
-    <Style x:Key="PageHeader_Style" TargetType="ContentControl">
+    <Style x:Key="Page_Style" TargetType="Page">
+        <Style.Setters>
+            <Setter Property="Margin" Value="20,0,0,0"/>
+        </Style.Setters>
+    </Style>
+    <Style x:Key="PageIntroText_Style" TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="{DynamicResource Theme_TextBrush}"/>
+            <Setter Property="Opacity" Value="0.8"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="Margin" Value="30,10,10,20"/>
+            <Setter Property="MaxWidth" Value="800"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="LineHeight" Value="24"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style.Setters>
+    </Style>
+    <Style x:Key="PageTitle_Style" TargetType="ContentControl">
         <Style.Setters>
             <Setter Property="FontSize" Value="60"/>
             <Setter Property="FontWeight" Value="Black"/>
             <Setter Property="FontFamily" Value="{StaticResource InterFontFamily}"/>
-            <Setter Property="Margin" Value="21,20,10,20"/>
+            <Setter Property="Margin" Value="27,32,50,10"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
             <Setter Property="Foreground">
                 <Setter.Value>
@@ -27,12 +45,7 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="ContentControl">
                         <Viewbox Stretch="Uniform" StretchDirection="DownOnly" HorizontalAlignment="Stretch">
-                            <Border Background="{DynamicResource Theme_ContainerBackgroundBrush}" CornerRadius="50">
-                                <Border.Effect>
-                                    <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="30" Opacity="0.2" />
-                                </Border.Effect>
-                                <ContentPresenter Margin="40,12,40,12"/>
-                            </Border>
+                            <ContentPresenter Margin="{TemplateBinding Padding}"/>
                         </Viewbox>
                     </ControlTemplate>
                 </Setter.Value>
