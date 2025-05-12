@@ -37,37 +37,35 @@ namespace OpenSilver.Samples.Showcase
             set => SetValue(NoColumnsBelowWidthProperty, value);
         }
 
+        // Get visible children only once and as FrameworkElement directly
+        private List<FrameworkElement> GetVisibleChildren() =>
+            Children.OfType<FrameworkElement>()
+                    .Where(c => c.Visibility != Visibility.Collapsed)
+                    .ToList();
+
+        // Determine layout mode in one place
+        private bool ShouldUseColumns(double availableWidth, int childCount) =>
+            !double.IsInfinity(availableWidth) &&
+            availableWidth > NoColumnsBelowWidth &&
+            childCount > 0;
+
         protected override Size MeasureOverride(Size availableSize)
         {
-            double layoutWidth = double.IsNaN(this.Width)
-                                 ? availableSize.Width
-                                 : this.Width;
-            bool hasFinite = !double.IsInfinity(layoutWidth);
-
-            // collect only visible children
-            var children = Children.Cast<UIElement>()
-                                .Where(c => c.Visibility != Visibility.Collapsed
-                                && c is FrameworkElement)
-                                .Cast<FrameworkElement>()
-                                .ToList();
+            double layoutWidth = double.IsNaN(this.Width) ? availableSize.Width : this.Width;
+            var children = GetVisibleChildren();
             int count = children.Count;
 
-            // Decide mode using our fixed layoutWidth
-            bool useColumns = hasFinite
-                              && layoutWidth > NoColumnsBelowWidth
-                              && count > 0;
+            bool useColumns = ShouldUseColumns(layoutWidth, count);
 
             if (!useColumns)
             {
-                // — vertical stack —
+                // Vertical stack mode
                 double desiredW = 0, desiredH = 0;
-                foreach (UIElement child in children)
+                foreach (var child in children)
                 {
-                    // each child can be up to "layoutWidth" wide, infinite height
                     child.Measure(new Size(layoutWidth, double.PositiveInfinity));
-                    var fe = child as FrameworkElement;
-                    double mW = (fe?.Margin.Left ?? 0) + (fe?.Margin.Right ?? 0);
-                    double mH = (fe?.Margin.Top ?? 0) + (fe?.Margin.Bottom ?? 0);
+                    double mW = child.Margin.Left + child.Margin.Right;
+                    double mH = child.Margin.Top + child.Margin.Bottom;
                     desiredW = Math.Max(desiredW, child.DesiredSize.Width + mW);
                     desiredH += child.DesiredSize.Height + mH;
                 }
@@ -75,14 +73,13 @@ namespace OpenSilver.Samples.Showcase
             }
             else
             {
-                // — N equal‐width columns —
+                // Column mode
                 double colW = layoutWidth / count;
                 double maxChildH = 0;
-                foreach (UIElement child in children)
+                foreach (var child in children)
                 {
                     child.Measure(new Size(colW, double.PositiveInfinity));
-                    var fe = child as FrameworkElement;
-                    double mH = (fe?.Margin.Top ?? 0) + (fe?.Margin.Bottom ?? 0);
+                    double mH = child.Margin.Top + child.Margin.Bottom;
                     maxChildH = Math.Max(maxChildH, child.DesiredSize.Height + mH);
                 }
                 return new Size(layoutWidth, maxChildH);
@@ -91,50 +88,43 @@ namespace OpenSilver.Samples.Showcase
 
         protected override Size ArrangeOverride(Size finalSize)
         {
-            double layoutWidth = finalSize.Width;
-            bool hasFinite = !double.IsInfinity(layoutWidth);
-
-            var children = Children.Cast<UIElement>()
-                                .Where(c => c.Visibility != Visibility.Collapsed
-                                && c is FrameworkElement)
-                                .Cast<FrameworkElement>()
-                                .ToList();
+            var children = GetVisibleChildren();
             int count = children.Count;
-
-            // Use the same condition as in MeasureOverride
-            bool useColumns = hasFinite
-                              && layoutWidth > NoColumnsBelowWidth
-                              && count > 0;
+            bool useColumns = ShouldUseColumns(finalSize.Width, count);
 
             if (!useColumns)
             {
-                // vertical stack
+                // Vertical stack mode
                 double y = 0;
                 foreach (var child in children)
                 {
-                    var desired = child.DesiredSize;
+                    // Account for margins
                     double marginLeft = child.Margin.Left;
-                    double marginTop = child.Margin.Top;
                     double marginRight = child.Margin.Right;
+                    double marginTop = child.Margin.Top;
                     double marginBottom = child.Margin.Bottom;
 
+                    // Calculate available width for this child
                     double availableWidth = finalSize.Width - marginLeft - marginRight;
-                    double w = (child.HorizontalAlignment == HorizontalAlignment.Stretch)
-                               ? availableWidth
-                               : desired.Width;
-                    double x = AlignOffset(availableWidth, w, child.HorizontalAlignment) + marginLeft;
 
-                    Rect rect = new Rect(x, y + marginTop, w, desired.Height);
-                    child.Arrange(rect);
+                    // Determine width based on alignment
+                    double width = (child.HorizontalAlignment == HorizontalAlignment.Stretch)
+                                  ? availableWidth
+                                  : Math.Min(child.DesiredSize.Width, availableWidth);
 
-                    y += desired.Height + marginTop + marginBottom;
+                    // Calculate x position with alignment
+                    double x = marginLeft + GetHorizontalAlignmentOffset(availableWidth, width, child.HorizontalAlignment);
+
+                    // Arrange the child
+                    child.Arrange(new Rect(x, y + marginTop, width, child.DesiredSize.Height));
+
+                    // Move to next vertical position
+                    y += child.DesiredSize.Height + marginTop + marginBottom;
                 }
-
-                return finalSize;
             }
             else
             {
-                // Compute the actual height we need (same as in MeasureOverride)
+                // Column mode - calculate actual height needed
                 double maxChildH = 0;
                 foreach (var child in children)
                 {
@@ -142,67 +132,67 @@ namespace OpenSilver.Samples.Showcase
                     maxChildH = Math.Max(maxChildH, child.DesiredSize.Height + mH);
                 }
 
-                // Use our calculated height rather than the finalSize.Height
-                Size actualSize = new Size(finalSize.Width, maxChildH);
-
-                // columns
+                // Column width
                 double colW = finalSize.Width / count;
+
                 for (int i = 0; i < count; i++)
                 {
                     var child = children[i];
-                    var desired = child.DesiredSize;
-
                     double marginLeft = child.Margin.Left;
-                    double marginTop = child.Margin.Top;
                     double marginRight = child.Margin.Right;
+                    double marginTop = child.Margin.Top;
+                    double marginBottom = child.Margin.Bottom;
 
+                    // Available width for this column
                     double availableWidth = colW - marginLeft - marginRight;
 
-                    double w = (child.HorizontalAlignment == HorizontalAlignment.Stretch)
-                               ? availableWidth
-                               : Math.Min(desired.Width, availableWidth);
+                    // Determine width based on alignment
+                    double width = (child.HorizontalAlignment == HorizontalAlignment.Stretch)
+                                  ? availableWidth
+                                  : Math.Min(child.DesiredSize.Width, availableWidth);
 
-                    double x = i * colW + marginLeft + AlignOffset(availableWidth, w, child.HorizontalAlignment);
-                    double y = marginTop;
+                    // Calculate horizontal position
+                    double x = (i * colW) + marginLeft +
+                               GetHorizontalAlignmentOffset(availableWidth, width, child.HorizontalAlignment);
 
-                    if (child.VerticalAlignment != VerticalAlignment.Top)
-                    {
-                        // Only do vertical alignment if it's not Top-aligned
-                        double h = desired.Height;
-                        y = marginTop + AlignOffset(maxChildH - marginTop - child.Margin.Bottom, h, child.VerticalAlignment);
-                    }
+                    // Calculate height based on alignment
+                    double height = (child.VerticalAlignment == VerticalAlignment.Stretch)
+                                   ? maxChildH - marginTop - marginBottom
+                                   : child.DesiredSize.Height;
 
-                    Rect rect = new Rect(x, y, w, desired.Height);
-                    child.Arrange(rect);
+                    // Calculate vertical position
+                    double availableHeight = maxChildH - marginTop - marginBottom;
+                    double y = marginTop + GetVerticalAlignmentOffset(availableHeight, height, child.VerticalAlignment);
+
+                    // Arrange the child
+                    child.Arrange(new Rect(x, y, width, height));
                 }
 
-                // Return our calculated size instead of finalSize
-                return actualSize;
+                // Return the correct size
+                return new Size(finalSize.Width, maxChildH);
             }
+
+            return finalSize;
         }
 
-        private double AlignOffset(double container, double element, HorizontalAlignment align)
+        private double GetHorizontalAlignmentOffset(double container, double element, HorizontalAlignment align)
         {
-            switch (align)
+            return align switch
             {
-                case HorizontalAlignment.Center: return (container - element) / 2;
-                case HorizontalAlignment.Right: return container - element;
-                case HorizontalAlignment.Stretch: return 0;
-                case HorizontalAlignment.Left:
-                default: return 0;
-            }
+                HorizontalAlignment.Center => (container - element) / 2,
+                HorizontalAlignment.Right => container - element,
+                _ => 0 // Left or Stretch
+            };
         }
 
-        private double AlignOffset(double container, double element, VerticalAlignment align)
+        private double GetVerticalAlignmentOffset(double container, double element, VerticalAlignment align)
         {
-            switch (align)
+            return align switch
             {
-                case VerticalAlignment.Center: return (container - element) / 2;
-                case VerticalAlignment.Bottom: return container - element;
-                case VerticalAlignment.Stretch: return 0;
-                case VerticalAlignment.Top:
-                default: return 0;
-            }
+                VerticalAlignment.Center => (container - element) / 2,
+                VerticalAlignment.Bottom => container - element,
+                _ => 0 // Top or Stretch
+            };
         }
     }
 }
