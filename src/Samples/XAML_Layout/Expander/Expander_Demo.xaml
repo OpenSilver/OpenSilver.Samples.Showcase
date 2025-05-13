@@ -53,7 +53,7 @@
                     <local:ViewSourceButtonInfo FileName="Expander_Demo.xaml.vb" RelativePath="src/Samples/XAML_Layout/Expander"/>
                     <local:ViewSourceButtonInfo FileName="Expander_Demo.xaml.fs" RelativePath="src/Samples/XAML_Layout/Expander"/>
                     <local:ViewStyleSourceInfo TabHeader="Default Expander Style" RelativePath="src/Runtime/Controls.Toolkit/Themes" Fragment="#L443-L1238"/>
-                    <local:ViewModernStyleSourceInfo TabHeader="Modern Expander Style" FileName="OpenSilver.Controls.Toolkit.xaml" Fragment="#L259-L1021"/>
+                    <local:ViewModernStyleSourceInfo TabHeader="Modern Expander Style" FileName="OpenSilver.Controls.Toolkit.xaml" Fragment="#L255-L937"/>
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

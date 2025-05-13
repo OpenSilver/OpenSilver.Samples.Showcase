@@ -10,7 +10,7 @@ namespace OpenSilver.Samples.Showcase
         {
             InitializeComponent();
 
-            SearchField.AddHandler(KeyDownEvent, new KeyEventHandler(SearchField_KeyDown), true);
+            SearchField.PreviewKeyDown += SearchField_KeyDown;
         }
 
         public void ButtonSearch_Click(object sender, RoutedEventArgs e)

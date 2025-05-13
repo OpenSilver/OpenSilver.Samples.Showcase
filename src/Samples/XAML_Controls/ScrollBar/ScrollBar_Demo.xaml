@@ -44,7 +44,7 @@
                     <local:ViewSourceButtonInfo FileName="ScrollBar_Demo.xaml.vb" RelativePath="src/Samples/XAML_Controls/ScrollBar"/>
                     <local:ViewSourceButtonInfo FileName="ScrollBar_Demo.xaml.fs" RelativePath="src/Samples/XAML_Controls/ScrollBar"/>
                     <local:ViewStyleSourceInfo TabHeader="Default ScrollBar Style" Fragment="#L3425-L3650"/>
-                    <local:ViewModernStyleSourceInfo TabHeader="Modern ScrollBar Style" Fragment="#L1725-L2019"/>
+                    <local:ViewModernStyleSourceInfo TabHeader="Modern ScrollBar Style" Fragment="#L1655-L1939"/>
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

@@ -89,7 +89,7 @@
                     <local:ViewSourceButtonInfo FileName="Calendar_Demo.xaml.vb" RelativePath="src/Samples/XAML_Controls/Calendar"/>
                     <local:ViewSourceButtonInfo FileName="Calendar_Demo.xaml.fs" RelativePath="src/Samples/XAML_Controls/Calendar"/>
                     <local:ViewStyleSourceInfo TabHeader="Default Calendar Style" RelativePath="src/Runtime/Controls/Themes" Fragment="#L96-L132"/>
-                    <local:ViewModernStyleSourceInfo FileName="OpenSilver.Controls.xaml" TabHeader="Modern Calendar Style" Fragment="#L633-L817"/>
+                    <local:ViewModernStyleSourceInfo FileName="OpenSilver.Controls.xaml" TabHeader="Modern Calendar Style" Fragment="#L606-L794"/>
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

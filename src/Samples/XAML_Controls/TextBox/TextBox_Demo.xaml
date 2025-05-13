@@ -51,7 +51,7 @@
                     <local:ViewSourceButtonInfo FileName="TextBox_Demo.xaml.fs" RelativePath="src/Samples/XAML_Controls/TextBox"/>
                     <local:ViewSourceButtonInfo FileName="TextBoxStyles.xaml" RelativePath="src/Samples/XAML_Controls/TextBox"/>
                     <local:ViewStyleSourceInfo TabHeader="Default TextBox Style" Fragment="#L1360-L1531"/>
-                    <local:ViewModernStyleSourceInfo TabHeader="Modern TextBox Style" Fragment="#L438-L639"/>
+                    <local:ViewModernStyleSourceInfo TabHeader="Modern TextBox Style" Fragment="#L409-L609"/>
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

@@ -94,7 +94,7 @@
                     <local:ViewSourceButtonInfo FileName="ToolTip_Demo.xaml.vb" RelativePath="src/Samples/XAML_Controls/ToolTip"/>
                     <local:ViewSourceButtonInfo FileName="ToolTip_Demo.xaml.fs" RelativePath="src/Samples/XAML_Controls/ToolTip"/>
                     <local:ViewStyleSourceInfo TabHeader="Default ToolTip Style" Fragment="#L1799-L1848"/>
-                    <local:ViewModernStyleSourceInfo TabHeader="Modern ToolTip Style" Fragment="#L3344-L3371"/>
+                    <local:ViewModernStyleSourceInfo TabHeader="Modern ToolTip Style" Fragment="#L3252-L3279"/>
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

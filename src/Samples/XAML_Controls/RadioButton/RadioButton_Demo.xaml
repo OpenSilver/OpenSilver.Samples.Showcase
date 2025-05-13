@@ -57,7 +57,7 @@
                     <local:ViewSourceButtonInfo FileName="RadioButton_Demo.xaml.fs" RelativePath="src/Samples/XAML_Controls/RadioButton"/>
                     <local:ViewSourceButtonInfo FileName="RadioButtonStyles.xaml" RelativePath="src/Samples/XAML_Controls/RadioButton"/>
                     <local:ViewStyleSourceInfo TabHeader="Default RadioButton Style" Fragment="#L735-L1017"/>
-                    <local:ViewModernStyleSourceInfo TabHeader="Modern RadioButton Style" Fragment="#L1221-L1468"/>
+                    <local:ViewModernStyleSourceInfo TabHeader="Modern RadioButton Style" Fragment="#L1165-L1402"/>
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

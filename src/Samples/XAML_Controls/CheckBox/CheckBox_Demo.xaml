@@ -24,7 +24,7 @@
                     <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/CheckBox"
                                                 FileName="CheckBox_Demo.xaml.fs" />
                     <local:ViewStyleSourceInfo TabHeader="Default CheckBox Style" Fragment="#L436-L733" />
-                    <local:ViewModernStyleSourceInfo TabHeader="Modern CheckBox Style" Fragment="#L706-L1022" />
+                    <local:ViewModernStyleSourceInfo TabHeader="Modern CheckBox Style" Fragment="#L676-L973" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>
