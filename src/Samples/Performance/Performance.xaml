@@ -30,7 +30,7 @@
             <local:Virtualization_Demo/>
             <local:ProgressiveLoading_Demo/>
             <local:AOT_Demo/>
-            <local:HtmlCanvas_Demo HorizontalAlignment="Center"/>
+            <!--<local:HtmlCanvas_Demo HorizontalAlignment="Center"/>-->
 
         </ItemsControl>
     </StackPanel>
