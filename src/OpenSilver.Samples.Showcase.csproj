@@ -391,7 +391,7 @@
     <Content Include="Other\smallBall.png" />
     <Content Include="Other\SampleVideo.mp4" />
     <Content Include="Other\SampleAudio.mp3" />
-    <Content Include="Properties\launchSettings.json" />
+    <None Include="Properties\launchSettings.json" />
     <Page Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
