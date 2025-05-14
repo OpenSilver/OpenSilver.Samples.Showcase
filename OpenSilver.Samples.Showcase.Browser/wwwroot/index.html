@@ -86,63 +86,65 @@
                 const scriptWebAssembly = document.createElement('script');
                 scriptWebAssembly.setAttribute('type', 'application/javascript');
                 scriptWebAssembly.setAttribute('src', '_framework/blazor.webassembly.js?date=' + new Date().toISOString());
-                document.body.appendChild(scriptWebAssembly);
-                navigator.serviceWorker.register('service-worker.js')
-                    .then(reg => {
-                        reg.onupdatefound = () => {
-                            if (reg.active) { // it is not the first installation
-                                const newWorker = reg.installing;
-                                newWorker.onstatechange = () => {
-                                    if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                                        showUpdateToast();
-                                    }
-                                };
-                            }
-                        };
-                    });
+                scriptWebAssembly.addEventListener('load', function () {
+                    navigator.serviceWorker.register('service-worker.js')
+                        .then(reg => {
+                            reg.onupdatefound = () => {
+                                if (reg.active) { // it is not the first installation
+                                    const newWorker = reg.installing;
+                                    newWorker.onstatechange = () => {
+                                        if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                            showUpdateToast();
+                                        }
+                                    };
+                                }
+                            };
+                        });
 
-                function showUpdateToast() {
-                    const toast = document.createElement('div');
-                    toast.innerHTML = `
-                    <div style="
-                      position: fixed;
-                      bottom: 20px;
-                      left: 50%;
-                      transform: translateX(-50%);
-                      background: #323232;
-                      color: #fff;
-                      padding: 16px 24px;
-                      border-radius: 10px;
-                      font-family: sans-serif;
-                      font-size: 14px;
-                      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-                      display: flex;
-                      align-items: center;
-                      gap: 12px;
-                      z-index: 10000;
-                    ">
-                      <span style="flex-grow: 1;">🔄 New version available.</span>
-                      <button style="
-                        background: #4caf50;
-                        color: white;
-                        border: none;
-                        padding: 8px 16px;
-                        font-size: 15px;
-                        border-radius: 6px;
-                        cursor: pointer;
-                      " onclick="location.reload()">Refresh</button>
-                      <button style="
-                        background: transparent;
-                        color: #ccc;
-                        font-size: 22px;
-                        border: none;
-                        cursor: pointer;
-                        margin-left: 4px;
-                      " onclick="this.parentElement.remove()">×</button>
-                    </div>
-                  `;
-                    document.body.appendChild(toast);
-                }
+                    function showUpdateToast() {
+                        const toast = document.createElement('div');
+                        toast.innerHTML = `
+  <div style="
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #323232;
+    color: #fff;
+    padding: 16px 24px;
+    border-radius: 10px;
+    font-family: sans-serif;
+    font-size: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 10000;
+  ">
+    <span style="flex-grow: 1;">🔄 New version available.</span>
+    <button style="
+      background: #4caf50;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      font-size: 15px;
+      border-radius: 6px;
+      cursor: pointer;
+    " onclick="location.reload()">Refresh</button>
+    <button style="
+      background: transparent;
+      color: #ccc;
+      font-size: 22px;
+      border: none;
+      cursor: pointer;
+      margin-left: 4px;
+    " onclick="this.parentElement.remove()">×</button>
+  </div>
+`;
+                        document.body.appendChild(toast);
+                    }
+                });
+                document.body.appendChild(scriptWebAssembly);
             });
             document.body.appendChild(script);
         })();
