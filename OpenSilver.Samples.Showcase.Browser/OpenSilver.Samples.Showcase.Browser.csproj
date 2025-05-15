@@ -27,6 +27,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <BlazorWebAssemblyLazyLoad Include="Microsoft.Maui.Essentials.dll" />
+    <BlazorWebAssemblyLazyLoad Include="Microsoft.Maui.Graphics.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
     <TrimmerRootAssembly Include="mscorlib" />
     <TrimmableAssembly Include="OpenSilver.Animations" />
     <TrimmableAssembly Include="OpenSilver.Browser" />

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -254,6 +254,7 @@
     <Compile Include="Other\Internals\ViewModernStyleSourceInfo.cs" />
     <Compile Include="Other\Internals\ViewSourcePanel.xaml.cs" />
     <Compile Include="Other\Internals\ViewStyleSourceInfo.cs" />
+    <Compile Include="Other\LazyLoadingHelper.cs" />
     <Compile Include="Other\Leagues\League.cs" />
     <Compile Include="Other\MarkupExtensions\ResxExtension.cs" />
     <Compile Include="Other\PageInfo.cs" />
