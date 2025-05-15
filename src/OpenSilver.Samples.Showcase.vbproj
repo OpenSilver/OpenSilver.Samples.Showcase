@@ -666,6 +666,9 @@
     <Page Include="Samples\XAML_Features\DropShadowEffect\DropShadowEffect_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\XAML_Features\BlurEffect\BlurEffect_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\XAML_Features\FindElementsInHostCoordinates\FindElementsInHostCoordinates_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -852,6 +855,7 @@
     <Compile Include="Samples\XAML_Features\Command\Command_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Features\DependencyProperties\DependencyProperties_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Features\DropShadowEffect\DropShadowEffect_Demo.xaml.vb" />
+    <Compile Include="Samples\XAML_Features\BlurEffect\BlurEffect_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Features\FindElementsInHostCoordinates\FindElementsInHostCoordinates_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Features\Gradients\Gradients_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Features\MarkupExtensions\MarkupExtensions_Demo.xaml.vb" />

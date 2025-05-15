@@ -39,6 +39,7 @@
             <local:Animations_Demo HorizontalAlignment="Center"/>
             <local:AnimationTool_Demo/>
             <local:DropShadowEffect_Demo HorizontalAlignment="Center"/>
+            <local:BlurEffect_Demo/>
             <local:ImageBrush_Demo/>
             <local:Window_SizeChanged_Demo HorizontalAlignment="Center"/>
             <local:FindElementsInHostCoordinates_Demo HorizontalAlignment="Center"/>

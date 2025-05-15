@@ -1083,11 +1083,17 @@
 		<Compile Include="Samples\XAML_Features\Drag_And_Drop\Drag_And_Drop_Demo_Silverlight.xaml.fs">
 			<DependentUpon>Samples\XAML_Features\Drag_And_Drop\Drag_And_Drop_Demo_Silverlight.xaml</DependentUpon>
 		</Compile>
-		<Page Include="Samples\XAML_Features\DropShadowEffect\DropShadowEffect_Demo.xaml">
+      <Page Include="Samples\XAML_Features\DropShadowEffect\DropShadowEffect_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
 		<Compile Include="Samples\XAML_Features\DropShadowEffect\DropShadowEffect_Demo.xaml.fs">
 			<DependentUpon>Samples\XAML_Features\DropShadowEffect\DropShadowEffect_Demo.xaml</DependentUpon>
+		</Compile>
+		<Page Include="Samples\XAML_Features\BlurEffect\BlurEffect_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Compile Include="Samples\XAML_Features\BlurEffect\BlurEffect_Demo.xaml.fs">
+			<DependentUpon>Samples\XAML_Features\BlurEffect\BlurEffect_Demo.xaml</DependentUpon>
 		</Compile>
 		<Page Include="Samples\XAML_Features\FindElementsInHostCoordinates\FindElementsInHostCoordinates_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
