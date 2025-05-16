@@ -111,7 +111,7 @@ mc:Ignorable="d"
             <RowDefinition x:Name="RowThatContainsTheBanner" Height="Auto"/>
             <RowDefinition x:Name="RowThatContainsThePage" Height="*"/>
             <RowDefinition x:Name="RowThatContainsTheGridSplitter" Height="0"/>
-            <RowDefinition x:Name="RowThatContainsTheSourceCodePane" Height="0"/>
+            <RowDefinition x:Name="RowThatContainsTheSourceCodePane" Height="0*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="1" ClipToBounds="True" Background="White">
             <Grid.ColumnDefinitions>

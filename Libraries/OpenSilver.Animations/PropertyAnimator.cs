@@ -11,120 +11,65 @@
 \*====================================================================================*/
 
 using System;
-using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Media.Animation;
-using System.Runtime.CompilerServices;
+using System.Collections.Generic;
+using System.Windows.Controls;
 
-namespace OpenSilver.Animationns
+namespace OpenSilver.Animations
 {
     /// <summary>
     /// A utility class for animating any property using a lambda expression to transform progress values.
     /// </summary>
     public class PropertyAnimator : IDisposable
     {
-        // Composite key class for target+property pairs
-        private class AnimationKey
+        // Proxy class for animation
+        private class AnimationProxy : DependencyObject
         {
-            public WeakReference<DependencyObject> Target { get; }
-            public DependencyProperty Property { get; }
+            public static readonly DependencyProperty ProgressProperty =
+                DependencyProperty.Register("Progress", typeof(double), typeof(AnimationProxy),
+                    new PropertyMetadata(0.0, OnProgressChanged));
 
-            public AnimationKey(DependencyObject target, DependencyProperty property)
+            public PropertyAnimator Owner { get; set; }
+
+            private static void OnProgressChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
             {
-                Target = new WeakReference<DependencyObject>(target);
-                Property = property;
-            }
-
-            public override bool Equals(object obj)
-            {
-                var other = obj as AnimationKey;
-                if (other == null) return false;
-
-                DependencyObject thisTarget, otherTarget;
-                if (!Target.TryGetTarget(out thisTarget) || !other.Target.TryGetTarget(out otherTarget))
-                    return false;
-
-                return ReferenceEquals(thisTarget, otherTarget) && Property == other.Property;
-            }
-
-            public override int GetHashCode()
-            {
-                DependencyObject target;
-                return (Target.TryGetTarget(out target) ? target.GetHashCode() : 0) ^ Property.GetHashCode();
-            }
-        }
-
-        // Attached property to use as animation proxy
-        public static readonly DependencyProperty ProgressProperty =
-            DependencyProperty.RegisterAttached(
-                "Progress",
-                typeof(double),
-                typeof(PropertyAnimator),
-                new PropertyMetadata(0.0, OnProgressChanged));
-
-        // Attached property to track animated properties per object
-        public static readonly DependencyProperty AnimatedPropertiesProperty =
-            DependencyProperty.RegisterAttached(
-                "AnimatedProperties",
-                typeof(List<DependencyProperty>),
-                typeof(PropertyAnimator),
-                new PropertyMetadata(null));
-
-        // Dictionary to track animators by target/property
-        private static readonly ConditionalWeakTable<object, PropertyAnimator> _activeAnimators =
-            new ConditionalWeakTable<object, PropertyAnimator>();
-
-        private static void OnProgressChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            // Find all properties being animated for this target
-            var propertyList = d.GetValue(AnimatedPropertiesProperty) as List<DependencyProperty>;
-            if (propertyList != null)
-            {
-                foreach (var prop in new List<DependencyProperty>(propertyList)) // Create a copy to avoid modification during iteration
+                var proxy = d as AnimationProxy;
+                if (proxy?.Owner != null && !proxy.Owner._isDisposed)
                 {
-                    var key = new AnimationKey(d, prop);
-                    PropertyAnimator animator;
-                    if (_activeAnimators.TryGetValue(key, out animator))
-                    {
-                        animator.UpdatePropertyValue((double)e.NewValue);
-                    }
+                    proxy.Owner.UpdatePropertyValue((double)e.NewValue);
                 }
             }
         }
 
-        // Gets the progress attached property value
-        public static double GetProgress(DependencyObject obj)
-        {
-            return (double)obj.GetValue(ProgressProperty);
-        }
+        // Static dictionary to track active animators by target/property pairs
+        private static readonly Dictionary<DependencyObject, Dictionary<DependencyProperty, PropertyAnimator>>
+            _activeAnimators = new Dictionary<DependencyObject, Dictionary<DependencyProperty, PropertyAnimator>>();
 
-        // Sets the progress attached property value
-        public static void SetProgress(DependencyObject obj, double value)
-        {
-            obj.SetValue(ProgressProperty, value);
-        }
+        // Lock for thread safety
+        private static readonly object _animatorsLock = new object();
 
         /// <summary>
         /// Stops all animations on the specified object.
         /// </summary>
         public static void StopAnimations(DependencyObject target)
         {
-            var propertyList = target.GetValue(AnimatedPropertiesProperty) as List<DependencyProperty>;
-            if (propertyList != null)
+            if (target == null) return;
+
+            lock (_animatorsLock)
             {
-                foreach (var prop in new List<DependencyProperty>(propertyList)) // Create a copy to avoid modification during iteration
+                Dictionary<DependencyProperty, PropertyAnimator> targetAnimators;
+                if (_activeAnimators.TryGetValue(target, out targetAnimators))
                 {
-                    var key = new AnimationKey(target, prop);
-                    PropertyAnimator animator;
-                    if (_activeAnimators.TryGetValue(key, out animator))
+                    // Create a copy to avoid modification during iteration
+                    foreach (var animator in new List<PropertyAnimator>(targetAnimators.Values))
                     {
                         animator.Stop();
                     }
-                }
 
-                // Clear the list
-                propertyList.Clear();
-                target.ClearValue(AnimatedPropertiesProperty);
+                    // Dictionary should now be empty after all stops, but clear it just in case
+                    _activeAnimators.Remove(target);
+                }
             }
         }
 
@@ -132,6 +77,7 @@ namespace OpenSilver.Animationns
         private readonly DependencyProperty _property;
         private readonly Func<double, object> _progressTransformer;
         private readonly object _finalValue;
+        private readonly AnimationProxy _proxy;
         private Storyboard _storyboard;
         private bool _isDisposed;
 
@@ -146,15 +92,9 @@ namespace OpenSilver.Animationns
         public IEasingFunction EasingFunction { get; set; }
 
         /// <summary>
-        /// Gets or sets the fill behavior for when the animation ends.
-        /// </summary>
-        public FillBehavior FillBehavior { get; set; }
-
-        /// <summary>
         /// Event raised when the animation completes.
         /// </summary>
         public event EventHandler Completed;
-
 
         /// <summary>
         /// Creates a new PropertyAnimator to animate a property.
@@ -167,40 +107,68 @@ namespace OpenSilver.Animationns
             _progressTransformer = progressTransformer ?? throw new ArgumentNullException(nameof(progressTransformer));
             _finalValue = finalValue;
 
-            Duration = TimeSpan.FromMilliseconds(250);
-            FillBehavior = this.FillBehavior;
+            // Create the animation proxy
+            _proxy = new AnimationProxy { Owner = this };
 
-            // Register this animator
-            RegisterAnimation();
+            Duration = TimeSpan.FromMilliseconds(300);
+
+            // Stop any existing animation for this target/property
+            StopExistingAnimation();
+        }
+
+        private void StopExistingAnimation()
+        {
+            if (_target == null || _property == null) return;
+
+            lock (_animatorsLock)
+            {
+                Dictionary<DependencyProperty, PropertyAnimator> targetAnimators;
+                if (_activeAnimators.TryGetValue(_target, out targetAnimators))
+                {
+                    PropertyAnimator existingAnimator;
+                    if (targetAnimators.TryGetValue(_property, out existingAnimator))
+                    {
+                        existingAnimator.Stop();
+                    }
+                }
+            }
         }
 
         private void RegisterAnimation()
         {
-            var key = new AnimationKey(_target, _property);
+            if (_target == null || _property == null || _isDisposed) return;
 
-            // Look for existing animation and stop it
-            PropertyAnimator existingAnimator;
-            if (_activeAnimators.TryGetValue(key, out existingAnimator))
+            lock (_animatorsLock)
             {
-                existingAnimator.Stop();
-            }
+                Dictionary<DependencyProperty, PropertyAnimator> targetAnimators;
+                if (!_activeAnimators.TryGetValue(_target, out targetAnimators))
+                {
+                    targetAnimators = new Dictionary<DependencyProperty, PropertyAnimator>();
+                    _activeAnimators[_target] = targetAnimators;
+                }
 
-            // Track which properties are being animated for this target
-            var propertyList = _target.GetValue(AnimatedPropertiesProperty) as List<DependencyProperty>;
-            if (propertyList == null)
+                targetAnimators[_property] = this;
+            }
+        }
+
+        private void UnregisterAnimation()
+        {
+            if (_target == null || _property == null) return;
+
+            lock (_animatorsLock)
             {
-                propertyList = new List<DependencyProperty>();
-                _target.SetValue(AnimatedPropertiesProperty, propertyList);
-            }
+                Dictionary<DependencyProperty, PropertyAnimator> targetAnimators;
+                if (_activeAnimators.TryGetValue(_target, out targetAnimators))
+                {
+                    targetAnimators.Remove(_property);
 
-            if (!propertyList.Contains(_property))
-            {
-                propertyList.Add(_property);
+                    // If no more properties are being animated for this target, remove the target entry
+                    if (targetAnimators.Count == 0)
+                    {
+                        _activeAnimators.Remove(_target);
+                    }
+                }
             }
-
-            // Add this animator
-            _activeAnimators.Remove(key);
-            _activeAnimators.Add(key, this);
         }
 
         /// <summary>
@@ -208,7 +176,7 @@ namespace OpenSilver.Animationns
         /// </summary>
         internal void UpdatePropertyValue(double progress)
         {
-            if (_isDisposed) return;
+            if (_isDisposed || _target == null || _property == null) return;
 
             try
             {
@@ -229,11 +197,11 @@ namespace OpenSilver.Animationns
             if (_isDisposed)
                 throw new ObjectDisposedException("PropertyAnimator");
 
-            // Stop any existing animation on this property
-            Stop();
-
             // Set initial state 
             UpdatePropertyValue(0);
+
+            // Register this animation
+            RegisterAnimation();
 
             // Create a new storyboard for this animation
             _storyboard = new Storyboard();
@@ -244,13 +212,12 @@ namespace OpenSilver.Animationns
                 From = 0.0,
                 To = 1.0,
                 Duration = new Duration(Duration),
-                EasingFunction = EasingFunction,
-                FillBehavior = this.FillBehavior
+                EasingFunction = EasingFunction
             };
 
-            // Set the target
-            Storyboard.SetTarget(animation, _target);
-            Storyboard.SetTargetProperty(animation, new PropertyPath("(PropertyAnimator.Progress)"));
+            // Set target to the proxy object
+            Storyboard.SetTarget(animation, _proxy);
+            Storyboard.SetTargetProperty(animation, new PropertyPath("Progress"));
 
             _storyboard.Children.Add(animation);
 
@@ -271,14 +238,21 @@ namespace OpenSilver.Animationns
 
         private void Storyboard_Completed(object sender, EventArgs e)
         {
-            // Apply final value if needed
-            if (_finalValue != null)
-            {
-                _target.SetValue(_property, _finalValue);
-            }
-
-            // Clean up
+            // Clean up first
             CleanupAnimation();
+
+            // THEN apply final value if needed (after cleanup)
+            if (_finalValue != null && _target != null && _property != null)
+            {
+                try
+                {
+                    _target.SetValue(_property, _finalValue);
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine($"Error setting final value: {ex.Message}");
+                }
+            }
 
             // Notify completion
             Completed?.Invoke(this, EventArgs.Empty);
@@ -286,28 +260,26 @@ namespace OpenSilver.Animationns
 
         private void CleanupAnimation()
         {
+            // Clean up storyboard
             if (_storyboard != null)
             {
-                _storyboard.Completed -= Storyboard_Completed;
-                _storyboard.Stop();
-                _storyboard = null;
-            }
-
-            // Remove from active animators and property list
-            var key = new AnimationKey(_target, _property);
-            _activeAnimators.Remove(key);
-
-            var propertyList = _target.GetValue(AnimatedPropertiesProperty) as List<DependencyProperty>;
-            if (propertyList != null)
-            {
-                propertyList.Remove(_property);
-
-                // If no more properties are being animated, clear the list entirely
-                if (propertyList.Count == 0)
+                try
                 {
-                    _target.ClearValue(AnimatedPropertiesProperty);
+                    _storyboard.Completed -= Storyboard_Completed;
+                    _storyboard.Stop();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine($"Error cleaning up storyboard: {ex.Message}");
+                }
+                finally
+                {
+                    _storyboard = null;
                 }
             }
+
+            // Unregister from active animators
+            UnregisterAnimation();
         }
 
         /// <summary>
@@ -330,62 +302,15 @@ namespace OpenSilver.Animationns
                 // Clear event handlers
                 Completed = null;
 
+                // Clear reference to owner
+                if (_proxy != null)
+                {
+                    _proxy.Owner = null;
+                }
+
                 _isDisposed = true;
                 GC.SuppressFinalize(this);
             }
-        }
-    }
-
-    /// <summary>
-    /// Extension methods to simplify animation creation.
-    /// </summary>
-    public static class AnimationExtensions
-    {
-        /// <summary>
-        /// Animates a property using a progress transformer function.
-        /// </summary>
-        public static PropertyAnimator Animate<TValue>(
-            this DependencyObject target,
-            DependencyProperty property,
-            Func<double, TValue> progressTransformer,
-            TimeSpan duration,
-            TValue finalValue = default(TValue))
-        {
-            var animator = new PropertyAnimator(
-                target,
-                property,
-                progress => (object)progressTransformer(progress),
-                finalValue);
-
-            animator.Duration = duration;
-            animator.Begin();
-            return animator;
-        }
-
-        /// <summary>
-        /// Animates a GridLength property.
-        /// </summary>
-        public static PropertyAnimator AnimateGridLength(
-            this DependencyObject target,
-            DependencyProperty property,
-            double fromValue,
-            double toValue,
-            GridUnitType unitType,
-            TimeSpan duration)
-        {
-            return target.Animate<GridLength>(
-                property,
-                progress => new GridLength(fromValue + (progress * (toValue - fromValue)), unitType),
-                duration,
-                new GridLength(toValue, unitType));
-        }
-
-        /// <summary>
-        /// Stops all animations on the specified target.
-        /// </summary>
-        public static void StopAllAnimations(this DependencyObject target)
-        {
-            PropertyAnimator.StopAnimations(target);
         }
     }
 }

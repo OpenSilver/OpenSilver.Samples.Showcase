@@ -1,4 +1,4 @@
-﻿using OpenSilver.Animationns;
+﻿using OpenSilver.Animations;
 using OpenSilver.Themes.Modern;
 using System;
 using System.Linq;
@@ -113,8 +113,8 @@ namespace OpenSilver.Samples.Showcase
                 var animator1 = new PropertyAnimator(
                                     RowThatContainsThePage,
                                     RowDefinition.HeightProperty,
-                                    progress => new GridLength(progress * 0.5d, GridUnitType.Star),
-                                    0.5d)
+                                    progress => new GridLength((1d - progress * 0.5d),GridUnitType.Star),
+                                    new GridLength(0.5d, GridUnitType.Star))
                                     {
                                         Duration = TimeSpan.FromMilliseconds(500),
                                         EasingFunction = easing
@@ -125,7 +125,7 @@ namespace OpenSilver.Samples.Showcase
                                     RowThatContainsTheGridSplitter,
                                     RowDefinition.HeightProperty,
                                     progress => new GridLength(progress * 5d, GridUnitType.Pixel),
-                                    5d)
+                                    new GridLength(5d, GridUnitType.Pixel))
                                     {
                                         Duration = TimeSpan.FromMilliseconds(500),
                                         EasingFunction = easing
@@ -135,8 +135,8 @@ namespace OpenSilver.Samples.Showcase
                 var animator3 = new PropertyAnimator(
                                     RowThatContainsTheSourceCodePane,
                                     RowDefinition.HeightProperty,
-                                    progress => new GridLength(progress * 0.5d, GridUnitType.Star),
-                                    0.5d)
+                                    progress =>  new GridLength(progress * 0.5d, GridUnitType.Star),
+                                    new GridLength(0.5d, GridUnitType.Star))
                                     {
                                         Duration = TimeSpan.FromMilliseconds(500),
                                         EasingFunction = easing
@@ -150,7 +150,7 @@ namespace OpenSilver.Samples.Showcase
 
         private void ButtonToCloseSourceCode_Click(object sender, RoutedEventArgs e)
         {
-            // Close the Source Code Pane, which is the place where the source code is displayed:
+            // Close the Source Code Pane, which is the place where the source code is displayed.
             
             // Create animations with easing
             var easing = new CubicEase { EasingMode = EasingMode.EaseIn };
@@ -158,8 +158,8 @@ namespace OpenSilver.Samples.Showcase
             var animator1 = new PropertyAnimator(
                                 RowThatContainsThePage,
                                 RowDefinition.HeightProperty,
-                                progress => new GridLength((1d - progress * 0.5d), GridUnitType.Star),
-                                0d)
+                                progress => new GridLength(0.5d + progress * 0.5d, GridUnitType.Star),
+                                new GridLength(0d, GridUnitType.Star))
                                 {
                                     Duration = TimeSpan.FromMilliseconds(500),
                                     EasingFunction = easing
@@ -169,8 +169,8 @@ namespace OpenSilver.Samples.Showcase
             var animator2 = new PropertyAnimator(
                                 RowThatContainsTheGridSplitter,
                                 RowDefinition.HeightProperty,
-                                progress => new GridLength((1d - progress * 5d), GridUnitType.Pixel),
-                                0d)
+                                progress => new GridLength((1d - progress) * 5d, GridUnitType.Pixel),
+                                new GridLength(0d, GridUnitType.Pixel))
                                 {
                                     Duration = TimeSpan.FromMilliseconds(500),
                                     EasingFunction = easing
@@ -180,8 +180,8 @@ namespace OpenSilver.Samples.Showcase
             var animator3 = new PropertyAnimator(
                                 RowThatContainsTheSourceCodePane,
                                 RowDefinition.HeightProperty,
-                                progress => new GridLength((1d - progress * 0.5d), GridUnitType.Star),
-                                0d)
+                                progress => new GridLength((0.5d - progress * 0.5d), GridUnitType.Star),
+                                new GridLength(0d, GridUnitType.Star))
                                 {
                                     Duration = TimeSpan.FromMilliseconds(500),
                                     EasingFunction = easing
@@ -201,14 +201,6 @@ namespace OpenSilver.Samples.Showcase
                 animator2.Dispose();
                 animator3.Dispose();
             };
-
-            // Close the Source Code Pane, which is the place where the source code is displayed:
-            PlaceWhereSourceCodeWillBeDisplayed.Child = null;
-            GridSplitter1.Visibility = Visibility.Collapsed;
-            SourceCodePane.Visibility = Visibility.Collapsed;
-            RowThatContainsThePage.Height = new GridLength(1d, GridUnitType.Star);
-            RowThatContainsTheGridSplitter.Height = new GridLength(0d);
-            RowThatContainsTheSourceCodePane.Height = new GridLength(0d);
         }
 
         #endregion
