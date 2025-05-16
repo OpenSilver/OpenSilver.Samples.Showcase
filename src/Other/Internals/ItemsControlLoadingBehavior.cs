@@ -34,10 +34,10 @@ namespace OpenSilver.Samples.Showcase
                 null
             );
 
-        private static readonly DependencyProperty MouseWheelHandlerProperty =
+        private static readonly DependencyProperty ScrollChangedHandlerProperty =
             DependencyProperty.RegisterAttached(
-                "MouseWheelHandler",
-                typeof(MouseWheelEventHandler),
+                "ScrollChangedHandler",
+                typeof(ScrollChangedEventHandler),
                 typeof(ItemsControlLoadingBehavior),
                 null
             );
@@ -66,6 +66,22 @@ namespace OpenSilver.Samples.Showcase
                 new PropertyMetadata(false)
             );
 
+        private static readonly DependencyProperty LoadedHandlerProperty =
+            DependencyProperty.RegisterAttached(
+                "LoadedHandler",
+                typeof(RoutedEventHandler),
+                typeof(ItemsControlLoadingBehavior),
+                null
+            );
+
+        private static readonly DependencyProperty ScrollViewerProperty =
+            DependencyProperty.RegisterAttached(
+                "ScrollViewer",
+                typeof(ScrollViewer),
+                typeof(ItemsControlLoadingBehavior),
+                null
+            );
+
         private static void OnShowLoadingOnGeneratingChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             if (!(d is ItemsControl itemsControl))
@@ -79,14 +95,20 @@ namespace OpenSilver.Samples.Showcase
                 itemsControl.SetValue(StatusChangedHandlerProperty, statusHandler);
                 itemsControl.ItemContainerGenerator.StatusChanged += statusHandler;
 
-                // Mouse wheel handler (for scroll detection)
-                MouseWheelEventHandler mouseWheelHandler = (s, args) => OnMouseWheel(itemsControl, args);
-                itemsControl.SetValue(MouseWheelHandlerProperty, mouseWheelHandler);
-                itemsControl.MouseWheel += mouseWheelHandler;
-
                 // Reset tracking properties
                 itemsControl.SetValue(HasUserScrolledProperty, false);
                 itemsControl.SetValue(IsGeneratingProperty, false);
+
+                // Setup for finding ScrollViewer and attaching to scroll events
+                RoutedEventHandler loadedHandler = (s, args) => OnItemsControlLoaded(itemsControl);
+                itemsControl.SetValue(LoadedHandlerProperty, loadedHandler);
+                itemsControl.Loaded += loadedHandler;
+                
+                // If the control is already loaded, call the handler immediately
+                if (itemsControl.IsLoaded)
+                {
+                    OnItemsControlLoaded(itemsControl);
+                }
             }
             else
             {
@@ -98,17 +120,21 @@ namespace OpenSilver.Samples.Showcase
                     itemsControl.ClearValue(StatusChangedHandlerProperty);
                 }
 
-                // Detach mouse wheel handler
-                var mouseWheelHandler = (MouseWheelEventHandler)itemsControl.GetValue(MouseWheelHandlerProperty);
-                if (mouseWheelHandler != null)
+                // Detach loaded handler
+                var loadedHandler = (RoutedEventHandler)itemsControl.GetValue(LoadedHandlerProperty);
+                if (loadedHandler != null)
                 {
-                    itemsControl.MouseWheel -= mouseWheelHandler;
-                    itemsControl.ClearValue(MouseWheelHandlerProperty);
+                    itemsControl.Loaded -= loadedHandler;
+                    itemsControl.ClearValue(LoadedHandlerProperty);
                 }
+
+                // Detach ScrollChanged handler
+                DetachScrollChangedHandler(itemsControl);
 
                 // Clear tracking properties
                 itemsControl.ClearValue(HasUserScrolledProperty);
                 itemsControl.ClearValue(IsGeneratingProperty);
+                itemsControl.ClearValue(ScrollViewerProperty);
 
                 // Ensure any popup is closed
                 var existing = (Popup)itemsControl.GetValue(LoadingPopupProperty);
@@ -120,15 +146,57 @@ namespace OpenSilver.Samples.Showcase
             }
         }
 
-        private static void OnMouseWheel(ItemsControl itemsControl, MouseWheelEventArgs e)
+        private static void OnItemsControlLoaded(ItemsControl itemsControl)
         {
-            // Mark that the user has scrolled
-            itemsControl.SetValue(HasUserScrolledProperty, true);
+            AttachToScrollViewer(itemsControl);
+        }
 
-            // If we're generating containers, show the loading popup
-            if ((bool)itemsControl.GetValue(IsGeneratingProperty))
+        private static void AttachToScrollViewer(ItemsControl itemsControl)
+        {
+            // First detach any existing handlers to avoid duplicates
+            DetachScrollChangedHandler(itemsControl);
+
+            // Find ScrollViewer
+            ScrollViewer scrollViewer = FindScrollViewer(itemsControl);
+            if (scrollViewer != null)
             {
-                ShowLoadingPopup(itemsControl);
+                // Store reference to ScrollViewer
+                itemsControl.SetValue(ScrollViewerProperty, scrollViewer);
+
+                // Create and attach handler for ScrollChanged event
+                ScrollChangedEventHandler scrollHandler = (s, e) => OnScrollChanged(itemsControl, e);
+                itemsControl.SetValue(ScrollChangedHandlerProperty, scrollHandler);
+                scrollViewer.ScrollChanged += scrollHandler;
+            }
+        }
+
+        private static void DetachScrollChangedHandler(ItemsControl itemsControl)
+        {
+            var scrollViewer = itemsControl.GetValue(ScrollViewerProperty) as ScrollViewer;
+            if (scrollViewer != null)
+            {
+                var scrollHandler = (ScrollChangedEventHandler)itemsControl.GetValue(ScrollChangedHandlerProperty);
+                if (scrollHandler != null)
+                {
+                    scrollViewer.ScrollChanged -= scrollHandler;
+                    itemsControl.ClearValue(ScrollChangedHandlerProperty);
+                }
+            }
+        }
+
+        private static void OnScrollChanged(ItemsControl itemsControl, ScrollChangedEventArgs e)
+        {
+            // Only consider it scrolling if the vertical offset changed
+            if (e.VerticalChange != 0)
+            {
+                // Mark that the user has scrolled
+                itemsControl.SetValue(HasUserScrolledProperty, true);
+
+                // If we're generating containers, show the loading popup
+                if ((bool)itemsControl.GetValue(IsGeneratingProperty))
+                {
+                    ShowLoadingPopup(itemsControl);
+                }
             }
         }
 
@@ -185,6 +253,41 @@ namespace OpenSilver.Samples.Showcase
 
             itemsControl.SetValue(LoadingPopupProperty, popup);
             popup.IsOpen = true;
+        }
+
+        // Helper method to find the ScrollViewer in an ItemsControl
+        private static ScrollViewer FindScrollViewer(ItemsControl itemsControl)
+        {
+            // First try to get the ScrollViewer from the template
+            ScrollViewer scrollViewer = itemsControl.Template?.FindName("ScrollViewer", itemsControl) as ScrollViewer;
+            if (scrollViewer != null)
+                return scrollViewer;
+
+            // Look for a ScrollViewer in the parent chain
+            return FindScrollViewerInVisualTree(itemsControl);
+        }
+
+        // Helper method to find a ScrollViewer in the visual tree by walking up
+        private static ScrollViewer FindScrollViewerInVisualTree(DependencyObject element)
+        {
+            if (element == null)
+                return null;
+
+            // Start with the parent of the provided element
+            DependencyObject parent = VisualTreeHelper.GetParent(element);
+            
+            while (parent != null)
+            {
+                // Try to cast the parent to a ScrollViewer
+                ScrollViewer scrollViewer = parent as ScrollViewer;
+                if (scrollViewer != null)
+                    return scrollViewer;
+                
+                // Move up to the next parent
+                parent = VisualTreeHelper.GetParent(parent);
+            }
+
+            return null;
         }
     }
 }
