@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="PropertyAnimator.cs" />
     <Compile Include="Animation.cs" />
     <Compile Include="AnimationTypeConverter.cs" />
     <Compile Include="AnimationTypes\Fade.cs" />
