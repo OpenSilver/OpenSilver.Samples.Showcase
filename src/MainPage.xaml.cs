@@ -113,8 +113,7 @@ namespace OpenSilver.Samples.Showcase
                 var animator1 = new PropertyAnimator(
                                     RowThatContainsThePage,
                                     RowDefinition.HeightProperty,
-                                    progress => new GridLength((1d - progress * 0.5d),GridUnitType.Star),
-                                    new GridLength(0.5d, GridUnitType.Star))
+                                    progress => new GridLength((1d - progress * 0.5d),GridUnitType.Star))
                                     {
                                         Duration = TimeSpan.FromMilliseconds(500),
                                         EasingFunction = easing
@@ -124,8 +123,7 @@ namespace OpenSilver.Samples.Showcase
                 var animator2 = new PropertyAnimator(
                                     RowThatContainsTheGridSplitter,
                                     RowDefinition.HeightProperty,
-                                    progress => new GridLength(progress * 5d, GridUnitType.Pixel),
-                                    new GridLength(5d, GridUnitType.Pixel))
+                                    progress => new GridLength(progress * 5d, GridUnitType.Pixel))
                                     {
                                         Duration = TimeSpan.FromMilliseconds(500),
                                         EasingFunction = easing
@@ -135,8 +133,7 @@ namespace OpenSilver.Samples.Showcase
                 var animator3 = new PropertyAnimator(
                                     RowThatContainsTheSourceCodePane,
                                     RowDefinition.HeightProperty,
-                                    progress =>  new GridLength(progress * 0.5d, GridUnitType.Star),
-                                    new GridLength(0.5d, GridUnitType.Star))
+                                    progress =>  new GridLength(progress * 0.5d, GridUnitType.Star))
                                     {
                                         Duration = TimeSpan.FromMilliseconds(500),
                                         EasingFunction = easing
@@ -158,8 +155,7 @@ namespace OpenSilver.Samples.Showcase
             var animator1 = new PropertyAnimator(
                                 RowThatContainsThePage,
                                 RowDefinition.HeightProperty,
-                                progress => new GridLength(0.5d + progress * 0.5d, GridUnitType.Star),
-                                new GridLength(0d, GridUnitType.Star))
+                                progress => new GridLength(0.5d + progress * 0.5d, GridUnitType.Star))
                                 {
                                     Duration = TimeSpan.FromMilliseconds(500),
                                     EasingFunction = easing
@@ -169,8 +165,7 @@ namespace OpenSilver.Samples.Showcase
             var animator2 = new PropertyAnimator(
                                 RowThatContainsTheGridSplitter,
                                 RowDefinition.HeightProperty,
-                                progress => new GridLength((1d - progress) * 5d, GridUnitType.Pixel),
-                                new GridLength(0d, GridUnitType.Pixel))
+                                progress => new GridLength((1d - progress) * 5d, GridUnitType.Pixel))
                                 {
                                     Duration = TimeSpan.FromMilliseconds(500),
                                     EasingFunction = easing
@@ -180,8 +175,7 @@ namespace OpenSilver.Samples.Showcase
             var animator3 = new PropertyAnimator(
                                 RowThatContainsTheSourceCodePane,
                                 RowDefinition.HeightProperty,
-                                progress => new GridLength((0.5d - progress * 0.5d), GridUnitType.Star),
-                                new GridLength(0d, GridUnitType.Star))
+                                progress => new GridLength((0.5d - progress * 0.5d), GridUnitType.Star))
                                 {
                                     Duration = TimeSpan.FromMilliseconds(500),
                                     EasingFunction = easing

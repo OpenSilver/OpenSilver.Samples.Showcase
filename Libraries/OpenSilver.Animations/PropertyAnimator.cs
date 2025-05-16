@@ -76,7 +76,6 @@ namespace OpenSilver.Animations
         private readonly DependencyObject _target;
         private readonly DependencyProperty _property;
         private readonly Func<double, object> _progressTransformer;
-        private readonly object _finalValue;
         private readonly AnimationProxy _proxy;
         private Storyboard _storyboard;
         private bool _isDisposed;
@@ -92,6 +91,12 @@ namespace OpenSilver.Animations
         public IEasingFunction EasingFunction { get; set; }
 
         /// <summary>
+        /// Gets or sets whether to set the final value when the animation completes.
+        /// Default is true.
+        /// </summary>
+        public bool ApplyFinalValue { get; set; } = true;
+
+        /// <summary>
         /// Event raised when the animation completes.
         /// </summary>
         public event EventHandler Completed;
@@ -100,12 +105,11 @@ namespace OpenSilver.Animations
         /// Creates a new PropertyAnimator to animate a property.
         /// </summary>
         public PropertyAnimator(DependencyObject target, DependencyProperty property,
-                               Func<double, object> progressTransformer, object finalValue = null)
+                              Func<double, object> progressTransformer)
         {
             _target = target ?? throw new ArgumentNullException(nameof(target));
             _property = property ?? throw new ArgumentNullException(nameof(property));
             _progressTransformer = progressTransformer ?? throw new ArgumentNullException(nameof(progressTransformer));
-            _finalValue = finalValue;
 
             // Create the animation proxy
             _proxy = new AnimationProxy { Owner = this };
@@ -238,15 +242,17 @@ namespace OpenSilver.Animations
 
         private void Storyboard_Completed(object sender, EventArgs e)
         {
-            // Clean up first
+            // Clean up first (doesn't work properly if called after setting the final value)
             CleanupAnimation();
 
-            // THEN apply final value if needed (after cleanup)
-            if (_finalValue != null && _target != null && _property != null)
+            // Apply final value if enabled
+            if (ApplyFinalValue && _target != null && _property != null)
             {
                 try
                 {
-                    _target.SetValue(_property, _finalValue);
+                    // Calculate final value using the transformer with progress=1
+                    object finalValue = _progressTransformer(1.0);
+                    _target.SetValue(_property, finalValue);
                 }
                 catch (Exception ex)
                 {
