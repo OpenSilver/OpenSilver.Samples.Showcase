@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
+using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Effects;
 
@@ -24,11 +25,19 @@ namespace OpenSilver.Samples.Showcase
         public static bool GetShowLoadingOnGenerating(DependencyObject element) =>
             (bool)element.GetValue(ShowLoadingOnGeneratingProperty);
 
-        // Private attached properties to hold our handler & popup per-control
+        // Private attached properties to hold our handlers & state per-control
         private static readonly DependencyProperty StatusChangedHandlerProperty =
             DependencyProperty.RegisterAttached(
                 "StatusChangedHandler",
                 typeof(EventHandler),
+                typeof(ItemsControlLoadingBehavior),
+                null
+            );
+
+        private static readonly DependencyProperty MouseWheelHandlerProperty =
+            DependencyProperty.RegisterAttached(
+                "MouseWheelHandler",
+                typeof(MouseWheelEventHandler),
                 typeof(ItemsControlLoadingBehavior),
                 null
             );
@@ -41,6 +50,22 @@ namespace OpenSilver.Samples.Showcase
                 null
             );
 
+        private static readonly DependencyProperty HasUserScrolledProperty =
+            DependencyProperty.RegisterAttached(
+                "HasUserScrolled",
+                typeof(bool),
+                typeof(ItemsControlLoadingBehavior),
+                new PropertyMetadata(false)
+            );
+
+        private static readonly DependencyProperty IsGeneratingProperty =
+            DependencyProperty.RegisterAttached(
+                "IsGenerating",
+                typeof(bool),
+                typeof(ItemsControlLoadingBehavior),
+                new PropertyMetadata(false)
+            );
+
         private static void OnShowLoadingOnGeneratingChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             if (!(d is ItemsControl itemsControl))
@@ -49,22 +74,43 @@ namespace OpenSilver.Samples.Showcase
             bool enabled = (bool)e.NewValue;
             if (enabled)
             {
-                // attach
-                EventHandler handler = (s, args) => OnStatusChanged(itemsControl);
-                itemsControl.SetValue(StatusChangedHandlerProperty, handler);
-                itemsControl.ItemContainerGenerator.StatusChanged += handler;
+                // Status changed handler (for container generation)
+                EventHandler statusHandler = (s, args) => OnStatusChanged(itemsControl);
+                itemsControl.SetValue(StatusChangedHandlerProperty, statusHandler);
+                itemsControl.ItemContainerGenerator.StatusChanged += statusHandler;
+
+                // Mouse wheel handler (for scroll detection)
+                MouseWheelEventHandler mouseWheelHandler = (s, args) => OnMouseWheel(itemsControl, args);
+                itemsControl.SetValue(MouseWheelHandlerProperty, mouseWheelHandler);
+                itemsControl.MouseWheel += mouseWheelHandler;
+
+                // Reset tracking properties
+                itemsControl.SetValue(HasUserScrolledProperty, false);
+                itemsControl.SetValue(IsGeneratingProperty, false);
             }
             else
             {
-                // detach
-                var handler = (EventHandler)itemsControl.GetValue(StatusChangedHandlerProperty);
-                if (handler != null)
+                // Detach status handler
+                var statusHandler = (EventHandler)itemsControl.GetValue(StatusChangedHandlerProperty);
+                if (statusHandler != null)
                 {
-                    itemsControl.ItemContainerGenerator.StatusChanged -= handler;
+                    itemsControl.ItemContainerGenerator.StatusChanged -= statusHandler;
                     itemsControl.ClearValue(StatusChangedHandlerProperty);
                 }
 
-                // ensure any popup is closed
+                // Detach mouse wheel handler
+                var mouseWheelHandler = (MouseWheelEventHandler)itemsControl.GetValue(MouseWheelHandlerProperty);
+                if (mouseWheelHandler != null)
+                {
+                    itemsControl.MouseWheel -= mouseWheelHandler;
+                    itemsControl.ClearValue(MouseWheelHandlerProperty);
+                }
+
+                // Clear tracking properties
+                itemsControl.ClearValue(HasUserScrolledProperty);
+                itemsControl.ClearValue(IsGeneratingProperty);
+
+                // Ensure any popup is closed
                 var existing = (Popup)itemsControl.GetValue(LoadingPopupProperty);
                 if (existing != null)
                 {
@@ -74,42 +120,38 @@ namespace OpenSilver.Samples.Showcase
             }
         }
 
+        private static void OnMouseWheel(ItemsControl itemsControl, MouseWheelEventArgs e)
+        {
+            // Mark that the user has scrolled
+            itemsControl.SetValue(HasUserScrolledProperty, true);
+
+            // If we're generating containers, show the loading popup
+            if ((bool)itemsControl.GetValue(IsGeneratingProperty))
+            {
+                ShowLoadingPopup(itemsControl);
+            }
+        }
+
         private static void OnStatusChanged(ItemsControl itemsControl)
         {
             var status = itemsControl.ItemContainerGenerator.Status;
 
             if (status == GeneratorStatus.GeneratingContainers)
             {
-                // create & show
-                var popup = new Popup
+                // Mark that we're generating
+                itemsControl.SetValue(IsGeneratingProperty, true);
+
+                // Only show the loading popup if the user has scrolled
+                if ((bool)itemsControl.GetValue(HasUserScrolledProperty))
                 {
-                    Child = new LoadingControl(),
-                    Placement = PlacementMode.Absolute,
-                    IsHitTestVisible = false,
-                    IsOpen = false
-                };
-
-                /*
-                // size & position to overlay the ItemsControl
-                var root = Application.Current.RootVisual as FrameworkElement;
-                var transform = itemsControl.TransformToVisual(root);
-                var topLeft = transform.Transform(new Point(0, 0));
-                popup.HorizontalOffset = topLeft.X;
-                popup.VerticalOffset = topLeft.Y;
-                popup.Width = itemsControl.ActualWidth;
-                popup.Height = itemsControl.ActualHeight;
-                */
-
-                // size & position to overlay the whole window
-                var host = (FrameworkElement)Application.Current.RootVisual;
-                popup.Width = host.ActualWidth;
-                popup.Height = host.ActualHeight;
-
-                itemsControl.SetValue(LoadingPopupProperty, popup);
-                popup.IsOpen = true;
+                    ShowLoadingPopup(itemsControl);
+                }
             }
             else
             {
+                // Mark that we're no longer generating
+                itemsControl.SetValue(IsGeneratingProperty, false);
+
                 // close & cleanup
                 var popup = (Popup)itemsControl.GetValue(LoadingPopupProperty);
                 if (popup != null)
@@ -118,6 +160,31 @@ namespace OpenSilver.Samples.Showcase
                     itemsControl.ClearValue(LoadingPopupProperty);
                 }
             }
+        }
+
+        private static void ShowLoadingPopup(ItemsControl itemsControl)
+        {
+            // If we already have a popup open, no need to create another one
+            var existingPopup = (Popup)itemsControl.GetValue(LoadingPopupProperty);
+            if (existingPopup != null && existingPopup.IsOpen)
+                return;
+
+            // Create & show the popup
+            var popup = new Popup
+            {
+                Child = new LoadingControl(),
+                Placement = PlacementMode.Absolute,
+                IsHitTestVisible = false,
+                IsOpen = false
+            };
+
+            // Size & position to overlay the whole window
+            var host = (FrameworkElement)Application.Current.RootVisual;
+            popup.Width = host.ActualWidth;
+            popup.Height = host.ActualHeight;
+
+            itemsControl.SetValue(LoadingPopupProperty, popup);
+            popup.IsOpen = true;
         }
     }
 }

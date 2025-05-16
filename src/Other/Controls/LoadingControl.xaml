@@ -8,7 +8,7 @@
 
     <Grid   HorizontalAlignment="Center"
             VerticalAlignment="Center"
-            animations:Animation.OnAppear="{animations:FadeAndScale Bounciness=0.3, Delay=1000}">
+            animations:Animation.OnAppear="{animations:FadeAndScale Bounciness=0.3}">
         <Border Background="{DynamicResource Theme_TextBrush}"
                 Opacity="0.6"
                 CornerRadius="20">
@@ -24,7 +24,7 @@
         <TextBlock  FontSize="26"
                     Foreground="{DynamicResource Theme_BackgroundBrush}"
                     FontWeight="Bold"
-                    animations:Animation.OnAppear="{animations:FadeAndScale Bounciness=0.3, Delay=1000}"
+                    animations:Animation.OnAppear="{animations:FadeAndScale Bounciness=0.3}"
                     TextAlignment="Center"
                     Margin="30,20">Loading<LineBreak/>Please wait...</TextBlock>
     </Grid>
