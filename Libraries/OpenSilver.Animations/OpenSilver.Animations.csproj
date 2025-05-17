@@ -18,6 +18,7 @@
     <Compile Include="Direction.cs" />
     <Compile Include="IAnimationType.cs" />
     <Compile Include="Internal\StoryboardsHelper.cs" />
+    <Compile Include="SpringEffect.cs" />
   </ItemGroup>
 
   <ItemGroup>
