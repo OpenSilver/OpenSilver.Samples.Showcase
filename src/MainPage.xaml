@@ -137,13 +137,13 @@ mc:Ignorable="d"
                     <DockPanel LastChildFill="True" animations:Animation.OnAppear="{animations:FadeAndSlide Delay=2250, Direction=LeftToRight, Duration=500, Bounciness=0.3}">
                         <Border DockPanel.Dock="Bottom" Margin="0,10,0,20" Padding="3" CornerRadius="7" HorizontalAlignment="Center" Background="{DynamicResource Theme_BackgroundBrush}">
                             <StackPanel Orientation="Horizontal">
-                                <RadioButton x:Name="LightThemeRadioButton" IsChecked="True" Checked="ThemeToggle_RadioButton_Checked">
+                                <RadioButton x:Name="LightThemeRadioButton" IsChecked="True" Checked="ThemeToggle_RadioButton_Checked" animations:SpringEffect.IsEnabled="True">
                                     <StackPanel Orientation="Horizontal">
                                         <local:SvgImage x:Name="lightThemeImage" Width="20" Height="20" Source="/Other/Icons/LightTheme.svg"/>
                                         <TextBlock Margin="3" VerticalAlignment="Center" FontSize="11" Text="Light" Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"/>
                                     </StackPanel>
                                 </RadioButton>
-                                <RadioButton x:Name="DarkThemeRadioButton" Margin="4,0,0,0" Checked="ThemeToggle_RadioButton_Checked">
+                                <RadioButton x:Name="DarkThemeRadioButton" Margin="4,0,0,0" Checked="ThemeToggle_RadioButton_Checked" animations:SpringEffect.IsEnabled="True">
                                     <StackPanel Orientation="Horizontal">
                                         <local:SvgImage x:Name="darkThemeImage" Width="20" Height="20" Source="/Other/Icons/DarkTheme.svg"/>
                                         <TextBlock Margin="3" VerticalAlignment="Center" FontSize="11" Text="Dark" Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"/>
@@ -153,22 +153,24 @@ mc:Ignorable="d"
                         </Border>
                         <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Padding="0">
                             <StackPanel >
-                                <Grid Margin="50,32,55,0" HorizontalAlignment="Stretch">
+                                <Grid Margin="50,32,55,0" HorizontalAlignment="Stretch" animations:SpringEffect.IsEnabled="True">
                                     <Image Source="/OpenSilver.Samples.Showcase;component/Other/Images/LogoOpenSilverDark.png" x:Name="LogoOpenSilverDark" Opacity="0" Cursor="Hand" MouseLeftButtonDown="Logo_MouseLeftButtonDown" />
                                     <Image Source="/OpenSilver.Samples.Showcase;component/Other/Images/LogoOpenSilverLight.png" x:Name="LogoOpenSilverLight" Cursor="Hand" MouseLeftButtonDown="Logo_MouseLeftButtonDown" />
                                 </Grid>
-                                <Border HorizontalAlignment="Center" VerticalAlignment="Bottom" Padding="6,1,6,2" Margin="0,2,0,4" CornerRadius="10" Cursor="Hand" MouseLeftButtonDown="Logo_MouseLeftButtonDown" Background="Transparent">
+                                <Border HorizontalAlignment="Center" VerticalAlignment="Bottom" Padding="6,1,6,2" Margin="0,2,0,4" CornerRadius="10" Cursor="Hand" MouseLeftButtonDown="Logo_MouseLeftButtonDown" Background="Transparent" animations:SpringEffect.IsEnabled="True">
                                     <TextBlock Text="WPF FOR THE MODERN WEB" Foreground="{DynamicResource Theme_TextBrush}" Opacity="0.7" FontWeight="Bold" FontSize="10"/>
                                 </Border>
-                                <Image Source="/OpenSilver.Samples.Showcase;component/Other/Images/logo-showcase.png" Margin="75,20,75,0" Cursor="Hand" MouseLeftButtonDown="Logo_MouseLeftButtonDown"/>
-                                <local:SearchControl Margin="32,40,30,20"/>
+                                <Image Source="/OpenSilver.Samples.Showcase;component/Other/Images/logo-showcase.png" Margin="75,20,75,0" Cursor="Hand" MouseLeftButtonDown="Logo_MouseLeftButtonDown" animations:SpringEffect.IsEnabled="True"/>
+                                <local:SearchControl Margin="32,40,30,20" animations:SpringEffect.IsEnabled="True"/>
                                 <ListBox x:Name="MenuListBox" SelectionChanged="MenuListBox_SelectionChanged" Background="Transparent" Margin="30,0,0,0" BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Hidden">
                                     <ListBox.ItemContainerStyle>
                                         <Style TargetType="ListBoxItem">
                                             <Setter Property="Template">
                                                 <Setter.Value>
                                                     <ControlTemplate TargetType="ListBoxItem">
-                                                        <Grid Background="Transparent" Visibility="{Binding IsVisibleInMenu, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                                        <Border Background="Transparent"
+                                                                Visibility="{Binding IsVisibleInMenu, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                                                animations:SpringEffect.IsEnabled="True">
                                                             <VisualStateManager.VisualStateGroups>
                                                                 <VisualStateGroup x:Name="CommonStates">
                                                                     <VisualState x:Name="Normal" />
@@ -201,7 +203,7 @@ mc:Ignorable="d"
                                                                     <ContentPresenter x:Name="Presenter" TextBlock.Foreground="{Binding (TextBlock.Foreground), ElementName=ContainerBorder}"/>
                                                                 </Border>
                                                             </Border>
-                                                        </Grid>
+                                                        </Border>
                                                     </ControlTemplate>
                                                 </Setter.Value>
                                             </Setter>
@@ -209,9 +211,9 @@ mc:Ignorable="d"
                                     </ListBox.ItemContainerStyle>
                                     <ListBox.ItemTemplate>
                                         <DataTemplate>
-                                            <Grid Cursor="Hand">
+                                            <Border Cursor="Hand">
                                                 <TextBlock Text="{Binding Name}"/>
-                                            </Grid>
+                                            </Border>
                                         </DataTemplate>
                                     </ListBox.ItemTemplate>
                                 </ListBox>
