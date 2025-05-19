@@ -34,10 +34,11 @@ public class JsParticlesEffect : HtmlPresenter
 
         // Start the effect:
         Interop.ExecuteJavaScriptVoidAsync($@"
-            $0.firstChild.style.width = ""100%"";
-            $0.firstChild.style.height = ""100%"";
+            //$0.firstChild.style.width = ""100%"";
+            //$0.firstChild.style.height = ""100%"";
             $0.firstChild.firstChild.style.width = ""100%"";
             $0.firstChild.firstChild.style.height = ""100%"";
+            $0.style.overflow = ""hidden"";
           window.ParticleEffect.startEffect($0.firstChild.firstChild);
         ", _domElement);
     }
@@ -75,7 +76,6 @@ public class JsParticlesEffect : HtmlPresenter
                     velocityY: 0,
                     friction: 0.95,
                     onMouseMove: null,
-                    resizeObserver: null,
 
                     // Debounce helper
                     debounce(fn, wait) {{
@@ -216,18 +216,14 @@ public class JsParticlesEffect : HtmlPresenter
                             canvas.style.height = height + ""px"";
                         }}, 150);
 
+                        // Window resize handler
+                        this.onResize = () => {{
+                            debouncedResize(window.innerWidth, window.innerHeight);
+                        }};
+                        window.addEventListener('resize', this.onResize);
 
-                        // Resize handler
-                        this.resizeObserver = new ResizeObserver(entries => {{
-                        for (let entry of entries) {{
-                            if (entry.target === div) {{
-                                const {{ width, height }} = entry.contentRect;
-                                debouncedResize(width, height);
-                            }}
-                        }}
-                    }});
-                    this.resizeObserver.observe(div);
-
+                        // Initialize with current window size
+                        debouncedResize(window.innerWidth, window.innerHeight);
 
                         // Animation loop
                         const animate = () => {{
@@ -282,9 +278,9 @@ public class JsParticlesEffect : HtmlPresenter
                             document.removeEventListener('mousemove', this.onMouseMove);
                             this.onMouseMove = null;
                         }}
-                        if (this.resizeObserver) {{
-                            this.resizeObserver.disconnect();
-                            this.resizeObserver = null;
+                        if (this.onResize) {{
+                            window.removeEventListener('resize', this.onResize);
+                            this.onResize = null;
                         }}
 
                         // Dispose of Three.js resources
@@ -315,6 +311,8 @@ public class JsParticlesEffect : HtmlPresenter
                         this.targetRotationY = 0;
                         this.velocityX = 0;
                         this.velocityY = 0;
+
+                        console.log('ParticleEffect stopped and resources released');
                     }}
                 }};
                 ");
