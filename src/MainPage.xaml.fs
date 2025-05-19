@@ -6,6 +6,8 @@ open System.Windows
 open System.Windows.Controls
 open System.Windows.Media
 open System.Windows.Navigation
+open System.Windows.Media.Animation
+open OpenSilver.Animations
 
 type CurrentState =
     | Unset                                 // Initial value
@@ -77,24 +79,83 @@ type MainPage() as this =
     member public this.ViewSourceCode(controlThatDisplaysTheSourceCode: UIElement) =
         // Open the Source Code Pane, which is the place where the source code will be displayed:
         if this.SourceCodePane.Visibility = Visibility.Collapsed then
-            this.RowThatContainsThePage.Height <- new GridLength(0.5, GridUnitType.Star)
-            this.RowThatContainsTheGridSplitter.Height <- new GridLength(5.0)
-            this.RowThatContainsTheSourceCodePane.Height <- new GridLength(0.5, GridUnitType.Star)
-            //this.GridSplitter1.ResizeDirection <- GridSplitter.GridResizeDirection.Rows
+            // Make the pane and grid splitter visible
             this.GridSplitter1.Visibility <- Visibility.Visible
             this.SourceCodePane.Visibility <- Visibility.Visible
+
+            // Animate the appearance of the Source Code Pane and the Grid Splitter:
+            let easing = CubicEase(EasingMode = EasingMode.EaseOut)
+
+            let animatorForGridSplitter = 
+                new PropertyAnimator(
+                    this.RowThatContainsTheGridSplitter,
+                    RowDefinition.HeightProperty,
+                    fun progress -> GridLength(progress * 5.0, GridUnitType.Pixel)
+                )
+            animatorForGridSplitter.Duration <- TimeSpan.FromMilliseconds(500.0)
+            animatorForGridSplitter.EasingFunction <- easing
+            animatorForGridSplitter.Begin()
+
+            let animatorForSourceCodePane = 
+                new PropertyAnimator(
+                    this.RowThatContainsTheSourceCodePane,
+                    RowDefinition.HeightProperty,
+                    fun progress -> GridLength(progress * 1.0, GridUnitType.Star)
+                )
+            animatorForSourceCodePane.Duration <- TimeSpan.FromMilliseconds(500.0)
+            animatorForSourceCodePane.EasingFunction <- easing
+            animatorForSourceCodePane.Begin()
 
         // Display the source code:
         this.PlaceWhereSourceCodeWillBeDisplayed.Child <- controlThatDisplaysTheSourceCode
 
     member private this.ButtonToCloseSourceCode_Click(sender: obj, e: RoutedEventArgs) =
-        // Close the Source Code Pane, which is the place where the source code is displayed:
-        this.PlaceWhereSourceCodeWillBeDisplayed.Child <- null
-        this.GridSplitter1.Visibility <- Visibility.Collapsed
-        this.SourceCodePane.Visibility <- Visibility.Collapsed
-        this.RowThatContainsThePage.Height <- new GridLength(1.0, GridUnitType.Star)
-        this.RowThatContainsTheGridSplitter.Height <- new GridLength(0.0)
-        this.RowThatContainsTheSourceCodePane.Height <- new GridLength(0.0)
+        // Close the Source Code Pane
+        let mutable initialStarHeightForRowThatContainsTheSourceCodePane = 0.5
+        if this.RowThatContainsTheSourceCodePane.Height.GridUnitType = GridUnitType.Star then
+            initialStarHeightForRowThatContainsTheSourceCodePane <- this.RowThatContainsTheSourceCodePane.Height.Value
+
+        // Create animations with easing
+        let easing = CubicEase(EasingMode = EasingMode.EaseIn)
+
+        let animatorForGridSplitter = 
+            new PropertyAnimator(
+                this.RowThatContainsTheGridSplitter,
+                RowDefinition.HeightProperty,
+                fun progress -> GridLength((1.0 - progress) * 5.0, GridUnitType.Pixel)
+            )
+        animatorForGridSplitter.Duration <- TimeSpan.FromMilliseconds(300.0)
+        animatorForGridSplitter.EasingFunction <- easing
+        animatorForGridSplitter.Begin()
+
+        let animatorForSourceCodePane = 
+            new PropertyAnimator(
+                this.RowThatContainsTheSourceCodePane,
+                RowDefinition.HeightProperty,
+                fun progress -> GridLength(initialStarHeightForRowThatContainsTheSourceCodePane - (progress * initialStarHeightForRowThatContainsTheSourceCodePane), GridUnitType.Star)
+            )
+        animatorForSourceCodePane.Duration <- TimeSpan.FromMilliseconds(500.0)
+        animatorForSourceCodePane.EasingFunction <- easing
+        animatorForSourceCodePane.Begin()
+
+        // Completion handler
+        animatorForSourceCodePane.Completed.Add (fun _ ->
+            async {
+                do! Async.Sleep 300
+
+                // Clean up
+                this.PlaceWhereSourceCodeWillBeDisplayed.Child <- null
+                this.GridSplitter1.Visibility <- Visibility.Collapsed
+                this.SourceCodePane.Visibility <- Visibility.Collapsed
+
+                this.RowThatContainsThePage.Height <- GridLength(1.0, GridUnitType.Star)
+                this.RowThatContainsTheGridSplitter.Height <- GridLength(0.0, GridUnitType.Pixel)
+                this.RowThatContainsTheSourceCodePane.Height <- GridLength(0.0, GridUnitType.Star)
+
+                animatorForGridSplitter.Dispose()
+                animatorForSourceCodePane.Dispose()
+            } |> Async.Start
+        )
 
 //#endregion
 
