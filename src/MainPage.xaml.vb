@@ -3,7 +3,9 @@ Imports System.Windows.Browser
 Imports System.Windows.Controls
 Imports System.Windows.Input
 Imports System.Windows.Media
+Imports System.Windows.Media.Animation
 Imports System.Windows.Navigation
+Imports OpenSilver.Animations
 Imports OpenSilver.Themes.Modern
 
 Namespace OpenSilver.Samples.Showcase
@@ -81,23 +83,90 @@ Namespace OpenSilver.Samples.Showcase
 
         Public Sub ViewSourceCode(control As UIElement)
             If SourceCodePane.Visibility = Visibility.Collapsed Then
-                RowThatContainsThePage.Height = New GridLength(0.5, GridUnitType.Star)
-                RowThatContainsTheGridSplitter.Height = New GridLength(5)
-                RowThatContainsTheSourceCodePane.Height = New GridLength(0.5, GridUnitType.Star)
+                ' Make the pane and grid splitter visible
                 GridSplitter1.Visibility = Visibility.Visible
                 SourceCodePane.Visibility = Visibility.Visible
+
+                ' Animate the appearance of the Source Code Pane and the Grid Splitter:
+                Dim easing As New CubicEase With {
+                    .EasingMode = EasingMode.EaseOut
+                }
+
+                Dim animatorForGridSplitter As New PropertyAnimator(
+                    RowThatContainsTheGridSplitter,
+                    RowDefinition.HeightProperty,
+                    Function(progress) New GridLength(progress * 5.0, GridUnitType.Pixel)
+                ) With {
+                    .Duration = TimeSpan.FromMilliseconds(500),
+                    .EasingFunction = easing
+                }
+                animatorForGridSplitter.Begin()
+
+                Dim animatorForSourceCodePane As New PropertyAnimator(
+                    RowThatContainsTheSourceCodePane,
+                    RowDefinition.HeightProperty,
+                    Function(progress) New GridLength(progress * 1.0, GridUnitType.Star)
+                ) With {
+                    .Duration = TimeSpan.FromMilliseconds(500),
+                    .EasingFunction = easing
+                }
+                animatorForSourceCodePane.Begin()
             End If
 
             PlaceWhereSourceCodeWillBeDisplayed.Child = control
         End Sub
 
         Private Sub ButtonToCloseSourceCode_Click(sender As Object, e As RoutedEventArgs)
-            PlaceWhereSourceCodeWillBeDisplayed.Child = Nothing
-            GridSplitter1.Visibility = Visibility.Collapsed
-            SourceCodePane.Visibility = Visibility.Collapsed
-            RowThatContainsThePage.Height = New GridLength(1, GridUnitType.Star)
-            RowThatContainsTheGridSplitter.Height = New GridLength(0)
-            RowThatContainsTheSourceCodePane.Height = New GridLength(0)
+            ' Close the Source Code Pane
+            Dim initialStarHeightForRowThatContainsTheSourceCodePane As Double = 0.5
+            If RowThatContainsTheSourceCodePane.Height.GridUnitType = GridUnitType.Star Then
+                initialStarHeightForRowThatContainsTheSourceCodePane = RowThatContainsTheSourceCodePane.Height.Value
+            End If
+
+            ' Create animations with easing
+            Dim easing As New CubicEase With {
+                .EasingMode = EasingMode.EaseIn
+            }
+
+            Dim animatorForGridSplitter As New PropertyAnimator(
+                RowThatContainsTheGridSplitter,
+                RowDefinition.HeightProperty,
+                Function(progress) New GridLength((1.0 - progress) * 5.0, GridUnitType.Pixel)
+            ) With {
+                .Duration = TimeSpan.FromMilliseconds(300),
+                .EasingFunction = easing
+            }
+            animatorForGridSplitter.Begin()
+
+            Dim animatorForSourceCodePane As New PropertyAnimator(
+                RowThatContainsTheSourceCodePane,
+                RowDefinition.HeightProperty,
+                Function(progress) New GridLength(initialStarHeightForRowThatContainsTheSourceCodePane - (progress * initialStarHeightForRowThatContainsTheSourceCodePane), GridUnitType.Star)
+            ) With {
+                .Duration = TimeSpan.FromMilliseconds(500),
+                .EasingFunction = easing
+            }
+            animatorForSourceCodePane.Begin()
+
+            ' Set up completion handler
+            AddHandler animatorForSourceCodePane.Completed, Async Sub(s As Object, args As EventArgs)
+                                                                Await Task.Delay(300)
+
+                                                                ' Clean up when animation completes
+                                                                PlaceWhereSourceCodeWillBeDisplayed.Child = Nothing
+                                                                GridSplitter1.Visibility = Visibility.Collapsed
+                                                                SourceCodePane.Visibility = Visibility.Collapsed
+
+                                                                ' Reset the row heights
+                                                                RowThatContainsThePage.Height = New GridLength(1.0, GridUnitType.Star)
+                                                                RowThatContainsTheGridSplitter.Height = New GridLength(0.0, GridUnitType.Pixel)
+                                                                RowThatContainsTheSourceCodePane.Height = New GridLength(0.0, GridUnitType.Star)
+
+                                                                ' Dispose
+                                                                animatorForGridSplitter.Dispose()
+                                                                animatorForSourceCodePane.Dispose()
+                                                            End Sub
+
         End Sub
 
 #End Region

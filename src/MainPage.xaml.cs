@@ -1,11 +1,14 @@
-﻿using OpenSilver.Themes.Modern;
+﻿using OpenSilver.Animations;
+using OpenSilver.Themes.Modern;
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Browser;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Navigation;
 
 namespace OpenSilver.Samples.Showcase
@@ -101,11 +104,30 @@ namespace OpenSilver.Samples.Showcase
             // Open the Source Code Pane, which is the place where the source code will be displayed:
             if (SourceCodePane.Visibility == Visibility.Collapsed)
             {
-                RowThatContainsThePage.Height = new GridLength(0.5d, GridUnitType.Star);
-                RowThatContainsTheGridSplitter.Height = new GridLength(5d);
-                RowThatContainsTheSourceCodePane.Height = new GridLength(0.5d, GridUnitType.Star);
+                // Make the pane and grid splitter visible
                 GridSplitter1.Visibility = Visibility.Visible;
                 SourceCodePane.Visibility = Visibility.Visible;
+
+                // Animate the appearance of the Source Code Pane and the Grid Splitter:
+                var easing = new CubicEase { EasingMode = EasingMode.EaseOut };
+                var animatorForGridSplitter = new PropertyAnimator(
+                                    RowThatContainsTheGridSplitter,
+                                    RowDefinition.HeightProperty,
+                                    progress => new GridLength(progress * 5d, GridUnitType.Pixel))
+                                    {
+                                        Duration = TimeSpan.FromMilliseconds(500),
+                                        EasingFunction = easing
+                                    };
+                animatorForGridSplitter.Begin();
+                var animatorForSourceCodePane = new PropertyAnimator(
+                                    RowThatContainsTheSourceCodePane,
+                                    RowDefinition.HeightProperty,
+                                    progress =>  new GridLength(progress * 1d, GridUnitType.Star))
+                                    {
+                                        Duration = TimeSpan.FromMilliseconds(500),
+                                        EasingFunction = easing
+                                    };
+                animatorForSourceCodePane.Begin();
             }
 
             // Display the source code:
@@ -114,13 +136,58 @@ namespace OpenSilver.Samples.Showcase
 
         private void ButtonToCloseSourceCode_Click(object sender, RoutedEventArgs e)
         {
-            // Close the Source Code Pane, which is the place where the source code is displayed:
-            PlaceWhereSourceCodeWillBeDisplayed.Child = null;
-            GridSplitter1.Visibility = Visibility.Collapsed;
-            SourceCodePane.Visibility = Visibility.Collapsed;
-            RowThatContainsThePage.Height = new GridLength(1d, GridUnitType.Star);
-            RowThatContainsTheGridSplitter.Height = new GridLength(0d);
-            RowThatContainsTheSourceCodePane.Height = new GridLength(0d);
+            // Close the Source Code Pane, which is the place where the source code is displayed.
+
+            // Note: we animate only the source code pane to 0, not the page, so that, if the user drags the splitter, it will not be reset to 0.5*:
+            double initialStarHeightForRowThatContainsTheSourceCodePane = 0.5d;
+            if (RowThatContainsTheSourceCodePane.Height.GridUnitType == GridUnitType.Star)
+            {
+                initialStarHeightForRowThatContainsTheSourceCodePane = RowThatContainsTheSourceCodePane.Height.Value;
+            }
+
+            // Create animations with easing
+            var easing = new CubicEase { EasingMode = EasingMode.EaseIn };
+
+            var animatorForGridSplitter = new PropertyAnimator(
+                                RowThatContainsTheGridSplitter,
+                                RowDefinition.HeightProperty,
+                                progress => new GridLength((1d - progress) * 5d, GridUnitType.Pixel))
+                                {
+                                    Duration = TimeSpan.FromMilliseconds(300), // Note: This animation is faster than the one for the source code pane, so that the "Completed" event of the the one for the source code pane is executed after this one completes.
+                EasingFunction = easing
+                                };
+            animatorForGridSplitter.Begin();
+
+            var animatorForSourceCodePane = new PropertyAnimator(
+                                RowThatContainsTheSourceCodePane,
+                                RowDefinition.HeightProperty,
+                                progress => new GridLength(initialStarHeightForRowThatContainsTheSourceCodePane - (progress * initialStarHeightForRowThatContainsTheSourceCodePane), GridUnitType.Star))
+                                {
+                                    Duration = TimeSpan.FromMilliseconds(500),
+                                    EasingFunction = easing
+                                };
+            animatorForSourceCodePane.Begin();
+
+            // Set up completion handler
+            animatorForSourceCodePane.Completed += async (s, args) =>
+            {
+                await Task.Delay(300); // Let's wait a bit to make that the other animation is completed too.
+
+                // Clean up when animation completes
+                PlaceWhereSourceCodeWillBeDisplayed.Child = null;
+                GridSplitter1.Visibility = Visibility.Collapsed;
+                SourceCodePane.Visibility = Visibility.Collapsed;
+
+                // Reset the row heights to their original values
+                RowThatContainsThePage.Height = new GridLength(1d, GridUnitType.Star);
+                RowThatContainsTheGridSplitter.Height = new GridLength(0d, GridUnitType.Pixel);
+                RowThatContainsTheSourceCodePane.Height = new GridLength(0d, GridUnitType.Star);
+
+                // Dispose of the animators to be extra safe
+                //animator1.Dispose();
+                animatorForGridSplitter.Dispose();
+                animatorForSourceCodePane.Dispose();
+            };
         }
 
         #endregion
