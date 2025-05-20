@@ -1,6 +1,6 @@
 <Project>
   <PropertyGroup>
-    <OpenSilverVersion Condition=" '$(OpenSilverVersion)' == '' ">3.3.0-preview-2025-05-12-091000-0c49e0b5</OpenSilverVersion>
+    <OpenSilverVersion Condition=" '$(OpenSilverVersion)' == '' ">3.3.0-preview-2025-05-20-085626-7bb9b4fa</OpenSilverVersion>
 	  <OpenSilverModernThemeVersion Condition=" '$(OpenSilverModernThemeVersion)' == '' ">3.3.0-preview-2025-05-13-080949-c4fa6b18</OpenSilverModernThemeVersion>
     <OpenSilverControlsKitVersion Condition=" '$(OpenSilverControlsKitVersion)' == '' ">3.3.0-preview-2025-05-12-153036-6d35ce1</OpenSilverControlsKitVersion>
   </PropertyGroup>
