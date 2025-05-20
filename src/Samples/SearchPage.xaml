@@ -4,7 +4,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:controlskit="clr-namespace:OpenSilver.ControlsKit;assembly=OpenSilver.ControlsKit.Controls"
     xmlns:search="clr-namespace:OpenSilver.Samples.Showcase.Search"
-    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase"
+    Title="Search Results - OpenSilver Features Showcase">
 
     <StackPanel>
         <ContentControl Content="Search Results" Style="{StaticResource PageTitle_Style}"/>

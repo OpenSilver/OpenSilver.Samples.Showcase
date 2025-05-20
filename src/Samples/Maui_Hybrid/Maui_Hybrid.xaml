@@ -4,7 +4,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:controlskit="clr-namespace:OpenSilver.ControlsKit;assembly=OpenSilver.ControlsKit.Controls"
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase"
-    Style="{StaticResource Page_Style}">
+    Style="{StaticResource Page_Style}"
+    Title="Native APIs">
     <StackPanel>
 
         <StackPanel>
