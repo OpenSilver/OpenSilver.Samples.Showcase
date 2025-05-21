@@ -1,7 +1,6 @@
 using CSHTML5.Native.Html.Controls;
 using System;
 using System.Globalization;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 
@@ -9,8 +8,6 @@ namespace OpenSilver.Samples.Showcase;
 
 public class ColorPicker : HtmlPresenter
 {
-    private static bool _isJsLibLoaded;
-
     private object _domElement;
 
     #region Color
@@ -33,10 +30,13 @@ public class ColorPicker : HtmlPresenter
     {
         Loaded -= OnLoaded;
 
-        await LoadJSLibrary();
-        _domElement = Interop.GetDiv(this);
+        if (!await FileLoader.TryLoadCssFile("https://cdn.jsdelivr.net/npm/alwan/dist/css/alwan.min.css") ||
+            !await FileLoader.TryLoadJavaScriptFile("https://cdn.jsdelivr.net/npm/alwan/dist/js/alwan.min.js"))
+            return;
 
+        _domElement = Interop.GetDiv(this);
         Html = "<div></div>";
+
         Interop.ExecuteJavaScriptVoidAsync($@"
           const alwan = new Alwan($0.firstChild.firstChild, {{
             theme: 'dark',
@@ -66,14 +66,4 @@ public class ColorPicker : HtmlPresenter
     private string JsHexColor => $"'#{GetHex(Color.R)}{GetHex(Color.G)}{GetHex(Color.B)}{GetHex(Color.A)}'";
 
     private string GetHex(byte number) => number.ToString("X2", CultureInfo.InvariantCulture);
-
-    private static async Task LoadJSLibrary()
-    {
-        if (!_isJsLibLoaded)
-        {
-            await Interop.LoadCssFile("https://cdn.jsdelivr.net/npm/alwan/dist/css/alwan.min.css");
-            await Interop.LoadJavaScriptFile("https://cdn.jsdelivr.net/npm/alwan/dist/js/alwan.min.js");
-            _isJsLibLoaded = true;
-        }
-    }
 }

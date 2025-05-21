@@ -1,16 +1,11 @@
 using CSHTML5.Native.Html.Controls;
-using System;
-using System.Globalization;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Media;
 
 namespace OpenSilver.Samples.Showcase;
 
 public class JsParticlesEffect : HtmlPresenter
 {
-    private static bool _isJsLibLoaded;
-
     private object _domElement;
 
     public JsParticlesEffect()
@@ -39,7 +34,7 @@ public class JsParticlesEffect : HtmlPresenter
             $0.firstChild.firstChild.style.width = ""100%"";
             $0.firstChild.firstChild.style.height = ""100%"";
             $0.style.overflow = ""hidden"";
-          window.ParticleEffect.startEffect($0.firstChild.firstChild);
+          window.ParticleEffect?.startEffect($0.firstChild.firstChild);
         ", _domElement);
     }
 
@@ -47,17 +42,14 @@ public class JsParticlesEffect : HtmlPresenter
     {
         // Stop the effect and release all resources:
         Interop.ExecuteJavaScriptVoidAsync($@"
-          window.ParticleEffect.stopEffect();
+          window.ParticleEffect?.stopEffect();
         ", _domElement);
     }
 
     private static async Task LoadJSLibrary()
     {
-        if (!_isJsLibLoaded)
+        if (await FileLoader.TryLoadJavaScriptFile("https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"))
         {
-            // Load the ThreeJS library:
-            await Interop.LoadJavaScriptFile("https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js");
-
             // Load our script for the particles effect:
             Interop.ExecuteJavaScriptVoid($@"
                 window.ParticleEffect = {{
@@ -316,8 +308,6 @@ public class JsParticlesEffect : HtmlPresenter
                     }}
                 }};
                 ");
-
-            _isJsLibLoaded = true;
         }
     }
 }

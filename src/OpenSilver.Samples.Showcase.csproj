@@ -276,6 +276,7 @@
     <Compile Include="Samples\Client_Server\RIAServices\RIAServices_Demo.xaml.cs" />
     <Compile Include="Samples\Interop_Samples\HtmlPresenter\HtmlColorPicker.cs" />
     <Compile Include="Samples\Interop_Samples\PWA\PWA_Demo.xaml.cs" />
+    <Compile Include="Samples\JS_Libs\FileLoader.cs" />
     <Compile Include="Samples\JS_Libs\JS_Libs.xaml.cs" />
     <Compile Include="Samples\JS_Libs\JSZip\ZipFile.cs" />
     <Compile Include="Samples\JS_Libs\JSZip\JSZip_Demo.xaml.cs" />    <Compile Include="Samples\JS_Libs\ColorPicker\ColorPicker.cs" />

@@ -1,5 +1,5 @@
 ﻿using OpenSilver;
-using System;
+using OpenSilver.Samples.Showcase;
 using System.Threading.Tasks;
 
 //------------------------------------
@@ -29,28 +29,31 @@ using System.Threading.Tasks;
 
 namespace Ionic.Zip
 {
-    public class ZipFile : IDisposable
+    public class ZipFile
     {
-        static bool JSLibraryWasLoaded;
+        private static readonly Task<bool> _jsLibraryLoaded =
+            FileLoader.TryLoadJavaScriptFile("https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js");
 
-        object _referenceToJavaScriptZipInstance;
+        private object _referenceToJavaScriptZipInstance;
 
         public async Task AddFile(string fileName, string fileContent)
         {
-            await LoadJSLibrary();
+            if (!await _jsLibraryLoaded)
+                return;
 
             Initialize();
 
             Interop.ExecuteJavaScript(@"$0.file($1, $2)", _referenceToJavaScriptZipInstance, fileName, fileContent);
         }
 
-        public async Task AddFile(string fileName, Byte[] fileContent)
+        public async Task AddFile(string fileName, byte[] fileContent)
         {
-            await LoadJSLibrary();
+            if (!await _jsLibraryLoaded)
+                return;
 
             Initialize();
 
-            if (!OpenSilver.Interop.IsRunningInTheSimulator)
+            if (!Interop.IsRunningInTheSimulator)
             {
                 Interop.ExecuteJavaScript(@"$0.file($1, $2)", _referenceToJavaScriptZipInstance, fileName, fileContent);
             }
@@ -68,7 +71,8 @@ namespace Ionic.Zip
 
         public async Task<object> SaveToJavaScriptBlob()
         {
-            await LoadJSLibrary();
+            if (!await _jsLibraryLoaded)
+                return null;
 
             Initialize();
 
@@ -77,32 +81,20 @@ namespace Ionic.Zip
             return blob;
         }
 
-        public void Dispose()
-        {
-        }
-
-        static async Task LoadJSLibrary()
-        {
-            if (!JSLibraryWasLoaded)
-            {
-                await Interop.LoadJavaScriptFile(@"https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js");
-                JSLibraryWasLoaded = true;
-            }
-        }
-
         void Initialize()
         {
-            if (_referenceToJavaScriptZipInstance == null)
-                _referenceToJavaScriptZipInstance = Interop.ExecuteJavaScript("new JSZip()");
+            _referenceToJavaScriptZipInstance ??= Interop.ExecuteJavaScript("new JSZip()");
         }
 
         public static async Task<ZipFile> Read(object javaScriptBlob)
         {
-            await LoadJSLibrary();
+            if (!await _jsLibraryLoaded)
+                return null;
 
-            var zipFile = new ZipFile();
-
-            zipFile._referenceToJavaScriptZipInstance = Interop.ExecuteJavaScript("new JSZip($0)", javaScriptBlob);
+            var zipFile = new ZipFile
+            {
+                _referenceToJavaScriptZipInstance = Interop.ExecuteJavaScript("new JSZip($0)", javaScriptBlob)
+            };
 
             return zipFile;
         }

@@ -1,6 +1,5 @@
 using CSHTML5.Native.Html.Controls;
 using System;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace OpenSilver.Samples.Showcase;
@@ -8,7 +7,6 @@ namespace OpenSilver.Samples.Showcase;
 public class ToastUiEditor : HtmlPresenter
 {
     private const string CdnUrl = "https://uicdn.toast.com/editor/latest";
-    private static bool _isJsLibLoaded;
 
     private object _domElement;
 
@@ -50,10 +48,13 @@ public class ToastUiEditor : HtmlPresenter
     {
         Loaded -= OnLoaded;
 
-        await LoadJSLibrary();
+        if (!await FileLoader.TryLoadCssFile($"{CdnUrl}/toastui-editor.min.css") ||
+            !await FileLoader.TryLoadJavaScriptFile($"{CdnUrl}/toastui-editor-all.min.js"))
+            return;
+
         _domElement = Interop.GetDiv(this);
 
-        Interop.ExecuteJavaScriptAsync($$"""
+        Interop.ExecuteJavaScriptVoidAsync($$"""
             $0.editor = new toastui.Editor({
                 el: $0.firstChild,
                 initialValue: $1,
@@ -73,15 +74,5 @@ public class ToastUiEditor : HtmlPresenter
     {
         _contentInEditor = newContent;
         Content = newContent;
-    }
-
-    private static async Task LoadJSLibrary()
-    {
-        if (!_isJsLibLoaded)
-        {
-            await Interop.LoadCssFile($"{CdnUrl}/toastui-editor.min.css");
-            await Interop.LoadJavaScriptFile($"{CdnUrl}/toastui-editor-all.min.js");
-            _isJsLibLoaded = true;
-        }
     }
 }
