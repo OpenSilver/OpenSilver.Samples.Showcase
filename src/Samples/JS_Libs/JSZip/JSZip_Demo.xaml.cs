@@ -16,9 +16,13 @@ public partial class JSZip_Demo : UserControl
 
     private async void ButtonGenerateZip_Click(object sender, RoutedEventArgs e)
     {
-        using var zipFile = new ZipFile();
+        var zipFile = new ZipFile();
         await zipFile.AddFile("SampleText.txt", "Hello World!");
         var jsBlob = await zipFile.SaveToJavaScriptBlob();
-        await FileSaver.SaveJavaScriptBlobToFile(jsBlob, "MyTestFile.zip");
+
+        if (jsBlob != null)
+        {
+            await FileSaver.SaveJavaScriptBlobToFile(jsBlob, "MyTestFile.zip");
+        }
     }
 }

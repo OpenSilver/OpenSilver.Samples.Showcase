@@ -15,11 +15,13 @@ Namespace OpenSilver.Samples.Showcase
         End Sub
 
         Private Async Sub ButtonGenerateZip_Click(sender As Object, e As RoutedEventArgs)
-            Using zipFile As New ZipFile()
-                Await zipFile.AddFile("SampleText.txt", "Hello World!")
-                Dim jsBlob = Await zipFile.SaveToJavaScriptBlob()
+            Dim zipFile As New ZipFile()
+            Await zipFile.AddFile("SampleText.txt", "Hello World!")
+            Dim jsBlob = Await zipFile.SaveToJavaScriptBlob()
+
+            If jsBlob IsNot Nothing Then
                 Await FileSaver.SaveJavaScriptBlobToFile(jsBlob, "MyTestFile.zip")
-            End Using
+            End If
         End Sub
 
     End Class

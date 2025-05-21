@@ -8,10 +8,8 @@ open System.Windows.Media
 open OpenSilver
 open CSHTML5.Native.Html.Controls
 
-type ColorPicker() as this =
+type ColorPicker() =
     inherit HtmlPresenter()
-
-    static let mutable isJsLibLoaded = false
 
     let mutable domElement: obj = null
 

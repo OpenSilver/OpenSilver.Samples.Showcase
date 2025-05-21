@@ -6,7 +6,6 @@ Namespace OpenSilver.Samples.Showcase
     Public Class JsParticlesEffect
         Inherits HtmlPresenter
 
-        Private Shared _isJsLibLoaded As Boolean
         Private _domElement As Object
 
         Public Sub New()
@@ -25,19 +24,18 @@ Namespace OpenSilver.Samples.Showcase
                 $0.firstChild.style.height = '100%';
                 $0.firstChild.firstChild.style.width = '100%';
                 $0.firstChild.firstChild.style.height = '100%';
-                window.ParticleEffect.startEffect($0.firstChild.firstChild);
+                window.ParticleEffect?.startEffect($0.firstChild.firstChild);
             ", _domElement)
         End Sub
 
         Private Sub OnUnloaded(sender As Object, e As RoutedEventArgs)
             Interop.ExecuteJavaScriptVoidAsync($"
-                window.ParticleEffect.stopEffect();
+                window.ParticleEffect?.stopEffect();
             ", _domElement)
         End Sub
 
         Private Shared Async Function LoadJSLibrary() As Task
-            If Not _isJsLibLoaded Then
-                Await Interop.LoadJavaScriptFile("https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js")
+            If Await FileLoader.TryLoadJavaScriptFile("https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js") Then
 
                 Interop.ExecuteJavaScriptVoid($"
                 window.ParticleEffect = {{
@@ -85,7 +83,7 @@ Namespace OpenSilver.Samples.Showcase
                         this.camera.position.z = 50;
 
                         // Create the renderer
-                        this.renderer = new THREE.WebGLRenderer({{ antialias: true, alpha: true }});
+                        this.renderer = new THREE.WebGLRenderer({{antialias: true, alpha: true }});
                         this.renderer.setClearColor(0x000000, 0);
                         const canvas = this.renderer.domElement;
 
@@ -94,7 +92,7 @@ Namespace OpenSilver.Samples.Showcase
 
                         // Set its initial size via both pixel buffer and style
                         this.renderer.setSize(div.clientWidth, div.clientHeight, false);
-                        canvas.style.width  = div.clientWidth  + ""px"";
+                        canvas.style.width = div.clientWidth + ""px"";
                         canvas.style.height = div.clientHeight + ""px"";
 
                         div.appendChild(canvas);
@@ -193,7 +191,7 @@ Namespace OpenSilver.Samples.Showcase
                             this.renderer.setSize(width, height, false);
 
                             // now gently transition the *display* size
-                            canvas.style.width  = width  + ""px"";
+                            canvas.style.width = width + ""px"";
                             canvas.style.height = height + ""px"";
                         }}, 150);
 
@@ -299,8 +297,6 @@ Namespace OpenSilver.Samples.Showcase
                     }}
                 }};
                 ")
-
-                _isJsLibLoaded = True
             End If
         End Function
 

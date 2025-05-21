@@ -8,7 +8,6 @@ open OpenSilver
 type JsParticlesEffect() as this =
     inherit HtmlPresenter()
 
-    static let mutable isJsLibLoaded = false
     let mutable domElement : obj = null
 
     do
@@ -22,26 +21,25 @@ type JsParticlesEffect() as this =
             do! JsParticlesEffect.LoadJSLibrary()
             do! Task.Delay(100)
 
-            //do! Interop.ExecuteJavaScriptVoidAsync($"
-            //    $0.firstChild.style.width = '100%';
-            //    $0.firstChild.style.height = '100%';
-            //    $0.firstChild.firstChild.style.width = '100%';
-            //    $0.firstChild.firstChild.style.height = '100%';
-            //    window.ParticleEffect.startEffect($0.firstChild.firstChild);
-            //", domElement)
-            //|> Async.AwaitTask
+            Interop.ExecuteJavaScriptVoidAsync("
+                $0.firstChild.style.width = '100%';
+                $0.firstChild.style.height = '100%';
+                $0.firstChild.firstChild.style.width = '100%';
+                $0.firstChild.firstChild.style.height = '100%';
+                window.ParticleEffect?.startEffect($0.firstChild.firstChild);
+            ", domElement)
+            |> ignore
         } (*|> Async.StartImmediate*)
 
     member private this.OnUnloaded(sender: obj, e: RoutedEventArgs) =
         Interop.ExecuteJavaScriptVoidAsync($"
-            window.ParticleEffect.stopEffect();
+            window.ParticleEffect?.stopEffect();
         ", domElement)
         |> ignore
 
     static member private LoadJSLibrary() : Task =
         task {
-            if not isJsLibLoaded then
-                //do! Interop.LoadJavaScriptFile("https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js")
+            if (FileLoader.TryLoadJavaScriptFile("https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js") |> Async.AwaitTask |> Async.RunSynchronously) then
 
                 Interop.ExecuteJavaScriptVoid($@"
                 window.ParticleEffect = {{
@@ -303,7 +301,5 @@ type JsParticlesEffect() as this =
                     }}
                 }};
                 ")
-
-                isJsLibLoaded <- true
         }
 

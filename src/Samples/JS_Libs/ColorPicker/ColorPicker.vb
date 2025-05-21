@@ -1,16 +1,13 @@
-Imports CSHTML5.Native.Html.Controls
-Imports System
 Imports System.Globalization
-Imports System.Threading.Tasks
 Imports System.Windows
 Imports System.Windows.Media
+Imports CSHTML5.Native.Html.Controls
 
 Namespace OpenSilver.Samples.Showcase
 
     Public Class ColorPicker
         Inherits HtmlPresenter
 
-        Private Shared _isJsLibLoaded As Boolean
         Private _domElement As Object
 
 #Region "Color"
@@ -23,7 +20,7 @@ Namespace OpenSilver.Samples.Showcase
             End Set
         End Property
 
-        Public Shared ReadOnly ColorProperty As DependencyProperty = 
+        Public Shared ReadOnly ColorProperty As DependencyProperty =
             DependencyProperty.Register(NameOf(Color), GetType(Color), GetType(ColorPicker), New PropertyMetadata(Colors.Black))
 #End Region
 
@@ -34,10 +31,14 @@ Namespace OpenSilver.Samples.Showcase
         Private Async Sub OnLoaded(sender As Object, e As RoutedEventArgs)
             RemoveHandler Loaded, AddressOf OnLoaded
 
-            Await LoadJSLibrary()
-            _domElement = Interop.GetDiv(Me)
+            If Not Await FileLoader.TryLoadCssFile("https://cdn.jsdelivr.net/npm/alwan/dist/css/alwan.min.css") OrElse
+               Not Await FileLoader.TryLoadJavaScriptFile("https://cdn.jsdelivr.net/npm/alwan/dist/js/alwan.min.js") Then
+                Return
+            End If
 
+            _domElement = Interop.GetDiv(Me)
             Html = "<div></div>"
+
             Interop.ExecuteJavaScriptVoidAsync($"
               const alwan = new Alwan($0.firstChild.firstChild, {{
                 theme: 'dark',
@@ -71,14 +72,6 @@ Namespace OpenSilver.Samples.Showcase
 
         Private Function GetHex(number As Byte) As String
             Return number.ToString("X2", CultureInfo.InvariantCulture)
-        End Function
-
-        Private Shared Async Function LoadJSLibrary() As Task
-            If Not _isJsLibLoaded Then
-                Await Interop.LoadCssFile("https://cdn.jsdelivr.net/npm/alwan/dist/css/alwan.min.css")
-                Await Interop.LoadJavaScriptFile("https://cdn.jsdelivr.net/npm/alwan/dist/js/alwan.min.js")
-                _isJsLibLoaded = True
-            End If
         End Function
     End Class
 
