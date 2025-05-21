@@ -6,8 +6,8 @@ Namespace OpenSilver.Samples.Showcase
     Public Class MonacoEditor
         Inherits HtmlPresenter
 
-        Private Const CdnUrl As String = "https://unpkg.com/monaco-editor@latest/min/vs"
-        Private Shared _isJsLibLoaded As Boolean
+        Private Const CdnUrl As String = "https://unpkg.com/monaco-editor@latest"
+        Private Const IframeId As String = "monacoEditorIframe"
         Private _domElement As Object
 
 #Region "Code"
@@ -26,11 +26,7 @@ Namespace OpenSilver.Samples.Showcase
         Private Shared Sub OnCodeChanged(d As DependencyObject, e As DependencyPropertyChangedEventArgs)
             Dim editor = DirectCast(d, MonacoEditor)
             If editor._domElement IsNot Nothing Then
-                Interop.ExecuteJavaScriptVoidAsync(
-                    "if($0.editor) { $0.editor.setValue($1); }",
-                    editor._domElement,
-                    e.NewValue
-                )
+                Interop.ExecuteJavaScriptVoid($"document.getElementById('{IframeId}').contentWindow.setEditorContent(`{e.NewValue}`)")
             End If
         End Sub
 #End Region
@@ -51,11 +47,7 @@ Namespace OpenSilver.Samples.Showcase
         Private Shared Sub OnLanguageChanged(d As DependencyObject, e As DependencyPropertyChangedEventArgs)
             Dim editor = DirectCast(d, MonacoEditor)
             If editor._domElement IsNot Nothing Then
-                Interop.ExecuteJavaScriptVoidAsync(
-                    "if($0.editor) { monaco.editor.setModelLanguage($0.editor.getModel(), $1); }",
-                    editor._domElement,
-                    e.NewValue
-                )
+                Interop.ExecuteJavaScriptVoid($"document.getElementById('{IframeId}').contentWindow.setEditorLanguage('{e.NewValue}')")
             End If
         End Sub
 #End Region
@@ -64,47 +56,102 @@ Namespace OpenSilver.Samples.Showcase
             AddHandler Loaded, AddressOf OnLoaded
         End Sub
 
-        Private Async Sub OnLoaded(sender As Object, e As RoutedEventArgs)
+        Private Sub OnLoaded(sender As Object, e As RoutedEventArgs)
             RemoveHandler Loaded, AddressOf OnLoaded
 
-            Await LoadJSLibrary()
             _domElement = Interop.GetDiv(Me)
 
-            Html = $"<div style='width:100%;height:{Height}px;display:block'></div>"
+            Interop.ExecuteJavaScriptVoidAsync(
+$"
+                (function () {{
+                    const iframe = document.createElement('iframe');
+                    iframe.setAttribute('id','{IframeId}');
+                    iframe.style='border:none;width:100%;height:100%;overflow:hidden;display:block';
 
-            Interop.ExecuteJavaScriptAsync(
-$"require.config({{
-    paths: {{ 'vs': '{CdnUrl}' }}
-}});                
-require(['vs/editor/editor.main'], function() {{
-        $0.editor = monaco.editor.create($0.firstChild.firstChild, {{
-            value: $1,
-            language: $2,
-            theme: 'vs-dark',
-            minimap: {{
-                enabled: false
-            }},
-            automaticLayout: true
-        }});
+                    const currentDiv = $0;
+                    currentDiv.appendChild(iframe);
 
-        $0.editor.onDidChangeModelContent((e) => {{
-            const value = $0.editor.getValue();
-            $3(value);
-        }});
-    }});", _domElement, Code, Language, DirectCast(AddressOf OnCodeChangedInEditor, Action(Of String)))
+                    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                    iframeDoc.open();
+                    const div = `
+                        <html>
+                            <style>
+                                body, html {{
+                                    margin: 0;
+                                    padding: 0;
+                                    width: 100%;
+                                    height: 100%;
+                                    overflow:hidden;
+                                }}
+                                #monacoContainer {{
+                                    width: 100%;
+                                    height: 100%;
+                                    margin: 0;
+                                    padding: 0;
+                                }}
+                            </style>
+                            <body>
+                                <div id=""monacoContainer""></div>
+                            </body>
+                        </html>
+                    `;
+                    iframeDoc.write(div);
+
+                    const monacoLoaderScript = iframeDoc.createElement('script');
+                    monacoLoaderScript.src = '{CdnUrl}/min/vs/loader.js';
+                    monacoLoaderScript.onload = function()
+                    {{
+                        var configScript = iframeDoc.createElement('script');
+                        configScript.type = 'text/javascript';
+                        configScript.text = `
+                            require.config({{ paths: {{ 'vs': '{CdnUrl}/min/vs' }} }});
+                            require(['vs/editor/editor.main'], function() {{
+                                let element=document.getElementById('monacoContainer');
+                                element.editor = monaco.editor.create(element, {{
+                                        value: \`{Code}\`,
+                                        language: $1,
+                                        theme: 'vs-dark',
+                                        automaticLayout: true,
+                                        scrolling: {{ vertical:'auto' }}
+                                }});
+                                element.style.height = '100%';
+                                element.editor.onDidChangeModelContent((event) => {{
+                                    const fullContent = element.editor.getValue();
+                                    window.updateContentInParent(fullContent);
+                                }});
+                            }});
+                        `;
+                        iframeDoc.body.appendChild(configScript);
+                    }};
+                    iframeDoc.body.appendChild(monacoLoaderScript);
+
+                    const scriptCallback = iframeDoc.createElement('script');
+                    scriptCallback.text = `
+                            window.setEditorContent = function(message) {{
+                                let element=document.getElementById('monacoContainer');
+                                element && element.editor && element.editor.getModel().getValue() != message && element.editor.getModel().setValue(message)
+                            }};
+                            window.setEditorLanguage = function(language) {{
+                                let editor = document.getElementById('monacoContainer')?.editor;
+                                if (editor) {{
+                                    monaco.editor.setModelLanguage(editor.getModel(), language);
+                                }}
+                            }};
+                    `;
+
+                    iframeDoc.body.appendChild(scriptCallback);
+                    iframeDoc.close();
+                    const cw = document.getElementById('{IframeId}').contentWindow;
+                    cw.updateContentInParent = function(message) {{
+                        $2(message);
+                    }};
+                }})();
+", _domElement, Language, DirectCast(AddressOf OnCodeChangedInEditor, Action(Of String)))
         End Sub
 
         Private Sub OnCodeChangedInEditor(newCode As String)
             Code = newCode
         End Sub
-
-        Private Shared Async Function LoadJSLibrary() As Task
-            If Not _isJsLibLoaded Then
-                Await Interop.LoadJavaScriptFile($"{CdnUrl}/loader.js")
-
-                _isJsLibLoaded = True
-            End If
-        End Function
     End Class
 
 End Namespace

@@ -7,7 +7,6 @@ Namespace OpenSilver.Samples.Showcase
         Inherits HtmlPresenter
 
         Private Const CdnUrl As String = "https://uicdn.toast.com/editor/latest"
-        Private Shared _isJsLibLoaded As Boolean
         Private _domElement As Object
 
 #Region "Content"
@@ -43,13 +42,18 @@ Namespace OpenSilver.Samples.Showcase
         Public Sub New()
             AddHandler Loaded, AddressOf OnLoaded
         End Sub
+
         Private Async Sub OnLoaded(sender As Object, e As RoutedEventArgs)
             RemoveHandler Loaded, AddressOf OnLoaded
 
-            Await LoadJSLibrary()
+            If Not Await FileLoader.TryLoadCssFile($"{CdnUrl}/toastui-editor.min.css") OrElse _
+               Not Await FileLoader.TryLoadJavaScriptFile($"{CdnUrl}/toastui-editor-all.min.js") Then
+                Return
+            End If
+
             _domElement = Interop.GetDiv(Me)
 
-            Interop.ExecuteJavaScriptAsync(
+            Interop.ExecuteJavaScriptVoidAsync(
 $"$0.editor = new toastui.Editor({{
     el: $0.firstChild,
     initialValue: $1,
@@ -68,14 +72,6 @@ $0.editor.on('change', () => {{
             _contentInEditor = newContent
             Content = newContent
         End Sub
-
-        Private Shared Async Function LoadJSLibrary() As Task
-            If Not _isJsLibLoaded Then
-                Await Interop.LoadCssFile($"{CdnUrl}/toastui-editor.min.css")
-                Await Interop.LoadJavaScriptFile($"{CdnUrl}/toastui-editor-all.min.js")
-                _isJsLibLoaded = True
-            End If
-        End Function
     End Class
 
 End Namespace

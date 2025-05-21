@@ -1,4 +1,5 @@
 ﻿Imports OpenSilver
+Imports OpenSilver.Samples.Showcase
 
 '------------------------------------
 ' This is an extension for C#/XAML for OpenSilver (https://opensilver.net)
@@ -27,13 +28,14 @@
 
 Namespace Global.Ionic.Zip
     Public Class ZipFile
-        Implements IDisposable
-        Private Shared JSLibraryWasLoaded As Boolean
+        Private Shared ReadOnly _jsLibraryLoaded As Task(Of Boolean) = FileLoader.TryLoadJavaScriptFile("https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js")
 
         Private _referenceToJavaScriptZipInstance As Object
 
         Public Async Function AddFile(ByVal fileName As String, ByVal fileContent As String) As Task
-            Await LoadJSLibrary()
+            If Not Await _jsLibraryLoaded Then
+                Return
+            End If
 
             Initialize()
 
@@ -41,11 +43,13 @@ Namespace Global.Ionic.Zip
         End Function
 
         Public Async Function AddFile(ByVal fileName As String, ByVal fileContent As Byte()) As Task
-            Await LoadJSLibrary()
+            If Not Await _jsLibraryLoaded Then
+                Return
+            End If
 
             Initialize()
 
-            If Not OpenSilver.Interop.IsRunningInTheSimulator Then
+            If Not Interop.IsRunningInTheSimulator Then
                 Interop.ExecuteJavaScript("$0.file($1, $2)", _referenceToJavaScriptZipInstance, fileName, fileContent)
             Else
                 Dim length = fileContent.Length
@@ -61,7 +65,9 @@ Namespace Global.Ionic.Zip
         End Function
 
         Public Async Function SaveToJavaScriptBlob() As Task(Of Object)
-            Await LoadJSLibrary()
+            If Not Await _jsLibraryLoaded Then
+                Return Nothing
+            End If
 
             Initialize()
 
@@ -70,22 +76,14 @@ Namespace Global.Ionic.Zip
             Return blob
         End Function
 
-        Public Sub Dispose() Implements IDisposable.Dispose
-        End Sub
-
-        Private Shared Async Function LoadJSLibrary() As Task
-            If Not JSLibraryWasLoaded Then
-                Await Interop.LoadJavaScriptFile("https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js")
-                JSLibraryWasLoaded = True
-            End If
-        End Function
-
         Private Sub Initialize()
-            If _referenceToJavaScriptZipInstance Is Nothing Then _referenceToJavaScriptZipInstance = Interop.ExecuteJavaScript("new JSZip()")
+            _referenceToJavaScriptZipInstance = If(_referenceToJavaScriptZipInstance, Interop.ExecuteJavaScript("new JSZip()"))
         End Sub
 
         Public Shared Async Function Read(ByVal javaScriptBlob As Object) As Task(Of ZipFile)
-            Await Ionic.Zip.ZipFile.LoadJSLibrary()
+            If Not Await _jsLibraryLoaded Then
+                Return Nothing
+            End If
 
             Dim zipFile = New ZipFile()
 

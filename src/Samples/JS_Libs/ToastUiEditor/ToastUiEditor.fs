@@ -4,12 +4,10 @@ open CSHTML5.Native.Html.Controls
 open System
 open System.Threading.Tasks
 open System.Windows
-open OpenSilver
 
 type ToastUiEditor() as this =
     inherit HtmlPresenter()
     
-    static let mutable _isJsLibLoaded = false
     static let CdnUrl = "https://uicdn.toast.com/editor/latest"
     let mutable _domElement: obj = null
     let mutable _contentInEditor: string = ""
@@ -34,42 +32,41 @@ type ToastUiEditor() as this =
     member this.Content
         with get() = this.GetValue(ContentProperty) :?> string
         and set(value: string) = this.SetValue(ContentProperty, value)
-      // Load JS Library
-    static member private LoadJSLibrary(): Task =
-        async {
-            if not _isJsLibLoaded then
-                //do! Interop.LoadCssFile($"{CdnUrl}/toastui-editor.min.css") |> Async.AwaitTask
-                //do! Interop.LoadJavaScriptFile($"{CdnUrl}/toastui-editor-all.min.js") |> Async.AwaitTask
-                _isJsLibLoaded <- true
-        } |> Async.StartAsTask :> Task
-    
-    // Event handlers
+
+      // Event handlers
     //let OnContentChangedInEditor(newContent: string) =
     //    _contentInEditor <- newContent
     //    this.Content <- newContent
     
     //let OnLoaded(_: obj) (e: RoutedEventArgs) =
-    //    //this.Loaded.RemoveHandler(RoutedEventHandler(OnLoaded))
+    //    this.Loaded.RemoveHandler(RoutedEventHandler(OnLoaded))
         
-    //    async {
-    //        do! ToastUiEditor.LoadJSLibrary() |> Async.AwaitTask
-    //        _domElement <- Interop.GetDiv(this)
+    //    task {
+    //        let! cssLoaded = FileLoader.TryLoadCssFile($"{CdnUrl}/toastui-editor.min.css")
+    //        let! jsLoaded = FileLoader.TryLoadJavaScriptFile($"{CdnUrl}/toastui-editor-all.min.js")
             
-    //        //do! Interop.ExecuteJavaScriptAsync(
-    //        //    "$0.editor = new toastui.Editor({" +
-    //        //    "    el: $0.firstChild," +
-    //        //    "    initialValue: $1," +
-    //        //    "    previewStyle: 'vertical'," +
-    //        //    "    initialEditType: 'wysiwyg'," +
-    //        //    "    theme: 'dark'" +
-    //        //    "});" +
-    //        //    "" +
-    //        //    "$0.editor.on('change', () => {" +
-    //        //    "    const value = $0.editor.getMarkdown();" +
-    //        //    "    $2(value);" +
-    //        //    "});", 
-    //        //    _domElement, this.Content, Action<string>(OnContentChangedInEditor)) |> Async.AwaitTask
-    //    } |> Async.StartImmediate
+    //        if not cssLoaded || not jsLoaded then
+    //            return ()
+    //        else
+    //            _domElement <- Interop.GetDiv(this)
+            
+    ////                Interop.ExecuteJavaScriptVoidAsync(
+    //                $"""
+    //                $0.editor = new toastui.Editor({{
+    //                    el: $0.firstChild,
+    //                    initialValue: $1,
+    //                    previewStyle: 'vertical',
+    //                    initialEditType: 'wysiwyg',
+    //                    theme: 'dark'
+    //                }});
+                    
+    //                $0.editor.on('change', () => {{
+    //                    const value = $0.editor.getMarkdown();
+    //                    $2(value);
+    //                }});
+    //                """, 
+    //                _domElement, this.Content, Action<string>(OnContentChangedInEditor)) |> ignore
+    //    } |> ignore
     
     //do
     //    this.Loaded.AddHandler(RoutedEventHandler(OnLoaded))

@@ -3,6 +3,7 @@
 open OpenSilver
 open System
 open System.Threading.Tasks
+open OpenSilver.Samples.Showcase
 
 //------------------------------------
 // This is an extension for C#/XAML for OpenSilver (https://opensilver.net)
@@ -30,20 +31,24 @@ open System.Threading.Tasks
 //------------------------------------
 
 type ZipFile() =
-    static let mutable JSLibraryWasLoaded = false
+    static let _jsLibraryLoaded = FileLoader.TryLoadJavaScriptFile("https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js")
 
     member val _referenceToJavaScriptZipInstance: obj = null with get, set
-
+    
     member this.AddFile(fileName : string, fileContent : string) =
         async {
-            do! ZipFile.LoadJSLibrary()
+            let! loaded = _jsLibraryLoaded |> Async.AwaitTask
+            if not loaded then return ()
+            
             this.Initialize()
             Interop.ExecuteJavaScript(@"$0.file($1, $2)", this._referenceToJavaScriptZipInstance, fileName, fileContent) |> ignore
         }
 
     member this.AddFile(fileName : string, fileContent : byte []) =
         async {
-            do! ZipFile.LoadJSLibrary()
+            let! loaded = _jsLibraryLoaded |> Async.AwaitTask
+            if not loaded then return ()
+            
             this.Initialize()
 
             if not (Interop.IsRunningInTheSimulator) then
@@ -55,23 +60,22 @@ type ZipFile() =
                     Interop.ExecuteJavaScript("$0[$1] = $2", array, i, fileContent.[i]) |> ignore
                 Interop.ExecuteJavaScript(@"$0.file($1, $2)", this._referenceToJavaScriptZipInstance, fileName, array) |> ignore
         }
-
+        
     member this.SaveToJavaScriptBlob() =
         async {
-            do! ZipFile.LoadJSLibrary()
+            let! loaded = _jsLibraryLoaded |> Async.AwaitTask
+            if not loaded then return ()
+            
             this.Initialize()
             let blob = Interop.ExecuteJavaScript(@"$0.generate({type:""blob""})", this._referenceToJavaScriptZipInstance) :> obj
             return blob
         }
 
-    interface IDisposable with
-        member this.Dispose() =
-            // Dispose logic goes here
-            ()
-
     static member Read (javaScriptBlob : obj) =
         async {
-            do! ZipFile.LoadJSLibrary()
+            let! loaded = _jsLibraryLoaded |> Async.AwaitTask
+            if not loaded then return ()
+            
             let zipFile = new ZipFile()
             zipFile._referenceToJavaScriptZipInstance <- Interop.ExecuteJavaScript("new JSZip($0)", javaScriptBlob) :> obj
             return zipFile
@@ -81,14 +85,7 @@ type ZipFile() =
         let fileContainedInZipFile = Interop.ExecuteJavaScript(@"$0.files[$1]", this._referenceToJavaScriptZipInstance, fileName)
         let zipEntry = ZipEntry(fileContainedInZipFile)
         zipEntry
-
-    static member private LoadJSLibrary() =
-        async {
-            if not JSLibraryWasLoaded then
-                let! result = Interop.LoadJavaScriptFile(@"https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js") |> Async.AwaitTask
-                JSLibraryWasLoaded <- true
-        }
-
+    
     member private this.Initialize() =
         if this._referenceToJavaScriptZipInstance = null then
             this._referenceToJavaScriptZipInstance <- Interop.ExecuteJavaScript("new JSZip()")
