@@ -1,21 +1,21 @@
-﻿using System.Windows.Browser;
+﻿using OpenSilver.Samples.Showcase.Search;
 using System.Windows;
+using System.Windows.Browser;
 using System.Windows.Controls;
-using OpenSilver.Samples.Showcase.Search;
 
-namespace OpenSilver.Samples.Showcase
+namespace OpenSilver.Samples.Showcase;
+
+[SearchKeywords("HTML", "browser", "web", "host", "useragent", "platform")]
+public partial class HtmlPage_Demo : UserControl
 {
-    [SearchKeywords("HTML", "browser", "web", "host")]
-    public partial class HtmlPage_Demo : UserControl
+    public HtmlPage_Demo()
     {
-        public HtmlPage_Demo()
-        {
-            this.InitializeComponent();
-        }
+        InitializeComponent();
+        Loaded += OnLoaded;
+    }
 
-        void ButtonGetCurrentURL_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("The current URL is: " + HtmlPage.Document.DocumentUri.OriginalString);
-        }
+    private void OnLoaded(object sender, RoutedEventArgs e)
+    {
+        documentUriTextBlock.Text = HtmlPage.Document.DocumentUri.OriginalString;
     }
 }
