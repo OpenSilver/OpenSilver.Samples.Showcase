@@ -184,7 +184,8 @@ type AnimationTool_Demo() as this =
                     new RepeatBehavior(this.RepeatCountNumericUpDown.Value)
             timeline.FillBehavior <- this.FillBehaviorComboBox.SelectedItem :?> FillBehavior
             timeline.BeginTime <- TimeSpan.FromSeconds(this.BeginTimeNumericUpDown.Value)
-            // todo: latest OpenSilver supports SpeedRatio and AutoReverse
+            timeline.SpeedRatio <- this.SpeedRatioNumericUpDown.Value
+            timeline.AutoReverse <- this.AutoReverseCheckBox.IsChecked.Value
 
             // Apply easing function to animations that support it
             match timeline with

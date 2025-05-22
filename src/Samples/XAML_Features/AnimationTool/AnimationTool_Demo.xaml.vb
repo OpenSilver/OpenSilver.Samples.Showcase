@@ -235,7 +235,8 @@ Namespace OpenSilver.Samples.Showcase
                 timeline.RepeatBehavior = If(RepeatForever, RepeatBehavior.Forever, New RepeatBehavior(RepeatCountNumericUpDown.Value))
                 timeline.FillBehavior = CType(FillBehaviorComboBox.SelectedItem, FillBehavior)
                 timeline.BeginTime = TimeSpan.FromSeconds(BeginTimeNumericUpDown.Value)
-                ' todo: latest OpenSilver supports SpeedRatio and AutoReverse
+                timeline.SpeedRatio = SpeedRatioNumericUpDown.Value
+                timeline.AutoReverse = CBool(AutoReverseCheckBox.IsChecked)
 
                 ' Apply easing function to animations that support it
                 If TypeOf timeline Is DoubleAnimation Then

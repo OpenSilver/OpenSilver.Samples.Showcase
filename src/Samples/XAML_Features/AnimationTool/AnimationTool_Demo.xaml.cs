@@ -260,7 +260,8 @@ public partial class AnimationTool_Demo : UserControl
             timeline.RepeatBehavior = RepeatForever ? RepeatBehavior.Forever : new RepeatBehavior(RepeatCountNumericUpDown.Value);
             timeline.FillBehavior = (FillBehavior)FillBehaviorComboBox.SelectedItem;
             timeline.BeginTime = TimeSpan.FromSeconds(BeginTimeNumericUpDown.Value);
-            // todo: latest OpenSilver supports SpeedRatio and AutoReverse
+            timeline.SpeedRatio = SpeedRatioNumericUpDown.Value;
+            timeline.AutoReverse = (bool)AutoReverseCheckBox.IsChecked;
 
             // Apply easing function to animations that support it
             if (timeline is DoubleAnimation doubleAnimation)

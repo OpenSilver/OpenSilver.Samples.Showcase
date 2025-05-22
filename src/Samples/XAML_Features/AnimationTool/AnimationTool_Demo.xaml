@@ -128,6 +128,7 @@
         <Style TargetType="NumericUpDown">
             <Setter Property="FontSize" Value="12"/>
             <Setter Property="Margin" Value="0,0,0,5"/>
+            <Setter Property="Padding" Value="0"/>
             <Setter Property="MinWidth" Value="0"/>
             <Setter Property="DecimalPlaces" Value="1"/>
         </Style>
@@ -203,6 +204,8 @@
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
 
                         <!--  Animation Type  -->
@@ -260,6 +263,21 @@
                                   Content="Repeat Forever"
                                   FontSize="11"
                                   Unchecked="RepeatForeverCheckBoxStateChanged"/>
+
+                        <!--  Speed Ratio  -->
+                        <TextBlock Grid.Row="7" Text="Speed Ratio"/>
+                        <NumericUpDown x:Name="SpeedRatioNumericUpDown"
+                                       Grid.Row="7"
+                                       Grid.Column="1"
+                                       Minimum="0.1"
+                                       Value="1"/>
+
+                        <!--  Repeat Forever  -->
+                        <CheckBox x:Name="AutoReverseCheckBox"
+                                  Grid.Row="8"
+                                  Grid.ColumnSpan="2"
+                                  Content="Auto Reverse"
+                                  FontSize="11"/>
                     </Grid>
 
                     <!--  Easing Options  -->
