@@ -86,6 +86,11 @@ namespace OpenSilver.Animations
         public TimeSpan Duration { get; set; }
 
         /// <summary>
+        /// Gets or sets the delay of the animation.
+        /// </summary>
+        public TimeSpan? BeginTime { get; set; }
+
+        /// <summary>
         /// Gets or sets the easing function for the animation.
         /// </summary>
         public IEasingFunction EasingFunction { get; set; }
@@ -215,6 +220,7 @@ namespace OpenSilver.Animations
             {
                 From = 0.0,
                 To = 1.0,
+                BeginTime = BeginTime,
                 Duration = new Duration(Duration),
                 EasingFunction = EasingFunction
             };

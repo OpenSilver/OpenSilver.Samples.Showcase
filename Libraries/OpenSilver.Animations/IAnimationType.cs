@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 using System.Windows;
+using System.Windows.Media.Animation;
 
 namespace OpenSilver.Animations
 {
@@ -32,5 +33,10 @@ namespace OpenSilver.Animations
         /// Duration in milliseconds
         /// </summary>
         int Duration { get; set; }
+
+        /// <summary>
+        /// Easing function to be used for the animation.
+        /// </summary>
+        EasingMode EasingMode { get; set; }
     }
 }

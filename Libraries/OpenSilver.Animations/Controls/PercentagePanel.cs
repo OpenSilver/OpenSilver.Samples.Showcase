@@ -11,6 +11,8 @@
 \*====================================================================================*/
 
 using System;
+using System.Diagnostics;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -24,6 +26,34 @@ namespace OpenSilver.Animations
     /// </summary>
     public class PercentagePanel : Panel
     {
+        public PercentagePanel()
+        {
+            //Console.WriteLine("Constr: " + WidthAsPercentageOfChild.ToString());
+
+            //this.Loaded += PercentagePanel_Loaded;
+        }
+        /*
+        private async void PercentagePanel_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (WidthAsPercentageOfChild < 0.8)
+            {
+                WidthAsPercentageOfChild = WidthAsPercentageOfChild + 0.01;
+                Console.WriteLine("increased");
+            }
+
+            Console.WriteLine("Loaded: " + WidthAsPercentageOfChild.ToString());
+            await Task.Delay(100);
+            Dispatcher.BeginInvoke(new Action(() =>
+            {
+                //yourPanel.WidthAsPercentageOfChild = 0.5;
+                InvalidateMeasure();
+                ((UIElement)this.Parent)?.InvalidateMeasure();
+                this.UpdateLayout();
+                
+                Console.WriteLine("test");
+            }));
+        }
+*/
         public static readonly DependencyProperty WidthAsPercentageOfChildProperty =
             DependencyProperty.Register(
                 nameof(WidthAsPercentageOfChild),
@@ -61,7 +91,9 @@ namespace OpenSilver.Animations
         }
 
         private static void OnLayoutPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-            => ((PercentagePanel)d).InvalidateMeasure();
+        {
+            ((PercentagePanel)d).InvalidateMeasure();
+        }
 
         protected override Size MeasureOverride(Size availableSize)
         {

@@ -1,7 +1,8 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase"
+    xmlns:animations="clr-namespace:OpenSilver.Animations;assembly=OpenSilver.Animations">
 
     <FontFamily x:Key="InterFontFamily">ms-appx:///OpenSilver.Samples.Showcase/Other/Inter_VariableFont_slnt_wght.ttf</FontFamily>
     <Style x:Key="Page_Style" TargetType="Page">
@@ -178,6 +179,7 @@
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="animations:SpringEffect.IsEnabled" Value="True" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -415,7 +417,8 @@
             <Setter Property="FontSize" Value="60"/>
             <Setter Property="FontWeight" Value="Black"/>
             <Setter Property="FontFamily" Value="{StaticResource InterFontFamily}"/>
-            <Setter Property="Margin" Value="21,20,10,20"/>
+            <Setter Property="Margin" Value="11,20,10,20"/>
+            <Setter Property="Padding" Value="20,12,20,12"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
             <Setter Property="Background" Value="{DynamicResource Theme_BackgroundBrush}"/>
             <Setter Property="Foreground">
@@ -438,7 +441,7 @@
                                 <Border.Effect>
                                     <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="30" Opacity="0.3" />
                                 </Border.Effect>
-                                <ContentPresenter Margin="40,12,40,12"/>
+                                <ContentPresenter Margin="{TemplateBinding Padding}"/>
                             </Border>
                         </Viewbox>
                     </ControlTemplate>

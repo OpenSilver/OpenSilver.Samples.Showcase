@@ -13,9 +13,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Windows.Media.Animation;
-using System.Windows.Media;
+using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Threading;
 
 namespace OpenSilver.Animations.Internal
@@ -25,6 +27,7 @@ namespace OpenSilver.Animations.Internal
         public static void AnimateElement(FrameworkElement elementToAnimate,
             int duration,
             int delay,
+            EasingMode easingMode = EasingMode.EaseOut,
             double bounciness = 0.0,
             Direction direction = Direction.DownToUp,
             bool includeFade = false,
@@ -47,6 +50,7 @@ namespace OpenSilver.Animations.Internal
                             elementToAnimate: elementToAnimate,
                             duration: duration,
                             delay: delay,
+                            easingMode: easingMode,
                             bounciness: bounciness,
                             direction: direction,
                             includeFade: includeFade,
@@ -58,6 +62,7 @@ namespace OpenSilver.Animations.Internal
         public static void ApplyAnimateElement(FrameworkElement elementToAnimate,
             int duration,
             int delay,
+            EasingMode easingMode = EasingMode.EaseOut,
             double bounciness = 0.0,
             Direction direction = Direction.DownToUp,
             bool includeFade = false,
@@ -93,7 +98,7 @@ namespace OpenSilver.Animations.Internal
                     Duration = TimeSpan.FromMilliseconds(duration),
                     BeginTime = TimeSpan.FromMilliseconds(delay),
                     FillBehavior = FillBehavior.HoldEnd,
-                    EasingFunction = new CubicEase { EasingMode = EasingMode.EaseOut }
+                    EasingFunction = new CubicEase { EasingMode = easingMode }
                 };
                 Storyboard.SetTarget(opacityAnim, elementToAnimate);
                 Storyboard.SetTargetProperty(opacityAnim, new PropertyPath(UIElement.OpacityProperty));
@@ -127,8 +132,8 @@ namespace OpenSilver.Animations.Internal
                     FillBehavior = FillBehavior.HoldEnd,
                     EasingFunction =
                         bounciness > 0.0 ?
-                        new BackEase { Amplitude = bounciness, EasingMode = EasingMode.EaseOut } :
-                        new CubicEase { EasingMode = EasingMode.EaseOut }
+                        new BackEase { Amplitude = bounciness, EasingMode = easingMode } :
+                        new CubicEase { EasingMode = easingMode }
                 };
                 Storyboard.SetTarget(scaleXAnim, elementToAnimate);
                 Storyboard.SetTargetProperty(scaleXAnim, new PropertyPath("RenderTransform.ScaleX"));
@@ -144,8 +149,8 @@ namespace OpenSilver.Animations.Internal
                     FillBehavior = FillBehavior.HoldEnd,
                     EasingFunction =
                         bounciness > 0.0 ?
-                        new BackEase { Amplitude = bounciness, EasingMode = EasingMode.EaseOut } :
-                        new CubicEase { EasingMode = EasingMode.EaseOut }
+                        new BackEase { Amplitude = bounciness, EasingMode = easingMode } :
+                        new CubicEase { EasingMode = easingMode }
                 };
                 Storyboard.SetTarget(scaleYAnim, elementToAnimate);
                 Storyboard.SetTargetProperty(scaleYAnim, new PropertyPath("RenderTransform.ScaleY"));
@@ -180,8 +185,8 @@ namespace OpenSilver.Animations.Internal
                             FillBehavior = FillBehavior.HoldEnd,
                             EasingFunction =
                                 bounciness > 0.0 ?
-                                new BackEase { Amplitude = bounciness, EasingMode = EasingMode.EaseOut } :
-                                new CubicEase { EasingMode = EasingMode.EaseOut }
+                                new BackEase { Amplitude = bounciness, EasingMode = easingMode } :
+                                new CubicEase { EasingMode = easingMode }
                         };
                         Storyboard.SetTarget(translateXAnim, elementToAnimate);
                         Storyboard.SetTargetProperty(translateXAnim, new PropertyPath("RenderTransform.X"));
@@ -205,8 +210,8 @@ namespace OpenSilver.Animations.Internal
                             FillBehavior = FillBehavior.HoldEnd,
                             EasingFunction =
                                 bounciness > 0.0 ?
-                                new BackEase { Amplitude = bounciness, EasingMode = EasingMode.EaseOut } :
-                                new CubicEase { EasingMode = EasingMode.EaseOut }
+                                new BackEase { Amplitude = bounciness, EasingMode = easingMode } :
+                                new CubicEase { EasingMode = easingMode }
                         };
                         Storyboard.SetTarget(translateYAnim, elementToAnimate);
                         Storyboard.SetTargetProperty(translateYAnim, new PropertyPath("RenderTransform.Y"));
@@ -222,47 +227,83 @@ namespace OpenSilver.Animations.Internal
             // If we're animating an "AnimationContentControl", we can animate its layout too:
             if (elementToAnimate is AnimatedContentControl animatedContentControl)
             {
-                // Set initial size:
-                animatedContentControl.WidthAsPercentageOfChild = 0.0;
-                animatedContentControl.HeightAsPercentageOfChild = 0.0;
-
-                // Determine whether to apply "bounciness" on the layout animation (note: when using the Slide animation, the "bounciness" should only be applied in the direction of the Slide):
-                bool applyBouncinessOnWidthAnimation = (bounciness > 0.0 && !(includeSlide && (direction == Direction.UpToDown || direction == Direction.DownToUp)));
-                bool applyBouncinessOnHeight = (bounciness > 0.0 && !(includeSlide && (direction == Direction.LeftToRight || direction == Direction.RightToLeft)));
-
-                // Animate Width:
-                var widthAnim = new DoubleAnimation
+                // We need to ensure that element is loaded before setting the value and animating
+                // (otherwise there's a very subtle shift/displacement when the animation starts,
+                // because the animation will set "WidthAsPercentageOfChild" while the control is
+                // loaded, which doesn't position elemennts exactly the same as if it's set before
+                // the controls are loaded):
+                Dispatcher.CurrentDispatcher.BeginInvoke(async () =>
                 {
-                    From = 0,
-                    To = 1.0,
-                    Duration = TimeSpan.FromMilliseconds(duration * 1.5), // We multiply by 1.5 for a nice effect where surrounding element moved with a small delay.
-                    BeginTime = TimeSpan.FromMilliseconds(delay),
-                    FillBehavior = FillBehavior.HoldEnd,
-                    EasingFunction =
-                        applyBouncinessOnWidthAnimation ?
-                        new BackEase { Amplitude = bounciness, EasingMode = EasingMode.EaseOut } :
-                        new CubicEase { EasingMode = EasingMode.EaseOut }
-                };
-                Storyboard.SetTarget(widthAnim, elementToAnimate);
-                Storyboard.SetTargetProperty(widthAnim, new PropertyPath("WidthAsPercentageOfChild"));
-                storyboard.Children.Add(widthAnim);
+                    await Task.Delay(200);
+                    // Set initial size:
+                    animatedContentControl.WidthAsPercentageOfChild = 0.0;
+                    animatedContentControl.HeightAsPercentageOfChild = 0.0;
 
-                // Animate Height:
-                var heightAnim = new DoubleAnimation
-                {
-                    From = 0,
-                    To = 1.0,
-                    Duration = TimeSpan.FromMilliseconds(duration * 1.5), // We multiply by 1.5 for a nice effect where surrounding element moved with a small delay.
-                    BeginTime = TimeSpan.FromMilliseconds(delay),
-                    FillBehavior = FillBehavior.HoldEnd,
-                    EasingFunction =
-                        applyBouncinessOnHeight ?
-                        new BackEase { Amplitude = bounciness, EasingMode = EasingMode.EaseOut } :
-                        new CubicEase { EasingMode = EasingMode.EaseOut }
-                };
-                Storyboard.SetTarget(heightAnim, elementToAnimate);
-                Storyboard.SetTargetProperty(heightAnim, new PropertyPath("HeightAsPercentageOfChild"));
-                storyboard.Children.Add(heightAnim);
+                    // Create storyboard
+                    var layoutStoryboard = new Storyboard();
+
+                    // Determine whether to apply "bounciness" on the layout animation (note: when using the Slide animation, the "bounciness" should only be applied in the direction of the Slide):
+                    bool applyBouncinessOnWidthAnimation = (bounciness > 0.0 && !(includeSlide && (direction == Direction.UpToDown || direction == Direction.DownToUp)));
+                    bool applyBouncinessOnHeight = (bounciness > 0.0 && !(includeSlide && (direction == Direction.LeftToRight || direction == Direction.RightToLeft)));
+
+                    // Animate Width:
+                    var widthAnim = new DoubleAnimation
+                    {
+                        From = 0.0,
+                        To = 1.0,
+                        Duration = TimeSpan.FromMilliseconds(duration * 1.5), // We multiply by 1.5 for a nice effect where surrounding element moved with a small delay.
+                        BeginTime = TimeSpan.FromMilliseconds(delay),
+                        FillBehavior = FillBehavior.HoldEnd,
+                        EasingFunction =
+                            applyBouncinessOnWidthAnimation ?
+                            new BackEase { Amplitude = bounciness, EasingMode = easingMode } :
+                            new CubicEase { EasingMode = easingMode }
+                    };
+                    Storyboard.SetTarget(widthAnim, elementToAnimate);
+                    Storyboard.SetTargetProperty(widthAnim, new PropertyPath("WidthAsPercentageOfChild"));
+                    layoutStoryboard.Children.Add(widthAnim);
+
+                    //Dispatcher.CurrentDispatcher.BeginInvoke(() =>
+                    //{
+                    //await Task.Delay(4000);
+                    //animatedContentControl.WidthAsPercentageOfChild = 0.000001;
+                    //animatedContentControl.HeightAsPercentageOfChild = 1.0;
+                    //});
+                    /*
+                                    var animator1 = new PropertyAnimator(
+                                                        animatedContentControl,
+                                                        AnimatedContentControl.WidthAsPercentageOfChildProperty,
+                                                        progress => progress)
+                                    {
+                                        Duration = TimeSpan.FromMilliseconds(duration * 1.5), // We multiply by 1.5 for a nice effect where surrounding element moved with a small delay.
+                                        BeginTime = TimeSpan.FromMilliseconds(delay),
+                                        EasingFunction = applyBouncinessOnWidthAnimation ?
+                                            new BackEase { Amplitude = bounciness, EasingMode = easingMode } :
+                                            new CubicEase { EasingMode = easingMode },
+                                        ApplyFinalValue = true
+                                    };
+                                    animator1.Begin();
+                    */
+                    // Animate Height:
+                    var heightAnim = new DoubleAnimation
+                    {
+                        From = 0.0,
+                        To = 1.0,
+                        Duration = TimeSpan.FromMilliseconds(duration * 1.5), // We multiply by 1.5 for a nice effect where surrounding element moved with a small delay.
+                        BeginTime = TimeSpan.FromMilliseconds(delay),
+                        FillBehavior = FillBehavior.HoldEnd,
+                        EasingFunction =
+                            applyBouncinessOnHeight ?
+                            new BackEase { Amplitude = bounciness, EasingMode = easingMode } :
+                            new CubicEase { EasingMode = easingMode }
+                    };
+                    Storyboard.SetTarget(heightAnim, elementToAnimate);
+                    Storyboard.SetTargetProperty(heightAnim, new PropertyPath("HeightAsPercentageOfChild"));
+                    layoutStoryboard.Children.Add(heightAnim);
+
+                    // Begin storyboard
+                    layoutStoryboard.Begin();
+                });
             }
 
             // Begin storyboard
