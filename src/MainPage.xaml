@@ -6,8 +6,8 @@ xmlns:local="clr-namespace:OpenSilver.Samples.Showcase"
 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
-xmlns:animations="clr-namespace:OpenSilver.Animations;assembly=OpenSilver.Animations"
-Background="White"
+xmlns:animations="clr-namespace:OpenSilver.Animations;assembly=OpenSilver.Animations" xmlns:easing="clr-namespace:OpenSilver.Animations.Easing;assembly=OpenSilver.Animations"
+    Background="White"
 mc:Ignorable="d"
     Foreground="{DynamicResource Theme_TextBrush}"
     FontFamily="{StaticResource InterFontFamily}">
@@ -126,7 +126,7 @@ mc:Ignorable="d"
             </Grid>
 
             <!-- Menu -->
-            <animations:AnimatedContentControl x:Name="MenuContainer" Canvas.ZIndex="3" animations:Animation.OnAppear="{animations:FadeAndSlide Delay=2000, Direction=LeftToRight, Duration=500, Bounciness=0.3}" HorizontalAlignment="Left">
+            <animations:AnimatedContentControl x:Name="MenuContainer" Canvas.ZIndex="3" animations:Animation.OnAppear="{animations:Fade Delay=4000, Duration=2000, Easing=CubicInOut}" HorizontalAlignment="Left">
                 <Border x:Name="MenuBorder" Canvas.ZIndex="1" Width="240" Background="{DynamicResource Theme_BackgroundBrush}">
                     <Border.Effect>
                         <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="14" Opacity="0.15" />
@@ -134,7 +134,7 @@ mc:Ignorable="d"
                     <Border.RenderTransform>
                         <TranslateTransform/>
                     </Border.RenderTransform>
-                    <DockPanel LastChildFill="True" animations:Animation.OnAppear="{animations:FadeAndSlide Delay=2250, Direction=LeftToRight, Duration=500, Bounciness=0.3}">
+                    <DockPanel LastChildFill="True">
                         <Border DockPanel.Dock="Bottom" Margin="0,10,0,20" Padding="3" CornerRadius="7" HorizontalAlignment="Center" Background="{DynamicResource Theme_BackgroundBrush}">
                             <StackPanel Orientation="Horizontal">
                                 <RadioButton x:Name="LightThemeRadioButton" IsChecked="True" Checked="ThemeToggle_RadioButton_Checked" animations:SpringEffect.IsEnabled="True">

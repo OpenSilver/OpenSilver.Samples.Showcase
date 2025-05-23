@@ -37,6 +37,11 @@ namespace OpenSilver.Animations
         public int Duration { get; set; } = 250;
 
         /// <summary>
+        /// Easing function to be used for the animation.
+        /// </summary>
+        public IEasingType Easing { get; set; }
+
+        /// <summary>
         /// Determines the intensity of the elastic effect.
         /// Higher values result in greater overshoot and oscillation,
         /// simulating a more dynamic and spring-like motion.
@@ -55,6 +60,7 @@ namespace OpenSilver.Animations
                 elementToAnimate: elementToAnimate,
                 duration: Duration,
                 delay: Delay,
+                easingType: Easing,
                 bounciness: Bounciness,
                 includeFade: true,
                 includeScale: true);

@@ -14,8 +14,8 @@
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
             <ContentControl animations:Animation.OnAppear="{animations:FadeAndScale Delay=500, Duration=1000, Bounciness=1}" HorizontalAlignment="Center" Background="{DynamicResource Theme_ControlBackgroundBrush}" Style="{StaticResource WelcomeTitle_Style}">
                 <StackPanel>
-                    <TextBlock Text="Welcome" HorizontalAlignment="Center" FontSize="80"/>
-                    <animations:AnimatedContentControl animations:Animation.OnAppear="{animations:FadeAndScale Delay=1500, Bounciness=0.3}">
+                    <TextBlock Text="Welcome" HorizontalAlignment="Center" FontSize="60" Margin="32,0,32,0"/>
+                    <animations:AnimatedContentControl animations:Animation.OnAppear="{animations:FadeAndScale Delay=1500}">
                         <TextBlock Text="TO THE OPENSILVER FEATURES SHOWCASE!" Margin="0,0,0,12" FontSize="12" Opacity="0.7" Foreground="{DynamicResource Theme_TextBrush}" FontWeight="Bold" CharacterSpacing="100" HorizontalAlignment="Center"/>
                     </animations:AnimatedContentControl>
                 </StackPanel>

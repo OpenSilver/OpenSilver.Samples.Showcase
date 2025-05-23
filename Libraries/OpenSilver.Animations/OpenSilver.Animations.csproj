@@ -8,6 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="EasingTypeConverter.cs" />
+    <Compile Include="EasingTypes\CubicInOut.cs" />
+    <Compile Include="EasingTypes\CubicIn.cs" />
+    <Compile Include="EasingTypes\CubicOut.cs" />
+    <Compile Include="EasingTypes\Linear.cs" />
+    <Compile Include="IEasingType.cs" />
     <Compile Include="PropertyAnimator.cs" />
     <Compile Include="Animation.cs" />
     <Compile Include="AnimationTypeConverter.cs" />

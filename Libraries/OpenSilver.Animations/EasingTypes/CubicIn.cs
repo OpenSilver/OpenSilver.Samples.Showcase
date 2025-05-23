@@ -20,38 +20,15 @@ using System.Windows.Media.Animation;
 using System.Windows.Media;
 using OpenSilver.Animations.Internal;
 
-namespace OpenSilver.Animations
+namespace OpenSilver.Animations.Easing
 {
-    public class Fade : MarkupExtension, IAnimationType
+    public class CubicIn : MarkupExtension, IEasingType
     {
-        /// <summary>
-        /// Delay in milliseconds
-        /// </summary>
-        public int Delay { get; set; } = 0;
-
-        /// <summary>
-        /// Duration in milliseconds
-        /// </summary>
-        public int Duration { get; set; } = 250;
-
-        /// <summary>
-        /// Easing function to be used for the animation.
-        /// </summary>
-        public IEasingType Easing { get; set; }
+        public IEasingFunction EasingFunction => new CubicEase() { EasingMode = EasingMode.EaseIn };
 
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
             return this;
-        }
-
-        public void AnimateElementIn(FrameworkElement elementToAnimate)
-        {
-            StoryboardsHelper.AnimateElement(
-                elementToAnimate: elementToAnimate,
-                duration: Duration,
-                delay: Delay,
-                easingType: Easing,
-                includeFade: true);
         }
     }
 }

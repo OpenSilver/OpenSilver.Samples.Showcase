@@ -35,6 +35,11 @@ namespace OpenSilver.Animations
         public int Duration { get; set; } = 250;
 
         /// <summary>
+        /// Easing function to be used for the animation.
+        /// </summary>
+        public IEasingType Easing { get; set; }
+
+        /// <summary>
         /// Direction of the slide animation
         /// </summary>
         public Direction Direction { get; set; } = Direction.DownToUp;
@@ -58,6 +63,7 @@ namespace OpenSilver.Animations
                 elementToAnimate: elementToAnimate,
                 duration: Duration,
                 delay: Delay,
+                easingType: Easing,
                 direction: Direction,
                 bounciness: Bounciness,
                 includeFade: true,

@@ -14,28 +14,16 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
-using System.Windows;
+using System.Windows.Media.Animation;
 
 namespace OpenSilver.Animations
 {
-    [TypeConverter(typeof(AnimationTypeConverter))]
-    public interface IAnimationType
+    [TypeConverter(typeof(EasingTypeConverter))]
+    public interface IEasingType
     {
-        void AnimateElementIn(FrameworkElement elementToAnimate);
-
-        /// <summary>
-        /// Delay in milliseconds
-        /// </summary>
-        int Delay { get; set; }
-
-        /// <summary>
-        /// Duration in milliseconds
-        /// </summary>
-        int Duration { get; set; }
-
         /// <summary>
         /// Easing function to be used for the animation.
         /// </summary>
-        IEasingType Easing { get; set; }
+        IEasingFunction EasingFunction { get; }
     }
 }
