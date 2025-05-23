@@ -498,6 +498,9 @@
     <Page Include="Samples\Welcome.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\XAML_Controls\AnimatedNavigationBar\AnimatedNavigationBar_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\XAML_Controls\AutoCompleteBox\AutoCompleteBox_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>    <Page Include="Samples\XAML_Layout\Border\Border_Demo.xaml">
@@ -802,6 +805,7 @@
     <Compile Include="Samples\Third_Party\Third_Party.xaml.vb" />
     <Compile Include="Samples\Welcome.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\AutoCompleteBox\AutoCompleteBox_Demo.xaml.vb" />
+    <Compile Include="Samples\XAML_Controls\AnimatedNavigationBar\AnimatedNavigationBar_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Layout\Border\Border_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\Button\Button_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\CheckBox\CheckBox_Demo.xaml.vb" />

@@ -590,6 +590,12 @@
 		<Compile Include="Samples\\XAML_Layout\\Accordion\\Accordion_Demo.xaml.fs">
 			<DependentUpon>Samples\\XAML_Layout\\Accordion\\Accordion_Demo.xaml</DependentUpon>
 		</Compile>
+		<Page Include="Samples\XAML_Controls\AnimatedNavigationBar\AnimatedNavigationBar_Demo.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Compile Include="Samples\XAML_Controls\AnimatedNavigationBar\AnimatedNavigationBar_Demo.xaml.fs">
+			<DependentUpon>Samples\XAML_Controls\AnimatedNavigationBar\AnimatedNavigationBar_Demo.xaml</DependentUpon>
+		</Compile>
 		<Page Include="Samples\XAML_Controls\AutoCompleteBox\AutoCompleteBox_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -359,6 +359,10 @@
     <Page Include="Samples\XAML_Features\Cursor\Cursor_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Samples\XAML_Controls\AnimatedNavigationBar\AnimatedNavigationBar_Demo.xaml.cs"/>
+    <Page Include="Samples\XAML_Controls\AnimatedNavigationBar\AnimatedNavigationBar_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
 

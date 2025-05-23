@@ -67,7 +67,7 @@
             <local:GlobalCalendar_Demo/>
             <local:Rating_Demo/>
             <local:ContextMenu_MenuItem_Demo x:Name="MenuItemDemo" HorizontalAlignment="Center"/>
-
+            <local:AnimatedNavigationBar_Demo/>
         </ItemsControl>
     </StackPanel>
 </Page>

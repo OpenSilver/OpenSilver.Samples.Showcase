@@ -446,4 +446,10 @@
             </Setter>
         </Style.Setters>
     </Style>
+
+    <Style x:Key="ControlsKitDescriptionStyle" TargetType="DescriptionViewer">
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="Description" Value="Make sure to reference the 'OpenSilver.ControlsKit' package to be able to use this control"/>
+    </Style>
 </ResourceDictionary>
