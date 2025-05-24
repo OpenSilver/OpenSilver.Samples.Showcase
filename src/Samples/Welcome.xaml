@@ -15,12 +15,12 @@
             <ContentControl animations:Animation.OnAppear="{animations:FadeAndScale Delay=500, Duration=1000, Bounciness=1}" HorizontalAlignment="Center" Background="{DynamicResource Theme_ControlBackgroundBrush}" Style="{StaticResource WelcomeTitle_Style}">
                 <StackPanel>
                     <TextBlock Text="Welcome" HorizontalAlignment="Center" FontSize="80"/>
-                    <animations:AnimatedContentControl animations:Animation.OnAppear="{animations:FadeAndScale Delay=1500, Bounciness=0.3}">
+                    <animations:AnimatedContentControl animations:Animation.OnAppear="{animations:FadeAndScale Delay=1500, EasingMode=EaseInOut}">
                         <TextBlock Text="TO THE OPENSILVER FEATURES SHOWCASE!" Margin="0,0,0,12" FontSize="12" Opacity="0.7" Foreground="{DynamicResource Theme_TextBrush}" FontWeight="Bold" CharacterSpacing="100" HorizontalAlignment="Center"/>
                     </animations:AnimatedContentControl>
                 </StackPanel>
             </ContentControl>
-            <animations:AnimatedContentControl Opacity="0" animations:Animation.OnAppear="{animations:FadeAndSlide Delay=2700, Duration=500, Bounciness=0.1, Direction=DownToUp}">
+            <animations:AnimatedContentControl Opacity="0" animations:Animation.OnAppear="{animations:FadeAndScale Delay=2700, Duration=1000, EasingMode=EaseInOut}">
                 <Border Background="{DynamicResource Theme_ControlBackgroundBrush}" CornerRadius="20" MaxWidth="800" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,0,40,20">
                     <Border.Effect>
                         <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="20" Opacity="0.2" />
