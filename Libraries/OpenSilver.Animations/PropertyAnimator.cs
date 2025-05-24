@@ -222,7 +222,8 @@ namespace OpenSilver.Animations
                 To = 1.0,
                 BeginTime = BeginTime,
                 Duration = new Duration(Duration),
-                EasingFunction = EasingFunction
+                EasingFunction = EasingFunction,
+                FillBehavior = FillBehavior.HoldEnd
             };
 
             // Set target to the proxy object

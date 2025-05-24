@@ -232,12 +232,32 @@ namespace OpenSilver.Animations.Internal
                 // because the animation will set "WidthAsPercentageOfChild" while the control is
                 // loaded, which doesn't position elemennts exactly the same as if it's set before
                 // the controls are loaded):
-                Dispatcher.CurrentDispatcher.BeginInvoke(async () =>
-                {
-                    await Task.Delay(200);
+                //Dispatcher.CurrentDispatcher.BeginInvoke(async () =>
+                //{
+                //    await Task.Delay(500);
                     // Set initial size:
                     animatedContentControl.WidthAsPercentageOfChild = 0.0;
                     animatedContentControl.HeightAsPercentageOfChild = 0.0;
+
+                    //var animator1 = new PropertyAnimator(animatedContentControl,
+                    //    AnimatedContentControl.WidthAsPercentageOfChildProperty,
+                    //    progress => 0.01)
+                    //{
+                    //    Duration = TimeSpan.FromMilliseconds(1),
+                    //    ApplyFinalValue = false
+                    //};
+                    //animator1.Begin();
+
+                    //var animator2 = new PropertyAnimator(animatedContentControl,
+                    //    AnimatedContentControl.HeightAsPercentageOfChildProperty,
+                    //    progress => 0.01)
+                    //{
+                    //    Duration = TimeSpan.FromMilliseconds(1),
+                    //    ApplyFinalValue = false
+                    //};
+                    //animator2.Begin();
+
+                    //await Task.Delay(1000);
 
                     // Create storyboard
                     var layoutStoryboard = new Storyboard();
@@ -254,10 +274,10 @@ namespace OpenSilver.Animations.Internal
                         Duration = TimeSpan.FromMilliseconds(duration * 1.5), // We multiply by 1.5 for a nice effect where surrounding element moved with a small delay.
                         BeginTime = TimeSpan.FromMilliseconds(delay),
                         FillBehavior = FillBehavior.HoldEnd,
-                        EasingFunction =
-                            applyBouncinessOnWidthAnimation ?
-                            new BackEase { Amplitude = bounciness, EasingMode = easingMode } :
-                            new CubicEase { EasingMode = easingMode }
+                        //EasingFunction =
+                        //    applyBouncinessOnWidthAnimation ?
+                        //    new BackEase { Amplitude = bounciness, EasingMode = easingMode } :
+                        //    new CubicEase { EasingMode = easingMode }
                     };
                     Storyboard.SetTarget(widthAnim, elementToAnimate);
                     Storyboard.SetTargetProperty(widthAnim, new PropertyPath("WidthAsPercentageOfChild"));
@@ -292,10 +312,10 @@ namespace OpenSilver.Animations.Internal
                         Duration = TimeSpan.FromMilliseconds(duration * 1.5), // We multiply by 1.5 for a nice effect where surrounding element moved with a small delay.
                         BeginTime = TimeSpan.FromMilliseconds(delay),
                         FillBehavior = FillBehavior.HoldEnd,
-                        EasingFunction =
-                            applyBouncinessOnHeight ?
-                            new BackEase { Amplitude = bounciness, EasingMode = easingMode } :
-                            new CubicEase { EasingMode = easingMode }
+                        //EasingFunction =
+                        //    applyBouncinessOnHeight ?
+                        //    new BackEase { Amplitude = bounciness, EasingMode = easingMode } :
+                        //    new CubicEase { EasingMode = easingMode }
                     };
                     Storyboard.SetTarget(heightAnim, elementToAnimate);
                     Storyboard.SetTargetProperty(heightAnim, new PropertyPath("HeightAsPercentageOfChild"));
@@ -303,7 +323,7 @@ namespace OpenSilver.Animations.Internal
 
                     // Begin storyboard
                     layoutStoryboard.Begin();
-                });
+                //});
             }
 
             // Begin storyboard

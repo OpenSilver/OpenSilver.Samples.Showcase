@@ -29,8 +29,8 @@ public class JsParticlesEffect : HtmlPresenter
 
         // Start the effect:
         Interop.ExecuteJavaScriptVoidAsync($@"
-            //$0.firstChild.style.width = ""100%"";
-            //$0.firstChild.style.height = ""100%"";
+            $0.firstChild.style.width = ""100%"";
+            $0.firstChild.style.height = ""100%"";
             $0.firstChild.firstChild.style.width = ""100%"";
             $0.firstChild.firstChild.style.height = ""100%"";
             $0.style.overflow = ""hidden"";
@@ -68,6 +68,7 @@ public class JsParticlesEffect : HtmlPresenter
                     velocityY: 0,
                     friction: 0.95,
                     onMouseMove: null,
+                    parentDiv: null,
 
                     // Debounce helper
                     debounce(fn, wait) {{
@@ -84,6 +85,9 @@ public class JsParticlesEffect : HtmlPresenter
                             console.error('ParticleEffect.startEffect: Parameter must be a DOM element');
                             return;
                         }}
+
+                        // Store the div reference
+                        this.parentDiv = div;
 
                         // Stop any existing effect to prevent conflicts
                         if (this.renderer || this.animationFrameId) {{
@@ -191,10 +195,13 @@ public class JsParticlesEffect : HtmlPresenter
                         document.addEventListener('mousemove', this.onMouseMove);
 
                         // Create a debounced resize handler
-                        const debouncedResize = this.debounce((width, height) => {{
+                        const debouncedResize = this.debounce(() => {{
                             //this.camera.aspect = width / height;
                             //this.camera.updateProjectionMatrix();
                             //this.renderer.setSize(width, height);
+
+                            const width = this.parentDiv.clientWidth;
+                            const height = this.parentDiv.clientHeight;
 
                             // update the camera
                             this.camera.aspect = width / height;
@@ -210,12 +217,14 @@ public class JsParticlesEffect : HtmlPresenter
 
                         // Window resize handler
                         this.onResize = () => {{
-                            debouncedResize(window.innerWidth, window.innerHeight);
+                            if (this.parentDiv) {{
+                                debouncedResize();
+                            }}
                         }};
                         window.addEventListener('resize', this.onResize);
 
-                        // Initialize with current window size
-                        debouncedResize(window.innerWidth, window.innerHeight);
+                        // Initialize with current div size
+                        debouncedResize();
 
                         // Animation loop
                         const animate = () => {{
@@ -303,6 +312,7 @@ public class JsParticlesEffect : HtmlPresenter
                         this.targetRotationY = 0;
                         this.velocityX = 0;
                         this.velocityY = 0;
+                        this.parentDiv = null;
 
                         console.log('ParticleEffect stopped and resources released');
                     }}
