@@ -13,9 +13,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Windows.Media.Animation;
-using System.Windows.Media;
+using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Threading;
 
 namespace OpenSilver.Animations.Internal
@@ -25,6 +27,7 @@ namespace OpenSilver.Animations.Internal
         public static void AnimateElement(FrameworkElement elementToAnimate,
             int duration,
             int delay,
+            EasingMode easingMode = EasingMode.EaseOut,
             double bounciness = 0.0,
             Direction direction = Direction.DownToUp,
             bool includeFade = false,
@@ -47,6 +50,7 @@ namespace OpenSilver.Animations.Internal
                             elementToAnimate: elementToAnimate,
                             duration: duration,
                             delay: delay,
+                            easingMode: easingMode,
                             bounciness: bounciness,
                             direction: direction,
                             includeFade: includeFade,
@@ -58,6 +62,7 @@ namespace OpenSilver.Animations.Internal
         public static void ApplyAnimateElement(FrameworkElement elementToAnimate,
             int duration,
             int delay,
+            EasingMode easingMode = EasingMode.EaseOut,
             double bounciness = 0.0,
             Direction direction = Direction.DownToUp,
             bool includeFade = false,
@@ -93,7 +98,7 @@ namespace OpenSilver.Animations.Internal
                     Duration = TimeSpan.FromMilliseconds(duration),
                     BeginTime = TimeSpan.FromMilliseconds(delay),
                     FillBehavior = FillBehavior.HoldEnd,
-                    EasingFunction = new CubicEase { EasingMode = EasingMode.EaseOut }
+                    EasingFunction = new CubicEase { EasingMode = easingMode }
                 };
                 Storyboard.SetTarget(opacityAnim, elementToAnimate);
                 Storyboard.SetTargetProperty(opacityAnim, new PropertyPath(UIElement.OpacityProperty));
@@ -127,8 +132,8 @@ namespace OpenSilver.Animations.Internal
                     FillBehavior = FillBehavior.HoldEnd,
                     EasingFunction =
                         bounciness > 0.0 ?
-                        new BackEase { Amplitude = bounciness, EasingMode = EasingMode.EaseOut } :
-                        new CubicEase { EasingMode = EasingMode.EaseOut }
+                        new BackEase { Amplitude = bounciness, EasingMode = easingMode } :
+                        new CubicEase { EasingMode = easingMode }
                 };
                 Storyboard.SetTarget(scaleXAnim, elementToAnimate);
                 Storyboard.SetTargetProperty(scaleXAnim, new PropertyPath("RenderTransform.ScaleX"));
@@ -144,8 +149,8 @@ namespace OpenSilver.Animations.Internal
                     FillBehavior = FillBehavior.HoldEnd,
                     EasingFunction =
                         bounciness > 0.0 ?
-                        new BackEase { Amplitude = bounciness, EasingMode = EasingMode.EaseOut } :
-                        new CubicEase { EasingMode = EasingMode.EaseOut }
+                        new BackEase { Amplitude = bounciness, EasingMode = easingMode } :
+                        new CubicEase { EasingMode = easingMode }
                 };
                 Storyboard.SetTarget(scaleYAnim, elementToAnimate);
                 Storyboard.SetTargetProperty(scaleYAnim, new PropertyPath("RenderTransform.ScaleY"));
@@ -180,8 +185,8 @@ namespace OpenSilver.Animations.Internal
                             FillBehavior = FillBehavior.HoldEnd,
                             EasingFunction =
                                 bounciness > 0.0 ?
-                                new BackEase { Amplitude = bounciness, EasingMode = EasingMode.EaseOut } :
-                                new CubicEase { EasingMode = EasingMode.EaseOut }
+                                new BackEase { Amplitude = bounciness, EasingMode = easingMode } :
+                                new CubicEase { EasingMode = easingMode }
                         };
                         Storyboard.SetTarget(translateXAnim, elementToAnimate);
                         Storyboard.SetTargetProperty(translateXAnim, new PropertyPath("RenderTransform.X"));
@@ -205,8 +210,8 @@ namespace OpenSilver.Animations.Internal
                             FillBehavior = FillBehavior.HoldEnd,
                             EasingFunction =
                                 bounciness > 0.0 ?
-                                new BackEase { Amplitude = bounciness, EasingMode = EasingMode.EaseOut } :
-                                new CubicEase { EasingMode = EasingMode.EaseOut }
+                                new BackEase { Amplitude = bounciness, EasingMode = easingMode } :
+                                new CubicEase { EasingMode = easingMode }
                         };
                         Storyboard.SetTarget(translateYAnim, elementToAnimate);
                         Storyboard.SetTargetProperty(translateYAnim, new PropertyPath("RenderTransform.Y"));
@@ -240,8 +245,8 @@ namespace OpenSilver.Animations.Internal
                     FillBehavior = FillBehavior.HoldEnd,
                     EasingFunction =
                         applyBouncinessOnWidthAnimation ?
-                        new BackEase { Amplitude = bounciness, EasingMode = EasingMode.EaseOut } :
-                        new CubicEase { EasingMode = EasingMode.EaseOut }
+                        new BackEase { Amplitude = bounciness, EasingMode = easingMode } :
+                        new CubicEase { EasingMode = easingMode }
                 };
                 Storyboard.SetTarget(widthAnim, elementToAnimate);
                 Storyboard.SetTargetProperty(widthAnim, new PropertyPath("WidthAsPercentageOfChild"));
@@ -257,8 +262,8 @@ namespace OpenSilver.Animations.Internal
                     FillBehavior = FillBehavior.HoldEnd,
                     EasingFunction =
                         applyBouncinessOnHeight ?
-                        new BackEase { Amplitude = bounciness, EasingMode = EasingMode.EaseOut } :
-                        new CubicEase { EasingMode = EasingMode.EaseOut }
+                        new BackEase { Amplitude = bounciness, EasingMode = easingMode } :
+                        new CubicEase { EasingMode = easingMode }
                 };
                 Storyboard.SetTarget(heightAnim, elementToAnimate);
                 Storyboard.SetTargetProperty(heightAnim, new PropertyPath("HeightAsPercentageOfChild"));
