@@ -32,7 +32,6 @@
     <TrimmableAssembly Include="OpenSilver.Controls.Data" />
     <TrimmableAssembly Include="OpenSilver.Controls.Data.Toolkit" />
     <TrimmableAssembly Include="OpenSilver.Controls.Theming.Toolkit" />
-    <TrimmableAssembly Include="OpenSilver.ControlsKit.Controls" />
     <TrimmableAssembly Include="OpenSilver.ControlsKit.FastControls" />
     <TrimmableAssembly Include="OpenSilver.Expression.Effects" />
     <TrimmableAssembly Include="OpenSilver.Interactivity" />
