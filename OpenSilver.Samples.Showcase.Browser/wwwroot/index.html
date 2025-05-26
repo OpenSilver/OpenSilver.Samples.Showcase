@@ -89,19 +89,23 @@
                 scriptWebAssembly.addEventListener('load', function () {
                     navigator.serviceWorker.register('service-worker.js')
                         .then(reg => {
-                            reg.onupdatefound = () => {
-                                if (reg.active) { // it is not the first installation
-                                    const newWorker = reg.installing;
-                                    newWorker.onstatechange = () => {
-                                        if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                                            showUpdateToast();
-                                        }
-                                    };
-                                }
+                            if (reg.waiting) {
+                                showUpdateToast();
+                                return;
+                            }
+                            reg.onupdatefound = e => {
+                                const newWorker = reg.installing;
+                                newWorker.onstatechange = () => {
+                                    if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                        showUpdateToast();
+                                    }
+                                };
                             };
                         });
 
                     function showUpdateToast() {
+                        if (location.hostname === 'localhost') return;
+
                         const toast = document.createElement('div');
                         toast.innerHTML = `
   <div style="
