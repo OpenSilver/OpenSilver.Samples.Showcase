@@ -34,6 +34,11 @@ namespace OpenSilver.Animations
         /// </summary>
         public int Duration { get; set; } = 250;
 
+        /// <summary>
+        /// Easing function to be used for the animation.
+        /// </summary>
+        public EasingMode EasingMode { get; set; } = EasingMode.EaseOut;
+
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
             return this;
@@ -45,6 +50,7 @@ namespace OpenSilver.Animations
                 elementToAnimate: elementToAnimate,
                 duration: Duration,
                 delay: Delay,
+                easingMode: EasingMode,
                 includeFade: true);
         }
     }
