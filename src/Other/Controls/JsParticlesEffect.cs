@@ -210,12 +210,12 @@ public class JsParticlesEffect : HtmlPresenter
 
                         // Window resize handler
                         this.onResize = () => {{
-                            debouncedResize(window.innerWidth, window.innerHeight);
+                            debouncedResize(window.innerWidth, window.innerHeight - 5); // Remove 5px to prevent scrollbars from appearing  
                         }};
                         window.addEventListener('resize', this.onResize);
 
                         // Initialize with current window size
-                        debouncedResize(window.innerWidth, window.innerHeight);
+                        debouncedResize(window.innerWidth, window.innerHeight - 5); // Remove 5px to prevent scrollbars from appearing  
 
                         // Animation loop
                         const animate = () => {{
