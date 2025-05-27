@@ -4,7 +4,11 @@
 self.importScripts('./service-worker-assets.js');
 self.addEventListener('install', event => event.waitUntil(onInstall(event)));
 self.addEventListener('activate', event => event.waitUntil(onActivate(event)));
-self.addEventListener('fetch', event => event.respondWith(onFetch(event)));
+self.addEventListener('fetch', event => {
+    if (pwaModeEnabled) {
+        event.respondWith(onFetch(event));
+    }
+});
 
 const cacheNamePrefix = 'offline-cache-';
 const cacheName = `${cacheNamePrefix}${self.assetsManifest.version}`;
@@ -15,6 +19,14 @@ const offlineAssetsExclude = [ /^service-worker\.js$/ ];
 const base = "/";
 const baseUrl = new URL(base, self.origin);
 const manifestUrlList = self.assetsManifest.assets.map(asset => new URL(asset.url, baseUrl).href);
+
+let pwaModeEnabled = false;
+
+self.addEventListener('message', (e) => {
+    if (e.data?.type === 'PWA_MODE') {
+        pwaModeEnabled = true;
+    }
+});
 
 async function onInstall(event) {
     console.info('Service worker: Install');

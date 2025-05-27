@@ -87,6 +87,14 @@
                 scriptWebAssembly.setAttribute('type', 'application/javascript');
                 scriptWebAssembly.setAttribute('src', '_framework/blazor.webassembly.js?date=' + new Date().toISOString());
                 scriptWebAssembly.addEventListener('load', function () {
+                    const isRunningAsPWA = window.matchMedia('(display-mode: standalone)').matches ||
+                                           window.navigator.standalone === true;
+                    if (isRunningAsPWA) {
+                        navigator.serviceWorker.ready.then(reg => {
+                            reg.active?.postMessage({ type: 'PWA_MODE' });
+                        });
+                    }
+
                     navigator.serviceWorker.register('service-worker.js')
                         .then(reg => {
                             if (reg.waiting) {
@@ -104,7 +112,7 @@
                         });
 
                     function showUpdateToast() {
-                        if (location.hostname === 'localhost') return;
+                        if (!isRunningAsPWA) return;
 
                         const toast = document.createElement('div');
                         toast.innerHTML = `
