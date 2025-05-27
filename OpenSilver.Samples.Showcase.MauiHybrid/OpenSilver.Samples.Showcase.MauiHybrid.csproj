@@ -20,6 +20,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <EnableDefaultCssItems>false</EnableDefaultCssItems>
         <Nullable>enable</Nullable>
+        <AssemblyName>Showcase</AssemblyName>
 
         <!-- Display name -->
         <ApplicationTitle>OpenSilver.Samples.Showcase</ApplicationTitle>
