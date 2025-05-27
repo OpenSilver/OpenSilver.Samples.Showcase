@@ -245,3 +245,10 @@ ModelManifest.xml
 src/Third_Party_Resources/
 **/wwwroot/resources/*
 **/wwwroot/libs/*
+
+# Folder view configuration files
+.DS_Store
+
+# Miscellaneious
+build-ios.sh
+upload-ipa.sh
