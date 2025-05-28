@@ -48,6 +48,7 @@ namespace OpenSilver.Samples.Showcase
                     const iframe = document.createElement('iframe');
                     iframe.style=""border:none;width:100%;height:100%;overflow:hidden;display:block;pointer-events:auto"";
                     iframe.onload = function() {{
+                        iframe.onload = null; // Prevent double execution
                         iframe.contentDocument.open();
                         iframe.contentDocument.write('<html><head>{htmlString}</head></html>');
                         iframe.contentDocument.close();
