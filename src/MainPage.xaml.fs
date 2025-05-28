@@ -267,6 +267,8 @@ type MainPage() as this =
                 theme.CurrentPalette <- OpenSilver.Themes.Modern.ModernTheme.Palettes.Dark
                 this.LogoOpenSilverDark.Opacity <- 1
                 this.LogoOpenSilverLight.Opacity <- 0
+                this.LogoShowcaseDark.Opacity <- 1
+                this.LogoShowcaseLight.Opacity <- 0
                 this.BackgroundImageDark.Opacity <- 1
                 this.BackgroundImageLight.Opacity <- 0
             else
@@ -274,6 +276,8 @@ type MainPage() as this =
                 theme.CurrentPalette <- OpenSilver.Themes.Modern.ModernTheme.Palettes.Light
                 this.LogoOpenSilverLight.Opacity <- 1
                 this.LogoOpenSilverDark.Opacity <- 0
+                this.LogoShowcaseLight.Opacity <- 1
+                this.LogoShowcaseDark.Opacity <- 0
                 this.BackgroundImageLight.Opacity <- 1
                 this.BackgroundImageDark.Opacity <- 0                
 
