@@ -34,9 +34,9 @@
     <string>This app requires motion sensor access.</string>
     <key>NSCameraUsageDescription</key>
     <string>The app requires camera access to take pictures.</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>This app needs access to the photo gallery to demonstrate certain samples.</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>This app needs access to the photo gallery to demonstrate certain samples.</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>This app needs access to the photo gallery to demonstrate certain samples.</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>This app needs access to the photo gallery to demonstrate certain samples.</string>
 </dict>
 </plist>
