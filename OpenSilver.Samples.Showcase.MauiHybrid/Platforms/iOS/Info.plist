@@ -38,5 +38,7 @@
     <string>This app needs access to the photo gallery to demonstrate certain samples.</string>
     <key>NSPhotoLibraryUsageDescription</key>
     <string>This app needs access to the photo gallery to demonstrate certain samples.</string>
+    <key>ITSAppUsesNonExemptEncryption</key>
+    <false/>
 </dict>
 </plist>
