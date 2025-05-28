@@ -360,7 +360,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="Samples\XAML_Controls\AnimatedNavigationBar\AnimatedNavigationBar_Demo.xaml.cs"/>
+    <Compile Include="Samples\XAML_Controls\AnimatedNavigationBar\AnimatedNavigationBar_Demo.xaml.cs" />
     <Page Include="Samples\XAML_Controls\AnimatedNavigationBar\AnimatedNavigationBar_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -380,6 +380,8 @@
     <Content Include="Other\Images\LogoOpenSilverDark.png" />
     <Content Include="Other\Images\BackgroundImageDark.jpg" />
     <Content Include="Other\Images\BackgroundImageLight.jpg" />
+    <Content Include="Other\Images\LogoShowcaseDark.png" />
+    <Content Include="Other\Images\LogoShowcaseLight.png" />
     <Content Include="Other\Inter_VariableFont_slnt_wght.ttf" />
     <Content Include="Other\Images\LogoOpenSilverLight.png" />
     <Content Include="Other\Logo.png" />
