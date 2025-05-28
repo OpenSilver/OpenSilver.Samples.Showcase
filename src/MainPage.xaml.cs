@@ -335,6 +335,8 @@ namespace OpenSilver.Samples.Showcase
                     theme.CurrentPalette = ModernTheme.Palettes.Dark;
                     LogoOpenSilverDark.Opacity = 1;
                     LogoOpenSilverLight.Opacity = 0;
+                    LogoShowcaseDark.Opacity = 1;
+                    LogoShowcaseLight.Opacity = 0;
                     BackgroundImageDark.Opacity = 1;
                     BackgroundImageLight.Opacity = 0;
                 }
@@ -344,6 +346,8 @@ namespace OpenSilver.Samples.Showcase
                     theme.CurrentPalette = ModernTheme.Palettes.Light;
                     LogoOpenSilverLight.Opacity = 1;
                     LogoOpenSilverDark.Opacity = 0;
+                    LogoShowcaseLight.Opacity = 1;
+                    LogoShowcaseDark.Opacity = 0;
                     BackgroundImageLight.Opacity = 1;
                     BackgroundImageDark.Opacity = 0;
                 }

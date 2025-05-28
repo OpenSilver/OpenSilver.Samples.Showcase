@@ -5,7 +5,7 @@ open System
 open System.Threading.Tasks
 open System.Windows
 
-type ToastUiEditor() as this =
+type ToastUiEditor() =
     inherit HtmlPresenter()
     
     static let CdnUrl = "https://uicdn.toast.com/editor/latest"
