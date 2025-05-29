@@ -16,6 +16,9 @@ namespace OpenSilver.Samples.Showcase
         {
             await FontFamily.LoadFontAsync("ms-appx:///OpenSilver.Samples.Showcase/Other/Inter_VariableFont_slnt_wght.ttf");
 
+            Features.DOM.AssignClass = true;
+            await Interop.LoadCssFile("ms-appx:///OpenSilver.Samples.Showcase/Other/CSS/app-styles.css");
+
             var mainPage = new MainPage();
             Window.Current.Content = mainPage;
         }
