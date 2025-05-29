@@ -15,6 +15,13 @@ namespace OpenSilver.Samples.Showcase.MauiHybrid
 
         private async void OnBlazorWebViewUrlLoading(object? sender, UrlLoadingEventArgs e)
         {
+            if (e.Url != null &&
+                (string.Equals(e.Url.AbsoluteUri, "about:blank", StringComparison.OrdinalIgnoreCase) ||
+                string.Equals(e.Url.AbsoluteUri, "about:srcdoc", StringComparison.OrdinalIgnoreCase)))
+            {
+                e.UrlLoadingStrategy = UrlLoadingStrategy.OpenInWebView;
+            }
+
             // if it is external link, WebKit does not handle it, so try to open it in Safari
             if (e.UrlLoadingStrategy == UrlLoadingStrategy.OpenExternally)
             {
