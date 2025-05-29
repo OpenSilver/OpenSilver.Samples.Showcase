@@ -30,13 +30,13 @@
             <local:DispatcherTimer_Demo HorizontalAlignment="Center"/>
             <local:File_Open_Demo x:Name="File_OpenDemo" HorizontalAlignment="Center"/>
             <local:OpenFileDialog_Demo HorizontalAlignment="Center"/>
-            <local:WriteableBitmap_Demo/>
+            <local:WriteableBitmap_Demo HorizontalAlignment="Center"/>
             <local:File_Save_Demo x:Name="File_SaveDemo" HorizontalAlignment="Center"/>
             <local:Printing_Demo HorizontalAlignment="Center"/>
             <local:Zip_Demo x:Name="ZipDemo" HorizontalAlignment="Center"/>
             <local:HtmlPage_Demo HorizontalAlignment="Center"/>
-            <local:UnhandledException_Demo/>
-            <local:InitParams_Demo/>
+            <local:UnhandledException_Demo HorizontalAlignment="Center"/>
+            <local:InitParams_Demo HorizontalAlignment="Center"/>
             <local:Keyboard_Demo HorizontalAlignment="Center"/>
             <local:IsolatedStorageFile_Demo HorizontalAlignment="Center"/>
             <local:IsolatedStorageSettings_Demo HorizontalAlignment="Center"/>
@@ -47,12 +47,11 @@
             <local:DataContractSerializer_Demo HorizontalAlignment="Center" VerticalAlignment="Top"/>
             <local:Console_Demo x:Name="ConsoleDemo" HorizontalAlignment="Center"/>
             <local:GetResourceStream_Demo x:Name="GetRessourceStreamDemo" HorizontalAlignment="Center"/>
-            <local:RESX_Demo/>
-            <local:Localization_Demo/>
+            <local:RESX_Demo HorizontalAlignment="Center"/>
+            <local:Localization_Demo HorizontalAlignment="Center"/>
             <local:Clipboard_SetText_Demo HorizontalAlignment="Center"/>
             <local:FullScreen_Demo x:Name="FullScreenDemo" HorizontalAlignment="Center"/>
-            <local:MVVM_Demo/>
-
+            <local:MVVM_Demo HorizontalAlignment="Center"/>
         </ItemsControl>
     </StackPanel>
 </Page>

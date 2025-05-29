@@ -25,11 +25,10 @@
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
 
-            <local:JSZip_Demo/>
-            <local:ColorPicker_Demo/>
-            <local:MonacoEditor_Demo/>
-            <local:ToastUiEditor_Demo/>
-            
+            <local:JSZip_Demo HorizontalAlignment="Center"/>
+            <local:ColorPicker_Demo HorizontalAlignment="Center"/>
+            <local:MonacoEditor_Demo HorizontalAlignment="Center"/>
+            <local:ToastUiEditor_Demo HorizontalAlignment="Center"/>            
         </ItemsControl>
     </StackPanel>
 </Page>

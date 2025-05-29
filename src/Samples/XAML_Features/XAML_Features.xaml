@@ -30,21 +30,21 @@
             <local:Binding1_Demo x:Name="Binding1Demo" HorizontalAlignment="Center"/>
             <local:Binding2_Demo HorizontalAlignment="Center"/>
             <local:Binding3_Demo HorizontalAlignment="Center"/>
-            <local:MultiBinding_Demo/>
-            <local:Command_Demo/>
+            <local:MultiBinding_Demo HorizontalAlignment="Center"/>
+            <local:Command_Demo HorizontalAlignment="Center"/>
             <local:Gradients_Demo HorizontalAlignment="Center"/>
-            <local:Styles_Demo/>
-            <local:Themes_Demo/>
-            <local:Triggers_Demo/>
-            <local:XamlReader_Demo/>
+            <local:Styles_Demo HorizontalAlignment="Center"/>
+            <local:Themes_Demo HorizontalAlignment="Center"/>
+            <local:Triggers_Demo HorizontalAlignment="Center"/>
+            <local:XamlReader_Demo HorizontalAlignment="Center"/>
             <local:Animations_Demo HorizontalAlignment="Center"/>
-            <local:AnimationTool_Demo/>
+            <local:AnimationTool_Demo HorizontalAlignment="Center"/>
             <local:DropShadowEffect_Demo HorizontalAlignment="Center"/>
-            <local:BlurEffect_Demo/>
-            <local:ImageBrush_Demo/>
+            <local:BlurEffect_Demo HorizontalAlignment="Center"/>
+            <local:ImageBrush_Demo HorizontalAlignment="Center"/>
             <local:Window_SizeChanged_Demo HorizontalAlignment="Center"/>
             <local:FindElementsInHostCoordinates_Demo HorizontalAlignment="Center"/>
-            <local:TransformToVisual_Demo/>
+            <local:TransformToVisual_Demo HorizontalAlignment="Center"/>
             <local:ClipToBounds_Demo HorizontalAlignment="Center"/>
             <local:Validation_Demo HorizontalAlignment="Center"/>
             <local:MouseWheel_Demo HorizontalAlignment="Center"/>
@@ -56,11 +56,10 @@
             <local:MarkupExtensions_Demo x:Name="MarkupExtensionsDemo" HorizontalAlignment="Center"/>
             <local:UriMapper_Demo HorizontalAlignment="Center"/>
             <local:PropertyChangedTrigger_Demo HorizontalAlignment="Center"/>
-            <local:Behaviors_Demo/>
-            <local:Clipping_Demo/>
-            <local:Cursor_Demo/>
-            <local:FlowDirection_Demo/>
-            
+            <local:Behaviors_Demo HorizontalAlignment="Center"/>
+            <local:Clipping_Demo HorizontalAlignment="Center"/>
+            <local:Cursor_Demo HorizontalAlignment="Center"/>
+            <local:FlowDirection_Demo HorizontalAlignment="Center"/>            
         </ItemsControl>
     </StackPanel>
 </Page>

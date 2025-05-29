@@ -28,11 +28,10 @@
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
             
-            <local:Virtualization_Demo/>
-            <local:ProgressiveLoading_Demo/>
-            <local:AOT_Demo/>
+            <local:Virtualization_Demo HorizontalAlignment="Center"/>
+            <local:ProgressiveLoading_Demo HorizontalAlignment="Center"/>
+            <local:AOT_Demo HorizontalAlignment="Center"/>
             <!--<local:HtmlCanvas_Demo HorizontalAlignment="Center"/>-->
-
         </ItemsControl>
     </StackPanel>
 </Page>

@@ -25,30 +25,30 @@
             </ItemsControl.ItemsPanel>
             
             <local:TreeView_Demo HorizontalAlignment="Center"/>
-            <local:TreeMap_Demo/>
-            <local:InkPresenter_Demo/>
+            <local:TreeMap_Demo HorizontalAlignment="Center"/>
+            <local:InkPresenter_Demo HorizontalAlignment="Center"/>
             <local:Button_Demo HorizontalAlignment="Center"/>
-            <local:ButtonSpinner_Demo/>
+            <local:ButtonSpinner_Demo HorizontalAlignment="Center"/>
             <local:TextBox_Demo HorizontalAlignment="Center"/>
             <local:CheckBox_Demo HorizontalAlignment="Center"/>
             <local:RadioButton_Demo HorizontalAlignment="Center"/>
             <local:TextBlock_Demo HorizontalAlignment="Center"/>
             <local:Label_Demo HorizontalAlignment="Center"/>
-            <local:RichTextBlock_Demo/>
-            <local:RichTextBox_Demo/>
+            <local:RichTextBlock_Demo HorizontalAlignment="Center"/>
+            <local:RichTextBox_Demo HorizontalAlignment="Center"/>
             <local:Path_Demo HorizontalAlignment="Center"/>
-            <local:ProgressBar_Demo/>
+            <local:ProgressBar_Demo HorizontalAlignment="Center"/>
             <local:DataForm_Demo HorizontalAlignment="Center"/>
             <local:BusyIndicator_Demo HorizontalAlignment="Center"/>
             <local:ToolTip_Demo HorizontalAlignment="Center"/>
             <local:HyperlinkButton_Demo HorizontalAlignment="Center"/>
             <local:NumericUpDown_Demo HorizontalAlignment="Center"/>
-            <local:DomainUpDown_Demo/>
-            <local:UpDownBase_Demo/>
+            <local:DomainUpDown_Demo HorizontalAlignment="Center"/>
+            <local:UpDownBase_Demo HorizontalAlignment="Center"/>
             <local:ComboBox_Demo x:Name="ComboBoxDemo" HorizontalAlignment="Center"/>
             <local:RepeatButton_Demo HorizontalAlignment="Center"/>
             <local:ListBox_Demo x:Name="ListBoxDemo" HorizontalAlignment="Center"/>
-            <local:ItemsControl_Demo/>
+            <local:ItemsControl_Demo HorizontalAlignment="Center"/>
             <local:Slider_Demo HorizontalAlignment="Center"/>
             <local:ToggleButton_Demo HorizontalAlignment="Center"/>
             <local:PasswordBox_Demo HorizontalAlignment="Center"/>
@@ -62,12 +62,12 @@
             <local:Thumb_Demo x:Name="ThumbDemo" HorizontalAlignment="Center"/>
             <local:Shapes_Demo HorizontalAlignment="Center"/>
             <local:DatePicker_Demo x:Name="DatePickerDemo" HorizontalAlignment="Center"/>
-            <local:TimePicker_Demo/>
-            <local:Calendar_Demo/>
-            <local:GlobalCalendar_Demo/>
-            <local:Rating_Demo/>
+            <local:TimePicker_Demo HorizontalAlignment="Center"/>
+            <local:Calendar_Demo HorizontalAlignment="Center"/>
+            <local:GlobalCalendar_Demo HorizontalAlignment="Center"/>
+            <local:Rating_Demo HorizontalAlignment="Center"/>
             <local:ContextMenu_MenuItem_Demo x:Name="MenuItemDemo" HorizontalAlignment="Center"/>
-            <local:AnimatedNavigationBar_Demo/>
+            <local:AnimatedNavigationBar_Demo HorizontalAlignment="Center"/>
         </ItemsControl>
     </StackPanel>
 </Page>

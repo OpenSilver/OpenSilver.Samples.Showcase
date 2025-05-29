@@ -23,15 +23,14 @@
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
 
-            <local:AreaSeries_Demo/>
-            <local:BarSeries_Demo/>
-            <local:BubbleSeries_Demo/>
-            <local:ColumnSeries_Demo/>
-            <local:LineSeries_Demo/>
-            <local:PieSeries_Demo/>
-            <local:ScatterSeries_Demo/>
-            <local:Stacked100AreaSeries_Demo/>
-
+            <local:AreaSeries_Demo HorizontalAlignment="Center"/>
+            <local:BarSeries_Demo HorizontalAlignment="Center"/>
+            <local:BubbleSeries_Demo HorizontalAlignment="Center"/>
+            <local:ColumnSeries_Demo HorizontalAlignment="Center"/>
+            <local:LineSeries_Demo HorizontalAlignment="Center"/>
+            <local:PieSeries_Demo HorizontalAlignment="Center"/>
+            <local:ScatterSeries_Demo HorizontalAlignment="Center"/>
+            <local:Stacked100AreaSeries_Demo HorizontalAlignment="Center"/>
         </ItemsControl>
     </StackPanel>
 </Page>

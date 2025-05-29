@@ -1,10 +1,5 @@
-﻿using System;
-using System.Net;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
-using System.Windows.Media;
-using System.Windows.Media.Effects;
 
 namespace OpenSilver.Samples.Showcase;
 
@@ -15,6 +10,6 @@ public partial class Xaml_Controls : Page
         InitializeComponent();
 
         var dataGridDemoIndex = SamplesPanel.Items.IndexOf(DataGridDemo);
-        SamplesPanel.Items.Insert(dataGridDemoIndex, new DataGridGrouping());
+        SamplesPanel.Items.Insert(dataGridDemoIndex, new DataGridGrouping { HorizontalAlignment = HorizontalAlignment.Center });
     }
 }
