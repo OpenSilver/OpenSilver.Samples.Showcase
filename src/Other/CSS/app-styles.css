@@ -1,0 +1,3 @@
+﻿.OpenSilver\.ControlsKit\.StaggeredPanel > div > .System\.Windows\.Controls\.ContentControl[style*='clip'] {
+    clip: revert !important;
+}

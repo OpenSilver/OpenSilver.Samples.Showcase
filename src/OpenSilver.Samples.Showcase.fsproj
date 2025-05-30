@@ -37,6 +37,7 @@
 		<Compile Include="Samples\Net_Framework\MVVM\Movie.fs" />
 		<Compile Include="Samples\Net_Framework\MVVM\MoviesViewModel.fs" />
 		<Compile Include="Samples\XAML_Features\Command\CommandDemoViewModel.fs" />
+		<Content Include="Other\CSS\app-styles.css" />
 		<Content Include="Other\embed.js">
 			<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
 			<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>

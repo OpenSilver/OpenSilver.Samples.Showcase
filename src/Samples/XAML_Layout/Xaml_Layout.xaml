@@ -18,17 +18,17 @@
         <ItemsControl x:Name="SamplesPanel" local:ItemsControlLoadingBehavior.ShowLoadingOnGenerating="True">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <controlskit:StaggeredPanel ProgressiveRenderingChunkSize="2"/>
+                    <controlskit:StaggeredPanel ProgressiveRenderingChunkSize="2" DesiredColumnWidth="280"/>
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
 
             <local:Grid_Demo HorizontalAlignment="Center"/>
-            <local:UniformGrid_Demo/>
+            <local:UniformGrid_Demo HorizontalAlignment="Center"/>
             <local:StackPanel_Demo HorizontalAlignment="Center"/>
             <local:DockPanel_Demo HorizontalAlignment="Center"/>
             <local:WrapPanel_Demo HorizontalAlignment="Center"/>
             <local:Canvas_Demo HorizontalAlignment="Center"/>
-            <local:MeasureArrange_Demo/>
+            <local:MeasureArrange_Demo HorizontalAlignment="Center"/>
             <local:Border_Demo HorizontalAlignment="Center"/>
             <local:ScrollViewer_Demo x:Name="ScrollViewerDemo" HorizontalAlignment="Center"/>
             <local:GridSplitter_Demo HorizontalAlignment="Center"/>
@@ -36,14 +36,13 @@
             <local:ChildWindow_Demo HorizontalAlignment="Center"/>
             <local:NonModalChildWindow_Demo x:Name="NonModalChildWindow" HorizontalAlignment="Center"/>
             <local:Expander_Demo HorizontalAlignment="Center"/>
-            <local:HeaderedContentControl_Demo/>
-            <local:Accordion_Demo/>
+            <local:HeaderedContentControl_Demo HorizontalAlignment="Center"/>
+            <local:Accordion_Demo HorizontalAlignment="Center"/>
             <local:Popup_Demo HorizontalAlignment="Center"/>
             <local:Frame_Demo x:Name="FrameDemo" HorizontalAlignment="Center"/>
             <local:Viewbox_Demo HorizontalAlignment="Center"/>
-            <local:TransitioningContentControl_Demo/>
-            <local:LayoutTransformer_Demo/>
-
+            <local:TransitioningContentControl_Demo HorizontalAlignment="Center"/>
+            <local:LayoutTransformer_Demo HorizontalAlignment="Center"/>
         </ItemsControl>
     </StackPanel>
 </Page>
