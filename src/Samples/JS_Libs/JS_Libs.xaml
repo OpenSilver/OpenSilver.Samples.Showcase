@@ -21,7 +21,7 @@
         <ItemsControl x:Name="SamplesPanel" local:ItemsControlLoadingBehavior.ShowLoadingOnGenerating="True">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <controlskit:StaggeredPanel DesiredColumnWidth="280" ProgressiveRenderingChunkSize="2"/>
+                    <controlskit:StaggeredPanel DesiredColumnWidth="330" ProgressiveRenderingChunkSize="2"/>
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
 
