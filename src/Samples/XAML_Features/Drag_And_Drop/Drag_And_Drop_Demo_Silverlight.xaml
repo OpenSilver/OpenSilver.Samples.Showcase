@@ -38,6 +38,7 @@
                                    Canvas.Top="10"
                                    Width="50"
                                    Height="50"
+                                   AllowScrollOnTouchMove="False"
                                    Cursor="SizeAll"
                                    Fill="#FFE6E166"
                                    MouseLeftButtonDown="DragAndDropItem_PointerPressed"

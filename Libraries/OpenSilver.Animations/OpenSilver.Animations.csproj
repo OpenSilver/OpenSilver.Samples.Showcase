@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="OpenSilver" Version="3.2.0" />
+    <PackageReference Include="OpenSilver" Version="[$(OpenSilverVersion)]" />
   </ItemGroup>
 
   <ItemGroup>
