@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
 
-    <ContentControl Width="220" Style="{StaticResource Card_Style}">
+    <ContentControl Width="230" Style="{StaticResource Card_Style}">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -49,9 +49,7 @@
             </TabControl>
             
             <StackPanel Grid.Row="2" Orientation="Horizontal">
-                <TextBlock Margin="5,0"
-                           VerticalAlignment="Center"
-                           Text="TabStripPlacement"/>
+                <TextBlock VerticalAlignment="Center" Text="TabStripPlacement "/>
                 <ComboBox ItemsSource="{Binding Converter={StaticResource EnumToListConverter}, ConverterParameter={x:Type Dock}}" SelectedItem="{Binding TabStripPlacement, ElementName=MyTabControl, Mode=TwoWay}"/>
             </StackPanel>
             

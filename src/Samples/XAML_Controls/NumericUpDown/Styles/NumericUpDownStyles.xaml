@@ -53,9 +53,8 @@
     <Style x:Key="SpinnerRepeatButtonStyle" TargetType="RepeatButton">
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Padding" Value="7,0"/>
         <Setter Property="Cursor" Value="Hand"/>
-        <Setter Property="FontSize" Value="12"/>
         <Setter Property="ClickMode" Value="Press"/>
         <Setter Property="IsTabStop" Value="False"/>
         <Setter Property="Template" Value="{StaticResource RoundedButtonTemplate}"/>
@@ -99,7 +98,9 @@
             </VisualStateManager.VisualStateGroups>
             <RepeatButton x:Name="DecreaseButton"
                           Grid.Column="0"
+                          Margin="0,0,7,0"
                           Content="-"
+                          FontSize="{TemplateBinding FontSize}"
                           Foreground="{TemplateBinding Foreground}"
                           Style="{StaticResource SpinnerRepeatButtonStyle}"/>
             <Border Grid.Column="1"
@@ -111,7 +112,9 @@
             </Border>
             <RepeatButton x:Name="IncreaseButton"
                           Grid.Column="2"
+                          Margin="7,0,0,0"
                           Content="+"
+                          FontSize="{TemplateBinding FontSize}"
                           Foreground="{TemplateBinding Foreground}"
                           Style="{StaticResource SpinnerRepeatButtonStyle}"/>
         </Grid>
@@ -128,6 +131,7 @@
     <ControlTemplate x:Key="NumericUpDownTemplate" TargetType="NumericUpDown">
         <ButtonSpinner x:Name="Spinner"
                        Padding="{TemplateBinding Padding}"
+                       FontSize="{TemplateBinding FontSize}"
                        Foreground="{TemplateBinding Foreground}"
                        Style="{StaticResource DefaultButtonSpinnerStyle}">
             <VisualStateManager.VisualStateGroups>

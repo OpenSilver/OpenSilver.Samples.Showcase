@@ -25,6 +25,7 @@
                 <Label Content="Month:"/>
                 <ButtonSpinner Name="spinner"
                                Grid.Column="1"
+                               Height="32"
                                VerticalAlignment="Center"
                                Background="{DynamicResource Theme_ControlBackgroundBrush}"
                                FontSize="14"

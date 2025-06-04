@@ -11,7 +11,7 @@
         <RowDefinition Height="Auto"/>
       </Grid.RowDefinitions>
       <ContentControl Content="HtmlPresenter" Foreground="#FFA05BFF" Background="#FFA793C3" Style="{StaticResource HeaderControl_Style}"/>
-            <ScrollViewer Background="{DynamicResource Theme_BorderBrush}" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Grid.Row="1" Height="200">
+            <ScrollViewer Background="{DynamicResource Theme_ContainerBackgroundBrush}" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Grid.Row="1" Height="200">
 
         <native:HtmlPresenter xmlns:native="clr-namespace:CSHTML5.Native.Html.Controls;assembly=OpenSilver"
                               ScrollMode="Disabled">
