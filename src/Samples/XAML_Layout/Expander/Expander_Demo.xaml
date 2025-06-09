@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
 
     <ContentControl Width="245"
-                    Height="250"
+                    Height="340"
                     Style="{StaticResource Card_Style}">
         <Grid>
             <Grid.RowDefinitions>
@@ -25,8 +25,14 @@
                       HorizontalAlignment="Center"
                       VerticalAlignment="Top"
                       Header="Click to Expand/Collapse">
-                <TextBlock Margin="30,20,20,0"
-                           Text="This is the content of the Expander"
+                <Expander.HeaderTemplate>
+                    <DataTemplate>
+                        <TextBlock MaxWidth="120"
+                                   Text="{Binding}"
+                                   TextWrapping="Wrap"/>
+                    </DataTemplate>
+                </Expander.HeaderTemplate>
+                <TextBlock Text="This is the content of the Expander"
                            TextAlignment="Center"
                            TextWrapping="Wrap"/>
             </Expander>
