@@ -28,7 +28,6 @@
             </ItemsControl.ItemsPanel>
 
             <local:DispatcherTimer_Demo HorizontalAlignment="Center"/>
-            <local:File_Open_Demo x:Name="File_OpenDemo" HorizontalAlignment="Center"/>
             <local:OpenFileDialog_Demo HorizontalAlignment="Center"/>
             <local:WriteableBitmap_Demo HorizontalAlignment="Center"/>
             <local:File_Save_Demo x:Name="File_SaveDemo" HorizontalAlignment="Center"/>

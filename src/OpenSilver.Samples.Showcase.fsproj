@@ -407,16 +407,9 @@
 		<Compile Include="Samples\Net_Framework\DispatcherTimer\DispatcherTimer_Demo.xaml.fs">
 			<DependentUpon>Samples\Net_Framework\DispatcherTimer\DispatcherTimer_Demo.xaml</DependentUpon>
 		</Compile>
-		<Compile Include="Samples\Net_Framework\File_Open\FileOpenDialog.fs" />
-		<Page Include="Samples\Net_Framework\File_Open\File_Open_Demo.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</Page>
 		<Page Include="Samples\Net_Framework\File_Save\File_Save_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
-		<Compile Include="Samples\Net_Framework\File_Open\File_Open_Demo.xaml.fs">
-			<DependentUpon>Samples\Net_Framework\File_Open\File_Open_Demo.xaml</DependentUpon>
-		</Compile>
 		<Compile Include="Samples\Net_Framework\File_Save\File_Save_Demo.xaml.fs">
 			<DependentUpon>Samples\Net_Framework\File_Save\File_Save_Demo.xaml</DependentUpon>
 		</Compile>

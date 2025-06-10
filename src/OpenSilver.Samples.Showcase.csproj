@@ -452,9 +452,6 @@
     <Page Include="Samples\Net_Framework\DispatcherTimer\DispatcherTimer_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\Net_Framework\File_Open\File_Open_Demo.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Samples\Net_Framework\File_Save\File_Save_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -788,8 +785,6 @@
     <Compile Include="Samples\Net_Framework\Console\Console_Demo.xaml.cs" />
     <Compile Include="Samples\Net_Framework\DataContractSerializer\DataContractSerializer_Demo.xaml.cs" />
     <Compile Include="Samples\Net_Framework\DispatcherTimer\DispatcherTimer_Demo.xaml.cs" />
-    <Compile Include="Samples\Net_Framework\File_Open\FileOpenDialog.cs" />
-    <Compile Include="Samples\Net_Framework\File_Open\File_Open_Demo.xaml.cs" />
     <Compile Include="Samples\Net_Framework\File_Save\FileSaver.cs" />
     <Compile Include="Samples\Net_Framework\File_Save\File_Save_Demo.xaml.cs" />
     <Compile Include="Samples\Net_Framework\FullScreen\FullScreen_Demo.xaml.cs" />

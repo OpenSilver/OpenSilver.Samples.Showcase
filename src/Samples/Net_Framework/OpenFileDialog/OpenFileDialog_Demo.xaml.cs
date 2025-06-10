@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Microsoft.Maui.Devices;
+using OpenSilver.Samples.Showcase.Search;
+using System;
 using System.IO;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using OpenSilver.Samples.Showcase.Search;
 
 namespace OpenSilver.Samples.Showcase
 {
@@ -14,10 +15,11 @@ namespace OpenSilver.Samples.Showcase
 
         public OpenFileDialog_Demo()
         {
-            this.InitializeComponent();
+            InitializeComponent();
+
             openFileDialog1 = new Controls.OpenFileDialog()
             {
-                Filter = "Text files (*.txt)|*.txt",
+                Filter = DeviceInfo.Current.Platform == DevicePlatform.Android ? "text/plain" : "Text files (*.txt)|*.txt",
             };
         }
 
