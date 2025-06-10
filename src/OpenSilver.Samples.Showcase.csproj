@@ -378,6 +378,8 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
     <Content Include="Other\Images\Logo-Showcase.png" />
+    <Content Include="Other\Images\LogoGitHubDark.png" />
+    <Content Include="Other\Images\LogoGitHubLight.png" />
     <Content Include="Other\Images\LogoOpenSilverDark.png" />
     <Content Include="Other\Images\BackgroundImageDark.jpg" />
     <Content Include="Other\Images\BackgroundImageLight.jpg" />

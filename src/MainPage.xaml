@@ -10,7 +10,7 @@ xmlns:animations="clr-namespace:OpenSilver.Animations;assembly=OpenSilver.Animat
 Background="White"
 mc:Ignorable="d"
     Foreground="{DynamicResource Theme_TextBrush}"
-    FontFamily="{StaticResource InterFontFamily}">
+    FontFamily="{StaticResource InterFontFamily}" d:DesignWidth="430" d:DesignHeight="932">
     <Page.Resources>
         <SolidColorBrush x:Key="NativeApiButtonBackground" Color="#dddddd"/>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
@@ -245,20 +245,47 @@ mc:Ignorable="d"
 
             <!-- Page -->
             <ScrollViewer x:Name="PageScrollViewer" Grid.Column="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Padding="0">
-                <sdk:Frame x:Name="PageContainer" JournalOwnership="Automatic" HorizontalContentAlignment="Stretch" Navigated="PageContainer_Navigated">
-                    <sdk:Frame.UriMapper>
-                        <sdk:UriMapper>
-                            <sdk:UriMapping Uri="/Welcome" MappedUri="/Samples/Welcome.xaml"/>
-                            <sdk:UriMapping Uri="/Search" MappedUri="/Samples/SearchPage.xaml"/>
-                            <sdk:UriMapping Uri="/Search/{searchTerms}" MappedUri="/Samples/SearchPage.xaml?SearchTerms={searchTerms}"/>
-                            <sdk:UriMapping Uri="/{page_name}/{demo_name}" MappedUri="/Samples/{page_name}/{demo_name}/{demo_name}_Demo.xaml"/>
-                            <sdk:UriMapping Uri="/{page_name}" MappedUri="/Samples/{page_name}/{page_name}.xaml"/>
-                        </sdk:UriMapper>
-                    </sdk:Frame.UriMapper>
-                    <sdk:Frame.RenderTransform>
-                        <TranslateTransform/>
-                    </sdk:Frame.RenderTransform>
-                </sdk:Frame>
+                <Grid>
+                    <sdk:Frame x:Name="PageContainer" JournalOwnership="Automatic" HorizontalContentAlignment="Stretch" Navigated="PageContainer_Navigated">
+                        <sdk:Frame.UriMapper>
+                            <sdk:UriMapper>
+                                <sdk:UriMapping Uri="/Welcome" MappedUri="/Samples/Welcome.xaml"/>
+                                <sdk:UriMapping Uri="/Search" MappedUri="/Samples/SearchPage.xaml"/>
+                                <sdk:UriMapping Uri="/Search/{searchTerms}" MappedUri="/Samples/SearchPage.xaml?SearchTerms={searchTerms}"/>
+                                <sdk:UriMapping Uri="/{page_name}/{demo_name}" MappedUri="/Samples/{page_name}/{demo_name}/{demo_name}_Demo.xaml"/>
+                                <sdk:UriMapping Uri="/{page_name}" MappedUri="/Samples/{page_name}/{page_name}.xaml"/>
+                            </sdk:UriMapper>
+                        </sdk:Frame.UriMapper>
+                    </sdk:Frame>
+                    <HyperlinkButton NavigateUri="https://github.com/OpenSilver/openSilver.samples.showcase"
+                                     TargetName="_blank"
+                                     Cursor="Hand"
+                                     Opacity="0"
+                                     animations:Animation.OnAppear="{animations:FadeAndSlide Delay=2000, Duration=500, Direction=UpToDown, EasingMode=EaseOut}"
+                                     HorizontalAlignment="Right"
+                                     VerticalAlignment="Top"
+                                     Margin="0,-6,20,0">
+                        <Border 
+                            Padding="14,10,14,10"
+                            CornerRadius="0,0,10,10"
+                            Background="{DynamicResource Theme_ControlBackgroundBrush}"
+                            animations:SpringEffect.IsEnabled="True">
+                            <Border.Effect>
+                                <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="14" Opacity="0.15"/>
+                            </Border.Effect>
+                            <StackPanel>
+                                <TextBlock Text="FORK ME ON" Foreground="{DynamicResource Theme_TextBrush}" Opacity="0.5" FontSize="8" FontWeight="Bold" CharacterSpacing="80"/>
+                                <Grid Opacity="0.7" Margin="0,5,0,0">
+                                    <Image x:Name="LogoGitHubDark" Source="/OpenSilver.Samples.Showcase;component/Other/Images/LogoGitHubDark.png" Width="70" Opacity="0"/>
+                                    <Image x:Name="LogoGitHubLight" Source="/OpenSilver.Samples.Showcase;component/Other/Images/LogoGitHubLight.png" Width="70"/>
+                                </Grid>
+                            </StackPanel>
+                        </Border>
+                    </HyperlinkButton>
+                </Grid>
+                <ScrollViewer.RenderTransform>
+                    <TranslateTransform/>
+                </ScrollViewer.RenderTransform>
             </ScrollViewer>
         </Grid>
         <GridSplitter Grid.Row="2" x:Name="GridSplitter1" Background="LightGray" Visibility="Collapsed" Cursor="SizeNS" Height="5" HorizontalAlignment="Stretch"/>

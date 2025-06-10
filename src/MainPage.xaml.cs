@@ -226,7 +226,7 @@ namespace OpenSilver.Samples.Showcase
                     MenuContainer.Visibility = Visibility.Visible;
 
                     // Set the translation of the frame to 0:
-                    ((TranslateTransform)PageContainer.RenderTransform).X = 0;
+                    ((TranslateTransform)PageScrollViewer.RenderTransform).X = 0;
 
                     // Set the translation of the border to 0:
                     ((TranslateTransform)MenuBorder.RenderTransform).X = 0;
@@ -251,7 +251,7 @@ namespace OpenSilver.Samples.Showcase
                         MenuContainer.Visibility = Visibility.Visible;
 
                         // Translate the page to the right, for a nicer effect:
-                        ((TranslateTransform)PageContainer.RenderTransform).X = 240;
+                        ((TranslateTransform)PageScrollViewer.RenderTransform).X = 240;
                     }
                     else
                     {
@@ -259,7 +259,7 @@ namespace OpenSilver.Samples.Showcase
                         MenuContainer.Visibility = Visibility.Collapsed;
 
                         // Translate the page back to its original position:
-                        ((TranslateTransform)PageContainer.RenderTransform).X = 0;
+                        ((TranslateTransform)PageScrollViewer.RenderTransform).X = 0;
                     }
                 }
                 _currentState = newState;
@@ -339,6 +339,8 @@ namespace OpenSilver.Samples.Showcase
                     LogoShowcaseLight.Opacity = 0;
                     BackgroundImageDark.Opacity = 1;
                     BackgroundImageLight.Opacity = 0;
+                    LogoGitHubDark.Opacity = 1;
+                    LogoGitHubLight.Opacity = 0;
                 }
                 else
                 {
@@ -350,6 +352,8 @@ namespace OpenSilver.Samples.Showcase
                     LogoShowcaseDark.Opacity = 0;
                     BackgroundImageLight.Opacity = 1;
                     BackgroundImageDark.Opacity = 0;
+                    LogoGitHubLight.Opacity = 1;
+                    LogoGitHubDark.Opacity = 0;
                 }
 
                 if (SourceCodePane.Visibility == Visibility.Visible &&
