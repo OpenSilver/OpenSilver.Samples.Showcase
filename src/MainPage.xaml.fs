@@ -181,7 +181,7 @@ type MainPage() as this =
                 this.MenuContainer.Visibility <- Visibility.Visible
 
                 // Set the translation of the frame to 0:
-                (this.PageContainer.RenderTransform :?> TranslateTransform).X <- 0.0
+                (this.PageScrollViewer.RenderTransform :?> TranslateTransform).X <- 0.0
 
                 // Set the translation of the border to 0:
                 (this.MenuBorder.RenderTransform :?> TranslateTransform).X <- 0.0
@@ -212,14 +212,14 @@ type MainPage() as this =
                     this.MenuContainer.Visibility <- Visibility.Visible
 
                     // Translate the page to the right, for a nicer effect:
-                    (this.PageContainer.RenderTransform :?> TranslateTransform).X <- 240.0
+                    (this.PageScrollViewer.RenderTransform :?> TranslateTransform).X <- 240.0
 
                 | _ ->
                     // Hide the menu:
                     this.MenuContainer.Visibility <- Visibility.Collapsed
 
                     // Translate the page back to its original position:
-                    (this.PageContainer.RenderTransform :?> TranslateTransform).X <- 0.0
+                    (this.PageScrollViewer.RenderTransform :?> TranslateTransform).X <- 0.0
 
             currentState <- newState
 
@@ -271,6 +271,8 @@ type MainPage() as this =
                 this.LogoShowcaseLight.Opacity <- 0
                 this.BackgroundImageDark.Opacity <- 1
                 this.BackgroundImageLight.Opacity <- 0
+                this.LogoGitHubDark.Opacity <- 1
+                this.LogoGitHubLight.Opacity <- 0
             else
                 nativeBrush.Color <- Color.FromRgb(221uy, 221uy, 221uy)
                 theme.CurrentPalette <- OpenSilver.Themes.Modern.ModernTheme.Palettes.Light
@@ -279,7 +281,9 @@ type MainPage() as this =
                 this.LogoShowcaseLight.Opacity <- 1
                 this.LogoShowcaseDark.Opacity <- 0
                 this.BackgroundImageLight.Opacity <- 1
-                this.BackgroundImageDark.Opacity <- 0                
+                this.BackgroundImageDark.Opacity <- 0
+                this.LogoGitHubLight.Opacity <- 1
+                this.LogoGitHubDark.Opacity <- 0
 
             this.UpdateThemeToggleFillColor()
 

@@ -190,7 +190,7 @@ Namespace OpenSilver.Samples.Showcase
                     Grid.SetColumn(PageScrollViewer, 1)
                     Grid.SetColumnSpan(PageScrollViewer, 1)
                     MenuContainer.Visibility = Visibility.Visible
-                    CType(PageContainer.RenderTransform, TranslateTransform).X = 0
+                    CType(PageScrollViewer.RenderTransform, TranslateTransform).X = 0
                     CType(MenuBorder.RenderTransform, TranslateTransform).X = 0
                 Else
                     ButtonToHideOrShowMenu.Visibility = Visibility.Visible
@@ -200,10 +200,10 @@ Namespace OpenSilver.Samples.Showcase
 
                     If newState = CurrentState.SmallResolution_ShowMenu Then
                         MenuContainer.Visibility = Visibility.Visible
-                        CType(PageContainer.RenderTransform, TranslateTransform).X = 240
+                        CType(PageScrollViewer.RenderTransform, TranslateTransform).X = 240
                     Else
                         MenuContainer.Visibility = Visibility.Collapsed
-                        CType(PageContainer.RenderTransform, TranslateTransform).X = 0
+                        CType(PageScrollViewer.RenderTransform, TranslateTransform).X = 0
                     End If
                 End If
                 _currentState = newState
@@ -261,6 +261,8 @@ Namespace OpenSilver.Samples.Showcase
                     LogoShowcaseLight.Opacity = 0
                     BackgroundImageDark.Opacity = 1
                     BackgroundImageLight.Opacity = 0
+                    LogoGitHubDark.Opacity = 1
+                    LogoGitHubLight.Opacity = 0
                 Else
                     NativeApiButtonBackgroundBrush.Color = lightColor
                     theme.CurrentPalette = ModernTheme.Palettes.Light
@@ -270,6 +272,8 @@ Namespace OpenSilver.Samples.Showcase
                     LogoShowcaseDark.Opacity = 0
                     BackgroundImageLight.Opacity = 1
                     BackgroundImageDark.Opacity = 0
+                    LogoGitHubLight.Opacity = 1
+                    LogoGitHubDark.Opacity = 0
                 End If
 
                 If SourceCodePane.Visibility = Visibility.Visible AndAlso
