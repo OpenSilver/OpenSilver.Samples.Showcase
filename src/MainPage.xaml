@@ -237,7 +237,8 @@ mc:Ignorable="d"
                     </DockPanel>
                 </Border>
             </animations:AnimatedContentControl>
-            <Border x:Name="ButtonToHideOrShowMenu" Grid.Column="1" Canvas.ZIndex="2" Padding="2" Visibility="Collapsed" Width="60" Height="50" Margin="5" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <Border x:Name="ButtonToHideOrShowMenu" Grid.Column="1" Canvas.ZIndex="2" Padding="2" Visibility="Collapsed" Width="60" Height="50" Margin="5" VerticalAlignment="Top" HorizontalAlignment="Left"
+                    animations:Animation.OnAppear="{animations:Fade Delay=3000, Duration=2000, EasingMode=EaseInOut}">
                 <Button Click="ButtonToHideOrShowMenu_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" Padding="0">
                     <Path Fill="{DynamicResource Theme_TextBrush}" Opacity="0.5" Width="46" Height="46" Data="M10 0A1 1 90 0010 15L90 15A1 1 90 0089 0L10 0M10 22.5A1 1 90 0010 37.5L90 37.5A1 1 90 0089 22.5L10 22.5M10 45A1 1 90 0010 60L90 60A1 1 90 0089 45L10 45" Stretch="Uniform" HorizontalAlignment="Center"/>
                 </Button>
