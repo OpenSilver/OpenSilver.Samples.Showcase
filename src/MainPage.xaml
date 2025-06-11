@@ -159,7 +159,7 @@ mc:Ignorable="d"
                                 </Grid>
                                 <HyperlinkButton x:Name="HyperlinkButtonDemo" NavigateUri="https://opensilver.net" Margin="0,10,0,0" TargetName="_blank" Cursor="Hand" HorizontalAlignment="Center" animations:SpringEffect.IsEnabled="True">
                                     <Grid>
-                                        <Border BorderThickness="2" BorderBrush="{DynamicResource Theme_TextBrush}" Opacity="0.3" CornerRadius="10">
+                                        <Border BorderThickness="1" BorderBrush="{DynamicResource Theme_TextBrush}" Opacity="0.3" CornerRadius="15">
                                             <Border.Effect>
                                                 <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="8" Opacity="0.5" />
                                             </Border.Effect>
@@ -171,13 +171,18 @@ mc:Ignorable="d"
                                                 <Image Source="/OpenSilver.Samples.Showcase;component/Other/Images/LogoOpenSilverLight.png" x:Name="LogoOpenSilverLight"/>
                                             </Grid>
                                             <Border HorizontalAlignment="Center" VerticalAlignment="Bottom" Padding="10,1,10,4" Margin="0,3,0,4" CornerRadius="10" Cursor="Hand" MouseLeftButtonDown="Logo_MouseLeftButtonDown" Background="Transparent">
-                                                <TextBlock Text="WPF Evolved &amp; Cross-Platform" Foreground="{DynamicResource Theme_TextBrush}" Opacity="0.8" FontWeight="Bold" FontSize="11"/>
+                                                <TextBlock Text="WPF Evolved &amp; Cross-Platform" Foreground="{DynamicResource Theme_TextBrush}" Opacity="0.6" FontWeight="Bold" FontSize="11"/>
                                             </Border>
                                         </StackPanel>
                                     </Grid>
                                 </HyperlinkButton>
-                                <local:SearchControl Margin="32,30,30,20" animations:SpringEffect.IsEnabled="True"/>
-                                <ListBox x:Name="MenuListBox" SelectionChanged="MenuListBox_SelectionChanged" Background="Transparent" Margin="30,0,0,0" BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+                                <local:SearchControl Margin="21,24,18,0" animations:SpringEffect.IsEnabled="True"/>
+                                <TreeView
+                                    x:Name="MenuTreeView"
+                                    Margin="20,10,0,0"
+                                    Style="{StaticResource Menu_TreeView_Style}"
+                                    SelectedItemChanged="MenuTreeView_SelectedItemChanged"/>
+                                <!--<ListBox x:Name="MenuListBox" SelectionChanged="MenuListBox_SelectionChanged" Background="Transparent" Margin="30,0,0,0" BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Hidden">
                                     <ListBox.ItemContainerStyle>
                                         <Style TargetType="ListBoxItem">
                                             <Setter Property="Template">
@@ -231,7 +236,7 @@ mc:Ignorable="d"
                                             </Border>
                                         </DataTemplate>
                                     </ListBox.ItemTemplate>
-                                </ListBox>
+                                </ListBox>-->
                             </StackPanel>
                         </ScrollViewer>
                     </DockPanel>

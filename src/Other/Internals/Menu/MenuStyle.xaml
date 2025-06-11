@@ -1,0 +1,383 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:animations="clr-namespace:OpenSilver.Animations;assembly=OpenSilver.Animations">
+
+    <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+
+    <Style x:Key="Menu_PageCategory_TreeViewItem_Style" TargetType="TreeViewItem">
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="IsExpanded" Value="True" />
+        <Setter Property="Margin" Value="0,14,0,10" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TreeViewItem">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <!-- Category Header -->
+                        <TextBlock Text="{Binding Name}" 
+                                   FontWeight="Bold"
+                                   CharacterSpacing="80"
+                                   FontSize="12"
+                                   Opacity="0.7"
+                                   Margin="8,0,0,10"
+                                   Foreground="{Binding Foreground}"/>
+
+                        <!-- Child Items -->
+                        <ItemsPresenter Grid.Row="1" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Name="Menu_Page_TreeViewItem_Style" TargetType="TreeViewItem">
+        <Setter Property="Padding" Value="3" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="IsTabStop" Value="True" />
+        <Setter Property="TabNavigation" Value="Once" />
+        <Setter Property="Visibility" Value="{Binding IsVisibleInMenu, Converter={StaticResource BooleanToVisibilityConverter}}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TreeViewItem">
+                    <Grid x:Name="Root"
+                          Background="{x:Null}"
+                          RenderTransformOrigin="0.5,0.5"
+                          HorizontalAlignment="Left">
+                        <Grid.Resources>
+                            <SolidColorBrush x:Key="SelectedBrush"
+                                     Color="{DynamicResource Theme_TextOnPrimaryColor}" />
+                            <SolidColorBrush x:Key="DisabledBrush"
+                                     Color="Gray" />
+                        </Grid.Resources>
+                        <Grid.RenderTransform>
+                            <ScaleTransform x:Name="scaleTransform"/>
+                        </Grid.RenderTransform>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="scaleTransform"
+                                                         Storyboard.TargetProperty="ScaleX"
+                                                         To="1"
+                                                         Duration="00:00:00.3"/>
+                                        <DoubleAnimation Storyboard.TargetName="scaleTransform"
+                                                         Storyboard.TargetProperty="ScaleY"
+                                                         To="1"
+                                                         Duration="00:00:00.3"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="scaleTransform"
+                                                         Storyboard.TargetProperty="ScaleX"
+                                                         To="1.05"
+                                                         Duration="00:00:00.1"/>
+                                        <DoubleAnimation Storyboard.TargetName="scaleTransform"
+                                                         Storyboard.TargetProperty="ScaleY"
+                                                         To="1.05"
+                                                         Duration="00:00:00.1"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="scaleTransform"
+                                                         Storyboard.TargetProperty="ScaleX"
+                                                         To="1"
+                                                         Duration="00:00:00.05"/>
+                                        <DoubleAnimation Storyboard.TargetName="scaleTransform"
+                                                         Storyboard.TargetProperty="ScaleY"
+                                                         To="1"
+                                                         Duration="00:00:00.05"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Background"
+                                                                       Storyboard.TargetProperty="Background">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                                    Value="{StaticResource DisabledBrush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <DoubleAnimation Duration="0"
+                                                         Storyboard.TargetName="Header"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="0.55" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="SelectionStates">
+                                <VisualState x:Name="Unselected">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="00:00:00.3"
+                                                         Storyboard.TargetName="grid"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="0" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Selected">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="00:00:00.3"
+                                                         Storyboard.TargetName="grid"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="1" />
+                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00.3"
+                                                               Storyboard.TargetName="Header"
+                                                               Storyboard.TargetProperty="Foreground">
+                                            <DiscreteObjectKeyFrame KeyTime="00:00:00.3"
+                                                                    Value="{DynamicResource Theme_TextOnPrimaryBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="SelectedInactive">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="00:00:00.3"
+                                                         Storyboard.TargetName="grid"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="0.8" />
+                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00.3"
+                                                                       Storyboard.TargetName="Header"
+                                                                       Storyboard.TargetProperty="Foreground">
+                                            <DiscreteObjectKeyFrame KeyTime="00:00:00.3"
+                                                                    Value="{DynamicResource Theme_TextOnPrimaryBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="HasItemsStates">
+                                <VisualState x:Name="HasItems" />
+                                <VisualState x:Name="NoItems">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Duration="0"
+                                                               Storyboard.TargetName="ExpanderButton"
+                                                               Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                                    Value="Collapsed" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="ExpansionStates">
+                                <VisualState x:Name="Collapsed" />
+                                <VisualState x:Name="Expanded">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Duration="0"
+                                                               Storyboard.TargetName="ItemsHost"
+                                                               Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                                    Value="Visible" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0" />
+                            <!--<ColumnDefinition Width="15" />-->
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="1"
+                              Opacity="0"
+                              x:Name="grid">
+                            <Border x:Name="Background"
+                                    CornerRadius="12"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="1"
+                                    Background="{DynamicResource Theme_PrimaryBrush}" />
+                        </Grid>
+                        <ToggleButton HorizontalAlignment="Stretch"
+                              x:Name="ExpanderButton"
+                              VerticalAlignment="Stretch"
+                              IsTabStop="False"
+                              Cursor="Hand"
+                              TabNavigation="Once">
+                            <ToggleButton.Template>
+                                <ControlTemplate TargetType="ToggleButton">
+                                    <Grid x:Name="Root"
+                                          Background="Transparent">
+                                        <VisualStateManager.VisualStateGroups>
+                                            <VisualStateGroup x:Name="CommonStates">
+                                                <VisualState x:Name="Normal"/>
+                                                <VisualState x:Name="MouseOver">
+                                                    <Storyboard>
+                                                        <DoubleAnimation Duration="100"
+                                                                 Storyboard.TargetName="Border"
+                                                                 Storyboard.TargetProperty="StrokeThickness"
+                                                                 To="1.25" />
+                                                    </Storyboard>
+                                                </VisualState>
+                                                <VisualState x:Name="Disabled">
+                                                    <Storyboard>
+                                                        <DoubleAnimation Duration="0"
+                                                                 Storyboard.TargetName="Root"
+                                                                 Storyboard.TargetProperty="Opacity"
+                                                                 To=".7" />
+                                                    </Storyboard>
+                                                </VisualState>
+                                            </VisualStateGroup>
+                                            <VisualStateGroup x:Name="CheckStates">
+                                                <VisualState x:Name="Unchecked" />
+                                                <VisualState x:Name="Checked">
+                                                    <Storyboard>
+                                                        <DoubleAnimation Duration="0"
+                                                                 Storyboard.TargetName="grid"
+                                                                 Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(RotateTransform.Angle)"
+                                                                 To="45" />
+                                                        <DoubleAnimation Duration="0"
+                                                                 Storyboard.TargetName="Arrow"
+                                                                 Storyboard.TargetProperty="Opacity"
+                                                                 To="1" />
+                                                        <DoubleAnimation Duration="0"
+                                                                 Storyboard.TargetName="Border"
+                                                                 Storyboard.TargetProperty="Opacity"
+                                                                 To="0" />
+                                                    </Storyboard>
+                                                </VisualState>
+                                            </VisualStateGroup>
+                                        </VisualStateManager.VisualStateGroups>
+                                        <Grid HorizontalAlignment="Right"
+                                              Margin="2 2 5 2">
+                                            <Grid x:Name="grid"
+                                                  HorizontalAlignment="Center"
+                                                  VerticalAlignment="Center"
+                                                  RenderTransformOrigin=".25,.8"
+                                                  Height="10"
+                                                  Width="5">
+                                                <Grid.RenderTransform>
+                                                    <TransformGroup>
+                                                        <RotateTransform />
+                                                    </TransformGroup>
+                                                </Grid.RenderTransform>
+                                                <Path x:Name="Arrow"
+                                                      Stroke="{x:Null}"
+                                                      StrokeLineJoin="Miter"
+                                                      StrokeThickness=".75"
+                                                      Data="M 0,0 L 0,10 L 5,5 Z"
+                                                      Fill="{DynamicResource Theme_TextBrush}"
+                                                      Opacity="0" />
+                                                <Path x:Name="Border"
+                                                      Stroke="{DynamicResource Theme_TextBrush}"
+                                                      StrokeLineJoin="Miter"
+                                                      StrokeThickness=".75"
+                                                      Data="M 0,0 L 0,10 L 5,5 Z"
+                                                      Fill="{x:Null}" />
+                                            </Grid>
+                                        </Grid>
+                                    </Grid>
+                                </ControlTemplate>
+                            </ToggleButton.Template>
+                        </ToggleButton>
+                        <Button x:Name="Header"
+                                Height="Auto"
+                                Cursor="{TemplateBinding Cursor}"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                Background="{TemplateBinding Background}"
+                                Foreground="{TemplateBinding Foreground}"
+                                IsTabStop="False"
+                                TabNavigation="Once"
+                                Grid.Column="1"
+                                ClickMode="Hover"
+                                Content="{TemplateBinding Header}"
+                                ContentTemplate="{TemplateBinding HeaderTemplate}"
+                                Padding="8,3,8,3"
+                                UseLayoutRounding="False"
+                                animations:SpringEffect.IsEnabled="True">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Grid Background="{TemplateBinding Background}">
+                                        <VisualStateManager.VisualStateGroups>
+                                            <VisualStateGroup x:Name="CommonStates">
+                                                <VisualState x:Name="Normal">
+                                                    <Storyboard>
+                                                        <DoubleAnimation Duration="00:00:00.3"
+                                                                 Storyboard.TargetName="Hover"
+                                                                 Storyboard.TargetProperty="Opacity"
+                                                                 To="0" />
+                                                    </Storyboard>
+                                                </VisualState>
+                                                <VisualState x:Name="Pressed">
+                                                    <Storyboard>
+                                                        <DoubleAnimation Duration="00:00:00.1"
+                                                                 Storyboard.TargetName="Hover"
+                                                                 Storyboard.TargetProperty="Opacity"
+                                                                 To=".3" />
+                                                    </Storyboard>
+                                                </VisualState>
+                                                <VisualState x:Name="Disabled">
+                                                    <Storyboard>
+                                                        <DoubleAnimation Duration="0"
+                                                                 Storyboard.TargetName="content"
+                                                                 Storyboard.TargetProperty="Opacity"
+                                                                 To=".55" />
+                                                    </Storyboard>
+                                                </VisualState>
+                                            </VisualStateGroup>
+                                        </VisualStateManager.VisualStateGroups>
+                                        <Border x:Name="Hover"
+                                                Opacity="0"
+                                                Background="{DynamicResource Theme_PrimaryBrush}"
+                                                IsHitTestVisible="False"
+                                                CornerRadius="12" />
+                                        <ContentPresenter Cursor="{TemplateBinding Cursor}"
+                                                  HorizontalAlignment="Left"
+                                                  Margin="{TemplateBinding Padding}"
+                                                  x:Name="content" />
+                                    </Grid>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <ItemsPresenter x:Name="ItemsHost"
+                                Visibility="Collapsed"
+                                Grid.Column="1"
+                                Grid.ColumnSpan="2"
+                                Grid.Row="1" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Name="Menu_TreeView_Style" TargetType="TreeView">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="ItemContainerStyle">
+            <Setter.Value>
+                <!-- Apply category style to top-level items -->
+                <Style TargetType="TreeViewItem" BasedOn="{StaticResource Menu_PageCategory_TreeViewItem_Style}"/>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <!-- Template for categories -->
+                <HierarchicalDataTemplate ItemsSource="{Binding Pages}">
+                    <TextBlock Text="{Binding Name}"/>
+
+                    <!-- Template for items within categories -->
+                    <HierarchicalDataTemplate.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}" FontSize="16"/>
+                        </DataTemplate>
+                    </HierarchicalDataTemplate.ItemTemplate>
+
+                    <!-- Apply menu item style to children -->
+                    <HierarchicalDataTemplate.ItemContainerStyle>
+                        <Style TargetType="TreeViewItem" BasedOn="{StaticResource Menu_Page_TreeViewItem_Style}"/>
+                    </HierarchicalDataTemplate.ItemContainerStyle>
+                </HierarchicalDataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

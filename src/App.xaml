@@ -7,7 +7,8 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Other/Styles.xaml"/>
+				<ResourceDictionary Source="Other/Styles.xaml"/>
+				<ResourceDictionary Source="Other/Internals/Menu/MenuStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <local:EnumToListConverter x:Key="EnumToListConverter"/>
