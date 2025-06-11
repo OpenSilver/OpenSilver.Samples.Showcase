@@ -1,8 +1,8 @@
 ﻿using OpenSilver.Samples.Showcase.Search;
 using System;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Input;
 using System.Windows.Navigation;
 
 namespace OpenSilver.Samples.Showcase
@@ -56,7 +56,8 @@ namespace OpenSilver.Samples.Showcase
         {
             //todo: if multiple searches one after the other, increase efficiency by only looking at the changes between the current search and the previous search
             //for now, we just clear everything.
-            SamplesPanel.Items.Clear();
+            SamplesPanel.ItemsSource = null;
+            var samples = new List<UIElement>();
 
             if (!string.IsNullOrWhiteSpace(searchText))
             {
@@ -68,13 +69,16 @@ namespace OpenSilver.Samples.Showcase
                     {
                         object controlInstance = Activator.CreateInstance(sampleType);
 
-                        if (controlInstance is UIElement uiElement)
+                        if (controlInstance is FrameworkElement element)
                         {
-                            SamplesPanel.Items.Add(uiElement);
+                            element.HorizontalAlignment = HorizontalAlignment.Center;
+                            samples.Add(element);
                         }
                     }
                 }
             }
+
+            SamplesPanel.ItemsSource = samples;
         }
     }
 }

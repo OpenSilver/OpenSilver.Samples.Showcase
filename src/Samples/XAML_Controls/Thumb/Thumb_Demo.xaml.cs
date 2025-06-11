@@ -21,12 +21,12 @@ public partial class Thumb_Demo : UserControl
 
     private void OnThumbDragDelta(object sender, DragDeltaEventArgs e)
     {
-        infoTextBlock.Text = $"DragDelta X: {e.HorizontalChange}; Y: {e.VerticalChange}";
+        infoTextBlock.Text = $"DragDelta X: {e.HorizontalChange:N1}; Y: {e.VerticalChange:N1}";
     }
 
     private void OnThumbDragCompleted(object sender, DragCompletedEventArgs e)
     {
-        infoTextBlock.Text = $"DragCompleted X: {e.HorizontalChange}; Y: {e.VerticalChange}";
+        infoTextBlock.Text = $"DragCompleted X: {e.HorizontalChange:N1}; Y: {e.VerticalChange:N1}";
         Cursor = null;
     }
 }

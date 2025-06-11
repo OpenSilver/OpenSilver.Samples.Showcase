@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace OpenSilver.Samples.Showcase
 {
@@ -22,7 +23,7 @@ namespace OpenSilver.Samples.Showcase
 
         protected override void INTERNAL_OnAttachedToVisualTree()
         {
-            var parent = Parent as FrameworkElement;
+            var parent = VisualTreeHelper.GetParent(this) as FrameworkElement;
             UpdateAdaptiveSize(parent.ActualWidth);
             parent.SizeChanged += (_, e) => UpdateAdaptiveSize(e.NewSize.Width);
 
