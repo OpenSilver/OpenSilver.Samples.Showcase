@@ -1,6 +1,7 @@
 ﻿using OpenSilver.Samples.Showcase.Search;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace OpenSilver.Samples.Showcase;
 
@@ -17,7 +18,7 @@ public partial class TransformToVisual_Demo : UserControl
 
     private void OnLoaded(object sender, RoutedEventArgs e)
     {
-        (Parent as FrameworkElement).LayoutUpdated += (_, _) => CalculatePosition();
+        (VisualTreeHelper.GetParent(this) as FrameworkElement).LayoutUpdated += (_, _) => CalculatePosition();
     }
 
     private void CalculatePosition()
