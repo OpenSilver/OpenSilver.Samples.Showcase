@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
@@ -13,28 +14,28 @@ namespace OpenSilver.Samples.Showcase
             SearchField.PreviewKeyDown += SearchField_KeyDown;
         }
 
-        public void ButtonSearch_Click(object sender, RoutedEventArgs e)
+        public async void ButtonSearch_Click(object sender, RoutedEventArgs e)
         {
-            StartSearch(SearchField.Text);
+            await StartSearch(SearchField.Text);
             SearchField.Focus();
         }
 
-        private void SearchField_KeyDown(object sender, KeyEventArgs e)
+        private async void SearchField_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
-                StartSearch(SearchField.Text);
+                await StartSearch(SearchField.Text);
             }
         }
 
-        public void StartSearch(string searchTerms)
+        public async Task StartSearch(string searchTerms)
         {
             if (!string.IsNullOrWhiteSpace(searchTerms))
             {
                 //get the MainPage and start the search:
                 if (Application.Current.RootVisual is MainPage mainPage)
                 {
-                    mainPage.StartSearch(searchTerms);
+                    await mainPage.StartSearch(searchTerms);
                 }
             }
         }

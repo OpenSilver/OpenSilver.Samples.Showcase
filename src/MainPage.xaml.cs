@@ -22,33 +22,31 @@ namespace OpenSilver.Samples.Showcase
             Current = this;
             Loaded += MainPage_Loaded;
             SizeChanged += MainPage_SizeChanged;
-            MenuListBox.ItemsSource = PageInfo.Pages;
+            MenuTreeView.ItemsSource = Pages.AllPagesAndCategories;
             UpdateThemeToggleFillColor();
-
             //Animations.Animation.SlowDownAnimationsForDebugging = 10.0;
         }
 
         public static MainPage Current { get; private set; }
 
-        void MainPage_Loaded(object sender, RoutedEventArgs e)
+        async void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
             // Navigate to the "Welcome" page by default:
             if (!HtmlPage.Document.DocumentUri.OriginalString.Contains("#"))
             {
-                MenuListBox.SelectedItem = PageInfo.LandingPageInfo;
+                await TreeViewHelpers.SelectItemInTreeViewAsync(MenuTreeView, Pages.LandingPageInfo);
             }
         }
 
         #region Navigation
 
-        private void MenuListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void MenuTreeView_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
-            if (!(_skipMenuListBox_SelectionChanged && (e.AddedItems?.Count == 0)))
+            if (!_skipMenu_SelectionChanged
+                && e.NewValue != e.OldValue
+                && e.NewValue is PageInfo page)
             {
-                if (e.AddedItems[0] is PageInfo page)
-                {
-                    NavigateToPage(page.Path);
-                }
+                NavigateToPage(page.Path);
             }
         }
 
@@ -66,33 +64,33 @@ namespace OpenSilver.Samples.Showcase
             PageScrollViewer.ScrollToVerticalOffset(0d);
         }
 
-        private void PageContainer_Navigated(object sender, NavigationEventArgs e)
+        private async void PageContainer_Navigated(object sender, NavigationEventArgs e)
         {
-            _skipMenuListBox_SelectionChanged = true;
-            var selectedPage = MenuListBox.SelectedItem as PageInfo;
-            var navigatedPage = PageInfo.Pages.FirstOrDefault(x => x.Path == e.Uri.OriginalString);
+            _skipMenu_SelectionChanged = true;
+            var selectedPage = MenuTreeView.SelectedItem as PageInfo;
+            var navigatedPage = Pages.AllPages.FirstOrDefault(x => x.Path == e.Uri.OriginalString);
             if (navigatedPage != selectedPage)
             {
-                MenuListBox.SelectedItem = navigatedPage;
+                await TreeViewHelpers.SelectItemInTreeViewAsync(MenuTreeView, navigatedPage);
             }
-            _skipMenuListBox_SelectionChanged = false;
+            _skipMenu_SelectionChanged = false;
         }
 
-        private void Logo_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private async void Logo_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             // Go to the homepage:
-            MenuListBox.SelectedItem = PageInfo.LandingPageInfo;
+            await TreeViewHelpers.SelectItemInTreeViewAsync(MenuTreeView, Pages.LandingPageInfo);
             //NavigateToPage("");
         }
 
-        bool _skipMenuListBox_SelectionChanged = false;
-        internal void StartSearch(string searchTerms)
+        bool _skipMenu_SelectionChanged = false;
+        internal async Task StartSearch(string searchTerms)
         {
-            _skipMenuListBox_SelectionChanged = true;
-            MenuListBox.SelectedItem = PageInfo.SearchPageInfo;
+            _skipMenu_SelectionChanged = true;
+            await TreeViewHelpers.SelectItemInTreeViewAsync(MenuTreeView, Pages.SearchPageInfo);
 
             NavigateToPage($"/Search/{Uri.EscapeUriString(searchTerms)}");
-            _skipMenuListBox_SelectionChanged = false;
+            _skipMenu_SelectionChanged = false;
         }
 
         #endregion
@@ -114,19 +112,19 @@ namespace OpenSilver.Samples.Showcase
                                     RowThatContainsTheGridSplitter,
                                     RowDefinition.HeightProperty,
                                     progress => new GridLength(progress * 5d, GridUnitType.Pixel))
-                                    {
-                                        Duration = TimeSpan.FromMilliseconds(500),
-                                        EasingFunction = easing
-                                    };
+                {
+                    Duration = TimeSpan.FromMilliseconds(500),
+                    EasingFunction = easing
+                };
                 animatorForGridSplitter.Begin();
                 var animatorForSourceCodePane = new PropertyAnimator(
                                     RowThatContainsTheSourceCodePane,
                                     RowDefinition.HeightProperty,
-                                    progress =>  new GridLength(progress * 1d, GridUnitType.Star))
-                                    {
-                                        Duration = TimeSpan.FromMilliseconds(500),
-                                        EasingFunction = easing
-                                    };
+                                    progress => new GridLength(progress * 1d, GridUnitType.Star))
+                {
+                    Duration = TimeSpan.FromMilliseconds(500),
+                    EasingFunction = easing
+                };
                 animatorForSourceCodePane.Begin();
             }
 
@@ -152,20 +150,20 @@ namespace OpenSilver.Samples.Showcase
                                 RowThatContainsTheGridSplitter,
                                 RowDefinition.HeightProperty,
                                 progress => new GridLength((1d - progress) * 5d, GridUnitType.Pixel))
-                                {
-                                    Duration = TimeSpan.FromMilliseconds(300), // Note: This animation is faster than the one for the source code pane, so that the "Completed" event of the the one for the source code pane is executed after this one completes.
+            {
+                Duration = TimeSpan.FromMilliseconds(300), // Note: This animation is faster than the one for the source code pane, so that the "Completed" event of the the one for the source code pane is executed after this one completes.
                 EasingFunction = easing
-                                };
+            };
             animatorForGridSplitter.Begin();
 
             var animatorForSourceCodePane = new PropertyAnimator(
                                 RowThatContainsTheSourceCodePane,
                                 RowDefinition.HeightProperty,
                                 progress => new GridLength(initialStarHeightForRowThatContainsTheSourceCodePane - (progress * initialStarHeightForRowThatContainsTheSourceCodePane), GridUnitType.Star))
-                                {
-                                    Duration = TimeSpan.FromMilliseconds(500),
-                                    EasingFunction = easing
-                                };
+            {
+                Duration = TimeSpan.FromMilliseconds(500),
+                EasingFunction = easing
+            };
             animatorForSourceCodePane.Begin();
 
             // Set up completion handler

@@ -18,28 +18,26 @@ Namespace OpenSilver.Samples.Showcase
             Current = Me
             AddHandler Loaded, AddressOf MainPage_Loaded
             AddHandler SizeChanged, AddressOf MainPage_SizeChanged
-            MenuListBox.ItemsSource = PageInfo.Pages
+            MenuTreeView.ItemsSource = Pages.AllPagesAndCategories
             UpdateThemeToggleFillColor()
-
             'Animations.Animation.SlowDownAnimationsForDebugging = 10.0
         End Sub
 
         Public Shared Property Current As MainPage
 
-        Private Sub MainPage_Loaded(sender As Object, e As RoutedEventArgs)
+        Private Async Sub MainPage_Loaded(sender As Object, e As RoutedEventArgs)
             If Not HtmlPage.Document.DocumentUri.OriginalString.Contains("#") Then
-                MenuListBox.SelectedItem = PageInfo.LandingPageInfo
+                Await TreeViewHelpers.SelectItemInTreeViewAsync(MenuTreeView, Pages.LandingPageInfo)
             End If
         End Sub
 
 #Region "Navigation"
-
-        Private Sub MenuListBox_SelectionChanged(sender As Object, e As SelectionChangedEventArgs)
-            If Not (_skipMenuListBox_SelectionChanged AndAlso (e.AddedItems?.Count = 0)) Then
-                Dim page = TryCast(e.AddedItems(0), PageInfo)
-                If page IsNot Nothing Then
-                    NavigateToPage(page.Path)
-                End If
+        Private Sub MenuTreeView_SelectedItemChanged(sender As Object, e As RoutedPropertyChangedEventArgs(Of Object))
+            If Not _skipMenu_SelectionChanged AndAlso
+               e.NewValue IsNot e.OldValue AndAlso
+               TypeOf e.NewValue Is PageInfo Then
+                Dim page As PageInfo = DirectCast(e.NewValue, PageInfo)
+                NavigateToPage(page.Path)
             End If
         End Sub
 
@@ -52,30 +50,30 @@ Namespace OpenSilver.Samples.Showcase
             PageScrollViewer.ScrollToVerticalOffset(0)
         End Sub
 
-        Private Sub PageContainer_Navigated(sender As Object, e As NavigationEventArgs)
-            _skipMenuListBox_SelectionChanged = True
-            Dim selectedPage As PageInfo = TryCast(MenuListBox.SelectedItem, PageInfo)
-            Dim navigatedPage As PageInfo = PageInfo.Pages.FirstOrDefault(Function(x) x.Path = e.Uri.OriginalString)
+        Private Async Sub PageContainer_Navigated(sender As Object, e As NavigationEventArgs)
+            _skipMenu_SelectionChanged = True
+            Dim selectedPage As PageInfo = TryCast(MenuTreeView.SelectedItem, PageInfo)
+            Dim navigatedPage As PageInfo = Pages.AllPages.FirstOrDefault(Function(x) x.Path = e.Uri.OriginalString)
 
             If navigatedPage IsNot selectedPage Then
-                MenuListBox.SelectedItem = navigatedPage
+                Await TreeViewHelpers.SelectItemInTreeViewAsync(MenuTreeView, navigatedPage)
             End If
 
-            _skipMenuListBox_SelectionChanged = False
+            _skipMenu_SelectionChanged = False
         End Sub
 
-        Private Sub Logo_MouseLeftButtonDown(sender As Object, e As MouseButtonEventArgs)
-            MenuListBox.SelectedItem = PageInfo.LandingPageInfo
+        Private Async Sub Logo_MouseLeftButtonDown(sender As Object, e As MouseButtonEventArgs)
+            Await TreeViewHelpers.SelectItemInTreeViewAsync(MenuTreeView, Pages.LandingPageInfo)
         End Sub
 
-        Private _skipMenuListBox_SelectionChanged As Boolean
+        Private _skipMenu_SelectionChanged As Boolean
 
-        Friend Sub StartSearch(searchTerms As String)
-            _skipMenuListBox_SelectionChanged = True
-            MenuListBox.SelectedItem = PageInfo.SearchPageInfo
+        Friend Async Function StartSearch(searchTerms As String) As Task
+            _skipMenu_SelectionChanged = True
+            Await TreeViewHelpers.SelectItemInTreeViewAsync(MenuTreeView, Pages.SearchPageInfo)
             NavigateToPage($"/Search/{Uri.EscapeUriString(searchTerms)}")
-            _skipMenuListBox_SelectionChanged = False
-        End Sub
+            _skipMenu_SelectionChanged = False
+        End Function
 
 #End Region
 

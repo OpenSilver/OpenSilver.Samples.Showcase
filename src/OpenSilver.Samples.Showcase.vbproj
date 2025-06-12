@@ -38,6 +38,9 @@
     <Page Include="Other\Internals\ViewSourcePanel.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Other\Internals\Menu\MenuStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\Charts\AreaSeries\AreaSeries_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -249,6 +252,8 @@
     <Compile Include="Other\Converters\StringEmptyToVisibilityConverter.vb" />
     <Compile Include="Other\Elements.vb" />
     <Compile Include="Other\Internals\ItemsControlLoadingBehavior.vb" />
+    <Compile Include="Other\Internals\Menu\TreeViewHelpers.vb" />
+    <Compile Include="Other\Internals\Menu\UIElementHelpers.vb" />
     <Compile Include="Other\Internals\Search\ControlSearch.vb" />
     <Compile Include="Other\Internals\Search\SamplesInfoLoader.vb" />
     <Compile Include="Other\Internals\Search\SearchableItem.vb" />
@@ -259,7 +264,10 @@
     <Compile Include="Other\Internals\ViewStyleSourceInfo.vb" />
     <Compile Include="Other\Leagues\Leagues.vb" />
     <Compile Include="Other\MarkupExtensions\ResxExtension.vb" />
-    <Compile Include="Other\PageInfo.vb" />
+    <Compile Include="Other\Internals\Menu\PageCategoryInfo.vb" />
+    <Compile Include="Other\Internals\Menu\PageInfo.vb" />
+    <Compile Include="Other\Internals\Menu\IMenuElement.vb" />
+    <Compile Include="Other\Internals\Menu\Pages.vb" />
     <Compile Include="Other\Sales.vb" />
     <Compile Include="Other\Localization\SampleResourceFile.Designer.vb">
       <DesignTime>True</DesignTime>

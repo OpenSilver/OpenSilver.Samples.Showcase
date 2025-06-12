@@ -107,7 +107,11 @@
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
                             Background="{TemplateBinding Background}"
-                            Opacity="0.5" />
+                            Opacity="0.5">
+                                <Border.Effect>
+                                    <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="8" Opacity="0.3" />
+                                </Border.Effect>
+                            </Border>
                             <Border x:Name="BorderColor"
                             CornerRadius="15"
                             BorderBrush="{TemplateBinding BorderBrush}"

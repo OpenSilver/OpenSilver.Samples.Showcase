@@ -1,8 +1,8 @@
 ﻿namespace OpenSilver.Samples.Showcase
 
 open System
+open System.Threading.Tasks
 open System.Windows
-open System.Windows.Controls
 open System.Windows.Input
 
 type SearchControl() as this =
@@ -13,20 +13,25 @@ type SearchControl() as this =
 
         this.SearchField.AddHandler(
             UIElement.KeyDownEvent,
-            KeyEventHandler(fun sender e -> this.SearchField_KeyDown(sender, e)),
+            KeyEventHandler(fun sender e -> this.SearchField_KeyDown(sender, e) |> ignore),
             true
         )
 
     member this.ButtonSearch_Click(_sender: obj, _e: RoutedEventArgs) =
-        this.StartSearch(this.SearchField.Text)
-        this.SearchField.Focus()
+        async {
+            do! this.StartSearch(this.SearchField.Text) |> Async.AwaitTask
+            this.SearchField.Focus() |> ignore
+        } |> Async.StartAsTask |> ignore
 
     member private this.SearchField_KeyDown(_sender: obj, e: KeyEventArgs) =
         if e.Key = Key.Enter then
-            this.StartSearch(this.SearchField.Text)
+            this.StartSearch(this.SearchField.Text) |> ignore
 
-    member this.StartSearch(searchTerms: string) = Console.WriteLine("not implemented")
-        //if not (String.IsNullOrWhiteSpace(searchTerms)) then
-            //match Application.Current.RootVisual with
-            //| :? MainPage as mainPage -> mainPage.StartSearch(searchTerms)
-            //| _ -> ()
+    member this.StartSearch(searchTerms: string) : Task =
+        async {
+            //if not (String.IsNullOrWhiteSpace(searchTerms)) then
+            //    match Application.Current.RootVisual with
+            //    | :? MainPage as mainPage -> 
+            //        do! mainPage.StartSearch(searchTerms) |> Async.AwaitTask
+            //    | _ -> ()
+        } |> Async.StartAsTask :> Task
