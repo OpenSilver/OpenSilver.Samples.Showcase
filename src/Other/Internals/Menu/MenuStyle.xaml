@@ -223,7 +223,7 @@
                                                         <DoubleAnimation Duration="0"
                                                                  Storyboard.TargetName="Root"
                                                                  Storyboard.TargetProperty="Opacity"
-                                                                 To=".7" />
+                                                                 To="0.7" />
                                                     </Storyboard>
                                                 </VisualState>
                                             </VisualStateGroup>
@@ -263,14 +263,14 @@
                                                 <Path x:Name="Arrow"
                                                       Stroke="{x:Null}"
                                                       StrokeLineJoin="Miter"
-                                                      StrokeThickness=".75"
+                                                      StrokeThickness="0.75"
                                                       Data="M 0,0 L 0,10 L 5,5 Z"
                                                       Fill="{DynamicResource Theme_TextBrush}"
                                                       Opacity="0" />
                                                 <Path x:Name="Border"
                                                       Stroke="{DynamicResource Theme_TextBrush}"
                                                       StrokeLineJoin="Miter"
-                                                      StrokeThickness=".75"
+                                                      StrokeThickness="0.75"
                                                       Data="M 0,0 L 0,10 L 5,5 Z"
                                                       Fill="{x:Null}" />
                                             </Grid>
@@ -313,7 +313,7 @@
                                                         <DoubleAnimation Duration="00:00:00.1"
                                                                  Storyboard.TargetName="Hover"
                                                                  Storyboard.TargetProperty="Opacity"
-                                                                 To=".3" />
+                                                                 To="0.3" />
                                                     </Storyboard>
                                                 </VisualState>
                                                 <VisualState x:Name="Disabled">
@@ -321,7 +321,7 @@
                                                         <DoubleAnimation Duration="0"
                                                                  Storyboard.TargetName="content"
                                                                  Storyboard.TargetProperty="Opacity"
-                                                                 To=".55" />
+                                                                 To="0.55" />
                                                     </Storyboard>
                                                 </VisualState>
                                             </VisualStateGroup>

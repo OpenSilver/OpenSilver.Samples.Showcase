@@ -24,7 +24,6 @@ namespace OpenSilver.Samples.Showcase
             SizeChanged += MainPage_SizeChanged;
             MenuTreeView.ItemsSource = Pages.AllPagesAndCategories;
             UpdateThemeToggleFillColor();
-            MenuTreeView.MouseRightButtonDown += (s, e) => { MessageBox.Show(MenuTreeView.SelectedItem?.ToString() ?? "null"); };
             //Animations.Animation.SlowDownAnimationsForDebugging = 10.0;
         }
 
@@ -113,19 +112,19 @@ namespace OpenSilver.Samples.Showcase
                                     RowThatContainsTheGridSplitter,
                                     RowDefinition.HeightProperty,
                                     progress => new GridLength(progress * 5d, GridUnitType.Pixel))
-                                    {
-                                        Duration = TimeSpan.FromMilliseconds(500),
-                                        EasingFunction = easing
-                                    };
+                {
+                    Duration = TimeSpan.FromMilliseconds(500),
+                    EasingFunction = easing
+                };
                 animatorForGridSplitter.Begin();
                 var animatorForSourceCodePane = new PropertyAnimator(
                                     RowThatContainsTheSourceCodePane,
                                     RowDefinition.HeightProperty,
-                                    progress =>  new GridLength(progress * 1d, GridUnitType.Star))
-                                    {
-                                        Duration = TimeSpan.FromMilliseconds(500),
-                                        EasingFunction = easing
-                                    };
+                                    progress => new GridLength(progress * 1d, GridUnitType.Star))
+                {
+                    Duration = TimeSpan.FromMilliseconds(500),
+                    EasingFunction = easing
+                };
                 animatorForSourceCodePane.Begin();
             }
 
@@ -151,20 +150,20 @@ namespace OpenSilver.Samples.Showcase
                                 RowThatContainsTheGridSplitter,
                                 RowDefinition.HeightProperty,
                                 progress => new GridLength((1d - progress) * 5d, GridUnitType.Pixel))
-                                {
-                                    Duration = TimeSpan.FromMilliseconds(300), // Note: This animation is faster than the one for the source code pane, so that the "Completed" event of the the one for the source code pane is executed after this one completes.
+            {
+                Duration = TimeSpan.FromMilliseconds(300), // Note: This animation is faster than the one for the source code pane, so that the "Completed" event of the the one for the source code pane is executed after this one completes.
                 EasingFunction = easing
-                                };
+            };
             animatorForGridSplitter.Begin();
 
             var animatorForSourceCodePane = new PropertyAnimator(
                                 RowThatContainsTheSourceCodePane,
                                 RowDefinition.HeightProperty,
                                 progress => new GridLength(initialStarHeightForRowThatContainsTheSourceCodePane - (progress * initialStarHeightForRowThatContainsTheSourceCodePane), GridUnitType.Star))
-                                {
-                                    Duration = TimeSpan.FromMilliseconds(500),
-                                    EasingFunction = easing
-                                };
+            {
+                Duration = TimeSpan.FromMilliseconds(500),
+                EasingFunction = easing
+            };
             animatorForSourceCodePane.Begin();
 
             // Set up completion handler

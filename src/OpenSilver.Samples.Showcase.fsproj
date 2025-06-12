@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -31,7 +31,12 @@
 		<Compile Include="Other\Converters\RgbToBrushConverter.fs" />
 		<Compile Include="Other\Converters\StringEmptyToVisibilityConverter.fs" />	
 		<Compile Include="Other\MarkupExtensions\ResxExtension.fs" />
-		<Compile Include="Other\PageInfo.fs" />
+		<Compile Include="Other\Internals\Menu\IMenuElement.fs" />
+		<Compile Include="Other\Internals\Menu\PageInfo.fs" />
+		<Compile Include="Other\Internals\Menu\PageCategoryInfo.fs" />
+		<Compile Include="Other\Internals\Menu\UIElementHelpers.fs" />
+		<Compile Include="Other\Internals\Menu\TreeViewHelpers.fs" />
+		<Compile Include="Other\Internals\Menu\Pages.fs" />
 		<Compile Include="Samples\Interop_Samples\HtmlPresenter\HtmlColorPicker.fs" />
 		<Compile Include="Samples\JS_Libs\JSZip\ZipFile.fs" />
 		<Compile Include="Samples\Net_Framework\MVVM\Movie.fs" />
@@ -89,6 +94,9 @@
     </Compile>
     <Compile Include="Other\Internals\ItemsControlLoadingBehavior.fs" />
     <Page Include="Other\Internals\ViewSourcePanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Other\Internals\Menu\MenuStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Compile Include="Other\Internals\ViewSourcePanel.xaml.fs">

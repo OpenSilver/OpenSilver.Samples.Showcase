@@ -10,25 +10,25 @@ Namespace OpenSilver.Samples.Showcase
             InitializeComponent()
         End Sub
 
-        Public Sub ButtonSearch_Click(sender As Object, e As RoutedEventArgs)
-            StartSearch(SearchField.Text)
+        Public Async Sub ButtonSearch_Click(sender As Object, e As RoutedEventArgs)
+            Await StartSearch(SearchField.Text)
+            SearchField.Focus()
         End Sub
 
-        Private Sub SearchField_KeyDown(sender As Object, e As KeyEventArgs)
+        Private Async Sub SearchField_KeyDown(sender As Object, e As KeyEventArgs)
             If e.Key = Key.Enter Then
-                StartSearch(SearchField.Text)
-                SearchField.Focus()
+                Await StartSearch(SearchField.Text)
             End If
         End Sub
 
-        Public Sub StartSearch(searchTerms As String)
+        Public Async Function StartSearch(searchTerms As String) As Task
             If Not String.IsNullOrWhiteSpace(searchTerms) Then
                 ' Get the MainPage and start the search:
                 Dim mainPage As MainPage = TryCast(Application.Current.RootVisual, MainPage)
                 If mainPage IsNot Nothing Then
-                    mainPage.StartSearch(searchTerms)
+                    Await mainPage.StartSearch(searchTerms)
                 End If
             End If
-        End Sub
+        End Function
     End Class
 End Namespace
