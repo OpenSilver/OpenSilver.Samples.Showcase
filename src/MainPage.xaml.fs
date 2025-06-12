@@ -19,7 +19,7 @@ type MainPage() as this =
     inherit MainPageXaml()
 
     let mutable currentState : CurrentState = CurrentState.Unset
-    let mutable _skipMenuListBox_SelectionChanged = false
+    let mutable _skipMenu_SelectionChanged = false
     let mutable _nativeApiButtonBackgroundBrush: SolidColorBrush = null
     
     do
@@ -52,14 +52,14 @@ type MainPage() as this =
 
         member private this.PageContainer_Navigated (sender: obj) (e: NavigationEventArgs) =
             async {
-                _skipMenuListBox_SelectionChanged <- true
+                _skipMenu_SelectionChanged <- true
                 let selectedPage = this.MenuTreeView.SelectedItem :?> PageInfo
                 let navigatedPage = Pages.AllPages |> Seq.tryFind (fun x -> x.Path = e.Uri.OriginalString)
                 match navigatedPage with
                 | Some page when not (obj.ReferenceEquals(page, selectedPage)) ->
                     do! TreeViewHelpers.SelectItemInTreeViewAsync(this.MenuTreeView, page) |> Async.AwaitTask |> Async.Ignore
                 | _ -> ()
-                _skipMenuListBox_SelectionChanged <- false
+                _skipMenu_SelectionChanged <- false
             } |> Async.StartAsTask |> ignore
         
         member private this.Logo_MouseLeftButtonDown(sender: obj, e: System.Windows.Input.MouseButtonEventArgs) =
@@ -68,7 +68,7 @@ type MainPage() as this =
             } |> Async.StartAsTask |> ignore
         
         member private this.MenuTreeView_SelectedItemChanged(e: RoutedPropertyChangedEventArgs<obj>) =
-            if not _skipMenuListBox_SelectionChanged &&
+            if not _skipMenu_SelectionChanged &&
                e.NewValue <> e.OldValue &&
                (e.NewValue :? PageInfo) then
                 let page = e.NewValue :?> PageInfo
@@ -76,10 +76,10 @@ type MainPage() as this =
             
         member internal this.StartSearch(searchTerms: string) =
             async {
-                _skipMenuListBox_SelectionChanged <- true
+                _skipMenu_SelectionChanged <- true
                 do! TreeViewHelpers.SelectItemInTreeViewAsync(this.MenuTreeView, Pages.SearchPageInfo) |> Async.AwaitTask |> Async.Ignore
                 this.NavigateToPage($"/Search/{Uri.EscapeUriString(searchTerms)}")
-                _skipMenuListBox_SelectionChanged <- false
+                _skipMenu_SelectionChanged <- false
             } |> Async.StartAsTask
 
 //#region Show/hide source code

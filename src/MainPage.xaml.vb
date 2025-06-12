@@ -33,7 +33,7 @@ Namespace OpenSilver.Samples.Showcase
 
 #Region "Navigation"
         Private Sub MenuTreeView_SelectedItemChanged(sender As Object, e As RoutedPropertyChangedEventArgs(Of Object))
-            If Not _skipMenuListBox_SelectionChanged AndAlso
+            If Not _skipMenu_SelectionChanged AndAlso
                e.NewValue IsNot e.OldValue AndAlso
                TypeOf e.NewValue Is PageInfo Then
                 Dim page As PageInfo = DirectCast(e.NewValue, PageInfo)
@@ -51,7 +51,7 @@ Namespace OpenSilver.Samples.Showcase
         End Sub
 
         Private Async Sub PageContainer_Navigated(sender As Object, e As NavigationEventArgs)
-            _skipMenuListBox_SelectionChanged = True
+            _skipMenu_SelectionChanged = True
             Dim selectedPage As PageInfo = TryCast(MenuTreeView.SelectedItem, PageInfo)
             Dim navigatedPage As PageInfo = Pages.AllPages.FirstOrDefault(Function(x) x.Path = e.Uri.OriginalString)
 
@@ -59,20 +59,20 @@ Namespace OpenSilver.Samples.Showcase
                 Await TreeViewHelpers.SelectItemInTreeViewAsync(MenuTreeView, navigatedPage)
             End If
 
-            _skipMenuListBox_SelectionChanged = False
+            _skipMenu_SelectionChanged = False
         End Sub
 
         Private Async Sub Logo_MouseLeftButtonDown(sender As Object, e As MouseButtonEventArgs)
             Await TreeViewHelpers.SelectItemInTreeViewAsync(MenuTreeView, Pages.LandingPageInfo)
         End Sub
 
-        Private _skipMenuListBox_SelectionChanged As Boolean
+        Private _skipMenu_SelectionChanged As Boolean
 
         Friend Async Function StartSearch(searchTerms As String) As Task
-            _skipMenuListBox_SelectionChanged = True
+            _skipMenu_SelectionChanged = True
             Await TreeViewHelpers.SelectItemInTreeViewAsync(MenuTreeView, Pages.SearchPageInfo)
             NavigateToPage($"/Search/{Uri.EscapeUriString(searchTerms)}")
-            _skipMenuListBox_SelectionChanged = False
+            _skipMenu_SelectionChanged = False
         End Function
 
 #End Region

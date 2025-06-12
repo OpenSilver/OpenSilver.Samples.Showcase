@@ -35,7 +35,7 @@
         </Setter>
     </Style>
 
-    <Style x:Name="Menu_Page_TreeViewItem_Style" TargetType="TreeViewItem">
+    <Style x:Key="Menu_Page_TreeViewItem_Style" TargetType="TreeViewItem">
         <Setter Property="Padding" Value="3" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
@@ -350,7 +350,7 @@
         </Setter>
     </Style>
 
-    <Style x:Name="Menu_TreeView_Style" TargetType="TreeView">
+    <Style x:Key="Menu_TreeView_Style" TargetType="TreeView">
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="ItemContainerStyle">

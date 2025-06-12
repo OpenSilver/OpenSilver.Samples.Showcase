@@ -42,7 +42,7 @@ namespace OpenSilver.Samples.Showcase
 
         private void MenuTreeView_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
-            if (!_skipMenuListBox_SelectionChanged
+            if (!_skipMenu_SelectionChanged
                 && e.NewValue != e.OldValue
                 && e.NewValue is PageInfo page)
             {
@@ -66,14 +66,14 @@ namespace OpenSilver.Samples.Showcase
 
         private async void PageContainer_Navigated(object sender, NavigationEventArgs e)
         {
-            _skipMenuListBox_SelectionChanged = true;
+            _skipMenu_SelectionChanged = true;
             var selectedPage = MenuTreeView.SelectedItem as PageInfo;
             var navigatedPage = Pages.AllPages.FirstOrDefault(x => x.Path == e.Uri.OriginalString);
             if (navigatedPage != selectedPage)
             {
                 await TreeViewHelpers.SelectItemInTreeViewAsync(MenuTreeView, navigatedPage);
             }
-            _skipMenuListBox_SelectionChanged = false;
+            _skipMenu_SelectionChanged = false;
         }
 
         private async void Logo_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -83,14 +83,14 @@ namespace OpenSilver.Samples.Showcase
             //NavigateToPage("");
         }
 
-        bool _skipMenuListBox_SelectionChanged = false;
+        bool _skipMenu_SelectionChanged = false;
         internal async Task StartSearch(string searchTerms)
         {
-            _skipMenuListBox_SelectionChanged = true;
+            _skipMenu_SelectionChanged = true;
             await TreeViewHelpers.SelectItemInTreeViewAsync(MenuTreeView, Pages.SearchPageInfo);
 
             NavigateToPage($"/Search/{Uri.EscapeUriString(searchTerms)}");
-            _skipMenuListBox_SelectionChanged = false;
+            _skipMenu_SelectionChanged = false;
         }
 
         #endregion
