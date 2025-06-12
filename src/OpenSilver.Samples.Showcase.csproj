@@ -507,9 +507,6 @@
     <Page Include="Samples\Net_Framework\Zip\Zip_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\Performance\HtmlCanvas\HtmlCanvas_Demo.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Samples\Performance\Performance.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -811,8 +808,6 @@
     <Compile Include="Samples\Net_Framework\Regex\Regex_Demo.xaml.cs" />
     <Compile Include="Samples\Net_Framework\RESX\RESX_Demo.xaml.cs" />
     <Compile Include="Samples\Net_Framework\Zip\Zip_Demo.xaml.cs" />
-    <Compile Include="Samples\Performance\HtmlCanvas\HtmlCanvas_Demo.xaml.cs" />
-    <Compile Include="Samples\Performance\HtmlCanvas\MainSprite.cs" />
     <Compile Include="Samples\Performance\Performance.xaml.cs" />
     <Compile Include="Samples\Third_Party\Third_Party.xaml.cs" />
     <Compile Include="Samples\Welcome.xaml.cs" />

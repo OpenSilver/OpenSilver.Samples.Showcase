@@ -552,13 +552,6 @@
 		<Compile Include="Samples\Performance\AOTCompilation\AOT_Demo.xaml.fs">
 			<DependentUpon>Samples\Performance\AOTCompilation\AOT_Demo.xaml</DependentUpon>
 		</Compile>
-		<Compile Include="Samples\Performance\HtmlCanvas\MainSprite.fs" />
-		<Page Include="Samples\Performance\HtmlCanvas\HtmlCanvas_Demo.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</Page>
-		<Compile Include="Samples\Performance\HtmlCanvas\HtmlCanvas_Demo.xaml.fs">
-			<DependentUpon>Samples\Performance\HtmlCanvas\HtmlCanvas_Demo.xaml</DependentUpon>
-		</Compile>
 		
 		<Page Include="Samples\Performance\Progressive_Loading\ProgressiveLoading_Demo.xaml">
 			<Generator>MSBuild:Compile</Generator>
