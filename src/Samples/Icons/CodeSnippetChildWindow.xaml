@@ -11,7 +11,7 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <TextBlock TextWrapping="Wrap" Margin="20" FontSize="14" LineHeight="24">Copy/paste the following XAML snippet into your OpenSilver app to display the icon:</TextBlock>
-        <TextBox x:Name="SnippetTextBox" Grid.Row="1" Height="50" Margin="20,0,20,12" IsReadOnly="True" TextWrapping="Wrap" FontFamily="monospace" VerticalScrollBarVisibility="Auto"/>
+        <TextBox x:Name="SnippetTextBox" Grid.Row="1" Height="100" Margin="18,0,20,12" IsReadOnly="True" TextWrapping="Wrap" FontFamily="monospace" VerticalScrollBarVisibility="Auto"/>
         <Button x:Name="OKButton" Content="Close" Click="OKButton_Click" Width="88" Height="32" HorizontalAlignment="Right" Margin="0,8,20,20" Grid.Row="2" BorderThickness="1" BorderBrush="{DynamicResource Theme_PrimaryBrush}"/>
     </Grid>
 </ChildWindow>

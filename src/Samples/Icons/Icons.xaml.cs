@@ -29,7 +29,7 @@ namespace OpenSilver.Samples.Showcase
 
             // Build the numeric entities for the exact code-points of the grapheme.
             string xmlRefs = GetXmlNumericEntities(e.Character); // e.g. "&#x1F600;"
-            string snippet = $"<TextBlock Text=\"{xmlRefs}\"/>";
+            string snippet = $"<TextBlock Text=\"{xmlRefs}\" FontFamily=\"emoji, Segoe UI Emoji, Apple Color Emoji, Noto Color Emoji, Segoe UI Symbol, sans-serif\"/>";
 
             // Also show the pretty “U+…” list for reference.
             string pretty = string.Join(" ",
