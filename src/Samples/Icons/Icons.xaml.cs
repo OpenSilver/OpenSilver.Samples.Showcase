@@ -48,13 +48,49 @@ namespace OpenSilver.Samples.Showcase
             // symbols) because almost none of them render on Windows.
             (int Start, int End)[] emojiBlocks =
             {
-                (0x1F600, 0x1F64F),  // Emoticons 😀😅🤔
-                (0x2700 , 0x27BF),   // Dingbats ✂✉✔
-                (0x1F300, 0x1F5FF),  // Misc Symbols & Pictographs
-                (0x2600 , 0x26FF),   // Misc Symbols ☀✈☂
-                (0x1F680, 0x1F6FF),  // Transport & Map 🚀✈🛳
-                (0x1F900, 0x1F9FF),  // Supplemental Symbols & Pictographs 🤯🥺🦄
-                //(0x1FA70, 0x1FAFF),  // Symbols & Pictographs Ext-B 🪄🫠
+                // Basic “text” emoji that live below U+2600
+                (0x0023, 0x0023),     // #️⃣
+                (0x002A, 0x002A),     // *️⃣
+                (0x0030, 0x0039),     // 0️⃣–9️⃣
+                (0x00A9, 0x00A9),     // ©️
+                (0x00AE, 0x00AE),     // ®️
+                (0x203C, 0x203C),     // ‼️
+                (0x2049, 0x2049),     // ⁉️
+                (0x2122, 0x2122),     // ™️
+                (0x2139, 0x2139),     // ℹ️
+                (0x2194, 0x2199),     // ↔️ ↙️ ↘️
+                (0x21A9, 0x21AA),     // ↩️ ↪️
+                (0x231A, 0x231B),     // ⌚ ⌛
+                (0x2328, 0x2328),     // ⌨️
+                (0x2388, 0x2388),     // ⎈
+                (0x23CF, 0x23CF),     // ⏏️
+                (0x23E9, 0x23F3),     // ⏩ … ⏳
+                (0x23F8, 0x23FA),     // ⏸️ ⏺️
+                (0x24C2, 0x24C2),     // Ⓜ️
+                (0x25AA, 0x25AB),     // ▪️ ▫️
+                (0x25B6, 0x25B6),     // ▶️
+                (0x25C0, 0x25C0),     // ◀️
+                (0x25FB, 0x25FE),     // ◻️ ◾
+                (0x2600, 0x26FF),     // Misc Symbols ☀️✈️☂️
+                (0x2700, 0x27BF),     // Dingbats ✂️✉️✔️
+                (0x27C0, 0x27EF),     // Additional arrows & shapes (few emoji)
+                (0x2900, 0x297F),     // Arrows to match ⏎ type glyphs
+                (0x2B00, 0x2BFF),     // Misc Symbols & Arrows ⬆️⬇️⏹️
+    
+                // Full-width blocks that are almost all emoji
+                (0x1F000, 0x1F02F),   // Mahjong tiles 🀄
+                (0x1F0A0, 0x1F0FF),   // Playing cards 🂡
+                (0x1F100, 0x1F1FF),   // Enclosed alphanums + regional flags 🏁🇺🇳
+                (0x1F300, 0x1F5FF),   // Misc Symbols & Pictographs 🍕🎄🤖
+                (0x1F600, 0x1F64F),   // Emoticons 😀🤔😅
+                (0x1F680, 0x1F6FF),   // Transport & Map 🚀🚌🛳️
+                (0x1F700, 0x1F77F),   // Alchemical (🜚 etc.—rare but still emoji per spec)
+                (0x1F780, 0x1F7FF),   // Geometric Shapes Ext. 🟥🟦
+                (0x1F800, 0x1F8FF),   // Supplemental Arrows-C (⮕, ⮾ …)
+                (0x1F900, 0x1F9FF),   // Supplemental Symbols & Pictographs 🤯🥺🦄
+                (0x1FA00, 0x1FA6F),   // Symbols & Pictographs Ext-A: chess/xiàngqí 🨂
+                (0x1FA70, 0x1FAFF),   // Symbols & Pictographs Ext-B 🪄🫠
+                (0x1FB00, 0x1FBFF),   // Symbols & Pictographs Ext-C (Unicode 15.1) 🩷🪻
             };
 
             var sb = new StringBuilder(3500);
