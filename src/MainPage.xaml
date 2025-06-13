@@ -14,97 +14,6 @@ mc:Ignorable="d"
     <Page.Resources>
         <SolidColorBrush x:Key="NativeApiButtonBackground" Color="#dddddd"/>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
-
-        <Style TargetType="RadioButton">
-            <Setter Property="Foreground" Value="{DynamicResource Theme_TextBrush}" />
-            <Setter Property="Cursor" Value="Hand" />
-            <Setter Property="Padding" Value="0" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="RadioButton" xmlns:system="clr-namespace:System;assembly=mscorlib">
-                        <Grid Margin="{TemplateBinding Padding}">
-                            <VisualStateManager.VisualStateGroups>
-                                <VisualStateGroup x:Name="CommonStates">
-                                    <!--<VisualStateGroup.Transitions>
-                                        <VisualTransition GeneratedDuration="00:00:00.1"
-                                                          To="MouseOver" />
-                                        <VisualTransition From="MouseOver"
-                                                          GeneratedDuration="00:00:00.1" />
-                                    </VisualStateGroup.Transitions>-->
-                                    <VisualState x:Name="Normal" />
-                                    <VisualState x:Name="MouseOver">
-                                        <Storyboard>
-                                            <DoubleAnimation Storyboard.TargetName="scaleTransform"
-                                                             Storyboard.TargetProperty="ScaleX"
-                                                             To="1.05"
-                                                             Duration="00:00:00.1"/>
-                                            <DoubleAnimation Storyboard.TargetName="scaleTransform"
-                                                             Storyboard.TargetProperty="ScaleY"
-                                                             To="1.05"
-                                                             Duration="00:00:00.1"/>
-                                        </Storyboard>
-                                    </VisualState>
-                                    <VisualState x:Name="Pressed">
-                                        <Storyboard>
-                                            <DoubleAnimation Storyboard.TargetName="scaleTransform"
-                                                             Storyboard.TargetProperty="ScaleX"
-                                                             To="0.95"
-                                                             Duration="00:00:00.1"/>
-                                            <DoubleAnimation Storyboard.TargetName="scaleTransform"
-                                                             Storyboard.TargetProperty="ScaleY"
-                                                             To="0.95"
-                                                             Duration="00:00:00.1"/>
-                                        </Storyboard>
-                                    </VisualState>
-                                    <VisualState x:Name="Disabled"/>
-                                </VisualStateGroup>
-                                <VisualStateGroup x:Name="CheckStates">
-                                    <VisualState x:Name="Checked">
-                                        <Storyboard>
-                                            <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                                       Storyboard.TargetName="border"
-                                                                       Storyboard.TargetProperty="(UIElement.Background)">
-                                                <DiscreteObjectKeyFrame KeyTime="0"
-                                                                        Value="{DynamicResource Theme_ContainerBackgroundBrush}" />
-                                            </ObjectAnimationUsingKeyFrames>
-                                        </Storyboard>
-                                    </VisualState>
-                                    <VisualState x:Name="Unchecked">
-                                        <Storyboard>
-                                            <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                             Storyboard.TargetName="border"
-                                                             Storyboard.TargetProperty="(UIElement.Effect)">
-                                                <DiscreteObjectKeyFrame KeyTime="0"
-                                                             Value="{x:Null}" />
-                                            </ObjectAnimationUsingKeyFrames>
-                                        </Storyboard>
-                                    </VisualState>
-                                </VisualStateGroup>
-                                <VisualStateGroup x:Name="FocusStates">
-                                    <VisualState x:Name="Focused" />
-                                    <VisualState x:Name="Unfocused" />
-                                </VisualStateGroup>
-                            </VisualStateManager.VisualStateGroups>
-                            <Border x:Name="border" Background="Transparent" CornerRadius="5" RenderTransformOrigin="0.5,0.5">
-                                <Border.Effect>
-                                    <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="5" Opacity="0.3" />
-                                </Border.Effect>
-                                <Border.RenderTransform>
-                                    <ScaleTransform x:Name="scaleTransform"/>
-                                </Border.RenderTransform>
-                                <ContentControl x:Name="contentPresenter"
-                                                Foreground="{DynamicResource Theme_TextBrush}"
-                                                Margin="8,6,8,6"
-                                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                                Content="{TemplateBinding Content}"
-                                                ContentTemplate="{TemplateBinding ContentTemplate}" />
-                            </Border>
-                        </Grid>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
     </Page.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -137,16 +46,16 @@ mc:Ignorable="d"
                     <DockPanel LastChildFill="True">
                         <Border DockPanel.Dock="Bottom" Margin="0,10,0,20" Padding="3" CornerRadius="7" HorizontalAlignment="Center" Background="{DynamicResource Theme_BackgroundBrush}">
                             <StackPanel Orientation="Horizontal">
-                                <RadioButton x:Name="LightThemeRadioButton" IsChecked="True" Checked="ThemeToggle_RadioButton_Checked" animations:SpringEffect.IsEnabled="True">
+                                <RadioButton x:Name="LightThemeRadioButton" IsChecked="True" Checked="ThemeToggle_RadioButton_Checked" Style="{StaticResource LightDarkToggle_RadioButton_Style}" animations:SpringEffect.IsEnabled="True">
                                     <StackPanel Orientation="Horizontal">
-                                        <local:SvgImage x:Name="lightThemeImage" Width="20" Height="20" Source="/Other/Icons/LightTheme.svg"/>
-                                        <TextBlock Margin="3" VerticalAlignment="Center" FontSize="11" Text="Light" Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"/>
+                                        <local:SvgImage x:Name="lightThemeImage" Width="20" Height="20" Source="/Other/Icons/LightTheme.svg" FillColor="{Binding Path=Foreground.(SolidColorBrush.Color), RelativeSource={RelativeSource AncestorType=ContentControl}}"/>
+                                        <TextBlock Margin="3" VerticalAlignment="Center" FontSize="11" FontWeight="Bold" Text="Light" Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"/>
                                     </StackPanel>
                                 </RadioButton>
-                                <RadioButton x:Name="DarkThemeRadioButton" Margin="4,0,0,0" Checked="ThemeToggle_RadioButton_Checked" animations:SpringEffect.IsEnabled="True">
+                                <RadioButton x:Name="DarkThemeRadioButton" Margin="4,0,0,0" Checked="ThemeToggle_RadioButton_Checked" Style="{StaticResource LightDarkToggle_RadioButton_Style}" animations:SpringEffect.IsEnabled="True">
                                     <StackPanel Orientation="Horizontal">
-                                        <local:SvgImage x:Name="darkThemeImage" Width="20" Height="20" Source="/Other/Icons/DarkTheme.svg"/>
-                                        <TextBlock Margin="3" VerticalAlignment="Center" FontSize="11" Text="Dark" Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"/>
+                                        <local:SvgImage x:Name="darkThemeImage" Width="20" Height="20" Source="/Other/Icons/DarkTheme.svg" FillColor="{Binding Path=Foreground.(SolidColorBrush.Color), RelativeSource={RelativeSource AncestorType=ContentControl}}"/>
+                                        <TextBlock Margin="3" VerticalAlignment="Center" FontSize="11" FontWeight="Bold" Text="Dark" Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"/>
                                     </StackPanel>
                                 </RadioButton>
                             </StackPanel>
@@ -187,61 +96,6 @@ mc:Ignorable="d"
                                     Margin="20,10,0,0"
                                     Style="{StaticResource Menu_TreeView_Style}"
                                     SelectedItemChanged="MenuTreeView_SelectedItemChanged"/>
-                                <!--<ListBox x:Name="MenuListBox" SelectionChanged="MenuListBox_SelectionChanged" Background="Transparent" Margin="30,0,0,0" BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Hidden">
-                                    <ListBox.ItemContainerStyle>
-                                        <Style TargetType="ListBoxItem">
-                                            <Setter Property="Template">
-                                                <Setter.Value>
-                                                    <ControlTemplate TargetType="ListBoxItem">
-                                                        <Border Background="Transparent"
-                                                                Visibility="{Binding IsVisibleInMenu, Converter={StaticResource BooleanToVisibilityConverter}}"
-                                                                animations:SpringEffect.IsEnabled="True">
-                                                            <VisualStateManager.VisualStateGroups>
-                                                                <VisualStateGroup x:Name="CommonStates">
-                                                                    <VisualState x:Name="Normal" />
-                                                                </VisualStateGroup>
-                                                                <VisualStateGroup x:Name="SelectionStates">
-                                                                    <VisualState x:Name="Unselected"/>
-                                                                    <VisualState x:Name="Selected">
-                                                                        <Storyboard>
-                                                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="SelectedBorder" 
-                                                                                                    Storyboard.TargetProperty="(Border.Background)" 
-                                                                                                    Duration="0">
-                                                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{DynamicResource Theme_PrimaryBrush}"/>
-                                                                            </ObjectAnimationUsingKeyFrames>
-                                                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContainerBorder" 
-                                                                                                    Storyboard.TargetProperty="(TextBlock.Foreground)" 
-                                                                                                    Duration="0">
-                                                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{DynamicResource Theme_TextOnPrimaryBrush}"/>
-                                                                            </ObjectAnimationUsingKeyFrames>
-                                                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContainerBorder"
-                                                                                                    Storyboard.TargetProperty="(TextBlock.FontWeight)"
-                                                                                                    Duration="0">
-                                                                                <DiscreteObjectKeyFrame KeyTime="0" Value="SemiBold" />
-                                                                            </ObjectAnimationUsingKeyFrames>
-                                                                        </Storyboard>
-                                                                    </VisualState>
-                                                                </VisualStateGroup>
-                                                            </VisualStateManager.VisualStateGroups>
-                                                            <Border x:Name="SelectedBorder" Background="Transparent" CornerRadius="20" HorizontalAlignment="Left">
-                                                                <Border x:Name="ContainerBorder" Background="Transparent" Grid.Column="1" Margin="10,5,10,5" TextBlock.FontSize="16" TextBlock.Foreground="{DynamicResource Theme_TextBrush}">
-                                                                    <ContentPresenter x:Name="Presenter" TextBlock.Foreground="{Binding (TextBlock.Foreground), ElementName=ContainerBorder}"/>
-                                                                </Border>
-                                                            </Border>
-                                                        </Border>
-                                                    </ControlTemplate>
-                                                </Setter.Value>
-                                            </Setter>
-                                        </Style>
-                                    </ListBox.ItemContainerStyle>
-                                    <ListBox.ItemTemplate>
-                                        <DataTemplate>
-                                            <Border Cursor="Hand">
-                                                <TextBlock Text="{Binding Name}"/>
-                                            </Border>
-                                        </DataTemplate>
-                                    </ListBox.ItemTemplate>
-                                </ListBox>-->
                             </StackPanel>
                         </ScrollViewer>
                     </DockPanel>
