@@ -256,6 +256,7 @@
     <Compile Include="Other\Elements.cs" />
     <Compile Include="Other\Internals\CharacterClickService.cs" />
     <Compile Include="Other\Internals\ItemsControlLoadingBehavior.cs" />
+    <Compile Include="Other\Internals\Menu\MenuIconBrushConverter.cs" />
     <Compile Include="Other\Internals\Menu\TreeViewHelpers.cs" />
     <Compile Include="Other\Internals\Menu\UIElementHelpers.cs" />
     <Compile Include="Other\Internals\Search\SamplesInfoLoader.cs" />

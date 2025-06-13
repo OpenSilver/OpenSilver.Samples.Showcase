@@ -6,9 +6,6 @@
     xmlns:search="clr-namespace:OpenSilver.Samples.Showcase.Search"
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase"
     Title="Icons - OpenSilver Features Showcase">
-    <Page.Resources>
-        <FontFamily x:Key="MaterialIconsRegular_FontFamily">ms-appx:///OpenSilver.Samples.Showcase/Samples/Icons/MaterialIcons-Regular.ttf</FontFamily>
-    </Page.Resources>
     <StackPanel>
         <StackPanel>
             <ContentControl Content="Icons" Style="{StaticResource PageTitle_Style}"/>

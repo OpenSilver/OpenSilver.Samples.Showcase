@@ -1,9 +1,11 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:animations="clr-namespace:OpenSilver.Animations;assembly=OpenSilver.Animations">
+    xmlns:animations="clr-namespace:OpenSilver.Animations;assembly=OpenSilver.Animations"
+    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
 
     <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    <local:MenuIconBrushConverter x:Key="MenuIconBrushConverter"/>
 
     <Style x:Key="Menu_PageCategory_TreeViewItem_Style" TargetType="TreeViewItem">
         <Setter Property="IsTabStop" Value="False" />
@@ -40,7 +42,7 @@
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Background" Value="Transparent" />
-        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Cursor" Value="Hand" />
         <Setter Property="IsTabStop" Value="True" />
         <Setter Property="TabNavigation" Value="Once" />
@@ -183,8 +185,7 @@
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="0" />
-                            <!--<ColumnDefinition Width="15" />-->
+                            <ColumnDefinition Width="0" /><!-- Replace 0 with another value to show the expand/collapse button -->
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
@@ -193,9 +194,7 @@
                               x:Name="grid">
                             <Border x:Name="Background"
                                     CornerRadius="12"
-                                    BorderBrush="{TemplateBinding BorderBrush}"
-                                    BorderThickness="1"
-                                    Background="{DynamicResource Theme_PrimaryBrush}" />
+                                    Background="{Binding DataContext.IconBrush, RelativeSource={RelativeSource AncestorType=TreeViewItem, Mode=FindAncestor}}" />
                         </Grid>
                         <ToggleButton HorizontalAlignment="Stretch"
                               x:Name="ExpanderButton"
@@ -328,7 +327,7 @@
                                         </VisualStateManager.VisualStateGroups>
                                         <Border x:Name="Hover"
                                                 Opacity="0"
-                                                Background="{DynamicResource Theme_PrimaryBrush}"
+                                                Background="{Binding DataContext.IconBrush, RelativeSource={RelativeSource AncestorType=TreeViewItem, Mode=FindAncestor}}"
                                                 IsHitTestVisible="False"
                                                 CornerRadius="12" />
                                         <ContentPresenter Cursor="{TemplateBinding Cursor}"
@@ -368,7 +367,25 @@
                     <!-- Template for items within categories -->
                     <HierarchicalDataTemplate.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Name}" FontSize="16"/>
+                            <StackPanel Orientation="Horizontal">
+
+                                <TextBlock
+                                        Text="{Binding Icon}"
+                                        FontFamily="{StaticResource MaterialIconsRegular_FontFamily}"
+                                        FontSize="16"
+                                        Opacity="0.7"
+                                        VerticalAlignment="Center">
+                                    <TextBlock.Foreground>
+                                        <MultiBinding Converter="{StaticResource MenuIconBrushConverter}">
+                                            <Binding RelativeSource="{RelativeSource AncestorType=TreeViewItem}"/>
+                                            <Binding Path="IsSelected" RelativeSource="{RelativeSource AncestorType=TreeViewItem}"/>
+                                        </MultiBinding>
+                                    </TextBlock.Foreground>
+                                </TextBlock>
+
+                                <TextBlock Margin="10,0,0,0" Text="{Binding Name}" FontSize="16" VerticalAlignment="Center"/>
+
+                            </StackPanel>
                         </DataTemplate>
                     </HierarchicalDataTemplate.ItemTemplate>
 
