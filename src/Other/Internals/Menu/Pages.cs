@@ -61,6 +61,7 @@ namespace OpenSilver.Samples.Showcase
                                 {
                                     new PageInfo { Name = "Interop", Path = "/Interop_Samples", Icon = "\uEACD", IconBrush = brush3 },
                                     new PageInfo { Name = "Performance", Path = "/Performance", Icon = "\uEB9B", IconBrush = brush3 },
+                                    new PageInfo { Name = "Performance Test", Path = "/Perf_Test", Icon = "\uEB9B", IconBrush = brush3 },
                                     new PageInfo { Name = "Third-Party", Path = "/Third_Party", Icon = "\uEBBB", IconBrush = brush3 },
                                     LandingPageInfo,
                                     SearchPageInfo

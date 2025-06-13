@@ -1,0 +1,28 @@
+﻿<Page x:Class="OpenSilver.Samples.Showcase.Perf_Test"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:controlskit="clr-namespace:OpenSilver.ControlsKit;assembly=OpenSilver.ControlsKit.Controls"
+      xmlns:local="clr-namespace:OpenSilver.Samples.Showcase"
+      xmlns:search="clr-namespace:OpenSilver.Samples.Showcase.Search"
+      Title="Performance Test - OpenSilver Features Showcase">
+
+    <StackPanel>
+        <Button Click="Button_Click" Content="Render Every Demo One-by-One"/>
+        <ProgressBar Name="progressBar"/>
+        <ScrollViewer Height="100">
+            <StackPanel Name="resultsPanel"/>
+        </ScrollViewer>
+        <ComboBox Name="controlsCombo"
+                  DisplayMemberPath="Name"
+                  SelectionChanged="ComboBox_SelectionChanged">
+            <!--<ComboBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel/>
+                </ItemsPanelTemplate>
+            </ComboBox.ItemsPanel>-->
+        </ComboBox>
+        <TextBlock Name="result"/>
+
+        <Border Name="container" Height="500"/>
+    </StackPanel>
+</Page>

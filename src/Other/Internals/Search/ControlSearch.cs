@@ -5,7 +5,7 @@ namespace OpenSilver.Samples.Showcase.Search
 {
     public static class ControlSearch
     {
-        private static List<SearchableItem> controls = SamplesInfoLoader.GetAllControls();
+        public static List<SearchableItem> controls = SamplesInfoLoader.GetAllControls();
 
         public static readonly string[] SearchKeywords = controls
             .SelectMany(x => x.Keywords.Append(x.Name))
