@@ -36,8 +36,8 @@
             <TabItem Header="Material Icons" IsSelected="True">
                 <TextBlock x:Name="MaterialIconsTextBlock" TextWrapping="Wrap" Margin="0,20,0,20" FontSize="24" Cursor="Hand" FontFamily="{StaticResource MaterialIconsRegular_FontFamily}"/>
             </TabItem>
-            <TabItem Header="Emoji Characters">
-                <TextBlock x:Name="EmojiCharactersTextBlock" TextWrapping="Wrap" Margin="0,20,0,20" FontSize="24" Cursor="Hand" FontFamily="Segoe UI Emoji, Apple Color Emoji, Noto Color Emoji, sans-serif"/>
+            <TabItem Header="Emoji Characters" HorizontalContentAlignment="Left">
+                <TextBlock x:Name="EmojiCharactersTextBlock" TextWrapping="Wrap" Margin="0,20,0,20" FontSize="32" MaxWidth="700" Cursor="Hand" FontFamily="Segoe UI Emoji, Apple Color Emoji, Noto Color Emoji, sans-serif"/>
             </TabItem>
         </TabControl>
 
