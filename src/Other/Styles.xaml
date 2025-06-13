@@ -4,6 +4,16 @@
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
 
     <FontFamily x:Key="InterFontFamily">ms-appx:///OpenSilver.Samples.Showcase/Other/Inter_VariableFont_slnt_wght.ttf</FontFamily>
+
+    <LinearGradientBrush x:Name="MainGradientBrush" StartPoint="0,0" EndPoint="1,0">
+        <GradientStop Offset="0" Color="#FF3288F1"/>
+        <GradientStop Offset="0.2" Color="#FF9442FD"/>
+        <GradientStop Offset="0.4" Color="#FFC534CD"/>
+        <GradientStop Offset="0.6" Color="#FFEE3881"/>
+        <GradientStop Offset="0.8" Color="#FFFB7434"/>
+        <GradientStop Offset="1" Color="#FFFFB200"/>
+    </LinearGradientBrush>
+
     <Style x:Key="Page_Style" TargetType="Page">
         <Style.Setters>
             <Setter Property="Margin" Value="20,0,0,0"/>
@@ -29,18 +39,7 @@
             <Setter Property="FontFamily" Value="{StaticResource InterFontFamily}"/>
             <Setter Property="Margin" Value="27,32,50,10"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
-            <Setter Property="Foreground">
-                <Setter.Value>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                        <GradientStop Offset="0" Color="#FF3288F1"/>
-                        <GradientStop Offset="0.2" Color="#FF9442FD"/>
-                        <GradientStop Offset="0.4" Color="#FFC534CD"/>
-                        <GradientStop Offset="0.6" Color="#FFEE3881"/>
-                        <GradientStop Offset="0.8" Color="#FFFB7434"/>
-                        <GradientStop Offset="1" Color="#FFFFB200"/>
-                    </LinearGradientBrush>
-                </Setter.Value>
-            </Setter>
+            <Setter Property="Foreground" Value="{StaticResource MainGradientBrush}"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ContentControl">
@@ -418,18 +417,7 @@
             <Setter Property="Margin" Value="21,20,10,20"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
             <Setter Property="Background" Value="{DynamicResource Theme_BackgroundBrush}"/>
-            <Setter Property="Foreground">
-                <Setter.Value>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                        <GradientStop Offset="0" Color="#FF3288F1"/>
-                        <GradientStop Offset="0.2" Color="#FF9442FD"/>
-                        <GradientStop Offset="0.4" Color="#FFC534CD"/>
-                        <GradientStop Offset="0.6" Color="#FFEE3881"/>
-                        <GradientStop Offset="0.8" Color="#FFFB7434"/>
-                        <GradientStop Offset="1" Color="#FFFFB200"/>
-                    </LinearGradientBrush>
-                </Setter.Value>
-            </Setter>
+            <Setter Property="Foreground" Value="{StaticResource MainGradientBrush}"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ContentControl">
