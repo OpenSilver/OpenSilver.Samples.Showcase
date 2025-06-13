@@ -34,7 +34,8 @@ namespace OpenSilver.Samples.Showcase
                                 new PageInfo { Name = "XAML Features", Path = "/XAML_Features", IsVisibleInMenu = true },
                                 new PageInfo { Name = "Layout", Path = "/XAML_Layout", IsVisibleInMenu = true },
                                 new PageInfo { Name = "JS Libs", Path = "/JS_Libs", IsVisibleInMenu = true },
-                                new PageInfo { Name = "Charts", Path = "/Charts", IsVisibleInMenu = true }
+                                new PageInfo { Name = "Charts", Path = "/Charts", IsVisibleInMenu = true },
+                                new PageInfo { Name = "Icons", Path = "/Icons", IsVisibleInMenu = true }
                             }
                         },
                         new PageCategoryInfo

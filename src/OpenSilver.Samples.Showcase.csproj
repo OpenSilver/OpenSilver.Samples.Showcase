@@ -69,6 +69,9 @@
     <Page Include="Samples\Client_Server\RIAServices\RIAServices_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\Icons\CodeSnippetChildWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\Interop_Samples\PWA\PWA_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -150,6 +153,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\Performance\Virtualization\Virtualization_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Icons\Icons.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\SearchPage.xaml">
@@ -248,6 +254,7 @@
     <Compile Include="Other\Converters\StringEmptyToVisibilityConverter.cs" />
     <Compile Include="Other\Converters\RgbToBrushConverter.cs" />
     <Compile Include="Other\Elements.cs" />
+    <Compile Include="Other\Internals\CharacterClickService.cs" />
     <Compile Include="Other\Internals\ItemsControlLoadingBehavior.cs" />
     <Compile Include="Other\Internals\Menu\TreeViewHelpers.cs" />
     <Compile Include="Other\Internals\Menu\UIElementHelpers.cs" />
@@ -282,6 +289,7 @@
     <Compile Include="Samples\Charts\ScatterSeries\ScatterSeries_Demo.xaml.cs" />
     <Compile Include="Samples\Charts\Stacked100AreaSeries\Stacked100AreaSeries_Demo.xaml.cs" />
     <Compile Include="Samples\Client_Server\RIAServices\RIAServices_Demo.xaml.cs" />
+    <Compile Include="Samples\Icons\CodeSnippetChildWindow.xaml.cs" />
     <Compile Include="Samples\Interop_Samples\HtmlPresenter\HtmlColorPicker.cs" />
     <Compile Include="Samples\Interop_Samples\PWA\PWA_Demo.xaml.cs" />
     <Compile Include="Samples\JS_Libs\FileLoader.cs" />
@@ -317,6 +325,7 @@
     <Compile Include="Samples\Performance\AOTCompilation\AOT_Demo.xaml.cs" />
     <Compile Include="Samples\Performance\Progressive_Loading\ProgressiveLoading_Demo.xaml.cs" />
     <Compile Include="Samples\Performance\Virtualization\Virtualization_Demo.xaml.cs" />
+    <Compile Include="Samples\Icons\Icons.xaml.cs" />
     <Compile Include="Samples\SearchPage.xaml.cs" />
     <Compile Include="Samples\\XAML_Layout\\Accordion\\Accordion_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Controls\BusyIndicator\BusyIndicator_Demo.xaml.cs" />
@@ -409,7 +418,9 @@
     <Content Include="Other\smallBall.png" />
     <Content Include="Other\SampleVideo.mp4" />
     <Content Include="Other\SampleAudio.mp3" />
+    <Content Include="Samples\Icons\MaterialIcons-Regular.ttf" />
     <None Include="Properties\launchSettings.json" />
+    <Content Include="Samples\Icons\MaterialIcons-Regular.codepoints.txt" />
     <Page Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
