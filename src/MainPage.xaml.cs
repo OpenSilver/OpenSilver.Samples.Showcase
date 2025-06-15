@@ -285,6 +285,10 @@ namespace OpenSilver.Samples.Showcase
             {
                 GoToState(CurrentState.SmallResolution_HideMenu);
             }
+
+            double actualHeight = this.ActualHeight;
+            OpenSilverLogoButton.Visibility = (actualHeight >= 460 ? Visibility.Visible : Visibility.Collapsed);
+            HorizontalSeparatorThinBar.Visibility = (actualHeight < 920 ? Visibility.Visible : Visibility.Collapsed);
         }
 
         void ButtonToHideOrShowMenu_Click(object sender, RoutedEventArgs e)

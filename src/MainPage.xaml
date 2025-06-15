@@ -44,23 +44,7 @@ mc:Ignorable="d"
                         <TranslateTransform/>
                     </Border.RenderTransform>
                     <DockPanel LastChildFill="True">
-                        <Border DockPanel.Dock="Bottom" Margin="0,10,0,20" Padding="3" CornerRadius="7" HorizontalAlignment="Center" Background="{DynamicResource Theme_BackgroundBrush}">
-                            <StackPanel Orientation="Horizontal">
-                                <RadioButton x:Name="LightThemeRadioButton" IsChecked="True" Checked="ThemeToggle_RadioButton_Checked" Style="{StaticResource LightDarkToggle_RadioButton_Style}" animations:SpringEffect.IsEnabled="True">
-                                    <StackPanel Orientation="Horizontal">
-                                        <local:SvgImage x:Name="lightThemeImage" Width="20" Height="20" Source="/Other/Icons/LightTheme.svg" FillColor="{Binding Path=Foreground.(SolidColorBrush.Color), RelativeSource={RelativeSource AncestorType=ContentControl}}"/>
-                                        <TextBlock Margin="3" VerticalAlignment="Center" FontSize="11" FontWeight="Bold" Text="Light" Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"/>
-                                    </StackPanel>
-                                </RadioButton>
-                                <RadioButton x:Name="DarkThemeRadioButton" Margin="4,0,0,0" Checked="ThemeToggle_RadioButton_Checked" Style="{StaticResource LightDarkToggle_RadioButton_Style}" animations:SpringEffect.IsEnabled="True">
-                                    <StackPanel Orientation="Horizontal">
-                                        <local:SvgImage x:Name="darkThemeImage" Width="20" Height="20" Source="/Other/Icons/DarkTheme.svg" FillColor="{Binding Path=Foreground.(SolidColorBrush.Color), RelativeSource={RelativeSource AncestorType=ContentControl}}"/>
-                                        <TextBlock Margin="3" VerticalAlignment="Center" FontSize="11" FontWeight="Bold" Text="Dark" Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"/>
-                                    </StackPanel>
-                                </RadioButton>
-                            </StackPanel>
-                        </Border>
-                        <HyperlinkButton DockPanel.Dock="Bottom" x:Name="HyperlinkButtonDemo" NavigateUri="https://opensilver.net" Margin="0,0,0,6" Padding="0" TargetName="_blank" Cursor="Hand" HorizontalAlignment="Center" animations:SpringEffect.IsEnabled="True">
+                        <HyperlinkButton x:Name="OpenSilverLogoButton" DockPanel.Dock="Bottom" NavigateUri="https://opensilver.net" Margin="0,0,0,6" Padding="0" TargetName="_blank" Cursor="Hand" HorizontalAlignment="Center" animations:SpringEffect.IsEnabled="True">
                             <Grid>
                                 <!--<Border Opacity="0.3" CornerRadius="15">
                                     <Border.Effect>
@@ -68,7 +52,6 @@ mc:Ignorable="d"
                                     </Border.Effect>
                                 </Border>-->
                                 <StackPanel>
-                                    <Rectangle Height="1" Margin="0,-1,0,6" Fill="{DynamicResource Theme_TextBrush}" Opacity="0.3" HorizontalAlignment="Stretch"/>
                                     <TextBlock Text="MADE WITH" Margin="0,5,0,0" Foreground="{StaticResource MainGradientBrush}" CharacterSpacing="70" Opacity="0.7" FontWeight="Bold" FontSize="11" HorizontalAlignment="Center" />
                                     <Grid Margin="0,0,0,0" Width="130" HorizontalAlignment="Stretch">
                                         <Image Source="/OpenSilver.Samples.Showcase;component/Other/Images/LogoOpenSilverDark.png" x:Name="LogoOpenSilverDark" Opacity="0"/>
@@ -84,6 +67,23 @@ mc:Ignorable="d"
                                 </StackPanel>
                             </Grid>
                         </HyperlinkButton>
+                        <Border DockPanel.Dock="Bottom" Margin="0,5,0,8" Padding="3" CornerRadius="7" HorizontalAlignment="Center" Background="{DynamicResource Theme_BackgroundBrush}">
+                            <StackPanel Orientation="Horizontal">
+                                <RadioButton x:Name="LightThemeRadioButton" IsChecked="True" Checked="ThemeToggle_RadioButton_Checked" Style="{StaticResource LightDarkToggle_RadioButton_Style}" animations:SpringEffect.IsEnabled="True">
+                                    <StackPanel Orientation="Horizontal">
+                                        <local:SvgImage x:Name="lightThemeImage" Width="20" Height="20" Source="/Other/Icons/LightTheme.svg" FillColor="{Binding Path=Foreground.(SolidColorBrush.Color), RelativeSource={RelativeSource AncestorType=ContentControl}}"/>
+                                        <TextBlock Margin="3" VerticalAlignment="Center" FontSize="11" FontWeight="Bold" Text="Light" Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"/>
+                                    </StackPanel>
+                                </RadioButton>
+                                <RadioButton x:Name="DarkThemeRadioButton" Margin="4,0,0,0" Checked="ThemeToggle_RadioButton_Checked" Style="{StaticResource LightDarkToggle_RadioButton_Style}" animations:SpringEffect.IsEnabled="True">
+                                    <StackPanel Orientation="Horizontal">
+                                        <local:SvgImage x:Name="darkThemeImage" Width="20" Height="20" Source="/Other/Icons/DarkTheme.svg" FillColor="{Binding Path=Foreground.(SolidColorBrush.Color), RelativeSource={RelativeSource AncestorType=ContentControl}}"/>
+                                        <TextBlock Margin="3" VerticalAlignment="Center" FontSize="11" FontWeight="Bold" Text="Dark" Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"/>
+                                    </StackPanel>
+                                </RadioButton>
+                            </StackPanel>
+                        </Border>
+                        <Rectangle x:Name="HorizontalSeparatorThinBar" DockPanel.Dock="Bottom" Height="1" Margin="0,0,0,6" Fill="{DynamicResource Theme_TextBrush}" Opacity="0.3" HorizontalAlignment="Stretch"/>
                         <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Padding="0">
                             <StackPanel>
                                 <Grid Margin="15,15,15,0" HorizontalAlignment="Stretch" Cursor="Hand" MouseLeftButtonDown="Logo_MouseLeftButtonDown" animations:SpringEffect.IsEnabled="True">
