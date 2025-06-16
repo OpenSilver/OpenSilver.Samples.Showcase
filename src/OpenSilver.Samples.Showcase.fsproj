@@ -24,6 +24,7 @@
 
 	<ItemGroup>
 		<Content Include="Connected Services\ServiceReference1\ConnectedService.json" />
+		<Compile Include="Other\Internals\Menu\MenuIconBrushConverter.fs" />
     <Compile Include="Samples\JS_Libs\FileLoader.fs" />
 		<Compile Include="Other\Controls\JsParticlesEffect.fs" />
 		<Compile Include="Other\Controls\SvgImage.fs" />
