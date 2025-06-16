@@ -252,6 +252,7 @@
     <Compile Include="Other\Converters\StringEmptyToVisibilityConverter.vb" />
     <Compile Include="Other\Elements.vb" />
     <Compile Include="Other\Internals\ItemsControlLoadingBehavior.vb" />
+    <Compile Include="Other\Internals\Menu\MenuIconBrushConverter.vb" />
     <Compile Include="Other\Internals\Menu\TreeViewHelpers.vb" />
     <Compile Include="Other\Internals\Menu\UIElementHelpers.vb" />
     <Compile Include="Other\Internals\Search\ControlSearch.vb" />

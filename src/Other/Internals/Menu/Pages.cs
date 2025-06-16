@@ -22,47 +22,51 @@ namespace OpenSilver.Samples.Showcase
             {
                 if (_allPagesAndCategories == null)
                 {
+                    var brush1 = new SolidColorBrush(Color.FromRgb(85, 119, 240));
+                    var brush2 = new SolidColorBrush(Color.FromRgb(205, 63, 186));
+                    var brush3 = new SolidColorBrush(Color.FromRgb(253, 163, 28));
+
                     _allPagesAndCategories = new ObservableCollection<PageCategoryInfo>
-                    {
-                        new PageCategoryInfo
                         {
-                            Name = "XAML & UI",
-                            Foreground = new SolidColorBrush(Color.FromRgb(85, 119, 240)),
-                            Pages = new ObservableCollection<PageInfo>
+                            new PageCategoryInfo
                             {
-                                new PageInfo { Name = "Controls", Path = "/XAML_Controls", IsVisibleInMenu = true },
-                                new PageInfo { Name = "XAML Features", Path = "/XAML_Features", IsVisibleInMenu = true },
-                                new PageInfo { Name = "Layout", Path = "/XAML_Layout", IsVisibleInMenu = true },
-                                new PageInfo { Name = "JS Libs", Path = "/JS_Libs", IsVisibleInMenu = true },
-                                new PageInfo { Name = "Charts", Path = "/Charts", IsVisibleInMenu = true },
-                                new PageInfo { Name = "Icons", Path = "/Icons", IsVisibleInMenu = true }
-                            }
-                        },
-                        new PageCategoryInfo
-                        {
-                            Name = "NON-UI",
-                            Foreground = new SolidColorBrush(Color.FromRgb(205, 63, 186)),
-                            Pages = new ObservableCollection<PageInfo>
+                                Name = "XAML & UI",
+                                Foreground = brush1,
+                                Pages = new ObservableCollection<PageInfo>
+                                {
+                                    new PageInfo { Name = "Controls", Path = "/XAML_Controls", Icon = "\uE913", IconBrush = brush1 },
+                                    new PageInfo { Name = "XAML Features", Path = "/XAML_Features", Icon = "\uE920", IconBrush = brush1 },
+                                    new PageInfo { Name = "Layout", Path = "/XAML_Layout", Icon = "\uE66B", IconBrush = brush1 },
+                                    new PageInfo { Name = "JS Libs", Path = "/JS_Libs", Icon = "\uEB7C", IconBrush = brush1 },
+                                    new PageInfo { Name = "Charts", Path = "/Charts", Icon = "\uE24B", IconBrush = brush1 },
+                                    new PageInfo { Name = "Icons", Path = "/Icons", Icon = "\uE3B6", IconBrush = brush1 },
+                                }
+                            },
+                            new PageCategoryInfo
                             {
-                                new PageInfo { Name = "Client / Server", Path = "/Client_Server", IsVisibleInMenu = true },
-                                new PageInfo { Name = ".NET Framework", Path = "/Net_Framework", IsVisibleInMenu = true },
-                                new PageInfo { Name = "Native APIs", Path = "/Maui_Hybrid", IsVisibleInMenu = true }
-                            }
-                        },
-                        new PageCategoryInfo
-                        {
-                            Name = "OTHER",
-                            Foreground = new SolidColorBrush(Color.FromRgb(253, 163, 28)),
-                            Pages = new ObservableCollection<PageInfo>
+                                Name = "NON-UI",
+                                Foreground = brush2,
+                                Pages = new ObservableCollection<PageInfo>
+                                {
+                                    new PageInfo { Name = "Client / Server", Path = "/Client_Server", Icon = "\uE1E2", IconBrush = brush2 },
+                                    new PageInfo { Name = ".NET Framework", Path = "/Net_Framework", Icon = "\uE1BD", IconBrush = brush2 },
+                                    new PageInfo { Name = "Native APIs", Path = "/Maui_Hybrid", Icon = "\uE0D4", IconBrush = brush2 },
+                                }
+                            },
+                            new PageCategoryInfo
                             {
-                                new PageInfo { Name = "Interop", Path = "/Interop_Samples", IsVisibleInMenu = true },
-                                new PageInfo { Name = "Performance", Path = "/Performance", IsVisibleInMenu = true },
-                                new PageInfo { Name = "Third-Party", Path = "/Third_Party", IsVisibleInMenu = true },
-                                LandingPageInfo,
-                                SearchPageInfo
+                                Name = "OTHER",
+                                Foreground = brush3,
+                                Pages = new ObservableCollection<PageInfo>
+                                {
+                                    new PageInfo { Name = "Interop", Path = "/Interop_Samples", Icon = "\uEACD", IconBrush = brush3 },
+                                    new PageInfo { Name = "Performance", Path = "/Performance", Icon = "\uEB9B", IconBrush = brush3 },
+                                    new PageInfo { Name = "Third-Party", Path = "/Third_Party", Icon = "\uEBBB", IconBrush = brush3 },
+                                    LandingPageInfo,
+                                    SearchPageInfo
+                                }
                             }
-                        }
-                    };
+                        };
                 }
 
                 return _allPagesAndCategories;
@@ -100,40 +104,6 @@ namespace OpenSilver.Samples.Showcase
                 return _searchPageInfo;
             }
         }
-
-        //public static async Task<bool> SelectPageInTreeView(TreeView treeView, PageInfo pageToSelect, bool searchInCollapsedNodesToo = false)
-        //{
-        //    await UIElementHelpers.WaitForLoadedAsync(treeView);
-        //    await TreeViewHelpers.WaitForContainerGenerationAsync(treeView.ItemContainerGenerator);
-
-        //    foreach (var category in treeView.Items)
-        //    {
-        //        if (treeView.ItemContainerGenerator.ContainerFromItem(category) is TreeViewItem categoryItem)
-        //        {
-        //            if (searchInCollapsedNodesToo)
-        //            {
-        //                // Make sure the child items are created
-        //                categoryItem.IsExpanded = true;
-        //                categoryItem.UpdateLayout();
-        //            }
-
-        //            foreach (var page in ((PageCategoryInfo)category).Pages)
-        //            {
-        //                await TreeViewHelpers.WaitForContainerGenerationAsync(categoryItem.ItemContainerGenerator);
-        //                if (categoryItem.ItemContainerGenerator.ContainerFromItem(page) is TreeViewItem pageItem)
-        //                {
-        //                    if (page == pageToSelect)
-        //                    {
-        //                        pageItem.IsSelected = true;
-        //                        return true;
-        //                    }
-        //                }
-        //            }
-        //        }
-        //    }
-
-        //    return false;
-        //}
     }
 
 }
