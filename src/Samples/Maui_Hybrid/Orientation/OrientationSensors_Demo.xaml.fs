@@ -81,7 +81,7 @@ type public OrientationSensors_Demo() as this =
     member private this.AccelerometerToggleButton_Click(_sender: obj, _e: RoutedEventArgs) =
         MainThread.BeginInvokeOnMainThread(fun () ->
             async {
-                if status = Accelerometer.Default.IsSupported then
+                if Accelerometer.Default.IsSupported then
                     if not Accelerometer.Default.IsMonitoring then
                         Accelerometer.Default.ReadingChanged.AddHandler(
                             EventHandler<AccelerometerChangedEventArgs>(fun s e -> this.Accelerometer_ReadingChanged(s, e))
@@ -105,7 +105,7 @@ type public OrientationSensors_Demo() as this =
     member private this.GyroscopeToggleButton_Click(_sender: obj, _e: RoutedEventArgs) =
         MainThread.BeginInvokeOnMainThread(fun () ->
             async {
-                if status = Gyroscope.Default.IsSupported then
+                if Gyroscope.Default.IsSupported then
                     if not Gyroscope.Default.IsMonitoring then
                         Gyroscope.Default.ReadingChanged.AddHandler(
                             EventHandler<GyroscopeChangedEventArgs>(fun s e -> this.Gyroscope_ReadingChanged(s, e))
@@ -129,7 +129,7 @@ type public OrientationSensors_Demo() as this =
     member private this.MagnetometerToggleButton_Click(_sender: obj, _e: RoutedEventArgs) =
         MainThread.BeginInvokeOnMainThread(fun () ->
             async {
-                if status = Magnetometer.Default.IsSupported then
+                if Magnetometer.Default.IsSupported then
                     if not Magnetometer.Default.IsMonitoring then
                         Magnetometer.Default.ReadingChanged.AddHandler(
                             EventHandler<MagnetometerChangedEventArgs>(fun s e -> this.Magnetometer_ReadingChanged(s, e))
@@ -155,7 +155,7 @@ type public OrientationSensors_Demo() as this =
     member private this.OrientationSensorToggleButton_Click(_sender: obj, _e: RoutedEventArgs) =
         MainThread.BeginInvokeOnMainThread(fun () ->
             async {
-                if status = OrientationSensor.Default.IsSupported then
+                if OrientationSensor.Default.IsSupported then
                     if not OrientationSensor.Default.IsMonitoring then
                         OrientationSensor.Default.ReadingChanged.AddHandler(
                             EventHandler<OrientationSensorChangedEventArgs>(fun s e -> this.OrientationSensor_ReadingChanged(s, e))
