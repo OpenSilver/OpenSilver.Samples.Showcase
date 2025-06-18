@@ -58,13 +58,7 @@ type public OrientationSensors_Demo() as this =
     member private this.CompassToggleButton_Click(_sender: obj, _e: RoutedEventArgs) =
         MainThread.BeginInvokeOnMainThread(fun () ->
             async {
-                let! status = Permissions.CheckStatusAsync<Permissions.Sensors>() |> Async.AwaitTask
-                let! status =
-                    if status <> PermissionStatus.Granted then
-                        Permissions.RequestAsync<Permissions.Sensors>() |> Async.AwaitTask
-                    else async.Return status
-
-                if status = PermissionStatus.Granted && Compass.Default.IsSupported then
+                if Compass.Default.IsSupported then
                     if not Compass.Default.IsMonitoring then
                         Compass.Default.ReadingChanged.AddHandler(
                             EventHandler<CompassChangedEventArgs>(fun s e -> this.Compass_ReadingChanged(s, e))
@@ -87,13 +81,7 @@ type public OrientationSensors_Demo() as this =
     member private this.AccelerometerToggleButton_Click(_sender: obj, _e: RoutedEventArgs) =
         MainThread.BeginInvokeOnMainThread(fun () ->
             async {
-                let! status = Permissions.CheckStatusAsync<Permissions.Sensors>() |> Async.AwaitTask
-                let! status =
-                    if status <> PermissionStatus.Granted then
-                        Permissions.RequestAsync<Permissions.Sensors>() |> Async.AwaitTask
-                    else async.Return status
-
-                if status = PermissionStatus.Granted && Accelerometer.Default.IsSupported then
+                if status = Accelerometer.Default.IsSupported then
                     if not Accelerometer.Default.IsMonitoring then
                         Accelerometer.Default.ReadingChanged.AddHandler(
                             EventHandler<AccelerometerChangedEventArgs>(fun s e -> this.Accelerometer_ReadingChanged(s, e))
@@ -117,13 +105,7 @@ type public OrientationSensors_Demo() as this =
     member private this.GyroscopeToggleButton_Click(_sender: obj, _e: RoutedEventArgs) =
         MainThread.BeginInvokeOnMainThread(fun () ->
             async {
-                let! status = Permissions.CheckStatusAsync<Permissions.Sensors>() |> Async.AwaitTask
-                let! status =
-                    if status <> PermissionStatus.Granted then
-                        Permissions.RequestAsync<Permissions.Sensors>() |> Async.AwaitTask
-                    else async.Return status
-
-                if status = PermissionStatus.Granted && Gyroscope.Default.IsSupported then
+                if status = Gyroscope.Default.IsSupported then
                     if not Gyroscope.Default.IsMonitoring then
                         Gyroscope.Default.ReadingChanged.AddHandler(
                             EventHandler<GyroscopeChangedEventArgs>(fun s e -> this.Gyroscope_ReadingChanged(s, e))
@@ -147,13 +129,7 @@ type public OrientationSensors_Demo() as this =
     member private this.MagnetometerToggleButton_Click(_sender: obj, _e: RoutedEventArgs) =
         MainThread.BeginInvokeOnMainThread(fun () ->
             async {
-                let! status = Permissions.CheckStatusAsync<Permissions.Sensors>() |> Async.AwaitTask
-                let! status =
-                    if status <> PermissionStatus.Granted then
-                        Permissions.RequestAsync<Permissions.Sensors>() |> Async.AwaitTask
-                    else async.Return status
-
-                if status = PermissionStatus.Granted && Magnetometer.Default.IsSupported then
+                if status = Magnetometer.Default.IsSupported then
                     if not Magnetometer.Default.IsMonitoring then
                         Magnetometer.Default.ReadingChanged.AddHandler(
                             EventHandler<MagnetometerChangedEventArgs>(fun s e -> this.Magnetometer_ReadingChanged(s, e))
@@ -179,13 +155,7 @@ type public OrientationSensors_Demo() as this =
     member private this.OrientationSensorToggleButton_Click(_sender: obj, _e: RoutedEventArgs) =
         MainThread.BeginInvokeOnMainThread(fun () ->
             async {
-                let! status = Permissions.CheckStatusAsync<Permissions.Sensors>() |> Async.AwaitTask
-                let! status =
-                    if status <> PermissionStatus.Granted then
-                        Permissions.RequestAsync<Permissions.Sensors>() |> Async.AwaitTask
-                    else async.Return status
-
-                if status = PermissionStatus.Granted && OrientationSensor.Default.IsSupported then
+                if status = OrientationSensor.Default.IsSupported then
                     if not OrientationSensor.Default.IsMonitoring then
                         OrientationSensor.Default.ReadingChanged.AddHandler(
                             EventHandler<OrientationSensorChangedEventArgs>(fun s e -> this.OrientationSensor_ReadingChanged(s, e))

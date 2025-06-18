@@ -29,42 +29,31 @@ Namespace OpenSilver.Samples.Showcase
 
         Private Async Sub PickImageButton_Click(sender As Object, e As RoutedEventArgs)
             Await MainThread.InvokeOnMainThreadAsync(Async Function()
-                                                         ' Check the current storage permission status.
-                                                         Dim status As PermissionStatus = Await Permissions.CheckStatusAsync(Of Permissions.StorageRead)()
+                                                         Try
+                                                             Dim options As PickOptions = PickOptions.Images
+                                                             Dim result As FileResult = Await FilePicker.Default.PickAsync(options)
 
-                                                         ' If permission is not granted, request it.
-                                                         If status <> PermissionStatus.Granted Then
-                                                             status = Await Permissions.RequestAsync(Of Permissions.StorageRead)()
-                                                         End If
+                                                             If result IsNot Nothing Then
+                                                                 _pickedFileFullPath = result.FullPath
+                                                                 ShareButton.Visibility = Visibility.Visible
+                                                                 PickedImageControl.Visibility = Visibility.Visible
+                                                                 FeatureNotAllowedTextBlock.Visibility = Visibility.Collapsed
 
-                                                         ' If permission is granted, allow file picking.
-                                                         If status = PermissionStatus.Granted Then
-                                                             Try
-                                                                 Dim options As PickOptions = PickOptions.Images
-                                                                 Dim result As FileResult = Await FilePicker.Default.PickAsync(options)
-
-                                                                 If result IsNot Nothing Then
-                                                                     _pickedFileFullPath = result.FullPath
-                                                                     ShareButton.Visibility = Visibility.Visible
-                                                                     PickedImageControl.Visibility = Visibility.Visible
-                                                                     FeatureNotAllowedTextBlock.Visibility = Visibility.Collapsed
-
-                                                                     If result.FileName.EndsWith("jpg", StringComparison.OrdinalIgnoreCase) OrElse
+                                                                 If result.FileName.EndsWith("jpg", StringComparison.OrdinalIgnoreCase) OrElse
                                                                         result.FileName.EndsWith("png", StringComparison.OrdinalIgnoreCase) Then
 
-                                                                         Using stream As System.IO.Stream = Await result.OpenReadAsync()
-                                                                             Dim bitmapImage As New BitmapImage()
-                                                                             bitmapImage.SetSource(stream)
-                                                                             PickedImageControl.Source = bitmapImage
-                                                                         End Using
-                                                                     End If
+                                                                     Using stream As System.IO.Stream = Await result.OpenReadAsync()
+                                                                         Dim bitmapImage As New BitmapImage()
+                                                                         bitmapImage.SetSource(stream)
+                                                                         PickedImageControl.Source = bitmapImage
+                                                                     End Using
                                                                  End If
-                                                             Catch ex As PermissionException
-                                                                 FeatureNotAllowedTextBlock.Visibility = Visibility.Visible
-                                                             Catch ex As Exception
-                                                                 ' The user canceled or something went wrong
-                                                             End Try
-                                                         End If
+                                                             End If
+                                                         Catch ex As PermissionException
+                                                             FeatureNotAllowedTextBlock.Visibility = Visibility.Visible
+                                                         Catch ex As Exception
+                                                             ' The user canceled or something went wrong
+                                                         End Try
                                                      End Function)
         End Sub
 

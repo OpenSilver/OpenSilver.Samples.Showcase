@@ -31,39 +31,26 @@ namespace OpenSilver.Samples.Showcase
         {
             MainThread.BeginInvokeOnMainThread(async () =>
             {
-                // Check the current location permission status.
-                var status = await Permissions.CheckStatusAsync<Permissions.Sensors>();
-
-                // If permission is not granted, request it.
-                if (status != PermissionStatus.Granted)
+                if (Barometer.Default.IsSupported)
                 {
-                    status = await Permissions.RequestAsync<Permissions.Sensors>();
-                }
-
-                // If permission is granted, fetch the location.
-                if (status == PermissionStatus.Granted)
-                {
-                    if (Barometer.Default.IsSupported)
+                    if (!Barometer.Default.IsMonitoring)
                     {
-                        if (!Barometer.Default.IsMonitoring)
-                        {
-                            // Turn on Barometer
-                            Barometer.Default.ReadingChanged += Barometer_ReadingChanged;
-                            Barometer.Default.Start(SensorSpeed.UI);
-                            BarometerTextBlock.Foreground = new SolidColorBrush(Colors.Green);
-                        }
-                        else
-                        {
-                            // Turn off Barometer
-                            Barometer.Default.Stop();
-                            Barometer.Default.ReadingChanged -= Barometer_ReadingChanged;
-                            BarometerTextBlock.SetValue(TextBlock.ForegroundProperty, DependencyProperty.UnsetValue);
-                        }
+                        // Turn on Barometer
+                        Barometer.Default.ReadingChanged += Barometer_ReadingChanged;
+                        Barometer.Default.Start(SensorSpeed.UI);
+                        BarometerTextBlock.Foreground = new SolidColorBrush(Colors.Green);
                     }
                     else
                     {
-                        BarometerTextBlock.Text = $"The barometer is not supported on this device.";
+                        // Turn off Barometer
+                        Barometer.Default.Stop();
+                        Barometer.Default.ReadingChanged -= Barometer_ReadingChanged;
+                        BarometerTextBlock.SetValue(TextBlock.ForegroundProperty, DependencyProperty.UnsetValue);
                     }
+                }
+                else
+                {
+                    BarometerTextBlock.Text = $"The barometer is not supported on this device.";
                 }
             });
         }

@@ -69,37 +69,24 @@ namespace OpenSilver.Samples.Showcase
         {
             MainThread.BeginInvokeOnMainThread(async () =>
             {
-                // Check the current location permission status.
-                var status = await Permissions.CheckStatusAsync<Permissions.Sensors>();
-
-                // If permission is not granted, request it.
-                if (status != PermissionStatus.Granted)
+                if (Compass.Default.IsSupported)
                 {
-                    status = await Permissions.RequestAsync<Permissions.Sensors>();
-                }
-
-                // If permission is granted, fetch the location.
-                if (status == PermissionStatus.Granted)
-                {
-                    if (Compass.Default.IsSupported)
+                    if (!Compass.Default.IsMonitoring)
                     {
-                        if (!Compass.Default.IsMonitoring)
-                        {
-                            // Turn on compass
-                            Compass.Default.ReadingChanged += Compass_ReadingChanged;
-                            Compass.Default.Start(SensorSpeed.UI);
-                            //CompassPath.Stroke = new SolidColorBrush(Colors.Green);
-                            TextBlock.SetForeground(CompassPath, new SolidColorBrush(Colors.Green));
-                        }
-                        else
-                        {
-                            // Turn off compass
-                            Compass.Default.Stop();
-                            Compass.Default.ReadingChanged -= Compass_ReadingChanged;
-                            //CompassPath.SetValue(Path.StrokeProperty, DependencyProperty.UnsetValue);
+                        // Turn on compass
+                        Compass.Default.ReadingChanged += Compass_ReadingChanged;
+                        Compass.Default.Start(SensorSpeed.UI);
+                        //CompassPath.Stroke = new SolidColorBrush(Colors.Green);
+                        TextBlock.SetForeground(CompassPath, new SolidColorBrush(Colors.Green));
+                    }
+                    else
+                    {
+                        // Turn off compass
+                        Compass.Default.Stop();
+                        Compass.Default.ReadingChanged -= Compass_ReadingChanged;
+                        //CompassPath.SetValue(Path.StrokeProperty, DependencyProperty.UnsetValue);
 
-                            CompassPath.SetValue(TextBlock.ForegroundProperty, DependencyProperty.UnsetValue);
-                        }
+                        CompassPath.SetValue(TextBlock.ForegroundProperty, DependencyProperty.UnsetValue);
                     }
                 }
             });
@@ -117,32 +104,19 @@ namespace OpenSilver.Samples.Showcase
         {
             MainThread.BeginInvokeOnMainThread(async () =>
             {
-                // Check the current location permission status.
-                var status = await Permissions.CheckStatusAsync<Permissions.Sensors>();
-
-                // If permission is not granted, request it.
-                if (status != PermissionStatus.Granted)
+                if (Accelerometer.Default.IsSupported)
                 {
-                    status = await Permissions.RequestAsync<Permissions.Sensors>();
-                }
-
-                // If permission is granted, fetch the location.
-                if (status == PermissionStatus.Granted)
-                {
-                    if (Accelerometer.Default.IsSupported)
+                    if (!Accelerometer.Default.IsMonitoring)
                     {
-                        if (!Accelerometer.Default.IsMonitoring)
-                        {
-                            // Turn on Accelerometer
-                            Accelerometer.Default.ReadingChanged += Accelerometer_ReadingChanged;
-                            Accelerometer.Default.Start(SensorSpeed.UI);
-                        }
-                        else
-                        {
-                            // Turn off Accelerometer
-                            Accelerometer.Default.Stop();
-                            Accelerometer.Default.ReadingChanged -= Accelerometer_ReadingChanged;
-                        }
+                        // Turn on Accelerometer
+                        Accelerometer.Default.ReadingChanged += Accelerometer_ReadingChanged;
+                        Accelerometer.Default.Start(SensorSpeed.UI);
+                    }
+                    else
+                    {
+                        // Turn off Accelerometer
+                        Accelerometer.Default.Stop();
+                        Accelerometer.Default.ReadingChanged -= Accelerometer_ReadingChanged;
                     }
                 }
             });
@@ -162,32 +136,19 @@ namespace OpenSilver.Samples.Showcase
         {
             MainThread.BeginInvokeOnMainThread(async () =>
             {
-                // Check the current location permission status.
-                var status = await Permissions.CheckStatusAsync<Permissions.Sensors>();
-
-                // If permission is not granted, request it.
-                if (status != PermissionStatus.Granted)
+                if (Gyroscope.Default.IsSupported)
                 {
-                    status = await Permissions.RequestAsync<Permissions.Sensors>();
-                }
-
-                // If permission is granted, fetch the location.
-                if (status == PermissionStatus.Granted)
-                {
-                    if (Gyroscope.Default.IsSupported)
+                    if (!Gyroscope.Default.IsMonitoring)
                     {
-                        if (!Gyroscope.Default.IsMonitoring)
-                        {
-                            // Turn on Gyroscope
-                            Gyroscope.Default.ReadingChanged += Gyroscope_ReadingChanged;
-                            Gyroscope.Default.Start(SensorSpeed.UI);
-                        }
-                        else
-                        {
-                            // Turn off Gyroscope
-                            Gyroscope.Default.Stop();
-                            Gyroscope.Default.ReadingChanged -= Gyroscope_ReadingChanged;
-                        }
+                        // Turn on Gyroscope
+                        Gyroscope.Default.ReadingChanged += Gyroscope_ReadingChanged;
+                        Gyroscope.Default.Start(SensorSpeed.UI);
+                    }
+                    else
+                    {
+                        // Turn off Gyroscope
+                        Gyroscope.Default.Stop();
+                        Gyroscope.Default.ReadingChanged -= Gyroscope_ReadingChanged;
                     }
                 }
             });
@@ -207,32 +168,19 @@ namespace OpenSilver.Samples.Showcase
         {
             MainThread.BeginInvokeOnMainThread(async () =>
             {
-                // Check the current location permission status.
-                var status = await Permissions.CheckStatusAsync<Permissions.Sensors>();
-
-                // If permission is not granted, request it.
-                if (status != PermissionStatus.Granted)
+                if (Magnetometer.Default.IsSupported)
                 {
-                    status = await Permissions.RequestAsync<Permissions.Sensors>();
-                }
-
-                // If permission is granted, fetch the location.
-                if (status == PermissionStatus.Granted)
-                {
-                    if (Magnetometer.Default.IsSupported)
+                    if (!Magnetometer.Default.IsMonitoring)
                     {
-                        if (!Magnetometer.Default.IsMonitoring)
-                        {
-                            // Turn on Magnetometer
-                            Magnetometer.Default.ReadingChanged += Magnetometer_ReadingChanged;
-                            Magnetometer.Default.Start(SensorSpeed.Default);
-                        }
-                        else
-                        {
-                            // Turn off Magnetometer
-                            Magnetometer.Default.Stop();
-                            Magnetometer.Default.ReadingChanged -= Magnetometer_ReadingChanged;
-                        }
+                        // Turn on Magnetometer
+                        Magnetometer.Default.ReadingChanged += Magnetometer_ReadingChanged;
+                        Magnetometer.Default.Start(SensorSpeed.Default);
+                    }
+                    else
+                    {
+                        // Turn off Magnetometer
+                        Magnetometer.Default.Stop();
+                        Magnetometer.Default.ReadingChanged -= Magnetometer_ReadingChanged;
                     }
                 }
             });
@@ -255,32 +203,19 @@ namespace OpenSilver.Samples.Showcase
         {
             MainThread.BeginInvokeOnMainThread(async () =>
             {
-                // Check the current location permission status.
-                var status = await Permissions.CheckStatusAsync<Permissions.Sensors>();
-
-                // If permission is not granted, request it.
-                if (status != PermissionStatus.Granted)
+                if (OrientationSensor.Default.IsSupported)
                 {
-                    status = await Permissions.RequestAsync<Permissions.Sensors>();
-                }
-
-                // If permission is granted, fetch the location.
-                if (status == PermissionStatus.Granted)
-                {
-                    if (OrientationSensor.Default.IsSupported)
+                    if (!OrientationSensor.Default.IsMonitoring)
                     {
-                        if (!OrientationSensor.Default.IsMonitoring)
-                        {
-                            // Turn on OrientationSensor
-                            OrientationSensor.Default.ReadingChanged += OrientationSensor_ReadingChanged;
-                            OrientationSensor.Default.Start(SensorSpeed.Default);
-                        }
-                        else
-                        {
-                            // Turn off OrientationSensor
-                            OrientationSensor.Default.Stop();
-                            OrientationSensor.Default.ReadingChanged -= OrientationSensor_ReadingChanged;
-                        }
+                        // Turn on OrientationSensor
+                        OrientationSensor.Default.ReadingChanged += OrientationSensor_ReadingChanged;
+                        OrientationSensor.Default.Start(SensorSpeed.Default);
+                    }
+                    else
+                    {
+                        // Turn off OrientationSensor
+                        OrientationSensor.Default.Stop();
+                        OrientationSensor.Default.ReadingChanged -= OrientationSensor_ReadingChanged;
                     }
                 }
             });
@@ -291,10 +226,10 @@ namespace OpenSilver.Samples.Showcase
             queueHandler.QueueActionIfQueueIsEmpty(() =>
             {
                 var velocity = e.Reading.Orientation;
-            OriW.Text = $"W: {velocity.W}";
-            OriX.Text = $"X: {velocity.X}";
-            OriY.Text = $"Y: {velocity.Y}";
-            OriZ.Text = $"Z: {velocity.Z}";
+                OriW.Text = $"W: {velocity.W}";
+                OriX.Text = $"X: {velocity.X}";
+                OriY.Text = $"Y: {velocity.Y}";
+                OriZ.Text = $"Z: {velocity.Z}";
             });
         }
         #endregion

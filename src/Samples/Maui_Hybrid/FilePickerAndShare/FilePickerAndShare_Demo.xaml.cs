@@ -29,49 +29,36 @@ namespace OpenSilver.Samples.Showcase
         {
             MainThread.BeginInvokeOnMainThread(async () =>
             {
-                // Check the current location permission status.
-                var status = await Permissions.CheckStatusAsync<Permissions.StorageRead>();
-
-                // If permission is not granted, request it.
-                if (status != PermissionStatus.Granted)
+                try
                 {
-                    status = await Permissions.RequestAsync<Permissions.StorageRead>();
-                }
-
-                // If permission is granted, fetch the location.
-                if (status == PermissionStatus.Granted)
-                {
-                    try
+                    var options = PickOptions.Images;
+                    var result = await FilePicker.Default.PickAsync(options);
+                    if (result != null)
                     {
-                        var options = PickOptions.Images;
-                        var result = await FilePicker.Default.PickAsync(options);
-                        if (result != null)
+                        _pickedFileFullPath = result.FullPath;
+                        ShareButton.Visibility = Visibility.Visible;
+                        PickedImageControl.Visibility = Visibility.Visible;
+                        FeatureNotAllowedTextBlock.Visibility = Visibility.Collapsed;
+                        if (result.FileName.EndsWith("jpg", StringComparison.OrdinalIgnoreCase) ||
+                            result.FileName.EndsWith("png", StringComparison.OrdinalIgnoreCase))
                         {
-                            _pickedFileFullPath = result.FullPath;
-                            ShareButton.Visibility = Visibility.Visible;
-                            PickedImageControl.Visibility = Visibility.Visible;
-                            FeatureNotAllowedTextBlock.Visibility = Visibility.Collapsed;
-                            if (result.FileName.EndsWith("jpg", StringComparison.OrdinalIgnoreCase) ||
-                                result.FileName.EndsWith("png", StringComparison.OrdinalIgnoreCase))
+                            using (var stream = await result.OpenReadAsync())
                             {
-                                using (var stream = await result.OpenReadAsync())
-                                {
-                                    BitmapImage bitmapImage = new BitmapImage();
+                                BitmapImage bitmapImage = new BitmapImage();
 
-                                    bitmapImage.SetSource(stream);
-                                    PickedImageControl.Source = bitmapImage;
-                                }
+                                bitmapImage.SetSource(stream);
+                                PickedImageControl.Source = bitmapImage;
                             }
                         }
                     }
-                    catch (PermissionException ex)
-                    {
-                        FeatureNotAllowedTextBlock.Visibility = Visibility.Visible;
-                    }
-                    catch (Exception ex)
-                    {
-                        // The user canceled or something went wrong
-                    }
+                }
+                catch (PermissionException ex)
+                {
+                    FeatureNotAllowedTextBlock.Visibility = Visibility.Visible;
+                }
+                catch (Exception ex)
+                {
+                    // The user canceled or something went wrong
                 }
             });
         }

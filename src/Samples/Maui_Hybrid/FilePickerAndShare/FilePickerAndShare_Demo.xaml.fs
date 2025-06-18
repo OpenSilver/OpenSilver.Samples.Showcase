@@ -28,34 +28,25 @@ type public FilePickerAndShare_Demo() as this =
     member private this.PickImageButton_Click(_sender: obj, _e: RoutedEventArgs) =
         MainThread.BeginInvokeOnMainThread(fun () ->
             async {
-                let! status = Permissions.CheckStatusAsync<Permissions.StorageRead>() |> Async.AwaitTask
+                try
+                    let! result = FilePicker.Default.PickAsync(PickOptions.Images) |> Async.AwaitTask
+                    if not (isNull result) then
+                        _pickedFileFullPath <- result.FullPath
+                        this.ShareButton.Visibility <- Visibility.Visible
+                        this.PickedImageControl.Visibility <- Visibility.Visible
+                        this.FeatureNotAllowedTextBlock.Visibility <- Visibility.Collapsed
 
-                let! status =
-                    if status <> PermissionStatus.Granted then
-                        Permissions.RequestAsync<Permissions.StorageRead>() |> Async.AwaitTask
-                    else
-                        async.Return status
-
-                if status = PermissionStatus.Granted then
-                    try
-                        let! result = FilePicker.Default.PickAsync(PickOptions.Images) |> Async.AwaitTask
-                        if not (isNull result) then
-                            _pickedFileFullPath <- result.FullPath
-                            this.ShareButton.Visibility <- Visibility.Visible
-                            this.PickedImageControl.Visibility <- Visibility.Visible
-                            this.FeatureNotAllowedTextBlock.Visibility <- Visibility.Collapsed
-
-                            if result.FileName.EndsWith("jpg", StringComparison.OrdinalIgnoreCase) ||
-                               result.FileName.EndsWith("png", StringComparison.OrdinalIgnoreCase) then
-                                use! stream = result.OpenReadAsync() |> Async.AwaitTask
-                                let bmp = BitmapImage()
-                                bmp.SetSource(stream)
-                                this.PickedImageControl.Source <- bmp
-                    with
-                    | :? PermissionException ->
-                        this.FeatureNotAllowedTextBlock.Visibility <- Visibility.Visible
-                    | _ ->
-                        () // user cancelled or other issue
+                        if result.FileName.EndsWith("jpg", StringComparison.OrdinalIgnoreCase) ||
+                            result.FileName.EndsWith("png", StringComparison.OrdinalIgnoreCase) then
+                            use! stream = result.OpenReadAsync() |> Async.AwaitTask
+                            let bmp = BitmapImage()
+                            bmp.SetSource(stream)
+                            this.PickedImageControl.Source <- bmp
+                with
+                | :? PermissionException ->
+                    this.FeatureNotAllowedTextBlock.Visibility <- Visibility.Visible
+                | _ ->
+                    () // user cancelled or other issue
             } |> Async.StartImmediate
         )
 

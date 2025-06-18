@@ -34,31 +34,20 @@ Namespace OpenSilver.Samples.Showcase
 
         Private Async Sub ShakeToggleButton_Click(sender As Object, e As RoutedEventArgs)
             Await MainThread.InvokeOnMainThreadAsync(Async Function()
-                                                         ' Check the current sensor permission status.
-                                                         Dim status As PermissionStatus = Await Permissions.CheckStatusAsync(Of Permissions.Sensors)()
-
-                                                         ' If permission is not granted, request it.
-                                                         If status <> PermissionStatus.Granted Then
-                                                             status = Await Permissions.RequestAsync(Of Permissions.Sensors)()
-                                                         End If
-
-                                                         ' If permission is granted, enable or disable shake detection.
-                                                         If status = PermissionStatus.Granted Then
-                                                             If Accelerometer.Default.IsSupported Then
-                                                                 If Not Accelerometer.Default.IsMonitoring Then
-                                                                     ' Turn on ShakeSensor
-                                                                     AddHandler Accelerometer.Default.ShakeDetected, AddressOf ShakeSensor_ReadingChanged
-                                                                     Accelerometer.Default.Start(SensorSpeed.Game)
-                                                                     ShakeTextBlock.Foreground = New SolidColorBrush(Colors.Green)
-                                                                 Else
-                                                                     ' Turn off ShakeSensor
-                                                                     Accelerometer.Default.Stop()
-                                                                     RemoveHandler Accelerometer.Default.ShakeDetected, AddressOf ShakeSensor_ReadingChanged
-                                                                     ShakeTextBlock.SetValue(TextBlock.ForegroundProperty, DependencyProperty.UnsetValue)
-                                                                 End If
+                                                         If Accelerometer.Default.IsSupported Then
+                                                             If Not Accelerometer.Default.IsMonitoring Then
+                                                                 ' Turn on ShakeSensor
+                                                                 AddHandler Accelerometer.Default.ShakeDetected, AddressOf ShakeSensor_ReadingChanged
+                                                                 Accelerometer.Default.Start(SensorSpeed.Game)
+                                                                 ShakeTextBlock.Foreground = New SolidColorBrush(Colors.Green)
                                                              Else
-                                                                 ShakeTextBlock.Text = "The ShakeSensor is not supported on this device."
+                                                                 ' Turn off ShakeSensor
+                                                                 Accelerometer.Default.Stop()
+                                                                 RemoveHandler Accelerometer.Default.ShakeDetected, AddressOf ShakeSensor_ReadingChanged
+                                                                 ShakeTextBlock.SetValue(TextBlock.ForegroundProperty, DependencyProperty.UnsetValue)
                                                              End If
+                                                         Else
+                                                             ShakeTextBlock.Text = "The ShakeSensor is not supported on this device."
                                                          End If
                                                      End Function)
         End Sub

@@ -31,31 +31,20 @@ Namespace OpenSilver.Samples.Showcase
 
         Private Async Sub BarometerToggleButton_Click(sender As Object, e As System.Windows.RoutedEventArgs)
             Await MainThread.InvokeOnMainThreadAsync(Async Function()
-                                                         ' Check the current location permission status.
-                                                         Dim status As PermissionStatus = Await Permissions.CheckStatusAsync(Of Permissions.Sensors)()
-
-                                                         ' If permission is not granted, request it.
-                                                         If status <> PermissionStatus.Granted Then
-                                                             status = Await Permissions.RequestAsync(Of Permissions.Sensors)()
-                                                         End If
-
-                                                         ' If permission is granted, manage the Barometer.
-                                                         If status = PermissionStatus.Granted Then
-                                                             If Barometer.Default.IsSupported Then
-                                                                 If Not Barometer.Default.IsMonitoring Then
-                                                                     ' Turn on Barometer
-                                                                     AddHandler Barometer.Default.ReadingChanged, AddressOf Barometer_ReadingChanged
-                                                                     Barometer.Default.Start(SensorSpeed.UI)
-                                                                     BarometerTextBlock.Foreground = New SolidColorBrush(Colors.Green)
-                                                                 Else
-                                                                     ' Turn off Barometer
-                                                                     Barometer.Default.Stop()
-                                                                     RemoveHandler Barometer.Default.ReadingChanged, AddressOf Barometer_ReadingChanged
-                                                                     BarometerTextBlock.SetValue(TextBlock.ForegroundProperty, DependencyProperty.UnsetValue)
-                                                                 End If
+                                                         If Barometer.Default.IsSupported Then
+                                                             If Not Barometer.Default.IsMonitoring Then
+                                                                 ' Turn on Barometer
+                                                                 AddHandler Barometer.Default.ReadingChanged, AddressOf Barometer_ReadingChanged
+                                                                 Barometer.Default.Start(SensorSpeed.UI)
+                                                                 BarometerTextBlock.Foreground = New SolidColorBrush(Colors.Green)
                                                              Else
-                                                                 BarometerTextBlock.Text = "The barometer is not supported on this device."
+                                                                 ' Turn off Barometer
+                                                                 Barometer.Default.Stop()
+                                                                 RemoveHandler Barometer.Default.ReadingChanged, AddressOf Barometer_ReadingChanged
+                                                                 BarometerTextBlock.SetValue(TextBlock.ForegroundProperty, DependencyProperty.UnsetValue)
                                                              End If
+                                                         Else
+                                                             BarometerTextBlock.Text = "The barometer is not supported on this device."
                                                          End If
                                                      End Function)
         End Sub

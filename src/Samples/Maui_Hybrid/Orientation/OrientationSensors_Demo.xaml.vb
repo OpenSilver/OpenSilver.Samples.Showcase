@@ -58,23 +58,15 @@ Namespace OpenSilver.Samples.Showcase
 #Region "Compass"
         Private Async Sub CompassToggleButton_Click(sender As Object, e As RoutedEventArgs)
             Await MainThread.InvokeOnMainThreadAsync(Async Function()
-                                                         Dim status As PermissionStatus = Await Permissions.CheckStatusAsync(Of Permissions.Sensors)()
-
-                                                         If status <> PermissionStatus.Granted Then
-                                                             status = Await Permissions.RequestAsync(Of Permissions.Sensors)()
-                                                         End If
-
-                                                         If status = PermissionStatus.Granted Then
-                                                             If Compass.Default.IsSupported Then
-                                                                 If Not Compass.Default.IsMonitoring Then
-                                                                     AddHandler Compass.Default.ReadingChanged, AddressOf Compass_ReadingChanged
-                                                                     Compass.Default.Start(SensorSpeed.UI)
-                                                                     TextBlock.SetForeground(CompassPath, New SolidColorBrush(Colors.Green))
-                                                                 Else
-                                                                     Compass.Default.Stop()
-                                                                     RemoveHandler Compass.Default.ReadingChanged, AddressOf Compass_ReadingChanged
-                                                                     CompassPath.SetValue(TextBlock.ForegroundProperty, DependencyProperty.UnsetValue)
-                                                                 End If
+                                                         If Compass.Default.IsSupported Then
+                                                             If Not Compass.Default.IsMonitoring Then
+                                                                 AddHandler Compass.Default.ReadingChanged, AddressOf Compass_ReadingChanged
+                                                                 Compass.Default.Start(SensorSpeed.UI)
+                                                                 TextBlock.SetForeground(CompassPath, New SolidColorBrush(Colors.Green))
+                                                             Else
+                                                                 Compass.Default.Stop()
+                                                                 RemoveHandler Compass.Default.ReadingChanged, AddressOf Compass_ReadingChanged
+                                                                 CompassPath.SetValue(TextBlock.ForegroundProperty, DependencyProperty.UnsetValue)
                                                              End If
                                                          End If
                                                      End Function)
@@ -88,21 +80,13 @@ Namespace OpenSilver.Samples.Showcase
 #Region "Accelerometer"
         Private Async Sub AccelerometerToggleButton_Click(sender As Object, e As RoutedEventArgs)
             Await MainThread.InvokeOnMainThreadAsync(Async Function()
-                                                         Dim status As PermissionStatus = Await Permissions.CheckStatusAsync(Of Permissions.Sensors)()
-
-                                                         If status <> PermissionStatus.Granted Then
-                                                             status = Await Permissions.RequestAsync(Of Permissions.Sensors)()
-                                                         End If
-
-                                                         If status = PermissionStatus.Granted Then
-                                                             If Accelerometer.Default.IsSupported Then
-                                                                 If Not Accelerometer.Default.IsMonitoring Then
-                                                                     AddHandler Accelerometer.Default.ReadingChanged, AddressOf Accelerometer_ReadingChanged
-                                                                     Accelerometer.Default.Start(SensorSpeed.UI)
-                                                                 Else
-                                                                     Accelerometer.Default.Stop()
-                                                                     RemoveHandler Accelerometer.Default.ReadingChanged, AddressOf Accelerometer_ReadingChanged
-                                                                 End If
+                                                         If Accelerometer.Default.IsSupported Then
+                                                             If Not Accelerometer.Default.IsMonitoring Then
+                                                                 AddHandler Accelerometer.Default.ReadingChanged, AddressOf Accelerometer_ReadingChanged
+                                                                 Accelerometer.Default.Start(SensorSpeed.UI)
+                                                             Else
+                                                                 Accelerometer.Default.Stop()
+                                                                 RemoveHandler Accelerometer.Default.ReadingChanged, AddressOf Accelerometer_ReadingChanged
                                                              End If
                                                          End If
                                                      End Function)
@@ -119,21 +103,13 @@ Namespace OpenSilver.Samples.Showcase
 #Region "Gyroscope"
         Private Async Sub GyroscopeToggleButton_Click(sender As Object, e As RoutedEventArgs)
             Await MainThread.InvokeOnMainThreadAsync(Async Function()
-                                                         Dim status As PermissionStatus = Await Permissions.CheckStatusAsync(Of Permissions.Sensors)()
-
-                                                         If status <> PermissionStatus.Granted Then
-                                                             status = Await Permissions.RequestAsync(Of Permissions.Sensors)()
-                                                         End If
-
-                                                         If status = PermissionStatus.Granted Then
-                                                             If Gyroscope.Default.IsSupported Then
-                                                                 If Not Gyroscope.Default.IsMonitoring Then
-                                                                     AddHandler Gyroscope.Default.ReadingChanged, AddressOf Gyroscope_ReadingChanged
-                                                                     Gyroscope.Default.Start(SensorSpeed.UI)
-                                                                 Else
-                                                                     Gyroscope.Default.Stop()
-                                                                     RemoveHandler Gyroscope.Default.ReadingChanged, AddressOf Gyroscope_ReadingChanged
-                                                                 End If
+                                                         If Gyroscope.Default.IsSupported Then
+                                                             If Not Gyroscope.Default.IsMonitoring Then
+                                                                 AddHandler Gyroscope.Default.ReadingChanged, AddressOf Gyroscope_ReadingChanged
+                                                                 Gyroscope.Default.Start(SensorSpeed.UI)
+                                                             Else
+                                                                 Gyroscope.Default.Stop()
+                                                                 RemoveHandler Gyroscope.Default.ReadingChanged, AddressOf Gyroscope_ReadingChanged
                                                              End If
                                                          End If
                                                      End Function)
@@ -150,21 +126,13 @@ Namespace OpenSilver.Samples.Showcase
 #Region "Magnetometer"
         Private Async Sub MagnetometerToggleButton_Click(sender As Object, e As RoutedEventArgs)
             Await MainThread.InvokeOnMainThreadAsync(Async Function()
-                                                         Dim status As PermissionStatus = Await Permissions.CheckStatusAsync(Of Permissions.Sensors)()
-
-                                                         If status <> PermissionStatus.Granted Then
-                                                             status = Await Permissions.RequestAsync(Of Permissions.Sensors)()
-                                                         End If
-
-                                                         If status = PermissionStatus.Granted Then
-                                                             If Magnetometer.Default.IsSupported Then
-                                                                 If Not Magnetometer.Default.IsMonitoring Then
-                                                                     AddHandler Magnetometer.Default.ReadingChanged, AddressOf Magnetometer_ReadingChanged
-                                                                     Magnetometer.Default.Start(SensorSpeed.Default)
-                                                                 Else
-                                                                     Magnetometer.Default.Stop()
-                                                                     RemoveHandler Magnetometer.Default.ReadingChanged, AddressOf Magnetometer_ReadingChanged
-                                                                 End If
+                                                         If Magnetometer.Default.IsSupported Then
+                                                             If Not Magnetometer.Default.IsMonitoring Then
+                                                                 AddHandler Magnetometer.Default.ReadingChanged, AddressOf Magnetometer_ReadingChanged
+                                                                 Magnetometer.Default.Start(SensorSpeed.Default)
+                                                             Else
+                                                                 Magnetometer.Default.Stop()
+                                                                 RemoveHandler Magnetometer.Default.ReadingChanged, AddressOf Magnetometer_ReadingChanged
                                                              End If
                                                          End If
                                                      End Function)

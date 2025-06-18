@@ -30,36 +30,27 @@ type Barometer_Demo() as this =
     member private this.BarometerToggleButton_Click(_sender: obj, _e: RoutedEventArgs) =
         MainThread.BeginInvokeOnMainThread(fun () ->
             async {
-                let! status = Permissions.CheckStatusAsync<Permissions.Sensors>() |> Async.AwaitTask
-
-                let! status =
-                    if status <> PermissionStatus.Granted then
-                        Permissions.RequestAsync<Permissions.Sensors>() |> Async.AwaitTask
-                    else
-                        async.Return status
-
-                if status = PermissionStatus.Granted then
-                    if Barometer.Default.IsSupported then
-                        if not Barometer.Default.IsMonitoring then
-                            Barometer.Default.ReadingChanged.AddHandler(
-                                EventHandler<BarometerChangedEventArgs>(fun sender args ->
-                                    this.Barometer_ReadingChanged(sender, args)
-                                )
+                if Barometer.Default.IsSupported then
+                    if not Barometer.Default.IsMonitoring then
+                        Barometer.Default.ReadingChanged.AddHandler(
+                            EventHandler<BarometerChangedEventArgs>(fun sender args ->
+                                this.Barometer_ReadingChanged(sender, args)
                             )
+                        )
 
-                            Barometer.Default.Start(SensorSpeed.UI)
-                            this.BarometerTextBlock.Foreground <- SolidColorBrush(Colors.Green)
-                        else
-                            Barometer.Default.Stop()
-                            Barometer.Default.ReadingChanged.RemoveHandler(
-                                EventHandler<BarometerChangedEventArgs>(fun sender args ->
-                                    this.Barometer_ReadingChanged(sender, args)
-                                )
-                            )
-
-                            this.BarometerTextBlock.ClearValue(TextBlock.ForegroundProperty)
+                        Barometer.Default.Start(SensorSpeed.UI)
+                        this.BarometerTextBlock.Foreground <- SolidColorBrush(Colors.Green)
                     else
-                        this.BarometerTextBlock.Text <- "The barometer is not supported on this device."
+                        Barometer.Default.Stop()
+                        Barometer.Default.ReadingChanged.RemoveHandler(
+                            EventHandler<BarometerChangedEventArgs>(fun sender args ->
+                                this.Barometer_ReadingChanged(sender, args)
+                            )
+                        )
+
+                        this.BarometerTextBlock.ClearValue(TextBlock.ForegroundProperty)
+                else
+                    this.BarometerTextBlock.Text <- "The barometer is not supported on this device."
             } |> Async.StartImmediate
         )
 
