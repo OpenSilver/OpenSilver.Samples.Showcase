@@ -94,9 +94,9 @@ Namespace OpenSilver.Samples.Showcase
 
         Private Sub Accelerometer_ReadingChanged(sender As Object, e As AccelerometerChangedEventArgs)
             Dim acceleration = e.Reading.Acceleration
-            AccelX.Text = $"X: {acceleration.X}G"
-            AccelY.Text = $"Y: {acceleration.Y}G"
-            AccelZ.Text = $"Z: {acceleration.Z}G"
+            Accel.Text = $"X: {acceleration.X}G
+Y: {acceleration.Y}G
+Z: {acceleration.Z}G"
         End Sub
 #End Region
 
@@ -117,9 +117,9 @@ Namespace OpenSilver.Samples.Showcase
 
         Private Sub Gyroscope_ReadingChanged(sender As Object, e As GyroscopeChangedEventArgs)
             Dim velocity = e.Reading.AngularVelocity
-            GyroX.Text = $"X: {velocity.X}rad/s"
-            GyroY.Text = $"Y: {velocity.Y}rad/s"
-            GyroZ.Text = $"Z: {velocity.Z}rad/s"
+            Gyro.Text = $"X: {velocity.X}rad/s
+Y: {velocity.Y}rad/s
+Z: {velocity.Z}rad/s"
         End Sub
 #End Region
 
@@ -141,9 +141,9 @@ Namespace OpenSilver.Samples.Showcase
         Private Sub Magnetometer_ReadingChanged(sender As Object, e As MagnetometerChangedEventArgs)
             queueHandler.QueueActionIfQueueIsEmpty(Sub()
                                                        Dim velocity = e.Reading.MagneticField
-                                                       MagnX.Text = $"X: {velocity.X}µT"
-                                                       MagnY.Text = $"Y: {velocity.Y}µT"
-                                                       MagnZ.Text = $"Z: {velocity.Z}µT"
+                                                       Magn.Text = $"X: {velocity.X}µT
+Y: {velocity.Y}µT
+Z: {velocity.Z}µT"
                                                    End Sub)
         End Sub
 #End Region
@@ -165,11 +165,11 @@ Namespace OpenSilver.Samples.Showcase
 
         Private Sub OrientationSensor_ReadingChanged(sender As Object, e As OrientationSensorChangedEventArgs)
             queueHandler.QueueActionIfQueueIsEmpty(Sub()
-                                                       Dim velocity = e.Reading.Orientation
-                                                       OriW.Text = $"W: {velocity.W}"
-                                                       OriX.Text = $"X: {velocity.X}"
-                                                       OriY.Text = $"Y: {velocity.Y}"
-                                                       OriZ.Text = $"Z: {velocity.Z}"
+                                                       Dim quaternion = e.Reading.Orientation
+                                                       Ori.Text = $"W: {quaternion.W}
+X: {quaternion.X}
+Y: {quaternion.Y}
+Z: {quaternion.Z}"
                                                    End Sub)
         End Sub
 #End Region

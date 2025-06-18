@@ -97,9 +97,9 @@ type public OrientationSensors_Demo() as this =
 
     member private this.Accelerometer_ReadingChanged(_sender: obj, e: AccelerometerChangedEventArgs) =
         let a = e.Reading.Acceleration
-        this.AccelX.Text <- $"X: {a.X}G"
-        this.AccelY.Text <- $"Y: {a.Y}G"
-        this.AccelZ.Text <- $"Z: {a.Z}G"
+        this.Accel.Text <- $"""X: {a.X}G
+Y: {a.Y}G
+Z: {a.Z}G"""
 
     // -------- Gyroscope --------
     member private this.GyroscopeToggleButton_Click(_sender: obj, _e: RoutedEventArgs) =
@@ -121,9 +121,9 @@ type public OrientationSensors_Demo() as this =
 
     member private this.Gyroscope_ReadingChanged(_sender: obj, e: GyroscopeChangedEventArgs) =
         let v = e.Reading.AngularVelocity
-        this.GyroX.Text <- $"X: {v.X}rad/s"
-        this.GyroY.Text <- $"Y: {v.Y}rad/s"
-        this.GyroZ.Text <- $"Z: {v.Z}rad/s"
+        this.Gyro.Text <- $"""X: {v.X}rad/s
+Y: {v.Y}rad/s
+Z: {v.Z}rad/s"""
 
     // -------- Magnetometer --------
     member private this.MagnetometerToggleButton_Click(_sender: obj, _e: RoutedEventArgs) =
@@ -146,9 +146,9 @@ type public OrientationSensors_Demo() as this =
     member private this.Magnetometer_ReadingChanged(_sender: obj, e: MagnetometerChangedEventArgs) =
         queueHandler.QueueActionIfQueueIsEmpty(fun () ->
             let v = e.Reading.MagneticField
-            this.MagnX.Text <- $"X: {v.X}µT"
-            this.MagnY.Text <- $"Y: {v.Y}µT"
-            this.MagnZ.Text <- $"Z: {v.Z}µT"
+            this.Magn.Text <- $"""X: {v.X}µT
+Y: {v.Y}µT
+Z: {v.Z}µT"""
         )
 
     // -------- Orientation Sensor --------
@@ -172,8 +172,8 @@ type public OrientationSensors_Demo() as this =
     member private this.OrientationSensor_ReadingChanged(_sender: obj, e: OrientationSensorChangedEventArgs) =
         queueHandler.QueueActionIfQueueIsEmpty(fun () ->
             let q = e.Reading.Orientation
-            this.OriW.Text <- $"W: {q.W}"
-            this.OriX.Text <- $"X: {q.X}"
-            this.OriY.Text <- $"Y: {q.Y}"
-            this.OriZ.Text <- $"Z: {q.Z}"
+            this.Ori.Text <- $"""W: {q.W}
+X: {q.X}
+Y: {q.Y}
+Z: {q.Z}"""
         )

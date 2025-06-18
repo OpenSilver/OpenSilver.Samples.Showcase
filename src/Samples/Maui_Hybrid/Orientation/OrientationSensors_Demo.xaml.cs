@@ -18,6 +18,9 @@ namespace OpenSilver.Samples.Showcase
     public partial class OrientationSensors_Demo : UserControl
     {
         INTERNAL_DispatcherQueueHandler queueHandler = new INTERNAL_DispatcherQueueHandler();
+        INTERNAL_DispatcherQueueHandler queueHandler2 = new INTERNAL_DispatcherQueueHandler();
+        INTERNAL_DispatcherQueueHandler queueHandler3 = new INTERNAL_DispatcherQueueHandler();
+        INTERNAL_DispatcherQueueHandler queueHandler4 = new INTERNAL_DispatcherQueueHandler();
 
         public OrientationSensors_Demo()
         {
@@ -124,10 +127,13 @@ namespace OpenSilver.Samples.Showcase
 
         private void Accelerometer_ReadingChanged(object sender, AccelerometerChangedEventArgs e)
         {
-            var acceleration = e.Reading.Acceleration;
-            AccelX.Text = $"X: {acceleration.X}G";
-            AccelY.Text = $"Y: {acceleration.Y}G";
-            AccelZ.Text = $"Z: {acceleration.Z}G";
+            queueHandler.QueueActionIfQueueIsEmpty(() =>
+            {
+                var acceleration = e.Reading.Acceleration;
+                Accel.Text = $@"X: {acceleration.X}G
+Y: {acceleration.Y}G
+Z: {acceleration.Z}G";
+            });
         }
         #endregion
 
@@ -156,10 +162,13 @@ namespace OpenSilver.Samples.Showcase
 
         private void Gyroscope_ReadingChanged(object sender, GyroscopeChangedEventArgs e)
         {
-            var velocity = e.Reading.AngularVelocity;
-            GyroX.Text = $"X: {velocity.X}rad/s";
-            GyroY.Text = $"Y: {velocity.Y}rad/s";
-            GyroZ.Text = $"Z: {velocity.Z}rad/s";
+            queueHandler2.QueueActionIfQueueIsEmpty(() =>
+            {
+                var velocity = e.Reading.AngularVelocity;
+                Gyro.Text = @$"X: {velocity.X}rad/s
+Y: {velocity.Y}rad/s
+Z: {velocity.Z}rad/s";
+            });
         }
         #endregion
 
@@ -188,12 +197,12 @@ namespace OpenSilver.Samples.Showcase
 
         private void Magnetometer_ReadingChanged(object sender, MagnetometerChangedEventArgs e)
         {
-            queueHandler.QueueActionIfQueueIsEmpty(() =>
+            queueHandler3.QueueActionIfQueueIsEmpty(() =>
             {
                 var velocity = e.Reading.MagneticField;
-                MagnX.Text = $"X: {velocity.X}µT";
-                MagnY.Text = $"Y: {velocity.Y}µT";
-                MagnZ.Text = $"Z: {velocity.Z}µT";
+                Magn.Text = @$"X: {velocity.X}µT
+Y: {velocity.Y}µT
+Z: {velocity.Z}µT";
             });
         }
         #endregion
@@ -223,13 +232,14 @@ namespace OpenSilver.Samples.Showcase
 
         private void OrientationSensor_ReadingChanged(object sender, OrientationSensorChangedEventArgs e)
         {
-            queueHandler.QueueActionIfQueueIsEmpty(() =>
+            queueHandler4.QueueActionIfQueueIsEmpty(() =>
             {
-                var velocity = e.Reading.Orientation;
-                OriW.Text = $"W: {velocity.W}";
-                OriX.Text = $"X: {velocity.X}";
-                OriY.Text = $"Y: {velocity.Y}";
-                OriZ.Text = $"Z: {velocity.Z}";
+                var quaternion = e.Reading.Orientation;
+                Ori.Text = @$"W: {quaternion.W}
+X: {quaternion.X}
+Y: {quaternion.Y}
+Z: {quaternion.Z}
+";
             });
         }
         #endregion
