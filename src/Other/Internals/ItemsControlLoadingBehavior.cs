@@ -1,9 +1,8 @@
-﻿using System;
+﻿using OpenSilver.Animations;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
-using System.Windows.Media;
-using System.Windows.Media.Effects;
 
 namespace OpenSilver.Samples.Showcase
 {
@@ -41,6 +40,48 @@ namespace OpenSilver.Samples.Showcase
                 null
             );
 
+        public static void ShowLoadingPopup(this ItemsControl itemsControl, IAnimationType animation = null)
+        {
+            // create & show
+            var popup = new Popup
+            {
+                Child = new LoadingControl(animation),
+                Placement = PlacementMode.Absolute,
+                IsHitTestVisible = false,
+                IsOpen = false
+            };
+
+            /*
+            // size & position to overlay the ItemsControl
+            var root = Application.Current.RootVisual as FrameworkElement;
+            var transform = itemsControl.TransformToVisual(root);
+            var topLeft = transform.Transform(new Point(0, 0));
+            popup.HorizontalOffset = topLeft.X;
+            popup.VerticalOffset = topLeft.Y;
+            popup.Width = itemsControl.ActualWidth;
+            popup.Height = itemsControl.ActualHeight;
+            */
+
+            // size & position to overlay the whole window
+            var host = (FrameworkElement)Application.Current.RootVisual;
+            popup.Width = host.ActualWidth;
+            popup.Height = host.ActualHeight;
+
+            itemsControl.SetValue(LoadingPopupProperty, popup);
+            popup.IsOpen = true;
+        }
+
+        public static void HideLoadingPopup(this ItemsControl itemsControl)
+        {
+            // close & cleanup
+            var popup = (Popup)itemsControl.GetValue(LoadingPopupProperty);
+            if (popup != null)
+            {
+                popup.IsOpen = false;
+                itemsControl.ClearValue(LoadingPopupProperty);
+            }
+        }
+
         private static void OnShowLoadingOnGeneratingChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             if (!(d is ItemsControl itemsControl))
@@ -65,12 +106,7 @@ namespace OpenSilver.Samples.Showcase
                 }
 
                 // ensure any popup is closed
-                var existing = (Popup)itemsControl.GetValue(LoadingPopupProperty);
-                if (existing != null)
-                {
-                    existing.IsOpen = false;
-                    itemsControl.ClearValue(LoadingPopupProperty);
-                }
+                HideLoadingPopup(itemsControl);
             }
         }
 
@@ -80,43 +116,11 @@ namespace OpenSilver.Samples.Showcase
 
             if (status == GeneratorStatus.GeneratingContainers)
             {
-                // create & show
-                var popup = new Popup
-                {
-                    Child = new LoadingControl(),
-                    Placement = PlacementMode.Absolute,
-                    IsHitTestVisible = false,
-                    IsOpen = false
-                };
-
-                /*
-                // size & position to overlay the ItemsControl
-                var root = Application.Current.RootVisual as FrameworkElement;
-                var transform = itemsControl.TransformToVisual(root);
-                var topLeft = transform.Transform(new Point(0, 0));
-                popup.HorizontalOffset = topLeft.X;
-                popup.VerticalOffset = topLeft.Y;
-                popup.Width = itemsControl.ActualWidth;
-                popup.Height = itemsControl.ActualHeight;
-                */
-
-                // size & position to overlay the whole window
-                var host = (FrameworkElement)Application.Current.RootVisual;
-                popup.Width = host.ActualWidth;
-                popup.Height = host.ActualHeight;
-
-                itemsControl.SetValue(LoadingPopupProperty, popup);
-                popup.IsOpen = true;
+                ShowLoadingPopup(itemsControl, new FadeAndScale { Bounciness = 0.3, Delay = 1000 });
             }
             else
             {
-                // close & cleanup
-                var popup = (Popup)itemsControl.GetValue(LoadingPopupProperty);
-                if (popup != null)
-                {
-                    popup.IsOpen = false;
-                    itemsControl.ClearValue(LoadingPopupProperty);
-                }
+                HideLoadingPopup(itemsControl);
             }
         }
     }
