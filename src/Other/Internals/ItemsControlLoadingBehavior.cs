@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenSilver.Animations;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
@@ -39,12 +40,12 @@ namespace OpenSilver.Samples.Showcase
                 null
             );
 
-        public static void ShowLoadingPopup(this ItemsControl itemsControl)
+        public static void ShowLoadingPopup(this ItemsControl itemsControl, IAnimationType animation = null)
         {
             // create & show
             var popup = new Popup
             {
-                Child = new LoadingControl(),
+                Child = new LoadingControl(animation),
                 Placement = PlacementMode.Absolute,
                 IsHitTestVisible = false,
                 IsOpen = false
@@ -115,7 +116,7 @@ namespace OpenSilver.Samples.Showcase
 
             if (status == GeneratorStatus.GeneratingContainers)
             {
-                ShowLoadingPopup(itemsControl);
+                ShowLoadingPopup(itemsControl, new FadeAndScale { Bounciness = 0.3, Delay = 1000 });
             }
             else
             {

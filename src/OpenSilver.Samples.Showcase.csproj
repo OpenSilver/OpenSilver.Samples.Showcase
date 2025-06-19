@@ -255,6 +255,7 @@
     <Compile Include="Other\Converters\RgbToBrushConverter.cs" />
     <Compile Include="Other\Elements.cs" />
     <Compile Include="Other\Internals\CharacterClickService.cs" />
+    <Compile Include="Other\Internals\DeferLoadingItemsBehavior.cs" />
     <Compile Include="Other\Internals\ItemsControlLoadingBehavior.cs" />
     <Compile Include="Other\Internals\Menu\MenuIconBrushConverter.cs" />
     <Compile Include="Other\Internals\Menu\TreeViewHelpers.cs" />

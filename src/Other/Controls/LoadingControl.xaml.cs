@@ -1,22 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Windows;
+﻿using OpenSilver.Animations;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
-using System.Windows.Data;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Navigation;
 
-namespace OpenSilver.Samples.Showcase
+namespace OpenSilver.Samples.Showcase;
+
+public partial class LoadingControl : UserControl
 {
-    public partial class LoadingControl : UserControl
+    public IAnimationType Animation { get; }
+
+    public LoadingControl(IAnimationType animation = null)
     {
-        public LoadingControl()
-        {
-            this.InitializeComponent();
-        }
+        InitializeComponent();
+
+        Animation = animation;
+        DataContext = this;
     }
 }
