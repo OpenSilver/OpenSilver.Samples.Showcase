@@ -9,7 +9,6 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
             <ContentControl Background="#FF91C3C5"
@@ -17,79 +16,149 @@
                             Foreground="#FF73AFB3"
                             Style="{StaticResource HeaderControl_Style}"/>
 
-            <Calendar x:Name="sampleCalendar" Grid.Row="1"/>
+            <TabControl Grid.Row="1">
+                <TabItem Header="Calendar">
+                    <StackPanel>
+                        <Calendar x:Name="sampleCalendar"/>
 
-            <Grid Grid.Row="2" Margin="18,10,0,0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
+                        <Expander Margin="0,10,0,0" Header="Settings">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
 
-                <CheckBox x:Name="chkPastDateSelection"
-                          Grid.ColumnSpan="2"
-                          Checked="OnPastDatesChanged"
-                          Content="Allow the past be selectable"
-                          FontSize="12"
-                          IsChecked="True"
-                          Unchecked="OnPastDatesChanged"/>
+                                <CheckBox x:Name="chkPastDateSelection"
+                                          Grid.ColumnSpan="2"
+                                          Checked="OnPastDatesChanged"
+                                          Content="Allow the past be selectable"
+                                          FontSize="12"
+                                          IsChecked="True"
+                                          Unchecked="OnPastDatesChanged"/>
 
-                <CheckBox Grid.Row="1"
-                          Content="IsTodayHighlighted"
-                          FontSize="12"
-                          IsChecked="{Binding IsTodayHighlighted, ElementName=sampleCalendar, Mode=TwoWay}"/>
+                                <CheckBox Grid.Row="1"
+                                          Content="IsTodayHighlighted"
+                                          FontSize="12"
+                                          IsChecked="{Binding IsTodayHighlighted, ElementName=sampleCalendar, Mode=TwoWay}"/>
 
-                <TextBlock Grid.Row="2"
-                           Margin="0,2,0,0"
-                           VerticalAlignment="Center"
-                           Text="DisplayMode"/>
-                <ComboBox Grid.Row="2"
-                          Grid.Column="1"
-                          Height="24"
-                          Margin="0,1"
-                          FontSize="12"
-                          ItemsSource="{Binding Converter={StaticResource EnumToListConverter}, ConverterParameter={x:Static Calendar.DisplayModeProperty}}"
-                          SelectedValue="{Binding DisplayMode, ElementName=sampleCalendar, Mode=TwoWay}"/>
+                                <TextBlock Grid.Row="2"
+                                           Margin="0,2,0,0"
+                                           VerticalAlignment="Center"
+                                           Text="DisplayMode"/>
+                                <ComboBox Grid.Row="2"
+                                          Grid.Column="1"
+                                          Height="24"
+                                          Margin="0,1"
+                                          FontSize="12"
+                                          ItemsSource="{Binding Converter={StaticResource EnumToListConverter}, ConverterParameter={x:Static Calendar.DisplayModeProperty}}"
+                                          SelectedValue="{Binding DisplayMode, ElementName=sampleCalendar, Mode=TwoWay}"/>
 
-                <TextBlock Grid.Row="3"
-                           Margin="0,2,0,0"
-                           VerticalAlignment="Center"
-                           Text="FirstDayOfWeek"/>
-                <ComboBox Grid.Row="3"
-                          Grid.Column="1"
-                          Height="24"
-                          Margin="0,1"
-                          FontSize="12"
-                          ItemsSource="{Binding Converter={StaticResource EnumToListConverter}, ConverterParameter={x:Static Calendar.FirstDayOfWeekProperty}}"
-                          SelectedValue="{Binding FirstDayOfWeek, ElementName=sampleCalendar, Mode=TwoWay}"/>
+                                <TextBlock Grid.Row="3"
+                                           Margin="0,2,0,0"
+                                           VerticalAlignment="Center"
+                                           Text="FirstDayOfWeek"/>
+                                <ComboBox Grid.Row="3"
+                                          Grid.Column="1"
+                                          Height="24"
+                                          Margin="0,1"
+                                          FontSize="12"
+                                          ItemsSource="{Binding Converter={StaticResource EnumToListConverter}, ConverterParameter={x:Static Calendar.FirstDayOfWeekProperty}}"
+                                          SelectedValue="{Binding FirstDayOfWeek, ElementName=sampleCalendar, Mode=TwoWay}"/>
 
-                <TextBlock Grid.Row="4"
-                           Margin="0,2,0,0"
-                           VerticalAlignment="Center"
-                           Text="SelectionMode"/>
-                <ComboBox Grid.Row="4"
-                          Grid.Column="1"
-                          Height="24"
-                          Margin="0,1"
-                          FontSize="12"
-                          ItemsSource="{Binding Converter={StaticResource EnumToListConverter}, ConverterParameter={x:Static Calendar.SelectionModeProperty}}"
-                          SelectedValue="{Binding SelectionMode, ElementName=sampleCalendar, Mode=TwoWay}"/>
-            </Grid>
+                                <TextBlock Grid.Row="4"
+                                           Margin="0,2,0,0"
+                                           VerticalAlignment="Center"
+                                           Text="SelectionMode"/>
+                                <ComboBox Grid.Row="4"
+                                          Grid.Column="1"
+                                          Height="24"
+                                          Margin="0,1"
+                                          FontSize="12"
+                                          ItemsSource="{Binding Converter={StaticResource EnumToListConverter}, ConverterParameter={x:Static Calendar.SelectionModeProperty}}"
+                                          SelectedValue="{Binding SelectionMode, ElementName=sampleCalendar, Mode=TwoWay}"/>
+                            </Grid>
+                        </Expander>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="GlobalCalendar">
+                    <StackPanel>
+                        <GlobalCalendar x:Name="globalCalendar" Grid.Row="1"/>
 
-            <local:ViewSourceButton Grid.Row="3" Background="#FF13D7E3">
+                        <Grid Margin="0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Row="2"
+                                       Margin="0,1,2,0"
+                                       VerticalAlignment="Center"
+                                       FontSize="12"
+                                       Text="Culture"/>
+                            <ComboBox Name="culturesCombo"
+                                      Grid.Row="2"
+                                      Grid.Column="1"
+                                      Height="24"
+                                      Margin="0,1"
+                                      FontSize="12"
+                                      SelectionChanged="OnCultureChanged">
+                                <ComboBoxItem Content="Arabic (Egypt)" Tag="ar-EG"/>
+                                <ComboBoxItem Content="Chinese (Simplified)" Tag="zh-Hans"/>
+                                <ComboBoxItem Content="Czech (Czech Republic)" Tag="cs-CZ"/>
+                                <ComboBoxItem Content="Danish (Denmark)" Tag="da-DK"/>
+                                <ComboBoxItem Content="Dutch (Netherlands)" Tag="nl-NL"/>
+                                <ComboBoxItem Content="English (United States)" Tag="en-US"/>
+                                <ComboBoxItem Content="Finnish (Finland)" Tag="fi-FI"/>
+                                <ComboBoxItem Content="French (France)" Tag="fr-FR"/>
+                                <ComboBoxItem Content="German (Germany)" Tag="de-DE"/>
+                                <ComboBoxItem Content="Greek (Greece)" Tag="el-GR"/>
+                                <ComboBoxItem Content="Hebrew (Israel)" Tag="he-IL"/>
+                                <ComboBoxItem Content="Hindi (India)" Tag="hi-IN"/>
+                                <ComboBoxItem Content="Hungarian (Hungary)" Tag="hu-HU"/>
+                                <ComboBoxItem Content="Indonesian (Indonesia)" Tag="id-ID"/>
+                                <ComboBoxItem Content="Irish (Ireland)" Tag="ga-IE"/>
+                                <ComboBoxItem Content="Italian (Italy)" Tag="it-IT"/>
+                                <ComboBoxItem Content="Japanese (Japan)" Tag="ja-JP"/>
+                                <ComboBoxItem Content="Korean (Korea)" Tag="ko-KR"/>
+                                <ComboBoxItem Content="Malay (Malaysia)" Tag="ms-MY"/>
+                                <ComboBoxItem Content="Mongolian (Cyrillic, Mongolia)" Tag="mn-MN"/>
+                                <ComboBoxItem Content="Norwegian, Bokmål (Norway)" Tag="nb-NO"/>
+                                <ComboBoxItem Content="Persian" Tag="fa-IR"/>
+                                <ComboBoxItem Content="Polish (Poland)" Tag="pl-PL"/>
+                                <ComboBoxItem Content="Portuguese (Brazil)" Tag="pt-BR"/>
+                                <ComboBoxItem Content="Romanian (Romania)" Tag="ro-RO"/>
+                                <ComboBoxItem Content="Russian (Russia)" Tag="ru-RU"/>
+                                <ComboBoxItem Content="Spanish (Mexico)" Tag="es-MX"/>
+                                <ComboBoxItem Content="Swedish (Sweden)" Tag="sv-SE"/>
+                                <ComboBoxItem Content="Thai (Thailand)" Tag="th-TH"/>
+                                <ComboBoxItem Content="Turkish (Turkey)" Tag="tr-TR"/>
+                                <ComboBoxItem Content="Ukrainian (Ukraine)" Tag="uk-UA"/>
+                                <ComboBoxItem Content="Vietnamese (Vietnam)" Tag="vi-VN"/>
+                            </ComboBox>
+                        </Grid>
+                    </StackPanel>
+                </TabItem>
+            </TabControl>
+
+            <local:ViewSourceButton Grid.Row="2" Background="#FF13D7E3">
                 <local:ViewSourceButton.Sources>
                     <local:ViewSourceButtonInfo FileName="Calendar_Demo.xaml" RelativePath="src/Samples/XAML_Controls/Calendar"/>
                     <local:ViewSourceButtonInfo FileName="Calendar_Demo.xaml.cs" RelativePath="src/Samples/XAML_Controls/Calendar"/>
                     <local:ViewSourceButtonInfo FileName="Calendar_Demo.xaml.vb" RelativePath="src/Samples/XAML_Controls/Calendar"/>
                     <local:ViewSourceButtonInfo FileName="Calendar_Demo.xaml.fs" RelativePath="src/Samples/XAML_Controls/Calendar"/>
-                    <local:ViewStyleSourceInfo TabHeader="Default Calendar Style" RelativePath="src/Runtime/Controls/Themes" Fragment="#L96-L132"/>
-                    <local:ViewModernStyleSourceInfo FileName="OpenSilver.Controls.xaml" TabHeader="Modern Calendar Style" Fragment="#L606-L794"/>
+                    <local:ViewStyleSourceInfo Fragment="#L96-L132"
+                                               RelativePath="src/Runtime/Controls/Themes"
+                                               TabHeader="Default Calendar Style"/>
+                    <local:ViewModernStyleSourceInfo FileName="OpenSilver.Controls.xaml"
+                                                     Fragment="#L606-L794"
+                                                     TabHeader="Modern Calendar Style"/>
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

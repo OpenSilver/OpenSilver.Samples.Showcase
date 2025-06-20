@@ -183,9 +183,6 @@
     <Page Include="Samples\XAML_Controls\DomainUpDown\DomainUpDown_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\XAML_Controls\GlobalCalendar\GlobalCalendar_Demo.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Samples\\XAML_Layout\\HeaderedContentControl\\HeaderedContentControl_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -336,7 +333,6 @@
     <Compile Include="Samples\XAML_Controls\DataForm\DataForm_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Controls\DataGrid\DataGridGrouping.xaml.cs" />
     <Compile Include="Samples\XAML_Controls\DomainUpDown\DomainUpDown_Demo.xaml.cs" />
-    <Compile Include="Samples\XAML_Controls\GlobalCalendar\GlobalCalendar_Demo.xaml.cs" />
     <Compile Include="Samples\\XAML_Layout\\HeaderedContentControl\\HeaderedContentControl_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Controls\InkPresenter\InkPresenter_Demo.xaml.cs" />
     <Compile Include="Samples\\XAML_Layout\\LayoutTransformer\\LayoutTransformer_Demo.xaml.cs" />

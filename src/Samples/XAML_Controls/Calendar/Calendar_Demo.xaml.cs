@@ -1,10 +1,11 @@
 ﻿using OpenSilver.Samples.Showcase.Search;
+using System.Globalization;
 using System.Windows;
 using System.Windows.Controls;
 
 namespace OpenSilver.Samples.Showcase
 {
-    [SearchKeywords("input", "calendar", "date", "selection", "schedule", "picker", "control")]
+    [SearchKeywords("input", "calendar", "date", "selection", "schedule", "picker", "control", "culture", "globalization")]
     public partial class Calendar_Demo : UserControl
     {
         public Calendar_Demo()
@@ -34,6 +35,17 @@ namespace OpenSilver.Samples.Showcase
                     chkPastDateSelection.IsChecked = true;
                 }
             }
+        }
+
+        private void OnCultureChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (culturesCombo.SelectedItem is not ComboBoxItem selected)
+            {
+                return;
+            }
+
+            var culture = new CultureInfo(selected.Tag as string);
+            globalCalendar.CalendarInfo = new CultureCalendarInfo(culture);
         }
     }
 }

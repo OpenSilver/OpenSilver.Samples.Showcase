@@ -4,6 +4,7 @@ open System
 open System.Windows
 open System.Windows.Controls
 open OpenSilver.Samples.Showcase.Search
+open System.Globalization
 
 [<SearchKeywords("input", "calendar", "date", "selection", "schedule", "picker", "control")>]
 type public Calendar_Demo() as this =
@@ -22,3 +23,13 @@ type public Calendar_Demo() as this =
                     this.sampleCalendar.BlackoutDates.AddDatesInPast()
                 with _ ->
                     this.chkPastDateSelection.IsChecked <- Nullable(true)
+
+    member private this.OnCultureChanged(sender: obj, e: SelectionChangedEventArgs) =
+        match this.culturesCombo.SelectedItem with
+        | :? ComboBoxItem as selected ->
+            match selected.Tag with
+            | :? string as tag ->
+                let culture = CultureInfo(tag)
+                this.globalCalendar.CalendarInfo <- CultureCalendarInfo(culture)
+            | _ -> ()
+        | _ -> ()

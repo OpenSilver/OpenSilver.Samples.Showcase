@@ -1,4 +1,5 @@
-﻿Imports System.Windows
+﻿Imports System.Globalization
+Imports System.Windows
 Imports System.Windows.Controls
 Imports OpenSilver.Samples.Showcase.Search
 
@@ -24,6 +25,16 @@ Namespace Global.OpenSilver.Samples.Showcase
                     chkPastDateSelection.IsChecked = True
                 End Try
             End If
+        End Sub
+
+        Private Sub OnCultureChanged(sender As Object, e As SelectionChangedEventArgs)
+            Dim selected = TryCast(culturesCombo.SelectedItem, ComboBoxItem)
+            If selected Is Nothing Then
+                Return
+            End If
+
+            Dim culture As New CultureInfo(TryCast(selected.Tag, String))
+            globalCalendar.CalendarInfo = New CultureCalendarInfo(culture)
         End Sub
     End Class
 End Namespace

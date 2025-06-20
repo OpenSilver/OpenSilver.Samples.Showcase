@@ -64,7 +64,6 @@
             <local:DatePicker_Demo x:Name="DatePickerDemo" HorizontalAlignment="Center"/>
             <local:TimePicker_Demo HorizontalAlignment="Center"/>
             <local:Calendar_Demo HorizontalAlignment="Center"/>
-            <local:GlobalCalendar_Demo HorizontalAlignment="Center"/>
             <local:Rating_Demo HorizontalAlignment="Center"/>
             <local:ContextMenu_MenuItem_Demo x:Name="MenuItemDemo" HorizontalAlignment="Center"/>
             <local:AnimatedNavigationBar_Demo HorizontalAlignment="Center"/>
