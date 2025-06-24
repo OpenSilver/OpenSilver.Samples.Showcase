@@ -27,6 +27,9 @@
     <Page Include="Other\Controls\LoadingControl.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Other\Controls\TogglePopupControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Other\Internals\Search\SearchControl.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -250,6 +253,7 @@
     <Compile Include="Other\Controls\JsParticlesEffect.cs" />
     <Compile Include="Other\Controls\LoadingControl.xaml.cs" />
     <Compile Include="Other\Controls\SvgImage.cs" />
+    <Compile Include="Other\Controls\TogglePopupControl.xaml.cs" />
     <Compile Include="Other\Converters\EnumToListConverter.cs" />
     <Compile Include="Other\Converters\StringEmptyToVisibilityConverter.cs" />
     <Compile Include="Other\Converters\RgbToBrushConverter.cs" />

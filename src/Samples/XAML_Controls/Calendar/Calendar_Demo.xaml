@@ -18,10 +18,16 @@
 
             <TabControl Grid.Row="1" Padding="0">
                 <TabItem Header="Calendar">
-                    <StackPanel>
-                        <Calendar x:Name="sampleCalendar"/>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Calendar x:Name="sampleCalendar" VerticalAlignment="Top"/>
 
-                        <Expander Margin="0,10,0,0" Header="Settings">
+                        <local:TogglePopupControl Grid.Row="1"
+                                                  Margin="10,10,0,0"
+                                                  DataContext="{Binding ElementName=sampleCalendar}">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"/>
@@ -46,7 +52,7 @@
                                 <CheckBox Grid.Row="1"
                                           Content="IsTodayHighlighted"
                                           FontSize="12"
-                                          IsChecked="{Binding IsTodayHighlighted, ElementName=sampleCalendar, Mode=TwoWay}"/>
+                                          IsChecked="{Binding IsTodayHighlighted, Mode=TwoWay}"/>
 
                                 <TextBlock Grid.Row="2"
                                            Margin="0,2,0,0"
@@ -58,7 +64,7 @@
                                           Margin="0,1"
                                           FontSize="12"
                                           ItemsSource="{Binding Converter={StaticResource EnumToListConverter}, ConverterParameter={x:Static Calendar.DisplayModeProperty}}"
-                                          SelectedValue="{Binding DisplayMode, ElementName=sampleCalendar, Mode=TwoWay}"/>
+                                          SelectedValue="{Binding DisplayMode, Mode=TwoWay}"/>
 
                                 <TextBlock Grid.Row="3"
                                            Margin="0,2,0,0"
@@ -70,7 +76,7 @@
                                           Margin="0,1"
                                           FontSize="12"
                                           ItemsSource="{Binding Converter={StaticResource EnumToListConverter}, ConverterParameter={x:Static Calendar.FirstDayOfWeekProperty}}"
-                                          SelectedValue="{Binding FirstDayOfWeek, ElementName=sampleCalendar, Mode=TwoWay}"/>
+                                          SelectedValue="{Binding FirstDayOfWeek, Mode=TwoWay}"/>
 
                                 <TextBlock Grid.Row="4"
                                            Margin="0,2,0,0"
@@ -82,16 +88,16 @@
                                           Margin="0,1"
                                           FontSize="12"
                                           ItemsSource="{Binding Converter={StaticResource EnumToListConverter}, ConverterParameter={x:Static Calendar.SelectionModeProperty}}"
-                                          SelectedValue="{Binding SelectionMode, ElementName=sampleCalendar, Mode=TwoWay}"/>
+                                          SelectedValue="{Binding SelectionMode, Mode=TwoWay}"/>
                             </Grid>
-                        </Expander>
-                    </StackPanel>
+                        </local:TogglePopupControl>
+                    </Grid>
                 </TabItem>
                 <TabItem Header="GlobalCalendar">
                     <StackPanel>
                         <GlobalCalendar x:Name="globalCalendar"/>
 
-                        <Grid Margin="0,10">
+                        <Grid Margin="0,10,0,0">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition/>
