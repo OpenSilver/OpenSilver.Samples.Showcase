@@ -18,53 +18,57 @@
                             Foreground="#FFA05BFF"
                             Style="{StaticResource HeaderControl_Style}"/>
 
-            <TimePicker Name="timePicker"
+            <TimePicker x:Name="timePicker"
                         Grid.Row="1"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"/>
 
-            <StackPanel Grid.Row="2" Margin="0,10,0,0">
-                <StackPanel Margin="0,0,0,2" Orientation="Horizontal">
-                    <TextBlock VerticalAlignment="Center" Text="Popup Mode "/>
-                    <ComboBox Name="popupModes"
-                              Width="99"
-                              Height="24"
-                              DisplayMemberPath="Name"
-                              FontSize="12"
-                              SelectedValue="{Binding Path=Popup, ElementName=timePicker, Mode=TwoWay}"
-                              SelectedValuePath="Popup"/>
+            <local:TogglePopupControl Grid.Row="2"
+                                      Margin="0,10,0,0"
+                                      DataContext="{Binding ElementName=timePicker}">
+                <StackPanel>
+                    <StackPanel Margin="0,0,0,2" Orientation="Horizontal">
+                        <TextBlock VerticalAlignment="Center" Text="Popup Mode "/>
+                        <ComboBox Name="popupModes"
+                                  Width="99"
+                                  Height="24"
+                                  DisplayMemberPath="Name"
+                                  FontSize="12"
+                                  SelectedValue="{Binding Path=Popup, Mode=TwoWay}"
+                                  SelectedValuePath="Popup"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock VerticalAlignment="Center" Text="TimeSelectionMode "/>
+                        <ComboBox Height="24"
+                                  MaxWidth="62"
+                                  FontSize="12"
+                                  ItemsSource="{Binding Converter={StaticResource EnumToListConverter}, ConverterParameter={x:Type PopupTimeSelectionMode}}"
+                                  SelectedValue="{Binding Path=PopupTimeSelectionMode, Mode=TwoWay}"/>
+                    </StackPanel>
+                    <StackPanel Margin="0,2" Orientation="Horizontal">
+                        <TextBlock VerticalAlignment="Center" Text="MinutesInterval "/>
+                        <NumericUpDown Width="85"
+                                       MinWidth="0"
+                                       FontSize="12"
+                                       Value="{Binding Path=PopupMinutesInterval, Mode=TwoWay}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock VerticalAlignment="Center" Text="SecondsInterval "/>
+                        <NumericUpDown Width="82"
+                                       MinWidth="0"
+                                       FontSize="12"
+                                       Value="{Binding Path=PopupSecondsInterval, Mode=TwoWay}"/>
+                    </StackPanel>
+                    <StackPanel Margin="0,2" Orientation="Horizontal">
+                        <TextBlock VerticalAlignment="Center" Text="ButtonMode "/>
+                        <ComboBox Width="101"
+                                  Height="24"
+                                  FontSize="12"
+                                  ItemsSource="{Binding Converter={StaticResource EnumToListConverter}, ConverterParameter={x:Type ClickMode}}"
+                                  SelectedValue="{Binding Path=PopupButtonMode, Mode=TwoWay}"/>
+                    </StackPanel>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock VerticalAlignment="Center" Text="TimeSelectionMode "/>
-                    <ComboBox Height="24"
-                              MaxWidth="62"
-                              FontSize="12"
-                              ItemsSource="{Binding Converter={StaticResource EnumToListConverter}, ConverterParameter={x:Type PopupTimeSelectionMode}}"
-                              SelectedValue="{Binding Path=PopupTimeSelectionMode, ElementName=timePicker, Mode=TwoWay}"/>
-                </StackPanel>
-                <StackPanel Margin="0,2" Orientation="Horizontal">
-                    <TextBlock VerticalAlignment="Center" Text="MinutesInterval "/>
-                    <NumericUpDown Width="85"
-                                   MinWidth="0"
-                                   FontSize="12"
-                                   Value="{Binding Path=PopupMinutesInterval, ElementName=timePicker, Mode=TwoWay}"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock VerticalAlignment="Center" Text="SecondsInterval "/>
-                    <NumericUpDown Width="82"
-                                   MinWidth="0"
-                                   FontSize="12"
-                                   Value="{Binding Path=PopupSecondsInterval, ElementName=timePicker, Mode=TwoWay}"/>
-                </StackPanel>
-                <StackPanel Margin="0,2" Orientation="Horizontal">
-                    <TextBlock VerticalAlignment="Center" Text="ButtonMode "/>
-                    <ComboBox Width="101"
-                              Height="24"
-                              FontSize="12"
-                              ItemsSource="{Binding Converter={StaticResource EnumToListConverter}, ConverterParameter={x:Type ClickMode}}"
-                              SelectedValue="{Binding Path=PopupButtonMode, ElementName=timePicker, Mode=TwoWay}"/>
-                </StackPanel>
-            </StackPanel>
+            </local:TogglePopupControl>
 
             <local:ViewSourceButton Grid.Row="3" Background="#FFA05BFF">
                 <local:ViewSourceButton.Sources>

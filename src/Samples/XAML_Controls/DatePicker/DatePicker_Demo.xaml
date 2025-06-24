@@ -17,22 +17,26 @@
                             Foreground="#FFFE7484"
                             Style="{StaticResource HeaderControl_Style}"/>
 
-            <DatePicker Name="datePicker"
-                        Grid.Row="1"
-                        Margin="0,10"/>
+            <DatePicker Grid.Row="1"
+                        Margin="0,10"
+                        IsDropDownOpen="{Binding IsChecked, ElementName=IsDropDownOpenCheckBox, Mode=TwoWay}"
+                        SelectedDateFormat="{Binding SelectedValue, ElementName=SelectedDateFormatCombo}"/>
 
-            <StackPanel Grid.Row="2">
-                <CheckBox Content="IsDropDownOpen"
-                          FontSize="12"
-                          IsChecked="{Binding Path=IsDropDownOpen, ElementName=datePicker, Mode=TwoWay}"/>
-                <StackPanel Margin="0,2" Orientation="Horizontal">
-                    <TextBlock VerticalAlignment="Center" Text="SelectedDateFormat "/>
-                    <ComboBox Height="24"
-                              FontSize="12"
-                              ItemsSource="{Binding Converter={StaticResource EnumToListConverter}, ConverterParameter={x:Static DatePicker.SelectedDateFormatProperty}}"
-                              SelectedValue="{Binding Path=SelectedDateFormat, ElementName=datePicker, Mode=TwoWay}"/>
+            <local:TogglePopupControl Grid.Row="2">
+                <StackPanel>
+                    <CheckBox x:Name="IsDropDownOpenCheckBox"
+                              Content="IsDropDownOpen"
+                              FontSize="12"/>
+                    <StackPanel Margin="0,2" Orientation="Horizontal">
+                        <TextBlock VerticalAlignment="Center" Text="SelectedDateFormat "/>
+                        <ComboBox x:Name="SelectedDateFormatCombo"
+                                  Height="24"
+                                  FontSize="12"
+                                  ItemsSource="{Binding Converter={StaticResource EnumToListConverter}, ConverterParameter={x:Static DatePicker.SelectedDateFormatProperty}}"
+                                  SelectedIndex="1"/>
+                    </StackPanel>
                 </StackPanel>
-            </StackPanel>
+            </local:TogglePopupControl>
 
             <local:ViewSourceButton Grid.Row="3" Background="#FFFE7484">
                 <local:ViewSourceButton.Sources>
