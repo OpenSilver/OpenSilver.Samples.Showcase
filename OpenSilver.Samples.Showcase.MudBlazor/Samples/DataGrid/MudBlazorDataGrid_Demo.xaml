@@ -17,8 +17,7 @@
             <Grid Grid.Row="1">
                 <razor:RazorComponent Margin="0,20,0,0" Height="500">
                     @using MudBlazor
-                    <MudThemeProvider />
-                    <MudPopoverProvider />
+                    
                     <MudDataGrid PageSize="5" AllowPaging="true" SortMode="global::MudBlazor.SortMode.Multiple" T="OpenSilver.Samples.Showcase.MudBlazorModel.Employee"  Items="{Binding Employees}" ColumnWidth="400px">
                         <Columns>
                             <PropertyColumn  Property="x => x.FirstName" Title="First Name" Width="150px" />
