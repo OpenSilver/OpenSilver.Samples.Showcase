@@ -61,7 +61,6 @@ namespace OpenSilver.Samples.Showcase
                                 Foreground = brush3,
                                 Pages = new ObservableCollection<PageInfo>
                                 {
-
                                     new PageInfo { Name = "Interop", Path = "/Interop_Samples", Icon = "\uEACD", IconBrush = brush3 },
                                     new PageInfo { Name = "Performance", Path = "/Performance", Icon = "\uEB9B", IconBrush = brush3 },
                                     new PageInfo { Name = "Third-Party", Path = "/Third_Party", Icon = "\uEBBB", IconBrush = brush3 },
@@ -78,8 +77,8 @@ namespace OpenSilver.Samples.Showcase
                                     new PageInfo { Name = "Radzen Components", Path = "/Blazor_Radzen", Icon = "\uEB9B", IconBrush = brush4 },
                                     new PageInfo { Name = "MudBlazor Components", Path = "/Blazor_MudBlazor", Icon = "\uEB9B", IconBrush = brush4 },
                                     new PageInfo {Name = "Blazorise Components", Path = "/Blazor_Blazorise", Icon = "\uEB9B", IconBrush = brush4 },
-                                    new PageInfo {Name = "DevExpress Components", Path = "/Blazor_DevExpress", Icon = "\uEB9B", IconBrush = brush4 },
-                                    new PageInfo {Name = "Syncfusion Components", Path = "/Blazor_Syncfusion", Icon = "\uEB9B", IconBrush = brush4 },
+                                    LandingPageInfo,
+                                    SearchPageInfo
                                 }
                             }
                         };
