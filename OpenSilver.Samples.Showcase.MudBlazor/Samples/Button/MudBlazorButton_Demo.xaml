@@ -29,8 +29,7 @@
                 </StackPanel>
                 <razor:RazorComponent Margin="0,20,0,0" Height="70" Grid.Row="1" Grid.ColumnSpan="2">
                     @using MudBlazor
-                    <MudThemeProvider />
-                    <MudPopoverProvider />
+                    
                     <MudButton x:Name="MyMudButton" Variant="{Binding CurrentVariant}" OnClick="{Binding ButtonClickDel}">Default</MudButton>
                 </razor:RazorComponent>
             </Grid>

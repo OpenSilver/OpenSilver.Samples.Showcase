@@ -17,10 +17,7 @@
             <Grid Grid.Row="1">
                 <razor:RazorComponent Margin="0,20,0,0" Height="100">
                     @using MudBlazor
-                    <MudThemeProvider />
-                    <MudSnackbarProvider />
-                    <MudPopoverProvider />
-                    <MudThemeProvider />
+                    
                     @inject global::MudBlazor.ISnackbar Snackbar
 
                     <MudButton Onclick="@(() => Snackbar.Add("This works!", global::MudBlazor.Severity.Normal))">Open Snackbar</MudButton>
