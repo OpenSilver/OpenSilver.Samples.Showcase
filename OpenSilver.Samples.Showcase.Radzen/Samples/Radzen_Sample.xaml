@@ -5,7 +5,7 @@
     xmlns:controlskit="clr-namespace:OpenSilver.ControlsKit;assembly=OpenSilver.ControlsKit.Controls"
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
     <StackPanel>
-        <TextBlock Text="Radzen Componenents" Style="{StaticResource PageHeader_Style}"/>
+        <ContentControl Content="Radzen Components" Style="{StaticResource PageTitle_Style}"/>
         <controlskit:StaggeredPanel ProgressiveRenderingChunkSize="2">
             <local:RadzenDataGrid_Demo HorizontalAlignment="Center"/>
             <local:RadzenColorPicker_Demo HorizontalAlignment="Center"/>

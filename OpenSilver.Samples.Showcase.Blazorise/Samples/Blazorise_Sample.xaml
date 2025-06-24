@@ -6,7 +6,7 @@
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
 
     <StackPanel>
-        <TextBlock Text="Blazorise Components" Style="{StaticResource PageHeader_Style}"/>
+        <ContentControl Content="Blazorise Components" Style="{StaticResource PageTitle_Style}"/>
         <controlskit:StaggeredPanel ProgressiveRenderingChunkSize="2">
             <local:BlazoriseButton_Demo HorizontalAlignment="Center"/>
             <local:BlazoriseTable_Demo HorizontalAlignment="Center"/>

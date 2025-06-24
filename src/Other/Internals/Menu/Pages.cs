@@ -25,6 +25,7 @@ namespace OpenSilver.Samples.Showcase
                     var brush1 = new SolidColorBrush(Color.FromRgb(85, 119, 240));
                     var brush2 = new SolidColorBrush(Color.FromRgb(205, 63, 186));
                     var brush3 = new SolidColorBrush(Color.FromRgb(253, 163, 28));
+                    var brush4 = new SolidColorBrush(Color.FromRgb(71, 194, 14));
 
                     _allPagesAndCategories = new ObservableCollection<PageCategoryInfo>
                         {
@@ -63,6 +64,19 @@ namespace OpenSilver.Samples.Showcase
                                     new PageInfo { Name = "Interop", Path = "/Interop_Samples", Icon = "\uEACD", IconBrush = brush3 },
                                     new PageInfo { Name = "Performance", Path = "/Performance", Icon = "\uEB9B", IconBrush = brush3 },
                                     new PageInfo { Name = "Third-Party", Path = "/Third_Party", Icon = "\uEBBB", IconBrush = brush3 },
+                                    LandingPageInfo,
+                                    SearchPageInfo
+                                }
+                            },
+                            new PageCategoryInfo
+                            {
+                                Name = "BLAZOR COMPONENTS",
+                                Foreground = brush4,
+                                Pages = new ObservableCollection<PageInfo>
+                                {
+                                    new PageInfo { Name = "Radzen Components", Path = "/Blazor_Radzen", Icon = "\uEB9B", IconBrush = brush4 },
+                                    new PageInfo { Name = "MudBlazor Components", Path = "/Blazor_MudBlazor", Icon = "\uEB9B", IconBrush = brush4 },
+                                    new PageInfo {Name = "Blazorise Components", Path = "/Blazor_Blazorise", Icon = "\uEB9B", IconBrush = brush4 },
                                     LandingPageInfo,
                                     SearchPageInfo
                                 }
