@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
 
-    <ContentControl Style="{StaticResource Card_Style}" Margin="0,22,0,5">
+    <ContentControl Margin="0,22,0,5" Style="{StaticResource Card_Style}">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -18,10 +18,17 @@
 
             <TabControl Grid.Row="1" Padding="0">
                 <TabItem Header="Calendar">
-                    <StackPanel>
-                        <Calendar x:Name="sampleCalendar"/>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Calendar x:Name="sampleCalendar" VerticalAlignment="Top"/>
 
-                        <Expander Margin="0,10,0,0" Header="Settings">
+                        <Expander Grid.Row="1"
+                                  Margin="0,10,0,0"
+                                  DataContext="{Binding ElementName=sampleCalendar}"
+                                  Style="{StaticResource PopupExpanderStyle}">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"/>
@@ -46,7 +53,7 @@
                                 <CheckBox Grid.Row="1"
                                           Content="IsTodayHighlighted"
                                           FontSize="12"
-                                          IsChecked="{Binding IsTodayHighlighted, ElementName=sampleCalendar, Mode=TwoWay}"/>
+                                          IsChecked="{Binding IsTodayHighlighted, Mode=TwoWay}"/>
 
                                 <TextBlock Grid.Row="2"
                                            Margin="0,2,0,0"
@@ -58,7 +65,7 @@
                                           Margin="0,1"
                                           FontSize="12"
                                           ItemsSource="{Binding Converter={StaticResource EnumToListConverter}, ConverterParameter={x:Static Calendar.DisplayModeProperty}}"
-                                          SelectedValue="{Binding DisplayMode, ElementName=sampleCalendar, Mode=TwoWay}"/>
+                                          SelectedValue="{Binding DisplayMode, Mode=TwoWay}"/>
 
                                 <TextBlock Grid.Row="3"
                                            Margin="0,2,0,0"
@@ -70,7 +77,7 @@
                                           Margin="0,1"
                                           FontSize="12"
                                           ItemsSource="{Binding Converter={StaticResource EnumToListConverter}, ConverterParameter={x:Static Calendar.FirstDayOfWeekProperty}}"
-                                          SelectedValue="{Binding FirstDayOfWeek, ElementName=sampleCalendar, Mode=TwoWay}"/>
+                                          SelectedValue="{Binding FirstDayOfWeek, Mode=TwoWay}"/>
 
                                 <TextBlock Grid.Row="4"
                                            Margin="0,2,0,0"
@@ -82,16 +89,16 @@
                                           Margin="0,1"
                                           FontSize="12"
                                           ItemsSource="{Binding Converter={StaticResource EnumToListConverter}, ConverterParameter={x:Static Calendar.SelectionModeProperty}}"
-                                          SelectedValue="{Binding SelectionMode, ElementName=sampleCalendar, Mode=TwoWay}"/>
+                                          SelectedValue="{Binding SelectionMode, Mode=TwoWay}"/>
                             </Grid>
                         </Expander>
-                    </StackPanel>
+                    </Grid>
                 </TabItem>
                 <TabItem Header="GlobalCalendar">
                     <StackPanel>
                         <GlobalCalendar x:Name="globalCalendar"/>
 
-                        <Grid Margin="0,10">
+                        <Grid Margin="0,10,0,0">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition/>

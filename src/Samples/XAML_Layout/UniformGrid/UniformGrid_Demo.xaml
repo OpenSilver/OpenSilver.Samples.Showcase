@@ -44,43 +44,45 @@
                 <ContentControl Background="#FFD970D7" Content="6"/>
             </UniformGrid>
 
-            <Grid Grid.Row="2"
-                  Margin="0,20,0,0"
-                  HorizontalAlignment="Center">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-                <Grid.Resources>
-                    <Style TargetType="NumericUpDown">
-                        <Setter Property="Margin" Value="5"/>
-                        <Setter Property="Height" Value="24"/>
-                        <Setter Property="MinWidth" Value="80"/>
-                        <Setter Property="FontSize" Value="12"/>
-                    </Style>
-                    <Style TargetType="TextBlock">
-                        <Setter Property="VerticalAlignment" Value="Center"/>
-                    </Style>
-                </Grid.Resources>
+            <Expander Grid.Row="2"
+                      Margin="10,20,0,0"
+                      Style="{StaticResource PopupExpanderStyle}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.Resources>
+                        <Style TargetType="NumericUpDown">
+                            <Setter Property="Margin" Value="5"/>
+                            <Setter Property="Height" Value="24"/>
+                            <Setter Property="MinWidth" Value="80"/>
+                            <Setter Property="FontSize" Value="12"/>
+                        </Style>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                        </Style>
+                    </Grid.Resources>
 
-                <TextBlock Text="Rows"/>
-                <NumericUpDown Grid.Column="1" Value="{Binding Rows, ElementName=uniformGrid, Mode=TwoWay}"/>
+                    <TextBlock Text="Rows"/>
+                    <NumericUpDown Grid.Column="1" Value="{Binding Rows, ElementName=uniformGrid, Mode=TwoWay}"/>
 
-                <TextBlock Grid.Row="1" Text="Columns"/>
-                <NumericUpDown Grid.Row="1"
-                               Grid.Column="1"
-                               Value="{Binding Columns, ElementName=uniformGrid, Mode=TwoWay}"/>
+                    <TextBlock Grid.Row="1" Text="Columns"/>
+                    <NumericUpDown Grid.Row="1"
+                                   Grid.Column="1"
+                                   Value="{Binding Columns, ElementName=uniformGrid, Mode=TwoWay}"/>
 
-                <TextBlock Grid.Row="2" Text="FirstColumn"/>
-                <NumericUpDown Grid.Row="2"
-                               Grid.Column="1"
-                               Value="{Binding FirstColumn, ElementName=uniformGrid, Mode=TwoWay}"/>
-            </Grid>
+                    <TextBlock Grid.Row="2" Text="FirstColumn"/>
+                    <NumericUpDown Grid.Row="2"
+                                   Grid.Column="1"
+                                   Value="{Binding FirstColumn, ElementName=uniformGrid, Mode=TwoWay}"/>
+                </Grid>
+            </Expander>
 
             <local:ViewSourceButton Grid.Row="3" Background="#FFE65969">
                 <local:ViewSourceButton.Sources>
