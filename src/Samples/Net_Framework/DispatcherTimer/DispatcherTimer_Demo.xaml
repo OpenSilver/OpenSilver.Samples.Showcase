@@ -11,11 +11,15 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ContentControl Content="DispatcherTimer" Foreground="#FFDEA542" Background="#FFD2BD9C" Style="{StaticResource HeaderControl_Style}"/>
-            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,5,0,0">
-                <Button Content="Start" VerticalAlignment="Top" Click="ButtonToStartTimer_Click"/>
-                <Button Content="Stop" Margin="5,0,0,0" VerticalAlignment="Top" Click="ButtonToStopTimer_Click"/>
-                <TextBlock x:Name="CounterTextBlock" Margin="10,0,0,0" FontSize="26" VerticalAlignment="Top"/>
+
+            <StackPanel Grid.Row="1" HorizontalAlignment="Center" Margin="0,5,0,0">
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="Start" Click="ButtonToStartTimer_Click"/>
+                    <Button Content="Stop" Margin="5,0,0,0" Click="ButtonToStopTimer_Click"/>
+                </StackPanel>
+                <TextBlock x:Name="CounterTextBlock" Margin="0,10,0,0" FontSize="26" HorizontalAlignment="Center" Text="0"/>
             </StackPanel>
+
             <local:ViewSourceButton Grid.Row="2"
                                     Background="#FCAB54">
                 <local:ViewSourceButton.Sources>

@@ -23,6 +23,7 @@
                 <StackPanel.Resources>
                     <Style TargetType="Slider">
                         <Setter Property="Maximum" Value="255"/>
+                        <Setter Property="LargeChange" Value="10"/>
                         <Setter Property="Margin" Value="20,5"/>
                     </Style>
                 </StackPanel.Resources>

@@ -19,7 +19,7 @@
                 <RadioButton Name="cSharpButton"
                              Checked="OnCSharpRadioButtonChecked"
                              Content="C#"/>
-                <RadioButton Checked="OnVBNETRadioButtonChecked" Content="VB.NET"/>
+                <RadioButton Checked="OnVBNETRadioButtonChecked" Content="VB.NET" Margin="15,0"/>
                 <RadioButton Checked="OnFSharpRadioButtonChecked" Content="F#"/>
             </StackPanel>
         </Border>
