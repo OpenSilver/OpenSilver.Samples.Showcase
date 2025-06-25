@@ -1,6 +1,7 @@
 ﻿using OpenSilver.Animations;
 using OpenSilver.Themes.Modern;
 using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,10 +21,21 @@ namespace OpenSilver.Samples.Showcase
             InitializeComponent();
 
             Current = this;
+
+            // Register some events:
             Loaded += MainPage_Loaded;
             SizeChanged += MainPage_SizeChanged;
+
+            // Load the left menu:
             MenuTreeView.ItemsSource = Pages.AllPagesAndCategories;
+
+            // Listen to clicks anywhere on the page, so as to collapse the left menu on mobile when user clicks outside of it:
+            PageContainer.AddHandler(MouseDownEvent, new MouseButtonEventHandler(PageContainer_MouseDown), handledEventsToo: true);
+
+            // Fix the color of the Light/Dark toggle:
             UpdateThemeToggleFillColor();
+
+            // Uncomment to slow down all animations (useful for debugging):
             //Animations.Animation.SlowDownAnimationsForDebugging = 10.0;
         }
 
@@ -307,6 +319,17 @@ namespace OpenSilver.Samples.Showcase
             else
             {
                 // Not supposed to happen because the button is not visible when in large resolution mode.
+            }
+        }
+
+        private void PageContainer_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Console.WriteLine("PageContainer_MouseDown " + DateTime.Now.ToString());
+
+            // Close the menu when the user clicks outside of it (on mobile):
+            if (_currentState == CurrentState.SmallResolution_ShowMenu)
+            {
+                GoToState(CurrentState.SmallResolution_HideMenu);
             }
         }
 
