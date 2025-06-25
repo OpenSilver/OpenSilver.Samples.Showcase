@@ -25,9 +25,10 @@
                         </Grid.RowDefinitions>
                         <Calendar x:Name="sampleCalendar" VerticalAlignment="Top"/>
 
-                        <local:TogglePopupControl Grid.Row="1"
-                                                  Margin="10,10,0,0"
-                                                  DataContext="{Binding ElementName=sampleCalendar}">
+                        <Expander Grid.Row="1"
+                                  Margin="10,0,0,0"
+                                  DataContext="{Binding ElementName=sampleCalendar}"
+                                  Style="{StaticResource PopupExpanderStyle}">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"/>
@@ -90,7 +91,7 @@
                                           ItemsSource="{Binding Converter={StaticResource EnumToListConverter}, ConverterParameter={x:Static Calendar.SelectionModeProperty}}"
                                           SelectedValue="{Binding SelectionMode, Mode=TwoWay}"/>
                             </Grid>
-                        </local:TogglePopupControl>
+                        </Expander>
                     </Grid>
                 </TabItem>
                 <TabItem Header="GlobalCalendar">

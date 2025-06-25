@@ -23,9 +23,10 @@
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"/>
 
-            <local:TogglePopupControl Grid.Row="2"
-                                      Margin="0,10,0,0"
-                                      DataContext="{Binding ElementName=timePicker}">
+            <Expander Grid.Row="2"
+                      Margin="10,20,0,0"
+                      DataContext="{Binding ElementName=timePicker}"
+                      Style="{StaticResource PopupExpanderStyle}">
                 <StackPanel>
                     <StackPanel Margin="0,0,0,2" Orientation="Horizontal">
                         <TextBlock VerticalAlignment="Center" Text="Popup Mode "/>
@@ -68,7 +69,7 @@
                                   SelectedValue="{Binding Path=PopupButtonMode, Mode=TwoWay}"/>
                     </StackPanel>
                 </StackPanel>
-            </local:TogglePopupControl>
+            </Expander>
 
             <local:ViewSourceButton Grid.Row="3" Background="#FFA05BFF">
                 <local:ViewSourceButton.Sources>

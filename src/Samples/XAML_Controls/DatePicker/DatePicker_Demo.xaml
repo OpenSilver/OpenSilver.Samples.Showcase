@@ -22,7 +22,7 @@
                         IsDropDownOpen="{Binding IsChecked, ElementName=IsDropDownOpenCheckBox, Mode=TwoWay}"
                         SelectedDateFormat="{Binding SelectedValue, ElementName=SelectedDateFormatCombo}"/>
 
-            <local:TogglePopupControl Grid.Row="2">
+            <Expander Grid.Row="2" Style="{StaticResource PopupExpanderStyle}">
                 <StackPanel>
                     <CheckBox x:Name="IsDropDownOpenCheckBox"
                               Content="IsDropDownOpen"
@@ -36,7 +36,7 @@
                                   SelectedIndex="1"/>
                     </StackPanel>
                 </StackPanel>
-            </local:TogglePopupControl>
+            </Expander>
 
             <local:ViewSourceButton Grid.Row="3" Background="#FFFE7484">
                 <local:ViewSourceButton.Sources>

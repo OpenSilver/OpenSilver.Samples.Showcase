@@ -48,7 +48,9 @@
                                Style="{StaticResource PlusMinusNumericUpDownStyle}"/>
             </StackPanel>
 
-            <local:TogglePopupControl Grid.Row="3" Margin="10,0">
+            <Expander Grid.Row="3"
+                      Margin="10,10,0,0"
+                      Style="{StaticResource PopupExpanderStyle}">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
@@ -74,7 +76,7 @@
                                    FontSize="12"
                                    Minimum="1"/>
                 </Grid>
-            </local:TogglePopupControl>
+            </Expander>
 
             <local:ViewSourceButton Grid.Row="4" Background="#FF3ADE8F">
                 <local:ViewSourceButton.Sources>

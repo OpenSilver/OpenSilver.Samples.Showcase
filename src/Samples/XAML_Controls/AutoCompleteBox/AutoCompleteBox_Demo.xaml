@@ -29,7 +29,9 @@
                                  MinimumPrefixLength="{Binding Value, ElementName=MinimumPrefixLengthUpDown}"/>
             </StackPanel>
 
-            <local:TogglePopupControl Grid.Row="2">
+            <Expander Grid.Row="2"
+                      Margin="0,10,0,0"
+                      Style="{StaticResource PopupExpanderStyle}">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
@@ -71,7 +73,7 @@
                                    Maximum="10"
                                    Minimum="1"/>
                 </Grid>
-            </local:TogglePopupControl>
+            </Expander>
 
             <local:ViewSourceButton Grid.Row="3" Background="#FFFF81E3">
                 <local:ViewSourceButton.Sources>

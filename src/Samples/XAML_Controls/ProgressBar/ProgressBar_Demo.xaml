@@ -23,7 +23,7 @@
                              Minimum="0"
                              Value="{Binding Path=Value, ElementName=MyNumericUpDown}"/>
 
-                <local:TogglePopupControl>
+                <Expander Margin="0,10,0,0" Style="{StaticResource PopupExpanderStyle}">
                     <StackPanel>
                         <TextBlock MaxWidth="200"
                                    Margin="0,0,0,10"
@@ -38,7 +38,7 @@
                                   Margin="0,5"
                                   Content="IsIndeterminate"/>
                     </StackPanel>
-                </local:TogglePopupControl>
+                </Expander>
             </StackPanel>
 
             <local:ViewSourceButton Grid.Row="2" Background="#FF13D7E3">
