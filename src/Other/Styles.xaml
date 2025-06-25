@@ -507,7 +507,7 @@
                                                      Storyboard.TargetName="background"
                                                      Storyboard.TargetProperty="BorderThickness">
                                             <DiscreteObjectKeyFrame KeyTime="0"
-                                                     Value="0" />                                
+                                                     Value="0" />
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -536,32 +536,6 @@
                         </Grid>
                     </Grid>
                 </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-
-    <Style TargetType="local:TogglePopupControl">
-        <Setter Property="HorizontalAlignment" Value="Left"/>
-        <Setter Property="ToggleButtonContent" Value="⚙️"/>
-        <Setter Property="ToolTip" Value="Options"/>
-        <Setter Property="ToggleButtonStyle">
-            <Setter.Value>
-                <Style TargetType="ToggleButton">
-                    <Setter Property="Background" Value="Transparent"/>
-                    <Setter Property="Padding" Value="0"/>
-                    <Setter Property="FontSize" Value="24"/>
-                </Style>
-            </Setter.Value>
-        </Setter>
-        <Setter Property="PopupBorderStyle">
-            <Setter.Value>
-                <Style TargetType="Border">
-                    <Setter Property="Background" Value="{DynamicResource Theme_BackgroundBrush}"/>
-                    <Setter Property="CornerRadius" Value="5"/>
-                    <Setter Property="BorderThickness" Value="1"/>
-                    <Setter Property="BorderBrush" Value="{DynamicResource Theme_BorderBrush}"/>
-                    <Setter Property="Padding" Value="10"/>
-                </Style>
             </Setter.Value>
         </Setter>
     </Style>

@@ -94,12 +94,6 @@
       <DependentUpon>Other\Controls\LoadingControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Other\Internals\ItemsControlLoadingBehavior.fs" />
-    <Page Include="Other\Controls\TogglePopupControl.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Compile Include="Other\Controls\TogglePopupControl.xaml.fs">      
-      <DependentUpon>Other\Controls\TogglePopupControl.xaml</DependentUpon>
-    </Compile>
     <Page Include="Other\Internals\ViewSourcePanel.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
