@@ -40,37 +40,71 @@ namespace OpenSilver.Animations
                 return;
             }
 
-            if (d is FrameworkElement elementToAnimate
-                && e.NewValue is IAnimationType animationType)
+            if (d is FrameworkElement element)
             {
-                // We unregister before registering so that, if this method is called multiple times, we don't end up registering multiple IsVisibleChanged events:
-                ((FrameworkElement)d).IsVisibleChanged -= ElementToAnimate_IsVisibleChanged; // Note: this is safely ignored if there was no previous event registration.
-                ((FrameworkElement)d).IsVisibleChanged += ElementToAnimate_IsVisibleChanged;
+                // Always clean up existing subscriptions first
+                CleanupElement(element);
+
+                // If new value is not null, set up new subscriptions
+                if (e.NewValue is IAnimationType)
+                {
+                    SetupElement(element);
+                }
+            }
+        }
+
+        private static void SetupElement(FrameworkElement element)
+        {
+            // Subscribe to Loaded/Unloaded to manage IsVisibleChanged subscription lifecycle
+            element.Loaded += Element_Loaded;
+            element.Unloaded += Element_Unloaded;
+
+            // If element is already loaded, subscribe immediately
+            if (element.IsLoaded)
+            {
+                element.IsVisibleChanged += ElementToAnimate_IsVisibleChanged;
+            }
+        }
+
+        private static void CleanupElement(FrameworkElement element)
+        {
+            // Unsubscribe from all events
+            element.Loaded -= Element_Loaded;
+            element.Unloaded -= Element_Unloaded;
+            element.IsVisibleChanged -= ElementToAnimate_IsVisibleChanged;
+        }
+
+        private static void Element_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (sender is FrameworkElement element)
+            {
+                // Element is now in visual tree, start listening for visibility changes
+                element.IsVisibleChanged -= ElementToAnimate_IsVisibleChanged; // Ensure no duplicates
+                element.IsVisibleChanged += ElementToAnimate_IsVisibleChanged;
+            }
+        }
+
+        private static void Element_Unloaded(object sender, RoutedEventArgs e)
+        {
+            if (sender is FrameworkElement element)
+            {
+                // Element is being removed from visual tree, stop listening for visibility changes
+                element.IsVisibleChanged -= ElementToAnimate_IsVisibleChanged;
             }
         }
 
         private static void ElementToAnimate_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-            //DebugAnimations(sender)
-
-            FrameworkElement elementToAnimate = sender as FrameworkElement;
-            IAnimationType animationType = GetOnAppear(elementToAnimate);
-
-            // Unregister the event:
-            //elementToAnimate.IsVisibleChanged -= ElementToAnimate_IsVisibleChanged;
-
-            if (animationType != null && elementToAnimate.IsVisible)
+            if (sender is FrameworkElement elementToAnimate)
             {
-                animationType.AnimateElementIn(elementToAnimate);
+                IAnimationType animationType = GetOnAppear(elementToAnimate);
+
+                if (animationType != null && elementToAnimate.IsVisible)
+                {
+                    animationType.AnimateElementIn(elementToAnimate);
+                }
             }
         }
-
-        //private string DebugAnimations(object obj)
-        //{
-        //    string text = obj != null ? obj.GetType().Name + " loaded!" : "null" + " " + DateTime.Now.ToString();
-        //    Console.WriteLine(text);
-        //    MessageBox.Show(text);
-        //}
 
         public static double SlowDownAnimationsForDebugging
         {
