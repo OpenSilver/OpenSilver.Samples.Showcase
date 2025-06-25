@@ -134,7 +134,7 @@
         </Style>
     </UserControl.Resources>
 
-    <ContentControl Width="310" Style="{StaticResource Card_Style}">
+    <ContentControl Style="{StaticResource Card_Style}">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>

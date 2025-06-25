@@ -21,14 +21,14 @@
         <ItemsControl x:Name="SamplesPanel" local:ItemsControlLoadingBehavior.ShowLoadingOnGenerating="True">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <controlskit:StaggeredPanel DesiredColumnWidth="330" ProgressiveRenderingChunkSize="2"/>
+                    <controlskit:StaggeredPanel DesiredColumnWidth="700" ProgressiveRenderingChunkSize="2"/>
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
 
+            <local:MonacoEditor_Demo MinWidth="{Responsive Mobile=50, Tablet=650}" HorizontalAlignment="Center"/>
+            <local:ToastUiEditor_Demo MinWidth="{Responsive Mobile=50, Tablet=650}" HorizontalAlignment="Center"/>
+            <local:ColorPicker_Demo HorizontalAlignment="Center" MinWidth="{Responsive Mobile=50, Tablet=330}"/>
             <local:JSZip_Demo HorizontalAlignment="Center"/>
-            <local:ColorPicker_Demo HorizontalAlignment="Center"/>
-            <local:MonacoEditor_Demo HorizontalAlignment="Center"/>
-            <local:ToastUiEditor_Demo HorizontalAlignment="Center"/>            
         </ItemsControl>
     </StackPanel>
 </Page>

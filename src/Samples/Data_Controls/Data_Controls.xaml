@@ -21,10 +21,10 @@
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
 
-            <local:DataGridGrouping HorizontalAlignment="Center"/>
-            <local:DataGrid_Demo HorizontalAlignment="Center"/>
-            <local:DataForm_Demo HorizontalAlignment="Center"/>
-            <local:MVVM_Demo HorizontalAlignment="Center"/>
+            <local:DataGridGrouping MaxWidth="650" HorizontalAlignment="Center"/>
+            <local:DataGrid_Demo MaxWidth="650" HorizontalAlignment="Center"/>
+            <local:DataForm_Demo MaxWidth="650" HorizontalAlignment="Center"/>
+            <local:MVVM_Demo MaxWidth="650" HorizontalAlignment="Center"/>
         </ItemsControl>
     </StackPanel>
 </Page>
