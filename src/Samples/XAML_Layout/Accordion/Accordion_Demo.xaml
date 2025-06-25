@@ -40,54 +40,61 @@
                 <AccordionItem Content="Content 3" Header="Item 3"/>
             </Accordion>
 
-            <Grid Grid.Row="2" Margin="0,10,0,0">
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
+            <Expander Grid.Row="2"
+                      Margin="0,10,0,0"
+                      Style="{StaticResource PopupExpanderStyle}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
 
-                <TextBlock VerticalAlignment="Center" Text="ExpandDirection"/>
-                <ComboBox Grid.Column="1"
-                          Height="24"
-                          Margin="0,1"
-                          FontSize="12"
-                          ItemsSource="{Binding Converter={StaticResource EnumToListConverter}, ConverterParameter={x:Static Accordion.ExpandDirectionProperty}}"
-                          SelectedValue="{Binding ExpandDirection, ElementName=accordion, Mode=TwoWay}"/>
+                    <TextBlock VerticalAlignment="Center" Text="ExpandDirection"/>
+                    <ComboBox Grid.Column="1"
+                              Height="24"
+                              Margin="0,1"
+                              FontSize="12"
+                              ItemsSource="{Binding Converter={StaticResource EnumToListConverter}, ConverterParameter={x:Static Accordion.ExpandDirectionProperty}}"
+                              SelectedValue="{Binding ExpandDirection, ElementName=accordion, Mode=TwoWay}"/>
 
-                <TextBlock Grid.Row="1"
-                           VerticalAlignment="Center"
-                           Text="SelectionMode"/>
-                <ComboBox Grid.Row="1"
-                          Grid.Column="1"
-                          Height="24"
-                          Margin="0,1"
-                          FontSize="12"
-                          ItemsSource="{Binding Converter={StaticResource EnumToListConverter}, ConverterParameter={x:Static Accordion.SelectionModeProperty}}"
-                          SelectedValue="{Binding SelectionMode, ElementName=accordion, Mode=TwoWay}"/>
+                    <TextBlock Grid.Row="1"
+                               VerticalAlignment="Center"
+                               Text="SelectionMode"/>
+                    <ComboBox Grid.Row="1"
+                              Grid.Column="1"
+                              Height="24"
+                              Margin="0,1"
+                              FontSize="12"
+                              ItemsSource="{Binding Converter={StaticResource EnumToListConverter}, ConverterParameter={x:Static Accordion.SelectionModeProperty}}"
+                              SelectedValue="{Binding SelectionMode, ElementName=accordion, Mode=TwoWay}"/>
 
-                <TextBlock Grid.Row="2"
-                           VerticalAlignment="Center"
-                           Text="SelectionSequence"/>
-                <ComboBox Grid.Row="2"
-                          Grid.Column="1"
-                          Height="24"
-                          Margin="0,1"
-                          FontSize="12"
-                          ItemsSource="{Binding Converter={StaticResource EnumToListConverter}, ConverterParameter={x:Static Accordion.SelectionSequenceProperty}}"
-                          SelectedValue="{Binding SelectionSequence, ElementName=accordion, Mode=TwoWay}"/>
-            </Grid>
+                    <TextBlock Grid.Row="2"
+                               VerticalAlignment="Center"
+                               Text="SelectionSequence"/>
+                    <ComboBox Grid.Row="2"
+                              Grid.Column="1"
+                              Height="24"
+                              Margin="0,1"
+                              FontSize="12"
+                              ItemsSource="{Binding Converter={StaticResource EnumToListConverter}, ConverterParameter={x:Static Accordion.SelectionSequenceProperty}}"
+                              SelectedValue="{Binding SelectionSequence, ElementName=accordion, Mode=TwoWay}"/>
+                </Grid>
+            </Expander>
 
-            <local:ViewSourceButton Grid.Row="3" Background="#FFA05BFF">                <local:ViewSourceButton.Sources>
+            <local:ViewSourceButton Grid.Row="3" Background="#FFA05BFF">
+                <local:ViewSourceButton.Sources>
                     <local:ViewSourceButtonInfo FileName="Accordion_Demo.xaml" RelativePath="src/Samples/XAML_Layout/Accordion"/>
                     <local:ViewSourceButtonInfo FileName="Accordion_Demo.xaml.cs" RelativePath="src/Samples/XAML_Layout/Accordion"/>
                     <local:ViewSourceButtonInfo FileName="Accordion_Demo.xaml.vb" RelativePath="src/Samples/XAML_Layout/Accordion"/>
                     <local:ViewSourceButtonInfo FileName="Accordion_Demo.xaml.fs" RelativePath="src/Samples/XAML_Layout/Accordion"/>
-                    <local:ViewStyleSourceInfo RelativePath="src/Runtime/Controls.Layout.Toolkit/Themes" TabHeader="Default Accordion Style" Fragment="#L490-L863"/>
+                    <local:ViewStyleSourceInfo Fragment="#L490-L863"
+                                               RelativePath="src/Runtime/Controls.Layout.Toolkit/Themes"
+                                               TabHeader="Default Accordion Style"/>
                     <local:ViewModernStyleSourceInfo FileName="OpenSilver.Controls.Layout.Toolkit.xaml" TabHeader="Modern Accordion Style"/>
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
