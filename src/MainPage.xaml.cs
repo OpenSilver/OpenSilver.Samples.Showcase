@@ -324,8 +324,6 @@ namespace OpenSilver.Samples.Showcase
 
         private void PageContainer_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Console.WriteLine("PageContainer_MouseDown " + DateTime.Now.ToString());
-
             // Close the menu when the user clicks outside of it (on mobile):
             if (_currentState == CurrentState.SmallResolution_ShowMenu)
             {
