@@ -43,13 +43,13 @@ namespace OpenSilver.Animations
             if (d is FrameworkElement elementToAnimate
                 && e.NewValue is IAnimationType animationType)
             {
-                // We unregister before registering so that, if this method is called multiple times, we don't end up registering multiple Loaded events:
-                ((FrameworkElement)d).Loaded -= ElementToAnimate_Loaded; // Note: this is safely ignored if there was no previous event registration.
-                ((FrameworkElement)d).Loaded += ElementToAnimate_Loaded;
+                // We unregister before registering so that, if this method is called multiple times, we don't end up registering multiple IsVisibleChanged events:
+                ((FrameworkElement)d).IsVisibleChanged -= ElementToAnimate_IsVisibleChanged; // Note: this is safely ignored if there was no previous event registration.
+                ((FrameworkElement)d).IsVisibleChanged += ElementToAnimate_IsVisibleChanged;
             }
         }
 
-        private static void ElementToAnimate_Loaded(object sender, RoutedEventArgs e)
+        private static void ElementToAnimate_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
             //DebugAnimations(sender)
 
@@ -57,9 +57,9 @@ namespace OpenSilver.Animations
             IAnimationType animationType = GetOnAppear(elementToAnimate);
 
             // Unregister the event:
-            elementToAnimate.Loaded -= ElementToAnimate_Loaded;
+            //elementToAnimate.IsVisibleChanged -= ElementToAnimate_IsVisibleChanged;
 
-            if (animationType != null)
+            if (animationType != null && elementToAnimate.IsVisible)
             {
                 animationType.AnimateElementIn(elementToAnimate);
             }
