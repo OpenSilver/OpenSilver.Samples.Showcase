@@ -7,7 +7,7 @@
         <local:MoviesViewModel/>
     </UserControl.DataContext>
 
-    <ContentControl Width="350" Style="{StaticResource Card_Style}">
+    <ContentControl Width="{Responsive Mobile=280, Tablet=400, Desktop=700}" Style="{StaticResource Card_Style}">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>

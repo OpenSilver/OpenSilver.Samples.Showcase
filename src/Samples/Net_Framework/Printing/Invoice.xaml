@@ -1,7 +1,12 @@
 ﻿<UserControl
     x:Class="OpenSilver.Samples.Showcase.Invoice"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    d:DesignWidth="322" d:DesignHeight="932"
+    MaxWidth="{Responsive Mobile=300, Tablet=700}"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
 
     <UserControl.Resources>
         <Style TargetType="TextBlock">
@@ -20,11 +25,11 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <StackPanel Grid.Row="0" HorizontalAlignment="Left">
-                <TextBlock Text="CompanyName" FontSize="20" Margin="0,5,0,0"/>
+                <TextBlock Text="CompanyName" FontSize="{Responsive Mobile=14, Tablet=20}" Margin="0,5,0,0" TextWrapping="Wrap"/>
                 <TextBlock Text="http://www.website.com" Margin="0,10,0,0"/>
                 <TextBlock Text="contact@website.com" Margin="0,0,0,0"/>
             </StackPanel>
-            <TextBlock Grid.Row="0" Text="INVOICE" FontSize="35" FontWeight="Bold" HorizontalAlignment="Right" Foreground="#7A8DC5"/>
+            <TextBlock Grid.Row="0" Text="INVOICE" FontSize="{Responsive Mobile=20, Tablet=35}" FontWeight="Bold" HorizontalAlignment="Right" Foreground="#7A8DC5"/>
             <Grid Grid.Row="1" HorizontalAlignment="Right">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -104,8 +109,8 @@
                 <TextBlock Grid.Row="2" Grid.Column="1" Text="$37" Margin="20,0,0,0" FontSize="14" FontWeight="Bold" HorizontalAlignment="Right"/>
             </Grid>
             <StackPanel Grid.Row="5" Margin="0,30,0,0">
-                <TextBlock Text="Thank you for doing business with us." TextAlignment="Center"/>
-                <TextBlock Text="Please contact us at contact@website.com for any questions." TextAlignment="Center"/>
+                <TextBlock Text="Thank you for doing business with us." TextAlignment="Center" TextWrapping="Wrap"/>
+                <TextBlock Text="Please contact us at contact@website.com for any questions." TextAlignment="Center" TextWrapping="Wrap"/>
             </StackPanel>
         </Grid>
     </Border>

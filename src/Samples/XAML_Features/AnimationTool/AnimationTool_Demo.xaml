@@ -134,7 +134,7 @@
         </Style>
     </UserControl.Resources>
 
-    <ContentControl Width="340" Style="{StaticResource Card_Style}">
+    <ContentControl Width="310" Style="{StaticResource Card_Style}">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -225,7 +225,7 @@
                         </ComboBox>
 
                         <!--  Duration  -->
-                        <TextBlock Grid.Row="2" Text="Duration, seconds"/>
+                        <TextBlock Grid.Row="2" Text="Duration (s)"/>
                         <NumericUpDown x:Name="DurationNumericUpDown"
                                        Grid.Row="2"
                                        Grid.Column="1"
@@ -233,7 +233,7 @@
                                        Value="2"/>
 
                         <!--  BeginTime  -->
-                        <TextBlock Grid.Row="3" Text="BeginTime, seconds "/>
+                        <TextBlock Grid.Row="3" Text="BeginTime (s)"/>
                         <NumericUpDown x:Name="BeginTimeNumericUpDown"
                                        Grid.Row="3"
                                        Grid.Column="1"/>

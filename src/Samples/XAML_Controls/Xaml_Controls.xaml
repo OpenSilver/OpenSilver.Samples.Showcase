@@ -38,7 +38,6 @@
             <local:RichTextBox_Demo HorizontalAlignment="Center"/>
             <local:Path_Demo HorizontalAlignment="Center"/>
             <local:ProgressBar_Demo HorizontalAlignment="Center"/>
-            <local:DataForm_Demo HorizontalAlignment="Center"/>
             <local:BusyIndicator_Demo HorizontalAlignment="Center"/>
             <local:ToolTip_Demo HorizontalAlignment="Center"/>
             <local:HyperlinkButton_Demo HorizontalAlignment="Center"/>
@@ -56,7 +55,6 @@
             <local:Image_Demo x:Name="ImageDemo" HorizontalAlignment="Center"/>
             <local:MediaElement_Demo x:Name="MediaElementDemo" HorizontalAlignment="Center"/>
             <local:AutoCompleteBox_Demo x:Name="AutoCompleteBoxDemo" HorizontalAlignment="Center"/>
-            <local:DataGrid_Demo x:Name="DataGridDemo" HorizontalAlignment="Center"/>
             <local:HtmlPresenter_Demo HorizontalAlignment="Center"/>
             <local:ScrollBar_Demo x:Name="ScrollBarDemo" HorizontalAlignment="Center"/>
             <local:Thumb_Demo x:Name="ThumbDemo" HorizontalAlignment="Center"/>

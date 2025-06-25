@@ -35,6 +35,7 @@ namespace OpenSilver.Samples.Showcase
                                 Pages = new ObservableCollection<PageInfo>
                                 {
                                     new PageInfo { Name = "Controls", Path = "/XAML_Controls", Icon = "\uE913", IconBrush = brush1 },
+                                    new PageInfo { Name = "Data Controls", Path = "/Data_Controls", Icon = "\uF1D0", IconBrush = brush1 },
                                     new PageInfo { Name = "XAML Features", Path = "/XAML_Features", Icon = "\uE920", IconBrush = brush1 },
                                     new PageInfo { Name = "Layout", Path = "/XAML_Layout", Icon = "\uE66B", IconBrush = brush1 },
                                     new PageInfo { Name = "JS Libs", Path = "/JS_Libs", Icon = "\uEB7C", IconBrush = brush1 },

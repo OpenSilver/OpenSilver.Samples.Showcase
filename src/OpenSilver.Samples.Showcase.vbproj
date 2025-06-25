@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -72,6 +72,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\Client_Server\RIAServices\RIAServices_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Data_Controls\Data_Controls.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\Interop_Samples\PWA\PWA_Demo.xaml">
@@ -160,6 +163,9 @@
     <Page Include="Samples\SearchPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\XAML_Controls\DataGrid\DataGridGrouping.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\\XAML_Layout\\Accordion\\Accordion_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -241,6 +247,7 @@
     <Page Include="Samples\XAML_Features\FlowDirection\FlowDirection_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Compile Include="Other\Contact.vb" />
     <Compile Include="Other\Controls\JsParticlesEffect.vb" />
     <Compile Include="Other\Controls\LoadingControl.xaml.vb" />
     <Compile Include="Other\Controls\SvgImage.vb" />
@@ -283,6 +290,7 @@
     <Compile Include="Samples\Charts\ScatterSeries\ScatterSeries_Demo.xaml.vb" />
     <Compile Include="Samples\Charts\Stacked100AreaSeries\Stacked100AreaSeries_Demo.xaml.vb" />
     <Compile Include="Samples\Client_Server\RIAServices\RIAServices_Demo.xaml.vb" />
+    <Compile Include="Samples\Data_Controls\Data_Controls.xaml.vb" />
     <Compile Include="Samples\Interop_Samples\HtmlPresenter\HtmlColorPicker.vb" />
     <Compile Include="Samples\Interop_Samples\PWA\PWA_Demo.xaml.vb" />
     <Compile Include="Samples\JS_Libs\FileLoader.vb" />
@@ -319,6 +327,7 @@
     <Compile Include="Samples\Performance\Progressive_Loading\ProgressiveLoading_Demo.xaml.vb" />
     <Compile Include="Samples\Performance\Virtualization\Virtualization_Demo.xaml.vb" />
     <Compile Include="Samples\SearchPage.xaml.vb" />
+    <Compile Include="Samples\XAML_Controls\DataGrid\DataGridGrouping.xaml.vb" />
     <Compile Include="Samples\\XAML_Layout\\Accordion\\Accordion_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\BusyIndicator\BusyIndicator_Demo.xaml.vb" />
     <Compile Include="Samples\XAML_Controls\ButtonSpinner\ButtonSpinner_Demo.xaml.vb" />

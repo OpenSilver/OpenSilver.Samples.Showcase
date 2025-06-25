@@ -11,9 +11,6 @@ public partial class Xaml_Controls : Page
     {
         InitializeComponent();
 
-        var dataGridDemoIndex = SamplesPanel.Items.IndexOf(DataGridDemo);
-        SamplesPanel.Items.Insert(dataGridDemoIndex, new DataGridGrouping { HorizontalAlignment = HorizontalAlignment.Center });
-
         if (DeviceInfo.Current.Platform == DevicePlatform.Android)
         {
             DeferLoadingItemsBehavior.Attach(
