@@ -16,52 +16,48 @@
                 <StackPanel>
                     <TextBlock Text="Welcome" HorizontalAlignment="Center" FontSize="80"/>
                     <animations:AnimatedContentControl animations:Animation.OnAppear="{animations:FadeAndScale Delay=1500, EasingMode=EaseInOut}">
-                        <TextBlock Text="TO THE OPENSILVER FEATURES SHOWCASE!" Margin="0,0,0,12" FontSize="12" Opacity="0.7" Foreground="{DynamicResource Theme_TextBrush}" FontWeight="Bold" CharacterSpacing="100" HorizontalAlignment="Center"/>
+                        <TextBlock Text="TO THE OPENSILVER SHOWCASE!" Margin="0,4,0,12" FontSize="11" Opacity="0.9" Foreground="{DynamicResource Theme_TextBrush}" FontWeight="Bold" CharacterSpacing="500" HorizontalAlignment="Center"/>
                     </animations:AnimatedContentControl>
                 </StackPanel>
             </ContentControl>
-            <animations:AnimatedContentControl Opacity="0" animations:Animation.OnAppear="{animations:FadeAndScale Delay=2700, Duration=1000, EasingMode=EaseInOut}">
-                <Border Background="{DynamicResource Theme_ControlBackgroundBrush}" CornerRadius="20" MaxWidth="800" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,0,40,20">
+            <animations:AnimatedContentControl Opacity="1" animations:Animation.OnAppear="{animations:FadeAndScale Delay=2700, Duration=1000, EasingMode=EaseInOut}">
+                <Border Background="{DynamicResource Theme_ControlBackgroundBrush}" CornerRadius="20" MaxWidth="600" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,0,40,20">
                     <Border.Effect>
                         <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="20" Opacity="0.2" />
                     </Border.Effect>
-                    <StackPanel Margin="10,16,30,20">
-                        <TextBlock FontSize="14" TextWrapping="Wrap" Margin="22,14,0,0" LineHeight="22" Opacity="0.8">This app contains over 200 small samples that demonstrate <Hyperlink NavigateUri="https://opensilver.net" TargetName="_blank" Foreground="{DynamicResource Theme_TextBrush}">OpenSilver</Hyperlink>’s features. Built with C# and XAML (with VB.NET and F# snippets included), it’s also a great way to learn XAML and explore .NET UI concepts.</TextBlock>
-                        <TextBlock FontSize="14" TextWrapping="Wrap" Margin="22,30,0,0" FontWeight="Bold">What is OpenSilver and what&apos;s unique about it?</TextBlock>
-                        <TextBlock x:Name="DescriptionDefault" FontSize="14" TextWrapping="Wrap" Margin="22,10,0,0" LineHeight="22" Opacity="0.8">
-                            <Hyperlink NavigateUri="https://opensilver.net" TargetName="_blank" Foreground="{DynamicResource Theme_TextBrush}">OpenSilver</Hyperlink> is a modern, <Hyperlink NavigateUri="https://github.com/OpenSilver/OpenSilver" TargetName="_blank" Foreground="{DynamicResource Theme_TextBrush}">open-source</Hyperlink> .NET UI framework that’s backward-compatible with WPF and runs cross-platform — on Web, Android, iOS, Windows, macOS, and Linux. It is professionally supported by <Hyperlink NavigateUri="https://userware.dev/" TargetName="_blank" Foreground="{DynamicResource Theme_TextBrush}">Userware</Hyperlink>.
-                                <LineBreak/>OpenSilver&apos;s unique features include:
-                        </TextBlock>
-                        <TextBlock x:Name="DescriptionIos" Visibility="Collapsed" FontSize="14" TextWrapping="Wrap" Margin="22,10,0,0" LineHeight="22" Opacity="0.8">
-                            <Hyperlink NavigateUri="https://opensilver.net" TargetName="_blank" Foreground="{DynamicResource Theme_TextBrush}">OpenSilver</Hyperlink> is a modern, <Hyperlink NavigateUri="https://github.com/OpenSilver/OpenSilver" TargetName="_blank" Foreground="{DynamicResource Theme_TextBrush}">open-source</Hyperlink> .NET UI framework that’s backward-compatible with WPF and runs cross-platform. It is professionally supported by <Hyperlink NavigateUri="https://userware.dev/" TargetName="_blank" Foreground="{DynamicResource Theme_TextBrush}">Userware</Hyperlink>.
-                                <LineBreak/>OpenSilver&apos;s unique features include:
-                        </TextBlock>
-                        <!--<animations:AnimatedContentControl animations:Animation.OnAppear="{animations:FadeAndSlide Delay=3900, Direction=DownToUp}">
-                            <TextBlock FontSize="14" TextWrapping="Wrap" Margin="22,30,0,0" FontWeight="Bold">What&apos;s unique about OpenSilver?</TextBlock>
-                        </animations:AnimatedContentControl>-->
-                        <controlskit:AdaptiveColumnsPanel Margin="0,5,0,0" NoColumnsBelowWidth="500">
+                    <StackPanel Margin="10,16,30,35">
+                        <TextBlock FontSize="16" TextWrapping="Wrap" Margin="22,14,0,0" LineHeight="22" Opacity="0.7"><Bold>This is a hands-on learning tool for C#, XAML, and <Hyperlink NavigateUri="https://opensilver.net" TargetName="_blank" Foreground="{DynamicResource Theme_TextBrush}">OpenSilver</Hyperlink></Bold> (i.e. WPF evolved and cross-platform).
+                            <LineBreak/>
+                            <LineBreak/>Explore 200+ curated samples, from <Hyperlink NavigateUri="/XAML_Features" Foreground="{DynamicResource Theme_TextBrush}">XAML features</Hyperlink> to <Hyperlink NavigateUri="/Client_Server" Foreground="{DynamicResource Theme_TextBrush}">client/server calls</Hyperlink>, with 1-click access to source code in C#, VB.NET, or F#.
+                            <LineBreak/>
+                            <LineBreak/>Use the menu on the left to start exploring!</TextBlock>
+                        <Expander Header="What is OpenSilver?" Margin="22,20,0,0" IsExpanded="False">
                             <StackPanel>
-                                <Border CornerRadius="10" Margin="22,10,0,0" Padding="14,8" TextBlock.Foreground="{DynamicResource Theme_BackgroundBrush}" Background="#FF7E75DC">
-                                    <TextBlock Text="WPF &amp; Silverlight Compatibility" FontSize="14" LineHeight="18" FontWeight="Bold" TextWrapping="Wrap"/>
-                                </Border>
-                                <TextBlock TextWrapping="Wrap" Margin="34,10,10,0" LineHeight="16" Opacity="0.8" FontSize="12">Reuse your WPF skills and <Hyperlink NavigateUri="https://opensilver.net/migration-service/" TargetName="_blank" Foreground="{DynamicResource Theme_TextBrush}">modernize</Hyperlink> existing WPF and Silverlight apps. (New WPF features are added 
-                                    <Hyperlink NavigateUri="https://github.com/OpenSilver/OpenSilver/commits/develop/" TargetName="_blank" Foreground="{DynamicResource Theme_TextBrush}">every week</Hyperlink>).
+                                <TextBlock FontSize="14" TextWrapping="Wrap" Margin="22,16,14,18" LineHeight="22" Opacity="1">
+                                    <Bold><Hyperlink NavigateUri="https://opensilver.net" TargetName="_blank" Foreground="{DynamicResource Theme_TextBrush}">OpenSilver</Hyperlink> is an <Hyperlink NavigateUri="https://github.com/OpenSilver/OpenSilver" TargetName="_blank" Foreground="{DynamicResource Theme_TextBrush}">open-source</Hyperlink> platform that lets .NET developers build cross-platform apps using familiar C# and XAML—no new frameworks to learn.</Bold>
+                            <LineBreak/>
+                            <LineBreak/>Originally created as a modern reimplementation of Microsoft Silverlight, OpenSilver has become “WPF Everywhere”: it brings the power and productivity of Windows Presentation Foundation (WPF) to any platform.
+                            <LineBreak/>
+                            <LineBreak/>Your apps can run on the web (via WebAssembly), as well as on <Run x:Name="DescriptionDefault">Windows, macOS, Linux, Android, and iOS</Run><Run x:Name="DescriptionIos" Visibility="Collapsed">desktop and mobile</Run> (via <Hyperlink NavigateUri="https://doc.opensilver.net/documentation/general/maui-hybrid-launcher.html" TargetName="_blank" Foreground="{DynamicResource Theme_TextBrush}">MAUI Hybrid</Hyperlink>)—all from a single codebase.
+                            <LineBreak/>
+                            <LineBreak/><Bold>With OpenSilver, you can:</Bold>
+                            <LineBreak/>•	Modernize legacy WPF, Silverlight, LightSwitch, or Windows Forms apps for web and beyond
+                            <LineBreak/>•	Build new applications that reach web, mobile, and desktop, without rewriting your code
+                            <LineBreak/>•	Develop with C#, VB.NET, or F# and design UIs in familiar XAML
+                            <LineBreak/>•	Use drag-and-drop WYSIWYG design in <Hyperlink NavigateUri="https://marketplace.visualstudio.com/items?itemName=userware.OpenSilverSDK" TargetName="_blank" Foreground="{DynamicResource Theme_TextBrush}">Visual Studio</Hyperlink>, <Hyperlink NavigateUri="https://marketplace.visualstudio.com/items?itemName=userware.vscode-opensilver" TargetName="_blank" Foreground="{DynamicResource Theme_TextBrush}">VS Code</Hyperlink>, or online at <Hyperlink NavigateUri="https://XAML.io" TargetName="_blank" Foreground="{DynamicResource Theme_TextBrush}">XAML.io</Hyperlink>
+                            <LineBreak/>
+                            <LineBreak/>OpenSilver combines the productivity of WPF with the reach of web and mobile technologies—so you can focus on building great applications, not learning new frameworks.
+                            <LineBreak/>
+                            <LineBreak/>OpenSilver is professionally maintained by <Hyperlink NavigateUri="https://userware.dev/" TargetName="_blank" Foreground="{DynamicResource Theme_TextBrush}">Userware</Hyperlink>. It is production-ready (<Hyperlink NavigateUri="https://opensilver.net/gallery/" TargetName="_blank" Foreground="{DynamicResource Theme_TextBrush}">see live samples &amp; case studies)</Hyperlink>, and <Hyperlink NavigateUri="https://github.com/OpenSilver/OpenSilver" TargetName="_blank" Foreground="{DynamicResource Theme_TextBrush}">open source</Hyperlink>.
+                            <LineBreak/>
+                            <LineBreak/>Need help with migration or enterprise solutions? <Hyperlink NavigateUri="https://opensilver.net/contact/" TargetName="_blank" Foreground="{DynamicResource Theme_TextBrush}">Contact the OpenSilver team for professional services.</Hyperlink>
+                            <LineBreak/>
+                            <LineBreak/><Hyperlink NavigateUri="https://opensilver.net" TargetName="_blank" Foreground="{DynamicResource Theme_TextBrush}">Learn more at OpenSilver.NET</Hyperlink>
+                            <LineBreak/>
+                            <LineBreak/><Run FontStyle="Italic">Note: Not all WPF features are available yet, but OpenSilver is updated frequently. </Run> <Hyperlink NavigateUri="https://github.com/OpenSilver/OpenSilver/commits/develop/" TargetName="_blank" Foreground="{DynamicResource Theme_TextBrush}" FontStyle="Italic">See what’s new on GitHub.</Hyperlink>
                                 </TextBlock>
                             </StackPanel>
-                            <StackPanel>
-                                <Border CornerRadius="10" Margin="22,10,0,0" Padding="14,8" TextBlock.Foreground="{DynamicResource Theme_BackgroundBrush}" Background="#FFF05079">
-                                    <TextBlock Text="Web-First XAML Framework" FontSize="14" LineHeight="18" FontWeight="Bold" TextWrapping="Wrap"/>
-                                </Border>
-                                <TextBlock TextWrapping="Wrap" Margin="34,10,10,0" LineHeight="16" Opacity="0.8" FontSize="12">Combine .NET with HTML/JavaScript and leverage the vast web ecosystem. Apps maintain pixel-perfect rendering across both web and native platforms.</TextBlock>
-                            </StackPanel>
-                            <StackPanel>
-                                <Border CornerRadius="10" Margin="22,10,0,0" Padding="14,8" TextBlock.Foreground="{DynamicResource Theme_BackgroundBrush}" Background="#FFFD921B">
-                                    <TextBlock Text="Integrated XAML UI Designer" FontSize="14" LineHeight="18" FontWeight="Bold" TextWrapping="Wrap"/>
-                                </Border>
-                                <TextBlock TextWrapping="Wrap" Margin="34,10,10,0" LineHeight="16" Opacity="0.8" FontSize="12">Design UIs visually with drag-and-drop or AI assistance. Available in the OpenSilver extensions <Hyperlink NavigateUri="https://marketplace.visualstudio.com/items?itemName=userware.OpenSilverSDK" TargetName="_blank" Foreground="{DynamicResource Theme_TextBrush}">for Visual Studio</Hyperlink> and <Hyperlink NavigateUri="https://marketplace.visualstudio.com/items?itemName=userware.vscode-opensilver" TargetName="_blank" Foreground="{DynamicResource Theme_TextBrush}">for VS Code</Hyperlink>, or try it online at <Hyperlink NavigateUri="https://XAML.io" TargetName="_blank" Foreground="{DynamicResource Theme_TextBrush}">XAML.io</Hyperlink> — no installation or signup required.</TextBlock>
-                            </StackPanel>
-                        </controlskit:AdaptiveColumnsPanel>
-                        <TextBlock FontSize="14" TextWrapping="Wrap" Margin="22,24,22,0" FontWeight="Bold" HorizontalAlignment="Center" LineHeight="20">USE THE MENU ON THE LEFT TO START EXPLORING THE SAMPLES!</TextBlock>
+                        </Expander>
                     </StackPanel>
                 </Border>
             </animations:AnimatedContentControl>
