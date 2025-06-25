@@ -16,7 +16,7 @@
 
     <Style x:Key="Page_Style" TargetType="Page">
         <Style.Setters>
-            <Setter Property="Margin" Value="20,0,0,0"/>
+            <Setter Property="Margin" Value="{Responsive Mobile='4,0,0,30', Tablet='20,0,0,30'}"/>
         </Style.Setters>
     </Style>
     <Style x:Key="PageIntroText_Style" TargetType="TextBlock">
