@@ -276,7 +276,7 @@ namespace OpenSilver.Samples.Showcase
             //double displayWidth = windowBounds.Width;
 
             double actualWidth = this.ActualWidth;
-            if (!double.IsNaN(actualWidth) && actualWidth > 560d)
+            if (!double.IsNaN(actualWidth) && actualWidth >= 768d)
             {
                 GoToState(CurrentState.LargeResolution_SeeBothMenuAndPage);
             }
