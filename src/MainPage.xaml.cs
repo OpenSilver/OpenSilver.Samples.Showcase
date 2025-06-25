@@ -243,6 +243,9 @@ namespace OpenSilver.Samples.Showcase
                     Grid.SetColumn(PageScrollViewer, 0);
                     Grid.SetColumnSpan(PageScrollViewer, 2);
 
+                    // Adjust the menu animation:
+                    Animation.SetOnAppear(MenuContainer, (IAnimationType)this.Resources["MenuAnimation_OnAppear_Faster"]);
+
                     if (newState == CurrentState.SmallResolution_ShowMenu)
                     {
                         // Show the menu:
