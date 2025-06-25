@@ -35,8 +35,9 @@ namespace OpenSilver.Samples.Showcase
             // Fix the color of the Light/Dark toggle:
             UpdateThemeToggleFillColor();
 
-            // Uncomment to slow down all animations (useful for debugging):
-            //Animations.Animation.SlowDownAnimationsForDebugging = 10.0;
+            // Uncomment the following lines to debug the animations:
+            //Animations.Animation.SlowDownAnimationsForDebugging = 10.0; // slow down factor
+            //Animations.Animation.LogAnimationsForDebugging = true;
         }
 
         public static MainPage Current { get; private set; }
