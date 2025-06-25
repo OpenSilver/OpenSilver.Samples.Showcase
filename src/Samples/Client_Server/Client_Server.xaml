@@ -25,8 +25,8 @@
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
 
-            <local:WCF_SOAP_Demo HorizontalAlignment="Center"/>
             <local:REST_HttpClient_Demo x:Name="REST_WebClientDemo" HorizontalAlignment="Center"/>
+            <local:WCF_SOAP_Demo HorizontalAlignment="Center"/>
             <local:WebSockets_Demo HorizontalAlignment="Center"/>
             <local:RIAServices_Demo HorizontalAlignment="Center"/>
             <local:JSONP_Demo HorizontalAlignment="Center"/>
