@@ -593,19 +593,7 @@
                                 </VisualState>
                             </VisualStateGroup>
                             <VisualStateGroup x:Name="FocusStates">
-                                <VisualState x:Name="Focused">
-                                    <Storyboard>
-                                        <ThicknessAnimation Storyboard.TargetName="Background"
-                                                            Storyboard.TargetProperty="BorderThickness"
-                                                            To="0.75,0.75,2,2"
-                                                            Duration="0"/>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Background"
-                                                                       Storyboard.TargetProperty="Margin"
-                                                                       Duration="0">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="0,0,-1.25,-1.25"/>
-                                        </ObjectAnimationUsingKeyFrames>
-                                    </Storyboard>
-                                </VisualState>
+                                <VisualState x:Name="Focused"/>
                                 <VisualState x:Name="Unfocused"/>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
