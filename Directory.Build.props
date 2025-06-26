@@ -1,7 +1,7 @@
 <Project>
   <PropertyGroup>
     <OpenSilverVersion Condition=" '$(OpenSilverVersion)' == '' ">3.3.0-preview-2025-06-25-183200-5e2a08ad</OpenSilverVersion>
-    <OpenSilverModernThemeVersion Condition=" '$(OpenSilverModernThemeVersion)' == '' ">3.3.0-preview-2025-05-13-080949-c4fa6b18</OpenSilverModernThemeVersion>
+    <OpenSilverModernThemeVersion Condition=" '$(OpenSilverModernThemeVersion)' == '' ">3.3.0-preview-2025-06-26-091043-9aad8feb</OpenSilverModernThemeVersion>
     <OpenSilverControlsKitVersion Condition=" '$(OpenSilverControlsKitVersion)' == '' ">3.3.0-preview-2025-06-19-155847-a6b8b91</OpenSilverControlsKitVersion>
   </PropertyGroup>
 </Project>
