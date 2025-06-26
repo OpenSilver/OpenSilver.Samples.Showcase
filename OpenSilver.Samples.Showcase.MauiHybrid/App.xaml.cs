@@ -1,4 +1,5 @@
 ﻿using Microsoft.Maui.Controls.PlatformConfiguration;
+using Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;
 using Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;
 
 namespace OpenSilver.Samples.Showcase.MauiHybrid
@@ -8,6 +9,9 @@ namespace OpenSilver.Samples.Showcase.MauiHybrid
         public App()
         {
             InitializeComponent();
+
+            Current?.On<Microsoft.Maui.Controls.PlatformConfiguration.Android>()
+                .UseWindowSoftInputModeAdjust(WindowSoftInputModeAdjust.Resize);
         }
 
         protected override Window CreateWindow(IActivationState? activationState)

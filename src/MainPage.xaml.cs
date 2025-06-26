@@ -1,7 +1,7 @@
-﻿using OpenSilver.Animations;
+﻿using Microsoft.Maui.Devices;
+using OpenSilver.Animations;
 using OpenSilver.Themes.Modern;
 using System;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
@@ -35,6 +35,8 @@ namespace OpenSilver.Samples.Showcase
             // Fix the color of the Light/Dark toggle:
             UpdateThemeToggleFillColor();
 
+            PreventVirtualKeyboardOverlap();
+
             // Uncomment the following lines to debug the animations:
             //Animations.Animation.SlowDownAnimationsForDebugging = 10.0; // slow down factor
             //Animations.Animation.LogAnimationsForDebugging = true;
@@ -48,6 +50,25 @@ namespace OpenSilver.Samples.Showcase
             if (!HtmlPage.Document.DocumentUri.OriginalString.Contains("#"))
             {
                 await TreeViewHelpers.SelectItemInTreeViewAsync(MenuTreeView, Pages.LandingPageInfo);
+            }
+        }
+
+        private void PreventVirtualKeyboardOverlap()
+        {
+            if (DeviceInfo.Current.Platform == DevicePlatform.Android)
+            {
+                PageScrollViewer.SizeChanged += async (s, e) =>
+                {
+                    if (e.HeightChanged)
+                    {
+                        var heightDelta = e.PreviousSize.Height - e.NewSize.Height;
+                        if (heightDelta > 100 && FocusManager.GetFocusedElement() is FrameworkElement element) // most likely virtual keyboard has appeared
+                        {
+                            await Task.Delay(1);
+                            PageScrollViewer.ScrollIntoView(element, 0, 10, new Duration(TimeSpan.FromMilliseconds(100)));
+                        }
+                    }
+                };
             }
         }
 
