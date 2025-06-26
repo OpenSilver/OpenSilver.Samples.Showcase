@@ -23,48 +23,48 @@
                     <controlskit:StaggeredPanel ProgressiveRenderingChunkSize="2" DesiredColumnWidth="270"/>
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
-            
-            <local:TreeView_Demo HorizontalAlignment="Center"/>
-            <local:TreeMap_Demo HorizontalAlignment="Center"/>
+
+            <local:AnimatedNavigationBar_Demo HorizontalAlignment="Center"/>
+            <local:ListBox_Demo x:Name="ListBoxDemo" HorizontalAlignment="Center"/>
+            <local:ItemsControl_Demo HorizontalAlignment="Center"/>
+            <local:Rating_Demo HorizontalAlignment="Center"/>
             <local:InkPresenter_Demo HorizontalAlignment="Center"/>
+            <local:MediaElement_Demo x:Name="MediaElementDemo" HorizontalAlignment="Center"/>
+            <local:HtmlPresenter_Demo HorizontalAlignment="Center"/>
+            <local:TreeView_Demo HorizontalAlignment="Center"/>
+            <local:Shapes_Demo HorizontalAlignment="Center"/>
+            <local:TreeMap_Demo HorizontalAlignment="Center"/>
             <local:Button_Demo HorizontalAlignment="Center"/>
             <local:ButtonSpinner_Demo HorizontalAlignment="Center"/>
             <local:TextBox_Demo HorizontalAlignment="Center"/>
             <local:CheckBox_Demo HorizontalAlignment="Center"/>
             <local:RadioButton_Demo HorizontalAlignment="Center"/>
             <local:TextBlock_Demo HorizontalAlignment="Center"/>
-            <local:Label_Demo HorizontalAlignment="Center"/>
             <local:RichTextBlock_Demo HorizontalAlignment="Center"/>
             <local:RichTextBox_Demo HorizontalAlignment="Center"/>
             <local:Path_Demo HorizontalAlignment="Center"/>
             <local:ProgressBar_Demo HorizontalAlignment="Center"/>
             <local:BusyIndicator_Demo HorizontalAlignment="Center"/>
-            <local:ToolTip_Demo HorizontalAlignment="Center"/>
             <local:HyperlinkButton_Demo HorizontalAlignment="Center"/>
             <local:NumericUpDown_Demo HorizontalAlignment="Center"/>
             <local:DomainUpDown_Demo HorizontalAlignment="Center"/>
             <local:UpDownBase_Demo HorizontalAlignment="Center"/>
             <local:ComboBox_Demo x:Name="ComboBoxDemo" HorizontalAlignment="Center"/>
             <local:RepeatButton_Demo HorizontalAlignment="Center"/>
-            <local:ListBox_Demo x:Name="ListBoxDemo" HorizontalAlignment="Center"/>
-            <local:ItemsControl_Demo HorizontalAlignment="Center"/>
             <local:Slider_Demo HorizontalAlignment="Center"/>
             <local:ToggleButton_Demo HorizontalAlignment="Center"/>
             <local:PasswordBox_Demo HorizontalAlignment="Center"/>
             <local:ContextMenu_Demo x:Name="ContextMenuDemo" HorizontalAlignment="Center"/>
             <local:Image_Demo x:Name="ImageDemo" HorizontalAlignment="Center"/>
-            <local:MediaElement_Demo x:Name="MediaElementDemo" HorizontalAlignment="Center"/>
             <local:AutoCompleteBox_Demo x:Name="AutoCompleteBoxDemo" HorizontalAlignment="Center"/>
-            <local:HtmlPresenter_Demo HorizontalAlignment="Center"/>
             <local:ScrollBar_Demo x:Name="ScrollBarDemo" HorizontalAlignment="Center"/>
             <local:Thumb_Demo x:Name="ThumbDemo" HorizontalAlignment="Center"/>
-            <local:Shapes_Demo HorizontalAlignment="Center"/>
             <local:DatePicker_Demo x:Name="DatePickerDemo" HorizontalAlignment="Center"/>
             <local:TimePicker_Demo HorizontalAlignment="Center"/>
-            <local:Calendar_Demo HorizontalAlignment="Center"/>
-            <local:Rating_Demo HorizontalAlignment="Center"/>
             <local:ContextMenu_MenuItem_Demo x:Name="MenuItemDemo" HorizontalAlignment="Center"/>
-            <local:AnimatedNavigationBar_Demo HorizontalAlignment="Center"/>
+            <local:ToolTip_Demo HorizontalAlignment="Center"/>
+            <local:Label_Demo HorizontalAlignment="Center"/>
+            <local:Calendar_Demo HorizontalAlignment="Center"/>
         </ItemsControl>
     </StackPanel>
 </Page>
