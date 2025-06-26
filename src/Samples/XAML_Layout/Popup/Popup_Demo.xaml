@@ -31,6 +31,7 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
 
                     <TextBlock Grid.Column="0"
@@ -47,9 +48,9 @@
                                Text="HorizontalOffset "/>
                     <NumericUpDown Grid.Row="1"
                                    Grid.Column="1"
-                                   Margin="0,5,0,5"
                                    Height="24"
                                    MinWidth="0"
+                                   Margin="0,10"
                                    FontSize="12"
                                    Maximum="3000"
                                    Minimum="-100"
@@ -64,8 +65,15 @@
                                    MinWidth="0"
                                    FontSize="12"
                                    Maximum="3000"
-                                   Minimum="-100"
+                                   Minimum="-1000"
                                    Value="{Binding ElementName=MyPopup, Path=VerticalOffset, Mode=TwoWay}"/>
+
+                    <CheckBox Grid.Row="3"
+                              Grid.ColumnSpan="2"
+                              Margin="0,10,0,0"
+                              Content="StaysWithinScreenBounds"
+                              FontSize="11"
+                              IsChecked="{Binding StaysWithinScreenBounds, ElementName=MyPopup, Mode=TwoWay}"/>
                 </Grid>
 
                 <Popup x:Name="MyPopup" PlacementTarget="{Binding ElementName=openPopupButton}">
@@ -87,7 +95,8 @@
                 </Popup>
             </StackPanel>
 
-            <local:ViewSourceButton Grid.Row="2" Background="#FF3393FF">                <local:ViewSourceButton.Sources>
+            <local:ViewSourceButton Grid.Row="2" Background="#FF3393FF">
+                <local:ViewSourceButton.Sources>
                     <local:ViewSourceButtonInfo FileName="Popup_Demo.xaml" RelativePath="src/Samples/XAML_Layout/Popup"/>
                     <local:ViewSourceButtonInfo FileName="Popup_Demo.xaml.cs" RelativePath="src/Samples/XAML_Layout/Popup"/>
                     <local:ViewSourceButtonInfo FileName="Popup_Demo.xaml.vb" RelativePath="src/Samples/XAML_Layout/Popup"/>
