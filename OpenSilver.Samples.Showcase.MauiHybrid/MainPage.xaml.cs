@@ -17,13 +17,14 @@ namespace OpenSilver.Samples.Showcase.MauiHybrid
         {
             if (e.Url != null &&
                 (string.Equals(e.Url.AbsoluteUri, "about:blank", StringComparison.OrdinalIgnoreCase) ||
-                string.Equals(e.Url.AbsoluteUri, "about:srcdoc", StringComparison.OrdinalIgnoreCase)))
+                string.Equals(e.Url.AbsoluteUri, "about:srcdoc", StringComparison.OrdinalIgnoreCase) ||
+                e.Url.AbsoluteUri.StartsWith("https://www.youtube.com/", StringComparison.OrdinalIgnoreCase)))
             {
                 e.UrlLoadingStrategy = UrlLoadingStrategy.OpenInWebView;
             }
 
             // if it is external link, WebKit does not handle it, so try to open it in Safari
-            if (e.UrlLoadingStrategy == UrlLoadingStrategy.OpenExternally)
+            if (e.UrlLoadingStrategy == UrlLoadingStrategy.OpenExternally && e.Url != null)
             {
                 await Launcher.TryOpenAsync(e.Url);
             }
