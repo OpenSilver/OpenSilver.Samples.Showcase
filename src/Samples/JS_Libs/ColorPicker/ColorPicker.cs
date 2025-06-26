@@ -21,6 +21,11 @@ public class ColorPicker : HtmlPresenter
         DependencyProperty.Register(nameof(Color), typeof(Color), typeof(ColorPicker), new PropertyMetadata(Colors.Black));
     #endregion
 
+    static ColorPicker()
+    {
+        AllowScrollOnTouchMoveProperty.OverrideMetadata(typeof(ColorPicker), new PropertyMetadata(false));
+    }
+
     public ColorPicker()
     {
         Loaded += OnLoaded;
