@@ -16,6 +16,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 using System.Windows;
+using System.Xml.Linq;
 
 namespace OpenSilver.Animations
 {
@@ -40,42 +41,159 @@ namespace OpenSilver.Animations
                 return;
             }
 
-            if (d is FrameworkElement elementToAnimate
-                && e.NewValue is IAnimationType animationType)
+            if (d is FrameworkElement element)
             {
-                // We unregister before registering so that, if this method is called multiple times, we don't end up registering multiple Loaded events:
-                ((FrameworkElement)d).Loaded -= ElementToAnimate_Loaded; // Note: this is safely ignored if there was no previous event registration.
-                ((FrameworkElement)d).Loaded += ElementToAnimate_Loaded;
+                // Always clean up existing subscriptions first
+                CleanupElement(element);
+
+                // If new value is not null, set up new subscriptions
+                if (e.NewValue is IAnimationType)
+                {
+                    SetupElement(element);
+                }
             }
         }
 
-        private static void ElementToAnimate_Loaded(object sender, RoutedEventArgs e)
+        private static void SetupElement(FrameworkElement element)
         {
-            //DebugAnimations(sender)
+            // Output to the log for debugging:
+            if (LogAnimationsForDebugging)
+            {
+                LogForDebugging("Animations: set up", element);
+            }
 
-            FrameworkElement elementToAnimate = sender as FrameworkElement;
+            // Subscribe to Loaded/Unloaded to manage IsVisibleChanged subscription lifecycle
+            element.Loaded += Element_Loaded;
+            element.Unloaded += Element_Unloaded;
+
+            // If element is already loaded, subscribe immediately
+            if (element.IsLoaded)
+            {
+                element.IsVisibleChanged -= ElementToAnimate_IsVisibleChanged; // Ensure no duplicates
+                element.IsVisibleChanged += ElementToAnimate_IsVisibleChanged;
+
+                // If element is already visible, do the OnAppear animation immediately:
+                if (element.IsVisible)
+                {
+                    DoOnAppearAnimationIfAny(element);
+                }
+            }
+        }
+
+        private static void CleanupElement(FrameworkElement element)
+        {
+            // Output to the log for debugging:
+            if (LogAnimationsForDebugging)
+            {
+                LogForDebugging("Animations: cleaned up", element);
+            }
+
+            // Unsubscribe from all events
+            element.Loaded -= Element_Loaded;
+            element.Unloaded -= Element_Unloaded;
+            element.IsVisibleChanged -= ElementToAnimate_IsVisibleChanged;
+        }
+
+        private static void Element_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (sender is FrameworkElement element)
+            {
+                // Output to the log for debugging:
+                if (LogAnimationsForDebugging)
+                {
+                    LogForDebugging("Animations: loaded event handled", element);
+                }
+
+                // Element is now in visual tree, start listening for visibility changes
+                element.IsVisibleChanged -= ElementToAnimate_IsVisibleChanged; // Ensure no duplicates
+                element.IsVisibleChanged += ElementToAnimate_IsVisibleChanged;
+
+                // If element is already visible, do the OnAppear animation immediately:
+                if (element.IsVisible)
+                {
+                    DoOnAppearAnimationIfAny(element);
+                }
+            }
+        }
+
+        private static void Element_Unloaded(object sender, RoutedEventArgs e)
+        {
+            if (sender is FrameworkElement element)
+            {
+                // Output to the log for debugging:
+                if (LogAnimationsForDebugging)
+                {
+                    LogForDebugging("Animations: unloaded event handled", element);
+                }
+
+                // Element is being removed from visual tree, stop listening for visibility changes
+                element.IsVisibleChanged -= ElementToAnimate_IsVisibleChanged;
+            }
+        }
+
+        private static void ElementToAnimate_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if (sender is FrameworkElement elementToAnimate)
+            {
+                // Output to the log for debugging:
+                if (LogAnimationsForDebugging)
+                {
+                    LogForDebugging("Animations: IsVisibleChanged", elementToAnimate);
+                }
+
+                // Check if the element has become visible or it has become hidden:
+                if (elementToAnimate.IsVisible)
+                {
+                    DoOnAppearAnimationIfAny(elementToAnimate);
+                }
+            }
+        }
+
+        private static void DoOnAppearAnimationIfAny(FrameworkElement elementToAnimate)
+        {
+            // Output to the log for debugging:
+            if (LogAnimationsForDebugging)
+            {
+                LogForDebugging("Animations: do the Appear animation (if any)", elementToAnimate);
+            }
+
             IAnimationType animationType = GetOnAppear(elementToAnimate);
-
-            // Unregister the event:
-            elementToAnimate.Loaded -= ElementToAnimate_Loaded;
-
             if (animationType != null)
             {
                 animationType.AnimateElementIn(elementToAnimate);
             }
         }
 
-        //private string DebugAnimations(object obj)
-        //{
-        //    string text = obj != null ? obj.GetType().Name + " loaded!" : "null" + " " + DateTime.Now.ToString();
-        //    Console.WriteLine(text);
-        //    MessageBox.Show(text);
-        //}
+        private static void LogForDebugging(string actionDisplayName, FrameworkElement element)
+        {
+            string elementName = !string.IsNullOrEmpty(element.Name) ? "'" + element.Name + "' " : "";
+            string instanceHashCode = element.GetHashCode().ToString();
+            string textToDisplay = $"{actionDisplayName} for element {elementName}(#{instanceHashCode}) of type {element.GetType().Name} at timestamp '{DateTime.Now.ToString()}'.";
 
+            // Display in the Console (useful when running in the browser, to see the log via the F12 developer tools of the browser):
+            Console.WriteLine(textToDisplay);
+
+            // Display in the Debug (useful when debugging with an IDE):
+            System.Diagnostics.Debug.WriteLine(textToDisplay);
+        }
+
+        /// <summary>
+        /// The factor by which to slow down the animations for debugging.
+        /// Default is 1.0, which means that animations are not slowed down.
+        /// For example, set ths property to 10.0 to slow down the animations
+        /// 10 times.
+        /// </summary>
         public static double SlowDownAnimationsForDebugging
         {
             get => StoryboardsHelper.SlowDownAnimationsForDebugging;
             set => StoryboardsHelper.SlowDownAnimationsForDebugging = value;
         }
+
+        /// <summary>
+        /// A boolean that indicates whether the animations framework shall
+        /// print debug information to the output Console.
+        /// </summary>
+        public static bool LogAnimationsForDebugging { get; set; }
+
     }
 }

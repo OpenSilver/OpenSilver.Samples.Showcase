@@ -14,6 +14,8 @@ mc:Ignorable="d"
     <Page.Resources>
         <SolidColorBrush x:Key="NativeApiButtonBackground" Color="#dddddd"/>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        <animations:Fade x:Key="MenuAnimation_OnAppear_Default" Delay="4000" Duration="2000" EasingMode="EaseInOut"/>
+        <animations:Fade x:Key="MenuAnimation_OnAppear_Faster" Delay="0" Duration="500" EasingMode="EaseOut"/>
     </Page.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -35,7 +37,7 @@ mc:Ignorable="d"
             </Grid>
 
             <!-- Menu -->
-            <animations:AnimatedContentControl x:Name="MenuContainer" Canvas.ZIndex="3" animations:Animation.OnAppear="{animations:Fade Delay=4000, Duration=2000, EasingMode=EaseInOut}" HorizontalAlignment="Left">
+            <animations:AnimatedContentControl x:Name="MenuContainer" Canvas.ZIndex="3" animations:Animation.OnAppear="{StaticResource MenuAnimation_OnAppear_Default}" HorizontalAlignment="Left">
                 <Border x:Name="MenuBorder" Canvas.ZIndex="1" Width="240" Background="{DynamicResource Theme_BackgroundBrush}">
                     <Border.Effect>
                         <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="14" Opacity="0.15" />
@@ -102,7 +104,7 @@ mc:Ignorable="d"
                 </Border>
             </animations:AnimatedContentControl>
             <Border x:Name="ButtonToHideOrShowMenu" Grid.Column="1" Canvas.ZIndex="2" Padding="2" Visibility="Collapsed" Width="60" Height="50" Margin="5" VerticalAlignment="Top" HorizontalAlignment="Left"
-                    animations:Animation.OnAppear="{animations:Fade Delay=3000, Duration=2000, EasingMode=EaseInOut}">
+                    animations:Animation.OnAppear="{animations:Fade Delay=100, Duration=500, EasingMode=EaseInOut}">
                 <Button Click="ButtonToHideOrShowMenu_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" Padding="0">
                     <Path Fill="{DynamicResource Theme_TextBrush}" Opacity="0.5" Width="46" Height="46" Data="M10 0A1 1 90 0010 15L90 15A1 1 90 0089 0L10 0M10 22.5A1 1 90 0010 37.5L90 37.5A1 1 90 0089 22.5L10 22.5M10 45A1 1 90 0010 60L90 60A1 1 90 0089 45L10 45" Stretch="Uniform" HorizontalAlignment="Center"/>
                 </Button>

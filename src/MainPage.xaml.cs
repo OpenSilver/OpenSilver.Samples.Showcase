@@ -1,6 +1,7 @@
 ﻿using OpenSilver.Animations;
 using OpenSilver.Themes.Modern;
 using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,11 +21,23 @@ namespace OpenSilver.Samples.Showcase
             InitializeComponent();
 
             Current = this;
+
+            // Register some events:
             Loaded += MainPage_Loaded;
             SizeChanged += MainPage_SizeChanged;
+
+            // Load the left menu:
             MenuTreeView.ItemsSource = Pages.AllPagesAndCategories;
+
+            // Listen to clicks anywhere on the page, so as to collapse the left menu on mobile when user clicks outside of it:
+            PageContainer.AddHandler(MouseDownEvent, new MouseButtonEventHandler(PageContainer_MouseDown), handledEventsToo: true);
+
+            // Fix the color of the Light/Dark toggle:
             UpdateThemeToggleFillColor();
-            //Animations.Animation.SlowDownAnimationsForDebugging = 10.0;
+
+            // Uncomment the following lines to debug the animations:
+            //Animations.Animation.SlowDownAnimationsForDebugging = 10.0; // slow down factor
+            //Animations.Animation.LogAnimationsForDebugging = true;
         }
 
         public static MainPage Current { get; private set; }
@@ -243,6 +256,9 @@ namespace OpenSilver.Samples.Showcase
                     Grid.SetColumn(PageScrollViewer, 0);
                     Grid.SetColumnSpan(PageScrollViewer, 2);
 
+                    // Adjust the menu animation:
+                    Animation.SetOnAppear(MenuContainer, (IAnimationType)this.Resources["MenuAnimation_OnAppear_Faster"]);
+
                     if (newState == CurrentState.SmallResolution_ShowMenu)
                     {
                         // Show the menu:
@@ -276,7 +292,7 @@ namespace OpenSilver.Samples.Showcase
             //double displayWidth = windowBounds.Width;
 
             double actualWidth = this.ActualWidth;
-            if (!double.IsNaN(actualWidth) && actualWidth > 560d)
+            if (!double.IsNaN(actualWidth) && actualWidth >= 768d)
             {
                 GoToState(CurrentState.LargeResolution_SeeBothMenuAndPage);
             }
@@ -304,6 +320,15 @@ namespace OpenSilver.Samples.Showcase
             else
             {
                 // Not supposed to happen because the button is not visible when in large resolution mode.
+            }
+        }
+
+        private void PageContainer_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            // Close the menu when the user clicks outside of it (on mobile):
+            if (_currentState == CurrentState.SmallResolution_ShowMenu)
+            {
+                GoToState(CurrentState.SmallResolution_HideMenu);
             }
         }
 
