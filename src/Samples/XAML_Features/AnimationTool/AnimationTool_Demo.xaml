@@ -296,6 +296,7 @@
                             <ComboBoxItem Content="QuarticEase"/>
                             <ComboBoxItem Content="QuinticEase"/>
                             <ComboBoxItem Content="SineEase"/>
+                            <ComboBoxItem Content="ElasticEase"/>
                         </ComboBox>
 
                         <TextBlock Text="EasingMode"/>
@@ -330,6 +331,17 @@
                             <StackPanel x:Name="PowerEaseProperties" Visibility="Collapsed">
                                 <TextBlock Text="Power"/>
                                 <NumericUpDown x:Name="PowerEasePowerNumericUpDown" Value="2"/>
+                            </StackPanel>
+
+                            <!--  ElasticEase Properties  -->
+                            <StackPanel x:Name="ElasticEaseProperties" Visibility="Collapsed">
+                                <TextBlock Text="Oscillations"/>
+                                <NumericUpDown x:Name="ElasticEaseOscillationsNumericUpDown"
+                                               DecimalPlaces="0"
+                                               Value="3"/>
+
+                                <TextBlock Text="Springiness"/>
+                                <NumericUpDown x:Name="ElasticEaseSpringinessNumericUpDown" Value="3"/>
                             </StackPanel>
                         </Grid>
                     </StackPanel>

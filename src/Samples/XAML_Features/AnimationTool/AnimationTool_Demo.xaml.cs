@@ -140,6 +140,7 @@ public partial class AnimationTool_Demo : UserControl
         BounceEaseProperties.Visibility = Visibility.Collapsed;
         ExponentialEaseProperties.Visibility = Visibility.Collapsed;
         PowerEaseProperties.Visibility = Visibility.Collapsed;
+        ElasticEaseProperties.Visibility = Visibility.Collapsed;
 
         // Update the easing function based on selection but keep the current easing mode
         switch (EasingFunctionComboBox.SelectedIndex)
@@ -194,6 +195,15 @@ public partial class AnimationTool_Demo : UserControl
                 break;
             case 9: // SineEase
                 _currentEasingFunction = new SineEase { EasingMode = _currentEasingMode };
+                break;
+            case 10: // ElasticEase
+                _currentEasingFunction = new ElasticEase
+                {
+                    EasingMode = _currentEasingMode,
+                    Oscillations = (int)ElasticEaseOscillationsNumericUpDown.Value,
+                    Springiness = ElasticEaseSpringinessNumericUpDown.Value
+                };
+                ElasticEaseProperties.Visibility = Visibility.Visible;
                 break;
         }
     }
