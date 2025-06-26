@@ -23,14 +23,14 @@
         <AssemblyName>Showcase</AssemblyName>
 
         <!-- Display name -->
-        <ApplicationTitle>OpenSilver.Samples.Showcase</ApplicationTitle>
+        <ApplicationTitle>OpenSilverShowcase</ApplicationTitle>
 
         <!-- App Identifier -->
         <ApplicationId>net.opensilver.showcase</ApplicationId>
 
         <!-- Versions -->
-        <ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
-        <ApplicationVersion>8</ApplicationVersion>
+        <ApplicationDisplayVersion>1.0.1</ApplicationDisplayVersion>
+        <ApplicationVersion>1</ApplicationVersion>
 
         <!-- To develop, package, and publish an app to the Microsoft Store, see: https://aka.ms/MauiTemplateUnpackaged -->
         <WindowsPackageType>None</WindowsPackageType>
@@ -51,7 +51,7 @@
         <MauiIcon Include="$(AppIconFile)" Color="#FFF6E3" BaseSize="256,256" />
 
         <!-- Splash Screen -->
-        <MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#FFF6E3" BaseSize="128,128" />
+        <MauiSplashScreen Include="Resources\Splash\splash.png" Color="#FFF6E3" BaseSize="128,128" />
 
         <!-- Images -->
         <MauiImage Include="Resources\Images\*" />
