@@ -20,15 +20,11 @@
 @using Radzen.Blazor
                     <RadzenStack Orientation="global::Radzen.Orientation.Vertical" AlignItems="global::Radzen.AlignItems.Center" JustifyContent="global::Radzen.JustifyContent.Center" Gap="0.5rem">
                         <RadzenText TextStyle="global::Radzen.Blazor.TextStyle.Subtitle2" TagName="global::Radzen.Blazor.TagName.H3">Telephone</RadzenText>
-                        <RadzenMask Mask="(***) ***-****" CharacterPattern="[0-9]" Placeholder="(000) 000-0000" Name="Phone" Value=@value Change="{Binding PhoneChangeDel}" Style="width: 100%;" aria-label="Phone" />
+                        <RadzenMask Mask="(***) ***-****" CharacterPattern="[0-9]" Placeholder="(000) 000-0000" Name="Phone" Change="{Binding PhoneChangeDel, Type=Action<string>}" Style="width: 100%;" aria-label="Phone" />
                             <!--<RadzenLabel Text="Pick your favorite day" Component="DropDownChangeEvent" />
                         <RadzenListBox TValue="string" Value=@value Data="{Binding Days}" Style="width: 100%; max-width: 400px;" Name="DropDownChangeEvent" Change="{Binding DropDownChangeDel}" />-->
                     </RadzenStack>
 
-                    @code {
-    string value;
-
-}
                 </razor:RazorComponent>
                 <TextBlock >
                     <Run Text="The phone number entered is "/>

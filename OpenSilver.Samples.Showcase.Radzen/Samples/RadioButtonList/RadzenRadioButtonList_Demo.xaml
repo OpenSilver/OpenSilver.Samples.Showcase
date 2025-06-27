@@ -17,7 +17,7 @@
                 <razor:RazorComponent Margin="0,20,0,0" Height="150">
                     @using Radzen
 @using Radzen.Blazor
-                    <RadzenRadioButtonList @bind-Value=@value TValue="int" Orientation="global::Radzen.Orientation.Vertical" Change="{Binding RadioButtonListChangeDel}">
+                    <RadzenRadioButtonList TValue="int" Orientation="global::Radzen.Orientation.Vertical" Change="{Binding RadioButtonListChangeDel, Type=Action<int>}">
                         <Items>
                             <RadzenRadioButtonListItem Text="Orders" Value="1" />
                             <RadzenRadioButtonListItem Text="Employees" Value="2" />
@@ -25,9 +25,6 @@
                         </Items>
                     </RadzenRadioButtonList>
 
-                    @code {
-    int value = 1;
-}
                 </razor:RazorComponent>
 
 

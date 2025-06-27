@@ -18,11 +18,7 @@
                     @using Radzen
 @using Radzen.Blazor
 
-                    <RadzenNumeric @bind-Value=@value Width="200"/>
-@code{
-    int value;
-}
-
+                    <RadzenNumeric Width="180" TValue="int"/>
                 </razor:RazorComponent>
             </StackPanel>
             <!--<local:ViewSourceButton Grid.Row="2" Background="#FFFF81E3">

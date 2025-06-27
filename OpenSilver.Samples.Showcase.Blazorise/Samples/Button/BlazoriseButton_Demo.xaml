@@ -19,7 +19,7 @@
                 <razor:RazorComponent Margin="0,20,0,0" Height="70">
                     @using Blazorise
 
-                        <Button Color="global::Blazorise.Color.Secondary" Clicked="{Binding ButtonClickDel}" Outline>Click me</Button>
+                    <Button Color="global::Blazorise.Color.Secondary" Clicked="{Binding ButtonClickDel, Type=Action}" Outline>Click me</Button>
                 </razor:RazorComponent>
             </Grid>
 

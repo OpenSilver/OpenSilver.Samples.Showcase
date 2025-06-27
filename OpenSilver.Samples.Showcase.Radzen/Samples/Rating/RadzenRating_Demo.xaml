@@ -18,11 +18,8 @@
                     @using Radzen
 @using Radzen.Blazor
 
-                    <RadzenRating TValue="int" Value=@value Change="{Binding RatingChangeDel}" />
+                    <RadzenRating TValue="int" Change="{Binding RatingChangeDel, Type=Action<int>}" />
 
-@code{
-    int value;
-}
 
                 </razor:RazorComponent>
                 <TextBlock>

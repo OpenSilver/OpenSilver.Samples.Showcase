@@ -33,6 +33,15 @@ namespace OpenSilver.Samples.Showcase
     {
         public Action<string> SetBrushDel;
 
+        private string _colorText = "rgb(68, 58, 110)";
+
+        public string ColorText
+        {
+            get { return _colorText; }
+            set { _colorText = value; OnPropertyChanged(); }
+        }
+
+
         private SolidColorBrush _colorBrush = new SolidColorBrush(Color.FromRgb(68, 58, 110));
         public SolidColorBrush ColorBrush
         {
@@ -47,6 +56,7 @@ namespace OpenSilver.Samples.Showcase
 
         public void SetBrush(string colorString)
         {
+            ColorText = colorString;
             byte a = 255, r = 255, g = 255, b = 255;
             int indexOfParenthesis = colorString.IndexOf('(');
             int indexOfClosingParenthesis = colorString.IndexOf(')');

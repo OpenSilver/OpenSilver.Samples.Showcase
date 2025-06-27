@@ -20,12 +20,9 @@
 
                     <!--<RadzenCheckBox Value="@value" Change="{Binding CheckBoxClickDel}" />-->
                     <div class="rz-text-align-center">
-                        <RadzenCheckBox Value=@value Name="CheckBox1" Change="{Binding CheckBoxClickDel}" />
+                        <RadzenCheckBox Name="CheckBox1" Change="{Binding CheckBoxClickDel, Type=Action<bool>}" />
                             <RadzenLabel Text="CheckBox" Component="CheckBox1" class="rz-ms-2" />
                     </div>
-                    @code{
-    bool value;
-}
                 </razor:RazorComponent>
             </StackPanel>
             <!--<local:ViewSourceButton Grid.Row="2" Background="#FFFF81E3">

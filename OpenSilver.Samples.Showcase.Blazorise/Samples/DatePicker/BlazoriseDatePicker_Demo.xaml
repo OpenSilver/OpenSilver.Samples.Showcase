@@ -18,10 +18,8 @@
                 <razor:RazorComponent Margin="0,10,0,0" Height="370">
                     @using Blazorise
 
-                    <DatePicker TValue="DateTime?" DateChanged="{Binding DateChangeDel}" Inline/>
-                    @code {
-                        DateTime? value;
-                    }
+                    <DatePicker TValue="DateTime?" DateChanged="{Binding DateChangeDel, Type=Action<DateTime?>}" Inline/>
+                    
                 </razor:RazorComponent>
                 <TextBlock Text="{Binding TextForTextBox}"/>
             </StackPanel>
