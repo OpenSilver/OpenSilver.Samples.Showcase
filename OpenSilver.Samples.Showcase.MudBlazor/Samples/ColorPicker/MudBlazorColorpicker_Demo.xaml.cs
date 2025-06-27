@@ -45,8 +45,6 @@ namespace OpenSilver.Samples.Showcase
         public void SetBrush(MudColor newColor)
         {
             ColorBrush = new SolidColorBrush(Color.FromArgb(newColor.A, newColor.R, newColor.G, newColor.B));
-           
-
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

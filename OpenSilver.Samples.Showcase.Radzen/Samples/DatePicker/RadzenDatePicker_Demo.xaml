@@ -20,12 +20,8 @@
 
                     <RadzenStack Orientation="global::Radzen.Orientation.Horizontal" JustifyContent="global::Radzen.JustifyContent.Center" AlignItems="global::Radzen.AlignItems.Center" Gap="0.5rem">
                         <RadzenLabel Text="Select Date" Component="RadzenDatePickerBindValue" />
-                        <RadzenDatePicker Value=@value TValue="DateTime?"  Name="RadzenDatePickerBindValue" ShowCalendarWeek Change="{Binding DateChangeDel}"/>
+                        <RadzenDatePicker TValue="DateTime?"  Name="RadzenDatePickerBindValue" ShowCalendarWeek Change="{Binding DateChangeDel, Type=Action<DateTime?>}"/>
                     </RadzenStack>
-
-                    @code {
-    DateTime? value;
-}
 
                 </razor:RazorComponent>
                 <TextBlock Text="{Binding TextForTextBox}"/>

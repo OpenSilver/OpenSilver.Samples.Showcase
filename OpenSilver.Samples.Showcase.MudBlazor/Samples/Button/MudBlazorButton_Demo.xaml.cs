@@ -23,17 +23,6 @@ namespace OpenSilver.Samples.Showcase
             this.InitializeComponent();
             this.DataContext = new TestButtonClickClass();
         }
-
-        private void VariantsComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            var dc = this.DataContext as TestButtonClickClass;
-            this.DataContext = null;
-            this.DataContext = dc;
-            //if (e.AddedItems[0] is Variant)
-            //{
-            //    MyMudButton.Variant = (Variant)e.AddedItems[0];
-            //}
-        }
     }
 
     public class TestButtonClickClass : INotifyPropertyChanged
@@ -59,7 +48,7 @@ namespace OpenSilver.Samples.Showcase
         }
 
 
-        private Variant _currentVariant = Variant.Outlined;
+        private Variant _currentVariant = Variant.Text;
         public Variant CurrentVariant
         {
             get { return _currentVariant; }
@@ -70,7 +59,13 @@ namespace OpenSilver.Samples.Showcase
 
         public void ButtonClick()
         {
-            MessageBox.Show("You clicked me!");
+            CurrentVariant = CurrentVariant switch
+            {
+                Variant.Filled => Variant.Outlined,
+                Variant.Outlined => Variant.Text,
+                _ => Variant.Filled
+            };
+            //MessageBox.Show("You clicked me!");
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

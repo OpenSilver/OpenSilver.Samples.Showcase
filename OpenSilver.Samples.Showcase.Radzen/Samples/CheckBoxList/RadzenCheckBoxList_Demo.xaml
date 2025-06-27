@@ -23,7 +23,7 @@
 @using Radzen.Blazor
 
                     <div class="rz-text-align-center">
-                        <RadzenCheckBoxList @bind-Value=@values TValue="int" Orientation="global::Radzen.Orientation.Vertical" Change="{Binding CheckBoxListChangeDel}">
+                        <RadzenCheckBoxList TValue="int" Orientation="global::Radzen.Orientation.Vertical" Change="{Binding CheckBoxListChangeDel, Type=Action<IEnumerable<int>>}">
                             <Items>
                                 <RadzenCheckBoxListItem Text="Orders" Value="1" />
                                 <RadzenCheckBoxListItem Text="Employees" Value="2" />
@@ -32,9 +32,6 @@
                         </RadzenCheckBoxList>
                     </div>
 
-                    @code {
-    IEnumerable<int>values = new int[] { 1 };
-}
                 </razor:RazorComponent>
             </StackPanel>
             <!--<local:ViewSourceButton Grid.Row="2" Background="#FFFF81E3">

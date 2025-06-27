@@ -38,7 +38,7 @@ namespace OpenSilver.Samples.Showcase
         public Action<IEnumerable<int>> CheckBoxListChangeDel;
 
 
-        private string _checkedItems = "Orders";
+        private string _checkedItems = string.Empty;
 
         public string CheckedItems
         {

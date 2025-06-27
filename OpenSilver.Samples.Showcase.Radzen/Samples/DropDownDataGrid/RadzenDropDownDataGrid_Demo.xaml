@@ -20,7 +20,7 @@
 @using Radzen.Blazor
                     <RadzenStack Orientation="global::Radzen.Orientation.Horizontal" AlignItems="global::Radzen.AlignItems.Center" JustifyContent="global::Radzen.JustifyContent.Center" Gap="0.5rem">
                         <RadzenLabel Text="Select Value" Component="DropDownDataGridBindValue" />
-                        <RadzenDropDownDataGrid Value=@value TValue="string" Data="{Binding Planets}" TextProperty="@nameof(Planet.Name)" ValueProperty="@nameof(Planet.Name)"  Name="DropDownDataGridBindValue" Change="{Binding DropDownChangeDel}">
+                        <RadzenDropDownDataGrid TValue="string" Data="{Binding Planets}" TextProperty="@nameof(Planet.Name)" ValueProperty="@nameof(Planet.Name)"  Name="DropDownDataGridBindValue" Change="{Binding DropDownChangeDel, Type=Action<object>}">
                             <Columns>
                                 <RadzenDropDownDataGridColumn Property="@nameof(Planet.Name)" Title="Name" Width="100px" />
                                 <RadzenDropDownDataGridColumn Property="@nameof(Planet.Radius)" Title="Radius" Width="200px" />
@@ -29,9 +29,6 @@
                         </RadzenDropDownDataGrid>
                     </RadzenStack>
 
-                    @code {
-    string value = "Mars";
-}
                 </razor:RazorComponent>
                 <TextBlock >
                     <Run Text="The currently selected planet is "/>

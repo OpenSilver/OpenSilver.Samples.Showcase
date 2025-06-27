@@ -19,8 +19,6 @@
 
                 <razor:RazorComponent Margin="0,20,0,0" Height="150">
                     @using Blazorise
-
-
                     <Table>
                         <TableHeader>
                             <TableRow>

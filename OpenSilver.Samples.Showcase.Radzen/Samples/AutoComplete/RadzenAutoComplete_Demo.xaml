@@ -18,17 +18,13 @@
                 <razor:RazorComponent Margin="0,20,0,0" Height="100">
                     @using Radzen
 @using Radzen.Blazor
-                    <RadzenAutoComplete x:Name="testName" @bind-Value="@companyName" Data="{Binding Words, Mode=TwoWay}" FilterCaseSensitivity="global::Radzen.FilterCaseSensitivity.CaseInsensitive"/>
+                    <RadzenAutoComplete x:Name="testName" Data="{Binding Words}" SelectedItem="{Binding CurrentWord, Mode=TwoWay}"  FilterCaseSensitivity="global::Radzen.FilterCaseSensitivity.CaseInsensitive"/>
                             <!--<RadzenText TextStyle="TextStyle.Body2">Start typing e.g. France
         @((MarkupString)(!string.IsNullOrEmpty(companyName) ? $", Value is:<strong>{companyName}</strong> " : ""))
                             </RadzenText>-->
 
-                    @code {
-    string companyName;
-
-}
                 </razor:RazorComponent>
-                <TextBlock x:Name="ValueTextBlock" Text="{Binding Value, ElementName=testName}"/>
+                <TextBlock x:Name="ValueTextBlock" Text="{Binding CurrentWord}"/>
             </StackPanel>
             <!--<local:ViewSourceButton Grid.Row="2" Background="#FFFF81E3">
                 <local:ViewSourceButton.Sources>
