@@ -28,8 +28,8 @@ type MainPage() as this =
         this.Loaded.Add(fun _ -> this.MainPage_Loaded() |> ignore)
         this.SizeChanged.Add(fun args -> this.MainPage_SizeChanged(args))
         this.MenuTreeView.ItemsSource <- Pages.AllPagesAndCategories
-        this.MenuTreeView.SelectedItemChanged.Add(fun args -> this.MenuTreeView_SelectedItemChanged(args))
         this.UpdateThemeToggleFillColor()
+        ViewSourceButton.ShowSourceCode <- this.ViewSourceCode
 
     member this.NavigateToPage(targetUri: string) =
         //Hide the menu:
@@ -66,13 +66,14 @@ type MainPage() as this =
             async {
                 do! TreeViewHelpers.SelectItemInTreeViewAsync(this.MenuTreeView, Pages.LandingPageInfo) |> Async.AwaitTask |> Async.Ignore
             } |> Async.StartAsTask |> ignore
-        
-        member private this.MenuTreeView_SelectedItemChanged(e: RoutedPropertyChangedEventArgs<obj>) =
+
+        member private this.MenuTreeView_SelectedItemChanged(sender: obj, e: RoutedPropertyChangedEventArgs<obj>) =
             if not _skipMenu_SelectionChanged &&
                e.NewValue <> e.OldValue &&
                (e.NewValue :? PageInfo) then
                 let page = e.NewValue :?> PageInfo
                 this.NavigateToPage(page.Path)
+
             
         member internal this.StartSearch(searchTerms: string) =
             async {

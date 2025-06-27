@@ -9,7 +9,7 @@ open System.Windows.Media.Animation
 open OpenSilver.Samples.Showcase.Search
 
 [<SearchKeywords("animation", "effects", "motion", "behavior", "storyboard", "tool", "transitions", "easing")>]
-type AnimationTool_Demo() as this =
+type AnimationTool_Demo() =
     inherit AnimationTool_DemoXaml()
 
     // Private Fields

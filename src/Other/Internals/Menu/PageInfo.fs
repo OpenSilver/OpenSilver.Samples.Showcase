@@ -1,7 +1,11 @@
 namespace OpenSilver.Samples.Showcase
 
+open System.Windows.Media
+
 type PageInfo() =
     interface IMenuElement
-    member val Name = "" with get, set
-    member val Path = "" with get, set
-    member val IsVisibleInMenu = false with get, set
+    member val Name: string = null with get, set
+    member val Path: string = null with get, set
+    member val Icon: string = null with get, set
+    member val IconBrush: Brush = null with get, set
+    member val IsVisibleInMenu: bool = true with get, set

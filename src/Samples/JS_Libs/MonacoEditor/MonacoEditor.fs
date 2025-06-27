@@ -7,7 +7,7 @@ open System.Windows.Media
 open OpenSilver
 open CSHTML5.Native.Html.Controls
 
-type MonacoEditor() as this =
+type MonacoEditor() =
     inherit HtmlPresenter()
 
     static let cdnUrl = "https://unpkg.com/monaco-editor@latest"

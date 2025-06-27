@@ -131,6 +131,8 @@
                 <local:ViewSourceButton.Sources>
                     <local:ViewSourceButtonInfo FileName="DataGridGrouping.xaml" RelativePath="src/Samples/XAML_Controls/DataGrid"/>
                     <local:ViewSourceButtonInfo FileName="DataGridGrouping.xaml.cs" RelativePath="src/Samples/XAML_Controls/DataGrid"/>
+                    <local:ViewSourceButtonInfo FileName="DataGridGrouping.xaml.vb" RelativePath="src/Samples/XAML_Controls/DataGrid"/>
+                    <local:ViewSourceButtonInfo FileName="DataGridGrouping.xaml.fs" RelativePath="src/Samples/XAML_Controls/DataGrid"/>
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>
