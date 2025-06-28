@@ -98,6 +98,18 @@ mc:Ignorable="d"
                                     Margin="20,10,0,0"
                                     Style="{StaticResource Menu_TreeView_Style}"
                                     SelectedItemChanged="MenuTreeView_SelectedItemChanged"/>
+                                <HyperlinkButton x:Name="GooglePlayBadgeButton" Width="120" NavigateUri="https://play.google.com/store/apps/details?id=net.opensilver.showcase" Margin="0,20,0,0" Padding="0" TargetName="_blank" Cursor="Hand" HorizontalAlignment="Center" animations:SpringEffect.IsEnabled="True">
+                                    <Grid>
+                                        <Image Source="/OpenSilver.Samples.Showcase;component/Other/Images/GooglePlayBadgeDark.png" x:Name="GooglePlayBadgeDark" Opacity="0"/>
+                                        <Image Source="/OpenSilver.Samples.Showcase;component/Other/Images/GooglePlayBadgeLight.png" x:Name="GooglePlayBadgeLight"/>
+                                    </Grid>
+                                </HyperlinkButton>
+                                <HyperlinkButton x:Name="AppStoreBadgeButton" Width="120" NavigateUri="https://apps.apple.com/app/opensilver-showcase/id6746472943" Margin="0,10,0,20" Padding="0" TargetName="_blank" Cursor="Hand" HorizontalAlignment="Center" animations:SpringEffect.IsEnabled="True">
+                                    <Grid Cursor="Hand" animations:SpringEffect.IsEnabled="True">
+                                        <Image Source="/OpenSilver.Samples.Showcase;component/Other/Images/AppStoreBadgeDark.png" x:Name="AppStoreBadgeDark" Opacity="0"/>
+                                        <Image Source="/OpenSilver.Samples.Showcase;component/Other/Images/AppStoreBadgeLight.png" x:Name="AppStoreBadgeLight"/>
+                                    </Grid>
+                                </HyperlinkButton>
                             </StackPanel>
                         </ScrollViewer>
                     </DockPanel>

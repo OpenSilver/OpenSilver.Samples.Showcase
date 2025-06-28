@@ -35,7 +35,16 @@ namespace OpenSilver.Samples.Showcase
             // Fix the color of the Light/Dark toggle:
             UpdateThemeToggleFillColor();
 
+            // Improve the virtual keyboard experience on Android by ensuring that the focused element is translated up to remain into view when the virtual keyboard appears:
             PreventVirtualKeyboardOverlap();
+
+            // Show the App Store & Google Play icons ONLY if we are running on the Web, not if we are running as a mobile app:
+            if (DeviceInfo.Current.Platform == DevicePlatform.Android
+                || DeviceInfo.Current.Platform == DevicePlatform.iOS)
+            {
+                GooglePlayBadgeButton.Visibility = Visibility.Collapsed;
+                AppStoreBadgeButton.Visibility = Visibility.Collapsed;
+            }
 
             // Uncomment the following lines to debug the animations:
             //Animations.Animation.SlowDownAnimationsForDebugging = 10.0; // slow down factor
@@ -389,6 +398,10 @@ namespace OpenSilver.Samples.Showcase
                     BackgroundImageLight.Opacity = 0;
                     LogoGitHubDark.Opacity = 1;
                     LogoGitHubLight.Opacity = 0;
+                    GooglePlayBadgeDark.Opacity = 1;
+                    GooglePlayBadgeLight.Opacity = 0;
+                    AppStoreBadgeDark.Opacity = 1;
+                    AppStoreBadgeLight.Opacity = 0;
                 }
                 else
                 {
@@ -402,6 +415,10 @@ namespace OpenSilver.Samples.Showcase
                     BackgroundImageDark.Opacity = 0;
                     LogoGitHubLight.Opacity = 1;
                     LogoGitHubDark.Opacity = 0;
+                    GooglePlayBadgeLight.Opacity = 1;
+                    GooglePlayBadgeDark.Opacity = 0;
+                    AppStoreBadgeLight.Opacity = 1;
+                    AppStoreBadgeDark.Opacity = 0;
                 }
 
                 if (SourceCodePane.Visibility == Visibility.Visible &&
