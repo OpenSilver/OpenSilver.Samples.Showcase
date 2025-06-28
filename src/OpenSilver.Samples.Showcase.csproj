@@ -396,6 +396,10 @@
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+    <Content Include="Other\Images\AppStoreBadgeDark.png" />
+    <Content Include="Other\Images\AppStoreBadgeLight.png" />
+    <Content Include="Other\Images\GooglePlayBadgeDark.png" />
+    <Content Include="Other\Images\GooglePlayBadgeLight.png" />
     <Content Include="Other\Images\Logo-Showcase.png" />
     <Content Include="Other\Images\LogoGitHubDark.png" />
     <Content Include="Other\Images\LogoGitHubLight.png" />
