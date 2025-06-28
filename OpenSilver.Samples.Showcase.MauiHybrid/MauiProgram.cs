@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components.WebView.Maui;
 using Microsoft.Extensions.Logging;
 using OpenSilver.MauiHybrid.Runner;
+using System.Globalization;
 
 namespace OpenSilver.Samples.Showcase.MauiHybrid;
 
@@ -8,6 +9,14 @@ public static class MauiProgram
 {
     public static MauiApp CreateMauiApp()
     {
+        var culture = new CultureInfo("en-US");
+        Thread.CurrentThread.CurrentCulture = culture;
+        Thread.CurrentThread.CurrentUICulture = culture;
+
+        // For all new threads:
+        CultureInfo.DefaultThreadCurrentCulture = culture;
+        CultureInfo.DefaultThreadCurrentUICulture = culture;
+
         var builder = MauiApp.CreateBuilder();
         builder
             .UseMauiApp<App>()
