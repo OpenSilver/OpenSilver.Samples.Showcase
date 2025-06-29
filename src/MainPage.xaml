@@ -14,7 +14,7 @@ mc:Ignorable="d"
     <Page.Resources>
         <SolidColorBrush x:Key="NativeApiButtonBackground" Color="#dddddd"/>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
-        <animations:Fade x:Key="MenuAnimation_OnAppear_Default" Delay="4000" Duration="2000" EasingMode="EaseInOut"/>
+        <animations:Fade x:Key="MenuAnimation_OnAppear_Default" Delay="4500" Duration="1000" EasingMode="EaseOut"/>
         <animations:Fade x:Key="MenuAnimation_OnAppear_Faster" Delay="0" Duration="500" EasingMode="EaseOut"/>
     </Page.Resources>
     <Grid>
