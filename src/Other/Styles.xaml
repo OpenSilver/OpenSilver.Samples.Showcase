@@ -25,7 +25,7 @@
             <Setter Property="Opacity" Value="0.8"/>
             <Setter Property="FontSize" Value="14"/>
             <Setter Property="TextWrapping" Value="Wrap"/>
-            <Setter Property="Margin" Value="30,10,10,20"/>
+            <Setter Property="Margin" Value="30,14,10,20"/>
             <Setter Property="MaxWidth" Value="800"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
             <Setter Property="LineHeight" Value="24"/>
