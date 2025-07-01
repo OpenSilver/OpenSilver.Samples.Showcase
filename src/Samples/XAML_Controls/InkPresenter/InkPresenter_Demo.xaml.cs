@@ -1,130 +1,100 @@
 ﻿using OpenSilver.Samples.Showcase.Search;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Ink;
 using System.Windows.Input;
 
-namespace OpenSilver.Samples.Showcase
+namespace OpenSilver.Samples.Showcase;
+
+[SearchKeywords("drawing", "inking", "pen input", "sketch", "graphics", "canvas", "png")]
+public partial class InkPresenter_Demo : UserControl
 {
-    [SearchKeywords("drawing", "inking", "pen input", "sketch", "graphics")]
-    public partial class InkPresenter_Demo : UserControl, INotifyPropertyChanged
+    private readonly Stack<Stroke> _nextStrokes = new();
+    private Stroke _lastStroke;
+
+    public InkPresenter_Demo()
     {
+        InitializeComponent();
+    }
 
-        private Stroke LastStroke;
-        private Stack<Stroke> nextStrokes = new Stack<Stroke>();
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public InkPresenter_Demo()
+    private void OnIP_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+    {
+        InkPad.CaptureMouse();
+        var MyStylusPointCollection = new StylusPointCollection
         {
-            InitializeComponent();
+            e.StylusDevice.GetStylusPoints(InkPad)
+        };
+
+        _lastStroke = new Stroke(MyStylusPointCollection);
+        _lastStroke.DrawingAttributes.Color = strokeColorPicker.Color;
+        _lastStroke.DrawingAttributes.Width = strokeWidthSlider.Value;
+
+        InkPad.Strokes.Add(_lastStroke);
+        _nextStrokes.Clear();
+        UpdateButtons();
+    }
+
+    private void OnIP_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+    {
+        InkPad.ReleaseMouseCapture();
+    }
+
+    private void OnIP_MouseMove(object sender, MouseEventArgs e)
+    {
+        if (_lastStroke != null && InkPad.IsMouseCaptured)
+        {
+            _lastStroke.StylusPoints.Add(e.StylusDevice.GetStylusPoints(InkPad));
+        }
+    }
+
+    private void OnClearInkPad(object sender, RoutedEventArgs e)
+    {
+        _lastStroke = null;
+        _nextStrokes.Clear();
+        InkPad.Strokes.Clear();
+        UpdateButtons();
+    }
+
+    private void OnUndoLastStroke(object sender, RoutedEventArgs e)
+    {
+        var strokes = InkPad.Strokes;
+        if (strokes.Count > 0)
+        {
+            _nextStrokes.Push(strokes[strokes.Count - 1]);
+            strokes.RemoveAt(strokes.Count - 1);
         }
 
+        UpdateButtons();
+    }
 
-        private bool _canClearStrokes;
-        public bool CanClearStrokes
+    private void OnRedoLastStroke(object sender, RoutedEventArgs e)
+    {
+        if (_nextStrokes.Count > 0)
         {
-            get { return _canClearStrokes; }
-            set { _canClearStrokes = value; OnPropertyChanged(); }
+            InkPad.Strokes.Add(_nextStrokes.Pop());
         }
 
-        private bool _canUndoStroke;
-        public bool CanUndoStroke
-        {
-            get { return _canUndoStroke; }
-            set { _canUndoStroke = value; OnPropertyChanged(); }
-        }
+        UpdateButtons();
+    }
 
-        private bool _canRedoStroke;
-        public bool CanRedoStroke
-        {
-            get { return _canRedoStroke; }
-            set { _canRedoStroke = value; OnPropertyChanged(); }
-        }
+    private void UpdateButtons()
+    {
+        clearButton.IsEnabled = InkPad.Strokes.Count > 0;
+        undoButton.IsEnabled = InkPad.Strokes.Count > 0;
+        redoButton.IsEnabled = _nextStrokes.Count > 0;
+    }
 
-
-
-        //A new stroke object named MyStroke is created. MyStroke is added to the StrokeCollection of the InkPresenter named MyIP
-        private void OnIP_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            InkPad.CaptureMouse();
-            StylusPointCollection MyStylusPointCollection = new StylusPointCollection();
-            MyStylusPointCollection.Add(e.StylusDevice.GetStylusPoints(InkPad));
-            LastStroke = new Stroke(MyStylusPointCollection);
-            InkPad.Strokes.Add(LastStroke);
-            CanUndoStroke = true;
-            CanClearStrokes = true;
-
-            CanRedoStroke = false;
-            nextStrokes.Clear();
-        }
-
-        private void OnIP_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            InkPad.ReleaseMouseCapture();
-        }
-
-        //StylusPoint objects are collected from the MouseEventArgs and added to MyStroke. 
-        private void OnIP_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (LastStroke != null && InkPad.IsMouseCaptured)
-            {
-                LastStroke.StylusPoints.Add(e.StylusDevice.GetStylusPoints(InkPad));
-            }
-        }
-
-        //MyStroke is completed
-        private void OnIP_LostMouseCapture(object sender, MouseEventArgs e)
-        {
-
-        }
-
-        private void OnClearInkPad(object sender, RoutedEventArgs e)
-        {
-            LastStroke = null;
-            nextStrokes.Clear();
-            InkPad.Strokes.Clear();
-            CanClearStrokes = false;
-            CanUndoStroke = false;
-            CanRedoStroke = false;
-        }
-
-        private void OnUndoLastStroke(object sender, RoutedEventArgs e)
-        {
-            var strokes = InkPad.Strokes;
-            if(strokes.Count > 0)
-            {
-                nextStrokes.Push(strokes[strokes.Count - 1]);
-                strokes.RemoveAt(strokes.Count - 1);
-                CanRedoStroke = true;
-            }
-            if(strokes.Count == 0)
-            {
-                CanUndoStroke = false;
-            }
-        }
-
-        private void OnRedoLastStroke(object sender, RoutedEventArgs e)
-        {
-            if(nextStrokes.Count > 0)
-            {
-                InkPad.Strokes.Add(nextStrokes.Pop());
-                CanUndoStroke = true;
-            }
-            if(nextStrokes.Count == 0)
-            {
-                CanRedoStroke = false;
-            }
-        }
-
-        private void OnPropertyChanged([CallerMemberName] string propertyName = "")
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
+    private void OnSaveAsPngButtonClick(object sender, RoutedEventArgs e)
+    {
+        Interop.ExecuteJavaScriptVoid(
+            $$"""
+            var link = document.createElement('a');
+            link.href = $0.firstChild.toDataURL('image/png');
+            link.download = 'canvas_image.png';
+            link.click();
+            link.remove();
+            """,
+            Interop.GetDiv(InkPad));
     }
 }
