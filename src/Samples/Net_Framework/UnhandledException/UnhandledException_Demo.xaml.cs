@@ -16,7 +16,7 @@ namespace OpenSilver.Samples.Showcase
 
         public UnhandledException_Demo()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
 
         private void ButtonThrowException_Click(object sender, RoutedEventArgs e)
@@ -26,16 +26,19 @@ namespace OpenSilver.Samples.Showcase
 
         private static void OnUnhandledException(object sender, ApplicationUnhandledExceptionEventArgs e)
         {
-            string exceptionStackMessages = "Received an unhandled Exception: ";
+            e.Handled = true;
+            string exceptionStackMessages = "";
             Exception ex = e.ExceptionObject;
             string spacing = "  ";
+
             while (ex != null)
             {
                 exceptionStackMessages += Environment.NewLine + spacing + "-" + ex.GetType().Name + ": " + ex.Message;
                 spacing += "  ";
                 ex = ex.InnerException;
             }
-            MessageBox.Show(exceptionStackMessages);
+
+            MessageBox.Show(exceptionStackMessages, "Received an unhandled Exception");
         }
     }
 }
