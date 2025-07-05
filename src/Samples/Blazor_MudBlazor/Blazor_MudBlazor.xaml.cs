@@ -20,12 +20,7 @@ namespace OpenSilver.Samples.Showcase
         {
             try
             {
-                Assembly assemblySample = AppDomain.CurrentDomain
-                    .GetAssemblies()
-                    .FirstOrDefault(a => a.GetName().Name == "OpenSilver.Samples.Showcase.MudBlazor");
-                Type type = assemblySample.GetType("OpenSilver.Samples.Showcase.MudBlazor_Sample");
-                object content = Activator.CreateInstance(type);
-                Content = (UIElement)content;
+                Content = new MudBlazor_Sample();
             }
             catch (Exception ex)
             {

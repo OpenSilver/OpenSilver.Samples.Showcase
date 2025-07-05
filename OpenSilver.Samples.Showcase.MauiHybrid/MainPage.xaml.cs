@@ -11,6 +11,7 @@ namespace OpenSilver.Samples.Showcase.MauiHybrid
 #if IOS || MACCATALYST
             blazorWebView.UrlLoading += OnBlazorWebViewUrlLoading;
 #endif
+            Blazor.Initializer.UseBlazorForOpenSilver(blazorWebView.RootComponents);
         }
 
         private async void OnBlazorWebViewUrlLoading(object? sender, UrlLoadingEventArgs e)

@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <EnableDefaultItems>false</EnableDefaultItems>
     <IsOpenSilver>true</IsOpenSilver>
     <OutputPath>bin/$(Configuration)_cs</OutputPath>
@@ -954,5 +954,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Libraries\OpenSilver.Animations\OpenSilver.Animations.csproj" />
+    <ProjectReference Include="..\OpenSilver.Samples.Showcase.Blazorise\OpenSilver.Samples.Showcase.Blazorise.csproj" />
+    <ProjectReference Include="..\OpenSilver.Samples.Showcase.MudBlazor\OpenSilver.Samples.Showcase.MudBlazor.csproj" />
+    <ProjectReference Include="..\OpenSilver.Samples.Showcase.Radzen\OpenSilver.Samples.Showcase.Radzen.csproj" />
   </ItemGroup>
 </Project>

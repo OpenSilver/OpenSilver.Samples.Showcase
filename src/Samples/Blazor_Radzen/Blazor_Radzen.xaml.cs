@@ -19,13 +19,7 @@ namespace OpenSilver.Samples.Showcase
         {
             try
             {
-                Assembly assemblySample = AppDomain.CurrentDomain
-                    .GetAssemblies()
-                    .FirstOrDefault(a => a.GetName().Name == "OpenSilver.Samples.Showcase.Radzen");
-
-                Type type = assemblySample.GetType("OpenSilver.Samples.Showcase.Radzen_Sample");
-                object content = Activator.CreateInstance(type);
-                Content = (UIElement)content;
+                Content = new Radzen_Sample();
             }
             catch (Exception ex)
             {

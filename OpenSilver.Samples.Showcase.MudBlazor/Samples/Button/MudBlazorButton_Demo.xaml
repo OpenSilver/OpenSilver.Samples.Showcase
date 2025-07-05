@@ -30,7 +30,7 @@
                 <razor:RazorComponent Margin="0,20,0,0" Height="70" Grid.Row="1" Grid.ColumnSpan="2">
                     @using MudBlazor
 
-                    <MudButton x:Name="MyMudButton" Variant="{Binding CurrentVariant, Type=global::MudBlazor.Variant, FallbackValue=Variant.Text}" OnClick="{Binding ButtonClickDel, Type=Action}">Default</MudButton>
+                    <MudButton x:Name="MyMudButton" Variant="{Binding CurrentVariant, Type=global::MudBlazor.Variant}" OnClick="{Binding ButtonClickDel, Type=Action}">Default</MudButton>
                 </razor:RazorComponent>
             </Grid>
 
