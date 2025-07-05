@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\OpenSilver.Samples.Showcase.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="OpenSilver" Version="[$(OpenSilverVersion)]" />
     <PackageReference Include="OpenSilver.ControlsKit" Version="[$(OpenSilverControlsKitVersion)]" />
     <PackageReference Include="OpenSilver.Blazor" Version="3.3.0-preview-2025-06-27-152003-99e4b398" />
@@ -18,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="Models\Planet.cs" />
     <Compile Include="Samples\AutoComplete\RadzenAutoComplete_Demo.xaml.cs" />
     <Compile Include="Samples\Button\RadzenButton_Demo.xaml.cs" />
     <Compile Include="Samples\CheckBoxList\RadzenCheckBoxList_Demo.xaml.cs" />

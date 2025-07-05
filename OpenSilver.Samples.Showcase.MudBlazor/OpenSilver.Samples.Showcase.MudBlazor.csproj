@@ -6,11 +6,6 @@
     <DefineSilverlight>true</DefineSilverlight>
   </PropertyGroup>
 
-
-  <ItemGroup>
-    <ProjectReference Include="..\src\OpenSilver.Samples.Showcase.csproj" />
-  </ItemGroup>
-
   <ItemGroup>
 	  <PackageReference Include="MudBlazor" Version="8.5.1" />
 	  <PackageReference Include="OpenSilver.Blazor" Version="3.3.0-preview-2025-06-27-152003-99e4b398" />

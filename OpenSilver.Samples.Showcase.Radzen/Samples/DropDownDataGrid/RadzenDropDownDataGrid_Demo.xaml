@@ -18,6 +18,8 @@
                 <razor:RazorComponent Margin="0,20,0,0" Height="100">
                     @using Radzen
 @using Radzen.Blazor
+@using OpenSilver.Samples.Showcase.Radzen.Models
+
                     <RadzenStack Orientation="global::Radzen.Orientation.Horizontal" AlignItems="global::Radzen.AlignItems.Center" JustifyContent="global::Radzen.JustifyContent.Center" Gap="0.5rem">
                         <RadzenLabel Text="Select Value" Component="DropDownDataGridBindValue" />
                         <RadzenDropDownDataGrid TValue="string" Data="{Binding Planets}" TextProperty="@nameof(Planet.Name)" ValueProperty="@nameof(Planet.Name)"  Name="DropDownDataGridBindValue" Change="{Binding DropDownChangeDel, Type=Action<object>}">

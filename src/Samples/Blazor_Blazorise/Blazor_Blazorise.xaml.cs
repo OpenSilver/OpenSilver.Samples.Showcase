@@ -26,12 +26,7 @@ namespace OpenSilver.Samples.Showcase
         {
             try
             {
-                Assembly assemblySample = AppDomain.CurrentDomain
-                    .GetAssemblies()
-                    .FirstOrDefault(a => a.GetName().Name == "OpenSilver.Samples.Showcase.Blazorise");
-                Type type = assemblySample.GetType("OpenSilver.Samples.Showcase.Blazorise_Sample");
-                object content = Activator.CreateInstance(type);
-                Content = (UIElement)content;
+                Content = new Blazorise_Sample();
             }
             catch (Exception ex)
             {

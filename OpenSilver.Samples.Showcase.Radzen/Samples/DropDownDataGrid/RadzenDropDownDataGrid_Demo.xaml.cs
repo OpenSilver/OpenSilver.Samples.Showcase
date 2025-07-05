@@ -12,6 +12,7 @@ using System.Windows.Navigation;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Collections.ObjectModel;
+using OpenSilver.Samples.Showcase.Radzen.Models;
 
 namespace OpenSilver.Samples.Showcase
 {

@@ -16,10 +16,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\src\OpenSilver.Samples.Showcase.csproj" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<PackageReference Include="Blazorise.Bootstrap5" Version="1.7.5" />
 		<PackageReference Include="Blazorise.Icons.FontAwesome" Version="1.7.5" />
 		<PackageReference Include="OpenSilver" Version="[$(OpenSilverVersion)]" />

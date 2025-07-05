@@ -1,6 +1,11 @@
-﻿using Microsoft.AspNetCore.Components.WebView.Maui;
+﻿using Blazorise;
+using Blazorise.Bootstrap5;
+using Blazorise.Icons.FontAwesome;
+using Microsoft.AspNetCore.Components.WebView.Maui;
 using Microsoft.Extensions.Logging;
+using MudBlazor.Services;
 using OpenSilver.MauiHybrid.Runner;
+using Radzen;
 using System.Globalization;
 
 namespace OpenSilver.Samples.Showcase.MauiHybrid;
@@ -37,7 +42,14 @@ public static class MauiProgram
         builder.Services.AddBlazorWebViewDeveloperTools();
         builder.Logging.AddDebug();
 #endif
-
+        builder.Services.AddRadzenComponents();
+        builder.Services.AddMudServices();
+        builder.Services.AddBlazorise(options =>
+            {
+                options.Immediate = true;
+            })
+            .AddBootstrap5Providers()
+            .AddFontAwesomeIcons();
         return builder.Build();
     }
 }
