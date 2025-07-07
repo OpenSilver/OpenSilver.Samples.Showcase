@@ -424,6 +424,7 @@
     <Content Include="Other\smallBall.png" />
     <Content Include="Other\SampleVideo.mp4" />
     <Content Include="Other\SampleAudio.mp3" />
+    <Content Include="Samples\Icons\emoji-codes.txt" />
     <Content Include="Samples\Icons\MaterialIcons-Regular.ttf" />
     <None Include="Properties\launchSettings.json" />
     <Content Include="Samples\Icons\MaterialIcons-Regular.codepoints.txt" />

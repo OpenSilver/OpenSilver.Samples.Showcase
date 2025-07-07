@@ -134,6 +134,9 @@ namespace OpenSilver.Samples.Showcase
                 tb.Loaded += reload;
             };
             tb.Unloaded += unload;
+
+            tb.InvalidateMeasure();
+            tb.InvalidateArrange();
         }
     }
 }
