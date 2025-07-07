@@ -1,4 +1,5 @@
 ﻿using Ionic.Zip;
+using Microsoft.Maui.Devices;
 using OpenSilver.Extensions.FileSystem;
 using OpenSilver.Samples.Showcase.Search;
 using System.Windows;
@@ -12,6 +13,12 @@ public partial class JSZip_Demo : UserControl
     public JSZip_Demo()
     {
         InitializeComponent();
+
+        var platform = DeviceInfo.Current.Platform;
+        if (platform == DevicePlatform.Android || platform == DevicePlatform.iOS)
+        {
+            SavingNotSupportedLabel.Visibility = Visibility.Visible;
+        }
     }
 
     private async void ButtonGenerateZip_Click(object sender, RoutedEventArgs e)

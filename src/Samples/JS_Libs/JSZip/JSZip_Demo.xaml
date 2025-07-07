@@ -27,6 +27,13 @@
                         HorizontalAlignment="Center"
                         Click="ButtonGenerateZip_Click"
                         Content="Click to Generate ZIP File"/>
+                <TextBlock x:Name="SavingNotSupportedLabel"
+                           Margin="0,10,0,0"
+                           FontSize="12"
+                           Foreground="{DynamicResource Theme_ErrorBrush}"
+                           Text="NOTE: Saving files is not supported on the current platform yet."
+                           TextWrapping="Wrap"
+                           Visibility="Collapsed"/>
             </StackPanel>
 
             <local:ViewSourceButton Grid.Row="2" Background="#FF6F7DFF">

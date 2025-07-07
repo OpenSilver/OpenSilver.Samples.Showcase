@@ -1,4 +1,5 @@
-﻿using OpenSilver.Samples.Showcase.Search;
+﻿using Microsoft.Maui.Devices;
+using OpenSilver.Samples.Showcase.Search;
 using System.IO;
 using System.IO.Compression;
 using System.Windows;
@@ -12,6 +13,12 @@ public partial class Zip_Demo : UserControl
     public Zip_Demo()
     {
         InitializeComponent();
+
+        var platform = DeviceInfo.Current.Platform;
+        if (platform == DevicePlatform.Android || platform == DevicePlatform.iOS)
+        {
+            SavingNotSupportedLabel.Visibility = Visibility.Visible;
+        }
     }
 
     private async void ButtonGenerateZip_Click(object sender, RoutedEventArgs e)
