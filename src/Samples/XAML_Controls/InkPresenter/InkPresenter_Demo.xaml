@@ -78,7 +78,8 @@
                     </Button>
                 </StackPanel>
 
-                <Button Grid.Row="3"
+                <Button x:Name="SaveAsPngButton"
+                        Grid.Row="3"
                         HorizontalAlignment="Center"
                         Click="OnSaveAsPngButtonClick"
                         Content="Save as PNG"/>

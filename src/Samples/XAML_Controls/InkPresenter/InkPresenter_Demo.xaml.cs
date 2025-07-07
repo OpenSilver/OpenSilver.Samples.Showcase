@@ -1,4 +1,5 @@
-﻿using OpenSilver.Samples.Showcase.Search;
+﻿using Microsoft.Maui.Devices;
+using OpenSilver.Samples.Showcase.Search;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
@@ -16,6 +17,12 @@ public partial class InkPresenter_Demo : UserControl
     public InkPresenter_Demo()
     {
         InitializeComponent();
+
+        var platform = DeviceInfo.Current.Platform;
+        if (platform == DevicePlatform.iOS) // downloading base64 data is not supported on iOS yet
+        {
+            SaveAsPngButton.Visibility = Visibility.Collapsed;
+        }
     }
 
     private void OnIP_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
