@@ -18,7 +18,7 @@
                     @using Radzen
 @using Radzen.Blazor
 
-                    <RadzenToggleButton Text="@(value ? "Turn off" : "Turn on" )" Change="{Binding ButtonClickDel, Type=Action<bool>}"/>
+                    <RadzenToggleButton @bind-Value=@value Text="@(value ? "Turn off" : "Turn on" )" Change="{Binding ButtonClickDel, Type=Action<bool>}"/>
 @code
 {
     bool value;

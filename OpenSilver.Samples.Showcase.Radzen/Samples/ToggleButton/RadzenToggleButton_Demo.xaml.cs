@@ -43,7 +43,7 @@ namespace OpenSilver.Samples.Showcase
         {
             ToggleButtonText = newValue ? "Uncheck" : "Check";
             string message = newValue ? $"You Checked me!" : $"You Unchecked me!";
-            //MessageBox.Show(message);
+            MessageBox.Show(message);
         }
 
 
