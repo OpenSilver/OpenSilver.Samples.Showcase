@@ -1,6 +1,7 @@
 ﻿using Blazorise;
 using Blazorise.Bootstrap5;
 using Blazorise.Icons.FontAwesome;
+using DevExpress.Blazor;
 using Microsoft.AspNetCore.Components.WebView.Maui;
 using Microsoft.Extensions.Logging;
 using MudBlazor.Services;
@@ -50,6 +51,9 @@ public static class MauiProgram
             })
             .AddBootstrap5Providers()
             .AddFontAwesomeIcons();
+        builder.Services.AddDevExpressBlazor(configure => configure.BootstrapVersion = BootstrapVersion.v5);
+
+
         return builder.Build();
     }
 }

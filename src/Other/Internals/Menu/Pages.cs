@@ -77,6 +77,7 @@ namespace OpenSilver.Samples.Showcase
                                     new PageInfo { Name = "Radzen Components", Path = "/Blazor_Radzen", Icon = "\uEB9B", IconBrush = brush4 },
                                     new PageInfo { Name = "MudBlazor Components", Path = "/Blazor_MudBlazor", Icon = "\uEB9B", IconBrush = brush4 },
                                     new PageInfo {Name = "Blazorise Components", Path = "/Blazor_Blazorise", Icon = "\uEB9B", IconBrush = brush4 },
+                                    new PageInfo {Name = "DevExpress Components", Path = "/Blazor_DevExpress", Icon = "\uEB9B", IconBrush = brush4 },
                                     LandingPageInfo,
                                     SearchPageInfo
                                 }
