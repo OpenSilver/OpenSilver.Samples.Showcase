@@ -8,7 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Models\Planet.cs" />
+    <Compile Include="Samples\Carousel\DevExpressCarousel_Demo.xaml.cs" />
+    <Compile Include="Samples\DateEdit\DevExpressDateEdit_Demo.xaml.cs" />
     <Compile Include="Samples\DevExpress_Sample.xaml.cs" />
+    <Compile Include="Models\Employees.cs" />
+    <Compile Include="Samples\Grid\DevExpressGrid_Demo.xaml.cs" />
     <Compile Include="Samples\RichEdit\DevExpressRichEdit_Demo.xaml.cs" />
   </ItemGroup>
 
@@ -20,7 +25,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Include="Samples\Carousel\DevExpressCarousel_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\DateEdit\DevExpressDateEdit_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\DevExpress_Sample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Grid\DevExpressGrid_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\RichEdit\DevExpressRichEdit_Demo.xaml">

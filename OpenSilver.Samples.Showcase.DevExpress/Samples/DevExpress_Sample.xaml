@@ -9,6 +9,9 @@
         <ContentControl Content="DevExpress Components" Style="{StaticResource PageTitle_Style}"/>
         <controlskit:StaggeredPanel ProgressiveRenderingChunkSize="2">
             <local:DevExpressRichEdit_Demo HorizontalAlignment="Center"/>
+            <local:DevExpressGrid_Demo HorizontalAlignment="Center"/>
+            <local:DevExpressDateEdit_Demo HorizontalAlignment="Center"/>
+            <local:DevExpressCarousel_Demo HorizontalAlignment="Center"/>
         </controlskit:StaggeredPanel>
     </StackPanel>
 </UserControl>

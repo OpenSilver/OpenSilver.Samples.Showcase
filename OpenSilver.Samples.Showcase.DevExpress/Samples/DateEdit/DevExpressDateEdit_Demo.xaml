@@ -1,0 +1,47 @@
+﻿<UserControl
+    x:Class="OpenSilver.Samples.Showcase.DevExpressDateEdit_Demo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+
+
+    <ContentControl Style="{StaticResource Card_Style}" Width="300">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl Content="DateEdit" Foreground="#FF7F5EA4" Background="#FFCB9DC1" Style="{StaticResource HeaderControl_Style}"/>
+
+            <Grid Grid.Row="1">
+                <StackPanel>
+                    <razor:RazorComponent x:Name="RichEditComponentHolder" Height="100">
+                        @using global::DevExpress.Blazor
+                        <DxDateEdit Date="@Date"
+                                    TimeSectionVisible="false"
+                                    DateChanged="{Binding DateChangeDel, Type=Action<DateTime?>}"
+                                    NullText="Select a date..."
+                                    CssClass="cw-320"/>
+                        @code {
+    DateTime Date = DateTime.Today;
+                            }
+                    </razor:RazorComponent>
+
+                    <TextBlock Text="{Binding TextForTextBox}"/>
+                </StackPanel>
+            </Grid>
+
+            <!--<local:ViewSourceButton Grid.Row="2" Background="#FFFF81E3">
+    <local:ViewSourceButton.Sources>
+        <local:ViewSourceButtonInfo RelativePath="OpenSilver.Samples.Showcase.MudBlazor/Samples"
+                                    FileName="MudBlazorColorPicker_Demo.xaml" />
+        <local:ViewSourceButtonInfo RelativePath="OpenSilver.Samples.Showcase.MudBlazor/Samples"
+                                    FileName="MudBlazorColorPicker_Demo.xaml.cs" />
+        <local:ViewSourceButtonInfo RelativePath="OpenSilver.Samples.Showcase.MudBlazor/Samples"
+                                    FileName="Employees.cs" />
+    </local:ViewSourceButton.Sources>
+</local:ViewSourceButton>-->
+        </Grid>
+    </ContentControl>
+</UserControl>
