@@ -12,6 +12,7 @@
       "OpenSilver.Samples.Showcase.MudBlazor\\OpenSilver.Samples.Showcase.MudBlazor.csproj",
       "OpenSilver.Samples.Showcase.Radzen\\OpenSilver.Samples.Showcase.Radzen.csproj",
       "OpenSilver.Samples.Showcase.Simulator\\OpenSilver.Samples.Showcase.Simulator.csproj",
+      "OpenSilver.Samples.Showcase.Syncfusion\\OpenSilver.Samples.Showcase.Syncfusion.csproj",
       "src\\OpenSilver.Samples.Showcase.csproj"
     ]
   }

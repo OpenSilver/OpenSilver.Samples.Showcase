@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using OpenSilver.Blazor;
 using OpenSilver.Samples.Showcase;
+using Syncfusion.Blazor;
 
 namespace OpenSilver.Samples.Showcase.Browser
 {
@@ -9,6 +10,8 @@ namespace OpenSilver.Samples.Showcase.Browser
     {
         public static async Task Main(string[] args)
         {
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(Other.Internals.Licenses.SYNCFUSION_LICENSE);
+
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.RootComponents.Add<App>("#app");
 
@@ -18,6 +21,8 @@ namespace OpenSilver.Samples.Showcase.Browser
             builder.Services.AddMudBlazorSamples();
             builder.Services.AddBlazoriseSamples();
             builder.Services.AddDevExpressSamples();
+            builder.Services.AddSyncfusionSamples();
+
             var host = builder.Build();
             await host.RunAsync();
         }

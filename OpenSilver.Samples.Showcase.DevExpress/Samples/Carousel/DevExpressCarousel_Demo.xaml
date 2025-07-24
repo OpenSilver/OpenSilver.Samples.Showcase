@@ -39,9 +39,6 @@
                                 </div>
                             </ItemTemplate>
                         </DxCarousel>
-                        @code {
-    DateTime Date = DateTime.Today;
-                            }
                     </razor:RazorComponent>
 
                     <TextBlock Text="{Binding TextForTextBox}"/>

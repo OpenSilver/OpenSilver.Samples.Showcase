@@ -8,6 +8,7 @@ using MudBlazor.Services;
 using OpenSilver.MauiHybrid.Runner;
 using Radzen;
 using System.Globalization;
+using Syncfusion.Blazor;
 
 namespace OpenSilver.Samples.Showcase.MauiHybrid;
 
@@ -22,6 +23,8 @@ public static class MauiProgram
         // For all new threads:
         CultureInfo.DefaultThreadCurrentCulture = culture;
         CultureInfo.DefaultThreadCurrentUICulture = culture;
+
+        Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(Other.Internals.Licenses.SYNCFUSION_LICENSE);
 
         var builder = MauiApp.CreateBuilder();
         builder
@@ -52,7 +55,7 @@ public static class MauiProgram
             .AddBootstrap5Providers()
             .AddFontAwesomeIcons();
         builder.Services.AddDevExpressBlazor(configure => configure.BootstrapVersion = BootstrapVersion.v5);
-
+        builder.Services.AddSyncfusionBlazor();
 
         return builder.Build();
     }

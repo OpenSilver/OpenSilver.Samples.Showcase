@@ -42,6 +42,9 @@
     <Page Include="Other\Internals\Menu\MenuStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\Blazor_Syncfusion\Blazor_Syncfusion.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\Charts\AreaSeries\AreaSeries_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -281,6 +284,7 @@
     <Compile Include="Other\Internals\CharacterClickService.cs" />
     <Compile Include="Other\Internals\DeferLoadingItemsBehavior.cs" />
     <Compile Include="Other\Internals\ItemsControlLoadingBehavior.cs" />
+    <Compile Include="Other\Internals\Licenses.cs" />
     <Compile Include="Other\Internals\Menu\MenuIconBrushConverter.cs" />
     <Compile Include="Other\Internals\Menu\TreeViewHelpers.cs" />
     <Compile Include="Other\Internals\Menu\UIElementHelpers.cs" />
@@ -304,6 +308,7 @@
     <Compile Include="Samples\Blazor_Blazorise\Blazor_Blazorise.xaml.cs" />
     <Compile Include="Samples\Blazor_DevExpress\Blazor_DevExpress.xaml.cs" />
     <Compile Include="Samples\Blazor_Radzen\Blazor_Radzen.xaml.cs" />
+    <Compile Include="Samples\Blazor_Syncfusion\Blazor_Syncfusion.xaml.cs" />
     <Compile Include="Samples\Charts\AreaSeries\AreaSeries_Demo.xaml.cs" />
     <Compile Include="Samples\Charts\BarSeries\BarSeries_Demo.xaml.cs" />
     <Compile Include="Samples\Charts\BubbleSeries\BubbleSeries_Demo.xaml.cs" />
@@ -953,6 +958,7 @@
     <ProjectReference Include="..\OpenSilver.Samples.Showcase.DevExpress\OpenSilver.Samples.Showcase.DevExpress.csproj" />
     <ProjectReference Include="..\OpenSilver.Samples.Showcase.MudBlazor\OpenSilver.Samples.Showcase.MudBlazor.csproj" />
     <ProjectReference Include="..\OpenSilver.Samples.Showcase.Radzen\OpenSilver.Samples.Showcase.Radzen.csproj" />
+    <ProjectReference Include="..\OpenSilver.Samples.Showcase.Syncfusion\OpenSilver.Samples.Showcase.Syncfusion.csproj" />
     <ProjectReference Include="..\OpenSilver.Samples.Showcase.Shared\OpenSilver.Samples.Showcase.Shared.csproj" />
   </ItemGroup>
 </Project>
