@@ -9,6 +9,7 @@
         <ContentControl Content="MudBlazor Components" Style="{StaticResource PageTitle_Style}"/>
         <controlskit:StaggeredPanel ProgressiveRenderingChunkSize="2">
             <local:SyncfusionQRCode_Demo HorizontalAlignment="Center" />
+            <local:SyncfusionDataGrid_Demo HorizontalAlignment="Center" />
         </controlskit:StaggeredPanel>
     </StackPanel>
 </UserControl>
