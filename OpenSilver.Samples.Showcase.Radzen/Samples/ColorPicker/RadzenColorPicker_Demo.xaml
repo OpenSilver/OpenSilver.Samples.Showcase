@@ -16,7 +16,7 @@
             <StackPanel Grid.Row="1">
                 <razor:RazorComponent Margin="0,20,0,0" Height="70">
                     @using Radzen
-@using Radzen.Blazor
+                    @using Radzen.Blazor
 
                     <RadzenColorPicker x:Name="MyRadzenColorPicker" ShowHSV="true" ShowRGBA="true" ShowColors="true" ShowButton="true" Value="{Binding ColorText, Mode=TwoWay}" Change="{Binding SetBrushDel, Type=Action<string>}"/>
                 </razor:RazorComponent>

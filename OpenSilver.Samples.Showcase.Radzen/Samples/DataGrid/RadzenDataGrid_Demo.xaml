@@ -14,8 +14,8 @@
             <ContentControl Content="DataGrid" Foreground="#FFFF81E3" Background="#FFCB9DC1" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1">
                 <razor:RazorComponent x:Name="RadzenDemo1" Margin="0,20,0,0" Height="400">
-@using Radzen
-@using Radzen.Blazor
+                    @using Radzen
+                    @using Radzen.Blazor
 
                     <RadzenDataGrid PageSize="5" AllowPaging="true" AllowSorting="true" Data="{Binding Employees, Type=IQueryable<OpenSilver.Samples.Showcase.RadzenModel.Employee>}" ColumnWidth="400px" >
                         <Columns>

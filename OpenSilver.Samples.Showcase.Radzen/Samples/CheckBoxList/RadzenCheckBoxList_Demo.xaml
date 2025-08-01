@@ -20,7 +20,7 @@
                 </TextBlock>
                 <razor:RazorComponent Margin="0,20,0,0" Height="170">
                     @using Radzen
-@using Radzen.Blazor
+                    @using Radzen.Blazor
 
                     <div class="rz-text-align-center">
                         <RadzenCheckBoxList TValue="int" Orientation="global::Radzen.Orientation.Vertical" Change="{Binding CheckBoxListChangeDel, Type=Action<IEnumerable<int>>}">

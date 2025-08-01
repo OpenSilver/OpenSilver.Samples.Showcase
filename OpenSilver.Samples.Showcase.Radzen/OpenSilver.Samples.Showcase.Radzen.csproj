@@ -9,7 +9,7 @@
   <ItemGroup>
     <PackageReference Include="OpenSilver" Version="[$(OpenSilverVersion)]" />
     <PackageReference Include="OpenSilver.ControlsKit" Version="[$(OpenSilverControlsKitVersion)]" />
-    <PackageReference Include="OpenSilver.Blazor" Version="3.3.0-preview-2025-06-27-152003-99e4b398" />
+    <PackageReference Include="OpenSilver.Blazor" Version="3.3.0-preview-2025-08-01-105418-72fd3275" />
     <PackageReference Include="Radzen.Blazor" Version="6.4.0" />
   </ItemGroup>
 

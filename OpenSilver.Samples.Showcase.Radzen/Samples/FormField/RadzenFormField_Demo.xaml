@@ -16,7 +16,7 @@
             <StackPanel Grid.Row="1">
                 <razor:RazorComponent Margin="0,20,0,0" Height="330">
                     @using Radzen
-@using Radzen.Blazor
+                    @using Radzen.Blazor
 
                     <RadzenStack Orientation="global::Radzen.Orientation.Vertical" AlignItems="global::Radzen.AlignItems.Center" JustifyContent="global::Radzen.JustifyContent.Center" Gap="0.5rem">
                         <RadzenColumn Size="12" SizeMD="6" SizeLG="3">

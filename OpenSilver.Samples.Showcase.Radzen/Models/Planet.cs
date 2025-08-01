@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace OpenSilver.Samples.Showcase.Radzen.Models
+namespace OpenSilver.Samples.Showcase.Models
 {
     public enum PlanetStructure
     {
