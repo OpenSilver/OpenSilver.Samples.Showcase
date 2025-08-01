@@ -16,7 +16,7 @@
             <StackPanel Grid.Row="1">
                 <razor:RazorComponent Margin="0,20,0,0" Height="360">
                     @using Radzen
-@using Radzen.Blazor
+                    @using Radzen.Blazor
 
                     <RadzenHtmlEditor bind-Value=@htmlValue style="height: 300px;" Input=@OnInput Change=@OnChange Paste=@OnPaste Execute=@OnExecute UploadUrl="upload/image" />
 

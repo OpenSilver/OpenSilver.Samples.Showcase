@@ -16,7 +16,7 @@
             <StackPanel Grid.Row="1">
                 <razor:RazorComponent Margin="0,20,0,0" Height="150">
                     @using Radzen
-@using Radzen.Blazor
+                    @using Radzen.Blazor
                     <RadzenRadioButtonList TValue="int" Orientation="global::Radzen.Orientation.Vertical" Change="{Binding RadioButtonListChangeDel, Type=Action<int>}">
                         <Items>
                             <RadzenRadioButtonListItem Text="Orders" Value="1" />

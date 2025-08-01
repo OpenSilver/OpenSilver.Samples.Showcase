@@ -16,7 +16,7 @@
             <StackPanel Grid.Row="1">
                 <razor:RazorComponent Margin="0,20,0,0" Height="70">
                     @using Radzen
-@using Radzen.Blazor
+                    @using Radzen.Blazor
 
                     <RadzenButton Text="Click me!" Click="{Binding ButtonClickDel, Type=Action}"/>
 

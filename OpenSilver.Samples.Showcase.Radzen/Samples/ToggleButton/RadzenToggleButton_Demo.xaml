@@ -16,7 +16,7 @@
             <StackPanel Grid.Row="1">
                 <razor:RazorComponent Margin="0,20,0,0" Height="70">
                     @using Radzen
-@using Radzen.Blazor
+                    @using Radzen.Blazor
 
                     <RadzenToggleButton @bind-Value=@value Text="@(value ? "Turn off" : "Turn on" )" Change="{Binding ButtonClickDel, Type=Action<bool>}"/>
 @code

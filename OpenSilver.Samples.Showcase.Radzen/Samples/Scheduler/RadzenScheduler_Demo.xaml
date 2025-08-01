@@ -15,8 +15,8 @@
             <ContentControl Content="Scheduler" Foreground="#FFFF81E3" Background="#FFCB9DC1" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1">
                 <razor:RazorComponent Margin="0,20,0,0" Height="410">
-@using Radzen
-@using Radzen.Blazor
+                    @using Radzen
+                    @using Radzen.Blazor
                     <RadzenScheduler TItem="Appointment" Data="{Binding}" StartProperty="Start" EndProperty="End"
     TextProperty="Text">
                         <RadzenDayView />

@@ -17,7 +17,7 @@
             <StackPanel Grid.Row="1">
                 <razor:RazorComponent Margin="0,20,0,0" Height="400">
                     @using Radzen
-@using Radzen.Blazor
+                    @using Radzen.Blazor
                     <RadzenStack Orientation="global::Radzen.Orientation.Vertical" AlignItems="global::Radzen.AlignItems.Center" JustifyContent="global::Radzen.JustifyContent.Center" Gap="0.5rem">
                         <RadzenLabel Text="Pick your favorite day" Component="DropDownChangeEvent" />
                         <RadzenListBox TValue="string" Data="{Binding Days}" Style="width: 100%; max-width: 400px;" Name="DropDownChangeEvent" Change="{Binding DropDownChangeDel, Type=Action<object>}" />
