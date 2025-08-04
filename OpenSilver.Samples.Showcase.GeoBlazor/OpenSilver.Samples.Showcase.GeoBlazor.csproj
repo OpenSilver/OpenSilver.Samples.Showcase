@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<EnableDefaultItems>false</EnableDefaultItems>
+		<DefineSilverlight>true</DefineSilverlight>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Include="Samples\GeoBlazor_Sample.xaml.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="OpenSilver" Version="3.3.0-preview-2025-07-28-120151-a6bc3145" />
+		<PackageReference Include="OpenSilver.ControlsKit" Version="3.3.0-preview-2025-06-19-155847-a6b8b91" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Page Include="Samples\GeoBlazor_Sample.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+	</ItemGroup>
+
+</Project>
