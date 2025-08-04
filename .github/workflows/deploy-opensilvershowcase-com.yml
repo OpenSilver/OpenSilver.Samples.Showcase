@@ -3,7 +3,6 @@ on:
   workflow_dispatch:    # Manual triggering only
 
 env:
-  SOLUTION_PATH: OpenSilver.Samples.Showcase.sln
   PROJECT_PATH: OpenSilver.Samples.Showcase.Browser/OpenSilver.Samples.Showcase.Browser.csproj
   BUILD_CONFIG: Release
   PUBLISH_DIR: ${{github.workspace}}/publish
