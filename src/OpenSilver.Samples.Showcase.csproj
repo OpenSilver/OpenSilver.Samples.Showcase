@@ -361,7 +361,7 @@
     <Compile Include="Samples\XAML_Features\Triggers\Triggers_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Features\VisualTreeHelper\TreeViewerWindow.xaml.cs" />
     <Compile Include="Samples\XAML_Features\XamlReader\XamlReader_Demo.xaml.cs" />
-    <Compile Include="Samples\XAML_Layout\Xaml_Layout.xaml.cs" />
+    <Compile Include="Samples\XAML_Layout\XAML_Layout.xaml.cs" />
     <Page Include="Samples\XAML_Features\MultiBinding\MultiBinding_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
