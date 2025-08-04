@@ -1,0 +1,42 @@
+name: Deploy to opensilvershowcase.com
+on:
+  workflow_dispatch:    # Manual triggering only
+
+env:
+  PROJECT_PATH: OpenSilver.Samples.Showcase.Browser/OpenSilver.Samples.Showcase.Browser.csproj
+  BUILD_CONFIG: Release
+  PUBLISH_DIR: ${{github.workspace}}/publish
+  AZURE_APP_NAME: opensilvershowcase
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Restore workloads
+      run: dotnet workload restore ${{ env.PROJECT_PATH }}
+
+    - name: Restore dependencies
+      run: dotnet restore ${{ env.PROJECT_PATH }}
+
+    - name: Build
+      run: dotnet build ${{ env.PROJECT_PATH }} --configuration ${{ env.BUILD_CONFIG }} --no-restore
+
+    - name: Publish
+      run: dotnet publish ${{ env.PROJECT_PATH }} -c ${{ env.BUILD_CONFIG }} -o ${{ env.PUBLISH_DIR }}
+
+    - name: Deploy to Azure Web App
+      id: deploy-to-azure
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: ${{ env.AZURE_APP_NAME }}
+        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+        package: ${{ env.PUBLISH_DIR }}
