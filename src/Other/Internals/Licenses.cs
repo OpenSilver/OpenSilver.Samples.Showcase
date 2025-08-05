@@ -13,6 +13,10 @@ namespace OpenSilver.Samples.Showcase.Other.Internals
 {
     internal static class Licenses
     {
-        internal const string SYNCFUSION_LICENSE = "Your license key";
+        internal const string SYNCFUSION_LICENSE = "Your Syncfusion License key";
+
+        //to get your GeoBlazor and ArcGIS license keys, follow the steps at this address: https://docs.geoblazor.com/pages/gettingStarted
+        internal const string GEOBLAZOR_LICENSE = "Your GeoBlazor License key";
+        internal const string ARCGIS_API_KEY = "Your ArcGIS Api key";
     }
 }

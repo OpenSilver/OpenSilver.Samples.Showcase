@@ -1,23 +1,29 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
 	<PropertyGroup>
-		<TargetFramework>netstandard2.0</TargetFramework>
+		<TargetFramework>net8.0</TargetFramework>
 		<EnableDefaultItems>false</EnableDefaultItems>
 		<DefineSilverlight>true</DefineSilverlight>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<Compile Include="Samples\GeoBlazor_Sample.xaml.cs" />
+		<Compile Include="Samples\Map_Sample\GeoBlazorMap_Demo.xaml.cs" />
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="dymaptic.GeoBlazor.Core" Version="4.1.0" />
 		<PackageReference Include="OpenSilver" Version="3.3.0-preview-2025-07-28-120151-a6bc3145" />
+		<PackageReference Include="OpenSilver.Blazor" Version="3.3.0-preview-2025-06-27-152003-99e4b398" />
 		<PackageReference Include="OpenSilver.ControlsKit" Version="3.3.0-preview-2025-06-19-155847-a6b8b91" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<Page Include="Samples\GeoBlazor_Sample.xaml">
 			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Samples\Map_Sample\GeoBlazorMap_Demo.xaml">
+		  <Generator>MSBuild:Compile</Generator>
 		</Page>
 	</ItemGroup>
 

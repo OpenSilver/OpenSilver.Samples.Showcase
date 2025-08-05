@@ -8,6 +8,7 @@
     <StackPanel>
         <ContentControl Content="GeoBlazor Maps" Style="{StaticResource PageTitle_Style}"/>
         <controlskit:StaggeredPanel ProgressiveRenderingChunkSize="2">
+            <local:GeoBlazorMap_Demo HorizontalAlignment="Center" />
         </controlskit:StaggeredPanel>
     </StackPanel>
 </UserControl>
