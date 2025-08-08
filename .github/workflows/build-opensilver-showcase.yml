@@ -6,6 +6,7 @@ env:
   virtual-directory-release: '/opensilvershowcase/release/'
   app-path-release: 'opensilverdemos/opensilvershowcase/release/'
   deploy-service-url: 'opensilverdemos.scm.azurewebsites.net:443'
+  project-path: 'OpenSilver.Samples.Showcase.Browser\OpenSilver.Samples.Showcase.Browser.csproj'
 
 on:
   workflow_dispatch:
@@ -47,17 +48,18 @@ jobs:
         uses: microsoft/setup-msbuild@v1.1
       - name: Inject slug/short variables
         uses: rlespinasse/github-slug-action@v3.x
-      - name: Install .NET 9
-        uses: actions/setup-dotnet@v1
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '9.0.102'
-      - name: Install wasm-tools workload
-        run: dotnet workload install wasm-tools
+          dotnet-version: '8.0.x'
       - name: Clone OpenSilver Showcase
         uses: actions/checkout@v2
         with:
           ref: ${{ github.ref }}
           path: './Showcase'
+      - name: Restore workloads
+        working-directory: Showcase
+        run: dotnet workload restore ${{ env.project-path }}
       - name: Replace text
         run: |
           sed -i 's|<base href="/" />|<base href="${{ env.vdir }}" />|g' Showcase/OpenSilver.Samples.Showcase.Browser/wwwroot/index.html
@@ -70,4 +72,4 @@ jobs:
       - name: Build and Deploy
         working-directory: Showcase
         run: |
-          msbuild OpenSilver.Samples.Showcase.Browser\OpenSilver.Samples.Showcase.Browser.csproj /p:DeployOnBuild=true /p:PublishProfile="OpenSilver.Samples.Showcase.Browser\Properties\PublishProfiles\publish.pubxml" /p:Password=${{ secrets.OPENSILVERDEMOSUSERPWD }} /p:DeployIisAppPath=${{ env.apath }} /p:MSDeployServiceURL=${{ env.deploy-service-url }} /p:Configuration=Release /p:OpenSilverVersion=${{ github.event.inputs.opensilver-version }} /p:OpenSilverModernThemeVersion=${{ github.event.inputs.opensilver-moderntheme-version }} /p:OpenSilverControlsKitVersion=${{ github.event.inputs.opensilver-controlskit-version }} /restore
+          msbuild ${{ env.project-path }} /p:DeployOnBuild=true /p:PublishProfile="OpenSilver.Samples.Showcase.Browser\Properties\PublishProfiles\publish.pubxml" /p:Password=${{ secrets.OPENSILVERDEMOSUSERPWD }} /p:DeployIisAppPath=${{ env.apath }} /p:MSDeployServiceURL=${{ env.deploy-service-url }} /p:Configuration=Release /p:OpenSilverVersion=${{ github.event.inputs.opensilver-version }} /p:OpenSilverModernThemeVersion=${{ github.event.inputs.opensilver-moderntheme-version }} /p:OpenSilverControlsKitVersion=${{ github.event.inputs.opensilver-controlskit-version }} /restore
