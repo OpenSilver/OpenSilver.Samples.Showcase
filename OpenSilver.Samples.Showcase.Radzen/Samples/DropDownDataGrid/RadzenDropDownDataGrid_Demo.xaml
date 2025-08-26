@@ -22,7 +22,7 @@
 
                     <RadzenStack Orientation="global::Radzen.Orientation.Horizontal" AlignItems="global::Radzen.AlignItems.Center" JustifyContent="global::Radzen.JustifyContent.Center" Gap="0.5rem">
                         <RadzenLabel Text="Select Value" Component="DropDownDataGridBindValue" />
-                        <RadzenDropDownDataGrid TValue="string" Data="{Binding Planets}" TextProperty="@nameof(Planet.Name)" ValueProperty="@nameof(Planet.Name)"  Name="DropDownDataGridBindValue" Change="{Binding DropDownChangeDel, Type=Action<object>}">
+                        <RadzenDropDownDataGrid TValue="string" Data="{Binding Planets}" TextProperty="@nameof(Planet.Name)" ValueProperty="@nameof(Planet.Name)" @bind-Value="{Binding SelectedPlanetName, Mode=TwoWay, Type=string}"  Name="DropDownDataGridBindValue">
                             <Columns>
                                 <RadzenDropDownDataGridColumn Property="@nameof(Planet.Name)" Title="Name" Width="100px" />
                                 <RadzenDropDownDataGridColumn Property="@nameof(Planet.Radius)" Title="Radius" Width="200px" />

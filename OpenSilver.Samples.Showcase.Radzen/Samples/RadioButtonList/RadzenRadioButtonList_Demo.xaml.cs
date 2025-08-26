@@ -26,7 +26,6 @@ namespace OpenSilver.Samples.Showcase
         public class TestRadioButtonListClass : INotifyPropertyChanged
         {
             Dictionary<int, string> _valuesToNames = new Dictionary<int, string>() { { 1, "Orders" }, { 2, "Employees" }, { 3, "Customers" } };
-            public Action<int> RadioButtonListChangeDel;
 
             private string _value = "";
             public string Value
@@ -35,10 +34,11 @@ namespace OpenSilver.Samples.Showcase
                 set { _value = value; OnPropertyChanged(); }
             }
 
-
-            public TestRadioButtonListClass()
+            private int _selectedValue;
+            public int SelectedValue
             {
-                RadioButtonListChangeDel = RadioButtonListChange;
+                get { return _selectedValue; }
+                set { _selectedValue = value; RadioButtonListChange(value); OnPropertyChanged(); }
             }
 
             public void RadioButtonListChange(int newValue)
@@ -52,8 +52,6 @@ namespace OpenSilver.Samples.Showcase
                     Value = "";
                 }
             }
-
-
 
             public event PropertyChangedEventHandler PropertyChanged;
             void OnPropertyChanged([CallerMemberName] string propertyName = "")

@@ -18,7 +18,7 @@
                 <razor:RazorComponent Margin="0,20,0,0" Height="100">
                     @using MudBlazor
 
-                    <MudColorPicker  ValueChanged="{Binding SetBrushDel, Type=Action<global::MudBlazor.Utilities.MudColor>}" ShowToolbar="true" ShowAlpha="true" ShowColorField="true" ShowPreview="true" ShowSliders="true" ShowInputs="true" ShowModeSwitch="true" 
+                    <MudColorPicker @bind-Value="{Binding TheMudColor, Type=global::MudBlazor.Utilities.MudColor, Mode=TwoWay}" ShowToolbar="true" ShowAlpha="true" ShowColorField="true" ShowPreview="true" ShowSliders="true" ShowInputs="true" ShowModeSwitch="true" 
                 ColorPickerMode="global::MudBlazor.ColorPickerMode.RGB" />
 
                 </razor:RazorComponent>

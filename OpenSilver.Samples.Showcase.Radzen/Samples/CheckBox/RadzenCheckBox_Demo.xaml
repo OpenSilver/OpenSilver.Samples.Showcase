@@ -14,16 +14,20 @@
             </Grid.RowDefinitions>
             <ContentControl Content="CheckBox" Foreground="#FFFF81E3" Background="#FFCB9DC1" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1">
-                <razor:RazorComponent Margin="0,20,0,0" Height="70">
+                <razor:RazorComponent Margin="0,20,0,0" Height="40">
                     @using Radzen
                     @using Radzen.Blazor
 
                     <!--<RadzenCheckBox Value="@value" Change="{Binding CheckBoxClickDel}" />-->
                     <div class="rz-text-align-center">
-                        <RadzenCheckBox Name="CheckBox1" Change="{Binding CheckBoxClickDel, Type=Action<bool>}" />
+                        <RadzenCheckBox Name="CheckBox1" @bind-Value="{Binding IsChecked, Mode=TwoWay, Type=Nullable<bool>}"  />
                             <RadzenLabel Text="CheckBox" Component="CheckBox1" class="rz-ms-2" />
                     </div>
                 </razor:RazorComponent>
+                <TextBlock TextWrapping="Wrap">
+                    <Run Text="The checkBox is checked: "/>
+                    <Run Text="{Binding IsChecked}"/>
+                </TextBlock>
             </StackPanel>
             <local:ViewSourceButton Grid.Row="2" Background="#FFFF81E3">
                 <local:ViewSourceButton.Sources>

@@ -26,7 +26,6 @@ namespace OpenSilver.Samples.Showcase
 
         public class DropDownData : INotifyPropertyChanged
         {
-            public Action<object> DropDownChangeDel;
             private string _selectedPlanetName;
 
             public string SelectedPlanetName
@@ -36,18 +35,6 @@ namespace OpenSilver.Samples.Showcase
             }
 
             public ObservableCollection<Planet> Planets = Planet.Planets;
-
-
-            public DropDownData()
-            {
-                DropDownChangeDel = DropDownChange;
-            }
-
-            public void DropDownChange(object newValue)
-            {
-                SelectedPlanetName = newValue.ToString();
-            }
-
 
             public event PropertyChangedEventHandler PropertyChanged;
             void OnPropertyChanged([CallerMemberName] string propertyName = "")

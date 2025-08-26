@@ -24,28 +24,20 @@ namespace OpenSilver.Samples.Showcase
     }
     public class TestToggleButtonClass : INotifyPropertyChanged
     {
-        public Action<bool> ButtonClickDel;
 
-        private string _toggleButtonText = "Check";
-        public string ToggleButtonText
+        private string _toggledText = "Untoggled";
+        public string ToggledText
         {
-            get { return _toggleButtonText; }
-            set { _toggleButtonText = value; OnPropertyChanged(); }
+            get { return _toggledText; }
+            set { _toggledText = value; OnPropertyChanged(); }
         }
 
-
-        public TestToggleButtonClass()
+        private bool _toggled;
+        public bool Toggled
         {
-            ButtonClickDel = ButtonClick;
+            get { return _toggled; }
+            set { _toggled = value; ToggledText = value ? "Toggled" : "Untoggled"; OnPropertyChanged(); }
         }
-
-        public void ButtonClick(bool newValue)
-        {
-            ToggleButtonText = newValue ? "Uncheck" : "Check";
-            string message = newValue ? $"You Checked me!" : $"You Unchecked me!";
-            MessageBox.Show(message);
-        }
-
 
         public event PropertyChangedEventHandler PropertyChanged;
         void OnPropertyChanged([CallerMemberName] string propertyName = "")

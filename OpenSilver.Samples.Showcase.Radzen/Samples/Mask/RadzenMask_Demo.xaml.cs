@@ -24,23 +24,12 @@ namespace OpenSilver.Samples.Showcase
 
         public class PhoneData : INotifyPropertyChanged
         {
-            public Action<string> PhoneChangeDel;
             private string _phone;
 
             public string Phone
             {
                 get { return _phone; }
                 set { _phone = value; OnPropertyChanged(); }
-            }
-
-            public PhoneData()
-            {
-                PhoneChangeDel = PhoneChange;
-            }
-
-            public void PhoneChange(string phone)
-            {
-                Phone = phone;
             }
 
             public event PropertyChangedEventHandler PropertyChanged;

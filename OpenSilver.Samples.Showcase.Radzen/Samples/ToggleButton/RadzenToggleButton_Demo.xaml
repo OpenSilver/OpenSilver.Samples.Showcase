@@ -18,12 +18,12 @@
                     @using Radzen
                     @using Radzen.Blazor
 
-                    <RadzenToggleButton @bind-Value=@value Text="@(value ? "Turn off" : "Turn on" )" Change="{Binding ButtonClickDel, Type=Action<bool>}"/>
-@code
-{
-    bool value;
-}
+                    <RadzenToggleButton @bind-Value="{Binding Toggled, Mode=TwoWay, Type=bool}" Text="{Binding ToggledText}"/>
                 </razor:RazorComponent>
+                <TextBlock TextWrapping="Wrap">
+                    <Run Text="The ToggleButton is "/>
+                    <Run Text="{Binding ToggledText}"/>
+                </TextBlock>
             </StackPanel>
             <local:ViewSourceButton Grid.Row="2" Background="#FFFF81E3">
                 <local:ViewSourceButton.Sources>

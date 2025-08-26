@@ -25,7 +25,6 @@ namespace OpenSilver.Samples.Showcase
 
         public class TestRatingClass : INotifyPropertyChanged
         {
-            public Action<int> RatingChangeDel;
 
             private int _value;
 
@@ -34,18 +33,6 @@ namespace OpenSilver.Samples.Showcase
                 get { return _value; }
                 set { _value = value; OnPropertyChanged(); }
             }
-
-
-            public TestRatingClass()
-            {
-                RatingChangeDel = OnRatingChange;
-            }
-
-            public void OnRatingChange(int newValue)
-            {
-                Value = newValue;
-            }
-
 
             public event PropertyChangedEventHandler PropertyChanged;
             void OnPropertyChanged([CallerMemberName] string propertyName = "")

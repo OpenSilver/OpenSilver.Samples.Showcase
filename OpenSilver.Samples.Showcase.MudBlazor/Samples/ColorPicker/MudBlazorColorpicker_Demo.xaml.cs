@@ -28,8 +28,6 @@ namespace OpenSilver.Samples.Showcase
 
     public class ColorPickerData : INotifyPropertyChanged
     {
-        public Action<MudColor> SetBrushDel;
-
         private SolidColorBrush _colorBrush = new SolidColorBrush(Color.FromRgb(68, 58, 110));
         public SolidColorBrush ColorBrush
         {
@@ -37,9 +35,17 @@ namespace OpenSilver.Samples.Showcase
             set { _colorBrush = value; OnPropertyChanged(); }
         }
 
-        public ColorPickerData()
+
+        private MudColor _mudColor = new MudColor();
+        public MudColor TheMudColor
         {
-            SetBrushDel = SetBrush;
+            get { return _mudColor; }
+            set
+            {
+                _mudColor = value;
+                OnPropertyChanged();
+                SetBrush(value);
+            }
         }
 
         public void SetBrush(MudColor newColor)

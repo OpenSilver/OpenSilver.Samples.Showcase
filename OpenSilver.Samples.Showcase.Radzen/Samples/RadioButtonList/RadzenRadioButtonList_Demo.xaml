@@ -17,7 +17,7 @@
                 <razor:RazorComponent Margin="0,20,0,0" Height="150">
                     @using Radzen
                     @using Radzen.Blazor
-                    <RadzenRadioButtonList TValue="int" Orientation="global::Radzen.Orientation.Vertical" Change="{Binding RadioButtonListChangeDel, Type=Action<int>}">
+                    <RadzenRadioButtonList TValue="int" Orientation="global::Radzen.Orientation.Vertical" @bind-Value="{Binding SelectedValue, Mode=TwoWay, Type=int}">
                         <Items>
                             <RadzenRadioButtonListItem Text="Orders" Value="1" />
                             <RadzenRadioButtonListItem Text="Employees" Value="2" />
