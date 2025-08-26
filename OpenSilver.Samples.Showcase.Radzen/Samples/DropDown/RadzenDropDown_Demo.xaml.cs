@@ -25,7 +25,6 @@ namespace OpenSilver.Samples.Showcase
 
         public class DropDownData : INotifyPropertyChanged
         {
-            public Action<object> DropDownChangeDel;
             private string _favoriteDay;
 
             public string FavoriteDay
@@ -46,17 +45,6 @@ namespace OpenSilver.Samples.Showcase
                     }
                     return _days;
                 }
-            }
-
-
-            public DropDownData()
-            {
-                DropDownChangeDel = DropDownChange;
-            }
-
-            public void DropDownChange(object newValue)
-            {
-                FavoriteDay = newValue.ToString();
             }
 
 

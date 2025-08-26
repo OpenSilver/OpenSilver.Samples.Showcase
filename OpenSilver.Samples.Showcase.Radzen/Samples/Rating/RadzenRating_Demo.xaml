@@ -18,7 +18,7 @@
                     @using Radzen
                     @using Radzen.Blazor
 
-                    <RadzenRating TValue="int" Change="{Binding RatingChangeDel, Type=Action<int>}" />
+                    <RadzenRating TValue="int" @bind-Value="{Binding Value, Mode=TwoWay, Type=int}" />
 
 
                 </razor:RazorComponent>

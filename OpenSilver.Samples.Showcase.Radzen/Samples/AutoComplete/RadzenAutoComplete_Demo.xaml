@@ -6,7 +6,7 @@
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
 
 
-    <ContentControl Style="{StaticResource Card_Style}" Width="300">
+    <ContentControl Style="{StaticResource Card_Style}" Width="230">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -15,16 +15,15 @@
             </Grid.RowDefinitions>
             <ContentControl Content="AutoComplete" Foreground="#FFFF81E3" Background="#FFCB9DC1" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1">
-                <razor:RazorComponent Margin="0,20,0,0" Height="100">
+                <razor:RazorComponent Margin="0,20,0,0" Height="70">
                     @using Radzen
                     @using Radzen.Blazor
-                    <RadzenAutoComplete x:Name="testName" Data="{Binding Words}" SelectedItem="{Binding CurrentWord, Mode=TwoWay}"  FilterCaseSensitivity="global::Radzen.FilterCaseSensitivity.CaseInsensitive"/>
-                            <!--<RadzenText TextStyle="TextStyle.Body2">Start typing e.g. France
-        @((MarkupString)(!string.IsNullOrEmpty(companyName) ? $", Value is:<strong>{companyName}</strong> " : ""))
-                            </RadzenText>-->
-
+                    <RadzenAutoComplete @bind-Value="{Binding CurrentWord, Mode=TwoWay, Type=string}" x:Name="testName" Data="{Binding Words}"  FilterCaseSensitivity="global::Radzen.FilterCaseSensitivity.CaseInsensitive"/>
                 </razor:RazorComponent>
-                <TextBlock x:Name="ValueTextBlock" Text="{Binding CurrentWord}"/>
+                <TextBlock x:Name="ValueTextBlock">
+                    <Run Text="You picked: "/>
+                    <Run Text="{Binding CurrentWord}"/>
+                </TextBlock>
             </StackPanel>
             <local:ViewSourceButton Grid.Row="2" Background="#FFFF81E3">
                 <local:ViewSourceButton.Sources>

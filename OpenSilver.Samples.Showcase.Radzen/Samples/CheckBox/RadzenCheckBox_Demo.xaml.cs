@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
@@ -20,18 +22,23 @@ namespace OpenSilver.Samples.Showcase
             this.DataContext = new TestCheckBoxClass();
         }
     }
-    public class TestCheckBoxClass
+    public class TestCheckBoxClass : INotifyPropertyChanged
     {
-        public Action<bool> CheckBoxClickDel;
+        private bool? _isChecked = true;
 
-        public TestCheckBoxClass()
+        public bool? IsChecked
         {
-            CheckBoxClickDel = CheckBoxCheck;
+            get { return _isChecked; }
+            set { _isChecked = value; OnPropertyChanged(); }
         }
 
-        public void CheckBoxCheck(bool newValue)
+        public event PropertyChangedEventHandler PropertyChanged;
+        void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {
-            MessageBox.Show(newValue? "You checked me!" : "You unchecked me!");
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
     }
 }

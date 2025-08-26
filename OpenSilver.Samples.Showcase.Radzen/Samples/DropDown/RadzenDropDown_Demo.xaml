@@ -20,7 +20,7 @@
                     @using Radzen.Blazor
                     <RadzenStack Orientation="global::Radzen.Orientation.Horizontal" AlignItems="global::Radzen.AlignItems.Center" JustifyContent="global::Radzen.JustifyContent.Center" Gap="0.5rem">
                         <RadzenLabel Text="Pick your favorite day" Component="DropDownChangeEvent" />
-                        <RadzenDropDown TValue="string" Data="{Binding Days}" Style="width: 100%; max-width: 400px;" Name="DropDownChangeEvent" Change="{Binding DropDownChangeDel, Type=Action<object>}"/>
+                        <RadzenDropDown TValue="string" Data="{Binding Days}" @bind-Value="{Binding FavoriteDay, Mode=Twoway, Type=string}"  Style="width: 100%; max-width: 400px;" Name="DropDownChangeEvent"/>
                     </RadzenStack>
                 </razor:RazorComponent>
                 <TextBlock >

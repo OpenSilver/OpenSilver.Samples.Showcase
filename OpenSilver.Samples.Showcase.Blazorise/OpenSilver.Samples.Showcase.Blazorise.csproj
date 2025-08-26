@@ -21,7 +21,7 @@
 		<PackageReference Include="Blazorise.Icons.FontAwesome" Version="1.7.5" />
 		<PackageReference Include="OpenSilver" Version="[$(OpenSilverVersion)]" />
 		<PackageReference Include="OpenSilver.ControlsKit" Version="[$(OpenSilverControlsKitVersion)]" />
-		<PackageReference Include="OpenSilver.Blazor" Version="3.3.0-preview-2025-08-01-105418-72fd3275" />
+		<PackageReference Include="OpenSilver.Blazor" Version="3.3.0-preview-2025-08-18-074748-f3593a5a" />
 	</ItemGroup>
 
 	<ItemGroup>
