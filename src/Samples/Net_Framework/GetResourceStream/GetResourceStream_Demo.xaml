@@ -26,14 +26,14 @@
                                     Margin="0,15,0,0"
                                     Background="#FF3ED4B2">
                 <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/GetRessourceStream"
-                                                FileName="GetRessourceStream_Demo.xaml" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/GetRessourceStream"
-                                                FileName="GetRessourceStream_Demo.xaml.cs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/GetRessourceStream"
-                                                FileName="GetRessourceStream_Demo.xaml.vb" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/GetRessourceStream"
-                                                FileName="GetRessourceStream_Demo.xaml.fs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/GetResourceStream"
+                                                FileName="GetResourceStream_Demo.xaml" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/GetResourceStream"
+                                                FileName="GetResourceStream_Demo.xaml.cs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/GetResourceStream"
+                                                FileName="GetResourceStream_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Net_Framework/GetResourceStream"
+                                                FileName="GetResourceStream_Demo.xaml.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>
