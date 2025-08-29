@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using MudBlazor;
 using MudBlazor.Services;
 using System;
 using System.Collections.Generic;
@@ -26,7 +27,10 @@ namespace OpenSilver.Samples.Showcase
     {
         public static void AddMudBlazorSamples(this IServiceCollection services)
         {
-            services.AddMudServices();
+            services.AddMudServices(config =>
+            {
+                config.SnackbarConfiguration.PositionClass = Defaults.Classes.Position.BottomRight;
+            });
         }
     }
 }
