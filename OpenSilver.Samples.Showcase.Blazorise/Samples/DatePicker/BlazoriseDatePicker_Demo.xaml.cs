@@ -24,8 +24,6 @@ namespace OpenSilver.Samples.Showcase
     }
     public class TestDatePickerClass : INotifyPropertyChanged
     {
-        public Action<DateTime?> DateChangeDel;
-
         private string _textForTextBox;
 
         public string TextForTextBox
@@ -34,10 +32,11 @@ namespace OpenSilver.Samples.Showcase
             set { _textForTextBox = value; OnPropertyChanged(); }
         }
 
-
-        public TestDatePickerClass()
+        private DateTime? _date;
+        public DateTime? Date
         {
-            DateChangeDel = OnDateChange;
+            get { return _date; }
+            set { _date = value; OnDateChange(value); OnPropertyChanged(); }
         }
 
         public void OnDateChange(DateTime? newDate)
@@ -50,6 +49,10 @@ namespace OpenSilver.Samples.Showcase
                 string difference = daysCount == 0 ? "Today" : daysCount > 0 ? $"in {daysCount} days" : $"{-daysCount} days ago";
                 bool isPast = ts.TotalDays < 0;
                 TextForTextBox = $"The date you picked is {difference}.";
+            }
+            else
+            {
+                TextForTextBox = $"No date selected.";
             }
         }
 
