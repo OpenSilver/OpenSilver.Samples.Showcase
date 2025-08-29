@@ -21,8 +21,8 @@
 @using OpenSilver.Samples.Showcase.DevExpressModel
                         <DxCarousel Width="500px"
                                     Height="300px"
-                                    Data="{Binding}"
-                                    LoopNavigationEnabled="true"
+                                    Data="{Binding Planets}"
+                                    LoopNavigationEnabled="{Binding IsLooping, Type=bool}"
                                     SlideShowEnabled="true"
                                     SlideShowDelay="5000"
                                     NavButtonsDisplayMode="CarouselControlsDisplayMode.AlwaysVisible"
