@@ -26,16 +26,14 @@
                 </razor:RazorComponent>
                 <TextBlock x:Name="ValueTextBlock" Text="{Binding CurrentWord}"/>
             </StackPanel>
-            <!--<local:ViewSourceButton Grid.Row="2" Background="#FFFF81E3">
+            <local:ViewSourceButton Grid.Row="2" Background="#FFFF81E3">
                 <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo RelativePath="OpenSilver.Samples.Showcase.Radzen/Samples"
-                                                FileName="RadzenDataGrid_Demo.xaml" />
-                    <local:ViewSourceButtonInfo RelativePath="OpenSilver.Samples.Showcase.Radzen/Samples"
-                                                FileName="RadzenDataGrid_Demo.xaml.cs" />
-                    <local:ViewSourceButtonInfo RelativePath="OpenSilver.Samples.Showcase.Radzen/Samples"
-                                                FileName="Employees.cs" />
+                    <local:ViewRadzenSourceInfo RelativePath="OpenSilver.Samples.Showcase.Radzen/Samples/AutoComplete"
+                                    FileName="RadzenAutoComplete_Demo.xaml" />
+                    <local:ViewRadzenSourceInfo RelativePath="OpenSilver.Samples.Showcase.Radzen/Samples/AutoComplete"
+                                    FileName="RadzenAutoComplete_Demo.xaml.cs" />
                 </local:ViewSourceButton.Sources>
-            </local:ViewSourceButton>-->
+            </local:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

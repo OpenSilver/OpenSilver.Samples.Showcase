@@ -23,16 +23,14 @@
                 </razor:RazorComponent>
             </Grid>
 
-            <!--<local:ViewSourceButton Grid.Row="2" Background="#FFFF81E3">
-            <local:ViewSourceButton.Sources>
-                <local:ViewSourceButtonInfo RelativePath="OpenSilver.Samples.Showcase.Blazorise/Samples"
-                                            FileName="BlazoriseButton_Demo.xaml" />
-                <local:ViewSourceButtonInfo RelativePath="OpenSilver.Samples.Showcase.Blazorise/Samples"
-                                            FileName="BlazoriseButton_Demo.xaml.cs" />
-                <local:ViewSourceButtonInfo RelativePath="OpenSilver.Samples.Showcase.Blazorise/Samples"
-                                            FileName="Employees.cs" />
-            </local:ViewSourceButton.Sources>
-        </local:ViewSourceButton>-->
+            <local:ViewSourceButton Grid.Row="2" Background="#FFFF81E3">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewBlazoriseSourceInfo RelativePath="OpenSilver.Samples.Showcase.Blazorise/Samples/Button"
+                        FileName="BlazoriseButton_Demo.xaml" />
+                    <local:ViewBlazoriseSourceInfo RelativePath="OpenSilver.Samples.Showcase.Blazorise/Samples/Button"
+                        FileName="BlazoriseButton_Demo.xaml.cs" />
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

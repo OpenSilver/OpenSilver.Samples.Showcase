@@ -15,6 +15,7 @@
 
 
 	<ItemGroup>
+		<Compile Include="Other\Internals\ViewMudBlazorSourceInfo.cs" />
 		<Compile Include="Samples\Button\MudBlazorButton_Demo.xaml.cs" />
 		<Compile Include="Samples\ColorPicker\MudBlazorColorpicker_Demo.xaml.cs" />
 		<Compile Include="Samples\DataGrid\Employees.cs" />
@@ -27,7 +28,7 @@
     <Page Include="Samples\Button\MudBlazorButton_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\ColorPicker\MudBlazorColorpicker_Demo.xaml">
+    <Page Include="Samples\ColorPicker\MudBlazorColorPicker_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\DataGrid\MudBlazorDataGrid_Demo.xaml">
@@ -40,5 +41,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\OpenSilver.Samples.Showcase.Shared\OpenSilver.Samples.Showcase.Shared.csproj" />
+	</ItemGroup>
 
 </Project>

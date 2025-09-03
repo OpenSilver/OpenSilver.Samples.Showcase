@@ -34,16 +34,14 @@
                 </razor:RazorComponent>
             </Grid>
 
-            <!--<local:ViewSourceButton Grid.Row="2" Background="#FFFF81E3">
+            <local:ViewSourceButton Grid.Row="2" Background="#FFFF81E3">
                 <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo RelativePath="OpenSilver.Samples.Showcase.MudBlazor/Samples"
-                                                FileName="MudBlazorButton_Demo.xaml" />
-                    <local:ViewSourceButtonInfo RelativePath="OpenSilver.Samples.Showcase.MudBlazor/Samples"
-                                                FileName="MudBlazorButton_Demo.xaml.cs" />
-                    <local:ViewSourceButtonInfo RelativePath="OpenSilver.Samples.Showcase.MudBlazor/Samples"
-                                                FileName="Employees.cs" />
+                    <local:ViewMudBlazorSourceInfo RelativePath="OpenSilver.Samples.Showcase.MudBlazor/Samples/Button"
+                        FileName="MudBlazorButton_Demo.xaml" />
+                    <local:ViewMudBlazorSourceInfo RelativePath="OpenSilver.Samples.Showcase.MudBlazor/Samples/Button"
+                        FileName="MudBlazorButton_Demo.xaml.cs" />
                 </local:ViewSourceButton.Sources>
-            </local:ViewSourceButton>-->
+            </local:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

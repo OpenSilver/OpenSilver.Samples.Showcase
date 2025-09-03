@@ -12,7 +12,7 @@
             <local:MudBlazorSnackbar_Demo HorizontalAlignment="Center" />
             <local:MudBlazorButton_Demo HorizontalAlignment="Center" />
             <local:MudBlazorDataGrid_Demo HorizontalAlignment="Center" />
-            <local:MudBlazorColorpicker_Demo HorizontalAlignment="Center" />
+            <local:MudBlazorColorPicker_Demo HorizontalAlignment="Center" />
         </controlskit:StaggeredPanel>
         <razor:RazorComponent Margin="0,20,0,0" Height="100">
             @using MudBlazor
