@@ -25,16 +25,14 @@
                 </razor:RazorComponent>
             </Grid>
 
-            <!--<local:ViewSourceButton Grid.Row="2" Background="#FFFF81E3">
-    <local:ViewSourceButton.Sources>
-        <local:ViewSourceButtonInfo RelativePath="OpenSilver.Samples.Showcase.MudBlazor/Samples"
-                                    FileName="MudBlazorSnackbar_Demo.xaml" />
-        <local:ViewSourceButtonInfo RelativePath="OpenSilver.Samples.Showcase.MudBlazor/Samples"
-                                    FileName="MudBlazorSnackbar_Demo.xaml.cs" />
-        <local:ViewSourceButtonInfo RelativePath="OpenSilver.Samples.Showcase.MudBlazor/Samples"
-                                    FileName="Employees.cs" />
-    </local:ViewSourceButton.Sources>
-</local:ViewSourceButton>-->
+            <local:ViewSourceButton Grid.Row="2" Background="#FFFF81E3">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewMudBlazorSourceInfo RelativePath="OpenSilver.Samples.Showcase.MudBlazor/Samples/Snackbar"
+                        FileName="MudBlazorSnackbar_Demo.xaml" />
+                    <local:ViewMudBlazorSourceInfo RelativePath="OpenSilver.Samples.Showcase.MudBlazor/Samples/Snackbar"
+                        FileName="MudBlazorSnackbar_Demo.xaml.cs" />
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

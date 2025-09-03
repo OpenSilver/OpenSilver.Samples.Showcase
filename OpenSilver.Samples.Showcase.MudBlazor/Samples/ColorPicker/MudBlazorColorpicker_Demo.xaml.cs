@@ -15,10 +15,10 @@ using System.Windows.Navigation;
 
 namespace OpenSilver.Samples.Showcase
 {
-    public partial class MudBlazorColorpicker_Demo : UserControl
+    public partial class MudBlazorColorPicker_Demo : UserControl
     {
         ColorPickerData _colorPickerData = new ColorPickerData();
-        public MudBlazorColorpicker_Demo()
+        public MudBlazorColorPicker_Demo()
         {
             this.InitializeComponent();
             this.DataContext = _colorPickerData;

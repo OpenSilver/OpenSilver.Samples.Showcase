@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -28,7 +29,11 @@ namespace OpenSilver.Samples.Showcase
 
             var panel = new ViewSourcePanel();
             panel.ViewSource(sourcePaths);
-            MainPage.Current.ViewSourceCode(panel);
+            dynamic mainPage = Application.Current.MainWindow.Content;
+            if (mainPage?.GetType().Name == "MainPage")
+            {
+                mainPage.ViewSourceCode(panel);
+            }
         }
     }
 }

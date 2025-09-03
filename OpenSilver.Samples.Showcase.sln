@@ -45,6 +45,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenSilver.Samples.Showcase
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenSilver.Samples.Showcase.Blazorise", "OpenSilver.Samples.Showcase.Blazorise\OpenSilver.Samples.Showcase.Blazorise.csproj", "{BE0FBB3F-D196-4BF8-9290-749F7F691BA0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenSilver.Samples.Showcase.Shared", "OpenSilver.Samples.Showcase.Shared\OpenSilver.Samples.Showcase.Shared.csproj", "{74407787-C3A6-49DF-B887-376B797E9615}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -108,6 +110,10 @@ Global
 		{BE0FBB3F-D196-4BF8-9290-749F7F691BA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE0FBB3F-D196-4BF8-9290-749F7F691BA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE0FBB3F-D196-4BF8-9290-749F7F691BA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74407787-C3A6-49DF-B887-376B797E9615}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74407787-C3A6-49DF-B887-376B797E9615}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74407787-C3A6-49DF-B887-376B797E9615}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74407787-C3A6-49DF-B887-376B797E9615}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -127,6 +133,7 @@ Global
 		{4A0073EA-FED1-419B-835D-2F5184A0F878} = {0D611A58-8B7C-4320-8BE2-300BA74226DD}
 		{B2AB460E-7F3F-4F19-B1F7-8CA6D6C236E1} = {119B9FBC-4843-4625-AAD2-1B1411C26E17}
 		{BE0FBB3F-D196-4BF8-9290-749F7F691BA0} = {119B9FBC-4843-4625-AAD2-1B1411C26E17}
+		{74407787-C3A6-49DF-B887-376B797E9615} = {119B9FBC-4843-4625-AAD2-1B1411C26E17}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {487C6C1E-8943-483B-89FE-84ACF0ECB68D}

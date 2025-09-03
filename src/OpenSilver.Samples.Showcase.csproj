@@ -36,9 +36,6 @@
     <Page Include="Samples\Blazor_Radzen\Blazor_Radzen.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Other\Internals\ViewSourcePanel.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Other\Internals\Menu\MenuStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -289,9 +286,6 @@
     <Compile Include="Other\Internals\Search\SearchableItem.cs" />
     <Compile Include="Other\Internals\Search\SearchControl.xaml.cs" />
     <Compile Include="Other\Internals\Search\SearchKeywordAttribute.cs" />
-    <Compile Include="Other\Internals\ViewModernStyleSourceInfo.cs" />
-    <Compile Include="Other\Internals\ViewSourcePanel.xaml.cs" />
-    <Compile Include="Other\Internals\ViewStyleSourceInfo.cs" />
     <Compile Include="Other\Leagues\League.cs" />
     <Compile Include="Other\MarkupExtensions\ResxExtension.cs" />
     <Compile Include="Other\Internals\Menu\PageCategoryInfo.cs" />
@@ -819,9 +813,6 @@
     <Compile Include="App.xaml.cs" />
     <Compile Include="Connected Services\ServiceReference1\Reference.cs" />
     <Compile Include="MainPage.xaml.cs" />
-    <Compile Include="Other\Internals\ViewSourceButton.cs" />
-    <Compile Include="Other\Internals\ControlToDisplayCodeHostedOnGitHub.cs" />
-    <Compile Include="Other\Internals\ViewSourceButtonInfo.cs" />
     <Compile Include="Other\Planet.cs" />
     <Compile Include="Samples\Client_Server\Client_Server.xaml.cs" />
     <Compile Include="Samples\Client_Server\JSONP\JSONP_Demo.xaml.cs" />
@@ -957,5 +948,6 @@
     <ProjectReference Include="..\OpenSilver.Samples.Showcase.Blazorise\OpenSilver.Samples.Showcase.Blazorise.csproj" />
     <ProjectReference Include="..\OpenSilver.Samples.Showcase.MudBlazor\OpenSilver.Samples.Showcase.MudBlazor.csproj" />
     <ProjectReference Include="..\OpenSilver.Samples.Showcase.Radzen\OpenSilver.Samples.Showcase.Radzen.csproj" />
+    <ProjectReference Include="..\OpenSilver.Samples.Showcase.Shared\OpenSilver.Samples.Showcase.Shared.csproj" />
   </ItemGroup>
 </Project>
