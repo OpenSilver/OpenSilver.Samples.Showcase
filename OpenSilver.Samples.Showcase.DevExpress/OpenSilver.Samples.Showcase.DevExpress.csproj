@@ -19,7 +19,7 @@
 
   <ItemGroup>
 	  <PackageReference Include="DevExpress.Blazor.RichEdit" Version="25.1.3" />
-	  <PackageReference Include="OpenSilver.Blazor" Version="3.3.0-preview-2025-06-27-152003-99e4b398" />
+	  <PackageReference Include="OpenSilver.Blazor" Version="3.3.0-preview-2025-08-18-074748-f3593a5a" />
 	  <PackageReference Include="OpenSilver" Version="[$(OpenSilverVersion)]" />
 	  <PackageReference Include="OpenSilver.ControlsKit" Version="[$(OpenSilverControlsKitVersion)]" />
   </ItemGroup>

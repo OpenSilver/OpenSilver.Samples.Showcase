@@ -13,8 +13,8 @@
 
 	<ItemGroup>
 		<PackageReference Include="dymaptic.GeoBlazor.Core" Version="4.1.0" />
-		<PackageReference Include="OpenSilver" Version="3.3.0-preview-2025-07-28-120151-a6bc3145" />
-		<PackageReference Include="OpenSilver.Blazor" Version="3.3.0-preview-2025-06-27-152003-99e4b398" />
+		<PackageReference Include="OpenSilver" Version="[$(OpenSilverVersion)]" />
+		<PackageReference Include="OpenSilver.Blazor" Version="3.3.0-preview-2025-08-18-074748-f3593a5a" />
 		<PackageReference Include="OpenSilver.ControlsKit" Version="3.3.0-preview-2025-06-19-155847-a6b8b91" />
 	</ItemGroup>
 
