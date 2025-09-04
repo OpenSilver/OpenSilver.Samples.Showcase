@@ -9,8 +9,9 @@
 
   <ItemGroup>
     <Compile Include="Models\Employees.cs" />
+    <Compile Include="Other\Internals\ViewSyncfusionSourceInfo.cs" />
     <Compile Include="Samples\DataGrid\SyncfusionDataGrid_Demo.xaml.cs" />
-    <Compile Include="Samples\QRCodeGenerator\SyncfusionQRCode_Demo.xaml.cs" />
+    <Compile Include="Samples\QRCode\SyncfusionQRCode_Demo.xaml.cs" />
     <Compile Include="Samples\Syncfusion_Sample.xaml.cs" />
   </ItemGroup>
 
@@ -27,12 +28,16 @@
     <Page Include="Samples\DataGrid\SyncfusionDataGrid_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\QRCodeGenerator\SyncfusionQRCode_Demo.xaml">
+    <Page Include="Samples\QRCode\SyncfusionQRCode_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\Syncfusion_Sample.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OpenSilver.Samples.Showcase.Shared\OpenSilver.Samples.Showcase.Shared.csproj" />
   </ItemGroup>
 
 </Project>

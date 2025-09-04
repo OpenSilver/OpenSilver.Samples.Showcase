@@ -7,8 +7,9 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<Compile Include="Other\Internals\ViewGeoBlazorSourceInfo.cs" />
 		<Compile Include="Samples\GeoBlazor_Sample.xaml.cs" />
-		<Compile Include="Samples\Map_Sample\GeoBlazorMap_Demo.xaml.cs" />
+		<Compile Include="Samples\Map\GeoBlazorMap_Demo.xaml.cs" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -22,9 +23,13 @@
 		<Page Include="Samples\GeoBlazor_Sample.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
-		<Page Include="Samples\Map_Sample\GeoBlazorMap_Demo.xaml">
+		<Page Include="Samples\Map\GeoBlazorMap_Demo.xaml">
 		  <Generator>MSBuild:Compile</Generator>
 		</Page>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\OpenSilver.Samples.Showcase.Shared\OpenSilver.Samples.Showcase.Shared.csproj" />
 	</ItemGroup>
 
 </Project>
