@@ -6,7 +6,7 @@
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
 
     <StackPanel>
-        <ContentControl Content="MudBlazor Components" Style="{StaticResource PageTitle_Style}"/>
+        <ContentControl Content="Syncfusion Components" Style="{StaticResource PageTitle_Style}"/>
         <controlskit:StaggeredPanel ProgressiveRenderingChunkSize="2">
             <local:SyncfusionQRCode_Demo HorizontalAlignment="Center" />
             <local:SyncfusionDataGrid_Demo HorizontalAlignment="Center" />

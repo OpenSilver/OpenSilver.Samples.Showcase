@@ -16,16 +16,12 @@
 
             <Grid Grid.Row="1">
                 <StackPanel>
-                    <razor:RazorComponent x:Name="RichEditComponentHolder" Height="100">
+                    <razor:RazorComponent x:Name="RichEditComponentHolder" Height="50">
                         @using global::DevExpress.Blazor
-                        <DxDateEdit Date="@Date"
+                        <DxDateEdit @bind-Date="{Binding Date, Mode=TwoWay, Type=DateTime}"
                                     TimeSectionVisible="false"
-                                    DateChanged="{Binding DateChangeDel, Type=Action<DateTime?>}"
                                     NullText="Select a date..."
                                     CssClass="cw-320"/>
-                        @code {
-    DateTime Date = DateTime.Today;
-                            }
                     </razor:RazorComponent>
 
                     <TextBlock Text="{Binding TextForTextBox}"/>

@@ -110,12 +110,6 @@ namespace OpenSilver.Samples.Showcase
             set { _documentContentChangedDel = value; OnPropertyChanged(); }
         }
 
-        public RTEDataContext()
-        {
-            DocumentContentChangedDel = OnDocumentContentChanged;
-        }
-
-
         private DocumentFormat _fileFormat;
         public DocumentFormat FileFormat
         {
@@ -137,12 +131,6 @@ namespace OpenSilver.Samples.Showcase
         {
             get { return _readOnly; }
             set { _readOnly = value; OnPropertyChanged(); }
-        }
-
-
-        public void OnDocumentContentChanged(byte[] newContent)
-        {
-            FileData = newContent;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

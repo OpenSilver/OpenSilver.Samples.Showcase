@@ -20,25 +20,25 @@ namespace OpenSilver.Samples.Showcase
         public DevExpressDateEdit_Demo()
         {
             this.InitializeComponent();
+
+            this.DataContext = new TestDatePickerClass();
         }
 
 
         public class TestDatePickerClass : INotifyPropertyChanged
         {
-            public Action<DateTime?> DateChangeDel;
-
             private string _textForTextBox;
-
             public string TextForTextBox
             {
                 get { return _textForTextBox; }
                 set { _textForTextBox = value; OnPropertyChanged(); }
             }
 
-
-            public TestDatePickerClass()
+            private DateTime _date = DateTime.Now;
+            public DateTime Date
             {
-                DateChangeDel = OnDateChange;
+                get { return _date; }
+                set { _date = value; OnDateChange(value); OnPropertyChanged(); }
             }
 
             public void OnDateChange(DateTime? newDate)
@@ -50,9 +50,8 @@ namespace OpenSilver.Samples.Showcase
                     DateTime dt = (DateTime)newDate;
                     TimeSpan ts = dt.Date - DateTime.Today;
                     var daysCount = (int)ts.TotalDays;
-                    string difference = daysCount == 0 ? "Today" : daysCount > 0 ? $"in {daysCount} days" : $"{-daysCount} days ago";
-                    bool isPast = ts.TotalDays < 0;
-                    TextForTextBox = $"The date you picked is {difference}.";
+                    string difference = daysCount == 0 ? "Today" : daysCount > 0 ? $"is in {daysCount} days" : $"was {-daysCount} days ago";
+                    TextForTextBox = $"The date you picked {difference}.";
                 }
             }
 

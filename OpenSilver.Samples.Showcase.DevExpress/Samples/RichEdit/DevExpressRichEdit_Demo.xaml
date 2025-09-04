@@ -46,9 +46,8 @@
                         <DxRichEdit @ref="myRichEdit"
                             style="height:800px"
                                     DocumentFormat="{Binding FileFormat, Type=global::DevExpress.Blazor.RichEdit.DocumentFormat, Mode=TwoWay}"
-                                    DocumentContent="{Binding FileData, Mode=TwoWay}"
-                                    ReadOnly="{Binding ReadOnly, Type=bool}"
-                                    DocumentContentChanged="{Binding DocumentContentChangedDel, Type=Action<byte[]>}"/>
+                                    @bind-DocumentContent="{Binding FileData, Mode=TwoWay, Type=byte[]}"
+                                    ReadOnly="{Binding ReadOnly, Type=bool}"/>
 
 @code {
     public DxRichEdit myRichEdit { get; set; }
