@@ -5,7 +5,7 @@
     xmlns:razor="clr-namespace:OpenSilver.Blazor;assembly=OpenSilver.Blazor"
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
 
-    <ContentControl Style="{StaticResource Card_Style}" Width="325">
+    <ContentControl Style="{StaticResource Card_Style}" Width="350">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -15,7 +15,7 @@
             <ContentControl Content="DatePicker" Foreground="#FFFF81E3" Background="#FFCB9DC1" Style="{StaticResource HeaderControl_Style}"/>
 
             <StackPanel Grid.Row="1">
-                <razor:RazorComponent Margin="0,10,0,0" Height="370">
+                <razor:RazorComponent Margin="0,10,0,0" Height="380">
                     @using Blazorise
 
                     <DatePicker TValue="DateTime?" @bind-Date="{Binding Date, Mode=TwoWay, Type=DateTime?}" Inline/>

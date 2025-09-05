@@ -5,7 +5,7 @@
     xmlns:razor="clr-namespace:OpenSilver.Blazor;assembly=OpenSilver.Blazor"
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
 
-    <ContentControl Style="{StaticResource Card_Style}" Width="150">
+    <ContentControl Style="{StaticResource Card_Style}" Width="190">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -18,7 +18,6 @@
                     @using Radzen
                     @using Radzen.Blazor
 
-                    <!--<RadzenCheckBox Value="@value" Change="{Binding CheckBoxClickDel}" />-->
                     <div class="rz-text-align-center">
                         <RadzenCheckBox Name="CheckBox1" @bind-Value="{Binding IsChecked, Mode=TwoWay, Type=Nullable<bool>}"  />
                             <RadzenLabel Text="CheckBox" Component="CheckBox1" class="rz-ms-2" />

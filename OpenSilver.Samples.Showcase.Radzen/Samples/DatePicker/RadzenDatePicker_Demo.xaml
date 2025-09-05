@@ -5,7 +5,7 @@
     xmlns:razor="clr-namespace:OpenSilver.Blazor;assembly=OpenSilver.Blazor"
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
 
-    <ContentControl Style="{StaticResource Card_Style}" Width="550">
+    <ContentControl Style="{StaticResource Card_Style}" Width="340">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -14,7 +14,7 @@
             </Grid.RowDefinitions>
             <ContentControl Content="DatePicker" Foreground="#FFFF81E3" Background="#FFCB9DC1" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1">
-                <razor:RazorComponent Margin="0,20,0,0" Height="100">
+                <razor:RazorComponent Margin="0,20,0,0" Height="60">
                     @using Radzen
                     @using Radzen.Blazor
 

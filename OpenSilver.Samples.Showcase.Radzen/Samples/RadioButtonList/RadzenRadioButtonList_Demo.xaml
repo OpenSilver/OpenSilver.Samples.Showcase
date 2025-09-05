@@ -28,7 +28,7 @@
                 </razor:RazorComponent>
 
 
-                <TextBlock >
+                <TextBlock TextWrapping="Wrap">
                     <Run Text="Currently selected value: "/>
                     <Run Text="{Binding Value}"/>
                 </TextBlock>
