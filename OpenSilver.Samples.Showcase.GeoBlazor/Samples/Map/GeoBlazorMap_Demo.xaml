@@ -15,7 +15,7 @@
             <ContentControl Content="Map" Foreground="#FFFF81E3" Background="#FFCB9DC1" Style="{StaticResource HeaderControl_Style}"/>
 
             <Grid Grid.Row="1">
-                <razor:RazorComponent x:Name="RichEditComponentHolder" Height="900" AllowScrollOnTouchMove="False">
+                <razor:RazorComponent x:Name="RichEditComponentHolder" Height="440" AllowScrollOnTouchMove="False">
                     @using dymaptic.GeoBlazor.Core
 @using dymaptic.GeoBlazor.Core.Attributes
 @using dymaptic.GeoBlazor.Core.Components

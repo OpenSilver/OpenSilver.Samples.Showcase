@@ -39,13 +39,13 @@
                         <ToggleButton Content="ReadOnly on/off" IsChecked="{Binding ReadOnly, Mode=TwoWay}" Margin="5,10" VerticalAlignment="Bottom"/>
                     </StackPanel>
 
-                    <razor:RazorComponent x:Name="RichEditComponentHolder" Height="900">
+                    <razor:RazorComponent x:Name="RichEditComponentHolder" Height="820">
                         @using global::DevExpress.Blazor
 @using global::DevExpress.Blazor.RichEdit
 
                         <DxRichEdit @ref="myRichEdit"
                             style="height:800px"
-                                    DocumentFormat="{Binding FileFormat, Type=global::DevExpress.Blazor.RichEdit.DocumentFormat, Mode=TwoWay}"
+                                    DocumentFormat="{Binding FileFormat, Type=global::DevExpress.Blazor.RichEdit.DocumentFormat}"
                                     @bind-DocumentContent="{Binding FileData, Mode=TwoWay, Type=byte[]}"
                                     ReadOnly="{Binding ReadOnly, Type=bool}"/>
 
