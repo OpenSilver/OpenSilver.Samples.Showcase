@@ -5,7 +5,7 @@
     xmlns:razor="clr-namespace:OpenSilver.Blazor;assembly=OpenSilver.Blazor"
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
 
-    <ContentControl Style="{StaticResource Card_Style}" Width="150">
+    <ContentControl Style="{StaticResource Card_Style}" Width="190">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -27,7 +27,7 @@
                 <StackPanel Grid.Column="0">
                     <ComboBox x:Name="VariantsComboBox" ItemsSource="{Binding Variants}" SelectedValue="{Binding CurrentVariant, Mode=TwoWay}"/>
                 </StackPanel>
-                <razor:RazorComponent Margin="0,20,0,0" Height="70" Grid.Row="1" Grid.ColumnSpan="2">
+                <razor:RazorComponent Margin="0,20,0,0" Height="50" Grid.Row="1" Grid.ColumnSpan="2">
                     @using MudBlazor
 
                     <MudButton x:Name="MyMudButton" Variant="{Binding CurrentVariant, Type=global::MudBlazor.Variant}" OnClick="{Binding ButtonClickDel, Type=Action}">Default</MudButton>

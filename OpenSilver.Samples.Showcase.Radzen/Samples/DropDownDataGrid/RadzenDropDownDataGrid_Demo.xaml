@@ -15,7 +15,7 @@
             </Grid.RowDefinitions>
             <ContentControl Content="DropDownDataGrid" Foreground="#FFFF81E3" Background="#FFCB9DC1" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1">
-                <razor:RazorComponent Margin="0,20,0,0" Height="100">
+                <razor:RazorComponent Margin="0,20,0,0" Height="70">
                     @using Radzen
                     @using Radzen.Blazor
                     @using OpenSilver.Samples.Showcase.Models

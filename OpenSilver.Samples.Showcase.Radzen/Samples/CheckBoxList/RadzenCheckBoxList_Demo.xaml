@@ -18,7 +18,7 @@
                     <Run>Currently selected items: </Run>
                     <Run Text="{Binding CheckedItems}"/>
                 </TextBlock>
-                <razor:RazorComponent Margin="0,20,0,0" Height="170">
+                <razor:RazorComponent Margin="10,20,0,0" Height="140">
                     @using Radzen
                     @using Radzen.Blazor
 

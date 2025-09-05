@@ -13,7 +13,7 @@
             </Grid.RowDefinitions>
             <ContentControl Content="DataGrid" Foreground="#FFFF81E3" Background="#FFCB9DC1" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1">
-                <razor:RazorComponent x:Name="RadzenDemo1" Margin="0,20,0,0" Height="400">
+                <razor:RazorComponent x:Name="RadzenDemo1" Margin="0,20,0,0" Height="380">
                     @using Radzen
                     @using Radzen.Blazor
 

@@ -14,7 +14,7 @@
             </Grid.RowDefinitions>
             <ContentControl Content="ColorPicker" Foreground="{Binding ColorBrush}" Background="#FFCB9DC1" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1">
-                <razor:RazorComponent Margin="0,20,0,0" Height="70">
+                <razor:RazorComponent Margin="0,20,0,0" Height="60">
                     @using Radzen
                     @using Radzen.Blazor
 
