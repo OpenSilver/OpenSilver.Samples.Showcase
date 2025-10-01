@@ -17,7 +17,7 @@ namespace OpenSilver.Samples.Showcase
         {
             try
             {
-                Content = new GeoBlazor_Sample();
+                //Content = new GeoBlazor_Sample();
             }
             catch (Exception ex)
             {

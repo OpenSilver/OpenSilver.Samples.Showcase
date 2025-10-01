@@ -22,7 +22,7 @@
     <PackageReference Include="OpenSilver" Version="[$(OpenSilverVersion)]" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
   </ItemGroup>
-
+	
   <ItemGroup>
     <Page Include="Other\Controls\LoadingControl.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -287,6 +287,9 @@
     <Compile Include="Other\Internals\CharacterClickService.cs" />
     <Compile Include="Other\Internals\DeferLoadingItemsBehavior.cs" />
     <Compile Include="Other\Internals\ItemsControlLoadingBehavior.cs" />
+    <Compile Include="Other\Internals\LazyLoading\LazyFeatureNavigator.cs" />
+    <Compile Include="Other\Internals\LazyLoading\LazyLoadingConstants.cs" />
+    <Compile Include="Other\Internals\LazyLoading\ServiceLocator.cs" />
     <Compile Include="Other\Internals\Licenses.cs" />
     <Compile Include="Other\Internals\Menu\MenuIconBrushConverter.cs" />
     <Compile Include="Other\Internals\Menu\TreeViewHelpers.cs" />
@@ -960,7 +963,6 @@
     <ProjectReference Include="..\Libraries\OpenSilver.Animations\OpenSilver.Animations.csproj" />
     <ProjectReference Include="..\OpenSilver.Samples.Showcase.Blazorise\OpenSilver.Samples.Showcase.Blazorise.csproj" />
     <ProjectReference Include="..\OpenSilver.Samples.Showcase.DevExpress\OpenSilver.Samples.Showcase.DevExpress.csproj" />
-    <ProjectReference Include="..\OpenSilver.Samples.Showcase.GeoBlazor\OpenSilver.Samples.Showcase.GeoBlazor.csproj" />
     <ProjectReference Include="..\OpenSilver.Samples.Showcase.MudBlazor\OpenSilver.Samples.Showcase.MudBlazor.csproj" />
     <ProjectReference Include="..\OpenSilver.Samples.Showcase.Radzen\OpenSilver.Samples.Showcase.Radzen.csproj" />
     <ProjectReference Include="..\OpenSilver.Samples.Showcase.Syncfusion\OpenSilver.Samples.Showcase.Syncfusion.csproj" />

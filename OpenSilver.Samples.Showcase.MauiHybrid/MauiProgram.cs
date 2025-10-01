@@ -2,15 +2,16 @@
 using Blazorise.Bootstrap5;
 using Blazorise.Icons.FontAwesome;
 using DevExpress.Blazor;
-using dymaptic.GeoBlazor.Core;
+using Microsoft.AspNetCore.Components.WebAssembly.Services;
+//using dymaptic.GeoBlazor.Core;
 using Microsoft.AspNetCore.Components.WebView.Maui;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using MudBlazor.Services;
 using OpenSilver.MauiHybrid.Runner;
 using Radzen;
-using System.Globalization;
 using Syncfusion.Blazor;
-using Microsoft.Extensions.Configuration;
+using System.Globalization;
 
 namespace OpenSilver.Samples.Showcase.MauiHybrid;
 
@@ -29,6 +30,7 @@ public static class MauiProgram
         Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(Other.Internals.Licenses.SYNCFUSION_LICENSE);
 
         var builder = MauiApp.CreateBuilder();
+
         builder
             .UseMauiApp<App>()
             .ConfigureFonts(fonts =>
@@ -41,6 +43,10 @@ public static class MauiProgram
                 conf.AddHandler<BlazorWebView, AndroidWebViewHandler>();
 #endif
             });
+
+        //For lazy loading
+        builder.Services.AddScoped<LazyAssemblyLoader>();
+        builder.Services.AddScoped<ILazyFeatureNavigator, LazyFeatureNavigator>();
 
         builder.Services.AddScoped<IMauiHybridRunner, MauiHybridRunner>();
         builder.Services.AddMauiBlazorWebView();
@@ -58,14 +64,17 @@ public static class MauiProgram
             .AddFontAwesomeIcons();
         builder.Services.AddDevExpressBlazor(configure => configure.BootstrapVersion = BootstrapVersion.v5);
         builder.Services.AddSyncfusionBlazor();
-        var inMemorySettings = new Dictionary<string, string?>
-                                    {
-                                        { "GeoBlazor:LicenseKey", Other.Internals.Licenses.GEOBLAZOR_LICENSE },
-                                        { "ArcGISApiKey", Other.Internals.Licenses.ARCGIS_API_KEY }
-                                    };
-        builder.Configuration.AddInMemoryCollection(inMemorySettings);
-        builder.Services.AddGeoBlazor(builder.Configuration);
+        //var inMemorySettings = new Dictionary<string, string?>
+        //                            {
+        //                                { "GeoBlazor:LicenseKey", Other.Internals.Licenses.GEOBLAZOR_LICENSE },
+        //                                { "ArcGISApiKey", Other.Internals.Licenses.ARCGIS_API_KEY }
+        //                            };
+        //builder.Configuration.AddInMemoryCollection(inMemorySettings);
+        //builder.Services.AddGeoBlazor(builder.Configuration);
 
-        return builder.Build();
+        var host = builder.Build();
+        //Make lazyLoader accessible:
+        ServiceLocator.Provider = host.Services;
+        return host;
     }
 }

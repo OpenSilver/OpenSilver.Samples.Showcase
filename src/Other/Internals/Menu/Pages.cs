@@ -79,7 +79,7 @@ namespace OpenSilver.Samples.Showcase
                                     new PageInfo {Name = "Blazorise Components", Path = "/Blazor_Blazorise", Icon = "\uEB9B", IconBrush = brush4 },
                                     new PageInfo {Name = "DevExpress Components", Path = "/Blazor_DevExpress", Icon = "\uEB9B", IconBrush = brush4 },
                                     new PageInfo {Name = "Syncfusion Components", Path = "/Blazor_Syncfusion", Icon = "\uEB9B", IconBrush = brush4 },
-                                    new PageInfo {Name = "GeoBlazor Maps", Path = "/Blazor_GeoBlazor", Icon = "\uEB9B", IconBrush = brush4 },
+                                    //new PageInfo {Name = "GeoBlazor Maps", Path = "/Blazor_GeoBlazor", Icon = "\uEB9B", IconBrush = brush4 },
                                     LandingPageInfo,
                                     SearchPageInfo
                                 }

@@ -78,9 +78,34 @@
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
         <PackageReference Include="OpenSilver.MauiHybrid" Version="[$(OpenSilverVersion)]" />
     </ItemGroup>
-
+	
     <ItemGroup>
       <ProjectReference Include="..\src\OpenSilver.Samples.Showcase.csproj" />
     </ItemGroup>
 
+	<!--<ItemGroup>
+		<TrimmerRootAssembly Include="Syncfusion.Blazor.Grids.dll" />
+		<TrimmerRootAssembly Include="Syncfusion.Blazor.BarcodeGenerator.dll" />
+		<TrimmerRootAssembly Include="Syncfusion.Blazor.Buttons.dll" />
+		<TrimmerRootAssembly Include="Syncfusion.Blazor.Calendars.dll" />
+		<TrimmerRootAssembly Include="Syncfusion.Blazor.Data.dll" />
+		<TrimmerRootAssembly Include="Syncfusion.Blazor.DropDowns.dll" />
+		<TrimmerRootAssembly Include="Syncfusion.Blazor.Inputs.dll" />
+		<TrimmerRootAssembly Include="Syncfusion.Blazor.Lists.dll" />
+		<TrimmerRootAssembly Include="Syncfusion.Blazor.Navigations.dll" />
+		<TrimmerRootAssembly Include="Syncfusion.Blazor.Notifications.dll" />
+		<TrimmerRootAssembly Include="Syncfusion.Blazor.Popups.dll" />
+		<TrimmerRootAssembly Include="Syncfusion.Blazor.Spinner.dll" />
+		<TrimmerRootAssembly Include="Syncfusion.Blazor.SplitButtons.dll" />
+		<TrimmerRootAssembly Include="Syncfusion.Blazor.Themes.dll" />
+		<TrimmerRootAssembly Include="Syncfusion.ExcelExport.Net.dll" />
+		<TrimmerRootAssembly Include="Syncfusion.PdfExport.Net.dll" />
+		<TrimmerRootAssembly Include="DevExpress.Blazor.Resources.v25.1.dll" />
+		<TrimmerRootAssembly Include="DevExpress.Blazor.RichEdit.v25.1.dll" />
+		<TrimmerRootAssembly Include="DevExpress.Drawing.v25.1.dll" />
+		<TrimmerRootAssembly Include="DevExpress.Pdf.v25.1.Core.dll" />
+		<TrimmerRootAssembly Include="DevExpress.Pdf.v25.1.Drawing.dll" />
+		<TrimmerRootAssembly Include="DevExpress.Printing.v25.1.Core.dll" />
+		<TrimmerRootAssembly Include="DevExpress.SpellChecker.v25.1.Core.dll" />
+	</ItemGroup>-->
 </Project>

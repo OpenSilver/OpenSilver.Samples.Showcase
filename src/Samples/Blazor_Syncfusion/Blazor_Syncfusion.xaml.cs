@@ -22,10 +22,25 @@ namespace OpenSilver.Samples.Showcase
             LoadContent();
         }
 
-        private void LoadContent()
+        private async void LoadContent()
         {
             try
             {
+                // Load required js and css files:
+                var baseUri = Interop.ExecuteJavaScript("document.baseURI").ToString();
+                var url = (baseUri.EndsWith("/") ? baseUri : baseUri + "/") +
+                          "_content/Syncfusion.Blazor.Core/scripts/syncfusion-blazor.min.js";
+                await Interop.LoadJavaScriptFile(url);
+                url = (baseUri.EndsWith("/") ? baseUri : baseUri + "/") +
+                          "_content/Syncfusion.Blazor.Themes/bootstrap5.css";
+                await Interop.LoadCssFile(url);
+
+                //Load Syncfusion dlls
+                var nav = ServiceLocator.Get<ILazyFeatureNavigator>();
+                await nav.EnsureLoadedFromPathAsync(LazyLoadingConstants.SYNCFUSION_NAME);
+                //await nav.NavigateToAsync(LazyLoadingConstants.SYNCFUSION_NAME);
+
+                //Add the page's content
                 Content = new Syncfusion_Sample();
             }
             catch (Exception ex)

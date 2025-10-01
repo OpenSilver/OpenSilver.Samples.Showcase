@@ -26,7 +26,7 @@ namespace OpenSilver.Samples.Showcase
     {
         public static void AddDevExpressSamples(this IServiceCollection services)
         {
-            services.AddDevExpressBlazor(configure => configure.BootstrapVersion = BootstrapVersion.v5);
+            services.AddDevExpressBlazor();
         }
     }
 }
