@@ -164,6 +164,12 @@
     <Page Include="Samples\SearchPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\XAML_Layout\AdaptiveTrigger\AdaptiveTrigger_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\XAML_Layout\ResponsiveMarkupExtension\ResponsiveMarkupExtension_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\\XAML_Layout\\Accordion\\Accordion_Demo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -330,6 +336,8 @@
     <Compile Include="Samples\Performance\Virtualization\Virtualization_Demo.xaml.cs" />
     <Compile Include="Samples\Icons\Icons.xaml.cs" />
     <Compile Include="Samples\SearchPage.xaml.cs" />
+    <Compile Include="Samples\XAML_Layout\AdaptiveTrigger\AdaptiveTrigger_Demo.xaml.cs" />
+    <Compile Include="Samples\XAML_Layout\ResponsiveMarkupExtension\ResponsiveMarkupExtension_Demo.xaml.cs" />
     <Compile Include="Samples\\XAML_Layout\\Accordion\\Accordion_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Controls\BusyIndicator\BusyIndicator_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Controls\ButtonSpinner\ButtonSpinner_Demo.xaml.cs" />

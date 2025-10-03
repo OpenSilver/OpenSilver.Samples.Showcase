@@ -29,6 +29,8 @@
             <local:WrapPanel_Demo HorizontalAlignment="Center"/>
             <local:Canvas_Demo HorizontalAlignment="Center"/>
             <local:MeasureArrange_Demo HorizontalAlignment="Center"/>
+            <local:ResponsiveMarkupExtension_Demo HorizontalAlignment="Center"/>
+            <local:AdaptiveTrigger_Demo HorizontalAlignment="Center"/>
             <local:Border_Demo HorizontalAlignment="Center"/>
             <local:ScrollViewer_Demo x:Name="ScrollViewerDemo" HorizontalAlignment="Center"/>
             <local:GridSplitter_Demo HorizontalAlignment="Center"/>
