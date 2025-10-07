@@ -164,10 +164,19 @@
     <Page Include="Samples\SearchPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\XAML_Layout\AdaptiveColumnsPanel\AdaptiveColumnsPanel_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\XAML_Layout\FlexPanel\FlexPanel_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\XAML_Layout\AdaptiveTrigger\AdaptiveTrigger_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\XAML_Layout\ResponsiveMarkupExtension\ResponsiveMarkupExtension_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\XAML_Layout\StaggeredPanel\StaggeredPanel_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\\XAML_Layout\\Accordion\\Accordion_Demo.xaml">
@@ -336,8 +345,11 @@
     <Compile Include="Samples\Performance\Virtualization\Virtualization_Demo.xaml.cs" />
     <Compile Include="Samples\Icons\Icons.xaml.cs" />
     <Compile Include="Samples\SearchPage.xaml.cs" />
+    <Compile Include="Samples\XAML_Layout\AdaptiveColumnsPanel\AdaptiveColumnsPanel_Demo.xaml.cs" />
+    <Compile Include="Samples\XAML_Layout\FlexPanel\FlexPanel_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Layout\AdaptiveTrigger\AdaptiveTrigger_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Layout\ResponsiveMarkupExtension\ResponsiveMarkupExtension_Demo.xaml.cs" />
+    <Compile Include="Samples\XAML_Layout\StaggeredPanel\StaggeredPanel_Demo.xaml.cs" />
     <Compile Include="Samples\\XAML_Layout\\Accordion\\Accordion_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Controls\BusyIndicator\BusyIndicator_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Controls\ButtonSpinner\ButtonSpinner_Demo.xaml.cs" />
@@ -387,8 +399,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="Samples\XAML_Controls\AnimatedNavigationBar\AnimatedNavigationBar_Demo.xaml.cs" />
-    <Page Include="Samples\XAML_Controls\AnimatedNavigationBar\AnimatedNavigationBar_Demo.xaml">
+    <Compile Include="Samples\XAML_Layout\AnimatedNavigationBar\AnimatedNavigationBar_Demo.xaml.cs" />
+    <Page Include="Samples\XAML_Layout\AnimatedNavigationBar\AnimatedNavigationBar_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>

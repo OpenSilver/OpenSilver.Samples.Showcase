@@ -24,7 +24,6 @@
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
 
-            <local:AnimatedNavigationBar_Demo HorizontalAlignment="Center"/>
             <local:ListBox_Demo x:Name="ListBoxDemo" HorizontalAlignment="Center"/>
             <local:ItemsControl_Demo HorizontalAlignment="Center"/>
             <local:Rating_Demo HorizontalAlignment="Center"/>

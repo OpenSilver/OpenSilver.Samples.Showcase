@@ -25,6 +25,9 @@
             <local:Grid_Demo HorizontalAlignment="Center"/>
             <local:UniformGrid_Demo HorizontalAlignment="Center"/>
             <local:StackPanel_Demo HorizontalAlignment="Center"/>
+            <local:StaggeredPanel_Demo HorizontalAlignment="Center"/>
+            <local:AdaptiveColumnsPanel_Demo HorizontalAlignment="Center"/>
+            <local:FlexPanel_Demo HorizontalAlignment="Center"/>
             <local:DockPanel_Demo HorizontalAlignment="Center"/>
             <local:WrapPanel_Demo HorizontalAlignment="Center"/>
             <local:Canvas_Demo HorizontalAlignment="Center"/>
@@ -35,6 +38,7 @@
             <local:ScrollViewer_Demo x:Name="ScrollViewerDemo" HorizontalAlignment="Center"/>
             <local:GridSplitter_Demo HorizontalAlignment="Center"/>
             <local:TabControl_Demo HorizontalAlignment="Center"/>
+            <local:AnimatedNavigationBar_Demo HorizontalAlignment="Center"/>
             <local:ChildWindow_Demo HorizontalAlignment="Center"/>
             <local:NonModalChildWindow_Demo x:Name="NonModalChildWindow" HorizontalAlignment="Center"/>
             <local:Expander_Demo HorizontalAlignment="Center"/>

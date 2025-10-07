@@ -55,10 +55,10 @@
 
             <local:ViewSourceButton Grid.Row="2" Background="#9C27B0">
                 <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo FileName="AnimatedNavigationBar_Demo.xaml" RelativePath="src/Samples/XAML_Controls/AnimatedNavigationBar"/>
-                    <local:ViewSourceButtonInfo FileName="AnimatedNavigationBar_Demo.xaml.cs" RelativePath="src/Samples/XAML_Controls/AnimatedNavigationBar"/>
-                    <local:ViewSourceButtonInfo FileName="AnimatedNavigationBar_Demo.xaml.vb" RelativePath="src/Samples/XAML_Controls/AnimatedNavigationBar"/>
-                    <local:ViewSourceButtonInfo FileName="AnimatedNavigationBar_Demo.xaml.fs" RelativePath="src/Samples/XAML_Controls/AnimatedNavigationBar"/>
+                    <local:ViewSourceButtonInfo FileName="AnimatedNavigationBar_Demo.xaml" RelativePath="src/Samples/XAML_Layout/AnimatedNavigationBar"/>
+                    <local:ViewSourceButtonInfo FileName="AnimatedNavigationBar_Demo.xaml.cs" RelativePath="src/Samples/XAML_Layout/AnimatedNavigationBar"/>
+                    <local:ViewSourceButtonInfo FileName="AnimatedNavigationBar_Demo.xaml.vb" RelativePath="src/Samples/XAML_Layout/AnimatedNavigationBar"/>
+                    <local:ViewSourceButtonInfo FileName="AnimatedNavigationBar_Demo.xaml.fs" RelativePath="src/Samples/XAML_Layout/AnimatedNavigationBar"/>
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>
