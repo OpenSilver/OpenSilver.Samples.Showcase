@@ -136,7 +136,8 @@ mc:Ignorable="d"
                             </sdk:UriMapper>
                         </sdk:Frame.UriMapper>
                     </sdk:Frame>
-                    <HyperlinkButton NavigateUri="https://github.com/OpenSilver/OpenSilver.Samples.Showcase"
+                    <HyperlinkButton x:Name="ForkOnGitHubButton"
+                                     NavigateUri="https://github.com/OpenSilver/OpenSilver.Samples.Showcase"
                                      TargetName="_blank"
                                      Cursor="Hand"
                                      Opacity="0"
@@ -161,7 +162,8 @@ mc:Ignorable="d"
                             </StackPanel>
                         </Border>
                     </HyperlinkButton>
-                    <HyperlinkButton NavigateUri="https://feedback.opensilvershowcase.com/"
+                    <HyperlinkButton x:Name="SuggestSamplesButton"
+                                     NavigateUri="https://feedback.opensilvershowcase.com/"
                                      TargetName="_blank"
                                      Cursor="Hand"
                                      Opacity="0"

@@ -2,10 +2,8 @@
 using OpenSilver.Animations;
 using OpenSilver.Themes.Modern;
 using System;
-using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
-using System.Net.Http;
-using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Browser;
@@ -19,7 +17,9 @@ namespace OpenSilver.Samples.Showcase
 {
     public partial class MainPage : Page
     {
-        public MainPage()
+        bool _isMenuHidden;
+
+public MainPage()
         {
             InitializeComponent();
 
@@ -52,44 +52,21 @@ namespace OpenSilver.Samples.Showcase
             // Uncomment the following lines to debug the animations:
             //Animations.Animation.SlowDownAnimationsForDebugging = 10.0; // slow down factor
             //Animations.Animation.LogAnimationsForDebugging = true;
-
-            LoadFilesForBlazorLaunch();
-        }
-
-        private async void LoadFilesForBlazorLaunch()
-        {
-            var http = new HttpClient();
-            
-            //string blazorAppAddress = "http://localhost:63485/";
-            string blazorAppAddress = "https://opensilvershowcase-preprod.azurewebsites.net/";
-
-            // Fetch boot manifest:
-            var bootJson = await http.GetStringAsync($"{blazorAppAddress}_framework/blazor.boot.json");
-            using var doc = System.Text.Json.JsonDocument.Parse(bootJson);
-            var res = doc.RootElement.GetProperty("resources");
-
-            IEnumerable<string> From(JsonElement e) =>
-                e.ValueKind == JsonValueKind.Object
-                    ? e.EnumerateObject().Select(p => $"{blazorAppAddress}_framework/{p.Name}")
-                    : Array.Empty<string>();
-
-            //Go through the dlls to load them:
-            var urls = new List<string>();
-            if (res.TryGetProperty("assembly", out var asm)) urls.AddRange(From(asm));
-            if (res.TryGetProperty("lazyAssembly", out var laz)) urls.AddRange(From(laz));
-            if (res.TryGetProperty("runtime", out var rt)) urls.AddRange(From(rt));
-            if (res.TryGetProperty("satelliteResources", out var sat))
-                foreach (var culture in sat.EnumerateObject())
-                    urls.AddRange(From(culture.Value));
-
-            await Task.WhenAll(urls.Select(u =>
-                http.GetAsync(u, System.Net.Http.HttpCompletionOption.ResponseHeadersRead)));
         }
 
         public static MainPage Current { get; private set; }
 
         async void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
+            var docUri = System.Windows.Browser.HtmlPage.Document.DocumentUri.OriginalString;
+            _isMenuHidden = docUri.Contains("menu=hidden");
+            if (_isMenuHidden)
+            {
+                MenuContainer.Visibility = Visibility.Collapsed;
+                ButtonToHideOrShowMenu.Visibility = Visibility.Collapsed;
+                ForkOnGitHubButton.Visibility = Visibility.Collapsed;
+                SuggestSamplesButton.Visibility = Visibility.Collapsed;
+            }
             // Navigate to the "Welcome" page by default:
             if (!HtmlPage.Document.DocumentUri.OriginalString.Contains("#"))
             {
@@ -299,7 +276,10 @@ namespace OpenSilver.Samples.Showcase
                     Grid.SetColumnSpan(PageScrollViewer, 1);
 
                     // Show the menu:
-                    MenuContainer.Visibility = Visibility.Visible;
+                    if (!_isMenuHidden)
+                    {
+                        MenuContainer.Visibility = Visibility.Visible;
+                    }
 
                     // Set the translation of the frame to 0:
                     ((TranslateTransform)PageScrollViewer.RenderTransform).X = 0;
@@ -312,7 +292,10 @@ namespace OpenSilver.Samples.Showcase
                     // Revert the changes that are specific to the CurrentState.LargeResolution_SeeBothMenuAndPage state.
 
                     // Show the button to hide/show the menu:
-                    ButtonToHideOrShowMenu.Visibility = Visibility.Visible;
+                    if (!_isMenuHidden)
+                    {
+                        ButtonToHideOrShowMenu.Visibility = Visibility.Visible;
+                    }
 
                     // Add some top margin to the page for the menu button:
                     PageContainer.Margin = new Thickness(0, 50, 0, 0);
@@ -327,7 +310,10 @@ namespace OpenSilver.Samples.Showcase
                     if (newState == CurrentState.SmallResolution_ShowMenu)
                     {
                         // Show the menu:
-                        MenuContainer.Visibility = Visibility.Visible;
+                        if (!_isMenuHidden)
+                        {
+                            MenuContainer.Visibility = Visibility.Visible;
+                        }
 
                         // Translate the page to the right, for a nicer effect:
                         ((TranslateTransform)PageScrollViewer.RenderTransform).X = 240;
