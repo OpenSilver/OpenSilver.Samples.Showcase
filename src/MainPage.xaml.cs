@@ -2,7 +2,10 @@
 using OpenSilver.Animations;
 using OpenSilver.Themes.Modern;
 using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Browser;
@@ -49,6 +52,38 @@ namespace OpenSilver.Samples.Showcase
             // Uncomment the following lines to debug the animations:
             //Animations.Animation.SlowDownAnimationsForDebugging = 10.0; // slow down factor
             //Animations.Animation.LogAnimationsForDebugging = true;
+
+            LoadFilesForBlazorLaunch();
+        }
+
+        private async void LoadFilesForBlazorLaunch()
+        {
+            var http = new HttpClient();
+            
+            //string blazorAppAddress = "http://localhost:63485/";
+            string blazorAppAddress = "https://opensilvershowcase-preprod.azurewebsites.net/";
+
+            // Fetch boot manifest:
+            var bootJson = await http.GetStringAsync($"{blazorAppAddress}_framework/blazor.boot.json");
+            using var doc = System.Text.Json.JsonDocument.Parse(bootJson);
+            var res = doc.RootElement.GetProperty("resources");
+
+            IEnumerable<string> From(JsonElement e) =>
+                e.ValueKind == JsonValueKind.Object
+                    ? e.EnumerateObject().Select(p => $"{blazorAppAddress}_framework/{p.Name}")
+                    : Array.Empty<string>();
+
+            //Go through the dlls to load them:
+            var urls = new List<string>();
+            if (res.TryGetProperty("assembly", out var asm)) urls.AddRange(From(asm));
+            if (res.TryGetProperty("lazyAssembly", out var laz)) urls.AddRange(From(laz));
+            if (res.TryGetProperty("runtime", out var rt)) urls.AddRange(From(rt));
+            if (res.TryGetProperty("satelliteResources", out var sat))
+                foreach (var culture in sat.EnumerateObject())
+                    urls.AddRange(From(culture.Value));
+
+            await Task.WhenAll(urls.Select(u =>
+                http.GetAsync(u, System.Net.Http.HttpCompletionOption.ResponseHeadersRead)));
         }
 
         public static MainPage Current { get; private set; }
