@@ -6,8 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-[assembly: InternalsVisibleTo("OpenSilver.Samples.Showcase.Browser")]
+[assembly: InternalsVisibleTo("OpenSilver.Samples.Showcase.Browser_WithBlazor")]
+[assembly: InternalsVisibleTo("OpenSilver.Samples.Showcase.MauiHybrid")]
 [assembly: InternalsVisibleTo("Showcase")]
+[assembly: InternalsVisibleTo("Showcase_WithBlazor")]
 
 namespace OpenSilver.Samples.Showcase.Other.Internals
 {

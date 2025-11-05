@@ -3,8 +3,5 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
-
-    <Grid>
-        <WebBrowser SourceUri="https://opensilvershowcase-preprod.azurewebsites.net/#/Blazor_Blazorise_WithBlazor?menu=hidden"/>
-    </Grid>
+    
 </UserControl>

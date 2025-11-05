@@ -74,14 +74,25 @@ namespace OpenSilver.Samples.Showcase
                                 Foreground = brush4,
                                 Pages = new ObservableCollection<PageInfo>
                                 {
+#if WITHBLAZOR
+                                    new PageInfo { Name = "Radzen Components", Path = "/Blazor_Radzen_WithBlazor", Icon = "\uEB9B", IconBrush = brush4 },
+                                    new PageInfo { Name = "MudBlazor Components", Path = "/Blazor_MudBlazor_WithBlazor", Icon = "\uEB9B", IconBrush = brush4 },
+                                    new PageInfo {Name = "Blazorise Components", Path = "/Blazor_Blazorise_WithBlazor", Icon = "\uEB9B", IconBrush = brush4 },
+                                    new PageInfo {Name = "DevExpress Components", Path = "/Blazor_DevExpress_WithBlazor", Icon = "\uEB9B", IconBrush = brush4 },
+                                    new PageInfo {Name = "Syncfusion Components", Path = "/Blazor_Syncfusion_WithBlazor", Icon = "\uEB9B", IconBrush = brush4 },
+		                            //new PageInfo {Name = "GeoBlazor Maps", Path = "/Blazor_GeoBlazor_WithBlazor", Icon = "\uEB9B", IconBrush = brush4 },
+                                    LandingPageInfo,
+                                    SearchPageInfo  
+#else
                                     new PageInfo { Name = "Radzen Components", Path = "/Blazor_Radzen", Icon = "\uEB9B", IconBrush = brush4 },
                                     new PageInfo { Name = "MudBlazor Components", Path = "/Blazor_MudBlazor", Icon = "\uEB9B", IconBrush = brush4 },
                                     new PageInfo {Name = "Blazorise Components", Path = "/Blazor_Blazorise", Icon = "\uEB9B", IconBrush = brush4 },
                                     new PageInfo {Name = "DevExpress Components", Path = "/Blazor_DevExpress", Icon = "\uEB9B", IconBrush = brush4 },
                                     new PageInfo {Name = "Syncfusion Components", Path = "/Blazor_Syncfusion", Icon = "\uEB9B", IconBrush = brush4 },
-                                    //new PageInfo {Name = "GeoBlazor Maps", Path = "/Blazor_GeoBlazor", Icon = "\uEB9B", IconBrush = brush4 },
+		                            //new PageInfo {Name = "GeoBlazor Maps", Path = "/Blazor_GeoBlazor", Icon = "\uEB9B", IconBrush = brush4 },
                                     LandingPageInfo,
-                                    SearchPageInfo
+                                    SearchPageInfo    
+#endif
                                 }
                             }
                         };

@@ -10,9 +10,12 @@ namespace OpenSilver.Samples.Showcase
         {
             this.InitializeComponent();
 
-            LoadContent();
+#if WITHBLAZOR
+            LoadContent(); 
+#endif
         }
 
+#if WITHBLAZOR
         private void LoadContent()
         {
             try
@@ -24,6 +27,7 @@ namespace OpenSilver.Samples.Showcase
                 Console.WriteLine(ex.Message);
                 throw new TargetInvocationException(ex);
             }
-        }
+        } 
+#endif
     }
 }

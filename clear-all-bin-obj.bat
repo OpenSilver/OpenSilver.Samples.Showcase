@@ -19,6 +19,20 @@ if exist "obj" (
     RMDIR /S /Q "obj"
 )
 
+rem Check and delete bin_WithBlazor in current directory
+if exist "bin_WithBlazor" (
+    set BIN_FOUND=1
+    echo Deleting: bin_WithBlazor in current directory
+    RMDIR /S /Q "bin_WithBlazor"
+)
+
+rem Check and delete obj_WithBlazor in current directory
+if exist "obj_WithBlazor" (
+    set OBJ_FOUND=1
+    echo Deleting: obj_WithBlazor in current directory
+    RMDIR /S /Q "obj_WithBlazor"
+)
+
 echo Searching and deleting bin directories in subdirectories...
 FOR /F "tokens=*" %%G IN ('DIR /B /AD /S bin 2^>nul') DO (
     set BIN_FOUND=1
@@ -28,6 +42,20 @@ FOR /F "tokens=*" %%G IN ('DIR /B /AD /S bin 2^>nul') DO (
 
 echo Searching and deleting obj directories in subdirectories...
 FOR /F "tokens=*" %%G IN ('DIR /B /AD /S obj 2^>nul') DO (
+    set OBJ_FOUND=1
+    echo Deleting: %%G
+    RMDIR /S /Q "%%G"
+)
+
+echo Searching and deleting bin_WithBlazor directories in subdirectories...
+FOR /F "tokens=*" %%G IN ('DIR /B /AD /S bin_WithBlazor 2^>nul') DO (
+    set BIN_FOUND=1
+    echo Deleting: %%G
+    RMDIR /S /Q "%%G"
+)
+
+echo Searching and deleting obj_WithBlazor directories in subdirectories...
+FOR /F "tokens=*" %%G IN ('DIR /B /AD /S obj_WithBlazor 2^>nul') DO (
     set OBJ_FOUND=1
     echo Deleting: %%G
     RMDIR /S /Q "%%G"

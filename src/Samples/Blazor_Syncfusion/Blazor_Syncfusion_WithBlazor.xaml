@@ -4,7 +4,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
 
-    <Grid>
-        <WebBrowser SourceUri="https://opensilvershowcase-preprod.azurewebsites.net/#/Blazor_Syncfusion_WithBlazor?menu=hidden"/>
-    </Grid>
+    <TextBlock Text="Loading Syncfusion libraries..." TextAlignment="Center" TextWrapping="Wrap" FontSize="32" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Gray"/>
+
 </UserControl>

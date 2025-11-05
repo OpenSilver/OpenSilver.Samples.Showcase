@@ -1,12 +1,14 @@
-﻿using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+﻿using System.Threading.Tasks;
+using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+#if WITHBLAZOR
 using Microsoft.AspNetCore.Components.WebAssembly.Services;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using OpenSilver.Blazor;
 using OpenSilver.Samples.Showcase;
 using Syncfusion.Blazor;
 using System.Collections.Generic;
-using System.Threading.Tasks;
+#endif
 
 namespace OpenSilver.Samples.Showcase.Browser
 {
@@ -14,11 +16,14 @@ namespace OpenSilver.Samples.Showcase.Browser
     {
         public static async Task Main(string[] args)
         {
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(Other.Internals.Licenses.SYNCFUSION_LICENSE);
+#if WITHBLAZOR
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(Other.Internals.Licenses.SYNCFUSION_LICENSE); 
+#endif
 
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.RootComponents.Add<App>("#app");
 
+#if WITHBLAZOR
             //For lazy loading
             builder.Services.AddScoped<LazyAssemblyLoader>();
             builder.Services.AddScoped<ILazyFeatureNavigator, LazyFeatureNavigator>();
@@ -38,14 +43,17 @@ namespace OpenSilver.Samples.Showcase.Browser
             //                            { "ArcGISApiKey", Other.Internals.Licenses.ARCGIS_API_KEY }
             //                        };
             //builder.Configuration.AddInMemoryCollection(inMemorySettings);
-            //builder.Services.AddGeoBlazorSamples(builder.Configuration);
+            //builder.Services.AddGeoBlazorSamples(builder.Configuration);  
+#endif
 
 
 
             var host = builder.Build();
 
+#if WITHBLAZOR
             //Make lazyLoader accessible:
-            ServiceLocator.Provider = host.Services;
+            ServiceLocator.Provider = host.Services; 
+#endif
 
             await host.RunAsync();
         }

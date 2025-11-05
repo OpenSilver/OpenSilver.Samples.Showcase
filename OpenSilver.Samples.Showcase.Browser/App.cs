@@ -2,16 +2,19 @@
 using Microsoft.AspNetCore.Components.CompilerServices;
 using Microsoft.AspNetCore.Components.Rendering;
 using Microsoft.AspNetCore.Components.Routing;
+#if WITHBLAZOR
 using Microsoft.AspNetCore.Components.WebAssembly.Services;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Threading.Tasks;
+#endif
 
 namespace OpenSilver.Samples.Showcase.Browser
 {
     public class App : ComponentBase
     {
+#if WITHBLAZOR
         [Inject] private ILazyFeatureNavigator NavSvc { get; set; } = default!;
         protected override void OnInitialized()
         {
@@ -23,7 +26,7 @@ namespace OpenSilver.Samples.Showcase.Browser
         {
             NavSvc.Changed -= StateHasChanged;
         }
-
+#endif
 
         protected override void BuildRenderTree(RenderTreeBuilder builder)
         {
@@ -31,6 +34,8 @@ namespace OpenSilver.Samples.Showcase.Browser
             builder.AddAttribute(1, "AppAssembly", RuntimeHelpers.TypeCheck(
                 typeof(Program).Assembly
             ));
+
+#if WITHBLAZOR
             builder.AddAttribute(2, "PreferExactMatches", RuntimeHelpers.TypeCheck(
                 true
             ));
@@ -43,6 +48,7 @@ namespace OpenSilver.Samples.Showcase.Browser
                     (NavigationContext ctx) => NavSvc.EnsureLoadedFromPathAsync(ctx.Path)
                 )
             );
+#endif
             builder.AddAttribute(5, "Found", (RenderFragment<RouteData>)(routeData => builder2 =>
             {
                 builder2.OpenComponent<RouteView>(6);
