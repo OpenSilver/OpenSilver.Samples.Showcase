@@ -1,5 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+  <PropertyGroup Condition="'$(Configuration)'=='Debug-WithBlazor' or '$(Configuration)'=='Release-WithBlazor'">
+    <WithBlazor>true</WithBlazor>
+  </PropertyGroup>
+
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <EnableDefaultItems>false</EnableDefaultItems>
@@ -8,6 +12,7 @@
     <IntermediateOutputPath>obj/$(Configuration)_cs</IntermediateOutputPath>
     <DefineTrace>true</DefineTrace>
     <LangVersion>12</LangVersion>
+    <Configurations>Debug;Release;Release-WithBlazor;Debug-WithBlazor</Configurations>
   </PropertyGroup>
 
   <ItemGroup>
@@ -22,6 +27,10 @@
     <PackageReference Include="OpenSilver" Version="[$(OpenSilverVersion)]" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
   </ItemGroup>
+
+  <PropertyGroup Condition="'$(WithBlazor)'=='true'">
+    <DefineConstants>$(DefineConstants);WITHBLAZOR</DefineConstants>
+  </PropertyGroup>
 	
   <ItemGroup>
     <Page Include="Other\Controls\LoadingControl.xaml">
@@ -30,22 +39,7 @@
     <Page Include="Other\Internals\Search\SearchControl.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\Blazor_Blazorise\Blazor_Blazorise.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Samples\Blazor_DevExpress\Blazor_DevExpress.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Samples\Blazor_GeoBlazor\Blazor_GeoBlazor.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Samples\Blazor_Radzen\Blazor_Radzen.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Other\Internals\Menu\MenuStyle.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Samples\Blazor_Syncfusion\Blazor_Syncfusion.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\Charts\AreaSeries\AreaSeries_Demo.xaml">
@@ -141,9 +135,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\Maui_Hybrid\Vibration\Vibration_Demo.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Samples\Blazor_MudBlazor\Blazor_MudBlazor.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\Net_Framework\InitParams\InitParams_Demo.xaml">
@@ -311,11 +302,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>SampleResourceFile.resx</DependentUpon>
     </Compile>
-    <Compile Include="Samples\Blazor_Blazorise\Blazor_Blazorise.xaml.cs" />
-    <Compile Include="Samples\Blazor_DevExpress\Blazor_DevExpress.xaml.cs" />
-    <Compile Include="Samples\Blazor_GeoBlazor\Blazor_GeoBlazor.xaml.cs" />
-    <Compile Include="Samples\Blazor_Radzen\Blazor_Radzen.xaml.cs" />
-    <Compile Include="Samples\Blazor_Syncfusion\Blazor_Syncfusion.xaml.cs" />
     <Compile Include="Samples\Charts\AreaSeries\AreaSeries_Demo.xaml.cs" />
     <Compile Include="Samples\Charts\BarSeries\BarSeries_Demo.xaml.cs" />
     <Compile Include="Samples\Charts\BubbleSeries\BubbleSeries_Demo.xaml.cs" />
@@ -353,7 +339,6 @@
     <Compile Include="Samples\Maui_Hybrid\Orientation\OrientationSensors_Demo.xaml.cs" />
     <Compile Include="Samples\Maui_Hybrid\Shake\Shake_Demo.xaml.cs" />
     <Compile Include="Samples\Maui_Hybrid\Vibration\Vibration_Demo.xaml.cs" />
-    <Compile Include="Samples\Blazor_MudBlazor\Blazor_MudBlazor.xaml.cs" />
     <Compile Include="Samples\Net_Framework\InitParams\InitParams_Demo.xaml.cs" />
     <Compile Include="Samples\Net_Framework\Localization\Localization_Demo.xaml.cs" />
     <Compile Include="Samples\Net_Framework\MVVM\Movie.cs" />
@@ -426,6 +411,77 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
+
+  <Choose>
+    <When Condition="'$(WithBlazor)'=='true'">
+      <ItemGroup>
+        <Page Include="Samples\Blazor_Blazorise\Blazor_Blazorise_WithBlazor.xaml">
+          <Generator>MSBuild:Compile</Generator>
+        </Page>
+        <Page Include="Samples\Blazor_DevExpress\Blazor_DevExpress_WithBlazor.xaml">
+          <Generator>MSBuild:Compile</Generator>
+        </Page>
+        <Page Include="Samples\Blazor_GeoBlazor\Blazor_GeoBlazor_WithBlazor.xaml">
+          <Generator>MSBuild:Compile</Generator>
+        </Page>
+        <Page Include="Samples\Blazor_Radzen\Blazor_Radzen_WithBlazor.xaml">
+          <Generator>MSBuild:Compile</Generator>
+        </Page>
+        <Page Include="Samples\Blazor_Syncfusion\Blazor_Syncfusion_WithBlazor.xaml">
+          <Generator>MSBuild:Compile</Generator>
+        </Page>
+        <Page Include="Samples\Blazor_MudBlazor\Blazor_MudBlazor_WithBlazor.xaml">
+          <Generator>MSBuild:Compile</Generator>
+        </Page>
+        <Compile Include="Samples\Blazor_Blazorise\Blazor_Blazorise.xaml.cs">
+          <DependentUpon>Blazor_Blazorise_WithBlazor.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="Samples\Blazor_DevExpress\Blazor_DevExpress.xaml.cs">
+          <DependentUpon>Blazor_DevExpress_WithBlazor.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="Samples\Blazor_GeoBlazor\Blazor_GeoBlazor.xaml.cs">
+          <DependentUpon>Blazor_GeoBlazor_WithBlazor.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="Samples\Blazor_Radzen\Blazor_Radzen.xaml.cs">
+          <DependentUpon>Blazor_Radzen_WithBlazor.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="Samples\Blazor_Syncfusion\Blazor_Syncfusion.xaml.cs">
+          <DependentUpon>Blazor_Syncfusion_WithBlazor.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="Samples\Blazor_MudBlazor\Blazor_MudBlazor.xaml.cs">
+          <DependentUpon>Blazor_MudBlazor_WithBlazor.xaml</DependentUpon>
+        </Compile>
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Page Include="Samples\Blazor_Blazorise\Blazor_Blazorise.xaml">
+          <Generator>MSBuild:Compile</Generator>
+        </Page>
+        <Page Include="Samples\Blazor_DevExpress\Blazor_DevExpress.xaml">
+          <Generator>MSBuild:Compile</Generator>
+        </Page>
+        <Page Include="Samples\Blazor_GeoBlazor\Blazor_GeoBlazor.xaml">
+          <Generator>MSBuild:Compile</Generator>
+        </Page>
+        <Page Include="Samples\Blazor_Radzen\Blazor_Radzen.xaml">
+          <Generator>MSBuild:Compile</Generator>
+        </Page>
+        <Page Include="Samples\Blazor_Syncfusion\Blazor_Syncfusion.xaml">
+          <Generator>MSBuild:Compile</Generator>
+        </Page>
+        <Page Include="Samples\Blazor_MudBlazor\Blazor_MudBlazor.xaml">
+          <Generator>MSBuild:Compile</Generator>
+        </Page>
+        <Compile Include="Samples\Blazor_Blazorise\Blazor_Blazorise.xaml.cs" />
+        <Compile Include="Samples\Blazor_DevExpress\Blazor_DevExpress.xaml.cs" />
+        <Compile Include="Samples\Blazor_GeoBlazor\Blazor_GeoBlazor.xaml.cs" />
+        <Compile Include="Samples\Blazor_Radzen\Blazor_Radzen.xaml.cs" />
+        <Compile Include="Samples\Blazor_Syncfusion\Blazor_Syncfusion.xaml.cs" />
+        <Compile Include="Samples\Blazor_MudBlazor\Blazor_MudBlazor.xaml.cs" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
 
   <ItemGroup>
     <Content Include="Connected Services\ServiceReference1\ConnectedService.json" />
@@ -962,5 +1018,13 @@
   <ItemGroup>
     <ProjectReference Include="..\Libraries\OpenSilver.Animations\OpenSilver.Animations.csproj" />
     <ProjectReference Include="..\OpenSilver.Samples.Showcase.Shared\OpenSilver.Samples.Showcase.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(WithBlazor)'=='true'">
+    <ProjectReference Include="..\OpenSilver.Samples.Showcase.Blazorise\OpenSilver.Samples.Showcase.Blazorise.csproj" />
+    <ProjectReference Include="..\OpenSilver.Samples.Showcase.DevExpress\OpenSilver.Samples.Showcase.DevExpress.csproj" />
+    <ProjectReference Include="..\OpenSilver.Samples.Showcase.MudBlazor\OpenSilver.Samples.Showcase.MudBlazor.csproj" />
+    <ProjectReference Include="..\OpenSilver.Samples.Showcase.Radzen\OpenSilver.Samples.Showcase.Radzen.csproj" />
+    <ProjectReference Include="..\OpenSilver.Samples.Showcase.Syncfusion\OpenSilver.Samples.Showcase.Syncfusion.csproj" />
   </ItemGroup>
 </Project>

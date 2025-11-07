@@ -1,5 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
+  <PropertyGroup>
+    <Configurations>Debug;Release;Release-WithBlazor;Debug-WithBlazor</Configurations>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Debug-WithBlazor' or '$(Configuration)'=='Release-WithBlazor'">
+    <WithBlazor>true</WithBlazor>
+  </PropertyGroup>
+  
     <PropertyGroup>
 		<CheckEolWorkloads>false</CheckEolWorkloads>
         <TargetFrameworks>net9.0-android</TargetFrameworks>
@@ -48,6 +55,10 @@
         <AppIconFile>Resources\AppIcon\appicon.png</AppIconFile>
         <AppIconFile Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">Resources\AppIcon\appicon_android.png</AppIconFile>
     </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(WithBlazor)'=='true'">
+    <DefineConstants>$(DefineConstants);WITHBLAZOR</DefineConstants>
+  </PropertyGroup>
 
     <ItemGroup>
         <!-- App Icon -->
@@ -83,7 +94,7 @@
     </ItemGroup>
 	
     <ItemGroup>
-      <ProjectReference Include="..\src\OpenSilver.Samples.Showcase_WithBlazor.csproj" />
+      <ProjectReference Include="..\src\OpenSilver.Samples.Showcase.csproj" />
     </ItemGroup>
 
 	<!--<ItemGroup>

@@ -1,16 +1,18 @@
-﻿using Blazorise;
+﻿#if WITHBLAZOR
+using Blazorise;
 using Blazorise.Bootstrap5;
 using Blazorise.Icons.FontAwesome;
-using DevExpress.Blazor;
+using DevExpress.Blazor; 
+using MudBlazor.Services;
+using Radzen;
+using Syncfusion.Blazor;
 using Microsoft.AspNetCore.Components.WebAssembly.Services;
+#endif
 //using dymaptic.GeoBlazor.Core;
 using Microsoft.AspNetCore.Components.WebView.Maui;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using MudBlazor.Services;
 using OpenSilver.MauiHybrid.Runner;
-using Radzen;
-using Syncfusion.Blazor;
 using System.Globalization;
 
 namespace OpenSilver.Samples.Showcase.MauiHybrid;
@@ -27,7 +29,9 @@ public static class MauiProgram
         CultureInfo.DefaultThreadCurrentCulture = culture;
         CultureInfo.DefaultThreadCurrentUICulture = culture;
 
-        Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(Other.Internals.Licenses.SYNCFUSION_LICENSE);
+#if WITHBLAZOR
+        Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(Other.Internals.Licenses.SYNCFUSION_LICENSE); 
+#endif
 
         var builder = MauiApp.CreateBuilder();
 
@@ -44,9 +48,11 @@ public static class MauiProgram
 #endif
             });
 
+#if WITHBLAZOR
         //For lazy loading
         builder.Services.AddScoped<LazyAssemblyLoader>();
-        builder.Services.AddScoped<ILazyFeatureNavigator, LazyFeatureNavigator>();
+        builder.Services.AddScoped<ILazyFeatureNavigator, LazyFeatureNavigator>(); 
+#endif
 
         builder.Services.AddScoped<IMauiHybridRunner, MauiHybridRunner>();
         builder.Services.AddMauiBlazorWebView();
@@ -54,6 +60,7 @@ public static class MauiProgram
         builder.Services.AddBlazorWebViewDeveloperTools();
         builder.Logging.AddDebug();
 #endif
+#if WITHBLAZOR
         builder.Services.AddRadzenComponents();
         builder.Services.AddMudServices();
         builder.Services.AddBlazorise(options =>
@@ -63,7 +70,8 @@ public static class MauiProgram
             .AddBootstrap5Providers()
             .AddFontAwesomeIcons();
         builder.Services.AddDevExpressBlazor(configure => configure.BootstrapVersion = BootstrapVersion.v5);
-        builder.Services.AddSyncfusionBlazor();
+        builder.Services.AddSyncfusionBlazor(); 
+#endif
         //var inMemorySettings = new Dictionary<string, string?>
         //                            {
         //                                { "GeoBlazor:LicenseKey", Other.Internals.Licenses.GEOBLAZOR_LICENSE },
@@ -73,8 +81,10 @@ public static class MauiProgram
         //builder.Services.AddGeoBlazor(builder.Configuration);
 
         var host = builder.Build();
+#if WITHBLAZOR
         //Make lazyLoader accessible:
-        ServiceLocator.Provider = host.Services;
+        ServiceLocator.Provider = host.Services; 
+#endif
         return host;
     }
 }
