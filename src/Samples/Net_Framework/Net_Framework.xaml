@@ -50,6 +50,7 @@
             <local:Localization_Demo HorizontalAlignment="Center"/>
             <local:Clipboard_SetText_Demo HorizontalAlignment="Center"/>
             <local:FullScreen_Demo x:Name="FullScreenDemo" HorizontalAlignment="Center"/>
+            <local:DynamicCompilation_Demo HorizontalAlignment="Center"/>
         </ItemsControl>
     </StackPanel>
 </Page>

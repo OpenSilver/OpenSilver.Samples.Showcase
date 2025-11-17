@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.8.0" />
     <PackageReference Include="Microsoft.Maui.Essentials" Version="8.0.100" />
     <PackageReference Include="OpenSilver.ControlsKit" Version="[$(OpenSilverControlsKitVersion)]" />
     <PackageReference Include="OpenSilver.Themes.Modern" Version="[$(OpenSilverModernThemeVersion)]" />
@@ -520,6 +521,9 @@
     <Page Include="Samples\Net_Framework\DispatcherTimer\DispatcherTimer_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\Net_Framework\DynamicCompilation\DynamicCompilation_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\Net_Framework\File_Save\File_Save_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -850,6 +854,7 @@
     <Compile Include="Samples\Net_Framework\Console\Console_Demo.xaml.cs" />
     <Compile Include="Samples\Net_Framework\DataContractSerializer\DataContractSerializer_Demo.xaml.cs" />
     <Compile Include="Samples\Net_Framework\DispatcherTimer\DispatcherTimer_Demo.xaml.cs" />
+    <Compile Include="Samples\Net_Framework\DynamicCompilation\DynamicCompilation_Demo.xaml.cs" />
     <Compile Include="Samples\Net_Framework\File_Save\FileSaver.cs" />
     <Compile Include="Samples\Net_Framework\File_Save\File_Save_Demo.xaml.cs" />
     <Compile Include="Samples\Net_Framework\FullScreen\FullScreen_Demo.xaml.cs" />

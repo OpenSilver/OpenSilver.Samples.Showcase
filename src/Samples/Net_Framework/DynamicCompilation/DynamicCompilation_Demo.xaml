@@ -1,0 +1,62 @@
+<UserControl x:Class="OpenSilver.Samples.Showcase.DynamicCompilation_Demo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+
+    <ContentControl Width="500" Style="{StaticResource Card_Style}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <ContentControl Background="#FFD2BD9C"
+                            Content="Dynamic C# Compilation"
+                            Foreground="#FFDEA542"
+                            Style="{StaticResource HeaderControl_Style}"/>
+
+            <TextBlock Grid.Row="1"
+                       Margin="10,10,10,5"
+                       TextWrapping="Wrap"
+                       Text="Enter C# code below and click 'Compile &amp; Run' to execute it at runtime:"/>
+
+            <TextBox Grid.Row="2"
+                     x:Name="CodeTextBox"
+                     Margin="10,5,10,10"
+                     MinHeight="200"
+                     AcceptsReturn="True"
+                     VerticalScrollBarVisibility="Auto"
+                     HorizontalScrollBarVisibility="Auto"
+                     FontFamily="Consolas, Courier New"
+                     FontSize="12"/>
+
+            <Button Grid.Row="3"
+                    Margin="10,0,10,10"
+                    HorizontalAlignment="Center"
+                    Click="OnCompileAndRunClick"
+                    Content="Compile &amp; Run"
+                    Padding="20,5"/>
+
+            <TextBlock Grid.Row="4"
+                       x:Name="OutputTextBlock"
+                       Margin="10,0,10,10"
+                       TextWrapping="Wrap"
+                       Foreground="DarkGreen"
+                       FontWeight="Bold"/>
+
+            <local:ViewSourceButton Grid.Row="5" Background="#FCAB54">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo FileName="DynamicCompilation_Demo.xaml" RelativePath="src/Samples/Net_Framework/DynamicCompilation"/>
+                    <local:ViewSourceButtonInfo FileName="DynamicCompilation_Demo.xaml.cs" RelativePath="src/Samples/Net_Framework/DynamicCompilation"/>
+                    <local:ViewSourceButtonInfo FileName="DynamicCompilation_Demo.xaml.vb" RelativePath="src/Samples/Net_Framework/DynamicCompilation"/>
+                    <local:ViewSourceButtonInfo FileName="DynamicCompilation_Demo.xaml.fs" RelativePath="src/Samples/Net_Framework/DynamicCompilation"/>
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
+</UserControl>
+
