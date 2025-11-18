@@ -1,0 +1,37 @@
+﻿<Page x:Class="OpenSilver.Showcase.Interop_Samples"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controlskit="clr-namespace:OpenSilver.ControlsKit;assembly=OpenSilver.ControlsKit.Controls"
+             xmlns:local="clr-namespace:OpenSilver.Showcase"
+             Style="{StaticResource Page_Style}"
+             Title="Interop">
+    
+    <StackPanel>
+        <StackPanel>
+            <ContentControl Content="Interop" Style="{StaticResource PageTitle_Style}"/>
+            <TextBlock Style="{StaticResource PageIntroText_Style}">As a web-first platform, OpenSilver gives you the freedom to go 
+                                                                    beyond XAML and .NET. You can directly leverage HTML, CSS
+                                                                    and JavaScript through simple interop, access low-level browser APIs,
+                                                                    and integrate with any JavaScript library or framework. Need to reach
+                                                                    mobile users? You can also publish OpenSilver apps as native mobile
+                                                                    apps using <Hyperlink NavigateUri="https://doc.opensilver.net/documentation/general/maui-hybrid-launcher.html" TargetName="_blank" Foreground="{DynamicResource Theme_TextBrush}">.NET MAUI-OpenSilver Hybrid</Hyperlink>,
+                                                                    extending your reach without rewriting your code.
+            </TextBlock>
+        </StackPanel>
+
+        <ItemsControl x:Name="SamplesPanel" local:ItemsControlLoadingBehavior.ShowLoadingOnGenerating="True">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <controlskit:StaggeredPanel DesiredColumnWidth="280" ProgressiveRenderingChunkSize="2"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            
+            <local:ExecuteJavaScript_Demo HorizontalAlignment="Center"/>
+            <local:Interop_HtmlPresenter_Demo HorizontalAlignment="Center"/>
+            <local:WebView_Demo HorizontalAlignment="Center"/>
+            <local:GetDiv_Demo HorizontalAlignment="Center"/>
+            <local:MethodToUpdateDom_Demo HorizontalAlignment="Center"/>
+            <local:PWA_Demo HorizontalAlignment="Center"/>            
+        </ItemsControl>
+    </StackPanel>
+</Page>

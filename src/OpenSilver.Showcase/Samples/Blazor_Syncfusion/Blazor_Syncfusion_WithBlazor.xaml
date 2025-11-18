@@ -1,0 +1,9 @@
+﻿<UserControl
+    x:Class="OpenSilver.Showcase.Blazor_Syncfusion"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:OpenSilver.Showcase">
+
+    <TextBlock Text="Loading Syncfusion libraries..." TextAlignment="Center" TextWrapping="Wrap" FontSize="32" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Gray"/>
+
+</UserControl>

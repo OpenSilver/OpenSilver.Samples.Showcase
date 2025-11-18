@@ -1,0 +1,11 @@
+﻿using System.Windows.Controls;
+
+namespace OpenSilver.Showcase;
+
+public partial class JS_Libs : Page
+{
+    public JS_Libs()
+    {
+        InitializeComponent();
+    }
+}

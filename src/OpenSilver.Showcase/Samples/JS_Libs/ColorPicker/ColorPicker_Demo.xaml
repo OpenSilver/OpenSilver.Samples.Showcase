@@ -1,0 +1,52 @@
+<UserControl x:Class="OpenSilver.Showcase.ColorPicker_Demo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:OpenSilver.Showcase">
+
+    <ContentControl Style="{StaticResource Card_Style}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <ContentControl Content="ColorPicker"
+                            Foreground="#FF00BCD4"
+                            Style="{StaticResource HeaderControl_Style}"/>
+
+            <StackPanel Grid.Row="1">
+                <TextBlock HorizontalAlignment="Left"
+                           FontSize="12"
+                           TextWrapping="Wrap">
+                    Example of using <Hyperlink NavigateUri="https://github.com/sefianecho/alwan" TargetName="_blank">Alwan</Hyperlink>
+                    color picker.</TextBlock>
+                <local:ColorPicker Name="colorPicker"
+                                   Height="280"
+                                   Margin="0,10,0,0"
+                                   Color="#FFD4B6F0"/>
+                <Border Height="50"
+                        Margin="0,10,0,0"
+                        BorderBrush="#FF808080"
+                        BorderThickness="1"
+                        CornerRadius="10">
+                    <Border.Background>
+                        <SolidColorBrush Color="{Binding Color, ElementName=colorPicker}"/>
+                    </Border.Background>
+                </Border>
+            </StackPanel>
+
+            <local:ViewSourceButton Grid.Row="2" Background="#FF00BCD4">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo FileName="ColorPicker_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/JS_Libs/ColorPicker"/>
+                    <local:ViewSourceButtonInfo FileName="ColorPicker_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/JS_Libs/ColorPicker"/>
+                    <local:ViewSourceButtonInfo FileName="ColorPicker_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/JS_Libs/ColorPicker"/>
+                    <local:ViewSourceButtonInfo FileName="ColorPicker_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/JS_Libs/ColorPicker"/>
+                    <local:ViewSourceButtonInfo FileName="ColorPicker.cs" RelativePath="src/OpenSilver.Showcase/Samples/JS_Libs/ColorPicker"/>
+                    <local:ViewSourceButtonInfo FileName="ColorPicker.vb" RelativePath="src/OpenSilver.Showcase/Samples/JS_Libs/ColorPicker"/>
+                    <local:ViewSourceButtonInfo FileName="ColorPicker.fs" RelativePath="src/OpenSilver.Showcase/Samples/JS_Libs/ColorPicker"/>
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
+</UserControl>

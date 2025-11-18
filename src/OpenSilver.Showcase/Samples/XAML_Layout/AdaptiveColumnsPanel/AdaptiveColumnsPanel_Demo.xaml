@@ -1,0 +1,59 @@
+﻿<UserControl
+    x:Class="OpenSilver.Showcase.AdaptiveColumnsPanel_Demo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controlskit="clr-namespace:OpenSilver.ControlsKit;assembly=OpenSilver.ControlsKit.Controls"
+    xmlns:local="clr-namespace:OpenSilver.Showcase">
+
+    <ContentControl Width="235" Style="{StaticResource Card_Style}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <ContentControl Content="Adaptive Columns Panel"
+                        Foreground="#FFFE7484"
+                        Style="{StaticResource HeaderControl_Style}"/>
+
+            <DescriptionViewer Style="{StaticResource ControlsKitDescriptionStyle}"/>
+
+            <TextBlock Grid.Row="1" Margin="0,0,0,5" TextWrapping="Wrap" Text="The AdaptiveColumnsPanel switches between vertical and horizontal layouts, based on whether its width is larger than its NoColumnsBelowWidth property or not."/>
+
+            <Grid Grid.Row="2" Width="210" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" MinWidth="50"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Border Background="Beige">
+                    <controlskit:AdaptiveColumnsPanel x:Name="AdaptivePanel" NoColumnsBelowWidth="150" VerticalAlignment="Top">
+                    <Border Height="50" CornerRadius="20" Margin="2" Background="#CC505E00">
+                        <TextBlock Text="Child 1" HorizontalAlignment="Center" Foreground="White" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border Height="50" CornerRadius="20" Margin="2" Background="#CC7D0030">
+                            <TextBlock Text="Child 2" HorizontalAlignment="Center" Foreground="White" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border Height="50" CornerRadius="20" Margin="2" Background="#CC00567A">
+                            <TextBlock Text="Child 3" HorizontalAlignment="Center" Foreground="White" Margin="0,10,0,0"/>
+                    </Border>
+                </controlskit:AdaptiveColumnsPanel>
+                </Border>
+                <GridSplitter Grid.Column="1" Name="gridSplitter" HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
+                <Border Background="AliceBlue" Grid.Column="2"/>
+            </Grid>
+
+            <local:ViewSourceButton Grid.Row="3" Background="#9C27B0">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo FileName="AdaptiveColumnsPanel_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/AdaptiveColumnsPanel"/>
+                    <local:ViewSourceButtonInfo FileName="AdaptiveColumnsPanel_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/AdaptiveColumnsPanel"/>
+                    <local:ViewSourceButtonInfo FileName="AdaptiveColumnsPanel_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/AdaptiveColumnsPanel"/>
+                    <local:ViewSourceButtonInfo FileName="AdaptiveColumnsPanel_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/AdaptiveColumnsPanel"/>
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
+</UserControl>

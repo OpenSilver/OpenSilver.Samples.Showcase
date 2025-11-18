@@ -1,0 +1,38 @@
+﻿<UserControl
+    x:Class="OpenSilver.Showcase.RadzenAutoComplete_Demo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:razor="clr-namespace:OpenSilver.Blazor;assembly=OpenSilver.Blazor"
+    xmlns:local="clr-namespace:OpenSilver.Showcase">
+
+
+    <ContentControl Style="{StaticResource Card_Style}" Width="230">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl Content="AutoComplete" Foreground="#FFFF81E3" Background="#FFCB9DC1" Style="{StaticResource HeaderControl_Style}"/>
+            <StackPanel Grid.Row="1">
+                <razor:RazorComponent Margin="0,20,0,0" Height="70">
+                    @using Radzen
+                    @using Radzen.Blazor
+                    <RadzenAutoComplete @bind-Value="{Binding CurrentWord, Mode=TwoWay, Type=string}" x:Name="testName" Data="{Binding Words}"  FilterCaseSensitivity="global::Radzen.FilterCaseSensitivity.CaseInsensitive"/>
+                </razor:RazorComponent>
+                <TextBlock x:Name="ValueTextBlock">
+                    <Run Text="You picked: "/>
+                    <Run Text="{Binding CurrentWord}"/>
+                </TextBlock>
+            </StackPanel>
+            <local:ViewSourceButton Grid.Row="2" Background="#FFFF81E3">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewRadzenSourceInfo RelativePath="src/3rdParty/OpenSilver.Showcase.Radzen/Samples/AutoComplete"
+                                    FileName="RadzenAutoComplete_Demo.xaml" />
+                    <local:ViewRadzenSourceInfo RelativePath="src/3rdParty/OpenSilver.Showcase.Radzen/Samples/AutoComplete"
+                                    FileName="RadzenAutoComplete_Demo.xaml.cs" />
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
+</UserControl>

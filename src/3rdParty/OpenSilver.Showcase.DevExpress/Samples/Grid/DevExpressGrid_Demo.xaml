@@ -1,0 +1,45 @@
+﻿<UserControl
+    x:Class="OpenSilver.Showcase.DevExpressGrid_Demo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:OpenSilver.Showcase">
+
+    <ContentControl Style="{StaticResource Card_Style}" Width="800">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl Content="Grid" Foreground="#FF7F5EA4" Background="#FFCB9DC1" Style="{StaticResource HeaderControl_Style}"/>
+
+            <Grid Grid.Row="1">
+                <StackPanel>
+                    <razor:RazorComponent x:Name="RichEditComponentHolder" Height="330">
+                        @using global::DevExpress.Blazor
+                        <DxGrid Data="{Binding Employees, Type=IQueryable<OpenSilver.Showcase.DevExpressModel.Employee>}" PageSize="15"
+                                ColumnResizeMode="GridColumnResizeMode.NextColumn"
+                                TextWrapEnabled="false">
+                            <Columns>
+                                <DxGridDataColumn FieldName="FirstName" Caption="First Name" Width="150px" />
+                                <DxGridDataColumn FieldName="LastName" Caption="Last Name" Width="150px"/>
+                                <DxGridDataColumn FieldName="BirthDate" Caption="Birth Date" DisplayFormat="{0:d}" Width="150px" />
+                                <DxGridDataColumn FieldName="Country" Caption="Country" Width="150px" />
+                                <DxGridDataColumn FieldName="Notes" Caption="Notes" />
+                            </Columns>
+                        </DxGrid>
+                    </razor:RazorComponent>
+                </StackPanel>
+            </Grid>
+
+            <local:ViewSourceButton Grid.Row="2" Background="#FFFF81E3">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewDevExpressSourceInfo RelativePath="src/3rdParty/OpenSilver.Showcase.DevExpress/Samples/Grid"
+FileName="DevExpressGrid_Demo.xaml" />
+                    <local:ViewDevExpressSourceInfo RelativePath="src/3rdParty/OpenSilver.Showcase.DevExpress/Samples/Grid"
+FileName="DevExpressGrid_Demo.xaml.cs" />
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
+</UserControl>

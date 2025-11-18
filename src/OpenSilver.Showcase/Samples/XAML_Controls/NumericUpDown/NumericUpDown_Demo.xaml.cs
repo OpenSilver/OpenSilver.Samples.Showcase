@@ -1,0 +1,14 @@
+﻿using OpenSilver.Showcase.Search;
+using System.Windows.Controls;
+
+namespace OpenSilver.Showcase
+{
+    [SearchKeywords("input", "numeric", "updown", "spinner", "counter", "control", "buttonspinner", "style", "template")]
+    public partial class NumericUpDown_Demo : UserControl
+    {
+        public NumericUpDown_Demo()
+        {
+            InitializeComponent();
+        }
+    }
+}

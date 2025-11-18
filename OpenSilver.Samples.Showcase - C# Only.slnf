@@ -1,20 +1,18 @@
 {
   "solution": {
-    "path": "OpenSilver.Samples.Showcase.sln",
+    "path": "OpenSilver.Showcase.sln",
     "projects": [
-      "Libraries\\OpenSilver.Animations\\OpenSilver.Animations.csproj",
-      "OpenSilver.Samples.Showcase.Blazorise\\OpenSilver.Samples.Showcase.Blazorise.csproj",
-      "OpenSilver.Samples.Showcase.Browser\\OpenSilver.Samples.Showcase.Browser.csproj",
-      "OpenSilver.Samples.Showcase.Browser\\OpenSilver.Samples.Showcase.Browser_WithBlazor.csproj",
-      "OpenSilver.Samples.Showcase.DevExpress\\OpenSilver.Samples.Showcase.DevExpress.csproj",
-      "OpenSilver.Samples.Showcase.MauiHybrid\\OpenSilver.Samples.Showcase.MauiHybrid.csproj",
-      "OpenSilver.Samples.Showcase.MudBlazor\\OpenSilver.Samples.Showcase.MudBlazor.csproj",
-      "OpenSilver.Samples.Showcase.Radzen\\OpenSilver.Samples.Showcase.Radzen.csproj",
-      "OpenSilver.Samples.Showcase.Shared\\OpenSilver.Samples.Showcase.Shared.csproj",
-      "OpenSilver.Samples.Showcase.Simulator\\OpenSilver.Samples.Showcase.Simulator.csproj",
-      "OpenSilver.Samples.Showcase.Syncfusion\\OpenSilver.Samples.Showcase.Syncfusion.csproj",
-      "src\\OpenSilver.Samples.Showcase.csproj",
-      "src\\OpenSilver.Samples.Showcase_WithBlazor.csproj"
+      "src\\Libraries\\OpenSilver.Animations\\OpenSilver.Animations.csproj",
+      "src\\3rdParty\\OpenSilver.Showcase.Blazorise\\OpenSilver.Showcase.Blazorise.csproj",
+      "src\\OpenSilver.Showcase.Browser\\OpenSilver.Showcase.Browser.csproj",
+      "src\\3rdParty\\OpenSilver.Showcase.DevExpress\\OpenSilver.Showcase.DevExpress.csproj",
+      "src\\OpenSilver.Showcase.MauiHybrid\\OpenSilver.Showcase.MauiHybrid.csproj",
+      "src\\3rdParty\\OpenSilver.Showcase.MudBlazor\\OpenSilver.Showcase.MudBlazor.csproj",
+      "src\\3rdParty\\OpenSilver.Showcase.Radzen\\OpenSilver.Showcase.Radzen.csproj",
+      "src\\OpenSilver.Showcase.Shared\\OpenSilver.Showcase.Shared.csproj",
+      "src\\OpenSilver.Showcase.Simulator\\OpenSilver.Showcase.Simulator.csproj",
+      "src\\3rdParty\\OpenSilver.Showcase.Syncfusion\\OpenSilver.Showcase.Syncfusion.csproj",
+      "src\\OpenSilver.Showcase\\OpenSilver.Showcase.csproj"
     ]
   }
 }

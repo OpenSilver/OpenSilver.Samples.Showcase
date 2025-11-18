@@ -1,0 +1,37 @@
+﻿<Page
+    x:Class="OpenSilver.Showcase.Performance"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controlskit="clr-namespace:OpenSilver.ControlsKit;assembly=OpenSilver.ControlsKit.Controls"
+    xmlns:local="clr-namespace:OpenSilver.Showcase"
+    Style="{StaticResource Page_Style}"
+    Title="Performance">
+
+    <StackPanel>
+        <StackPanel>
+            <ContentControl Content="Performance" Style="{StaticResource PageTitle_Style}"/>
+            <TextBlock Style="{StaticResource PageIntroText_Style}">Published OpenSilver builds are heavily optimized and significantly faster
+                                                                    than debug versions. You can further improve performance by applying
+                                                                    recommended code optimizations (read
+                                                                    <Hyperlink NavigateUri="https://doc.opensilver.net/documentation/in-depth-topics/performance-improvement.html"
+                                                                        TargetName="_blank"
+                                                                        Foreground="{DynamicResource Theme_TextBrush}">here</Hyperlink>
+                                                                    for tips). OpenSilver also gets faster with every release, so make sure
+                                                                    to stay updated with the latest version.
+            </TextBlock>
+        </StackPanel>
+
+        <ItemsControl x:Name="SamplesPanel" local:ItemsControlLoadingBehavior.ShowLoadingOnGenerating="True">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <controlskit:StaggeredPanel DesiredColumnWidth="330" ProgressiveRenderingChunkSize="2"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            
+            <local:Virtualization_Demo HorizontalAlignment="Center"/>
+            <local:ProgressiveLoading_Demo HorizontalAlignment="Center"/>
+            <local:AOT_Demo HorizontalAlignment="Center"/>
+            <!--<local:HtmlCanvas_Demo HorizontalAlignment="Center"/>-->
+        </ItemsControl>
+    </StackPanel>
+</Page>

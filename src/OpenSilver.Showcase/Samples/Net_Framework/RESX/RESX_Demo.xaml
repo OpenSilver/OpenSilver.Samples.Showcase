@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="OpenSilver.Showcase.RESX_Demo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:OpenSilver.Showcase">
+
+    <ContentControl Width="245" Style="{StaticResource Card_Style}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <ContentControl Background="#FF95ABCB"
+                            Content="RESX"
+                            Foreground="#FF6FA9FF"
+                            Style="{StaticResource HeaderControl_Style}"/>
+
+            <Button Grid.Row="1"
+                    Margin="0,5"
+                    HorizontalAlignment="Center"
+                    Click="ButtonReadResource_Click"
+                    Content="Read from resource file"/>
+
+            <TextBlock Grid.Row="2"
+                       Margin="0,25,0,20"
+                       HorizontalAlignment="Center"
+                       FontSize="12"
+                       TextAlignment="Center"
+                       TextWrapping="Wrap">
+                Refer to the <Hyperlink Click="Hyperlink_Click">&quot;MarkupExtensions&quot; demo</Hyperlink>
+                to see how to read .resx strings from XAML</TextBlock>
+
+            <local:ViewSourceButton Grid.Row="3" Background="#FF6FA9FF">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo FileName="RESX_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/RESX"/>
+                    <local:ViewSourceButtonInfo FileName="RESX_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/RESX"/>
+                    <local:ViewSourceButtonInfo FileName="RESX_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/RESX"/>
+                    <local:ViewSourceButtonInfo FileName="RESX_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/RESX"/>
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
+</UserControl>

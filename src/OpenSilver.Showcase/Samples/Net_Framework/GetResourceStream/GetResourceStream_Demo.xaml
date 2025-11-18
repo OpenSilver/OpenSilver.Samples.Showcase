@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="OpenSilver.Showcase.GetResourceStream_Demo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:OpenSilver.Showcase">
+    <ContentControl Style="{StaticResource Card_Style}"
+                    Width="245">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <ContentControl Content="GetResourceStream"
+                            Foreground="#FF89B8AD"
+                            Background="#FF8FCBBE"
+                            Style="{StaticResource HeaderControl_Style}" />
+            <StackPanel Grid.Row="1"
+                        Orientation="Vertical"
+                        HorizontalAlignment="Center"
+                        Margin="0,5,0,0">
+                <Button Content="View SampleText.txt"
+                        Click="ViewFile_Click"
+                        Margin="0,0,0,10" />
+            </StackPanel>
+            <local:ViewSourceButton Grid.Row="2"
+                                    Margin="0,15,0,0"
+                                    Background="#FF3ED4B2">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/GetResourceStream"
+                                                FileName="GetResourceStream_Demo.xaml" />
+                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/GetResourceStream"
+                                                FileName="GetResourceStream_Demo.xaml.cs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/GetResourceStream"
+                                                FileName="GetResourceStream_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/GetResourceStream"
+                                                FileName="GetResourceStream_Demo.xaml.fs" />
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
+</UserControl>

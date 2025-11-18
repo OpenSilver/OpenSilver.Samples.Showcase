@@ -1,0 +1,39 @@
+﻿<UserControl
+    x:Class="OpenSilver.Showcase.RadzenDatePicker_Demo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:razor="clr-namespace:OpenSilver.Blazor;assembly=OpenSilver.Blazor"
+    xmlns:local="clr-namespace:OpenSilver.Showcase">
+
+    <ContentControl Style="{StaticResource Card_Style}" Width="340">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl Content="DatePicker" Foreground="#FFFF81E3" Background="#FFCB9DC1" Style="{StaticResource HeaderControl_Style}"/>
+            <StackPanel Grid.Row="1">
+                <razor:RazorComponent Margin="0,20,0,0" Height="60">
+                    @using Radzen
+                    @using Radzen.Blazor
+
+                    <RadzenStack Orientation="global::Radzen.Orientation.Horizontal" JustifyContent="global::Radzen.JustifyContent.Center" AlignItems="global::Radzen.AlignItems.Center" Gap="0.5rem">
+                        <RadzenLabel Text="Select Date" Component="RadzenDatePickerBindValue" />
+                        <RadzenDatePicker TValue="DateTime?"  Name="RadzenDatePickerBindValue" ShowCalendarWeek Change="{Binding DateChangeDel, Type=Action<DateTime?>}"/>
+                    </RadzenStack>
+
+                </razor:RazorComponent>
+                <TextBlock Text="{Binding TextForTextBox}"/>
+            </StackPanel>
+            <local:ViewSourceButton Grid.Row="2" Background="#FFFF81E3">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewRadzenSourceInfo RelativePath="src/3rdParty/OpenSilver.Showcase.Radzen/Samples/DatePicker"
+                        FileName="RadzenDatePicker_Demo.xaml" />
+                    <local:ViewRadzenSourceInfo RelativePath="src/3rdParty/OpenSilver.Showcase.Radzen/Samples/DatePicker"
+                        FileName="RadzenDatePicker_Demo.xaml.cs" />
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
+</UserControl>

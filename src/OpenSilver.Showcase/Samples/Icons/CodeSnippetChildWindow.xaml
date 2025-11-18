@@ -1,0 +1,22 @@
+﻿<ChildWindow x:Class="OpenSilver.Showcase.CodeSnippetChildWindow"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           Width="350"
+           Title="Code Snippet"
+           xmlns:local="clr-namespace:OpenSilver.Showcase">
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="GenericInstructionsContainer" TextWrapping="Wrap" Margin="20" FontSize="14" LineHeight="24">Copy/paste the following XAML snippet into your OpenSilver app to display the icon:</TextBlock>
+        <StackPanel x:Name="MaterialIconsInstructionsContainer" Visibility="Collapsed">
+            <TextBlock TextWrapping="Wrap" Margin="20,16,20,0" FontSize="12" LineHeight="18">To use this icon in your OpenSilver app, add the 'MaterialIcons-Regular.ttf' font file to your project (you can copy it from this app's source code). Then add the following line to &lt;Application.Resources&gt;, updating the file path as needed:</TextBlock>
+            <TextBox Margin="18,12,20,12" Height="70" FontSize="12" Text="&lt;FontFamily x:Key=&quot;MaterialIconsRegular_FontFamily&quot;&gt;ms-appx:///YOUR_APP_NAME/YOUR_FOLDER_NAME/MaterialIcons-Regular.ttf&lt;/FontFamily&gt;" IsReadOnly="True" TextWrapping="Wrap" FontFamily="monospace" VerticalScrollBarVisibility="Auto"/>
+            <TextBlock TextWrapping="Wrap" Margin="20,0,20,10" FontSize="12" LineHeight="18">Next, paste the following XAML snippet to display this icon:</TextBlock>
+        </StackPanel>
+        <TextBox x:Name="SnippetTextBox" Grid.Row="1" Height="85" Margin="18,0,20,12" IsReadOnly="True" TextWrapping="Wrap" FontFamily="monospace" VerticalScrollBarVisibility="Auto"/>
+        <Button x:Name="OKButton" Content="Close" Click="OKButton_Click" Width="88" Height="32" HorizontalAlignment="Center" Margin="0,8,20,20" Grid.Row="2" BorderThickness="1" BorderBrush="{DynamicResource Theme_PrimaryBrush}"/>
+    </Grid>
+</ChildWindow>
