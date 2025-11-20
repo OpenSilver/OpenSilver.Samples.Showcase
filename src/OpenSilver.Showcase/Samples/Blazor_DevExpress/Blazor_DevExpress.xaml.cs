@@ -1,4 +1,4 @@
-﻿#if WITHBLAZOR
+﻿#if FULLBLAZOR
 using DevExpress.Blazor.RichEdit; 
 #endif
 using System;
@@ -16,12 +16,12 @@ namespace OpenSilver.Showcase
         {
             this.InitializeComponent();
 
-#if WITHBLAZOR
+#if FULLBLAZOR
             LoadContent(); 
 #endif
         }
 
-#if WITHBLAZOR
+#if FULLBLAZOR
         private async void LoadContent()
         {
             try

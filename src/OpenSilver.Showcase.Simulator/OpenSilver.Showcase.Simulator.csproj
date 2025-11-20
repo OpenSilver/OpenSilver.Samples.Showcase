@@ -5,7 +5,7 @@
     <TargetFramework>net9.0-windows</TargetFramework>
     <OutputPath>bin/$(Configuration)_cs</OutputPath>
     <IntermediateOutputPath>obj/$(Configuration)_cs</IntermediateOutputPath>
-    <Configurations>Debug;Release;Release-WithBlazor;Debug-WithBlazor</Configurations>
+    <Configurations>Debug;Release;Release-WithBlazor;Debug-WithBlazor;Release-FullBlazor;Debug-FullBlazor</Configurations>
   </PropertyGroup>
 
   <ItemGroup>

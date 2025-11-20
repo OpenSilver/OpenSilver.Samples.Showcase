@@ -19,12 +19,12 @@ namespace OpenSilver.Showcase
         {
             this.InitializeComponent();
 
-#if WITHBLAZOR
+#if FULLBLAZOR
             LoadContent(); 
 #endif
         }
 
-#if WITHBLAZOR
+#if FULLBLAZOR
         private async void LoadContent()
         {
             try

@@ -1,12 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
-    <Configurations>Debug;Release;Release-WithBlazor;Debug-WithBlazor</Configurations>
+    <Configurations>Debug;Release;Release-WithBlazor;Debug-WithBlazor;Release-FullBlazor;Debug-FullBlazor</Configurations>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)'=='Debug-WithBlazor' or '$(Configuration)'=='Release-WithBlazor'">
     <WithBlazor>true</WithBlazor>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)'=='Debug' or '$(Configuration)'=='Debug-WithBlazor'">
+  <PropertyGroup Condition="'$(Configuration)'=='Debug-FullBlazor' or '$(Configuration)'=='Release-FullBlazor'">
+    <FullBlazor>true</FullBlazor>
+</PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Debug' or '$(Configuration)'=='Debug-FullBlazor'">
     <IsDebug>true</IsDebug>
   </PropertyGroup>
   
@@ -64,6 +67,9 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(WithBlazor)'=='true'">
     <DefineConstants>$(DefineConstants);WITHBLAZOR</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(FullBlazor)'=='true'">
+    <DefineConstants>$(DefineConstants);WITHBLAZOR;FULLBLAZOR</DefineConstants>
   </PropertyGroup>
 
     <ItemGroup>

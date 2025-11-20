@@ -6,8 +6,10 @@ using Microsoft.AspNetCore.Components.WebAssembly.Services;
 using Microsoft.Extensions.Configuration;
 using OpenSilver.Blazor;
 using OpenSilver.Showcase;
-using Syncfusion.Blazor;
 using System.Collections.Generic;
+#if FULLBLAZOR
+using Syncfusion.Blazor;
+#endif
 #endif
 
 namespace OpenSilver.Showcase.Browser
@@ -16,7 +18,7 @@ namespace OpenSilver.Showcase.Browser
     {
         public static async Task Main(string[] args)
         {
-#if WITHBLAZOR
+#if FULLBLAZOR
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(Other.Internals.Licenses.SYNCFUSION_LICENSE); 
 #endif
 
@@ -33,6 +35,7 @@ namespace OpenSilver.Showcase.Browser
             builder.Services.AddRadzenSamples();
             builder.Services.AddMudBlazorSamples();
             builder.Services.AddBlazoriseSamples();
+#if FULLBLAZOR
             builder.Services.AddDevExpressSamples();
             builder.Services.AddSyncfusionSamples();
 
@@ -44,6 +47,7 @@ namespace OpenSilver.Showcase.Browser
             //                        };
             //builder.Configuration.AddInMemoryCollection(inMemorySettings);
             //builder.Services.AddGeoBlazorSamples(builder.Configuration);  
+#endif
 #endif
 
 
