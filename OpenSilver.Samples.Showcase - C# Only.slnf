@@ -12,6 +12,7 @@
       "src\\OpenSilver.Showcase.Shared\\OpenSilver.Showcase.Shared.csproj",
       "src\\OpenSilver.Showcase.Simulator\\OpenSilver.Showcase.Simulator.csproj",
       "src\\3rdParty\\OpenSilver.Showcase.Syncfusion\\OpenSilver.Showcase.Syncfusion.csproj",
+      "src\\OpenSilver.Showcase.Xaml3D\\OpenSilver.Showcase.Xaml3D.csproj",
       "src\\OpenSilver.Showcase\\OpenSilver.Showcase.csproj"
     ]
   }

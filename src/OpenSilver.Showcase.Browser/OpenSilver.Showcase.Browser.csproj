@@ -78,7 +78,11 @@
 		<BlazorWebAssemblyLazyLoad Include="DevExpress.Printing.v25.1.Core.dll" />
 		<BlazorWebAssemblyLazyLoad Include="DevExpress.SpellChecker.v25.1.Core.dll" />
 	</ItemGroup>
-	
+
+  <ItemGroup>
+    <BlazorWebAssemblyLazyLoad Include="OpenSilver.Showcase.Xaml3D.dll" />
+    <BlazorWebAssemblyLazyLoad Include="Xaml3D.dll" />
+  </ItemGroup>
 	
   <ItemGroup>
     <ProjectReference Include="..\OpenSilver.Showcase\OpenSilver.Showcase.csproj" />

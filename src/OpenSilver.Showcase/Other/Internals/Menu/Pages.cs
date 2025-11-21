@@ -26,6 +26,7 @@ namespace OpenSilver.Showcase
                     var brush2 = new SolidColorBrush(Color.FromRgb(205, 63, 186));
                     var brush3 = new SolidColorBrush(Color.FromRgb(253, 163, 28));
                     var brush4 = new SolidColorBrush(Color.FromRgb(71, 194, 14));
+                    var brush5 = new SolidColorBrush(Color.FromRgb(240, 79, 117));
 
                     _allPagesAndCategories = new ObservableCollection<PageCategoryInfo>
                         {
@@ -42,6 +43,15 @@ namespace OpenSilver.Showcase
                                     new PageInfo { Name = "JS Libs", Path = "/JS_Libs", Icon = "\uEB7C", IconBrush = brush1 },
                                     new PageInfo { Name = "Charts", Path = "/Charts", Icon = "\uE24B", IconBrush = brush1 },
                                     new PageInfo { Name = "Icons", Path = "/Icons", Icon = "\uE3B6", IconBrush = brush1 },
+                                }
+                            },
+                            new PageCategoryInfo
+                            {
+                                Name = "XAML3D UI",
+                                Foreground = brush5,
+                                Pages = new ObservableCollection<PageInfo>
+                                {
+                                    new PageInfo { Name = "3D Controls", Path = "/XAML3D/Controls3D", Icon = "📦", IconBrush = brush5 },
                                 }
                             },
                             new PageCategoryInfo

@@ -213,6 +213,9 @@
     <Page Include="Samples\SearchPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\Xaml3D\Controls3D.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\XAML_Layout\AdaptiveColumnsPanel\AdaptiveColumnsPanel_Demo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -321,6 +324,7 @@
     <Compile Include="Other\Internals\CharacterClickService.cs" />
     <Compile Include="Other\Internals\DeferLoadingItemsBehavior.cs" />
     <Compile Include="Other\Internals\ItemsControlLoadingBehavior.cs" />
+    <Compile Include="Other\Internals\LazyLoading\LazyAssemblyLoader.cs" />
     <Compile Include="Other\Internals\LazyLoading\LazyFeatureNavigator.cs" />
     <Compile Include="Other\Internals\LazyLoading\LazyLoadingConstants.cs" />
     <Compile Include="Other\Internals\LazyLoading\ServiceLocator.cs" />
@@ -395,6 +399,8 @@
     <Compile Include="Samples\Performance\Virtualization\Virtualization_Demo.xaml.cs" />
     <Compile Include="Samples\Icons\Icons.xaml.cs" />
     <Compile Include="Samples\SearchPage.xaml.cs" />
+    <Compile Include="Samples\Xaml3D\Controls3D.xaml.cs" />
+    <Compile Include="Samples\Xaml3D\Initializer.cs" />
     <Compile Include="Samples\XAML_Layout\AdaptiveColumnsPanel\AdaptiveColumnsPanel_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Layout\FlexPanel\FlexPanel_Demo.xaml.cs" />
     <Compile Include="Samples\XAML_Layout\AdaptiveTrigger\AdaptiveTrigger_Demo.xaml.cs" />
@@ -1033,6 +1039,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Libraries\OpenSilver.Animations\OpenSilver.Animations.csproj" />
     <ProjectReference Include="..\OpenSilver.Showcase.Shared\OpenSilver.Showcase.Shared.csproj" />
+		<ProjectReference Include="..\OpenSilver.Showcase.Xaml3D\OpenSilver.Showcase.Xaml3D.csproj" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(FullBlazor)'=='true'">

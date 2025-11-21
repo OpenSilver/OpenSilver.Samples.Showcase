@@ -1,0 +1,304 @@
+﻿<UserControl x:Class="OpenSilver.Showcase.Xaml3D.Samples.Controls"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:OpenSilver.Showcase.Xaml3D.Samples">
+
+    <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="20">
+            <TextBlock Margin="0,0,0,20"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       Text="Xaml3D Controls Showcase"/>
+
+            <!-- Section 1: Button3D Examples -->
+            <TextBlock Margin="0,10,0,10"
+                       FontSize="18"
+                       FontWeight="Bold"
+                       Text="Button3D Examples"/>
+            <Border Margin="0,0,0,20"
+                    Padding="10"
+                    BorderBrush="Gray"
+                    BorderThickness="1">
+                <Root3D Height="200">
+                    <Grid3D>
+                        <Button3D Width="120" Height="40" Depth="15" Margin="20,20,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Content="Red Button" Foreground="Red"/>
+
+                        <Button3D Width="120" Height="40" Depth="20" Margin="0,20,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Background="LightBlue" Content="Blue Button" Foreground="Blue"/>
+
+                        <Button3D Width="120" Height="40" Depth="12" Margin="0,20,20,0" HorizontalAlignment="Right" VerticalAlignment="Top" Background="LightGreen" Content="Green Button" Foreground="Green"/>
+
+                        <Button3D Width="150" Height="50" Depth="25" Margin="0,0,0,20" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="Lavender" Content="Large 3D Button" FontSize="16" FontWeight="Bold" Foreground="Purple"/>
+                    </Grid3D>
+                </Root3D>
+            </Border>
+
+            <!-- Section 2: TextBlock3D Examples -->
+            <TextBlock Margin="0,10,0,10"
+                       FontSize="18"
+                       FontWeight="Bold"
+                       Text="TextBlock3D Examples"/>
+            <Border Margin="0,0,0,20"
+                    Padding="10"
+                    BorderBrush="Gray"
+                    BorderThickness="1">
+                <Root3D Height="250">
+                    <Grid3D>
+                        <TextBlock3D Width="300"
+                                     Height="60"
+                                     Depth="18"
+                                     Margin="0,20,0,0"
+                                     HorizontalAlignment="Center"
+                                     VerticalAlignment="Top"
+                                     FontSize="28"
+                                     FontWeight="Bold"
+                                     Foreground="DarkBlue"
+                                     Text="3D Text Title"
+                                     TextAlignment="Center"/>
+
+                        <TextBlock3D Width="250"
+                                     Height="50"
+                                     Depth="22"
+                                     Margin="30,0,0,0"
+                                     HorizontalAlignment="Left"
+                                     VerticalAlignment="Center"
+                                     FontSize="20"
+                                     Foreground="OrangeRed"
+                                     Text="Extruded Text"/>
+
+                        <TextBlock3D Width="200"
+                                     Height="45"
+                                     Depth="30"
+                                     Margin="0,0,30,0"
+                                     HorizontalAlignment="Right"
+                                     VerticalAlignment="Center"
+                                     FontSize="18"
+                                     FontWeight="Bold"
+                                     Foreground="DarkGreen"
+                                     Text="Deep 3D"/>
+
+                        <TextBlock3D Width="220"
+                                     Height="40"
+                                     Depth="8"
+                                     Margin="0,0,0,30"
+                                     HorizontalAlignment="Center"
+                                     VerticalAlignment="Bottom"
+                                     FontSize="16"
+                                     Foreground="Brown"
+                                     Text="Shallow Depth"/>
+                    </Grid3D>
+                </Root3D>
+            </Border>
+
+            <!-- Section 3: Border3D with Nested 3D Controls -->
+            <TextBlock Margin="0,10,0,10"
+                       FontSize="18"
+                       FontWeight="Bold"
+                       Text="Border3D with Nested 3D Controls"/>
+            <Border Margin="0,0,0,20"
+                    Padding="10"
+                    BorderBrush="Gray"
+                    BorderThickness="1">
+                <Root3D Height="280">
+                    <Grid3D>
+                        <Border3D Width="180"
+                                  Height="80"
+                                  Depth="15"
+                                  Margin="20,20,0,0"
+                                  HorizontalAlignment="Left"
+                                  VerticalAlignment="Top"
+                                  Background="Pink"
+                                  BorderBrush="Red"
+                                  BorderThickness="3">
+                            <TextBlock3D Width="150"
+                                         Height="40"
+                                         Depth="8"
+                                         HorizontalAlignment="Center"
+                                         VerticalAlignment="Center"
+                                         FontSize="14"
+                                         FontWeight="Bold"
+                                         Foreground="DarkRed"
+                                         Text="Bordered 3D"
+                                         TextAlignment="Center"/>
+                        </Border3D>
+
+                        <Border3D Width="200"
+                                  Height="90"
+                                  Depth="20"
+                                  Margin="0,20,20,0"
+                                  HorizontalAlignment="Right"
+                                  VerticalAlignment="Top"
+                                  Background="LightCyan"
+                                  BorderBrush="Blue"
+                                  BorderThickness="4">
+                            <TextBlock3D Width="170"
+                                         Height="50"
+                                         Depth="12"
+                                         HorizontalAlignment="Center"
+                                         VerticalAlignment="Center"
+                                         FontSize="16"
+                                         FontWeight="Bold"
+                                         Foreground="DarkBlue"
+                                         Text="Deep Border"
+                                         TextAlignment="Center"/>
+                        </Border3D>
+
+                        <Border3D Width="220"
+                                  Height="100"
+                                  Depth="25"
+                                  Margin="0,0,0,20"
+                                  HorizontalAlignment="Center"
+                                  VerticalAlignment="Bottom"
+                                  Background="LightGreen"
+                                  BorderBrush="Green"
+                                  BorderThickness="5">
+                            <Button3D Width="180" Height="50" Depth="10" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Green" Content="Nested Button" Foreground="White"/>
+                        </Border3D>
+                    </Grid3D>
+                </Root3D>
+            </Border>
+
+            <!-- Section 4: Nested 3D Layout -->
+            <TextBlock Margin="0,10,0,10"
+                       FontSize="18"
+                       FontWeight="Bold"
+                       Text="Nested 3D Layout"/>
+            <Border Margin="0,0,0,20"
+                    Padding="10"
+                    BorderBrush="Gray"
+                    BorderThickness="1">
+                <Root3D Height="300">
+                    <Grid3D>
+                        <Border3D Width="280"
+                                  Height="220"
+                                  Depth="20"
+                                  HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"
+                                  Background="Lavender"
+                                  BorderBrush="Purple"
+                                  BorderThickness="3">
+                            <Grid3D>
+                                <TextBlock3D Width="240"
+                                             Height="40"
+                                             Depth="12"
+                                             Margin="0,20,0,0"
+                                             HorizontalAlignment="Center"
+                                             VerticalAlignment="Top"
+                                             FontSize="20"
+                                             FontWeight="Bold"
+                                             Foreground="Purple"
+                                             Text="3D Card Title"
+                                             TextAlignment="Center"/>
+
+                                <TextBlock3D Width="220"
+                                             Height="30"
+                                             Depth="8"
+                                             Margin="0,70,0,0"
+                                             HorizontalAlignment="Center"
+                                             VerticalAlignment="Top"
+                                             FontSize="14"
+                                             Foreground="DarkSlateBlue"
+                                             Text="Subtitle Text"
+                                             TextAlignment="Center"/>
+
+                                <Button3D Width="200" Height="40" Depth="10" Margin="0,0,0,20" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="Purple" Content="Action Button" FontWeight="Bold" Foreground="White"/>
+                            </Grid3D>
+                        </Border3D>
+                    </Grid3D>
+                </Root3D>
+            </Border>
+
+            <!-- Section 5: Depth Variations -->
+            <TextBlock Margin="0,10,0,10"
+                       FontSize="18"
+                       FontWeight="Bold"
+                       Text="Depth Variations (5 to 50)"/>
+            <Border Margin="0,0,0,20"
+                    Padding="10"
+                    BorderBrush="Gray"
+                    BorderThickness="1">
+                <Root3D Height="150">
+                    <Grid3D>
+                        <Button3D Width="80" Height="35" Depth="5" Margin="20,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Background="LightGray" Content="Depth 5"/>
+
+                        <Button3D Width="80" Height="35" Depth="15" Margin="120,0,0,0" Background="Silver" Content="Depth 15"/>
+
+                        <Button3D Width="80" Height="35" Depth="25" HorizontalAlignment="Center" VerticalAlignment="Center" Background="DarkGray" Content="Depth 25" Foreground="White"/>
+
+                        <Button3D Width="80" Height="35" Depth="40" Margin="0,0,120,0" Background="Gray" Content="Depth 40" Foreground="White"/>
+
+                        <Button3D Width="80" Height="35" Depth="50" Margin="0,0,20,0" HorizontalAlignment="Right" VerticalAlignment="Center" Background="DimGray" Content="Depth 50" Foreground="White"/>
+                    </Grid3D>
+                </Root3D>
+            </Border>
+
+            <!-- Section 6: Grid3D Layout -->
+            <TextBlock Margin="0,10,0,10"
+                       FontSize="18"
+                       FontWeight="Bold"
+                       Text="Grid3D Layout Demo"/>
+            <Border Margin="0,0,0,20"
+                    Padding="10"
+                    BorderBrush="Gray"
+                    BorderThickness="1">
+                <Root3D Height="250">
+                    <Grid3D>
+                        <TextBlock3D Width="140"
+                                     Height="40"
+                                     Depth="10"
+                                     Margin="20,20,0,0"
+                                     HorizontalAlignment="Left"
+                                     VerticalAlignment="Top"
+                                     FontSize="16"
+                                     Foreground="Red"
+                                     Text="Top Left"
+                                     TextAlignment="Center"/>
+
+                        <TextBlock3D Width="140"
+                                     Height="40"
+                                     Depth="10"
+                                     Margin="0,20,20,0"
+                                     HorizontalAlignment="Right"
+                                     VerticalAlignment="Top"
+                                     FontSize="16"
+                                     Foreground="Blue"
+                                     Text="Top Right"
+                                     TextAlignment="Center"/>
+
+                        <TextBlock3D Width="140"
+                                     Height="40"
+                                     Depth="20"
+                                     HorizontalAlignment="Center"
+                                     VerticalAlignment="Center"
+                                     FontSize="16"
+                                     FontWeight="Bold"
+                                     Foreground="Green"
+                                     Text="Center"
+                                     TextAlignment="Center"/>
+
+                        <TextBlock3D Width="140"
+                                     Height="40"
+                                     Depth="10"
+                                     Margin="20,0,0,20"
+                                     HorizontalAlignment="Left"
+                                     VerticalAlignment="Bottom"
+                                     FontSize="16"
+                                     Foreground="Orange"
+                                     Text="Bottom Left"
+                                     TextAlignment="Center"/>
+
+                        <TextBlock3D Width="140"
+                                     Height="40"
+                                     Depth="10"
+                                     Margin="0,0,20,20"
+                                     HorizontalAlignment="Right"
+                                     VerticalAlignment="Bottom"
+                                     FontSize="16"
+                                     Foreground="Purple"
+                                     Text="Bottom Right"
+                                     TextAlignment="Center"/>
+                    </Grid3D>
+                </Root3D>
+            </Border>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>
