@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenSilver.Showcase.Shared", "src\OpenSilver.Showcase.Shared\OpenSilver.Showcase.Shared.csproj", "{74407787-C3A6-49DF-B887-376B797E9615}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenSilver.Showcase.Xaml3D", "src\OpenSilver.Showcase.Xaml3D\OpenSilver.Showcase.Xaml3D.csproj", "{34755BA5-3075-8A5C-DB28-7A74A7CAAC5D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{74407787-C3A6-49DF-B887-376B797E9615}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74407787-C3A6-49DF-B887-376B797E9615}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74407787-C3A6-49DF-B887-376B797E9615}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34755BA5-3075-8A5C-DB28-7A74A7CAAC5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34755BA5-3075-8A5C-DB28-7A74A7CAAC5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34755BA5-3075-8A5C-DB28-7A74A7CAAC5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34755BA5-3075-8A5C-DB28-7A74A7CAAC5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +59,7 @@ Global
 		{A0EA0E2B-0E48-4CC6-8B71-1C048D02D3A9} = {119B9FBC-4843-4625-AAD2-1B1411C26E17}
 		{4A0073EA-FED1-419B-835D-2F5184A0F878} = {0D611A58-8B7C-4320-8BE2-300BA74226DD}
 		{74407787-C3A6-49DF-B887-376B797E9615} = {119B9FBC-4843-4625-AAD2-1B1411C26E17}
+		{34755BA5-3075-8A5C-DB28-7A74A7CAAC5D} = {119B9FBC-4843-4625-AAD2-1B1411C26E17}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {487C6C1E-8943-483B-89FE-84ACF0ECB68D}
