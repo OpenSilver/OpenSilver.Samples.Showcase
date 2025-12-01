@@ -12,7 +12,7 @@
 
   <ItemGroup>
     <PackageReference Include="OpenSilver" Version="[$(OpenSilverVersion)]" />
-    <PackageReference Include="Xaml3D" Version="0.0.1-preview-2025-11-20-070317-8ba65293" />
+    <PackageReference Include="Xaml3D" Version="0.0.1-preview-2025-12-01-062452-787280fd" />
   </ItemGroup>
 
   <ItemGroup>
