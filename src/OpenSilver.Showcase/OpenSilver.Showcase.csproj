@@ -533,7 +533,6 @@
     <Content Include="Other\Planets\Venus.png" />
     <Content Include="Other\SampleProfilePhoto.png" />
     <Content Include="Other\SampleText.txt" />
-    <Content Include="Other\smallBall.png" />
     <Content Include="Other\SampleVideo.mp4" />
     <Content Include="Other\SampleAudio.mp3" />
     <Content Include="Samples\Icons\emoji-codes.txt" />

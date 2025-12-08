@@ -10,11 +10,11 @@ This app contains over 200 small samples that demonstrate OpenSilver’s feature
 ## Or download the mobile app:
 - **Android** *([Link to Google Play](https://play.google.com/store/apps/details?id=net.opensilver.showcase))*
 
-  [![qr_code_android_app_small](https://github.com/user-attachments/assets/028e8cf1-3f56-4a6a-a762-40aad4c99e66)](https://play.google.com/store/apps/details?id=net.opensilver.showcase))
+  [![qr_code_android_app_small](https://github.com/user-attachments/assets/028e8cf1-3f56-4a6a-a762-40aad4c99e66)](https://play.google.com/store/apps/details?id=net.opensilver.showcase)
 
 - **iOS** *([Link to Apple App Store](https://apps.apple.com/app/opensilver-showcase/id6746472943))* 
 
-  [![qr_code_ios_app_small](https://github.com/user-attachments/assets/3172019c-0d7f-4d4a-832c-1ad82e3595c4)]([Link to Apple App Store](https://apps.apple.com/app/opensilver-showcase/id6746472943))
+  [![qr_code_ios_app_small](https://github.com/user-attachments/assets/3172019c-0d7f-4d4a-832c-1ad82e3595c4)](https://apps.apple.com/app/opensilver-showcase/id6746472943)
 
 
 
@@ -37,6 +37,8 @@ The different solution files are for different purposes and include different pr
 - **OpenSilver.Showcase - Minimal(Fast).sln** contains the bare minimum C# projects to run the showcase. The projects of Blazor components are not included and the samples for these components will instead be shown in an iFrame. This is recommended for users who wish to be able to build and run the showcase faster.
 - **OpenSilver.Showcase - With Blazor Demos.sln** contains all the C# projects, except the projects for Blazor component that do require a license.
 - **OpenSilver.Showcase - C# Full.sln** contains all the C# projects, including those that use third party Blazor components that require a license.
+
+To load the Blazor samples locally, select `Debug-FullBlazor` or `Release-FullBlazor` configuration. Otherwise, the Blazor samples will be shown in an iFrame pointing to the hosted version.
 
 Here are the projects included for each .sln file (names shortened for readability):
 | Solution file         | OpenSilver.Showcase | Browser      | Simulator | MauiHybrid | Shared | Blazorise | MudBlazor | Radzen | DevExpress | Syncfusion |
