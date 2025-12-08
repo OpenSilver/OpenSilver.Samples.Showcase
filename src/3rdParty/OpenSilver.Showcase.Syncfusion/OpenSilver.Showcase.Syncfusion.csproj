@@ -17,8 +17,8 @@
 
   <ItemGroup>
 	<PackageReference Include="OpenSilver" Version="[$(OpenSilverVersion)]" />
-    <PackageReference Include="OpenSilver.Blazor" Version="3.3.0-preview-2025-08-18-074748-f3593a5a" />
-    <PackageReference Include="OpenSilver.ControlsKit" Version="3.3.0-preview-2025-06-19-155847-a6b8b91" />
+    <PackageReference Include="OpenSilver.Blazor" Version="[$(OpenSilverBlazorVersion)]" />
+    <PackageReference Include="OpenSilver.ControlsKit" Version="[$(OpenSilverControlsKitVersion)]" />
     <PackageReference Include="Syncfusion.Blazor.BarcodeGenerator" Version="30.1.41" />
     <PackageReference Include="Syncfusion.Blazor.Grid" Version="30.1.41" />
     <PackageReference Include="Syncfusion.Blazor.Themes" Version="30.1.41" />

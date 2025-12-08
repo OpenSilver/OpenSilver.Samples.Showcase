@@ -8,7 +8,7 @@
 
   <ItemGroup>
 	  <PackageReference Include="MudBlazor" Version="8.5.1" />
-	  <PackageReference Include="OpenSilver.Blazor" Version="3.3.0-preview-2025-08-18-074748-f3593a5a" />
+	  <PackageReference Include="OpenSilver.Blazor" Version="[$(OpenSilverBlazorVersion)]" />
     <PackageReference Include="OpenSilver" Version="[$(OpenSilverVersion)]" />
     <PackageReference Include="OpenSilver.ControlsKit" Version="[$(OpenSilverControlsKitVersion)]" />
   </ItemGroup>

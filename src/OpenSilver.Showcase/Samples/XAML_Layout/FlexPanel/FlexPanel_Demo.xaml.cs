@@ -12,7 +12,7 @@ namespace OpenSilver.Showcase
         {
             this.InitializeComponent();
 
-            List<JustifyContent> justifies = new List<JustifyContent> { JustifyContent.Start, JustifyContent.End, JustifyContent.Center, JustifyContent.SpaceAround, JustifyContent.SpaceAuto, JustifyContent.SpaceBetween, JustifyContent.SpaceEvenly };
+            List<JustifyContent> justifies = new List<JustifyContent> { JustifyContent.Start, JustifyContent.End, JustifyContent.Center, JustifyContent.SpaceAround, JustifyContent.SpaceBetween, JustifyContent.SpaceEvenly };
             JustifyComboBox.ItemsSource = justifies;
         }
 

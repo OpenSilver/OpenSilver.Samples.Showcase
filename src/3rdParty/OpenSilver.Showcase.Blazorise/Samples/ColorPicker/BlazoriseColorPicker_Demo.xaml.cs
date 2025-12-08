@@ -12,7 +12,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Navigation;
 using System.Globalization;
-using System.Windows.Media;
 
 namespace OpenSilver.Showcase
 {

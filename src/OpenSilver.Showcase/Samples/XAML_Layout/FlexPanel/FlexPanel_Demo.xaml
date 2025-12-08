@@ -26,7 +26,7 @@
 
                 <ComboBox x:Name="JustifyComboBox" Width="200" HorizontalAlignment="Center" SelectedIndex="0"/>
 
-                <controlskit:FlexPanel Margin="2" Justify="{Binding SelectedValue, ElementName=JustifyComboBox}" Orientation="Horizontal">
+                <controlskit:FlexPanel Margin="2" JustifyContent="{Binding SelectedValue, ElementName=JustifyComboBox}" Orientation="Horizontal">
                     <Grid Width="50" Height="50" Background="Red" />
                     <Grid Width="50" Height="50" Background="Green" />
                     <Grid Width="50" Height="50" Background="Blue" />
