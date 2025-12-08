@@ -26,8 +26,8 @@
                                                 FileName="ComboBox_Demo.xaml.vb" />
                     <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ComboBox"
                                                 FileName="ComboBox_Demo.xaml.fs" />
-                    <local:ViewStyleSourceInfo TabHeader="Default ComboBox Style" Fragment="#L2199-L2406" />
-                    <local:ViewModernStyleSourceInfo TabHeader="Modern ComboBox Style" Fragment="#L2578-L2881"/>
+                    <local:ViewStyleSourceInfo TabHeader="Default ComboBox Style" Fragment="#L1975-L2391" />
+                    <local:ViewModernStyleSourceInfo TabHeader="Modern ComboBox Style" Fragment="#L2610-L2913"/>
                     <local:ViewSourceButtonInfo RelativePath="src/Other"
                                                 FileName="Planet.cs" />
                     <local:ViewSourceButtonInfo RelativePath="src/Other"

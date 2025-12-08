@@ -50,8 +50,8 @@
                     <local:ViewSourceButtonInfo FileName="TextBox_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/TextBox"/>
                     <local:ViewSourceButtonInfo FileName="TextBox_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/TextBox"/>
                     <local:ViewSourceButtonInfo FileName="TextBoxStyles.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/TextBox"/>
-                    <local:ViewStyleSourceInfo TabHeader="Default TextBox Style" Fragment="#L1360-L1531"/>
-                    <local:ViewModernStyleSourceInfo TabHeader="Modern TextBox Style" Fragment="#L409-L609"/>
+                    <local:ViewStyleSourceInfo TabHeader="Default TextBox Style" Fragment="#L1351-L1522"/>
+                    <local:ViewModernStyleSourceInfo TabHeader="Modern TextBox Style" Fragment="#L415-L615"/>
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

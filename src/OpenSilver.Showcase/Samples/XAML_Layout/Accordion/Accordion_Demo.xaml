@@ -92,7 +92,7 @@
                     <local:ViewSourceButtonInfo FileName="Accordion_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/Accordion"/>
                     <local:ViewSourceButtonInfo FileName="Accordion_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/Accordion"/>
                     <local:ViewSourceButtonInfo FileName="Accordion_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/Accordion"/>
-                    <local:ViewStyleSourceInfo Fragment="#L490-L863"
+                    <local:ViewStyleSourceInfo Fragment="#L490-L864"
                                                RelativePath="src/Runtime/Controls.Layout.Toolkit/Themes"
                                                TabHeader="Default Accordion Style"/>
                     <local:ViewModernStyleSourceInfo FileName="OpenSilver.Controls.Layout.Toolkit.xaml" TabHeader="Modern Accordion Style"/>

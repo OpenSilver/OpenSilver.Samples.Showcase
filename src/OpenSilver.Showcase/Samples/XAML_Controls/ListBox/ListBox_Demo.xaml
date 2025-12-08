@@ -88,8 +88,8 @@
                     <local:ViewSourceButtonInfo FileName="ListBox_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ListBox"/>
                     <local:ViewSourceButtonInfo FileName="Planet.vb" RelativePath="src/Other"/>
                     <local:ViewSourceButtonInfo FileName="Planet.fs" RelativePath="src/Other"/>
-                    <local:ViewStyleSourceInfo Fragment="#L1868-L1988" TabHeader="Default ListBox Style"/>
-                    <local:ViewModernStyleSourceInfo Fragment="#L1526-L1653" TabHeader="Modern ListBox Style"/>
+                    <local:ViewStyleSourceInfo Fragment="#L1853-L1973" TabHeader="Default ListBox Style"/>
+                    <local:ViewModernStyleSourceInfo Fragment="#L1418-L1669" TabHeader="Modern ListBox Style"/>
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

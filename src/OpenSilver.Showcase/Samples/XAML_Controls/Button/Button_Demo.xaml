@@ -77,7 +77,7 @@
                     <local:ViewSourceButtonInfo FileName="Button_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/Button"/>
                     <local:ViewSourceButtonInfo FileName="Button_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/Button"/>
                     <local:ViewSourceButtonInfo FileName="ButtonStyles.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/Button/Styles"/>
-                    <local:ViewStyleSourceInfo TabHeader="Default Button Style" Fragment="#L143-L280"/>
+                    <local:ViewStyleSourceInfo TabHeader="Default Button Style" Fragment="#L147-L282"/>
                     <local:ViewModernStyleSourceInfo TabHeader="Modern Button Style" Fragment="#L71-L176"/>
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>

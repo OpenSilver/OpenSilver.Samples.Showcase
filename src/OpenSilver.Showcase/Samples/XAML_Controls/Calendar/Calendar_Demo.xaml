@@ -164,7 +164,7 @@
                                                RelativePath="src/Runtime/Controls/Themes"
                                                TabHeader="Default Calendar Style"/>
                     <local:ViewModernStyleSourceInfo FileName="OpenSilver.Controls.xaml"
-                                                     Fragment="#L606-L794"
+                                                     Fragment="#L610-L800"
                                                      TabHeader="Modern Calendar Style"/>
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>

@@ -38,8 +38,8 @@
                     <local:ViewSourceButtonInfo FileName="Thumb_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/Thumb"/>
                     <local:ViewSourceButtonInfo FileName="Thumb_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/Thumb"/>
                     <local:ViewSourceButtonInfo FileName="Thumb_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/Thumb"/>
-                    <local:ViewStyleSourceInfo TabHeader="Default Thumb Style" Fragment="#L3833-L3975"/>
-                    <local:ViewModernStyleSourceInfo TabHeader="Modern Thumb Style" Fragment="#L3450-L3541"/>
+                    <local:ViewStyleSourceInfo TabHeader="Default Thumb Style" Fragment="#L3819-L3961"/>
+                    <local:ViewModernStyleSourceInfo TabHeader="Modern Thumb Style" Fragment="#L3492-L3581"/>
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

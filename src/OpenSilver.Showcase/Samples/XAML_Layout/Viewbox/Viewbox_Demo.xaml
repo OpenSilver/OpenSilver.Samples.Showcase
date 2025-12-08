@@ -32,7 +32,8 @@
                 </Border>
             </Grid>
             <local:ViewSourceButton Grid.Row="2"
-                                    Background="#FF87C0FF">                <local:ViewSourceButton.Sources>
+                                    Background="#FF87C0FF">
+                <local:ViewSourceButton.Sources>                    
                     <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/Viewbox"
                                                 FileName="Viewbox_Demo.xaml" />
                     <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/Viewbox"
@@ -41,7 +42,7 @@
                                                 FileName="Viewbox_Demo.xaml.vb" />
                     <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/Viewbox"
                                                 FileName="Viewbox_Demo.xaml.fs" />
-                    <local:ViewStyleSourceInfo TabHeader="Viewbox Style" Fragment="#L1850-L1866" />
+                    <local:ViewStyleSourceInfo TabHeader="Viewbox Style" Fragment="#L1837-L1851" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

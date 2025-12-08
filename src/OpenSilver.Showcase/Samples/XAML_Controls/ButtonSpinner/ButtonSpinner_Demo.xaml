@@ -40,8 +40,8 @@
                     <local:ViewSourceButtonInfo FileName="ButtonSpinner_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ButtonSpinner"/>
                     <local:ViewSourceButtonInfo FileName="ButtonSpinner_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ButtonSpinner"/>
                     <local:ViewSourceButtonInfo FileName="ButtonSpinner_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ButtonSpinner"/>
-                    <local:ViewStyleSourceInfo TabHeader="Default ButtonSpinner Style" RelativePath="src/Runtime/Controls.Input.Toolkit/Themes" Fragment="#L1074-L1543"/>
-                    <local:ViewModernStyleSourceInfo FileName="OpenSilver.Controls.Input.Toolkit.xaml" TabHeader="Modern ButtonSpinner Style" Fragment="#L680-L837"/>
+                    <local:ViewStyleSourceInfo TabHeader="Default ButtonSpinner Style" RelativePath="src/Runtime/Controls.Input.Toolkit/Themes" Fragment="#L1074-L1537"/>
+                    <local:ViewModernStyleSourceInfo FileName="OpenSilver.Controls.Input.Toolkit.xaml" TabHeader="Modern ButtonSpinner Style" Fragment="#L695-L852"/>
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

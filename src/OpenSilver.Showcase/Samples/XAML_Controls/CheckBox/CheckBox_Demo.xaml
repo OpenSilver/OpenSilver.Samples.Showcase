@@ -23,8 +23,8 @@
                                                 FileName="CheckBox_Demo.xaml.vb" />
                     <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/CheckBox"
                                                 FileName="CheckBox_Demo.xaml.fs" />
-                    <local:ViewStyleSourceInfo TabHeader="Default CheckBox Style" Fragment="#L436-L733" />
-                    <local:ViewModernStyleSourceInfo TabHeader="Modern CheckBox Style" Fragment="#L676-L973" />
+                    <local:ViewStyleSourceInfo TabHeader="Default CheckBox Style" Fragment="#L436-L731" />
+                    <local:ViewModernStyleSourceInfo TabHeader="Modern CheckBox Style" Fragment="#L684-L981" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

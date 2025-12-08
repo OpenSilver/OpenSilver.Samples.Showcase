@@ -93,8 +93,8 @@
                     <local:ViewSourceButtonInfo FileName="ToolTip_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ToolTip"/>
                     <local:ViewSourceButtonInfo FileName="ToolTip_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ToolTip"/>
                     <local:ViewSourceButtonInfo FileName="ToolTip_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ToolTip"/>
-                    <local:ViewStyleSourceInfo TabHeader="Default ToolTip Style" Fragment="#L1799-L1848"/>
-                    <local:ViewModernStyleSourceInfo TabHeader="Modern ToolTip Style" Fragment="#L3252-L3279"/>
+                    <local:ViewStyleSourceInfo TabHeader="Default ToolTip Style" Fragment="#L1788-L1835"/>
+                    <local:ViewModernStyleSourceInfo TabHeader="Modern ToolTip Style" Fragment="#L3288-L3317"/>
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

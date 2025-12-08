@@ -53,13 +53,14 @@
                 </StackPanel>
             </StackPanel>
 
-            <local:ViewSourceButton Grid.Row="3" Background="#FCAB54">                <local:ViewSourceButton.Sources>
+            <local:ViewSourceButton Grid.Row="3" Background="#FCAB54">
+                <local:ViewSourceButton.Sources>
                     <local:ViewSourceButtonInfo FileName="Expander_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/Expander"/>
                     <local:ViewSourceButtonInfo FileName="Expander_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/Expander"/>
                     <local:ViewSourceButtonInfo FileName="Expander_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/Expander"/>
                     <local:ViewSourceButtonInfo FileName="Expander_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/Expander"/>
-                    <local:ViewStyleSourceInfo TabHeader="Default Expander Style" RelativePath="src/Runtime/Controls.Toolkit/Themes" Fragment="#L443-L1238"/>
-                    <local:ViewModernStyleSourceInfo TabHeader="Modern Expander Style" FileName="OpenSilver.Controls.Toolkit.xaml" Fragment="#L255-L937"/>
+                    <local:ViewStyleSourceInfo TabHeader="Default Expander Style" RelativePath="src/Runtime/Controls.Toolkit/Themes" Fragment="#L443-L1231"/>
+                    <local:ViewModernStyleSourceInfo TabHeader="Modern Expander Style" FileName="OpenSilver.Controls.Toolkit.xaml" Fragment="#L257-L939"/>
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>
