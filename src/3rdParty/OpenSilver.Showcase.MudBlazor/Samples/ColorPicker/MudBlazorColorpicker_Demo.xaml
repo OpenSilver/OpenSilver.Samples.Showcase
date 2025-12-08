@@ -26,9 +26,9 @@
 
             <local:ViewSourceButton Grid.Row="2" Background="#FFFF81E3">
                 <local:ViewSourceButton.Sources>
-                    <local:ViewMudBlazorSourceInfo RelativePath="src/3rdParty/OpenSilver.Showcase.MudBlazor/Samples/ColorPicker"
+                    <local:ViewSourceButtonInfo RelativePath="src/3rdParty/OpenSilver.Showcase.MudBlazor/Samples/ColorPicker"
                         FileName="MudBlazorColorpicker_Demo.xaml" />
-                    <local:ViewMudBlazorSourceInfo RelativePath="src/3rdParty/OpenSilver.Showcase.MudBlazor/Samples/ColorPicker"
+                    <local:ViewSourceButtonInfo RelativePath="src/3rdParty/OpenSilver.Showcase.MudBlazor/Samples/ColorPicker"
                         FileName="MudBlazorColorpicker_Demo.xaml.cs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>

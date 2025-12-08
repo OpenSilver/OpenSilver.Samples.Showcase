@@ -28,9 +28,9 @@
 
             <local:ViewSourceButton Grid.Row="2" Background="#FFFF81E3">
                 <local:ViewSourceButton.Sources>
-                    <local:ViewSyncfusionSourceInfo RelativePath="src/3rdParty/OpenSilver.Showcase.Syncfusion/Samples/QRCode"
+                    <local:ViewSourceButtonInfo RelativePath="src/3rdParty/OpenSilver.Showcase.Syncfusion/Samples/QRCode"
 FileName="SyncfusionQRCode_Demo.xaml" />
-                    <local:ViewSyncfusionSourceInfo RelativePath="src/3rdParty/OpenSilver.Showcase.Syncfusion/Samples/QRCode"
+                    <local:ViewSourceButtonInfo RelativePath="src/3rdParty/OpenSilver.Showcase.Syncfusion/Samples/QRCode"
 FileName="SyncfusionQRCode_Demo.xaml.cs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>

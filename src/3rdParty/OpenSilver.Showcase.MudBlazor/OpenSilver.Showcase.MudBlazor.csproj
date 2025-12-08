@@ -15,7 +15,6 @@
 
 
 	<ItemGroup>
-		<Compile Include="Other\Internals\ViewMudBlazorSourceInfo.cs" />
 		<Compile Include="Samples\Button\MudBlazorButton_Demo.xaml.cs" />
 		<Compile Include="Samples\ColorPicker\MudBlazorColorpicker_Demo.xaml.cs" />
 		<Compile Include="Samples\DataGrid\Employees.cs" />

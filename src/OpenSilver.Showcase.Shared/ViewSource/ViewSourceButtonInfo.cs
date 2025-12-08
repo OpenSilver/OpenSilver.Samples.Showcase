@@ -14,9 +14,9 @@
 
         public string RelativePath { get; set; }
 
-        public string Branch { get; set; } = "develop";
+        public string Commit { get; set; } = "04289e41e247599d036aa0bf25a6169c3504363c";
 
-        public string Repository { get; set; } = "OpenSilver.Showcase";
+        public string Repository { get; set; } = "OpenSilver.Samples.Showcase";
 
         public string Owner { get; set; } = "OpenSilver";
 
@@ -28,6 +28,6 @@
 
         public string GetHeader() => !string.IsNullOrEmpty(TabHeader) ? TabHeader : FileName;
 
-        public string GetAbsoluteUrl() => $"https://github.com/{Owner}/{Repository}/blob/{Branch}/{RelativePath}/{FileName}{Fragment}";
+        public string GetAbsoluteUrl() => $"https://github.com/{Owner}/{Repository}/blob/{Commit}/{RelativePath}/{FileName}{Fragment}";
     }
 }

@@ -47,9 +47,9 @@
 
             <local:ViewSourceButton Grid.Row="2" Background="#FFFF81E3">
                 <local:ViewSourceButton.Sources>
-                    <local:ViewDevExpressSourceInfo RelativePath="src/3rdParty/OpenSilver.Showcase.DevExpress/Samples/Carousel"
+                    <local:ViewSourceButtonInfo RelativePath="src/3rdParty/OpenSilver.Showcase.DevExpress/Samples/Carousel"
             FileName="DevExpressCarousel_Demo.xaml" />
-                    <local:ViewDevExpressSourceInfo RelativePath="src/3rdParty/OpenSilver.Showcase.DevExpress/Samples/Carousel"
+                    <local:ViewSourceButtonInfo RelativePath="src/3rdParty/OpenSilver.Showcase.DevExpress/Samples/Carousel"
             FileName="DevExpressCarousel_Demo.xaml.cs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>

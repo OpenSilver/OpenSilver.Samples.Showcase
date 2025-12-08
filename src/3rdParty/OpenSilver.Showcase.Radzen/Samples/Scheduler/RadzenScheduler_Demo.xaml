@@ -27,11 +27,11 @@
             </StackPanel>
             <local:ViewSourceButton Grid.Row="2" Background="#FFFF81E3">
                 <local:ViewSourceButton.Sources>
-                    <local:ViewRadzenSourceInfo RelativePath="src/3rdParty/OpenSilver.Showcase.Radzen/Samples/Scheduler"
+                    <local:ViewSourceButtonInfo RelativePath="src/3rdParty/OpenSilver.Showcase.Radzen/Samples/Scheduler"
                         FileName="RadzenScheduler_Demo.xaml" />
-                    <local:ViewRadzenSourceInfo RelativePath="src/3rdParty/OpenSilver.Showcase.Radzen/Samples/Scheduler"
+                    <local:ViewSourceButtonInfo RelativePath="src/3rdParty/OpenSilver.Showcase.Radzen/Samples/Scheduler"
                         FileName="RadzenScheduler_Demo.xaml.cs" />
-                    <local:ViewRadzenSourceInfo RelativePath="src/3rdParty/OpenSilver.Showcase.Radzen/Samples/Scheduler"
+                    <local:ViewSourceButtonInfo RelativePath="src/3rdParty/OpenSilver.Showcase.Radzen/Samples/Scheduler"
                         FileName="Appointment.cs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>

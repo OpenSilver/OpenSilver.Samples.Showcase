@@ -30,11 +30,11 @@
             </StackPanel>
             <local:ViewSourceButton Grid.Row="2" Background="#FFFF81E3">
                 <local:ViewSourceButton.Sources>
-                    <local:ViewRadzenSourceInfo RelativePath="src/3rdParty/OpenSilver.Showcase.Radzen/Samples/DataGrid"
+                    <local:ViewSourceButtonInfo RelativePath="src/3rdParty/OpenSilver.Showcase.Radzen/Samples/DataGrid"
                                                 FileName="RadzenDataGrid_Demo.xaml" />
-                    <local:ViewRadzenSourceInfo RelativePath="src/3rdParty/OpenSilver.Showcase.Radzen/Samples/DataGrid"
+                    <local:ViewSourceButtonInfo RelativePath="src/3rdParty/OpenSilver.Showcase.Radzen/Samples/DataGrid"
                                                 FileName="RadzenDataGrid_Demo.xaml.cs" />
-                    <local:ViewRadzenSourceInfo RelativePath="src/3rdParty/OpenSilver.Showcase.Radzen/Samples"
+                    <local:ViewSourceButtonInfo RelativePath="src/3rdParty/OpenSilver.Showcase.Radzen/Samples"
                                                 FileName="Employees.cs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>

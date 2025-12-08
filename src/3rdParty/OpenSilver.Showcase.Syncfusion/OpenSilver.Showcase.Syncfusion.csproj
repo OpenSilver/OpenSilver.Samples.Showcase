@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <Compile Include="Models\Employees.cs" />
-    <Compile Include="Other\Internals\ViewSyncfusionSourceInfo.cs" />
     <Compile Include="Samples\DataGrid\SyncfusionDataGrid_Demo.xaml.cs" />
     <Compile Include="Samples\QRCode\SyncfusionQRCode_Demo.xaml.cs" />
     <Compile Include="Samples\Syncfusion_Sample.xaml.cs" />

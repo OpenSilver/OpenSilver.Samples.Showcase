@@ -15,7 +15,6 @@
 
   <ItemGroup>
     <Compile Include="Models\Planet.cs" />
-    <Compile Include="Other\Internals\ViewRadzenSourceInfo.cs" />
     <Compile Include="Samples\AutoComplete\RadzenAutoComplete_Demo.xaml.cs" />
     <Compile Include="Samples\Button\RadzenButton_Demo.xaml.cs" />
     <Compile Include="Samples\CheckBoxList\RadzenCheckBoxList_Demo.xaml.cs" />

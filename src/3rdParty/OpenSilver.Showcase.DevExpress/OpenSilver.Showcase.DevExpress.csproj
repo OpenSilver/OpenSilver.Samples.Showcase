@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <Compile Include="Models\Planet.cs" />
-    <Compile Include="Other\Internals\ViewDevExpressSourceInfo.cs" />
     <Compile Include="Samples\Carousel\DevExpressCarousel_Demo.xaml.cs" />
     <Compile Include="Samples\DateEdit\DevExpressDateEdit_Demo.xaml.cs" />
     <Compile Include="Samples\DevExpress_Sample.xaml.cs" />

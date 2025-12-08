@@ -28,9 +28,9 @@
             </StackPanel>
             <local:ViewSourceButton Grid.Row="2" Background="#FFFF81E3">
                 <local:ViewSourceButton.Sources>
-                    <local:ViewRadzenSourceInfo RelativePath="src/3rdParty/OpenSilver.Showcase.Radzen/Samples/DatePicker"
+                    <local:ViewSourceButtonInfo RelativePath="src/3rdParty/OpenSilver.Showcase.Radzen/Samples/DatePicker"
                         FileName="RadzenDatePicker_Demo.xaml" />
-                    <local:ViewRadzenSourceInfo RelativePath="src/3rdParty/OpenSilver.Showcase.Radzen/Samples/DatePicker"
+                    <local:ViewSourceButtonInfo RelativePath="src/3rdParty/OpenSilver.Showcase.Radzen/Samples/DatePicker"
                         FileName="RadzenDatePicker_Demo.xaml.cs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>

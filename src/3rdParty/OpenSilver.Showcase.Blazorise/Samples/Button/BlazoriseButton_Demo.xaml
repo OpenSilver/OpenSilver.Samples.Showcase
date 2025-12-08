@@ -25,9 +25,9 @@
 
             <local:ViewSourceButton Grid.Row="2" Background="#FFFF81E3">
                 <local:ViewSourceButton.Sources>
-                    <local:ViewBlazoriseSourceInfo RelativePath="src/3rdParty/OpenSilver.Showcase.Blazorise/Samples/Button"
+                    <local:ViewSourceButtonInfo RelativePath="src/3rdParty/OpenSilver.Showcase.Blazorise/Samples/Button"
                         FileName="BlazoriseButton_Demo.xaml" />
-                    <local:ViewBlazoriseSourceInfo RelativePath="src/3rdParty/OpenSilver.Showcase.Blazorise/Samples/Button"
+                    <local:ViewSourceButtonInfo RelativePath="src/3rdParty/OpenSilver.Showcase.Blazorise/Samples/Button"
                         FileName="BlazoriseButton_Demo.xaml.cs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>

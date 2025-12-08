@@ -7,7 +7,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Compile Include="Other\Internals\ViewBlazoriseSourceInfo.cs" />
 	  <Compile Include="Samples\Blazorise_Sample.xaml.cs" />
 	  <Compile Include="Samples\Button\BlazoriseButton_Demo.xaml.cs" />
 	  <Compile Include="Samples\ColorPicker\BlazoriseColorPicker_Demo.xaml.cs" />
