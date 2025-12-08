@@ -51,11 +51,11 @@
             <local:ViewSourceButton Grid.Row="3" Background="#FFD46141">
                 <local:ViewSourceButton.Sources>
                     <local:ViewSourceButtonInfo FileName="Themes_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Themes"/>
-                    <local:ViewSourceButtonInfo FileName="App.xaml" RelativePath="src"/>
-                    <local:ViewSourceButtonInfo FileName="MainPage.xaml" RelativePath="src"/>
-                    <local:ViewSourceButtonInfo FileName="MainPage.xaml.cs" RelativePath="src"/>
-                    <local:ViewSourceButtonInfo FileName="MainPage.xaml.vb" RelativePath="src"/>
-                    <local:ViewSourceButtonInfo FileName="MainPage.xaml.fs" RelativePath="src"/>
+                    <local:ViewSourceButtonInfo FileName="App.xaml" RelativePath="src\OpenSilver.Showcase"/>
+                    <local:ViewSourceButtonInfo FileName="MainPage.xaml" RelativePath="src\OpenSilver.Showcase"/>
+                    <local:ViewSourceButtonInfo FileName="MainPage.xaml.cs" RelativePath="src\OpenSilver.Showcase"/>
+                    <local:ViewSourceButtonInfo FileName="MainPage.xaml.vb" RelativePath="src\OpenSilver.Showcase"/>
+                    <local:ViewSourceButtonInfo FileName="MainPage.xaml.fs" RelativePath="src\OpenSilver.Showcase"/>
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

@@ -83,11 +83,11 @@
                 <local:ViewSourceButton.Sources>
                     <local:ViewSourceButtonInfo FileName="ListBox_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ListBox"/>
                     <local:ViewSourceButtonInfo FileName="ListBox_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ListBox"/>
-                    <local:ViewSourceButtonInfo FileName="Planet.cs" RelativePath="src/Other"/>
+                    <local:ViewSourceButtonInfo FileName="Planet.cs" RelativePath="src/OpenSilver.Showcase/Other"/>
                     <local:ViewSourceButtonInfo FileName="ListBox_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ListBox"/>
                     <local:ViewSourceButtonInfo FileName="ListBox_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ListBox"/>
-                    <local:ViewSourceButtonInfo FileName="Planet.vb" RelativePath="src/Other"/>
-                    <local:ViewSourceButtonInfo FileName="Planet.fs" RelativePath="src/Other"/>
+                    <local:ViewSourceButtonInfo FileName="Planet.vb" RelativePath="src/OpenSilver.Showcase/Other"/>
+                    <local:ViewSourceButtonInfo FileName="Planet.fs" RelativePath="src/OpenSilver.Showcase/Other"/>
                     <local:ViewStyleSourceInfo Fragment="#L1853-L1973" TabHeader="Default ListBox Style"/>
                     <local:ViewModernStyleSourceInfo Fragment="#L1418-L1669" TabHeader="Modern ListBox Style"/>
                 </local:ViewSourceButton.Sources>

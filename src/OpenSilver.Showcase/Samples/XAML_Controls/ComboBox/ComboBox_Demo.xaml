@@ -28,11 +28,11 @@
                                                 FileName="ComboBox_Demo.xaml.fs" />
                     <local:ViewStyleSourceInfo TabHeader="Default ComboBox Style" Fragment="#L1975-L2391" />
                     <local:ViewModernStyleSourceInfo TabHeader="Modern ComboBox Style" Fragment="#L2610-L2913"/>
-                    <local:ViewSourceButtonInfo RelativePath="src/Other"
+                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Other"
                                                 FileName="Planet.cs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Other"
+                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Other"
                                                 FileName="Planet.vb" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Other"
+                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Other"
                                                 FileName="Planet.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>

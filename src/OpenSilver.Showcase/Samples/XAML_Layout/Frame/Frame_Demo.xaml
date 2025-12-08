@@ -37,10 +37,10 @@
                     <local:ViewSourceButtonInfo FileName="Frame_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/Frame"/>
                     <local:ViewSourceButtonInfo FileName="Frame_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/Frame"/>
                     <local:ViewSourceButtonInfo FileName="Frame_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/Frame"/>
-                    <local:ViewSourceButtonInfo FileName="MainPage.xaml" RelativePath="src"/>
-                    <local:ViewSourceButtonInfo FileName="MainPage.xaml.cs" RelativePath="src"/>
-                    <local:ViewSourceButtonInfo FileName="MainPage.xaml.vb" RelativePath="src"/>
-                    <local:ViewSourceButtonInfo FileName="MainPage.xaml.fs" RelativePath="src"/>
+                    <local:ViewSourceButtonInfo FileName="MainPage.xaml" RelativePath="src\OpenSilver.Showcase"/>
+                    <local:ViewSourceButtonInfo FileName="MainPage.xaml.cs" RelativePath="src\OpenSilver.Showcase"/>
+                    <local:ViewSourceButtonInfo FileName="MainPage.xaml.vb" RelativePath="src\OpenSilver.Showcase"/>
+                    <local:ViewSourceButtonInfo FileName="MainPage.xaml.fs" RelativePath="src\OpenSilver.Showcase"/>
                     <local:ViewSourceButtonInfo FileName="SearchPage.xaml" RelativePath="src/OpenSilver.Showcase/Samples"/>
                     <local:ViewSourceButtonInfo FileName="SearchPage.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples"/>
                     <local:ViewSourceButtonInfo FileName="SearchPage.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples"/>

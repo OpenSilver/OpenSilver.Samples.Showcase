@@ -36,9 +36,9 @@
                     <local:ViewSourceButtonInfo FileName="MarkupExtensions_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/MarkupExtensions"/>
                     <local:ViewSourceButtonInfo FileName="MarkupExtensions_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/MarkupExtensions"/>
                     <local:ViewSourceButtonInfo FileName="MarkupExtensions_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/MarkupExtensions"/>
-                    <local:ViewSourceButtonInfo FileName="ResxExtension.cs" RelativePath="src/Other/MarkupExtensions"/>
-                    <local:ViewSourceButtonInfo FileName="ResxExtension.vb" RelativePath="src/Other/MarkupExtensions"/>
-                    <local:ViewSourceButtonInfo FileName="ResxExtension.fs" RelativePath="src/Other/MarkupExtensions"/>
+                    <local:ViewSourceButtonInfo FileName="ResxExtension.cs" RelativePath="src/OpenSilver.Showcase/Other/MarkupExtensions"/>
+                    <local:ViewSourceButtonInfo FileName="ResxExtension.vb" RelativePath="src/OpenSilver.Showcase/Other/MarkupExtensions"/>
+                    <local:ViewSourceButtonInfo FileName="ResxExtension.fs" RelativePath="src/OpenSilver.Showcase/Other/MarkupExtensions"/>
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

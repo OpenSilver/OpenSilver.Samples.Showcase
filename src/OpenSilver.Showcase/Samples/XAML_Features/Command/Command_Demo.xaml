@@ -31,13 +31,10 @@
 
             <local:ViewSourceButton Grid.Row="2" Background="#FFF78069">
                 <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo FileName="Commanding_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Command"/>
-                    <local:ViewSourceButtonInfo FileName="CommandDemoViewModel.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Command"/>
-                    <local:ViewSourceButtonInfo FileName="CommandDemoViewModel.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Command"/>
-                    <local:ViewSourceButtonInfo FileName="CommandDemoViewModel.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Command"/>
-                    <local:ViewSourceButtonInfo FileName="RelayCommand.cs" RelativePath="src/Other"/>
-                    <local:ViewSourceButtonInfo FileName="RelayCommand.vb" RelativePath="src/Other"/>
-                    <local:ViewSourceButtonInfo FileName="RelayCommand.fs" RelativePath="src/Other"/>
+                    <local:ViewSourceButtonInfo FileName="Command_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Command"/>
+                    <local:ViewSourceButtonInfo FileName="CommandDemoViewModel.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Command"/>
+                    <local:ViewSourceButtonInfo FileName="CommandDemoViewModel.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Command"/>
+                    <local:ViewSourceButtonInfo FileName="CommandDemoViewModel.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Command"/>
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

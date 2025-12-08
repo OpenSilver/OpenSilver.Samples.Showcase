@@ -57,9 +57,9 @@
                     <local:ViewSourceButtonInfo FileName="MultiBinding_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/MultiBinding"/>
                     <local:ViewSourceButtonInfo FileName="MultiBinding_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/MultiBinding"/>
                     <local:ViewSourceButtonInfo FileName="MultiBinding_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/MultiBinding"/>
-                    <local:ViewSourceButtonInfo FileName="RgbToBrushConverter.cs" RelativePath="src/Other/Converters"/>
-                    <local:ViewSourceButtonInfo FileName="RgbToBrushConverter.vb" RelativePath="src/Other/Converters"/>
-                    <local:ViewSourceButtonInfo FileName="RgbToBrushConverter.fs" RelativePath="src/Other/Converters"/>
+                    <local:ViewSourceButtonInfo FileName="RgbToBrushConverter.cs" RelativePath="src/OpenSilver.Showcase/Other/Converters"/>
+                    <local:ViewSourceButtonInfo FileName="RgbToBrushConverter.vb" RelativePath="src/OpenSilver.Showcase/Other/Converters"/>
+                    <local:ViewSourceButtonInfo FileName="RgbToBrushConverter.fs" RelativePath="src/OpenSilver.Showcase/Other/Converters"/>
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>

@@ -23,11 +23,11 @@
                                                 FileName="Linq_Demo.xaml.vb" />
                     <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/Linq"
                                                 FileName="Linq_Demo.xaml.fs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Other"
+                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Other"
                                                 FileName="Planet.cs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Other"
+                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Other"
                                                 FileName="Planet.vb" />
-                    <local:ViewSourceButtonInfo RelativePath="src/Other"
+                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Other"
                                                 FileName="Planet.fs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
