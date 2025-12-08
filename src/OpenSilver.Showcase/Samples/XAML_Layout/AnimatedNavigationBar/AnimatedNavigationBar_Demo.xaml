@@ -1,0 +1,66 @@
+<UserControl x:Class="OpenSilver.Showcase.AnimatedNavigationBar_Demo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controlskit="clr-namespace:OpenSilver.ControlsKit;assembly=OpenSilver.ControlsKit.Controls"
+             xmlns:local="clr-namespace:OpenSilver.Showcase">
+
+    <ContentControl Width="235" Style="{StaticResource Card_Style}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <ContentControl Content="Animated NavigationBar"
+                            Foreground="#FFCB6FDB"
+                            Style="{StaticResource HeaderControl_Style}"/>
+
+            <DescriptionViewer Style="{StaticResource ControlsKitDescriptionStyle}"/>
+
+            <StackPanel Grid.Row="1"
+                        Margin="0,15"
+                        HorizontalAlignment="Center">
+
+                <controlskit:AnimatedNavigationBar Padding="6"
+                                                   AnimationDuration="300"
+                                                   Background="#F3E5F5"
+                                                   CornerRadius="10"
+                                                   FontSize="12"
+                                                   Foreground="#673AB7"
+                                                   IndicatorBackground="#9C27B0"
+                                                   IndicatorCornerRadius="8"
+                                                   ItemPadding="10,8"
+                                                   SelectedForeground="#FFFFFF">
+                    <ListBoxItem Content="Home" IsSelected="True"/>
+                    <ListBoxItem Content="Products"/>
+                    <ListBoxItem Content="About"/>
+                </controlskit:AnimatedNavigationBar>
+
+                <controlskit:AnimatedNavigationBar Margin="0,20,0,0"
+                                                   Padding="10"
+                                                   AnimationDuration="480"
+                                                   Background="#1F2A44"
+                                                   CornerRadius="25"
+                                                   FontSize="15"
+                                                   Foreground="#9CA3AF"
+                                                   IndicatorBackground="#3B82F6"
+                                                   IndicatorCornerRadius="20"
+                                                   ItemPadding="10,7"
+                                                   SelectedForeground="#F3F4F6">
+                    <ListBoxItem Content="Dashboard" IsSelected="True"/>
+                    <ListBoxItem Content="Analytics"/>
+                </controlskit:AnimatedNavigationBar>
+            </StackPanel>
+
+            <local:ViewSourceButton Grid.Row="2" Background="#9C27B0">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo FileName="AnimatedNavigationBar_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/AnimatedNavigationBar"/>
+                    <local:ViewSourceButtonInfo FileName="AnimatedNavigationBar_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/AnimatedNavigationBar"/>
+                    <local:ViewSourceButtonInfo FileName="AnimatedNavigationBar_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/AnimatedNavigationBar"/>
+                    <local:ViewSourceButtonInfo FileName="AnimatedNavigationBar_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/AnimatedNavigationBar"/>
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
+</UserControl>

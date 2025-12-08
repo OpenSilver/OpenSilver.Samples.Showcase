@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="OpenSilver.Showcase.TreeMap_Demo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:OpenSilver.Showcase"
+             xmlns:other="clr-namespace:OpenSilver.Showcase.Other">
+
+    <ContentControl Width="210" Style="{StaticResource Card_Style}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl Content="TreeMap"
+                            Foreground="#FF6B7DE6"
+                            Style="{StaticResource HeaderControl_Style}"/>
+            <TreeMap Grid.Row="1"
+                     Height="100"
+                     ItemsSource="{x:Static other:Sales.Chairs}">
+                <TreeMap.ItemDefinition>
+                    <TreeMapItemDefinition ValuePath="Sales">
+                        <DataTemplate>
+                            <Border Background="AliceBlue"
+                                    BorderBrush="Black"
+                                    BorderThickness="1"
+                                    ToolTip="{Binding Sales}">
+                                <TextBlock VerticalAlignment="Center"
+                                           Text="{Binding Month}"
+                                           TextAlignment="Center"
+                                           TextWrapping="Wrap"/>
+                            </Border>
+                        </DataTemplate>
+                    </TreeMapItemDefinition>
+                </TreeMap.ItemDefinition>
+            </TreeMap>
+            <local:ViewSourceButton Grid.Row="2" Background="#FF6B7DE6">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo FileName="TreeMap_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/TreeMap"/>
+                    <local:ViewSourceButtonInfo FileName="TreeMap_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/TreeMap"/>
+                    <local:ViewSourceButtonInfo FileName="TreeMap_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/TreeMap"/>
+                    <local:ViewSourceButtonInfo FileName="TreeMap_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/TreeMap"/>
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
+</UserControl>

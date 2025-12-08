@@ -31,3 +31,17 @@ This app contains over 200 small samples that demonstrate OpenSilver’s feature
 The main branches are:
 - **develop**: this branch is where day to day development occurs (please send your **pull requests** here)
 - **master**: this branch corresponds to the version of the packages that are on Nuget.org
+
+The different solution files are for different purposes and include different projects:
+- **OpenSilver.Showcase.sln** contains all projects, including F# and VB versions of the showcase.
+- **OpenSilver.Showcase - Minimal(Fast).sln** contains the bare minimum C# projects to run the showcase. The projects of Blazor components are not included and the samples for these components will instead be shown in an iFrame. This is recommended for users who wish to be able to build and run the showcase faster.
+- **OpenSilver.Showcase - With Blazor Demos.sln** contains all the C# projects, except the projects for Blazor component that do require a license.
+- **OpenSilver.Showcase - C# Full.sln** contains all the C# projects, including those that use third party Blazor components that require a license.
+
+Here are the projects included for each .sln file (names shortened for readability):
+| Solution file         | OpenSilver.Showcase | Browser      | Simulator | MauiHybrid | Shared | Blazorise | MudBlazor | Radzen | DevExpress | Syncfusion |
+| :---                  |     :---:           |  :---:       |   :---:    |   :---:   | :---:  |  :---:    |  :---:    | :---:  |   :---:    |   :---:    |
+| **Showcase.sln**      |    C#✅ F#✅ VB✅    | C#✅ F#✅ VB✅ |   ✅       |     ✅     |   ✅   |    ✅      |    ✅     |   ✅    |     ✅     |     ✅      |
+| **Minimal(Fast)**     |    C#✅ F#❌ VB❌    | C#✅ F#❌ VB❌ |   ✅       |     ❌     |   ✅   |    ❌      |    ❌     |   ❌    |     ❌     |     ❌      |
+| **With Blazor Demos** |    C#✅ F#❌ VB❌    | C#✅ F#❌ VB❌ |   ✅       |     ❌     |   ✅   |    ✅      |    ✅     |   ✅    |     ❌     |     ❌      |
+| **C# Full**           |    C#✅ F#❌ VB❌    | C#✅ F#❌ VB❌ |   ✅       |     ✅     |   ✅   |    ✅      |    ✅     |   ✅    |     ✅     |     ✅      |

@@ -1,0 +1,97 @@
+﻿<UserControl x:Class="OpenSilver.Showcase.ListBox_Demo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:OpenSilver.Showcase">
+
+    <ContentControl Width="200" Style="{StaticResource Card_Style}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <ContentControl Background="#FF9A9FCE"
+                            Content="ListBox"
+                            Foreground="#FF6F7DFF"
+                            Style="{StaticResource HeaderControl_Style}"/>
+
+            <StackPanel Grid.Row="1"
+                        Margin="0,0,0,10"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal">
+                <ListBox x:Name="ListBox1"
+                         MaxHeight="140"
+                         VerticalAlignment="Top"
+                         BorderBrush="{DynamicResource Theme_BorderBrush}"
+                         BorderThickness="1"
+                         DisplayMemberPath="Name"
+                         SelectedValuePath="ImagePath"
+                         SelectionMode="Single"/>
+                <Image Width="60"
+                       Height="60"
+                       Margin="5,0,0,0"
+                       VerticalAlignment="Top"
+                       Source="{Binding ElementName=ListBox1, Path=SelectedValue}"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="2">
+                <TextBlock HorizontalAlignment="Center"
+                           FontSize="12"
+                           FontWeight="Bold"
+                           Text="Custom Template:"/>
+                <ListBox MaxHeight="150"
+                         BorderThickness="1"
+                         ItemsSource="{x:Static local:Planet.Planets}"
+                         ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel/>
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="ListBoxItem">
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate DataType="local:Planet">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Border Width="50"
+                                        Padding="2"
+                                        BorderBrush="#FF999999"
+                                        BorderThickness="2">
+                                    <Image Source="{Binding ImagePath}"/>
+                                </Border>
+                                <TextBlock Grid.Row="1"
+                                           HorizontalAlignment="Center"
+                                           FontSize="11"
+                                           Text="{Binding Name}"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+
+            <local:ViewSourceButton Grid.Row="3" Background="#FF6F7DFF">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo FileName="ListBox_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ListBox"/>
+                    <local:ViewSourceButtonInfo FileName="ListBox_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ListBox"/>
+                    <local:ViewSourceButtonInfo FileName="Planet.cs" RelativePath="src/Other"/>
+                    <local:ViewSourceButtonInfo FileName="ListBox_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ListBox"/>
+                    <local:ViewSourceButtonInfo FileName="ListBox_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ListBox"/>
+                    <local:ViewSourceButtonInfo FileName="Planet.vb" RelativePath="src/Other"/>
+                    <local:ViewSourceButtonInfo FileName="Planet.fs" RelativePath="src/Other"/>
+                    <local:ViewStyleSourceInfo Fragment="#L1868-L1988" TabHeader="Default ListBox Style"/>
+                    <local:ViewModernStyleSourceInfo Fragment="#L1526-L1653" TabHeader="Modern ListBox Style"/>
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
+</UserControl>

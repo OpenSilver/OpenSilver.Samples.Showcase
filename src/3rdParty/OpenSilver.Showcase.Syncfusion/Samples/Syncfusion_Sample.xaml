@@ -1,0 +1,15 @@
+﻿<UserControl
+    x:Class="OpenSilver.Showcase.Syncfusion_Sample"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controlskit="clr-namespace:OpenSilver.ControlsKit;assembly=OpenSilver.ControlsKit.Controls"
+    xmlns:local="clr-namespace:OpenSilver.Showcase">
+
+    <StackPanel>
+        <ContentControl Content="Syncfusion Components" Style="{StaticResource PageTitle_Style}"/>
+        <controlskit:StaggeredPanel ProgressiveRenderingChunkSize="2">
+            <local:SyncfusionQRCode_Demo HorizontalAlignment="Center" />
+            <local:SyncfusionDataGrid_Demo HorizontalAlignment="Center" />
+        </controlskit:StaggeredPanel>
+    </StackPanel>
+</UserControl>

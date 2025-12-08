@@ -252,3 +252,7 @@ src/Third_Party_Resources/
 # Miscellaneious
 build-ios.sh
 upload-ipa.sh
+OpenSilver.Samples.Showcase.Browser/obj_WithBlazor
+OpenSilver.Samples.Showcase.Browser/bin_WithBlazor
+src/bin_WithBlazor
+src/obj_WithBlazor

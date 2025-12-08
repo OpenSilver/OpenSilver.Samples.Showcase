@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="OpenSilver.Showcase.Console_Demo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:OpenSilver.Showcase">
+
+    <ContentControl Width="245" Style="{StaticResource Card_Style}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <ContentControl Background="#FFD2BD9C"
+                            Content="Console"
+                            Foreground="#FFDEA542"
+                            Style="{StaticResource HeaderControl_Style}"/>
+
+            <Button Grid.Row="1"
+                    Margin="0,10"
+                    HorizontalAlignment="Center"
+                    Click="OnWriteToConsoleButtonClick"
+                    Content="Write to Console"/>
+
+            <Button Grid.Row="2"
+                    Margin="0,10"
+                    HorizontalAlignment="Center"
+                    Click="OnWriteToDebugButtonClick"
+                    Content="Write to Debug"/>
+
+            <local:ViewSourceButton Grid.Row="3" Background="#FCAB54">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo FileName="Console_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/Console"/>
+                    <local:ViewSourceButtonInfo FileName="Console_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/Console"/>
+                    <local:ViewSourceButtonInfo FileName="Console_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/Console"/>
+                    <local:ViewSourceButtonInfo FileName="Console_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/Console"/>
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
+</UserControl>

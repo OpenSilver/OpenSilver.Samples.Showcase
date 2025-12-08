@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <DefineSilverlight>true</DefineSilverlight>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="ViewSource\ControlToDisplayCodeHostedOnGitHub.cs" />
+    <Compile Include="ViewSource\ViewModernStyleSourceInfo.cs" />
+    <Compile Include="ViewSource\ViewSourceButton.cs" />
+    <Compile Include="ViewSource\ViewSourceButtonInfo.cs" />
+    <Compile Include="ViewSource\ViewSourcePanel.xaml.cs" />
+    <Compile Include="ViewSource\ViewStyleSourceInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+	  <PackageReference Include="OpenSilver" Version="[$(OpenSilverVersion)]" />
+	  <PackageReference Include="OpenSilver.Themes.Modern" Version="[$(OpenSilverModernThemeVersion)]" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="ViewSource\ViewSourcePanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+</Project>

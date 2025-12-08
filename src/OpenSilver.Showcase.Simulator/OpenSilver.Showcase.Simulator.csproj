@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <OutputPath>bin/$(Configuration)_cs</OutputPath>
+    <IntermediateOutputPath>obj/$(Configuration)_cs</IntermediateOutputPath>
+    <Configurations>Debug;Release;Release-WithBlazor;Debug-WithBlazor;Release-FullBlazor;Debug-FullBlazor</Configurations>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OpenSilver.Simulator" Version="[$(OpenSilverVersion)]" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OpenSilver.Showcase\OpenSilver.Showcase.csproj" />
+  </ItemGroup>
+
+</Project>

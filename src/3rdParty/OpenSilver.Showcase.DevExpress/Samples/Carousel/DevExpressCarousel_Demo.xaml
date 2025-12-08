@@ -1,0 +1,58 @@
+﻿<UserControl
+    x:Class="OpenSilver.Showcase.DevExpressCarousel_Demo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:OpenSilver.Showcase">
+
+
+    <ContentControl Style="{StaticResource Card_Style}" Width="550">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl Content="Carousel" Foreground="#FF7F5EA4" Background="#FFCB9DC1" Style="{StaticResource HeaderControl_Style}"/>
+
+            <Grid Grid.Row="1">
+                <StackPanel>
+                    <razor:RazorComponent x:Name="RichEditComponentHolder" Height="350">
+                        @using global::DevExpress.Blazor
+@using OpenSilver.Showcase.DevExpressModel
+                        <DxCarousel Width="500px"
+                                    Height="300px"
+                                    Data="{Binding Planets}"
+                                    LoopNavigationEnabled="{Binding IsLooping, Type=bool}"
+                                    SlideShowEnabled="true"
+                                    SlideShowDelay="5000"
+                                    NavButtonsDisplayMode="CarouselControlsDisplayMode.AlwaysVisible"
+                                    ImageSizeMode="CarouselImageSizeMode.FillAndCrop"
+                                    PagerDisplayMode="CarouselControlsDisplayMode.AlwaysVisible"
+                                    CssClass="demo-carousel-container">
+                            <ItemTemplate>
+                                @{
+                                    var item = context.DataItem as Planet;
+                                }
+                                <div class="caruselItemContainer">
+                                    <p class="caruselItemCaption">@item?.Name</p>
+                                    <img src="@item?.ImagePath" alt="@item?.Name" />
+                                </div>
+                            </ItemTemplate>
+                        </DxCarousel>
+                    </razor:RazorComponent>
+
+                    <TextBlock Text="{Binding TextForTextBox}"/>
+                </StackPanel>
+            </Grid>
+
+            <local:ViewSourceButton Grid.Row="2" Background="#FFFF81E3">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewDevExpressSourceInfo RelativePath="src/3rdParty/OpenSilver.Showcase.DevExpress/Samples/Carousel"
+            FileName="DevExpressCarousel_Demo.xaml" />
+                    <local:ViewDevExpressSourceInfo RelativePath="src/3rdParty/OpenSilver.Showcase.DevExpress/Samples/Carousel"
+            FileName="DevExpressCarousel_Demo.xaml.cs" />
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
+</UserControl>

@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <DefineSilverlight>true</DefineSilverlight>
+    <AssemblyName>OpenSilver.Showcase.Syncfusion2</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Models\Employees.cs" />
+    <Compile Include="Other\Internals\ViewSyncfusionSourceInfo.cs" />
+    <Compile Include="Samples\DataGrid\SyncfusionDataGrid_Demo.xaml.cs" />
+    <Compile Include="Samples\QRCode\SyncfusionQRCode_Demo.xaml.cs" />
+    <Compile Include="Samples\Syncfusion_Sample.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<PackageReference Include="OpenSilver" Version="[$(OpenSilverVersion)]" />
+    <PackageReference Include="OpenSilver.Blazor" Version="[$(OpenSilverBlazorVersion)]" />
+    <PackageReference Include="OpenSilver.ControlsKit" Version="[$(OpenSilverControlsKitVersion)]" />
+    <PackageReference Include="Syncfusion.Blazor.BarcodeGenerator" Version="30.1.41" />
+    <PackageReference Include="Syncfusion.Blazor.Grid" Version="30.1.41" />
+    <PackageReference Include="Syncfusion.Blazor.Themes" Version="30.1.41" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="Samples\DataGrid\SyncfusionDataGrid_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\QRCode\SyncfusionQRCode_Demo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Syncfusion_Sample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\OpenSilver.Showcase.Shared\OpenSilver.Showcase.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

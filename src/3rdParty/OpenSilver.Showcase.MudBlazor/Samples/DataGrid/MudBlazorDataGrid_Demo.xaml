@@ -1,0 +1,45 @@
+﻿<UserControl
+    x:Class="OpenSilver.Showcase.MudBlazorDataGrid_Demo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:razor="clr-namespace:OpenSilver.Blazor;assembly=OpenSilver.Blazor"
+    xmlns:local="clr-namespace:OpenSilver.Showcase">
+
+    <ContentControl Style="{StaticResource Card_Style}" Width="750">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl Content="DataGrid" Foreground="#FFFF81E3" Background="#FFCB9DC1" Style="{StaticResource HeaderControl_Style}"/>
+
+            <Grid Grid.Row="1">
+                <razor:RazorComponent Margin="0,20,0,0" Height="500">
+                    @using MudBlazor
+                    
+                    <MudDataGrid PageSize="5" AllowPaging="true" SortMode="global::MudBlazor.SortMode.Multiple" T="OpenSilver.Showcase.MudBlazorModel.Employee"  Items="{Binding Employees}" ColumnWidth="400px">
+                        <Columns>
+                            <PropertyColumn  Property="x => x.FirstName" Title="First Name" Width="150px" />
+                            <PropertyColumn  Property="x => x.LastName" Title="Last Name" Width="150px"/>
+                            <PropertyColumn  Property="x => x.BirthDate" Title="Birth Date" FormatString="{0:d}" Width="150px" />
+                            <PropertyColumn  Property="x => x.Country" Title="Country" Width="150px" />
+                            <PropertyColumn  Property="x => x.Notes" Title="Notes" />
+                        </Columns>
+                    </MudDataGrid>
+                </razor:RazorComponent>
+            </Grid>
+
+            <local:ViewSourceButton Grid.Row="2" Background="#FFFF81E3">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewMudBlazorSourceInfo RelativePath="src/3rdParty/OpenSilver.Showcase.MudBlazor/Samples/DataGrid"
+                        FileName="MudBlazorDataGrid_Demo.xaml" />
+                    <local:ViewMudBlazorSourceInfo RelativePath="src/3rdParty/OpenSilver.Showcase.MudBlazor/Samples/DataGrid"
+                        FileName="MudBlazorDataGrid_Demo.xaml.cs" />
+                    <local:ViewMudBlazorSourceInfo RelativePath="src/3rdParty/OpenSilver.Showcase.MudBlazor/Samples/DataGrid"
+                        FileName="Employees.cs" />
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
+</UserControl>

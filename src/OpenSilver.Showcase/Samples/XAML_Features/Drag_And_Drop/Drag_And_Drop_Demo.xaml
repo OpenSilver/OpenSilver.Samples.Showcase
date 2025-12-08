@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="OpenSilver.Samples.Showcase.Drag_And_Drop_Demo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CSHTML5.Samples.Showcase">
+    <ContentControl Style="{StaticResource Card_Style}" Width="245">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl Content="DragAndDrop" Foreground="#FFE6E166" Background="#FFC5B58B" Style="{StaticResource HeaderControl_Style}"/>
+            <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="Drag the following rectangle to move it on the canvas." Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left"/>
+                <TextBlock Text="Note: performance in the browser is better than in the Simulator due to the debugger of the Simulator." Foreground="#FF808080" Margin="0,10,0,0" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left"/>
+                <Border Width="160" Height="100" Background="White" BorderThickness="2" BorderBrush="LightGray" HorizontalAlignment="Center" Margin="0,10,0,0">
+                    <Canvas>
+                        <Rectangle x:Name="ElementToDrag" Fill="#FFE6E166" Width="50" Height="50" Canvas.Left="10" Canvas.Top="10" Cursor="SizeAll"
+                                   AllowScrollOnTouchMove="False"
+                                   PointerPressed="DragAndDropItem_PointerPressed"
+                                   PointerReleased="DragAndDropItem_PointerReleased"
+                                   PointerMoved="DragAndDropItem_PointerMoved"/>
+                      <!-- TIP: set "AllowScrollOnTouchMove" to "False" to prevent
+                           the page from scrolling while the user is dragging the
+                           item using a touch screen (default is "True") -->
+                    </Canvas>
+                </Border>
+            </StackPanel>
+            <Button Grid.Row="2" Content="VIEW SOURCE..." Click="ButtonViewSource_Click" Background="#FFE6E166" Style="{StaticResource ButtonViewSource_Style}"/>
+        </Grid>
+    </ContentControl>
+</UserControl>

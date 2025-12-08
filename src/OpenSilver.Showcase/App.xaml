@@ -1,0 +1,56 @@
+<Application x:Class="OpenSilver.Showcase.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:OpenSilver.Showcase"
+             xmlns:mt="http://opensilver.net/themes/modern">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="Other/Styles.xaml"/>
+				<ResourceDictionary Source="Other/Internals/Menu/MenuStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- The icons font -->
+            <FontFamily x:Key="MaterialIconsRegular_FontFamily">ms-appx:///OpenSilver.Showcase/Samples/Icons/MaterialIcons-Regular.ttf</FontFamily>
+
+            <!-- Converters -->
+            <local:EnumToListConverter x:Key="EnumToListConverter"/>
+            <local:StringEmptyToVisibilityConverter x:Key="StringEmptyToVisibilityConverter"/>
+            
+            <!-- Set a larger Height for most controls -->
+            <Style TargetType="Button">
+                <Setter Property="Padding" Value="8,6,8,6"/>
+            </Style>
+            <Style TargetType="ToggleButton">
+                <Setter Property="MinHeight" Value="32"/>
+                <Setter Property="Padding" Value="8,6,8,6"/>
+            </Style>
+            <Style TargetType="ComboBox">
+                <Setter Property="MinHeight" Value="32"/>
+            </Style>
+            <Style TargetType="NumericUpDown">
+                <Setter Property="MinHeight" Value="32"/>
+            </Style>
+
+        </ResourceDictionary>
+    </Application.Resources>
+    <Application.Theme>
+        <mt:ModernTheme CurrentPalette="Light">
+            <mt:ModernTheme.LightPalette>
+                <mt:LightPalette
+                    BackgroundColor="#FFFFFFFF"
+                    ContainerBackgroundColor="#FFFFFFFF"
+                    PrimaryColor="#FF656565" />
+            </mt:ModernTheme.LightPalette>
+            <mt:ModernTheme.DarkPalette>
+                <mt:DarkPalette
+                    BackgroundColor="#FF1C0809"
+                    ContainerBackgroundColor="#26FFFFFF"
+                    PrimaryColor="#FF555555"
+                    ControlBackgroundColor="#FF242424"
+                    BorderColor="#FF4A4444" />
+            </mt:ModernTheme.DarkPalette>
+        </mt:ModernTheme>
+    </Application.Theme>
+</Application>

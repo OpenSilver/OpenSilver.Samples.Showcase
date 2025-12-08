@@ -1,0 +1,52 @@
+<UserControl x:Class="OpenSilver.Showcase.MonacoEditor_Demo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:OpenSilver.Showcase">
+
+    <ContentControl Style="{StaticResource Card_Style}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <ContentControl Content="Monaco Editor"
+                            Foreground="#FF7A3996"
+                            Style="{StaticResource HeaderControl_Style}"/>
+
+            <StackPanel Grid.Row="1">
+                <TextBlock TextWrapping="Wrap">
+                    <Hyperlink NavigateUri="https://microsoft.github.io/monaco-editor/" TargetName="_blank">Monaco Editor</Hyperlink>
+                    -
+                    the code editor that powers VS Code.</TextBlock>
+                <StackPanel Margin="0,10" Orientation="Horizontal">
+                    <RadioButton Name="csharpRadioButton"
+                                 Content="C#"
+                                 Style="{x:Null}"/>
+                    <RadioButton Name="xamlRadioButton"
+                                 Margin="10,0"
+                                 Content="XAML"
+                                 Style="{x:Null}"/>
+                </StackPanel>
+            </StackPanel>
+
+            <local:MonacoEditor Name="monacoEditor"
+                                Grid.Row="2"
+                                Height="250"/>
+
+            <local:ViewSourceButton Grid.Row="3" Background="#FF7A3996">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo FileName="MonacoEditor_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/JS_Libs/MonacoEditor"/>
+                    <local:ViewSourceButtonInfo FileName="MonacoEditor_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/JS_Libs/MonacoEditor"/>
+                    <local:ViewSourceButtonInfo FileName="MonacoEditor_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/JS_Libs/MonacoEditor"/>
+                    <local:ViewSourceButtonInfo FileName="MonacoEditor_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/JS_Libs/MonacoEditor"/>
+                    <local:ViewSourceButtonInfo FileName="MonacoEditor.cs" RelativePath="src/OpenSilver.Showcase/Samples/JS_Libs/MonacoEditor"/>
+                    <local:ViewSourceButtonInfo FileName="MonacoEditor.vb" RelativePath="src/OpenSilver.Showcase/Samples/JS_Libs/MonacoEditor"/>
+                    <local:ViewSourceButtonInfo FileName="MonacoEditor.fs" RelativePath="src/OpenSilver.Showcase/Samples/JS_Libs/MonacoEditor"/>
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
+</UserControl>

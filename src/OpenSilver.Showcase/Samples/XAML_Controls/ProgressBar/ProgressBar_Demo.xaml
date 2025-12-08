@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="OpenSilver.Showcase.ProgressBar_Demo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:OpenSilver.Showcase">
+
+    <ContentControl Width="200" Style="{StaticResource Card_Style}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <ContentControl Content="ProgressBar"
+                            Foreground="#FF73AFB3"
+                            Style="{StaticResource HeaderControl_Style}"/>
+
+            <StackPanel Grid.Row="1">
+                <ProgressBar Height="10"
+                             Margin="0,5"
+                             IsIndeterminate="{Binding IsChecked, ElementName=IndeterminateCheckBox}"
+                             Maximum="100"
+                             Minimum="0"
+                             Value="{Binding Path=Value, ElementName=MyNumericUpDown}"/>
+
+                <Expander Margin="0,10,0,0" Style="{StaticResource PopupExpanderStyle}">
+                    <StackPanel>
+                        <TextBlock MaxWidth="200"
+                                   Margin="0,0,0,10"
+                                   Text="You can use the NumericUpDown to change the progress of the ProgressBar."
+                                   TextWrapping="Wrap"/>
+                        <NumericUpDown x:Name="MyNumericUpDown"
+                                       Increment="5"
+                                       Maximum="100"
+                                       Minimum="0"
+                                       Value="50"/>
+                        <CheckBox Name="IndeterminateCheckBox"
+                                  Margin="0,5"
+                                  Content="IsIndeterminate"/>
+                    </StackPanel>
+                </Expander>
+            </StackPanel>
+
+            <local:ViewSourceButton Grid.Row="2" Background="#FF13D7E3">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo FileName="ProgressBar_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ProgressBar"/>
+                    <local:ViewSourceButtonInfo FileName="ProgressBar_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ProgressBar"/>
+                    <local:ViewSourceButtonInfo FileName="ProgressBar_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ProgressBar"/>
+                    <local:ViewSourceButtonInfo FileName="ProgressBar_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ProgressBar"/>
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
+</UserControl>

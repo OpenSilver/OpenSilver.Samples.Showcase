@@ -1,0 +1,103 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <PropertyGroup>
+	  <Configurations>Debug;Release;Release-WithBlazor;Debug-WithBlazor;Release-FullBlazor;Debug-FullBlazor</Configurations>
+  </PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)'=='Debug-WithBlazor' or '$(Configuration)'=='Release-WithBlazor'">
+  	<WithBlazor>true</WithBlazor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Debug-FullBlazor' or '$(Configuration)'=='Release-FullBlazor'">
+    <FullBlazor>true</FullBlazor>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <NoXamlPreprocessor>True</NoXamlPreprocessor>
+    <OpenSilverType>7</OpenSilverType>
+    <PublishTrimmed>true</PublishTrimmed>
+    <WasmEnableSIMD>false</WasmEnableSIMD>
+    <!--<RunAOTCompilation Condition="'$(IsSecondPass)'=='True'">true</RunAOTCompilation>-->
+    <OutputPath>bin/$(Configuration)_cs</OutputPath>
+    <IntermediateOutputPath>obj/$(Configuration)_cs</IntermediateOutputPath>
+    <DefineTrace>true</DefineTrace>
+    <BlazorWebAssemblyLoadAllGlobalizationData>true</BlazorWebAssemblyLoadAllGlobalizationData>
+    <WasmEnableWebcil>false</WasmEnableWebcil>
+    <ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
+    <PublishIISAssets>true</PublishIISAssets>
+  </PropertyGroup>
+
+	<PropertyGroup Condition="'$(WithBlazor)'=='true'">
+		<DefineConstants>$(DefineConstants);WITHBLAZOR</DefineConstants>
+	</PropertyGroup>
+  <PropertyGroup Condition="'$(FullBlazor)'=='true'">
+    <DefineConstants>$(DefineConstants);WITHBLAZOR;FULLBLAZOR</DefineConstants>
+  </PropertyGroup>
+	
+  <Choose>
+  	<When Condition="'$(FullBlazor)'=='true' or '$(WithBlazor)'=='true'">
+	  <ItemGroup>
+      <Content Remove="wwwroot\index_WithBlazor.html" />
+    </ItemGroup>
+  	</When>
+  	<Otherwise>
+      <ItemGroup>
+        <Content Remove="wwwroot\index.html" />
+      </ItemGroup>
+  	</Otherwise>
+  </Choose>
+	
+	
+  <ItemGroup>
+    <PackageReference Include="OpenSilver.WebAssembly" Version="[$(OpenSilverVersion)]" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.16" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.16" PrivateAssets="all" />
+  </ItemGroup>
+
+	<ItemGroup Condition="'$(FullBlazor)'=='true'">
+		<BlazorWebAssemblyLazyLoad Include="Syncfusion.Blazor.Grids.dll" />
+		<BlazorWebAssemblyLazyLoad Include="Syncfusion.Blazor.BarcodeGenerator.dll" />
+		<BlazorWebAssemblyLazyLoad Include="Syncfusion.Blazor.Buttons.dll" />
+		<BlazorWebAssemblyLazyLoad Include="Syncfusion.Blazor.Calendars.dll" />
+		<BlazorWebAssemblyLazyLoad Include="Syncfusion.Blazor.Data.dll" />
+		<BlazorWebAssemblyLazyLoad Include="Syncfusion.Blazor.DropDowns.dll" />
+		<BlazorWebAssemblyLazyLoad Include="Syncfusion.Blazor.Inputs.dll" />
+		<BlazorWebAssemblyLazyLoad Include="Syncfusion.Blazor.Lists.dll" />
+		<BlazorWebAssemblyLazyLoad Include="Syncfusion.Blazor.Navigations.dll" />
+		<BlazorWebAssemblyLazyLoad Include="Syncfusion.Blazor.Notifications.dll" />
+		<BlazorWebAssemblyLazyLoad Include="Syncfusion.Blazor.Popups.dll" />
+		<BlazorWebAssemblyLazyLoad Include="Syncfusion.Blazor.Spinner.dll" />
+		<BlazorWebAssemblyLazyLoad Include="Syncfusion.Blazor.SplitButtons.dll" />
+		<BlazorWebAssemblyLazyLoad Include="Syncfusion.Blazor.Themes.dll" />
+		<BlazorWebAssemblyLazyLoad Include="Syncfusion.ExcelExport.Net.dll" />
+		<BlazorWebAssemblyLazyLoad Include="Syncfusion.PdfExport.Net.dll" />
+		<BlazorWebAssemblyLazyLoad Include="DevExpress.Blazor.Resources.v25.1.dll" />
+		<BlazorWebAssemblyLazyLoad Include="DevExpress.Blazor.RichEdit.v25.1.dll" />
+		<BlazorWebAssemblyLazyLoad Include="DevExpress.Drawing.v25.1.dll" />
+		<BlazorWebAssemblyLazyLoad Include="DevExpress.Pdf.v25.1.Core.dll" />
+		<BlazorWebAssemblyLazyLoad Include="DevExpress.Pdf.v25.1.Drawing.dll" />
+		<BlazorWebAssemblyLazyLoad Include="DevExpress.Printing.v25.1.Core.dll" />
+		<BlazorWebAssemblyLazyLoad Include="DevExpress.SpellChecker.v25.1.Core.dll" />
+	</ItemGroup>
+	
+	
+  <ItemGroup>
+    <ProjectReference Include="..\OpenSilver.Showcase\OpenSilver.Showcase.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TrimmerRootAssembly Include="mscorlib" />
+    <TrimmableAssembly Include="OpenSilver.Animations" />
+    <TrimmableAssembly Include="OpenSilver.Controls.Data" />
+    <TrimmableAssembly Include="OpenSilver.Controls.Data.Toolkit" />
+    <TrimmableAssembly Include="OpenSilver.Controls.Theming.Toolkit" />
+    <TrimmableAssembly Include="OpenSilver.ControlsKit.FastControls" />
+    <TrimmableAssembly Include="OpenSilver.Expression.Effects" />
+    <TrimmableAssembly Include="OpenSilver.Interactivity" />
+    <TrimmableAssembly Include="OpenSilver.Data" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js" />
+  </ItemGroup>
+
+</Project>

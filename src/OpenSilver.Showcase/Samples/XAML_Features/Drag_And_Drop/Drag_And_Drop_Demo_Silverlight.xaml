@@ -1,0 +1,99 @@
+﻿<UserControl x:Class="OpenSilver.Showcase.Drag_And_Drop_Demo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:OpenSilver.Showcase">
+
+    <ContentControl Width="245" Style="{StaticResource Card_Style}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <ContentControl Background="#FFC5B58B"
+                            Content="DragAndDrop"
+                            Foreground="#FFC7C228"
+                            Style="{StaticResource HeaderControl_Style}"/>
+
+            <StackPanel Grid.Row="1"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Orientation="Vertical">
+                <TextBlock HorizontalAlignment="Left"
+                           FontSize="12"
+                           Foreground="#FF808080"
+                           Text="Drag the following rectangle to move it on the canvas."
+                           TextWrapping="Wrap"/>
+                <Border Width="160"
+                        Height="100"
+                        Margin="0,10,0,0"
+                        HorizontalAlignment="Center"
+                        Background="{DynamicResource Theme_BackgroundBrush}"
+                        BorderBrush="LightGray"
+                        BorderThickness="2">
+                    <Canvas>
+                        <Rectangle Canvas.Left="10"
+                                   Canvas.Top="10"
+                                   Width="50"
+                                   Height="50"
+                                   AllowScrollOnTouchMove="False"
+                                   Cursor="SizeAll"
+                                   Fill="#FFE6E166"
+                                   MouseLeftButtonDown="DragAndDropItem_PointerPressed"
+                                   MouseLeftButtonUp="DragAndDropItem_PointerReleased"
+                                   MouseMove="DragAndDropItem_PointerMoved"/>
+                    </Canvas>
+                </Border>
+            </StackPanel>
+
+            <Grid Grid.Row="2" Margin="0,20,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="100"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.ColumnSpan="2"
+                           Margin="0,0,0,5"
+                           FontSize="12"
+                           Foreground="#FF808080"
+                           Text="Drag and drop items between any two controls."
+                           TextWrapping="Wrap"/>
+                <ListBoxDragDropTarget Grid.Row="1"
+                                       HorizontalContentAlignment="Stretch"
+                                       VerticalContentAlignment="Stretch"
+                                       AllowDrop="True">
+                    <ListBox DisplayMemberPath="Name"
+                             FontSize="12"
+                             ItemsSource="{x:Static local:Planet.Planets}"/>
+                </ListBoxDragDropTarget>
+                <Border Grid.Row="1" Grid.Column="1" CornerRadius="4" Margin="4,0,0,0" BorderThickness="1" BorderBrush="{DynamicResource Theme_BorderBrush}">
+                    <TreeViewDragDropTarget HorizontalContentAlignment="Stretch"
+                                            VerticalContentAlignment="Stretch"
+                                            AllowDrop="True">
+                        <TreeView Background="{DynamicResource Theme_ControlBackgroundBrush}">
+                            <TreeView.ItemTemplate>
+                                <HierarchicalDataTemplate>
+                                    <TextBlock FontSize="12" Text="{Binding Name}"/>
+                                </HierarchicalDataTemplate>
+                            </TreeView.ItemTemplate>
+                        </TreeView>
+                    </TreeViewDragDropTarget>
+                </Border>
+            </Grid>
+
+            <local:ViewSourceButton Grid.Row="3" Background="#FFC7C228">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo FileName="Drag_And_Drop_Demo_Silverlight.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Drag_And_Drop"/>
+                    <local:ViewSourceButtonInfo FileName="Drag_And_Drop_Demo_Silverlight.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Drag_And_Drop"/>
+                    <local:ViewSourceButtonInfo FileName="Drag_And_Drop_Demo_Silverlight.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Drag_And_Drop"/>
+                    <local:ViewSourceButtonInfo FileName="Drag_And_Drop_Demo_Silverlight.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Drag_And_Drop"/>
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
+</UserControl>

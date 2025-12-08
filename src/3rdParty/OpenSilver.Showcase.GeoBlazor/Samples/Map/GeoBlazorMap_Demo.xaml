@@ -1,0 +1,58 @@
+﻿<UserControl
+    x:Class="OpenSilver.Samples.Showcase.GeoBlazorMap_Demo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:razor="clr-namespace:OpenSilver.Blazor;assembly=OpenSilver.Blazor"
+    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+
+    <ContentControl Style="{StaticResource Card_Style}" Width="1000">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl Content="Map" Foreground="#FFFF81E3" Background="#FFCB9DC1" Style="{StaticResource HeaderControl_Style}"/>
+
+            <Grid Grid.Row="1">
+                <razor:RazorComponent x:Name="RichEditComponentHolder" Height="440" AllowScrollOnTouchMove="False">
+                    @using dymaptic.GeoBlazor.Core
+@using dymaptic.GeoBlazor.Core.Attributes
+@using dymaptic.GeoBlazor.Core.Components
+@using dymaptic.GeoBlazor.Core.Components.Geometries
+@using dymaptic.GeoBlazor.Core.Components.Layers
+@using dymaptic.GeoBlazor.Core.Components.Popups
+@using dymaptic.GeoBlazor.Core.Components.Renderers
+@using dymaptic.GeoBlazor.Core.Components.Symbols
+@using dymaptic.GeoBlazor.Core.Components.Views
+@using dymaptic.GeoBlazor.Core.Components.Widgets
+@using dymaptic.GeoBlazor.Core.Enums
+@using dymaptic.GeoBlazor.Core.Events
+@using dymaptic.GeoBlazor.Core.Exceptions
+@using dymaptic.GeoBlazor.Core.Extensions
+@using dymaptic.GeoBlazor.Core.Functions
+@using dymaptic.GeoBlazor.Core.Interfaces
+@using dymaptic.GeoBlazor.Core.Model
+@using dymaptic.GeoBlazor.Core.Options
+@using dymaptic.GeoBlazor.Core.Results
+
+                    <MapView Longitude="-118.805" Latitude="34.027" Zoom="11" Style="height: 400px; width: 900px;">
+                        <WebMap>
+                            <PortalItem PortalItemId="4a6cb60ebbe3483a805999d481c2daa5" />
+                        </WebMap>
+                    </MapView>
+
+                </razor:RazorComponent>
+            </Grid>
+
+            <local:ViewSourceButton Grid.Row="2" Background="#FFFF81E3">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewGeoBlazorSourceInfo RelativePath="OpenSilver.Samples.Showcase.GeoBlazor/Samples/Map"
+FileName="GeoBlazorMap_Demo.xaml" />
+                    <local:ViewGeoBlazorSourceInfo RelativePath="OpenSilver.Samples.Showcase.GeoBlazor/Samples/Map"
+FileName="GeoBlazorMap_Demo.xaml.cs" />
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
+</UserControl>

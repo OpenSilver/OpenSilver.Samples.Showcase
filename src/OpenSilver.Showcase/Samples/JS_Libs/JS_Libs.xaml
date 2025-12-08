@@ -1,0 +1,34 @@
+﻿<Page x:Class="OpenSilver.Showcase.JS_Libs"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controlskit="clr-namespace:OpenSilver.ControlsKit;assembly=OpenSilver.ControlsKit.Controls"
+             xmlns:local="clr-namespace:OpenSilver.Showcase"
+             Style="{StaticResource Page_Style}"
+             Title="JS Libs">
+
+    <StackPanel>
+        <StackPanel>
+            <ContentControl Content="JS Libs" Style="{StaticResource PageTitle_Style}"/>
+            <TextBlock Style="{StaticResource PageIntroText_Style}">OpenSilver seamlessly bridges C#/XAML with the vast JavaScript ecosystem.
+                                                                    Since XAML is rendered as HTML, you can easily integrate JavaScript-based
+                                                                    components directly into your applications alongside XAML controls. This
+                                                                    flexibility gives you access to tens of thousands of JavaScript libraries
+                                                                    and UI components. This page shows how easily JavaScript libraries can
+                                                                    extend your OpenSilver apps.
+            </TextBlock>
+        </StackPanel>
+
+        <ItemsControl x:Name="SamplesPanel" local:ItemsControlLoadingBehavior.ShowLoadingOnGenerating="True">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <controlskit:StaggeredPanel DesiredColumnWidth="700" ProgressiveRenderingChunkSize="2"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+
+            <local:MonacoEditor_Demo MinWidth="{Responsive Mobile=50, Tablet=650}" HorizontalAlignment="Center"/>
+            <local:ToastUiEditor_Demo MinWidth="{Responsive Mobile=50, Tablet=650}" HorizontalAlignment="Center"/>
+            <local:ColorPicker_Demo HorizontalAlignment="Center" MinWidth="{Responsive Mobile=50, Tablet=330}"/>
+            <local:JSZip_Demo HorizontalAlignment="Center"/>
+        </ItemsControl>
+    </StackPanel>
+</Page>
