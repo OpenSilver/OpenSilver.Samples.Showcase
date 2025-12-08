@@ -1,0 +1,98 @@
+<UserControl x:Class="OpenSilver.Samples.Showcase.UniformGrid_Demo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+
+    <ContentControl Width="200" Style="{StaticResource Card_Style}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <ContentControl Content="UniformGrid"
+                            Foreground="#FFE65969"
+                            Style="{StaticResource HeaderControl_Style}"/>
+
+            <UniformGrid Name="uniformGrid"
+                         Grid.Row="1"
+                         Width="150"
+                         Height="100"
+                         HorizontalAlignment="Center"
+                         Background="#FFEED6ED">
+                <UniformGrid.Resources>
+                    <Style TargetType="ContentControl">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate>
+                                    <Border Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </UniformGrid.Resources>
+
+                <ContentControl Background="#FFFF99A7" Content="1"/>
+                <ContentControl Background="#FFF169B3" Content="2"/>
+                <ContentControl Background="#FFFF99EB" Content="3"/>
+                <ContentControl Background="#FFFF359E" Content="4"/>
+                <ContentControl Background="#FFBD80BC" Content="5"/>
+                <ContentControl Background="#FFD970D7" Content="6"/>
+            </UniformGrid>
+
+            <Expander Grid.Row="2"
+                      Margin="10,20,0,0"
+                      Style="{StaticResource PopupExpanderStyle}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.Resources>
+                        <Style TargetType="NumericUpDown">
+                            <Setter Property="Margin" Value="5"/>
+                            <Setter Property="Height" Value="24"/>
+                            <Setter Property="MinWidth" Value="80"/>
+                            <Setter Property="FontSize" Value="12"/>
+                        </Style>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                        </Style>
+                    </Grid.Resources>
+
+                    <TextBlock Text="Rows"/>
+                    <NumericUpDown Grid.Column="1" Value="{Binding Rows, ElementName=uniformGrid, Mode=TwoWay}"/>
+
+                    <TextBlock Grid.Row="1" Text="Columns"/>
+                    <NumericUpDown Grid.Row="1"
+                                   Grid.Column="1"
+                                   Value="{Binding Columns, ElementName=uniformGrid, Mode=TwoWay}"/>
+
+                    <TextBlock Grid.Row="2" Text="FirstColumn"/>
+                    <NumericUpDown Grid.Row="2"
+                                   Grid.Column="1"
+                                   Value="{Binding FirstColumn, ElementName=uniformGrid, Mode=TwoWay}"/>
+                </Grid>
+            </Expander>
+
+            <local:ViewSourceButton Grid.Row="3" Background="#FFE65969">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo FileName="UniformGrid_Demo.xaml" RelativePath="src/Samples/XAML_Layout/UniformGrid"/>
+                    <local:ViewSourceButtonInfo FileName="UniformGrid_Demo.xaml.cs" RelativePath="src/Samples/XAML_Layout/UniformGrid"/>
+                    <local:ViewSourceButtonInfo FileName="UniformGrid_Demo.xaml.vb" RelativePath="src/Samples/XAML_Layout/UniformGrid"/>
+                    <local:ViewSourceButtonInfo FileName="UniformGrid_Demo.xaml.fs" RelativePath="src/Samples/XAML_Layout/UniformGrid"/>
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
+</UserControl>
+

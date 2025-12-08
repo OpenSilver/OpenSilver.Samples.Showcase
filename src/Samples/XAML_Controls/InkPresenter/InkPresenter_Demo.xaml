@@ -1,0 +1,98 @@
+﻿<UserControl x:Class="OpenSilver.Samples.Showcase.InkPresenter_Demo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+
+    <ContentControl Width="200" Style="{StaticResource Card_Style}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <ContentControl Background="#FF91C3C5"
+                            Content="InkPresenter"
+                            Foreground="#FF73AFB3"
+                            Style="{StaticResource HeaderControl_Style}"/>
+
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <InkPresenter x:Name="InkPad"
+                              Width="170"
+                              Height="170"
+                              HorizontalAlignment="Center"
+                              VerticalAlignment="Center"
+                              Background="#FFDDDDDD"
+                              MouseLeftButtonDown="OnIP_MouseLeftButtonDown"
+                              MouseLeftButtonUp="OnIP_MouseLeftButtonUp"
+                              MouseMove="OnIP_MouseMove"/>
+
+                <StackPanel Grid.Row="1"
+                            Margin="0,5,0,2"
+                            HorizontalAlignment="Center"
+                            Orientation="Horizontal">
+                    <local:HtmlColorPicker x:Name="strokeColorPicker"
+                                           ToolTip="Stroke Color"
+                                           Color="#FF1D1730"/>
+                    <Slider x:Name="strokeWidthSlider"
+                            Width="100"
+                            Margin="10,0,0,0"
+                            Maximum="50"
+                            Minimum="1"
+                            ToolTip="Stroke Thickness"
+                            Value="3"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="2"
+                            Margin="0,5"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Bottom"
+                            Orientation="Horizontal">
+                    <Button x:Name="clearButton"
+                            Padding="5,-2,4,2"
+                            Click="OnClearInkPad"
+                            Content="×"
+                            FontSize="20"
+                            ToolTip="Clear"/>
+                    <Button x:Name="undoButton"
+                            Margin="2,0"
+                            Click="OnUndoLastStroke"
+                            ToolTip="Undo">
+                        <Path Data="M2,10 C7,0 12,0 22,10 M6,9 L2,10 0,7"
+                              Stroke="White"
+                              StrokeThickness="2"/>
+                    </Button>
+                    <Button x:Name="redoButton"
+                            Click="OnRedoLastStroke"
+                            ToolTip="Redo">
+                        <Path Data="M20,10 C15,0 10,0 0,10 M16,9 L20,10 22,7"
+                              Stroke="White"
+                              StrokeThickness="2"/>
+                    </Button>
+                </StackPanel>
+
+                <Button x:Name="SaveAsPngButton"
+                        Grid.Row="3"
+                        HorizontalAlignment="Center"
+                        Click="OnSaveAsPngButtonClick"
+                        Content="Save as PNG"/>
+            </Grid>
+
+            <local:ViewSourceButton Grid.Row="2" Background="#FF13D7E3">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo FileName="InkPresenter_Demo.xaml" RelativePath="src/Samples/XAML_Controls/InkPresenter"/>
+                    <local:ViewSourceButtonInfo FileName="InkPresenter_Demo.xaml.cs" RelativePath="src/Samples/XAML_Controls/InkPresenter"/>
+                    <local:ViewSourceButtonInfo FileName="InkPresenter_Demo.xaml.vb" RelativePath="src/Samples/XAML_Controls/InkPresenter"/>
+                    <local:ViewSourceButtonInfo FileName="InkPresenter_Demo.xaml.fs" RelativePath="src/Samples/XAML_Controls/InkPresenter"/>
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
+</UserControl>

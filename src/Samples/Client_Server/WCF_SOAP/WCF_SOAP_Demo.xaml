@@ -1,0 +1,58 @@
+﻿<UserControl
+    x:Class="OpenSilver.Samples.Showcase.WCF_SOAP_Demo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+    <ContentControl Style="{StaticResource Card_Style}" Width="245">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl Content="WCF SOAP" Foreground="#FF96C335" Background="#FFB3C391" Style="{StaticResource HeaderControl_Style}"/>
+            <StackPanel Orientation="Vertical" Grid.Row="1">
+                <TextBlock Text="You can use the &quot;Add Service Reference&quot; feature of Visual Studio to communicate with SOAP web services. Please read the WCF Limitations and Tutorials at the following page at:" Foreground="#FF808080" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Left"/>
+                <HyperlinkButton Foreground="#FF96C335" Margin="0,10,0,0" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" NavigateUri="https://doc.opensilver.net/documentation/in-depth-topics/wcf-and-webclient.html" TargetName="_blank">
+                    <TextBlock Text="https://doc.opensilver.net/documentation/in-depth-topics/wcf-and-webclient.html" TextWrapping="Wrap" Cursor="Hand"/>
+                </HyperlinkButton>
+                <TextBlock Text="SOAP DEMO - CREATE A NEW TO-DO:" Margin="0,20,0,0" HorizontalAlignment="Left"/>
+                <Grid Margin="0,10,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="SoapToDoTextBox" Text="Enter your To-Do here"/>
+                    <Button Grid.Column="1" Content="Create" Click="ButtonAddSoapToDo_Click" Margin="5,0,0,0"/>
+                </Grid>
+                <TextBlock Text="LIST OF TODO's:" Margin="0,20,0,0" HorizontalAlignment="Left"/>
+                <ScrollViewer Height="50" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                    <ItemsControl x:Name="SoapToDosItemsControl" HorizontalAlignment="Left">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                    <TextBlock Text="{Binding Description}" TextTrimming="CharacterEllipsis"/>
+                                    <Button Content="Delete" Click="ButtonDeleteSoapToDo_Click" Margin="5,0,0,0"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+                <Button Content="Refresh the list" Click="ButtonRefreshSoapToDos_Click" HorizontalAlignment="Left" Margin="0,10,0,0"/>
+            </StackPanel>
+            <local:ViewSourceButton Grid.Row="2"
+                                    Background="#FFBDE567">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Client_Server/WCF_SOAP"
+                                                FileName="WCF_SOAP_Demo.xaml" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Client_Server/WCF_SOAP"
+                                                FileName="WCF_SOAP_Demo.xaml.cs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Client_Server/WCF_SOAP"
+                                                FileName="WCF_SOAP_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Client_Server/WCF_SOAP"
+                                                FileName="WCF_SOAP_Demo.xaml.fs" />
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
+</UserControl>

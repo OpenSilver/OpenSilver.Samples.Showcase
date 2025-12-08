@@ -1,0 +1,14 @@
+Imports System.Windows.Controls
+Imports OpenSilver.Samples.Showcase.Search
+
+Namespace OpenSilver.Samples.Showcase
+    <SearchKeywords("RTL", "right to left", "flow", "direction", "layout", "arabic", "hebrew", "localization", "internationalization")>
+    Partial Public Class FlowDirection_Demo
+        Inherits UserControl
+
+        Public Sub New()
+            InitializeComponent()
+        End Sub
+
+    End Class
+End Namespace

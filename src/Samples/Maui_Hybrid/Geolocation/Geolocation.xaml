@@ -1,0 +1,34 @@
+﻿<UserControl
+    x:Class="OpenSilver.Samples.Showcase.Geolocation"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+    
+    <ContentControl Style="{StaticResource Card_Style}" Width="200">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl Content="Geolocation" Foreground="#fe7484" Background="#FF92BEAC" Style="{StaticResource HeaderControl_Style}"/>
+            <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Button Content="Get location" Click="GetButton_Click" HorizontalAlignment="Center" Height="32" Foreground="#fe7484" Background="{DynamicResource NativeApiButtonBackground}" FontWeight="Bold"/>
+                <TextBlock x:Name="LocationTextBlock" Text="" Foreground="#FF808080" TextWrapping="Wrap" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            </StackPanel>
+            <local:ViewSourceButton Grid.Row="2"
+                                    Background="#fe7484">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Maui_Hybrid/Geolocation"
+                                                FileName="Geolocation.xaml" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Maui_Hybrid/Geolocation"
+                                                FileName="Geolocation.xaml.cs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Maui_Hybrid/Geolocation"
+                                                FileName="Geolocation.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/Maui_Hybrid/Geolocation"
+                                                FileName="Geolocation.xaml.fs" />
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
+</UserControl>

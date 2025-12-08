@@ -1,0 +1,32 @@
+﻿<UserControl
+    x:Class="OpenSilver.Samples.Showcase.StaggeredPanel_Demo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+
+
+    <ContentControl Style="{StaticResource Card_Style}" Width="200">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl Content="Staggered Panel" Foreground="#FF89B8AD" Style="{StaticResource HeaderControl_Style}"/>
+
+            <DescriptionViewer Style="{StaticResource ControlsKitDescriptionStyle}" Margin="0,10,-10,0"/>
+
+            <StackPanel Grid.Row="1">
+                <TextBlock TextWrapping="Wrap" Text="The StaggeredPanel is a panel that arranges children in a masonry-like layout. Its children will be added in columns of equal width, such that each child is added to the column with the smallest heigth."/>
+                <TextBlock Margin="0,5,0,0" Grid.Row="1" TextWrapping="Wrap" Text="The cards shown on each page of this application are laid out using this Panel."/>
+            </StackPanel>
+            <local:ViewSourceButton Grid.Row="2"
+                                    Background="#FF3ED4B2">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Layout"
+                                                FileName="XAML_Layout.xaml" />
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
+</UserControl>

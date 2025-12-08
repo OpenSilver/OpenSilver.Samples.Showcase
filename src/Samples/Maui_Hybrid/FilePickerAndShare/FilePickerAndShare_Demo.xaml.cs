@@ -1,0 +1,93 @@
+﻿using System;
+using System.Windows;
+using System.Windows.Controls;
+using Microsoft.Maui.ApplicationModel;
+using Microsoft.Maui.ApplicationModel.DataTransfer;
+using Microsoft.Maui.Devices;
+using Microsoft.Maui.Storage;
+using System.Windows.Media.Imaging;
+using OpenSilver.Samples.Showcase.Search;
+
+namespace OpenSilver.Samples.Showcase
+{
+    [SearchKeywords("maui", "hybrid", "device", "native", "storage", "access")]
+    public partial class FilePickerAndShare_Demo : UserControl
+    {
+        string _pickedFileFullPath;
+        public FilePickerAndShare_Demo()
+        {
+            this.InitializeComponent();
+
+            if (DeviceInfo.Current.Platform == DevicePlatform.Unknown)
+            {
+                SampleContainer.Children.Clear();
+                SampleContainer.Children.Add(new TextBlock() { Text = "This sample is not supported in the browser.", TextWrapping = TextWrapping.Wrap });
+            }
+        }
+
+        private void PickImageButton_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            MainThread.BeginInvokeOnMainThread(async () =>
+            {
+                try
+                {
+                    var options = PickOptions.Images;
+                    var result = await FilePicker.Default.PickAsync(options);
+                    if (result != null)
+                    {
+                        _pickedFileFullPath = result.FullPath;
+                        ShareButton.Visibility = Visibility.Visible;
+                        PickedImageControl.Visibility = Visibility.Visible;
+                        FeatureNotAllowedTextBlock.Visibility = Visibility.Collapsed;
+                        if (result.FileName.EndsWith("jpg", StringComparison.OrdinalIgnoreCase) ||
+                            result.FileName.EndsWith("png", StringComparison.OrdinalIgnoreCase))
+                        {
+                            using (var stream = await result.OpenReadAsync())
+                            {
+                                BitmapImage bitmapImage = new BitmapImage();
+
+                                bitmapImage.SetSource(stream);
+                                PickedImageControl.Source = bitmapImage;
+                            }
+                        }
+                    }
+                }
+                catch (PermissionException ex)
+                {
+                    FeatureNotAllowedTextBlock.Visibility = Visibility.Visible;
+                }
+                catch (Exception ex)
+                {
+                    // The user canceled or something went wrong
+                }
+            });
+        }
+
+        private void ShareImageButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainThread.BeginInvokeOnMainThread(async () =>
+            {
+                if (_pickedFileFullPath != null)
+                {
+                    try
+                    {
+                        await Share.Default.RequestAsync(new ShareFileRequest
+                        {
+                            Title = "Share the picked image",
+                            File = new ShareFile(_pickedFileFullPath)
+                        });
+                    }
+                    catch (Exception ex)
+                    {
+                        // The user canceled or something went wrong
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Pick an image first before attempting to share it.");
+                }
+
+            });
+        }
+    }
+}

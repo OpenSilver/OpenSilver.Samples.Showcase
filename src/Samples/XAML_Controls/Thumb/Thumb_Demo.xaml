@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="OpenSilver.Samples.Showcase.Thumb_Demo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+
+    <ContentControl Width="210" Style="{StaticResource Card_Style}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <ContentControl Background="#FF8CC09C"
+                            Content="Thumb"
+                            Foreground="#FF61DD8A"
+                            Style="{StaticResource HeaderControl_Style}"/>
+
+            <Thumb Grid.Row="1"
+                   Width="50"
+                   Height="30"
+                   DragCompleted="OnThumbDragCompleted"
+                   DragDelta="OnThumbDragDelta"
+                   DragStarted="OnThumbDragStarted"/>
+
+            <TextBlock Name="infoTextBlock"
+                       Grid.Row="2"
+                       Margin="0,20"
+                       HorizontalAlignment="Center"
+                       FontSize="12"
+                       Text="Drag the thumb"
+                       TextWrapping="Wrap"/>
+
+            <local:ViewSourceButton Grid.Row="3" Background="#FF61DD8A">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo FileName="Thumb_Demo.xaml" RelativePath="src/Samples/XAML_Controls/Thumb"/>
+                    <local:ViewSourceButtonInfo FileName="Thumb_Demo.xaml.cs" RelativePath="src/Samples/XAML_Controls/Thumb"/>
+                    <local:ViewSourceButtonInfo FileName="Thumb_Demo.xaml.vb" RelativePath="src/Samples/XAML_Controls/Thumb"/>
+                    <local:ViewSourceButtonInfo FileName="Thumb_Demo.xaml.fs" RelativePath="src/Samples/XAML_Controls/Thumb"/>
+                    <local:ViewStyleSourceInfo TabHeader="Default Thumb Style" Fragment="#L3833-L3975"/>
+                    <local:ViewModernStyleSourceInfo TabHeader="Modern Thumb Style" Fragment="#L3450-L3541"/>
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
+</UserControl>

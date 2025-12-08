@@ -1,0 +1,46 @@
+﻿using Microsoft.Maui.Devices;
+using OpenSilver.Samples.Showcase.Search;
+using System;
+using System.IO;
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+
+namespace OpenSilver.Samples.Showcase
+{
+    [SearchKeywords("file", "dialog", "filesystem", "browse")]
+    public partial class OpenFileDialog_Demo : UserControl
+    {
+        private Controls.OpenFileDialog openFileDialog1;
+
+        public OpenFileDialog_Demo()
+        {
+            InitializeComponent();
+
+            openFileDialog1 = new Controls.OpenFileDialog()
+            {
+                Filter = DeviceInfo.Current.Platform == DevicePlatform.Android ? "text/plain" : "Text files (*.txt)|*.txt",
+            };
+        }
+
+        private async void ButtonOpenFile_Click(object sender, RoutedEventArgs e)
+        {
+            if (await openFileDialog1.ShowDialogAsync() == true)
+            {
+                try
+                {
+                    var file = openFileDialog1.File;
+                    FileNameTextBlock.Text = file.Name;
+                    using (StreamReader reader = new StreamReader(file.OpenRead(), Encoding.UTF8))
+                    {
+                        MessageBox.Show(reader.ReadToEnd());
+                    }
+                }
+                catch (Exception ex)
+                {
+                    //fail silently
+                }
+            }
+        }
+    }
+}

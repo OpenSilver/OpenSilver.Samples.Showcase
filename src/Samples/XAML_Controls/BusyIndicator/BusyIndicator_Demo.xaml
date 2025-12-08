@@ -1,0 +1,106 @@
+﻿<UserControl x:Class="OpenSilver.Samples.Showcase.BusyIndicator_Demo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+
+    <ContentControl Width="230" Style="{StaticResource Card_Style}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <ContentControl Background="#FFE45EE2"
+                            Content="BusyIndicator"
+                            Foreground="#FFE45EE2"
+                            Style="{StaticResource HeaderControl_Style}"/>
+
+            <StackPanel Grid.Row="1" Margin="0,10">
+                <CheckBox Content="IsBusy"
+                          FontSize="12"
+                          IsChecked="{Binding IsBusy, ElementName=MyBusyIndicator, Mode=TwoWay}"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center"
+                               FontSize="12"
+                               Text="BusyContent"/>
+                    <TextBox x:Name="BusyContentTextBox"
+                             Width="100"
+                             Margin="2"
+                             Text="{Binding BusyContent, ElementName=MyBusyIndicator, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </StackPanel>
+                <Button Margin="2"
+                        VerticalAlignment="Top"
+                        Canvas.ZIndex="1"
+                        Click="Button_Click"
+                        Content="Show for 3 seconds"/>
+            </StackPanel>
+
+            <BusyIndicator x:Name="MyBusyIndicator" Grid.Row="2">
+                <ContentControl HorizontalContentAlignment="Center" Content="Some Content"/>
+            </BusyIndicator>
+
+            <Separator Grid.Row="3" Margin="0,20"/>
+
+            <StackPanel Grid.Row="4">
+                <TextBlock Text="BusyIndicator with custom content:"
+                           TextAlignment="Center"
+                           TextWrapping="Wrap"/>
+                <BusyIndicator DisplayAfter="0" IsBusy="True">
+                    <BusyIndicator.BusyContentTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="4">
+                                <TextBlock HorizontalAlignment="Center"
+                                           FontWeight="Bold"
+                                           Text="Downloading Email"/>
+                                <StackPanel Margin="4">
+                                    <TextBlock Text="Downloading message 4/10..."/>
+                                    <ProgressBar Height="15" Value="40"/>
+                                </StackPanel>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Button Grid.Column="0"
+                                            Margin="0,0,2,0"
+                                            HorizontalAlignment="Right"
+                                            Content="Pause"/>
+                                    <Button Grid.Column="1"
+                                            Margin="2,0,0,0"
+                                            HorizontalAlignment="Left"
+                                            Content="Cancel"/>
+                                </Grid>
+                            </StackPanel>
+                        </DataTemplate>
+                    </BusyIndicator.BusyContentTemplate>
+                    <BusyIndicator.OverlayStyle>
+                        <Style TargetType="Rectangle">
+                            <Setter Property="Fill" Value="#82E8C0C0"/>
+                        </Style>
+                    </BusyIndicator.OverlayStyle>
+                    <BusyIndicator.ProgressBarStyle>
+                        <Style TargetType="ProgressBar">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                        </Style>
+                    </BusyIndicator.ProgressBarStyle>
+                    <ContentControl HorizontalContentAlignment="Center" Content="Some Content"/>
+                </BusyIndicator>
+            </StackPanel>
+
+            <local:ViewSourceButton Grid.Row="5" Background="#FFE45EE2">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo FileName="BusyIndicator_Demo.xaml" RelativePath="src/Samples/XAML_Controls/BusyIndicator"/>
+                    <local:ViewSourceButtonInfo FileName="BusyIndicator_Demo.xaml.cs" RelativePath="src/Samples/XAML_Controls/BusyIndicator"/>
+                    <local:ViewSourceButtonInfo FileName="BusyIndicator_Demo.xaml.vb" RelativePath="src/Samples/XAML_Controls/BusyIndicator"/>
+                    <local:ViewSourceButtonInfo FileName="BusyIndicator_Demo.xaml.fs" RelativePath="src/Samples/XAML_Controls/BusyIndicator"/>
+                    <local:ViewStyleSourceInfo TabHeader="Default BusyIndicator Style" RelativePath="src/Runtime/Controls.Toolkit/Themes" Fragment="#L14-L177"/>
+                    <local:ViewModernStyleSourceInfo FileName="OpenSilver.Controls.Toolkit.xaml" TabHeader="Modern BusyIndicator Style" Fragment="#L100-L253"/>
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
+</UserControl>

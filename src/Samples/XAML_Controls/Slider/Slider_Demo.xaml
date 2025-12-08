@@ -1,0 +1,46 @@
+﻿<UserControl
+    x:Class="OpenSilver.Samples.Showcase.Slider_Demo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:OpenSilver.Samples.Showcase">
+
+    <ContentControl Style="{StaticResource Card_Style}" Width="200">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ContentControl Content="Slider" Foreground="#FF76A6A2" Background="#FFA3CFCA" Style="{StaticResource HeaderControl_Style}"/>
+            <Grid Grid.Row="1" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="90"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <!--Vertical Slider example:-->
+                <Slider x:Name="MyVerticalSlider" Padding="10" Orientation="Vertical" Height="80" Width="20" Minimum="10" Maximum="110" HorizontalAlignment="Center"/>
+                <TextBlock Text="{Binding ElementName=MyVerticalSlider, Path=Value, StringFormat=N1}" Margin="15" Grid.Row="1" />
+                <!--Horizontal Slider example:-->
+                <Slider x:Name="MyHorizontalSlider" Padding="10" Orientation="Horizontal" Width="80" Height="20" Minimum="10" Maximum="110" SmallChange="5" LargeChange="10" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBlock Text="{Binding ElementName=MyHorizontalSlider, Path=Value, StringFormat=N1}" Margin="15" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center"/>
+            </Grid>
+            <local:ViewSourceButton Grid.Row="2"
+                                    Background="#FF3ED4C8">
+                <local:ViewSourceButton.Sources>
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Slider"
+                                                FileName="Slider_Demo.xaml" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Slider"
+                                                FileName="Slider_Demo.xaml.cs" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Slider"
+                                                FileName="Slider_Demo.xaml.vb" />
+                    <local:ViewSourceButtonInfo RelativePath="src/Samples/XAML_Controls/Slider"
+                                                FileName="Slider_Demo.xaml.fs" />
+                </local:ViewSourceButton.Sources>
+            </local:ViewSourceButton>
+        </Grid>
+    </ContentControl>
+</UserControl>
