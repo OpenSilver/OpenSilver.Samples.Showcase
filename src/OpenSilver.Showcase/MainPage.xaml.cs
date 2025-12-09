@@ -3,7 +3,6 @@ using OpenSilver.Animations;
 using OpenSilver.Themes.Modern;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Net.Http;
 using System.Text.Json;
@@ -22,7 +21,7 @@ namespace OpenSilver.Showcase
     {
         bool _isMenuHidden;
 
-public MainPage()
+        public MainPage()
         {
             InitializeComponent();
 
@@ -56,9 +55,8 @@ public MainPage()
             //Animations.Animation.SlowDownAnimationsForDebugging = 10.0; // slow down factor
             //Animations.Animation.LogAnimationsForDebugging = true;
 
-
 #if !WITHBLAZOR
-            LoadFilesForBlazorLaunch(); 
+            LoadFilesForBlazorLaunch();
 #endif
         }
 
@@ -67,12 +65,11 @@ public MainPage()
         {
             var http = new HttpClient();
 
-            //string blazorAppAddress = "http://localhost:63485/";
-            string blazorAppAddress = "https://opensilvershowcase-preprod.azurewebsites.net/";
+            string blazorAppAddress = BlazorHelper.FullAppBaseUri.Replace("#/", "");
 
             // Fetch boot manifest:
             var bootJson = await http.GetStringAsync($"{blazorAppAddress}_framework/blazor.boot.json");
-            using var doc = System.Text.Json.JsonDocument.Parse(bootJson);
+            using var doc = JsonDocument.Parse(bootJson);
             var res = doc.RootElement.GetProperty("resources");
 
             IEnumerable<string> From(JsonElement e) =>
@@ -90,8 +87,8 @@ public MainPage()
                     urls.AddRange(From(culture.Value));
 
             await Task.WhenAll(urls.Select(u =>
-                http.GetAsync(u, System.Net.Http.HttpCompletionOption.ResponseHeadersRead)));
-        } 
+                http.GetAsync(u, HttpCompletionOption.ResponseHeadersRead)));
+        }
 #endif
 
         public static MainPage Current { get; private set; }

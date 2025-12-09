@@ -1,36 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Navigation;
 
 namespace OpenSilver.Showcase
 {
-    public partial class Blazor_MudBlazor : UserControl
+    public partial class Blazor_MudBlazor : Page
     {
         public Blazor_MudBlazor()
         {
-            this.InitializeComponent();
-
-#if WITHBLAZOR
-            LoadContent(); 
-#endif
+            InitializeComponent();
         }
 
-#if WITHBLAZOR
-        private void LoadContent()
+        protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            try
-            {
-                Content = new MudBlazor_Sample();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                throw new TargetInvocationException(ex);
-            }
-        } 
+#if WITHBLAZOR
+            Content = new MudBlazor_Sample();
+#else
+            Content = new WebBrowser { SourceUri = new Uri($"{BlazorHelper.FullAppBaseUri}Blazor_MudBlazor?menu=hidden") };
 #endif
+        }
     }
 }

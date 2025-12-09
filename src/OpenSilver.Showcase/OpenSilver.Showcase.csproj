@@ -39,42 +39,6 @@
     <DefineConstants>$(DefineConstants);WITHBLAZOR;FULLBLAZOR</DefineConstants>
   </PropertyGroup>
 
-  <!--This section prepares to use the correct xaml file based on the configuration-->
-  <PropertyGroup>
-    <BlazoriseSuffix></BlazoriseSuffix>
-    <DevExpressSuffix></DevExpressSuffix>
-    <GeoBlazorSuffix></GeoBlazorSuffix>
-    <RadzenSuffix></RadzenSuffix>
-    <SyncfusionSuffix></SyncfusionSuffix>
-    <MudBlazorSuffix></MudBlazorSuffix>
-  </PropertyGroup>
-
-  <Choose>
-    <When Condition="'$(FullBlazor)' == 'true'">
-      <PropertyGroup>
-        <BlazoriseSuffix>_WithBlazor</BlazoriseSuffix>
-        <DevExpressSuffix>_WithBlazor</DevExpressSuffix>
-        <GeoBlazorSuffix>_WithBlazor</GeoBlazorSuffix>
-        <RadzenSuffix>_WithBlazor</RadzenSuffix>
-        <SyncfusionSuffix>_WithBlazor</SyncfusionSuffix>
-        <MudBlazorSuffix>_WithBlazor</MudBlazorSuffix>
-      </PropertyGroup>
-    </When>
-
-    <When Condition="'$(WithBlazor)' == 'true'">
-      <PropertyGroup>
-        <BlazoriseSuffix>_WithBlazor</BlazoriseSuffix>
-        <RadzenSuffix>_WithBlazor</RadzenSuffix>
-        <MudBlazorSuffix>_WithBlazor</MudBlazorSuffix>
-        <DevExpressSuffix></DevExpressSuffix>
-        <GeoBlazorSuffix></GeoBlazorSuffix>
-        <SyncfusionSuffix></SyncfusionSuffix>
-      </PropertyGroup>
-    </When>
-  </Choose>
-  <!--End of preparation of xaml file based on the configuration-->
-
-
   <ItemGroup>
     <Page Include="Other\Controls\LoadingControl.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -318,6 +282,7 @@
     <Compile Include="Other\Converters\StringEmptyToVisibilityConverter.cs" />
     <Compile Include="Other\Converters\RgbToBrushConverter.cs" />
     <Compile Include="Other\Elements.cs" />
+    <Compile Include="Other\Internals\BlazorHelper.cs" />
     <Compile Include="Other\Internals\CharacterClickService.cs" />
     <Compile Include="Other\Internals\DeferLoadingItemsBehavior.cs" />
     <Compile Include="Other\Internals\ItemsControlLoadingBehavior.cs" />
@@ -457,45 +422,44 @@
 
   <ItemGroup>
     <!-- XAML pages -->
-    <Page Include="Samples\Blazor_Blazorise\Blazor_Blazorise$(BlazoriseSuffix).xaml">
+    <Page Include="Samples\Blazor_Blazorise\Blazor_Blazorise.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\Blazor_DevExpress\Blazor_DevExpress$(DevExpressSuffix).xaml">
+    <Page Include="Samples\Blazor_DevExpress\Blazor_DevExpress.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\Blazor_GeoBlazor\Blazor_GeoBlazor$(GeoBlazorSuffix).xaml">
+    <Page Include="Samples\Blazor_GeoBlazor\Blazor_GeoBlazor.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\Blazor_Radzen\Blazor_Radzen$(RadzenSuffix).xaml">
+    <Page Include="Samples\Blazor_Radzen\Blazor_Radzen.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\Blazor_Syncfusion\Blazor_Syncfusion$(SyncfusionSuffix).xaml">
+    <Page Include="Samples\Blazor_Syncfusion\Blazor_Syncfusion.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\Blazor_MudBlazor\Blazor_MudBlazor$(MudBlazorSuffix).xaml">
+    <Page Include="Samples\Blazor_MudBlazor\Blazor_MudBlazor.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
 
     <Compile Include="Samples\Blazor_Blazorise\Blazor_Blazorise.xaml.cs">
-      <DependentUpon>Blazor_Blazorise$(BlazoriseSuffix).xaml</DependentUpon>
+      <DependentUpon>Blazor_Blazorise.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\Blazor_DevExpress\Blazor_DevExpress.xaml.cs">
-      <DependentUpon>Blazor_DevExpress$(DevExpressSuffix).xaml</DependentUpon>
+      <DependentUpon>Blazor_DevExpress.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\Blazor_GeoBlazor\Blazor_GeoBlazor.xaml.cs">
-      <DependentUpon>Blazor_GeoBlazor$(GeoBlazorSuffix).xaml</DependentUpon>
+      <DependentUpon>Blazor_GeoBlazor.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\Blazor_Radzen\Blazor_Radzen.xaml.cs">
-      <DependentUpon>Blazor_Radzen$(RadzenSuffix).xaml</DependentUpon>
+      <DependentUpon>Blazor_Radzen.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\Blazor_Syncfusion\Blazor_Syncfusion.xaml.cs">
-      <DependentUpon>Blazor_Syncfusion$(SyncfusionSuffix).xaml</DependentUpon>
+      <DependentUpon>Blazor_Syncfusion.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\Blazor_MudBlazor\Blazor_MudBlazor.xaml.cs">
-      <DependentUpon>Blazor_MudBlazor$(MudBlazorSuffix).xaml</DependentUpon>
+      <DependentUpon>Blazor_MudBlazor.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
-
 
   <ItemGroup>
     <Content Include="Connected Services\ServiceReference1\ConnectedService.json" />

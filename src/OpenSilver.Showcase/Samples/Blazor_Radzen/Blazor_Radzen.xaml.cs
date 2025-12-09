@@ -1,35 +1,22 @@
 ﻿using System;
-using System.Linq;
-using System.Reflection;
-using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Navigation;
 
-namespace OpenSilver.Showcase
+namespace OpenSilver.Showcase;
+
+public partial class Blazor_Radzen : Page
 {
-    public partial class Blazor_Radzen : UserControl
+    public Blazor_Radzen()
     {
-        public Blazor_Radzen()
-        {
-            this.InitializeComponent();
+        InitializeComponent();
+    }
 
+    protected override void OnNavigatedTo(NavigationEventArgs e)
+    {
 #if WITHBLAZOR
-            LoadContent(); 
-#endif
-        }
-
-#if WITHBLAZOR
-        private void LoadContent()
-        {
-            try
-            {
-                Content = new Radzen_Sample();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                throw new TargetInvocationException(ex);
-            }
-        } 
+        Content = new Radzen_Sample();
+#else
+        Content = new WebBrowser { SourceUri = new Uri($"{BlazorHelper.FullAppBaseUri}Blazor_Radzen?menu=hidden") };
 #endif
     }
 }

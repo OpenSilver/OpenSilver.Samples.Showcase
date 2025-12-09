@@ -32,20 +32,22 @@
   <PropertyGroup Condition="'$(FullBlazor)'=='true'">
     <DefineConstants>$(DefineConstants);WITHBLAZOR;FULLBLAZOR</DefineConstants>
   </PropertyGroup>
-	
-  <Choose>
-  	<When Condition="'$(FullBlazor)'=='true' or '$(WithBlazor)'=='true'">
-	  <ItemGroup>
-      <Content Remove="wwwroot\index_WithBlazor.html" />
-    </ItemGroup>
-  	</When>
-  	<Otherwise>
-      <ItemGroup>
-        <Content Remove="wwwroot\index.html" />
-      </ItemGroup>
-  	</Otherwise>
-  </Choose>
-	
+
+	<Choose>
+		<When Condition="'$(FullBlazor)'=='true' or '$(WithBlazor)'=='true'">
+			<ItemGroup>
+				<Content Remove="wwwroot\index.html" />
+				<Content Remove="wwwroot\manifest.webmanifest" />
+				<Content Remove="wwwroot\service-worker.js" />
+				<Content Remove="wwwroot\service-worker.published.js" />
+			</ItemGroup>
+		</When>
+		<Otherwise>
+			<ItemGroup>
+				<Content Remove="wwwroot\index.htm" />
+			</ItemGroup>
+		</Otherwise>
+	</Choose>	
 	
   <ItemGroup>
     <PackageReference Include="OpenSilver.WebAssembly" Version="[$(OpenSilverVersion)]" />
@@ -78,9 +80,17 @@
 		<BlazorWebAssemblyLazyLoad Include="DevExpress.Printing.v25.1.Core.dll" />
 		<BlazorWebAssemblyLazyLoad Include="DevExpress.SpellChecker.v25.1.Core.dll" />
 	</ItemGroup>
-	
-	
-  <ItemGroup>
+
+	<ItemGroup>
+		<SecondAppFiles Include="bin\fullblazor_publish\wwwroot\**\*" />
+	</ItemGroup>
+
+	<Target Name="CopySecondAppToPublish" AfterTargets="Publish" Condition="'$(Configuration)' == 'Release'">
+		<Message Text="Copying Full App to wwwroot/full" Importance="high" />
+		<Copy SourceFiles="@(SecondAppFiles)" DestinationFiles="@(SecondAppFiles->'$(PublishDir)wwwroot\full\%(RecursiveDir)%(Filename)%(Extension)')" />
+	</Target>
+
+	<ItemGroup>
     <ProjectReference Include="..\OpenSilver.Showcase\OpenSilver.Showcase.csproj" />
   </ItemGroup>
 

@@ -1,33 +1,23 @@
 ﻿using System;
-using System.Reflection;
 using System.Windows.Controls;
+using System.Windows.Interop;
+using System.Windows.Navigation;
 
-namespace OpenSilver.Showcase
+namespace OpenSilver.Showcase;
+
+public partial class Blazor_GeoBlazor : Page
 {
-    public partial class Blazor_GeoBlazor : UserControl
+    public Blazor_GeoBlazor()
     {
-        public Blazor_GeoBlazor()
-        {
-            this.InitializeComponent();
+        InitializeComponent();
+    }
 
+    protected override void OnNavigatedTo(NavigationEventArgs e)
+    {
 #if FULLBLAZOR
-            LoadContent(); 
-#endif
-        }
-
-#if FULLBLAZOR
-        private void LoadContent()
-        {
-            try
-            {
-                //Content = new GeoBlazor_Sample();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                throw new TargetInvocationException(ex);
-            }
-        } 
+        //Content = new GeoBlazor_Sample();
+#else
+        //Content = new WebBrowser { SourceUri = new Uri($"{BlazorHelper.FullAppBaseUri}Blazor_GeoBlazor?menu=hidden") };
 #endif
     }
 }
