@@ -6,6 +6,7 @@ using OpenSilver.WebAssembly;
 namespace OpenSilver.Showcase.Browser.Pages
 {
     [Route("/")]
+    [Route("/full/")]
     public class Index : ComponentBase
     {
         protected override void BuildRenderTree(RenderTreeBuilder __builder)

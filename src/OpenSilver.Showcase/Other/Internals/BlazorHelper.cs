@@ -3,6 +3,7 @@ using System.Windows.Browser;
 
 namespace OpenSilver.Showcase;
 
+#if !WITHBLAZOR
 public static class BlazorHelper
 {
     private static string fullAppBaseUri;
@@ -12,3 +13,4 @@ public static class BlazorHelper
         set => fullAppBaseUri = value;
     }
 }
+#endif

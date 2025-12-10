@@ -38,7 +38,7 @@ The different solution files are for different purposes and include different pr
 - **OpenSilver.Showcase - With Blazor Demos.sln** contains all the C# projects, except the projects for Blazor component that do require a license.
 - **OpenSilver.Showcase - C# Full.sln** contains all the C# projects, including those that use third party Blazor components that require a license.
 
-To load the Blazor samples locally, select `Debug-FullBlazor` or `Release-FullBlazor` configuration. Otherwise, the Blazor samples will be shown in an iFrame pointing to the hosted version.
+To load the Blazor samples locally, select `Debug-FullBlazor` or `Release-FullBlazor` configuration. Otherwise, the Blazor samples will be shown in an iFrame pointing to the hosted version. The url of the full app with Blazor samples can be configured by setting `BlazorHelper.FullAppBaseUri`. By default, it points to `wwwroot\full` folder.
 
 Here are the projects included for each .sln file (names shortened for readability):
 | Solution file         | OpenSilver.Showcase | Browser      | Simulator | MauiHybrid | Shared | Blazorise | MudBlazor | Radzen | DevExpress | Syncfusion |
@@ -47,3 +47,11 @@ Here are the projects included for each .sln file (names shortened for readabili
 | **Minimal(Fast)**     |    C#✅ F#❌ VB❌    | C#✅ F#❌ VB❌ |   ✅       |     ❌     |   ✅   |    ❌      |    ❌     |   ❌    |     ❌     |     ❌      |
 | **With Blazor Demos** |    C#✅ F#❌ VB❌    | C#✅ F#❌ VB❌ |   ✅       |     ❌     |   ✅   |    ✅      |    ✅     |   ✅    |     ❌     |     ❌      |
 | **C# Full**           |    C#✅ F#❌ VB❌    | C#✅ F#❌ VB❌ |   ✅       |     ✅     |   ✅   |    ✅      |    ✅     |   ✅    |     ✅     |     ✅      |
+
+## Publishing
+
+To publish the app with full Blazor samples inside `wwwroot\full` folder, follow these steps:
+- Include the licences
+- Open `OpenSilver.Showcase - C# Full.sln`
+- In Visual Studio, publish `FolderFullProfile`, it uses `Release-FullBlazor` build configuration and creates `bin\fullblazor_publish` folder
+- Publish `OpenSilver.Showcase.Browser` project with `Release` build configuration, it automaticaly copies the content of `bin\fullblazor_publish\wwwroot` folder into `wwwroot\full` folder
