@@ -2,14 +2,12 @@
 using OpenSilver.Animations;
 using OpenSilver.Themes.Modern;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
-using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Browser;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
@@ -61,33 +59,20 @@ namespace OpenSilver.Showcase
         }
 
 #if !WITHBLAZOR
-        private async void LoadFilesForBlazorLaunch()
+        private static async void LoadFilesForBlazorLaunch()
         {
-            var http = new HttpClient();
-
-            string blazorAppAddress = BlazorHelper.FullAppBaseUri.Replace("#/", "");
-
-            // Fetch boot manifest:
-            var bootJson = await http.GetStringAsync($"{blazorAppAddress}_framework/blazor.boot.json");
-            using var doc = JsonDocument.Parse(bootJson);
-            var res = doc.RootElement.GetProperty("resources");
-
-            IEnumerable<string> From(JsonElement e) =>
-                e.ValueKind == JsonValueKind.Object
-                    ? e.EnumerateObject().Select(p => $"{blazorAppAddress}_framework/{p.Name}")
-                    : Array.Empty<string>();
-
-            //Go through the dlls to load them:
-            var urls = new List<string>();
-            if (res.TryGetProperty("assembly", out var asm)) urls.AddRange(From(asm));
-            if (res.TryGetProperty("lazyAssembly", out var laz)) urls.AddRange(From(laz));
-            if (res.TryGetProperty("runtime", out var rt)) urls.AddRange(From(rt));
-            if (res.TryGetProperty("satelliteResources", out var sat))
-                foreach (var culture in sat.EnumerateObject())
-                    urls.AddRange(From(culture.Value));
-
-            await Task.WhenAll(urls.Select(u =>
-                http.GetAsync(u, HttpCompletionOption.ResponseHeadersRead)));
+            await Task.Delay(3000);
+            // preload files for the first Blazor sample, the main dlls are cached by the browser
+            var browser = new WebBrowser { SourceUri = new Uri($"{BlazorHelper.FullAppBaseUri}Blazor_Radzen?menu=hidden") };
+            var popup = new Popup
+            {
+                Child = browser,
+                HorizontalOffset = -10000,
+                VerticalOffset = -10000,
+                IsOpen = true
+            };
+            await Task.Delay(TimeSpan.FromMinutes(2));
+            popup.IsOpen = false;
         }
 #endif
 

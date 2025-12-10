@@ -22,7 +22,6 @@
     <DefineTrace>true</DefineTrace>
     <BlazorWebAssemblyLoadAllGlobalizationData>true</BlazorWebAssemblyLoadAllGlobalizationData>
     <WasmEnableWebcil>false</WasmEnableWebcil>
-    <ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
     <PublishIISAssets>true</PublishIISAssets>
   </PropertyGroup>
 
@@ -32,6 +31,9 @@
   <PropertyGroup Condition="'$(FullBlazor)'=='true'">
     <DefineConstants>$(DefineConstants);WITHBLAZOR;FULLBLAZOR</DefineConstants>
   </PropertyGroup>
+	<PropertyGroup Condition="'$(WithBlazor)'!='true' and '$(FullBlazor)'!='true'">
+		<ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
+	</PropertyGroup>
 
 	<Choose>
 		<When Condition="'$(FullBlazor)'=='true' or '$(WithBlazor)'=='true'">
@@ -45,6 +47,7 @@
 		<Otherwise>
 			<ItemGroup>
 				<Content Remove="wwwroot\index.htm" />
+				<ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js" />
 			</ItemGroup>
 		</Otherwise>
 	</Choose>	
@@ -104,10 +107,6 @@
     <TrimmableAssembly Include="OpenSilver.Expression.Effects" />
     <TrimmableAssembly Include="OpenSilver.Interactivity" />
     <TrimmableAssembly Include="OpenSilver.Data" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js" />
   </ItemGroup>
 
 </Project>
