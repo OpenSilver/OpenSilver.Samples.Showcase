@@ -25,13 +25,17 @@
     <PackageReference Include="OpenSilver.ControlsKit" Version="[$(OpenSilverControlsKitVersion)]" />
     <PackageReference Include="OpenSilver.Themes.Modern" Version="[$(OpenSilverModernThemeVersion)]" />
     <PackageReference Include="System.ServiceModel.Duplex" Version="4.10.0" />
-    <PackageReference Include="System.ServiceModel.Http" Version="8.1.2" />
     <PackageReference Include="System.ServiceModel.NetTcp" Version="4.10.0" />
     <PackageReference Include="System.ServiceModel.Security" Version="4.10.0" />
     <PackageReference Include="OpenSilver" Version="[$(OpenSilverVersion)]" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
   </ItemGroup>
-
+	
+	<!-- DevExpress loads a newer version of this package-->
+	<ItemGroup Condition="'$(FullBlazor)'!='true'">
+		<PackageReference Include="System.ServiceModel.Http" Version="4.10.0" />
+	</ItemGroup>
+	
   <PropertyGroup Condition="'$(WithBlazor)'=='true'">
     <DefineConstants>$(DefineConstants);WITHBLAZOR</DefineConstants>
   </PropertyGroup>

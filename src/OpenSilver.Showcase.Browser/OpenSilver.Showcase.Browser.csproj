@@ -21,6 +21,7 @@
     <IntermediateOutputPath>obj/$(Configuration)_cs</IntermediateOutputPath>
     <DefineTrace>true</DefineTrace>
     <BlazorWebAssemblyLoadAllGlobalizationData>true</BlazorWebAssemblyLoadAllGlobalizationData>
+		<SatelliteResourceLanguages>en;fr;es;ru</SatelliteResourceLanguages>
     <WasmEnableWebcil>false</WasmEnableWebcil>
     <PublishIISAssets>true</PublishIISAssets>
   </PropertyGroup>

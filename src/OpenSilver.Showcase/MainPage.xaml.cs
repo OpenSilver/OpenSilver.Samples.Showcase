@@ -52,12 +52,12 @@ namespace OpenSilver.Showcase
             //Animations.Animation.SlowDownAnimationsForDebugging = 10.0; // slow down factor
             //Animations.Animation.LogAnimationsForDebugging = true;
 
-#if !WITHBLAZOR
+#if !FULLBLAZOR
             PrepareBlazorSamples();
 #endif
         }
 
-#if !WITHBLAZOR
+#if !FULLBLAZOR
         private async void PrepareBlazorSamples()
         {
             var grid = PageScrollViewer.Content as Grid;

@@ -6,7 +6,7 @@ using System.Windows.Controls;
 
 namespace OpenSilver.Showcase;
 
-#if !WITHBLAZOR
+#if !FULLBLAZOR
 public static class BlazorHelper
 {
     private static WebBrowser _webBrowser;
