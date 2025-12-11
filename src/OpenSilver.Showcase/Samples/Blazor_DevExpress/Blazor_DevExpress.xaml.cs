@@ -9,6 +9,10 @@ public partial class Blazor_DevExpress : Page
     public Blazor_DevExpress()
     {
         InitializeComponent();
+
+#if !FULLBLAZOR
+        Content = null;
+#endif
     }
 
     protected override async void OnNavigatedTo(NavigationEventArgs e)
@@ -42,7 +46,12 @@ public partial class Blazor_DevExpress : Page
             throw;
         }
 #else
-        Content = new WebBrowser { SourceUri = new Uri($"{BlazorHelper.FullAppBaseUri}Blazor_DevExpress?menu=hidden") };
+        BlazorHelper.NavigateTo(nameof(Blazor_DevExpress));
 #endif
     }
+
+#if !FULLBLAZOR
+    protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
+        => BlazorHelper.OnNavigatingFrom(e.Uri);
+#endif
 }

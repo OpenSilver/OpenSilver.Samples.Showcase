@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 using System.Windows.Navigation;
 
 namespace OpenSilver.Showcase;
@@ -16,7 +15,12 @@ public partial class Blazor_Blazorise : Page
 #if WITHBLAZOR
         Content = new Blazorise_Sample();
 #else
-        Content = new WebBrowser { SourceUri = new Uri($"{BlazorHelper.FullAppBaseUri}Blazor_Blazorise?menu=hidden") };
+        BlazorHelper.NavigateTo(nameof(Blazor_Blazorise));
 #endif
     }
+
+#if !WITHBLAZOR
+    protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
+        => BlazorHelper.OnNavigatingFrom(e.Uri);
+#endif
 }

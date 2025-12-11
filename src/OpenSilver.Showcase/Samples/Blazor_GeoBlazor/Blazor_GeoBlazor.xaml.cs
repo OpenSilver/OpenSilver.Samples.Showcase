@@ -1,6 +1,4 @@
-﻿using System;
-using System.Windows.Controls;
-using System.Windows.Interop;
+﻿using System.Windows.Controls;
 using System.Windows.Navigation;
 
 namespace OpenSilver.Showcase;
@@ -17,7 +15,12 @@ public partial class Blazor_GeoBlazor : Page
 #if FULLBLAZOR
         //Content = new GeoBlazor_Sample();
 #else
-        //Content = new WebBrowser { SourceUri = new Uri($"{BlazorHelper.FullAppBaseUri}Blazor_GeoBlazor?menu=hidden") };
+        //BlazorHelper.NavigateTo(nameof(Blazor_GeoBlazor));
 #endif
     }
+
+#if !WITHBLAZOR
+    protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
+        => BlazorHelper.OnNavigatingFrom(e.Uri);
+#endif
 }

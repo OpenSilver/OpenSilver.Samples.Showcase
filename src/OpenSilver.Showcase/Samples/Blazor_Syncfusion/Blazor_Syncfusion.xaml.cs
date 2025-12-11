@@ -9,6 +9,10 @@ public partial class Blazor_Syncfusion : Page
     public Blazor_Syncfusion()
     {
         InitializeComponent();
+
+#if !FULLBLAZOR
+        Content = null;
+#endif
     }
 
     protected override async void OnNavigatedTo(NavigationEventArgs e)
@@ -39,7 +43,12 @@ public partial class Blazor_Syncfusion : Page
             throw;
         }
 #else
-        Content = new WebBrowser { SourceUri = new Uri($"{BlazorHelper.FullAppBaseUri}Blazor_Syncfusion?menu=hidden") };
+        BlazorHelper.NavigateTo(nameof(Blazor_Syncfusion));
 #endif
     }
+
+#if !FULLBLAZOR
+    protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
+        => BlazorHelper.OnNavigatingFrom(e.Uri);
+#endif
 }

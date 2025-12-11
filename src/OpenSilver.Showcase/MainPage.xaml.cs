@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Browser;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
@@ -54,25 +53,21 @@ namespace OpenSilver.Showcase
             //Animations.Animation.LogAnimationsForDebugging = true;
 
 #if !WITHBLAZOR
-            LoadFilesForBlazorLaunch();
+            PrepareBlazorSamples();
 #endif
         }
 
 #if !WITHBLAZOR
-        private static async void LoadFilesForBlazorLaunch()
+        private async void PrepareBlazorSamples()
         {
-            await Task.Delay(3000);
-            // preload files for the first Blazor sample, the main dlls are cached by the browser
-            var browser = new WebBrowser { SourceUri = new Uri($"{BlazorHelper.FullAppBaseUri}Blazor_Radzen?menu=hidden") };
-            var popup = new Popup
-            {
-                Child = browser,
-                HorizontalOffset = -10000,
-                VerticalOffset = -10000,
-                IsOpen = true
-            };
-            await Task.Delay(TimeSpan.FromMinutes(2));
-            popup.IsOpen = false;
+            var grid = PageScrollViewer.Content as Grid;
+            var webBrowser = new WebBrowser { Visibility = Visibility.Collapsed };
+            grid.Children.Insert(1, webBrowser); // after the Frame control to overlap it when visible
+            BlazorHelper.Initialize(webBrowser);
+
+            // preload files for the first Blazor sample, after menu animation
+            await Task.Delay(7000);
+            BlazorHelper.NavigateTo(nameof(Blazor_Radzen), hidden: true);
         }
 #endif
 
