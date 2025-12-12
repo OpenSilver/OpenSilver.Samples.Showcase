@@ -63,8 +63,8 @@ namespace OpenSilver.Showcase
             var grid = PageScrollViewer.Content as Grid;
             var webBrowser = new WebBrowser { Visibility = Visibility.Collapsed };
             grid.Children.Insert(1, webBrowser); // after the Frame control to overlap it when visible
-            //BlazorHelper.Initialize(webBrowser, "https://userware-test-deployment.azurewebsites.net/full/#/");
-            BlazorHelper.Initialize(webBrowser);
+            //BlazorHelper.Initialize(webBrowser, () => DarkThemeRadioButton.IsChecked == true, "https://userware-test-deployment.azurewebsites.net/full/#/");
+            BlazorHelper.Initialize(webBrowser, () => DarkThemeRadioButton.IsChecked == true);
 
             // preload files for the first Blazor sample, after menu animation
             await Task.Delay(7000);
@@ -146,6 +146,17 @@ namespace OpenSilver.Showcase
             {
                 await TreeViewHelpers.SelectItemInTreeViewAsync(MenuTreeView, navigatedPage);
             }
+
+#if FULLBLAZOR
+            if (e.Uri.OriginalString.Contains("theme=dark"))
+            {
+                DarkThemeRadioButton.IsChecked = true;
+            }
+            else if (DarkThemeRadioButton.IsChecked == true)
+            {
+                LightThemeRadioButton.IsChecked = true;
+            }
+#endif
             _skipMenu_SelectionChanged = false;
         }
 
@@ -470,6 +481,9 @@ namespace OpenSilver.Showcase
             }
 
             UpdateThemeToggleFillColor();
+#if !FULLBLAZOR
+            BlazorHelper.UpdateTheme();
+#endif
         }
 
         private void UpdateThemeToggleFillColor()

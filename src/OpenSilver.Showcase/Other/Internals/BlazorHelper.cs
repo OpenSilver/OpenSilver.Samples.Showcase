@@ -10,22 +10,22 @@ namespace OpenSilver.Showcase;
 public static class BlazorHelper
 {
     private static WebBrowser _webBrowser;
+    private static Func<bool> _isDarkTheme;
 
     public static string FullAppBaseUri { get; private set; }
 
-    public static void Initialize(WebBrowser webBrowser, string fullAppBaseUri = null)
+    public static void Initialize(WebBrowser webBrowser, Func<bool> isDarkTheme, string fullAppBaseUri = null)
     {
         _webBrowser = webBrowser;
+        _isDarkTheme = isDarkTheme;
         FullAppBaseUri = fullAppBaseUri ?? $"{HtmlPage.Document.DocumentUri.GetLeftPart(UriPartial.Authority)}/full/#/";
     }
 
     public static void NavigateTo(string relativeUri, bool hidden = false)
     {
-        if (_webBrowser == null)
-        {
-            throw new InvalidOperationException("BlazorHelper is not initialized. Call BlazorHelper.Initialize() first.");
-        }
-        _webBrowser.SourceUri = new Uri($"{FullAppBaseUri}{relativeUri}?menu=hidden");
+        ValidateBrowser();
+
+        _webBrowser.SourceUri = new Uri($"{FullAppBaseUri}{relativeUri}?menu=hidden{(_isDarkTheme() ? "&theme=dark" : "")}");
 
         if (!hidden)
         {
@@ -35,10 +35,7 @@ public static class BlazorHelper
 
     public static void OnNavigatingFrom(Uri toUri)
     {
-        if (_webBrowser == null)
-        {
-            throw new InvalidOperationException("BlazorHelper is not initialized. Call BlazorHelper.Initialize() first.");
-        }
+        ValidateBrowser();
 
         if (!toUri.OriginalString.Contains("Blazor"))
         {
@@ -53,6 +50,25 @@ public static class BlazorHelper
                     _webBrowser.SourceUri = null;
                 }
             });
+        }
+    }
+
+    public static void UpdateTheme()
+    {
+        ValidateBrowser();
+
+        if (_webBrowser.Visibility == Visibility.Visible)
+        {
+            var uri = _webBrowser.SourceUri.OriginalString;
+            _webBrowser.SourceUri = new Uri($"{uri[..uri.IndexOf('?')]}?menu=hidden{(_isDarkTheme() ? "&theme=dark" : "")}");
+        }
+    }
+
+    private static void ValidateBrowser()
+    {
+        if (_webBrowser == null)
+        {
+            throw new InvalidOperationException("BlazorHelper is not initialized. Call BlazorHelper.Initialize() first.");
         }
     }
 }
