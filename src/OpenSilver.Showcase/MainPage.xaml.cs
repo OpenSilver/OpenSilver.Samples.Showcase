@@ -156,7 +156,7 @@ namespace OpenSilver.Showcase
             {
                 LightThemeRadioButton.IsChecked = true;
             }
-#endif
+#endif        
             _skipMenu_SelectionChanged = false;
         }
 
@@ -479,6 +479,10 @@ namespace OpenSilver.Showcase
                     gitHubControl.Refresh();
                 }
             }
+
+#if WITHBLAZOR
+            ServiceLocator.Get<Radzen.ThemeService>().SetTheme(isDark ? "material-dark" : "material");
+#endif
 
             UpdateThemeToggleFillColor();
 #if !FULLBLAZOR
