@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.Blazor;
+using System;
 using System.Windows.Controls;
 using System.Windows.Navigation;
 
@@ -26,17 +27,18 @@ public partial class Blazor_DevExpress : Page
 
             //// Load required js and css files:
             var baseUri = Interop.ExecuteJavaScript("document.baseURI").ToString();
-            baseUri = baseUri.EndsWith("/") ? baseUri : baseUri + "/";
+            baseUri = baseUri.EndsWith('/') ? baseUri : baseUri + "/";
             Interop.LoadCssFilesAsync(
-                new string[]
-                {
+                [
                     baseUri + "_content/DevExpress.Blazor.Themes/blazing-berry.bs5.min.css",
                     baseUri + "_content/DevExpress.Blazor.RichEdit/dx-blazor-richedit.css"
-                },
+                ],
                 () =>
                 {
                     //Add the page's content
                     Content = new DevExpress_Sample();
+                    _isInitialized = true;
+                    ServiceLocator.Get<IThemeChangeService>().SetTheme(CurrentTheme);
                 }
             );
         }
@@ -50,7 +52,21 @@ public partial class Blazor_DevExpress : Page
 #endif
     }
 
-#if !FULLBLAZOR
+#if FULLBLAZOR
+    private static bool _isInitialized = false;
+    private static bool _isDarkMode = false;
+    private static DxTheme CurrentTheme => _isDarkMode ? DevExpress.Blazor.Themes.BlazingDark : DevExpress.Blazor.Themes.BlazingBerry;
+
+    public static void UpdateTheme(bool isDarkMode)
+    {
+        _isDarkMode = isDarkMode;
+
+        if (_isInitialized)
+        {
+            ServiceLocator.Get<IThemeChangeService>().SetTheme(CurrentTheme);
+        }
+    }
+#else
     protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
         => BlazorHelper.OnNavigatingFrom(e.Uri);
 #endif

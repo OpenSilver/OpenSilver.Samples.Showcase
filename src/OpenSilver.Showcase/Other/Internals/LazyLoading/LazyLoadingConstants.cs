@@ -32,7 +32,7 @@ namespace OpenSilver.Showcase
         internal static string DEVEXPRESS_NAME = "devexpress";
         internal static string[] DEVEXPRESS_DLLS = [
             //"DevExpress.Blazor.v25.1.dll",
-            "DevExpress.Blazor.Resources.v25.1.dll",
+            //"DevExpress.Blazor.Resources.v25.1.dll",
             "DevExpress.Blazor.RichEdit.v25.1.dll",
             //"DevExpress.Data.v25.1.dll",
             "DevExpress.Drawing.v25.1.dll",

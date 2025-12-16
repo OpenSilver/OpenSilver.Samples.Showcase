@@ -22,20 +22,18 @@ public partial class Blazor_Syncfusion : Page
         {
             // Load required js and css files:
             var baseUri = Interop.ExecuteJavaScript("document.baseURI").ToString();
-            var url = (baseUri.EndsWith("/") ? baseUri : baseUri + "/") +
-                      "_content/Syncfusion.Blazor.Core/scripts/syncfusion-blazor.min.js";
-            await Interop.LoadJavaScriptFile(url);
-            url = (baseUri.EndsWith("/") ? baseUri : baseUri + "/") +
-                      "_content/Syncfusion.Blazor.Themes/bootstrap5.css";
-            await Interop.LoadCssFile(url);
+            baseUri = baseUri.EndsWith('/') ? baseUri : baseUri + "/";
+            await Interop.LoadJavaScriptFile($"{baseUri}_content/Syncfusion.Blazor.Core/scripts/syncfusion-blazor.min.js");
+            await Interop.LoadCssFile($"{baseUri}_content/Syncfusion.Blazor.Themes/{CurrentTheme}");
+
+            Interop.ExecuteJavaScriptVoid("document.querySelector(\"head link[href*='Syncfusion.Blazor.Themes']\").id = 'syncfusionThemeLink'");
 
             //Load Syncfusion dlls
             var nav = ServiceLocator.Get<ILazyFeatureNavigator>();
             await nav.EnsureLoadedFromPathAsync(LazyLoadingConstants.SYNCFUSION_NAME);
-            //await nav.NavigateToAsync(LazyLoadingConstants.SYNCFUSION_NAME);
 
-            //Add the page's content
             Content = new Syncfusion_Sample();
+            _isInitialized = true;
         }
         catch (Exception ex)
         {
@@ -47,7 +45,22 @@ public partial class Blazor_Syncfusion : Page
 #endif
     }
 
-#if !FULLBLAZOR
+#if FULLBLAZOR
+    private static bool _isInitialized = false;
+    private static bool _isDarkMode = false;
+    private static string CurrentTheme => _isDarkMode ? "bootstrap5-dark.css" : "bootstrap5.css";
+
+    public static void UpdateTheme(bool isDarkMode)
+    {
+        _isDarkMode = isDarkMode;
+
+        if (_isInitialized)
+        {
+            Interop.ExecuteJavaScriptVoid(
+                $"document.getElementById('syncfusionThemeLink').setAttribute('href', '_content/Syncfusion.Blazor.Themes/{CurrentTheme}')");
+        }
+    }
+#else
     protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
         => BlazorHelper.OnNavigatingFrom(e.Uri);
 #endif

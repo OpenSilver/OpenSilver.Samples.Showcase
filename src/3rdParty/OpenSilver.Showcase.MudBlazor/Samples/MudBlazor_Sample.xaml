@@ -16,7 +16,7 @@
         </controlskit:StaggeredPanel>
         <razor:RazorComponent Margin="0,20,0,0" Height="100">
             @using MudBlazor
-            <MudThemeProvider />
+            <MudThemeProvider IsDarkMode="{Binding IsDarkMode, Type=bool}" />
             <MudSnackbarProvider />
             <MudPopoverProvider />
         </razor:RazorComponent>

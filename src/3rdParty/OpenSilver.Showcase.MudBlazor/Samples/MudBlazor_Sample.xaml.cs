@@ -1,17 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using MudBlazor;
 using MudBlazor.Services;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Windows;
+using System.ComponentModel;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
-using System.Windows.Data;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Navigation;
 
 namespace OpenSilver.Showcase
 {
@@ -19,8 +10,30 @@ namespace OpenSilver.Showcase
     {
         public MudBlazor_Sample()
         {
-            this.InitializeComponent();
+            InitializeComponent();
+            DataContext = MudBlazorThemeService.Instance;
         }
+    }
+
+    public class MudBlazorThemeService : INotifyPropertyChanged
+    {
+        public static MudBlazorThemeService Instance { get; } = new();
+
+        private bool isDarkMode;
+        public bool IsDarkMode
+        {
+            get => isDarkMode;
+            set
+            {
+                if (value != isDarkMode)
+                {
+                    isDarkMode = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsDarkMode)));
+                }
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 
     public static class Initializer

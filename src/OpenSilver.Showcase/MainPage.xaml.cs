@@ -481,7 +481,12 @@ namespace OpenSilver.Showcase
             }
 
 #if WITHBLAZOR
+            MudBlazorThemeService.Instance.IsDarkMode = isDark;
             ServiceLocator.Get<Radzen.ThemeService>().SetTheme(isDark ? "material-dark" : "material");
+#if FULLBLAZOR
+            Blazor_DevExpress.UpdateTheme(isDark);
+            Blazor_Syncfusion.UpdateTheme(isDark);
+#endif
 #endif
 
             UpdateThemeToggleFillColor();

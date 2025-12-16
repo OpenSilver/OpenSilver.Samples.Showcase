@@ -76,7 +76,6 @@
 		<BlazorWebAssemblyLazyLoad Include="Syncfusion.Blazor.Themes.dll" />
 		<BlazorWebAssemblyLazyLoad Include="Syncfusion.ExcelExport.Net.dll" />
 		<BlazorWebAssemblyLazyLoad Include="Syncfusion.PdfExport.Net.dll" />
-		<BlazorWebAssemblyLazyLoad Include="DevExpress.Blazor.Resources.v25.1.dll" />
 		<BlazorWebAssemblyLazyLoad Include="DevExpress.Blazor.RichEdit.v25.1.dll" />
 		<BlazorWebAssemblyLazyLoad Include="DevExpress.Drawing.v25.1.dll" />
 		<BlazorWebAssemblyLazyLoad Include="DevExpress.Pdf.v25.1.Core.dll" />
