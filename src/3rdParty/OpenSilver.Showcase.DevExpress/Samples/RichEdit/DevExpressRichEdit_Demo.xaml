@@ -5,7 +5,7 @@
     xmlns:razor="clr-namespace:OpenSilver.Blazor;assembly=OpenSilver.Blazor"
     xmlns:local="clr-namespace:OpenSilver.Showcase">
 
-    <ContentControl Style="{StaticResource Card_Style}" Width="1000">
+    <ContentControl Style="{StaticResource Card_Style}">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -39,7 +39,7 @@
                         <ToggleButton Content="ReadOnly on/off" IsChecked="{Binding ReadOnly, Mode=TwoWay}" Margin="5,10" VerticalAlignment="Bottom"/>
                     </StackPanel>
 
-                    <razor:RazorComponent x:Name="RichEditComponentHolder" Height="820">
+                    <razor:RazorComponent x:Name="RichEditComponentHolder" Height="820" ScrollMode="Auto">
                         @using global::DevExpress.Blazor
 @using global::DevExpress.Blazor.RichEdit
 

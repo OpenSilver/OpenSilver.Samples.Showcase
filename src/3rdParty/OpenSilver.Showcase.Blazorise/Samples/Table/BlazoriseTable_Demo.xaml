@@ -5,7 +5,7 @@
     xmlns:razor="clr-namespace:OpenSilver.Blazor;assembly=OpenSilver.Blazor"
     xmlns:local="clr-namespace:OpenSilver.Showcase">
 
-    <ContentControl Style="{StaticResource Card_Style}" Width="750">
+    <ContentControl Style="{StaticResource Card_Style}">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -15,7 +15,7 @@
             <ContentControl Content="Table" Foreground="#FFFF81E3" Background="#FFCB9DC1" Style="{StaticResource HeaderControl_Style}"/>
 
             <StackPanel Grid.Row="1">
-                <TextBlock Text="Unfortunately, Blazorize's Table does not provide a way to feed it data."/>
+                <TextBlock Text="Unfortunately, Blazorize's Table does not provide a way to feed it data." TextWrapping="Wrap"/>
 
                 <razor:RazorComponent Margin="0,20,0,0" Height="150">
                     @using Blazorise

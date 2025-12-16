@@ -5,7 +5,7 @@
     xmlns:razor="clr-namespace:OpenSilver.Blazor;assembly=OpenSilver.Blazor"
     xmlns:local="clr-namespace:OpenSilver.Showcase">
 
-    <ContentControl Style="{StaticResource Card_Style}" Width="340">
+    <ContentControl Style="{StaticResource Card_Style}" Width="300">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>

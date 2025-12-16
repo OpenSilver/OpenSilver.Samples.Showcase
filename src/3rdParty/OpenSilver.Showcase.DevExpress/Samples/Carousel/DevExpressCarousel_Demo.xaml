@@ -5,7 +5,7 @@
     xmlns:local="clr-namespace:OpenSilver.Showcase">
 
 
-    <ContentControl Style="{StaticResource Card_Style}" Width="550">
+    <ContentControl Style="{StaticResource Card_Style}">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -16,7 +16,7 @@
 
             <Grid Grid.Row="1">
                 <StackPanel>
-                    <razor:RazorComponent x:Name="RichEditComponentHolder" Height="350">
+                    <razor:RazorComponent x:Name="RichEditComponentHolder" Height="350" ScrollMode="Auto" AllowScrollOnTouchMove="False">
                         @using global::DevExpress.Blazor
 @using OpenSilver.Showcase.DevExpressModel
                         <DxCarousel Width="500px"

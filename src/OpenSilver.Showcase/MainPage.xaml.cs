@@ -63,7 +63,7 @@ namespace OpenSilver.Showcase
             var grid = PageScrollViewer.Content as Grid;
             var webBrowser = new WebBrowser { Visibility = Visibility.Collapsed };
             grid.Children.Insert(1, webBrowser); // after the Frame control to overlap it when visible
-            //BlazorHelper.Initialize(webBrowser, () => DarkThemeRadioButton.IsChecked == true, "https://userware-test-deployment.azurewebsites.net/full/#/");
+            //BlazorHelper.Initialize(webBrowser, () => DarkThemeRadioButton.IsChecked == true, "https://opensilvershowcase.com/full/#/");
             BlazorHelper.Initialize(webBrowser, () => DarkThemeRadioButton.IsChecked == true);
 
             // preload files for the first Blazor sample, after menu animation
