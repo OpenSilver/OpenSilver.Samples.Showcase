@@ -1,4 +1,6 @@
-﻿using DevExpress.Blazor;
+﻿#if FULLBLAZOR
+using DevExpress.Blazor;
+#endif
 using System;
 using System.Windows.Controls;
 using System.Windows.Navigation;
