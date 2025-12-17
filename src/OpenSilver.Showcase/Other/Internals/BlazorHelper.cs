@@ -25,7 +25,7 @@ public static class BlazorHelper
     {
         ValidateBrowser();
 
-        _webBrowser.SourceUri = new Uri($"{FullAppBaseUri}{relativeUri}?menu=hidden{(_isDarkTheme() ? "&theme=dark" : "")}");
+        _webBrowser.SourceUri = new Uri($"{FullAppBaseUri}{relativeUri}?menu=hidden&theme={(_isDarkTheme() ? "dark" : "light")}");
 
         if (!hidden)
         {
@@ -60,7 +60,7 @@ public static class BlazorHelper
         if (_webBrowser.Visibility == Visibility.Visible)
         {
             var uri = _webBrowser.SourceUri.OriginalString;
-            _webBrowser.SourceUri = new Uri($"{uri[..uri.IndexOf('?')]}?menu=hidden{(_isDarkTheme() ? "&theme=dark" : "")}");
+            _webBrowser.SourceUri = new Uri($"{uri[..uri.IndexOf('?')]}?menu=hidden&theme={(_isDarkTheme() ? "dark" : "light")}");
         }
     }
 

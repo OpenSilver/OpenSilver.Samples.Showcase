@@ -152,7 +152,7 @@ namespace OpenSilver.Showcase
             {
                 DarkThemeRadioButton.IsChecked = true;
             }
-            else if (DarkThemeRadioButton.IsChecked == true)
+            else if (e.Uri.OriginalString.Contains("theme=light"))
             {
                 LightThemeRadioButton.IsChecked = true;
             }
