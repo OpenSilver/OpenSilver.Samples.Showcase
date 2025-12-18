@@ -28,9 +28,12 @@ public partial class Blazor_Syncfusion : Page
 
             Interop.ExecuteJavaScriptVoid("document.querySelector(\"head link[href*='Syncfusion.Blazor.Themes']\").id = 'syncfusionThemeLink'");
 
-            //Load Syncfusion dlls
-            var nav = ServiceLocator.Get<ILazyFeatureNavigator>();
-            await nav.EnsureLoadedFromPathAsync(LazyLoadingConstants.SYNCFUSION_NAME);
+            if (!Interop.IsRunningInTheSimulator)
+            {
+                //Load Syncfusion dlls
+                var nav = ServiceLocator.Get<ILazyFeatureNavigator>();
+                await nav.EnsureLoadedFromPathAsync(LazyLoadingConstants.SYNCFUSION_NAME);
+            }
 
             Content = new Syncfusion_Sample();
             _isInitialized = true;

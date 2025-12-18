@@ -23,9 +23,12 @@ public partial class Blazor_DevExpress : Page
 #if FULLBLAZOR
         try
         {
-            //Load DevExpress dlls
-            var nav = ServiceLocator.Get<ILazyFeatureNavigator>();
-            await nav.EnsureLoadedFromPathAsync(LazyLoadingConstants.DEVEXPRESS_NAME);
+            if (!Interop.IsRunningInTheSimulator)
+            {
+                //Load DevExpress dlls
+                var nav = ServiceLocator.Get<ILazyFeatureNavigator>();
+                await nav.EnsureLoadedFromPathAsync(LazyLoadingConstants.DEVEXPRESS_NAME);
+            }
 
             //// Load required js and css files:
             var baseUri = Interop.ExecuteJavaScript("document.baseURI").ToString();
@@ -40,7 +43,10 @@ public partial class Blazor_DevExpress : Page
                     //Add the page's content
                     Content = new DevExpress_Sample();
                     _isInitialized = true;
-                    ServiceLocator.Get<IThemeChangeService>().SetTheme(CurrentTheme);
+                    if (!Interop.IsRunningInTheSimulator)
+                    {
+                        ServiceLocator.Get<IThemeChangeService>().SetTheme(CurrentTheme);
+                    }
                 }
             );
         }
@@ -65,7 +71,10 @@ public partial class Blazor_DevExpress : Page
 
         if (_isInitialized)
         {
-            ServiceLocator.Get<IThemeChangeService>().SetTheme(CurrentTheme);
+            if (!Interop.IsRunningInTheSimulator)
+            {
+                ServiceLocator.Get<IThemeChangeService>().SetTheme(CurrentTheme);
+            }
         }
     }
 #else
