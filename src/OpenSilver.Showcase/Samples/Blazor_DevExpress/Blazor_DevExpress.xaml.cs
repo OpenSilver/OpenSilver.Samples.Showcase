@@ -31,12 +31,10 @@ public partial class Blazor_DevExpress : Page
             }
 
             //// Load required js and css files:
-            var baseUri = Interop.ExecuteJavaScript("document.baseURI").ToString();
-            baseUri = baseUri.EndsWith('/') ? baseUri : baseUri + "/";
             Interop.LoadCssFilesAsync(
                 [
-                    baseUri + "_content/DevExpress.Blazor.Themes/blazing-berry.bs5.min.css",
-                    baseUri + "_content/DevExpress.Blazor.RichEdit/dx-blazor-richedit.css"
+                    "~/_content/DevExpress.Blazor.Themes/blazing-berry.bs5.min.css",
+                    "~/_content/DevExpress.Blazor.RichEdit/dx-blazor-richedit.css"
                 ],
                 () =>
                 {

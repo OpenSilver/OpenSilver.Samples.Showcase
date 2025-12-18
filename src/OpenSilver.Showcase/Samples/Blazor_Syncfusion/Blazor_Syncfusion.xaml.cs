@@ -21,10 +21,8 @@ public partial class Blazor_Syncfusion : Page
         try
         {
             // Load required js and css files:
-            var baseUri = Interop.ExecuteJavaScript("document.baseURI").ToString();
-            baseUri = baseUri.EndsWith('/') ? baseUri : baseUri + "/";
-            await Interop.LoadJavaScriptFile($"{baseUri}_content/Syncfusion.Blazor.Core/scripts/syncfusion-blazor.min.js");
-            await Interop.LoadCssFile($"{baseUri}_content/Syncfusion.Blazor.Themes/{CurrentTheme}");
+            await Interop.LoadJavaScriptFile($"~/_content/Syncfusion.Blazor.Core/scripts/syncfusion-blazor.min.js");
+            await Interop.LoadCssFile($"~/_content/Syncfusion.Blazor.Themes/{CurrentTheme}");
 
             Interop.ExecuteJavaScriptVoid("document.querySelector(\"head link[href*='Syncfusion.Blazor.Themes']\").id = 'syncfusionThemeLink'");
 

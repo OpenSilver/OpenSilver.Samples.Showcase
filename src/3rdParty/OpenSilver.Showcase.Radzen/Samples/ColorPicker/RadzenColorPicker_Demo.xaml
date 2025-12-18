@@ -18,7 +18,7 @@
                     @using Radzen
                     @using Radzen.Blazor
 
-                    <RadzenColorPicker x:Name="MyRadzenColorPicker" ShowHSV="true" ShowRGBA="true" ShowColors="true" ShowButton="true" Value="{Binding ColorText, Mode=TwoWay}" Change="{Binding SetBrushDel, Type=Action<string>}"/>
+                    <RadzenColorPicker x:Name="MyRadzenColorPicker" ShowHSV="true" ShowRGBA="true" ShowColors="true" ShowButton="true" Value="{Binding ColorText, Mode=TwoWay, Type=string}" Change="{Binding SetBrushDel, Type=Action<string>}"/>
                 </razor:RazorComponent>
             </StackPanel>
             <local:ViewSourceButton Grid.Row="2" Background="#FFFF81E3">

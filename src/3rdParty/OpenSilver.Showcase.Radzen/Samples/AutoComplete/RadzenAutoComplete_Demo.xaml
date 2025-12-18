@@ -18,7 +18,7 @@
                 <razor:RazorComponent Margin="0,20,0,0" Height="70">
                     @using Radzen
                     @using Radzen.Blazor
-                    <RadzenAutoComplete @bind-Value="{Binding CurrentWord, Mode=TwoWay, Type=string}" x:Name="testName" Data="{Binding Words}"  FilterCaseSensitivity="global::Radzen.FilterCaseSensitivity.CaseInsensitive"/>
+                    <RadzenAutoComplete @bind-Value="{Binding CurrentWord, Mode=TwoWay, Type=string}" x:Name="testName" Data="{Binding Words, Type=HashSet<string>}"  FilterCaseSensitivity="global::Radzen.FilterCaseSensitivity.CaseInsensitive"/>
                 </razor:RazorComponent>
                 <TextBlock x:Name="ValueTextBlock">
                     <Run Text="You picked: "/>

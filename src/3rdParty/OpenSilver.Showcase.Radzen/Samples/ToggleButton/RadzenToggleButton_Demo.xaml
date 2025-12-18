@@ -18,7 +18,7 @@
                     @using Radzen
                     @using Radzen.Blazor
 
-                    <RadzenToggleButton @bind-Value="{Binding Toggled, Mode=TwoWay, Type=bool}" Text="{Binding ToggledText}"/>
+                    <RadzenToggleButton @bind-Value="{Binding Toggled, Mode=TwoWay, Type=bool}" Text="{Binding ToggledText, Type=string}"/>
                 </razor:RazorComponent>
                 <TextBlock TextWrapping="Wrap">
                     <Run Text="The ToggleButton is "/>

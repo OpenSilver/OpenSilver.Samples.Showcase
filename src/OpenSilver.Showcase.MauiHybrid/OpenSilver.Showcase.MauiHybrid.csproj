@@ -1,23 +1,23 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
-  <PropertyGroup>
-    <Configurations>Debug;Release;Release-WithBlazor;Debug-WithBlazor;Release-FullBlazor;Debug-FullBlazor</Configurations>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)'=='Debug-WithBlazor' or '$(Configuration)'=='Release-WithBlazor'">
-    <WithBlazor>true</WithBlazor>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)'=='Debug-FullBlazor' or '$(Configuration)'=='Release-FullBlazor'">
-    <FullBlazor>true</FullBlazor>
-</PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)'=='Debug' or '$(Configuration)'=='Debug-FullBlazor'">
-    <IsDebug>true</IsDebug>
-  </PropertyGroup>
-  
     <PropertyGroup>
-		    <CheckEolWorkloads>false</CheckEolWorkloads>
+        <Configurations>Debug;Release;Release-WithBlazor;Debug-WithBlazor;Release-FullBlazor;Debug-FullBlazor</Configurations>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)'=='Debug-WithBlazor' or '$(Configuration)'=='Release-WithBlazor'">
+        <WithBlazor>true</WithBlazor>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)'=='Debug-FullBlazor' or '$(Configuration)'=='Release-FullBlazor'">
+        <FullBlazor>true</FullBlazor>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)'=='Debug' or '$(Configuration)'=='Debug-FullBlazor'">
+        <IsDebug>true</IsDebug>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <CheckEolWorkloads>false</CheckEolWorkloads>
         <TargetFrameworks>net9.0-android</TargetFrameworks>
-		    <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('OSX'))">$(TargetFrameworks);net8.0-ios;net8.0-maccatalyst</TargetFrameworks>
-		    <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net9.0-windows10.0.19041.0</TargetFrameworks>
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('OSX'))">$(TargetFrameworks);net8.0-ios;net8.0-maccatalyst</TargetFrameworks>
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net9.0-windows10.0.19041.0</TargetFrameworks>
         <!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
         <!-- <TargetFrameworks>$(TargetFrameworks);net9.0-tizen</TargetFrameworks> -->
 
@@ -44,9 +44,9 @@
         <ApplicationId>net.opensilver.showcase</ApplicationId>
 
         <!-- Versions -->
-		    <Version>1.0.3</Version>
-        <ApplicationDisplayVersion>1.0.3</ApplicationDisplayVersion>
-        <ApplicationVersion>21</ApplicationVersion>
+        <Version>1.0.4</Version>
+        <ApplicationDisplayVersion>1.0.4</ApplicationDisplayVersion>
+        <ApplicationVersion>22</ApplicationVersion>
 
         <!-- To develop, package, and publish an app to the Microsoft Store, see: https://aka.ms/MauiTemplateUnpackaged -->
         <WindowsPackageType>None</WindowsPackageType>
@@ -62,15 +62,15 @@
         <AppIconFile Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">Resources\AppIcon\appicon_android.png</AppIconFile>
     </PropertyGroup>
 
-  <PropertyGroup Condition="'$(IsDebug)'=='true'">
-    <DefineConstants>$(DefineConstants);DEBUG</DefineConstants>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(WithBlazor)'=='true'">
-    <DefineConstants>$(DefineConstants);WITHBLAZOR</DefineConstants>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(FullBlazor)'=='true'">
-    <DefineConstants>$(DefineConstants);WITHBLAZOR;FULLBLAZOR</DefineConstants>
-  </PropertyGroup>
+    <PropertyGroup Condition="'$(IsDebug)'=='true'">
+        <DefineConstants>$(DefineConstants);DEBUG</DefineConstants>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(WithBlazor)'=='true'">
+        <DefineConstants>$(DefineConstants);WITHBLAZOR</DefineConstants>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(FullBlazor)'=='true'">
+        <DefineConstants>$(DefineConstants);WITHBLAZOR;FULLBLAZOR</DefineConstants>
+    </PropertyGroup>
 
     <ItemGroup>
         <!-- App Icon -->
@@ -90,12 +90,12 @@
     </ItemGroup>
 
     <ItemGroup>
-      <AndroidResource Remove="Components\Pages\**" />
-      <Compile Remove="Components\Pages\**" />
-      <Content Remove="Components\Pages\**" />
-      <EmbeddedResource Remove="Components\Pages\**" />
-      <MauiXaml Remove="Components\Pages\**" />
-      <None Remove="Components\Pages\**" />
+        <AndroidResource Remove="Components\Pages\**" />
+        <Compile Remove="Components\Pages\**" />
+        <Content Remove="Components\Pages\**" />
+        <EmbeddedResource Remove="Components\Pages\**" />
+        <MauiXaml Remove="Components\Pages\**" />
+        <None Remove="Components\Pages\**" />
     </ItemGroup>
 
     <ItemGroup>
@@ -104,34 +104,8 @@
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
         <PackageReference Include="OpenSilver.MauiHybrid" Version="[$(OpenSilverVersion)]" />
     </ItemGroup>
-	
-    <ItemGroup>
-      <ProjectReference Include="..\OpenSilver.Showcase\OpenSilver.Showcase.csproj" />
-    </ItemGroup>
 
-	<!--<ItemGroup>
-		<TrimmerRootAssembly Include="Syncfusion.Blazor.Grids.dll" />
-		<TrimmerRootAssembly Include="Syncfusion.Blazor.BarcodeGenerator.dll" />
-		<TrimmerRootAssembly Include="Syncfusion.Blazor.Buttons.dll" />
-		<TrimmerRootAssembly Include="Syncfusion.Blazor.Calendars.dll" />
-		<TrimmerRootAssembly Include="Syncfusion.Blazor.Data.dll" />
-		<TrimmerRootAssembly Include="Syncfusion.Blazor.DropDowns.dll" />
-		<TrimmerRootAssembly Include="Syncfusion.Blazor.Inputs.dll" />
-		<TrimmerRootAssembly Include="Syncfusion.Blazor.Lists.dll" />
-		<TrimmerRootAssembly Include="Syncfusion.Blazor.Navigations.dll" />
-		<TrimmerRootAssembly Include="Syncfusion.Blazor.Notifications.dll" />
-		<TrimmerRootAssembly Include="Syncfusion.Blazor.Popups.dll" />
-		<TrimmerRootAssembly Include="Syncfusion.Blazor.Spinner.dll" />
-		<TrimmerRootAssembly Include="Syncfusion.Blazor.SplitButtons.dll" />
-		<TrimmerRootAssembly Include="Syncfusion.Blazor.Themes.dll" />
-		<TrimmerRootAssembly Include="Syncfusion.ExcelExport.Net.dll" />
-		<TrimmerRootAssembly Include="Syncfusion.PdfExport.Net.dll" />
-		<TrimmerRootAssembly Include="DevExpress.Blazor.Resources.v25.1.dll" />
-		<TrimmerRootAssembly Include="DevExpress.Blazor.RichEdit.v25.1.dll" />
-		<TrimmerRootAssembly Include="DevExpress.Drawing.v25.1.dll" />
-		<TrimmerRootAssembly Include="DevExpress.Pdf.v25.1.Core.dll" />
-		<TrimmerRootAssembly Include="DevExpress.Pdf.v25.1.Drawing.dll" />
-		<TrimmerRootAssembly Include="DevExpress.Printing.v25.1.Core.dll" />
-		<TrimmerRootAssembly Include="DevExpress.SpellChecker.v25.1.Core.dll" />
-	</ItemGroup>-->
+    <ItemGroup>
+        <ProjectReference Include="..\OpenSilver.Showcase\OpenSilver.Showcase.csproj" />
+    </ItemGroup>
 </Project>

@@ -18,7 +18,7 @@
                 <razor:RazorComponent Margin="0,20,0,0" Height="500" ScrollMode="Auto" AllowScrollOnTouchMove="False">
                     @using MudBlazor
                     
-                    <MudDataGrid PageSize="5" AllowPaging="true" SortMode="global::MudBlazor.SortMode.Multiple" T="OpenSilver.Showcase.MudBlazorModel.Employee"  Items="{Binding Employees}" ColumnWidth="400px">
+                    <MudDataGrid PageSize="5" AllowPaging="true" SortMode="global::MudBlazor.SortMode.Multiple" T="OpenSilver.Showcase.MudBlazorModel.Employee"  Items="{Binding Employees, Type=IQueryable<OpenSilver.Showcase.MudBlazorModel.Employee>}" ColumnWidth="400px">
                         <Columns>
                             <PropertyColumn  Property="x => x.FirstName" Title="First Name" Width="150px" />
                             <PropertyColumn  Property="x => x.LastName" Title="Last Name" Width="150px"/>

@@ -17,7 +17,7 @@
                 <razor:RazorComponent Margin="0,20,0,0" Height="410">
                     @using Radzen
                     @using Radzen.Blazor
-                    <RadzenScheduler TItem="Appointment" Data="{Binding}" StartProperty="Start" EndProperty="End"
+                    <RadzenScheduler TItem="Appointment" Data="{Binding ,Type=System.Collections.ObjectModel.ObservableCollection<Appointment>}" StartProperty="Start" EndProperty="End"
     TextProperty="Text">
                         <RadzenDayView />
                         <RadzenWeekView />
