@@ -2,8 +2,8 @@
     x:Class="OpenSilver.Showcase.DevExpressCarousel_Demo"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:razor="clr-namespace:OpenSilver.Blazor;assembly=OpenSilver.Blazor"
     xmlns:local="clr-namespace:OpenSilver.Showcase">
-
 
     <ContentControl Style="{StaticResource Card_Style}">
         <Grid>
@@ -21,7 +21,7 @@
 @using OpenSilver.Showcase.DevExpressModel
                         <DxCarousel Width="500px"
                                     Height="300px"
-                                    Data="{Binding Planets}"
+                                    Data="{Binding Planets, Type=System.Collections.ObjectModel.ObservableCollection<Planet>}"
                                     LoopNavigationEnabled="{Binding IsLooping, Type=bool}"
                                     SlideShowEnabled="true"
                                     SlideShowDelay="5000"
@@ -48,9 +48,9 @@
             <local:ViewSourceButton Grid.Row="2" Background="#FFFF81E3">
                 <local:ViewSourceButton.Sources>
                     <local:ViewSourceButtonInfo RelativePath="src/3rdParty/OpenSilver.Showcase.DevExpress/Samples/Carousel"
-            FileName="DevExpressCarousel_Demo.xaml" />
+                        FileName="DevExpressCarousel_Demo.xaml" />
                     <local:ViewSourceButtonInfo RelativePath="src/3rdParty/OpenSilver.Showcase.DevExpress/Samples/Carousel"
-            FileName="DevExpressCarousel_Demo.xaml.cs" />
+                        FileName="DevExpressCarousel_Demo.xaml.cs" />
                 </local:ViewSourceButton.Sources>
             </local:ViewSourceButton>
         </Grid>
