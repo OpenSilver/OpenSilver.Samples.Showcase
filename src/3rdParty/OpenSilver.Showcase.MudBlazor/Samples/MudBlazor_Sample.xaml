@@ -18,7 +18,6 @@
             @using MudBlazor
             <MudThemeProvider IsDarkMode="{Binding IsDarkMode, Type=bool}" />
             <MudSnackbarProvider />
-            <MudPopoverProvider />
         </razor:RazorComponent>
     </StackPanel>
 </UserControl>

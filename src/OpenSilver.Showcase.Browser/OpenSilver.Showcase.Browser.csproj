@@ -99,6 +99,7 @@
 
   <ItemGroup>
     <TrimmerRootAssembly Include="mscorlib" />
+    <TrimmerRootAssembly Include="MudBlazor" />
     <TrimmableAssembly Include="OpenSilver.Animations" />
     <TrimmableAssembly Include="OpenSilver.Controls.Data" />
     <TrimmableAssembly Include="OpenSilver.Controls.Data.Toolkit" />

@@ -24,7 +24,7 @@
                             <PropertyColumn  Property="x => x.LastName" Title="Last Name" Width="150px"/>
                             <PropertyColumn  Property="x => x.BirthDate" Title="Birth Date" FormatString="{0:d}" Width="150px" />
                             <PropertyColumn  Property="x => x.Country" Title="Country" Width="150px" />
-                            <PropertyColumn  Property="x => x.Notes" Title="Notes" />
+                            <!--<PropertyColumn  Property="x => x.Notes" Title="Notes" />-->
                         </Columns>
                     </MudDataGrid>
                 </razor:RazorComponent>
