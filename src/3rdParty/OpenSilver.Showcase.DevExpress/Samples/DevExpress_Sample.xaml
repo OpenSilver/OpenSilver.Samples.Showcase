@@ -8,10 +8,10 @@
     <StackPanel>
         <ContentControl Content="DevExpress Blazor UI" Style="{StaticResource PageTitle_Style}"/>
         <controlskit:StaggeredPanel ProgressiveRenderingChunkSize="2">
-            <local:DevExpressGrid_Demo HorizontalAlignment="Center"/>
+            <local:DevExpressGrid_Demo x:Name="GridDemo" HorizontalAlignment="Center"/>
             <local:DevExpressDateEdit_Demo HorizontalAlignment="Center"/>
             <local:DevExpressCarousel_Demo HorizontalAlignment="Center"/>
-            <local:DevExpressRichEdit_Demo HorizontalAlignment="Center"/>
+            <local:DevExpressRichEdit_Demo x:Name="RichEditDemo" HorizontalAlignment="Center"/>
         </controlskit:StaggeredPanel>
     </StackPanel>
 </UserControl>

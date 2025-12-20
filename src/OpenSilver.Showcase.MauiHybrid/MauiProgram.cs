@@ -2,7 +2,7 @@
 using Blazorise;
 using Blazorise.Bootstrap5;
 using Blazorise.Icons.FontAwesome;
-using DevExpress.Blazor; 
+using DevExpress.Blazor;
 using MudBlazor.Services;
 using Radzen;
 using Syncfusion.Blazor;

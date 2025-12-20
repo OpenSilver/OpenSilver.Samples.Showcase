@@ -1,5 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using DevExpress.Blazor;
+﻿using DevExpress.Blazor;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Maui.Devices;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -19,6 +20,12 @@ namespace OpenSilver.Showcase
         public DevExpress_Sample()
         {
             this.InitializeComponent();
+
+            if (DeviceInfo.Current.Platform == DevicePlatform.iOS)
+            {
+                GridDemo.Visibility = Visibility.Collapsed;
+                RichEditDemo.Visibility = Visibility.Collapsed;
+            }
         }
     }
     

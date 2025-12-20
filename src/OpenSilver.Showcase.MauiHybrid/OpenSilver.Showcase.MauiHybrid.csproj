@@ -1,16 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
     <PropertyGroup>
-        <Configurations>Debug;Release;Release-WithBlazor;Debug-WithBlazor;Release-FullBlazor;Debug-FullBlazor</Configurations>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)'=='Debug-WithBlazor' or '$(Configuration)'=='Release-WithBlazor'">
         <WithBlazor>true</WithBlazor>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)'=='Debug-FullBlazor' or '$(Configuration)'=='Release-FullBlazor'">
         <FullBlazor>true</FullBlazor>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)'=='Debug' or '$(Configuration)'=='Debug-FullBlazor'">
-        <IsDebug>true</IsDebug>
     </PropertyGroup>
 
     <PropertyGroup>
@@ -46,7 +38,7 @@
         <!-- Versions -->
         <Version>1.0.4</Version>
         <ApplicationDisplayVersion>1.0.4</ApplicationDisplayVersion>
-        <ApplicationVersion>22</ApplicationVersion>
+        <ApplicationVersion>23</ApplicationVersion>
 
         <!-- To develop, package, and publish an app to the Microsoft Store, see: https://aka.ms/MauiTemplateUnpackaged -->
         <WindowsPackageType>None</WindowsPackageType>
@@ -62,9 +54,6 @@
         <AppIconFile Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">Resources\AppIcon\appicon_android.png</AppIconFile>
     </PropertyGroup>
 
-    <PropertyGroup Condition="'$(IsDebug)'=='true'">
-        <DefineConstants>$(DefineConstants);DEBUG</DefineConstants>
-    </PropertyGroup>
     <PropertyGroup Condition="'$(WithBlazor)'=='true'">
         <DefineConstants>$(DefineConstants);WITHBLAZOR</DefineConstants>
     </PropertyGroup>
@@ -107,5 +96,9 @@
 
     <ItemGroup>
         <ProjectReference Include="..\OpenSilver.Showcase\OpenSilver.Showcase.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <TrimmerRootAssembly Include="MudBlazor" RootMode="Library" />
     </ItemGroup>
 </Project>
