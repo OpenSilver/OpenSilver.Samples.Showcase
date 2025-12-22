@@ -1,44 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
-using System.Windows.Data;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Navigation;
+﻿using Microsoft.Maui.Devices;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Windows.Controls;
 
-namespace OpenSilver.Showcase
+namespace OpenSilver.Showcase;
+
+public partial class RadzenMask_Demo : UserControl
 {
-    public partial class RadzenMask_Demo : UserControl
+    public RadzenMask_Demo()
     {
-        public RadzenMask_Demo()
+        InitializeComponent();
+        DataContext = new PhoneData();
+
+        if (DeviceInfo.Current.Platform == DevicePlatform.iOS)
         {
-            this.InitializeComponent();
-            this.DataContext = new PhoneData();
+            // prevent appearing of the keyboard on iOS when RadzenMask is loaded
+            PhoneMaskComponent.ComponentRendered += (_, _) => Focus();
+        }
+    }
+
+    public class PhoneData : INotifyPropertyChanged
+    {
+        private string _phone;
+
+        public string Phone
+        {
+            get { return _phone; }
+            set { _phone = value; OnPropertyChanged(); }
         }
 
-        public class PhoneData : INotifyPropertyChanged
+        public event PropertyChangedEventHandler PropertyChanged;
+        void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {
-            private string _phone;
-
-            public string Phone
+            if (PropertyChanged != null)
             {
-                get { return _phone; }
-                set { _phone = value; OnPropertyChanged(); }
-            }
-
-            public event PropertyChangedEventHandler PropertyChanged;
-            void OnPropertyChanged([CallerMemberName] string propertyName = "")
-            {
-                if (PropertyChanged != null)
-                {
-                    PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-                }
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
     }

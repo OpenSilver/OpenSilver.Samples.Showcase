@@ -15,7 +15,7 @@
             </Grid.RowDefinitions>
             <ContentControl Content="Mask" Foreground="#FFFF81E3" Background="#FFCB9DC1" Style="{StaticResource HeaderControl_Style}"/>
             <StackPanel Grid.Row="1">
-                <razor:RazorComponent Margin="0,10,0,0" Height="100">
+                <razor:RazorComponent x:Name="PhoneMaskComponent" Margin="0,10,0,0" Height="100">
                     @using Radzen
                     @using Radzen.Blazor
                     <RadzenStack Orientation="global::Radzen.Orientation.Vertical" AlignItems="global::Radzen.AlignItems.Center" JustifyContent="global::Radzen.JustifyContent.Center" Gap="0.5rem">
