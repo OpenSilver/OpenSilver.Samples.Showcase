@@ -18,8 +18,9 @@
                 <StackPanel>
                     <razor:RazorComponent x:Name="RichEditComponentHolder" Height="350" ScrollMode="Auto" AllowScrollOnTouchMove="False">
                         @using global::DevExpress.Blazor
-@using OpenSilver.Showcase.DevExpressModel
-                        <DxCarousel Width="500px"
+                        @using OpenSilver.Showcase.DevExpressModel
+                        <DxCarousel
+                                    Width="300px"
                                     Height="300px"
                                     Data="{Binding Planets, Type=System.Collections.ObjectModel.ObservableCollection<Planet>}"
                                     LoopNavigationEnabled="{Binding IsLooping, Type=bool}"

@@ -1,8 +1,10 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Maui.Devices;
 using MudBlazor;
 using MudBlazor.Services;
 using OpenSilver.Blazor;
 using System.ComponentModel;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 
@@ -23,6 +25,12 @@ public partial class MudBlazor_Sample : UserControl
 
         InitializeComponent();
         DataContext = MudBlazorThemeService.Instance;
+
+        if (DeviceInfo.Current.Platform == DevicePlatform.iOS ||
+            DeviceInfo.Current.Platform == DevicePlatform.MacCatalyst)
+        {
+            ColorPicker.Visibility = Visibility.Collapsed;
+        }
     }
 }
 

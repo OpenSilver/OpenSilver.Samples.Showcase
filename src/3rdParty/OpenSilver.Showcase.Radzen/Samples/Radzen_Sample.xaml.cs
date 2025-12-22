@@ -1,7 +1,8 @@
-﻿using System.Windows;
-using System.Windows.Controls;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Maui.Devices;
 using Radzen;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace OpenSilver.Showcase
 {
@@ -10,6 +11,12 @@ namespace OpenSilver.Showcase
         public Radzen_Sample()
         {
             InitializeComponent();
+
+            if (DeviceInfo.Current.Platform == DevicePlatform.iOS ||
+                DeviceInfo.Current.Platform == DevicePlatform.MacCatalyst)
+            {
+                DropDownDataGrid.Visibility = Visibility.Collapsed;
+            }
         }
     }
 

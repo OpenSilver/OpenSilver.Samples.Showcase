@@ -18,7 +18,7 @@
             <local:RadzenCheckBoxList_Demo HorizontalAlignment="Center" />
             <local:RadzenDatePicker_Demo HorizontalAlignment="Center" />
             <local:RadzenDropDown_Demo HorizontalAlignment="Center" />
-            <local:RadzenDropDownDataGrid_Demo HorizontalAlignment="Center" />
+            <local:RadzenDropDownDataGrid_Demo x:Name="DropDownDataGrid" HorizontalAlignment="Center" />
             <local:RadzenFormField_Demo HorizontalAlignment="Center" />
             <local:RadzenListBox_Demo HorizontalAlignment="Center" />
             <local:RadzenMask_Demo HorizontalAlignment="Center" />
@@ -29,7 +29,7 @@
         </controlskit:StaggeredPanel>
         <razor:RazorComponent Margin="0,20,0,0" Height="100">
             @using Radzen
-@using Radzen.Blazor
+            @using Radzen.Blazor
             <RadzenTheme Theme="material" />
         </razor:RazorComponent>
     </StackPanel>

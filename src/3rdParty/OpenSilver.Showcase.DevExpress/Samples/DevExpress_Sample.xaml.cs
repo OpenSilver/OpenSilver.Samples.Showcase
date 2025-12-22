@@ -21,7 +21,8 @@ namespace OpenSilver.Showcase
         {
             this.InitializeComponent();
 
-            if (DeviceInfo.Current.Platform == DevicePlatform.iOS)
+            if (DeviceInfo.Current.Platform == DevicePlatform.iOS ||
+                DeviceInfo.Current.Platform == DevicePlatform.MacCatalyst)
             {
                 GridDemo.Visibility = Visibility.Collapsed;
                 RichEditDemo.Visibility = Visibility.Collapsed;
