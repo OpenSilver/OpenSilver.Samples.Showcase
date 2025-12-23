@@ -16,6 +16,7 @@ namespace OpenSilver.Showcase
                 DeviceInfo.Current.Platform == DevicePlatform.MacCatalyst)
             {
                 DropDownDataGrid.Visibility = Visibility.Collapsed;
+                NumericDemo.Visibility = Visibility.Collapsed;
             }
         }
     }

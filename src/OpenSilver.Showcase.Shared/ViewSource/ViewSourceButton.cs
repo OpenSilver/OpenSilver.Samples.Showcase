@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -7,6 +6,19 @@ namespace OpenSilver.Showcase
 {
     public sealed class ViewSourceButton : Button
     {
+        public static readonly RoutedEvent ViewSourceEvent =
+            EventManager.RegisterRoutedEvent(
+                "ViewSource",
+                RoutingStrategy.Bubble,
+                typeof(RoutedEventHandler),
+                typeof(ViewSourceButton));
+
+        public event RoutedEventHandler ViewSource
+        {
+            add { AddHandler(ViewSourceEvent, value); }
+            remove { RemoveHandler(ViewSourceEvent, value); }
+        }
+
         public ViewSourceButton()
         {
             Style = Application.Current.Resources["ButtonViewSource_Style"] as Style;
@@ -17,23 +29,13 @@ namespace OpenSilver.Showcase
         protected override void OnClick()
         {
             base.OnClick();
-            ViewSource(Sources);
-        }
 
-        private static void ViewSource(ICollection<ViewSourceButtonInfo> sourcePaths)
-        {
-            if (sourcePaths is null || sourcePaths.Count == 0)
+            if (Sources is null || Sources.Count == 0)
             {
                 return;
             }
 
-            var panel = new ViewSourcePanel();
-            panel.ViewSource(sourcePaths);
-            dynamic mainPage = Application.Current.MainWindow.Content;
-            if (mainPage?.GetType().Name == "MainPage")
-            {
-                mainPage.ViewSourceCode(panel);
-            }
+            RaiseEvent(new RoutedEventArgs(ViewSourceEvent, this));
         }
     }
 }

@@ -16,8 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-	  <PackageReference Include="OpenSilver" Version="[$(OpenSilverVersion)]" />
-	  <PackageReference Include="OpenSilver.Themes.Modern" Version="[$(OpenSilverModernThemeVersion)]" />
+    <PackageReference Include="OpenSilver" Version="[$(OpenSilverVersion)]" />
+    <PackageReference Include="OpenSilver.Themes.Modern" Version="[$(OpenSilverModernThemeVersion)]" />
   </ItemGroup>
 
   <ItemGroup>

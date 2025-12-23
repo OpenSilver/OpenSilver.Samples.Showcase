@@ -48,6 +48,8 @@ namespace OpenSilver.Showcase
                 AppStoreBadgeButton.Visibility = Visibility.Collapsed;
             }
 
+            AddHandler(ViewSourceButton.ViewSourceEvent, new RoutedEventHandler(OnViewSource), true);
+
             // Uncomment the following lines to debug the animations:
             //Animations.Animation.SlowDownAnimationsForDebugging = 10.0; // slow down factor
             //Animations.Animation.LogAnimationsForDebugging = true;
@@ -181,7 +183,16 @@ namespace OpenSilver.Showcase
 
         #region Show/hide source code
 
-        public void ViewSourceCode(UIElement controlThatDisplaysTheSourceCode)
+        private void OnViewSource(object sender, RoutedEventArgs e)
+        {
+            var btn = e.OriginalSource as ViewSourceButton;
+
+            var panel = new ViewSourcePanel();
+            panel.ViewSource(btn.Sources);
+            ViewSourceCode(panel);
+        }
+
+        private void ViewSourceCode(UIElement controlThatDisplaysTheSourceCode)
         {
             // Open the Source Code Pane, which is the place where the source code will be displayed:
             if (SourceCodePane.Visibility == Visibility.Collapsed)
