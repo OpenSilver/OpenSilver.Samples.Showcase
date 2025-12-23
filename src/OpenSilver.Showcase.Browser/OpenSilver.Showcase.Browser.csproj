@@ -43,6 +43,7 @@
 				<Content Remove="wwwroot\manifest.webmanifest" />
 				<Content Remove="wwwroot\service-worker.js" />
 				<Content Remove="wwwroot\service-worker.published.js" />
+				<TrimmerRootAssembly Include="MudBlazor" />
 			</ItemGroup>
 		</When>
 		<Otherwise>
@@ -99,7 +100,6 @@
 
   <ItemGroup>
     <TrimmerRootAssembly Include="mscorlib" />
-    <TrimmerRootAssembly Include="MudBlazor" />
     <TrimmableAssembly Include="OpenSilver.Animations" />
     <TrimmableAssembly Include="OpenSilver.Controls.Data" />
     <TrimmableAssembly Include="OpenSilver.Controls.Data.Toolkit" />

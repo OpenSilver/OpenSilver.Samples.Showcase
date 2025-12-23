@@ -4,29 +4,33 @@ using Radzen;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace OpenSilver.Showcase
-{
-    public partial class Radzen_Sample : UserControl
-    {
-        public Radzen_Sample()
-        {
-            InitializeComponent();
+namespace OpenSilver.Showcase;
 
-            if (DeviceInfo.Current.Platform == DevicePlatform.iOS ||
-                DeviceInfo.Current.Platform == DevicePlatform.MacCatalyst)
-            {
-                DropDownDataGrid.Visibility = Visibility.Collapsed;
-                NumericDemo.Visibility = Visibility.Collapsed;
-            }
+public partial class Radzen_Sample : UserControl
+{
+    public Radzen_Sample()
+    {
+        InitializeComponent();
+
+        var platform = DeviceInfo.Current.Platform;
+        if (platform == DevicePlatform.iOS ||
+            platform == DevicePlatform.MacCatalyst)
+        {
+            DropDownDataGrid.Visibility = Visibility.Collapsed;
+            NumericDemo.Visibility = Visibility.Collapsed;
+        }
+        if (platform == DevicePlatform.iOS)
+        {
+            MaskDemo.Visibility = Visibility.Collapsed;
         }
     }
+}
 
-    public static class Initializer
+public static class Initializer
+{
+    public static void AddRadzenSamples(this IServiceCollection services)
     {
-        public static void AddRadzenSamples(this IServiceCollection services)
-        {
-            services.AddRadzenComponents();
-        }
+        services.AddRadzenComponents();
     }
 }
 

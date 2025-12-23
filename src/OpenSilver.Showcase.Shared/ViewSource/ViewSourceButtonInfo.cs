@@ -14,7 +14,7 @@
 
         public string RelativePath { get; set; }
 
-        public string Commit { get; set; } = "3190b7276b80ca26f8c90699b4d333e599538bb4";
+        public string Commit { get; set; } = "de48e63f0e15f4edbfcf21e5d417af303bdcc2da";
 
         public string Repository { get; set; } = "OpenSilver.Samples.Showcase";
 

@@ -1,5 +1,4 @@
-﻿using Microsoft.Maui.Devices;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Controls;
 
@@ -11,12 +10,6 @@ public partial class RadzenMask_Demo : UserControl
     {
         InitializeComponent();
         DataContext = new PhoneData();
-
-        if (DeviceInfo.Current.Platform == DevicePlatform.iOS)
-        {
-            // prevent appearing of the keyboard on iOS when RadzenMask is loaded
-            PhoneMaskComponent.ComponentRendered += (_, _) => Focus();
-        }
     }
 
     public class PhoneData : INotifyPropertyChanged
