@@ -488,6 +488,7 @@
     <Content Include="Other\Images\BackgroundImageLight.jpg" />
     <Content Include="Other\Images\LogoShowcaseDark.png" />
     <Content Include="Other\Images\LogoShowcaseLight.png" />
+    <EmbeddedResource Include="Other\Internals\licenses.txt" Condition="Exists('Other\Internals\licenses.txt')" />
     <Content Include="Other\Inter_VariableFont_slnt_wght.ttf" />
     <Content Include="Other\Images\LogoOpenSilverLight.png" />
     <Content Include="Other\Logo.png" />

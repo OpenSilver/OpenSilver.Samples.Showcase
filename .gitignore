@@ -256,3 +256,4 @@ OpenSilver.Samples.Showcase.Browser/obj_WithBlazor
 OpenSilver.Samples.Showcase.Browser/bin_WithBlazor
 src/bin_WithBlazor
 src/obj_WithBlazor
+**/licenses.txt
