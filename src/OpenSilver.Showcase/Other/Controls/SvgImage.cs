@@ -1,142 +1,129 @@
-﻿using System;
+﻿using CSHTML5.Internal;
+using CSHTML5.Native.Html.Controls;
+using System;
 using System.IO;
+using System.Net.Http;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
-using CSHTML5.Native.Html.Controls;
-using OpenSilver;
 
-namespace OpenSilver.Showcase
+namespace OpenSilver.Showcase;
+
+public class SvgImage : HtmlPresenter
 {
-    public class SvgImage : HtmlPresenter
+    private static HttpClient _httpClient;
+
+    #region Source
+    public string Source
     {
-        #region Source
-        public string Source
-        {
-            get => (string)GetValue(SourceProperty);
-            set => SetValue(SourceProperty, value);
-        }
+        get => (string)GetValue(SourceProperty);
+        set => SetValue(SourceProperty, value);
+    }
 
-        public static readonly DependencyProperty SourceProperty =
-            DependencyProperty.Register(nameof(Source), typeof(string), typeof(SvgImage), new PropertyMetadata(null, OnSourceChanged));
-
-        private static void OnSourceChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var control = (SvgImage)d;
-            var source = (string)e.NewValue;
-
-            if (string.IsNullOrEmpty(source))
+    public static readonly DependencyProperty SourceProperty =
+        DependencyProperty.Register(
+            nameof(Source),
+            typeof(string),
+            typeof(SvgImage),
+            new PropertyMetadata(null)
             {
-                control.Content = "";
-            }
-            else
+                MethodToUpdateDom = async (d, newValue) => await ((SvgImage)d).RefreshSource(),
+            });
+
+    private async Task RefreshSource()
+    {
+        Content = string.IsNullOrEmpty(Source) ? "" : await GetContent(Source);
+    }
+
+    private async Task<string> GetContent(string path)
+    {
+        var uri = INTERNAL_UriHelper.ConvertToHtml5Path(path, this);
+        if (Interop.IsRunningInTheSimulator)
+        {
+            var filePath = Path.Combine(AppContext.BaseDirectory, "wwwroot", uri);
+            return File.ReadAllText(filePath);
+        }
+        else
+        {
+            _httpClient ??= new HttpClient { BaseAddress = new Uri(Interop.ExecuteJavaScriptGetResult<string>("document.baseURI")) };
+            return await _httpClient.GetStringAsync(uri);
+        }
+    }
+    #endregion
+
+    #region Content
+    public string Content
+    {
+        get => (string)GetValue(ContentProperty);
+        set => SetValue(ContentProperty, value);
+    }
+
+    public static readonly DependencyProperty ContentProperty =
+        DependencyProperty.Register(nameof(Content), typeof(string), typeof(SvgImage),
+            new PropertyMetadata(string.Empty)
             {
-                // todo: fix getting the resource
-                // current workaround: every assembly that has svg resources must have it's own SvgImage control
-                // possible solution:
-                //   1. Wait until the control is loaded
-                //   2. Get the path by INTERNAL_UriHelper.ConvertToHtml5Path(Source, this)
-                //   3. Either fetch and assign the svg content in js, or parse the path find the corresponding assembly and get the stream of the source
-                // another possible solution: add support for .svg extension to Application.GetResourceString() method
-
-                var isAbsolutePath =
-                    source.Contains(";component/") ||
-                    source.StartsWith("http") ||
-                    source.StartsWith("pack:/") ||
-                    source.StartsWith("ms-appx:/");
-
-                if (!isAbsolutePath)
+                MethodToUpdateDom = static (d, newValue) =>
                 {
-                    var assembly = control.GetType().Assembly;
-                    source = $"/{assembly.GetName().Name};component/{source}";
-                }
+                    var control = (SvgImage)d;
+                    control.Html = (string)newValue;
+                    control.SetAutoSize();
+                    control.UpdateFillColor();
+                    control.UpdateStrokeColor();
+                },
+            });
+    #endregion
 
-                var stream = Application.GetResourceStream(new Uri(source, UriKind.Relative)).Result?.Stream;
-                if (stream is null)
-                {
-                    control.Content = $"<p style='color:red'>Icon '{source}' is not found</p>";
-                }
-                else
-                {
-                    using var reader = new StreamReader(stream);
-                    control.Content = reader.ReadToEnd();
-                }
-            }
-        }
-        #endregion
+    #region FillColor
+    public string FillElementSelector { get; set; } = "path";
+    public bool ForceSetFill { get; set; } = false;
 
-        #region Content
-        public string Content
-        {
-            get => (string)GetValue(ContentProperty);
-            set => SetValue(ContentProperty, value);
-        }
+    public Color? FillColor
+    {
+        get => (Color?)GetValue(FillColorProperty);
+        set => SetValue(FillColorProperty, value);
+    }
 
-        public static readonly DependencyProperty ContentProperty =
-            DependencyProperty.Register(nameof(Content), typeof(string), typeof(SvgImage),
-                new PropertyMetadata(string.Empty)
-                {
-                    MethodToUpdateDom = static (d, newValue) =>
-                    {
-                        var control = (SvgImage)d;
-                        control.Html = (string)newValue;
-                        control.SetAutoSize();
-                        control.UpdateFillColor();
-                        control.UpdateStrokeColor();
-                    },
-                });
-        #endregion
+    public static readonly DependencyProperty FillColorProperty =
+        DependencyProperty.Register(nameof(FillColor), typeof(Color?), typeof(SvgImage),
+            new PropertyMetadata(null) { MethodToUpdateDom = (d, _) => ((SvgImage)d).UpdateFillColor() });
 
-        #region FillColor
-        public string FillElementSelector { get; set; } = "path";
-        public bool ForceSetFill { get; set; } = false;
+    private void UpdateFillColor()
+    {
+        UpdateColor(FillColor, FillElementSelector, "fill", ForceSetFill);
+    }
+    #endregion
 
-        public Color? FillColor
-        {
-            get => (Color?)GetValue(FillColorProperty);
-            set => SetValue(FillColorProperty, value);
-        }
+    #region StrokeColor
+    public string StrokeElementSelector { get; set; } = "path";
+    public bool ForceSetStroke { get; set; } = false;
 
-        public static readonly DependencyProperty FillColorProperty =
-            DependencyProperty.Register(nameof(FillColor), typeof(Color?), typeof(SvgImage),
-                new PropertyMetadata(null) { MethodToUpdateDom = (d, _) => ((SvgImage)d).UpdateFillColor() });
+    public Color? StrokeColor
+    {
+        get => (Color?)GetValue(StrokeColorProperty);
+        set => SetValue(StrokeColorProperty, value);
+    }
 
-        private void UpdateFillColor()
-        {
-            UpdateColor(FillColor, FillElementSelector, "fill", ForceSetFill);
-        }
-        #endregion
+    public static readonly DependencyProperty StrokeColorProperty =
+        DependencyProperty.Register(nameof(StrokeColor), typeof(Color?), typeof(SvgImage),
+            new PropertyMetadata(null) { MethodToUpdateDom = (d, _) => ((SvgImage)d).UpdateStrokeColor() });
 
-        #region StrokeColor
-        public string StrokeElementSelector { get; set; } = "path";
-        public bool ForceSetStroke { get; set; } = false;
+    private void UpdateStrokeColor()
+    {
+        UpdateColor(StrokeColor, StrokeElementSelector, "stroke", ForceSetStroke);
+    }
+    #endregion
 
-        public Color? StrokeColor
-        {
-            get => (Color?)GetValue(StrokeColorProperty);
-            set => SetValue(StrokeColorProperty, value);
-        }
+    private void UpdateColor(Color? color, string elementSelector, string attributeName, bool forceUpdate)
+    {
+        if (color == null)
+            return;
 
-        public static readonly DependencyProperty StrokeColorProperty =
-            DependencyProperty.Register(nameof(StrokeColor), typeof(Color?), typeof(SvgImage),
-                new PropertyMetadata(null) { MethodToUpdateDom = (d, _) => ((SvgImage)d).UpdateStrokeColor() });
+        // converting C# ARGB to JS RGBA color
+        var hexARGB = color.ToString(); // #AARRGGBB
+        var jsColor = $"#{hexARGB.Substring(3, 6)}{hexARGB.Substring(1, 2)}";
 
-        private void UpdateStrokeColor()
-        {
-            UpdateColor(StrokeColor, StrokeElementSelector, "stroke", ForceSetStroke);
-        }
-        #endregion
-
-        private void UpdateColor(Color? color, string elementSelector, string attributeName, bool forceUpdate)
-        {
-            if (color == null)
-                return;
-
-            // converting C# ARGB to JS RGBA color
-            var hexARGB = color.ToString(); // #AARRGGBB
-            var jsColor = $"#{hexARGB.Substring(3, 6)}{hexARGB.Substring(1, 2)}";
-
-            Interop.ExecuteJavaScriptAsync($@"
+        Interop.ExecuteJavaScriptAsync($@"
 $0.firstChild.shadowRoot
   .querySelectorAll('{elementSelector}')
   .forEach(el => {{
@@ -145,32 +132,31 @@ $0.firstChild.shadowRoot
     }}
   }});
 ", Interop.GetDiv(this));
-        }
+    }
 
-        public SvgImage()
-        {
-            ScrollMode = System.Windows.Controls.ScrollMode.Disabled;
+    public SvgImage()
+    {
+        ScrollMode = System.Windows.Controls.ScrollMode.Disabled;
 
-            // Setting shadow dom via reflection for back compatibility
-            var shadowDom = GetType().GetProperty(nameof(UseShadowDom));
-            shadowDom?.SetValue(this, true);
-        }
+        // Setting shadow dom via reflection for back compatibility
+        var shadowDom = GetType().GetProperty(nameof(UseShadowDom));
+        shadowDom?.SetValue(this, true);
+    }
 
-        private void SetAutoSize()
-        {
-            Interop.ExecuteJavaScriptVoidAsync(@$"
+    private void SetAutoSize()
+    {
+        Interop.ExecuteJavaScriptVoidAsync(@$"
 var svg = $0.firstChild.shadowRoot.querySelector('svg');
 if (svg) {{
   svg.setAttribute('width', '100%');
   svg.setAttribute('height', '100%');
 }}
 ", Interop.GetDiv(this));
-        }
+    }
 
-        protected override void OnMouseWheel(MouseWheelEventArgs e)
-        {
-            base.OnMouseWheel(e);
-            e.Handled = false;
-        }
+    protected override void OnMouseWheel(MouseWheelEventArgs e)
+    {
+        base.OnMouseWheel(e);
+        e.Handled = false;
     }
 }

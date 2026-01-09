@@ -1,13 +1,14 @@
-﻿using OpenSilver.Showcase.Search;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
+using System.Reflection;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Navigation;
 
 namespace OpenSilver.Showcase
 {
@@ -24,12 +25,12 @@ namespace OpenSilver.Showcase
             EmojiCharactersTextBlock.Loaded += EmojiCharactersTextBlock_Loaded;
         }
 
-        private void MaterialIconsTextBlock_Loaded(object sender, RoutedEventArgs e)
+        private async void MaterialIconsTextBlock_Loaded(object sender, RoutedEventArgs e)
         {
             if (!_materialIconsHaveBeenInitialized)
             {
                 // Load all emoji
-                MaterialIconsTextBlock.Text = GetAllMaterialIcons();
+                MaterialIconsTextBlock.Text = await GetAllMaterialIcons();
 
                 // Subscribe to the CharacterClick event
                 CharacterClickService.Attach(MaterialIconsTextBlock, OnCharacterClick_MaterialIcons);
@@ -38,12 +39,12 @@ namespace OpenSilver.Showcase
             }
         }
 
-        private void EmojiCharactersTextBlock_Loaded(object sender, RoutedEventArgs e)
+        private async void EmojiCharactersTextBlock_Loaded(object sender, RoutedEventArgs e)
         {
             if (!_emojiHaveBeenInitialized)
             {
                 // Load all emoji
-                EmojiCharactersTextBlock.Text = GetAllEmoji();
+                EmojiCharactersTextBlock.Text = await GetAllEmoji();
 
                 // Subscribe to the CharacterClick event
                 CharacterClickService.Attach(EmojiCharactersTextBlock, OnCharacterClick_EmojiCharacters);
@@ -96,16 +97,11 @@ namespace OpenSilver.Showcase
                 .Select(cp => char.ConvertFromUtf32(Convert.ToInt32(cp.Trim(), 16))));
         }
 
-        private static string GetAllEmoji()
+        private static async Task<string> GetAllEmoji()
         {
-            var uri = new Uri(
-                "/OpenSilver.Showcase;component/Samples/Icons/emoji-codes.txt",
-                UriKind.Relative);
-
-            var fileContent = RetrieveFileContent(uri);
+            var fileContent = await RetrieveFileContent("Samples/Icons/emoji-codes.txt");
             return string.Join("", fileContent.Split('\n').Select(CodepointsToEmoji));
         }
-
 
         /* Returns "&#x1F44D;&#x1F3FD;" for 👍🏽                                */
         private static string GetXmlNumericEntities(string grapheme)
@@ -131,23 +127,34 @@ namespace OpenSilver.Showcase
             }
         }
 
-        private static string RetrieveFileContent(Uri uri)
+        private static async Task<string> RetrieveFileContent(string path)
         {
-            var resourceStream = Application.GetResourceStream(uri).Result;
-            using var currentReader = new StreamReader(resourceStream.Stream);
+            using var resourceStream = await GetFileStream(Assembly.GetExecutingAssembly().GetName().Name, path);
+            using var currentReader = new StreamReader(resourceStream);
 
             string result = currentReader.ReadToEnd();
             return result;
         }
 
-        private static string GetAllMaterialIcons()
+        private static async Task<Stream> GetFileStream(string assemblyName, string path)
         {
-            // Load the code-points list embedded in the assembly
-            var uri = new Uri(
-                "/OpenSilver.Showcase;component/Samples/Icons/MaterialIcons-Regular.codepoints.txt",
-                UriKind.Relative);
+            if (Interop.IsRunningInTheSimulator)
+            {
+                var filePath = Path.Combine(AppContext.BaseDirectory, "wwwroot", "resources", assemblyName, path);
+                return File.OpenRead(filePath);
+            }
+            else
+            {
+                string resourcePath = $"/resources/{assemblyName.ToLowerInvariant()}/{path}";
+                var httpClient = new HttpClient { BaseAddress = new Uri(Interop.ExecuteJavaScriptGetResult<string>("document.baseURI")) };
+                return await httpClient.GetStreamAsync(resourcePath);
+            }
+        }
 
-            string fileContent = RetrieveFileContent(uri);
+        private static async Task<string> GetAllMaterialIcons()
+        {
+            // Load the code-points list
+            string fileContent = await RetrieveFileContent("Samples/Icons/MaterialIcons-Regular.codepoints.txt");
 
             // Rough upper-bound capacity (one UTF-16 code unit per icon in the BMP,
             // two if it ever ventures into supplementary planes)

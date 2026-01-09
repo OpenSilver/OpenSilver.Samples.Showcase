@@ -12,6 +12,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <EnableDefaultItems>false</EnableDefaultItems>
     <IsOpenSilver>true</IsOpenSilver>
+		<OpenSilverEnableDefaultResourceEmbedding>false</OpenSilverEnableDefaultResourceEmbedding>
     <OutputPath>bin/$(Configuration)_cs</OutputPath>
     <IntermediateOutputPath>obj/$(Configuration)_cs</IntermediateOutputPath>
     <DefineTrace>true</DefineTrace>
@@ -466,7 +467,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Connected Services\ServiceReference1\ConnectedService.json" />
+    <None Include="Connected Services\ServiceReference1\ConnectedService.json" />
     <Content Include="MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -501,7 +502,9 @@
     <Content Include="Other\Planets\Uranus.png" />
     <Content Include="Other\Planets\Venus.png" />
     <Content Include="Other\SampleProfilePhoto.png" />
-    <Content Include="Other\SampleText.txt" />
+		<Content Include="Other\SampleText.txt">
+			<IsEmbedded>true</IsEmbedded>
+		</Content>
     <Content Include="Other\SampleVideo.mp4" />
     <Content Include="Other\SampleAudio.mp3" />
     <Content Include="Samples\Icons\emoji-codes.txt" />
