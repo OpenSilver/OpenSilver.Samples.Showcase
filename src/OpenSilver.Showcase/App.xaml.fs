@@ -9,5 +9,5 @@ type App = class
         this.InitializeComponent()
 
         let mainPage = new MainPage()
-        Window.Current.Content <- mainPage;
+        this.RootVisual <- mainPage;
 end

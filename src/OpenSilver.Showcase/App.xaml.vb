@@ -16,8 +16,7 @@ Namespace OpenSilver.Showcase
             Features.DOM.AssignClass = True
             Await Interop.LoadCssFile("ms-appx:///OpenSilver.Showcase/Other/CSS/app-styles.css")
 
-            Dim mainPage As New MainPage()
-            Window.Current.Content = mainPage
+            RootVisual = New MainPage()
         End Sub
     End Class
 End Namespace

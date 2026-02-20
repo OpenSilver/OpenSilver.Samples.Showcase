@@ -19,8 +19,7 @@ namespace OpenSilver.Showcase
             Features.DOM.AssignClass = true;
             await Interop.LoadCssFile("ms-appx:///OpenSilver.Showcase/Other/CSS/app-styles.css");
 
-            var mainPage = new MainPage();
-            Window.Current.Content = mainPage;
+            RootVisual = new MainPage();
         }
     }
 }
