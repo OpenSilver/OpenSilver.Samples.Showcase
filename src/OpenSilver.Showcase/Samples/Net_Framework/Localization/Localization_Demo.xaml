@@ -1,7 +1,8 @@
 ﻿<UserControl x:Class="OpenSilver.Showcase.Localization_Demo"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:OpenSilver.Showcase">
+             xmlns:local="clr-namespace:OpenSilver.Showcase"
+             xmlns:shared="clr-namespace:OpenSilver.Showcase;assembly=OpenSilver.Showcase.Shared">
 
     <ContentControl Width="245" Style="{StaticResource Card_Style}">
         <Grid>
@@ -78,14 +79,14 @@
                 Read documentation
             </HyperlinkButton>
 
-            <local:ViewSourceButton Grid.Row="5" Background="#FFD46DB7">
-                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo FileName="Localization_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/Localization"/>
-                    <local:ViewSourceButtonInfo FileName="Localization_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/Localization"/>
-                    <local:ViewSourceButtonInfo FileName="Localization_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/Localization"/>
-                    <local:ViewSourceButtonInfo FileName="Localization_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/Localization"/>
-                </local:ViewSourceButton.Sources>
-            </local:ViewSourceButton>
+            <shared:ViewSourceButton Grid.Row="5" Background="#FFD46DB7">
+                <shared:ViewSourceButton.Sources>
+                    <shared:ViewSourceButtonInfo FileName="Localization_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/Localization"/>
+                    <shared:ViewSourceButtonInfo FileName="Localization_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/Localization"/>
+                    <shared:ViewSourceButtonInfo FileName="Localization_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/Localization"/>
+                    <shared:ViewSourceButtonInfo FileName="Localization_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/Localization"/>
+                </shared:ViewSourceButton.Sources>
+            </shared:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

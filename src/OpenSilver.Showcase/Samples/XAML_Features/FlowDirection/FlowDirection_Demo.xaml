@@ -1,7 +1,7 @@
 <UserControl x:Class="OpenSilver.Showcase.FlowDirection_Demo"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:OpenSilver.Showcase">
+             xmlns:shared="clr-namespace:OpenSilver.Showcase;assembly=OpenSilver.Showcase.Shared">
 
     <ContentControl Width="245" Style="{StaticResource Card_Style}">
         <Grid>
@@ -62,14 +62,14 @@
                 </StackPanel>
             </StackPanel>
 
-            <local:ViewSourceButton Grid.Row="2" Background="#FF9C27B0">
-                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo FileName="FlowDirection_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/FlowDirection"/>
-                    <local:ViewSourceButtonInfo FileName="FlowDirection_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/FlowDirection"/>
-                    <local:ViewSourceButtonInfo FileName="FlowDirection_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/FlowDirection"/>
-                    <local:ViewSourceButtonInfo FileName="FlowDirection_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/FlowDirection"/>
-                </local:ViewSourceButton.Sources>
-            </local:ViewSourceButton>
+            <shared:ViewSourceButton Grid.Row="2" Background="#FF9C27B0">
+                <shared:ViewSourceButton.Sources>
+                    <shared:ViewSourceButtonInfo FileName="FlowDirection_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/FlowDirection"/>
+                    <shared:ViewSourceButtonInfo FileName="FlowDirection_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/FlowDirection"/>
+                    <shared:ViewSourceButtonInfo FileName="FlowDirection_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/FlowDirection"/>
+                    <shared:ViewSourceButtonInfo FileName="FlowDirection_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/FlowDirection"/>
+                </shared:ViewSourceButton.Sources>
+            </shared:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

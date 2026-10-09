@@ -1,7 +1,8 @@
 <UserControl x:Class="OpenSilver.Showcase.ColorPicker_Demo"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:OpenSilver.Showcase">
+             xmlns:local="clr-namespace:OpenSilver.Showcase"
+             xmlns:shared="clr-namespace:OpenSilver.Showcase;assembly=OpenSilver.Showcase.Shared">
 
     <ContentControl Style="{StaticResource Card_Style}">
         <Grid>
@@ -36,17 +37,17 @@
                 </Border>
             </StackPanel>
 
-            <local:ViewSourceButton Grid.Row="2" Background="#FF00BCD4">
-                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo FileName="ColorPicker_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/JS_Libs/ColorPicker"/>
-                    <local:ViewSourceButtonInfo FileName="ColorPicker_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/JS_Libs/ColorPicker"/>
-                    <local:ViewSourceButtonInfo FileName="ColorPicker_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/JS_Libs/ColorPicker"/>
-                    <local:ViewSourceButtonInfo FileName="ColorPicker_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/JS_Libs/ColorPicker"/>
-                    <local:ViewSourceButtonInfo FileName="ColorPicker.cs" RelativePath="src/OpenSilver.Showcase/Samples/JS_Libs/ColorPicker"/>
-                    <local:ViewSourceButtonInfo FileName="ColorPicker.vb" RelativePath="src/OpenSilver.Showcase/Samples/JS_Libs/ColorPicker"/>
-                    <local:ViewSourceButtonInfo FileName="ColorPicker.fs" RelativePath="src/OpenSilver.Showcase/Samples/JS_Libs/ColorPicker"/>
-                </local:ViewSourceButton.Sources>
-            </local:ViewSourceButton>
+            <shared:ViewSourceButton Grid.Row="2" Background="#FF00BCD4">
+                <shared:ViewSourceButton.Sources>
+                    <shared:ViewSourceButtonInfo FileName="ColorPicker_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/JS_Libs/ColorPicker"/>
+                    <shared:ViewSourceButtonInfo FileName="ColorPicker_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/JS_Libs/ColorPicker"/>
+                    <shared:ViewSourceButtonInfo FileName="ColorPicker_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/JS_Libs/ColorPicker"/>
+                    <shared:ViewSourceButtonInfo FileName="ColorPicker_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/JS_Libs/ColorPicker"/>
+                    <shared:ViewSourceButtonInfo FileName="ColorPicker.cs" RelativePath="src/OpenSilver.Showcase/Samples/JS_Libs/ColorPicker"/>
+                    <shared:ViewSourceButtonInfo FileName="ColorPicker.vb" RelativePath="src/OpenSilver.Showcase/Samples/JS_Libs/ColorPicker"/>
+                    <shared:ViewSourceButtonInfo FileName="ColorPicker.fs" RelativePath="src/OpenSilver.Showcase/Samples/JS_Libs/ColorPicker"/>
+                </shared:ViewSourceButton.Sources>
+            </shared:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

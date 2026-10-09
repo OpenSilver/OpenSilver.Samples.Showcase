@@ -2,7 +2,7 @@
     x:Class="OpenSilver.Showcase.Triggers_Demo"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:OpenSilver.Showcase">
+    xmlns:shared="clr-namespace:OpenSilver.Showcase;assembly=OpenSilver.Showcase.Shared">
     <ContentControl Style="{StaticResource Card_Style}" Width="245">
         <Grid>
             <Grid.Resources>
@@ -39,19 +39,19 @@
                     <TextBlock TextWrapping="Wrap" Text="Note: Like in Silverlight, EventTrigger.RoutedEvent only supports the Loaded event." Foreground="Gray" Margin="5,0,5,15" TextAlignment="Center"/>
                 </StackPanel>
             </StackPanel>
-            <local:ViewSourceButton Grid.Row="2"
+            <shared:ViewSourceButton Grid.Row="2"
                             Background="#FF6FA9FF">
-                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Triggers"
+                <shared:ViewSourceButton.Sources>
+                    <shared:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Triggers"
                                         FileName="Triggers_Demo.xaml" />
-                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Triggers"
+                    <shared:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Triggers"
                                         FileName="Triggers_Demo.xaml.cs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Triggers"
+                    <shared:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Triggers"
                                         FileName="Triggers_Demo.xaml.vb" />
-                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Triggers"
+                    <shared:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Triggers"
                                         FileName="Triggers_Demo.xaml.fs" />
-                </local:ViewSourceButton.Sources>
-            </local:ViewSourceButton>
+                </shared:ViewSourceButton.Sources>
+            </shared:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

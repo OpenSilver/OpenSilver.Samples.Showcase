@@ -2,7 +2,7 @@
     x:Class="OpenSilver.Showcase.LoadingControl"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:OpenSilver.Showcase"
+    xmlns:shared="clr-namespace:OpenSilver.Showcase;assembly=OpenSilver.Showcase.Shared"
     xmlns:animations="clr-namespace:OpenSilver.Animations;assembly=OpenSilver.Animations"
     IsHitTestVisible="False">
 

@@ -3,7 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:controlskit="clr-namespace:OpenSilver.ControlsKit;assembly=OpenSilver.ControlsKit.Controls"
-    xmlns:local="clr-namespace:OpenSilver.Showcase">
+    xmlns:shared="clr-namespace:OpenSilver.Showcase;assembly=OpenSilver.Showcase.Shared">
 
     <ContentControl Width="235" Style="{StaticResource Card_Style}">
         <Grid>
@@ -33,14 +33,14 @@
                 </controlskit:FlexPanel>
             </StackPanel>
 
-            <local:ViewSourceButton Grid.Row="3" Background="#9C27B0">
-                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo FileName="FlexPanel_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/FlexPanel"/>
-                    <local:ViewSourceButtonInfo FileName="FlexPanel_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/FlexPanel"/>
-                    <local:ViewSourceButtonInfo FileName="FlexPanel_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/FlexPanel"/>
-                    <local:ViewSourceButtonInfo FileName="FlexPanel_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/FlexPanel"/>
-                </local:ViewSourceButton.Sources>
-            </local:ViewSourceButton>
+            <shared:ViewSourceButton Grid.Row="3" Background="#9C27B0">
+                <shared:ViewSourceButton.Sources>
+                    <shared:ViewSourceButtonInfo FileName="FlexPanel_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/FlexPanel"/>
+                    <shared:ViewSourceButtonInfo FileName="FlexPanel_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/FlexPanel"/>
+                    <shared:ViewSourceButtonInfo FileName="FlexPanel_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/FlexPanel"/>
+                    <shared:ViewSourceButtonInfo FileName="FlexPanel_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/FlexPanel"/>
+                </shared:ViewSourceButton.Sources>
+            </shared:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

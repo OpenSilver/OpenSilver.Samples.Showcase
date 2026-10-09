@@ -2,7 +2,7 @@
     x:Class="OpenSilver.Showcase.WriteableBitmap_Demo"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:OpenSilver.Showcase">
+    xmlns:shared="clr-namespace:OpenSilver.Showcase;assembly=OpenSilver.Showcase.Shared">
     <ContentControl Style="{StaticResource Card_Style}" Width="245">
         <Grid>
             <Grid.RowDefinitions>
@@ -26,19 +26,19 @@
                     <Image x:Name="ivDestination" Width="200" Height="200" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="Fill"/>
                 </Border>
             </Grid>
-            <local:ViewSourceButton Grid.Row="3"
+            <shared:ViewSourceButton Grid.Row="3"
                                 Background="#FF6FA9FF">
-                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/WriteableBitmap"
+                <shared:ViewSourceButton.Sources>
+                    <shared:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/WriteableBitmap"
                                             FileName="WriteableBitmap_Demo.xaml" />
-                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/WriteableBitmap"
+                    <shared:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/WriteableBitmap"
                                             FileName="WriteableBitmap_Demo.xaml.cs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/WriteableBitmap"
+                    <shared:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/WriteableBitmap"
                                             FileName="WriteableBitmap_Demo.xaml.vb" />
-                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/WriteableBitmap"
+                    <shared:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/WriteableBitmap"
                                             FileName="WriteableBitmap_Demo.xaml.fs" />
-                </local:ViewSourceButton.Sources>
-            </local:ViewSourceButton>
+                </shared:ViewSourceButton.Sources>
+            </shared:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

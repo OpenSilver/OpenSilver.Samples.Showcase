@@ -2,7 +2,7 @@
     x:Class="OpenSilver.Showcase.FilePickerAndShare_Demo"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:OpenSilver.Showcase">
+    xmlns:shared="clr-namespace:OpenSilver.Showcase;assembly=OpenSilver.Showcase.Shared">
 
     <ContentControl Style="{StaticResource Card_Style}" Width="220">
         <Grid>
@@ -18,19 +18,19 @@
                 <Image x:Name="PickedImageControl" Width="180" Height="150" Stretch="Uniform" Visibility="Collapsed"/>
                 <Button x:Name="ShareButton" Content="Share" Click="ShareImageButton_Click" Height="32" Visibility="Collapsed" Foreground="#00c3cf" Background="{DynamicResource NativeApiButtonBackground}" FontWeight="Bold"/>
             </StackPanel>
-            <local:ViewSourceButton Grid.Row="2"
+            <shared:ViewSourceButton Grid.Row="2"
                          Background="#00c3cf">
-                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/Maui_Hybrid/FilePickerAndShare"
+                <shared:ViewSourceButton.Sources>
+                    <shared:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/Maui_Hybrid/FilePickerAndShare"
                                      FileName="FilePickerAndShare_Demo.xaml" />
-                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/Maui_Hybrid/FilePickerAndShare"
+                    <shared:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/Maui_Hybrid/FilePickerAndShare"
                                      FileName="FilePickerAndShare_Demo.xaml.cs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/Maui_Hybrid/FilePickerAndShare"
+                    <shared:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/Maui_Hybrid/FilePickerAndShare"
                                      FileName="FilePickerAndShare_Demo.xaml.vb" />
-                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/Maui_Hybrid/FilePickerAndShare"
+                    <shared:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/Maui_Hybrid/FilePickerAndShare"
                                      FileName="FilePickerAndShare_Demo.xaml.fs" />
-                </local:ViewSourceButton.Sources>
-            </local:ViewSourceButton>
+                </shared:ViewSourceButton.Sources>
+            </shared:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

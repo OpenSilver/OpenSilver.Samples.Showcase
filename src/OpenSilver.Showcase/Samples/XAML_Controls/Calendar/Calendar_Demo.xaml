@@ -1,7 +1,7 @@
 ﻿<UserControl x:Class="OpenSilver.Showcase.Calendar_Demo"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:OpenSilver.Showcase">
+             xmlns:shared="clr-namespace:OpenSilver.Showcase;assembly=OpenSilver.Showcase.Shared">
 
     <ContentControl Margin="0,22,0,5" Style="{StaticResource Card_Style}">
         <Grid>
@@ -154,20 +154,20 @@
                 </TabItem>
             </TabControl>
 
-            <local:ViewSourceButton Grid.Row="2" Background="#FF13D7E3">
-                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo FileName="Calendar_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/Calendar"/>
-                    <local:ViewSourceButtonInfo FileName="Calendar_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/Calendar"/>
-                    <local:ViewSourceButtonInfo FileName="Calendar_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/Calendar"/>
-                    <local:ViewSourceButtonInfo FileName="Calendar_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/Calendar"/>
-                    <local:ViewStyleSourceInfo Fragment="#L96-L132"
+            <shared:ViewSourceButton Grid.Row="2" Background="#FF13D7E3">
+                <shared:ViewSourceButton.Sources>
+                    <shared:ViewSourceButtonInfo FileName="Calendar_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/Calendar"/>
+                    <shared:ViewSourceButtonInfo FileName="Calendar_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/Calendar"/>
+                    <shared:ViewSourceButtonInfo FileName="Calendar_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/Calendar"/>
+                    <shared:ViewSourceButtonInfo FileName="Calendar_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/Calendar"/>
+                    <shared:ViewStyleSourceInfo Fragment="#L96-L132"
                                                RelativePath="src/Runtime/Controls/Themes"
                                                TabHeader="Default Calendar Style"/>
-                    <local:ViewModernStyleSourceInfo FileName="OpenSilver.Controls.xaml"
+                    <shared:ViewModernStyleSourceInfo FileName="OpenSilver.Controls.xaml"
                                                      Fragment="#L610-L800"
                                                      TabHeader="Modern Calendar Style"/>
-                </local:ViewSourceButton.Sources>
-            </local:ViewSourceButton>
+                </shared:ViewSourceButton.Sources>
+            </shared:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

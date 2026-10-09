@@ -2,7 +2,7 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:browser="clr-namespace:System.Windows.Browser;assembly=OpenSilver.Browser"
-             xmlns:local="clr-namespace:OpenSilver.Showcase">
+             xmlns:shared="clr-namespace:OpenSilver.Showcase;assembly=OpenSilver.Showcase.Shared">
 
     <ContentControl Width="245" Style="{StaticResource Card_Style}">
         <Grid>
@@ -64,14 +64,14 @@
                            Text="{Binding Source={x:Static browser:HtmlPage.BrowserInformation}, Path=UserAgent}"/>
             </Grid>
 
-            <local:ViewSourceButton Grid.Row="2" Background="#FFB3BFA9">
-                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo FileName="HtmlPage_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/HtmlPage"/>
-                    <local:ViewSourceButtonInfo FileName="HtmlPage_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/HtmlPage"/>
-                    <local:ViewSourceButtonInfo FileName="HtmlPage_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/HtmlPage"/>
-                    <local:ViewSourceButtonInfo FileName="HtmlPage_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/HtmlPage"/>
-                </local:ViewSourceButton.Sources>
-            </local:ViewSourceButton>
+            <shared:ViewSourceButton Grid.Row="2" Background="#FFB3BFA9">
+                <shared:ViewSourceButton.Sources>
+                    <shared:ViewSourceButtonInfo FileName="HtmlPage_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/HtmlPage"/>
+                    <shared:ViewSourceButtonInfo FileName="HtmlPage_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/HtmlPage"/>
+                    <shared:ViewSourceButtonInfo FileName="HtmlPage_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/HtmlPage"/>
+                    <shared:ViewSourceButtonInfo FileName="HtmlPage_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/HtmlPage"/>
+                </shared:ViewSourceButton.Sources>
+            </shared:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

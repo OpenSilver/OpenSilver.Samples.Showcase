@@ -1,7 +1,7 @@
 ﻿<UserControl x:Class="OpenSilver.Showcase.BusyIndicator_Demo"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:OpenSilver.Showcase">
+             xmlns:shared="clr-namespace:OpenSilver.Showcase;assembly=OpenSilver.Showcase.Shared">
 
     <ContentControl Width="230" Style="{StaticResource Card_Style}">
         <Grid>
@@ -91,16 +91,16 @@
                 </BusyIndicator>
             </StackPanel>
 
-            <local:ViewSourceButton Grid.Row="5" Background="#FFE45EE2">
-                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo FileName="BusyIndicator_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/BusyIndicator"/>
-                    <local:ViewSourceButtonInfo FileName="BusyIndicator_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/BusyIndicator"/>
-                    <local:ViewSourceButtonInfo FileName="BusyIndicator_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/BusyIndicator"/>
-                    <local:ViewSourceButtonInfo FileName="BusyIndicator_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/BusyIndicator"/>
-                    <local:ViewStyleSourceInfo TabHeader="Default BusyIndicator Style" RelativePath="src/Runtime/Controls.Toolkit/Themes" Fragment="#L14-L179"/>
-                    <local:ViewModernStyleSourceInfo FileName="OpenSilver.Controls.Toolkit.xaml" TabHeader="Modern BusyIndicator Style" Fragment="#L100-L255"/>
-                </local:ViewSourceButton.Sources>
-            </local:ViewSourceButton>
+            <shared:ViewSourceButton Grid.Row="5" Background="#FFE45EE2">
+                <shared:ViewSourceButton.Sources>
+                    <shared:ViewSourceButtonInfo FileName="BusyIndicator_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/BusyIndicator"/>
+                    <shared:ViewSourceButtonInfo FileName="BusyIndicator_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/BusyIndicator"/>
+                    <shared:ViewSourceButtonInfo FileName="BusyIndicator_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/BusyIndicator"/>
+                    <shared:ViewSourceButtonInfo FileName="BusyIndicator_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/BusyIndicator"/>
+                    <shared:ViewStyleSourceInfo TabHeader="Default BusyIndicator Style" RelativePath="src/Runtime/Controls.Toolkit/Themes" Fragment="#L14-L179"/>
+                    <shared:ViewModernStyleSourceInfo FileName="OpenSilver.Controls.Toolkit.xaml" TabHeader="Modern BusyIndicator Style" Fragment="#L100-L255"/>
+                </shared:ViewSourceButton.Sources>
+            </shared:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

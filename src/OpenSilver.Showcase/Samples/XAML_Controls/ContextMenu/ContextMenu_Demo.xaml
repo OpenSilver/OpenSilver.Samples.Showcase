@@ -2,7 +2,7 @@
     x:Class="OpenSilver.Showcase.ContextMenu_Demo"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:OpenSilver.Showcase">
+    xmlns:shared="clr-namespace:OpenSilver.Showcase;assembly=OpenSilver.Showcase.Shared">
     <ContentControl Style="{StaticResource Card_Style}" Width="200">
         <Grid>
             <Grid.RowDefinitions>
@@ -22,18 +22,18 @@
                 </Border.ContextMenu>
                 <TextBlock Text="Right-click here to display the context menu." Foreground="Gray" TextWrapping="Wrap" Width="130" TextAlignment="Center" FontSize="14"/>
             </Border>
-            <local:ViewSourceButton Grid.Row="2" Background="#FFFF65A3">
-                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ContextMenu"
+            <shared:ViewSourceButton Grid.Row="2" Background="#FFFF65A3">
+                <shared:ViewSourceButton.Sources>
+                    <shared:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ContextMenu"
                                                 FileName="ContextMenu_Demo.xaml" />
-                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ContextMenu"
+                    <shared:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ContextMenu"
                                                 FileName="ContextMenu_Demo.xaml.cs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ContextMenu"
+                    <shared:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ContextMenu"
                                                 FileName="ContextMenu_Demo.xaml.vb" />
-                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ContextMenu"
+                    <shared:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ContextMenu"
                                                 FileName="ContextMenu_Demo.xaml.fs" />
-                </local:ViewSourceButton.Sources>
-            </local:ViewSourceButton>
+                </shared:ViewSourceButton.Sources>
+            </shared:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

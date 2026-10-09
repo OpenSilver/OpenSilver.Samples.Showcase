@@ -8,7 +8,7 @@ namespace TestNumericTextBox;
 public class NumericTextBox : HtmlPresenter
 {
     private int _value = 0;
-    private object _domElement;
+    private HtmlElementReference _domElement;
 
     public NumericTextBox()
     {
@@ -21,9 +21,9 @@ public class NumericTextBox : HtmlPresenter
     {
         get
         {
-            if (_domElement != null) //Note: the DOM element is null if the control has not been added to the visual tree yet.
+            if (_domElement.IsConnected) //Note: the DOM element is null if the control has not been added to the visual tree yet.
             {
-                var id = (_domElement as INTERNAL_HtmlDomElementReference).UniqueIdentifier;
+                var id = _domElement.Uid;
                 string valueString = Interop.ExecuteJavaScriptGetResult<string>($"{id}.firstChild.firstChild.value");
                 if (int.TryParse(valueString, out int valueInt))
                 {
@@ -36,7 +36,7 @@ public class NumericTextBox : HtmlPresenter
         {
             _value = value;
 
-            if (_domElement != null) //Note: the DOM element is null if the control has not been added to the visual tree yet.
+            if (_domElement.IsConnected) //Note: the DOM element is null if the control has not been added to the visual tree yet.
                 UpdateValue();
         }
     }

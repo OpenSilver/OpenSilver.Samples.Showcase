@@ -1,7 +1,7 @@
 ﻿<UserControl x:Class="OpenSilver.Showcase.ProgressBar_Demo"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:OpenSilver.Showcase">
+             xmlns:shared="clr-namespace:OpenSilver.Showcase;assembly=OpenSilver.Showcase.Shared">
 
     <ContentControl Width="200" Style="{StaticResource Card_Style}">
         <Grid>
@@ -41,14 +41,14 @@
                 </Expander>
             </StackPanel>
 
-            <local:ViewSourceButton Grid.Row="2" Background="#FF13D7E3">
-                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo FileName="ProgressBar_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ProgressBar"/>
-                    <local:ViewSourceButtonInfo FileName="ProgressBar_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ProgressBar"/>
-                    <local:ViewSourceButtonInfo FileName="ProgressBar_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ProgressBar"/>
-                    <local:ViewSourceButtonInfo FileName="ProgressBar_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ProgressBar"/>
-                </local:ViewSourceButton.Sources>
-            </local:ViewSourceButton>
+            <shared:ViewSourceButton Grid.Row="2" Background="#FF13D7E3">
+                <shared:ViewSourceButton.Sources>
+                    <shared:ViewSourceButtonInfo FileName="ProgressBar_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ProgressBar"/>
+                    <shared:ViewSourceButtonInfo FileName="ProgressBar_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ProgressBar"/>
+                    <shared:ViewSourceButtonInfo FileName="ProgressBar_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ProgressBar"/>
+                    <shared:ViewSourceButtonInfo FileName="ProgressBar_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ProgressBar"/>
+                </shared:ViewSourceButton.Sources>
+            </shared:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

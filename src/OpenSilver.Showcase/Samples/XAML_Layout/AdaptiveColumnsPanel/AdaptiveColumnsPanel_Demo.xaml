@@ -3,7 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:controlskit="clr-namespace:OpenSilver.ControlsKit;assembly=OpenSilver.ControlsKit.Controls"
-    xmlns:local="clr-namespace:OpenSilver.Showcase">
+    xmlns:shared="clr-namespace:OpenSilver.Showcase;assembly=OpenSilver.Showcase.Shared">
 
     <ContentControl Width="235" Style="{StaticResource Card_Style}">
         <Grid>
@@ -46,14 +46,14 @@
                 <Border Background="AliceBlue" Grid.Column="2"/>
             </Grid>
 
-            <local:ViewSourceButton Grid.Row="3" Background="#9C27B0">
-                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo FileName="AdaptiveColumnsPanel_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/AdaptiveColumnsPanel"/>
-                    <local:ViewSourceButtonInfo FileName="AdaptiveColumnsPanel_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/AdaptiveColumnsPanel"/>
-                    <local:ViewSourceButtonInfo FileName="AdaptiveColumnsPanel_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/AdaptiveColumnsPanel"/>
-                    <local:ViewSourceButtonInfo FileName="AdaptiveColumnsPanel_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/AdaptiveColumnsPanel"/>
-                </local:ViewSourceButton.Sources>
-            </local:ViewSourceButton>
+            <shared:ViewSourceButton Grid.Row="3" Background="#9C27B0">
+                <shared:ViewSourceButton.Sources>
+                    <shared:ViewSourceButtonInfo FileName="AdaptiveColumnsPanel_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/AdaptiveColumnsPanel"/>
+                    <shared:ViewSourceButtonInfo FileName="AdaptiveColumnsPanel_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/AdaptiveColumnsPanel"/>
+                    <shared:ViewSourceButtonInfo FileName="AdaptiveColumnsPanel_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/AdaptiveColumnsPanel"/>
+                    <shared:ViewSourceButtonInfo FileName="AdaptiveColumnsPanel_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/AdaptiveColumnsPanel"/>
+                </shared:ViewSourceButton.Sources>
+            </shared:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

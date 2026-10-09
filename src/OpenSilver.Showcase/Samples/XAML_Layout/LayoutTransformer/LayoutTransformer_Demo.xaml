@@ -1,7 +1,7 @@
 ﻿<UserControl x:Class="OpenSilver.Showcase.LayoutTransformer_Demo"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:OpenSilver.Showcase"
+             xmlns:shared="clr-namespace:OpenSilver.Showcase;assembly=OpenSilver.Showcase.Shared"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              Width="230">
 
@@ -124,13 +124,13 @@
                 <Button Padding="10,5" Content="Content"/>
             </LayoutTransformer>
 
-            <local:ViewSourceButton Grid.Row="3" Background="#FF42BD55">                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo FileName="LayoutTransformer_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/LayoutTransformer"/>
-                    <local:ViewSourceButtonInfo FileName="LayoutTransformer_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/LayoutTransformer"/>
-                    <local:ViewSourceButtonInfo FileName="LayoutTransformer_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/LayoutTransformer"/>
-                    <local:ViewSourceButtonInfo FileName="LayoutTransformer_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/LayoutTransformer"/>
-                </local:ViewSourceButton.Sources>
-            </local:ViewSourceButton>
+            <shared:ViewSourceButton Grid.Row="3" Background="#FF42BD55">                <shared:ViewSourceButton.Sources>
+                    <shared:ViewSourceButtonInfo FileName="LayoutTransformer_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/LayoutTransformer"/>
+                    <shared:ViewSourceButtonInfo FileName="LayoutTransformer_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/LayoutTransformer"/>
+                    <shared:ViewSourceButtonInfo FileName="LayoutTransformer_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/LayoutTransformer"/>
+                    <shared:ViewSourceButtonInfo FileName="LayoutTransformer_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/LayoutTransformer"/>
+                </shared:ViewSourceButton.Sources>
+            </shared:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

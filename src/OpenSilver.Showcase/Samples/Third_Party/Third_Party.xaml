@@ -2,7 +2,7 @@
     x:Class="OpenSilver.Showcase.Third_Party"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:OpenSilver.Showcase"
+    xmlns:shared="clr-namespace:OpenSilver.Showcase;assembly=OpenSilver.Showcase.Shared"
     Style="{StaticResource Page_Style}"
     Title="Third-Party Components">
     

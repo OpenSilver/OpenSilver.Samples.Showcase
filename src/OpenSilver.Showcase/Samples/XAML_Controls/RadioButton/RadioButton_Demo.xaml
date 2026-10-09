@@ -1,7 +1,7 @@
 ﻿<UserControl x:Class="OpenSilver.Showcase.RadioButton_Demo"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:OpenSilver.Showcase">
+             xmlns:shared="clr-namespace:OpenSilver.Showcase;assembly=OpenSilver.Showcase.Shared">
 
     <UserControl.Resources>
         <ResourceDictionary>
@@ -49,17 +49,17 @@
                              Style="{StaticResource RadioButtonStyle}"/>
             </StackPanel>
 
-            <local:ViewSourceButton Grid.Row="2" Background="#FFB3CE00">
-                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo FileName="RadioButton_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/RadioButton"/>
-                    <local:ViewSourceButtonInfo FileName="RadioButton_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/RadioButton"/>
-                    <local:ViewSourceButtonInfo FileName="RadioButton_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/RadioButton"/>
-                    <local:ViewSourceButtonInfo FileName="RadioButton_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/RadioButton"/>
-                    <local:ViewSourceButtonInfo FileName="RadioButtonStyles.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/RadioButton"/>
-                    <local:ViewStyleSourceInfo TabHeader="Default RadioButton Style" Fragment="#L733-L1013"/>
-                    <local:ViewModernStyleSourceInfo TabHeader="Modern RadioButton Style" Fragment="#L1177-L1414"/>
-                </local:ViewSourceButton.Sources>
-            </local:ViewSourceButton>
+            <shared:ViewSourceButton Grid.Row="2" Background="#FFB3CE00">
+                <shared:ViewSourceButton.Sources>
+                    <shared:ViewSourceButtonInfo FileName="RadioButton_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/RadioButton"/>
+                    <shared:ViewSourceButtonInfo FileName="RadioButton_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/RadioButton"/>
+                    <shared:ViewSourceButtonInfo FileName="RadioButton_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/RadioButton"/>
+                    <shared:ViewSourceButtonInfo FileName="RadioButton_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/RadioButton"/>
+                    <shared:ViewSourceButtonInfo FileName="RadioButtonStyles.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/RadioButton"/>
+                    <shared:ViewStyleSourceInfo TabHeader="Default RadioButton Style" Fragment="#L733-L1013"/>
+                    <shared:ViewModernStyleSourceInfo TabHeader="Modern RadioButton Style" Fragment="#L1177-L1414"/>
+                </shared:ViewSourceButton.Sources>
+            </shared:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

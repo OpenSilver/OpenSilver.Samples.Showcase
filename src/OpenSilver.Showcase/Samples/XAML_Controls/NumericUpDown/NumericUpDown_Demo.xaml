@@ -1,7 +1,7 @@
 ﻿<UserControl x:Class="OpenSilver.Showcase.NumericUpDown_Demo"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:OpenSilver.Showcase">
+             xmlns:shared="clr-namespace:OpenSilver.Showcase;assembly=OpenSilver.Showcase.Shared">
 
     <UserControl.Resources>
         <ResourceDictionary>
@@ -78,15 +78,15 @@
                 </Grid>
             </Expander>
 
-            <local:ViewSourceButton Grid.Row="4" Background="#FF3ADE8F">
-                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo FileName="NumericUpDown_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/NumericUpDown"/>
-                    <local:ViewSourceButtonInfo FileName="NumericUpDown_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/NumericUpDown"/>
-                    <local:ViewSourceButtonInfo FileName="NumericUpDown_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/NumericUpDown"/>
-                    <local:ViewSourceButtonInfo FileName="NumericUpDown_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/NumericUpDown"/>
-                    <local:ViewSourceButtonInfo FileName="NumericUpDownStyles.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/NumericUpDown/Styles"/>
-                </local:ViewSourceButton.Sources>
-            </local:ViewSourceButton>
+            <shared:ViewSourceButton Grid.Row="4" Background="#FF3ADE8F">
+                <shared:ViewSourceButton.Sources>
+                    <shared:ViewSourceButtonInfo FileName="NumericUpDown_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/NumericUpDown"/>
+                    <shared:ViewSourceButtonInfo FileName="NumericUpDown_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/NumericUpDown"/>
+                    <shared:ViewSourceButtonInfo FileName="NumericUpDown_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/NumericUpDown"/>
+                    <shared:ViewSourceButtonInfo FileName="NumericUpDown_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/NumericUpDown"/>
+                    <shared:ViewSourceButtonInfo FileName="NumericUpDownStyles.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/NumericUpDown/Styles"/>
+                </shared:ViewSourceButton.Sources>
+            </shared:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

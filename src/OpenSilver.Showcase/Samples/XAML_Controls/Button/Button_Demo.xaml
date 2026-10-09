@@ -1,7 +1,7 @@
 ﻿<UserControl x:Class="OpenSilver.Showcase.Button_Demo"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:OpenSilver.Showcase">
+             xmlns:shared="clr-namespace:OpenSilver.Showcase;assembly=OpenSilver.Showcase.Shared">
 
     <UserControl.Resources>
         <ResourceDictionary>
@@ -70,17 +70,17 @@
                 </Button>
             </StackPanel>
 
-            <local:ViewSourceButton Grid.Row="2" Background="#FCAB54">
-                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo FileName="Button_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/Button"/>
-                    <local:ViewSourceButtonInfo FileName="Button_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/Button"/>
-                    <local:ViewSourceButtonInfo FileName="Button_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/Button"/>
-                    <local:ViewSourceButtonInfo FileName="Button_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/Button"/>
-                    <local:ViewSourceButtonInfo FileName="ButtonStyles.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/Button/Styles"/>
-                    <local:ViewStyleSourceInfo TabHeader="Default Button Style" Fragment="#L147-L282"/>
-                    <local:ViewModernStyleSourceInfo TabHeader="Modern Button Style" Fragment="#L71-L176"/>
-                </local:ViewSourceButton.Sources>
-            </local:ViewSourceButton>
+            <shared:ViewSourceButton Grid.Row="2" Background="#FCAB54">
+                <shared:ViewSourceButton.Sources>
+                    <shared:ViewSourceButtonInfo FileName="Button_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/Button"/>
+                    <shared:ViewSourceButtonInfo FileName="Button_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/Button"/>
+                    <shared:ViewSourceButtonInfo FileName="Button_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/Button"/>
+                    <shared:ViewSourceButtonInfo FileName="Button_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/Button"/>
+                    <shared:ViewSourceButtonInfo FileName="ButtonStyles.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/Button/Styles"/>
+                    <shared:ViewStyleSourceInfo TabHeader="Default Button Style" Fragment="#L147-L282"/>
+                    <shared:ViewModernStyleSourceInfo TabHeader="Modern Button Style" Fragment="#L71-L176"/>
+                </shared:ViewSourceButton.Sources>
+            </shared:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

@@ -1,7 +1,7 @@
 ﻿<UserControl x:Class="OpenSilver.Showcase.DataGridGrouping"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:OpenSilver.Showcase"
+             xmlns:shared="clr-namespace:OpenSilver.Showcase;assembly=OpenSilver.Showcase.Shared"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -127,14 +127,14 @@
                 </StackPanel>
             </Grid>
 
-            <local:ViewSourceButton Grid.Row="2" Background="#FF8D73FF">
-                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo FileName="DataGridGrouping.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/DataGrid"/>
-                    <local:ViewSourceButtonInfo FileName="DataGridGrouping.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/DataGrid"/>
-                    <local:ViewSourceButtonInfo FileName="DataGridGrouping.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/DataGrid"/>
-                    <local:ViewSourceButtonInfo FileName="DataGridGrouping.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/DataGrid"/>
-                </local:ViewSourceButton.Sources>
-            </local:ViewSourceButton>
+            <shared:ViewSourceButton Grid.Row="2" Background="#FF8D73FF">
+                <shared:ViewSourceButton.Sources>
+                    <shared:ViewSourceButtonInfo FileName="DataGridGrouping.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/DataGrid"/>
+                    <shared:ViewSourceButtonInfo FileName="DataGridGrouping.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/DataGrid"/>
+                    <shared:ViewSourceButtonInfo FileName="DataGridGrouping.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/DataGrid"/>
+                    <shared:ViewSourceButtonInfo FileName="DataGridGrouping.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/DataGrid"/>
+                </shared:ViewSourceButton.Sources>
+            </shared:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

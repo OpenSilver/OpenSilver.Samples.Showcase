@@ -2,7 +2,7 @@
     x:Class="OpenSilver.Showcase.NonModalChildWindow_Demo"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:OpenSilver.Showcase">
+    xmlns:shared="clr-namespace:OpenSilver.Showcase;assembly=OpenSilver.Showcase.Shared">
     <ContentControl Style="{StaticResource Card_Style}" Width="255">
         <Grid>
             <Grid.RowDefinitions>
@@ -15,27 +15,27 @@
                 <Button Content="Show Modal ChildWindow" Click="ButtonTestChildWindow_Modal_Click" Margin="0,5"/>
                 <Button Content="Show Non-Modal ChildWindow" Click="ButtonTestChildWindow_NonModal_Click"/>
             </StackPanel>
-            <local:ViewSourceButton Grid.Row="2" Background="#FFFF7065">                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/ChildWindow2"
+            <shared:ViewSourceButton Grid.Row="2" Background="#FFFF7065">                <shared:ViewSourceButton.Sources>
+                    <shared:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/ChildWindow2"
                                                 FileName="NonModalChildWindow_Demo.xaml" />
-                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/ChildWindow2"
+                    <shared:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/ChildWindow2"
                                                 FileName="NonModalChildWindow_Demo.xaml.cs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/ChildWindow2"
+                    <shared:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/ChildWindow2"
                                                 FileName="NonModalChildWindow_Demo.xaml.vb" />
-                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/ChildWindow2"
+                    <shared:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/ChildWindow2"
                                                 FileName="NonModalChildWindow_Demo.xaml.fs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/ChildWindow2"
+                    <shared:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/ChildWindow2"
                                                 FileName="SmallChildWindow.xaml" />
-                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/ChildWindow2"
+                    <shared:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/ChildWindow2"
                                                 FileName="SmallChildWindow.xaml.cs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/ChildWindow2"
+                    <shared:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/ChildWindow2"
                                                 FileName="SmallChildWindow.xaml.vb" />
-                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/ChildWindow2"
+                    <shared:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/ChildWindow2"
                                                 FileName="SmallChildWindow.xaml.fs" />
-                    <local:ViewStyleSourceInfo TabHeader="Default ChildWindow Style" Fragment="#L4254-L4681"/>
-                    <local:ViewModernStyleSourceInfo TabHeader="Modern ChildWindow Style" Fragment="#L2917-L3162"/>
-                </local:ViewSourceButton.Sources>
-            </local:ViewSourceButton>
+                    <shared:ViewStyleSourceInfo TabHeader="Default ChildWindow Style" Fragment="#L4254-L4681"/>
+                    <shared:ViewModernStyleSourceInfo TabHeader="Modern ChildWindow Style" Fragment="#L2917-L3162"/>
+                </shared:ViewSourceButton.Sources>
+            </shared:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

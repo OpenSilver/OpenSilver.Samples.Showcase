@@ -2,7 +2,7 @@
     x:Class="OpenSilver.Showcase.InitParams_Demo"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:OpenSilver.Showcase">
+    xmlns:shared="clr-namespace:OpenSilver.Showcase;assembly=OpenSilver.Showcase.Shared">
     <ContentControl Style="{StaticResource Card_Style}" Width="260">
         <Grid>
             <Grid.RowDefinitions>
@@ -24,23 +24,23 @@
                 </TextBlock>
                 <Button Content="Show the InitParams in a MessageBox" FontSize="12" Margin="0,10" HorizontalAlignment="Center" Click="ButtonShowInitParams_Click"/>
             </StackPanel>
-            <local:ViewSourceButton Grid.Row="2"
+            <shared:ViewSourceButton Grid.Row="2"
                                 Background="#FCAB54">
-                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/InitParams"
+                <shared:ViewSourceButton.Sources>
+                    <shared:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/InitParams"
                                             FileName="InitParams_Demo.xaml" />
-                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/InitParams"
+                    <shared:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/InitParams"
                                             FileName="InitParams_Demo.xaml.cs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/InitParams"
+                    <shared:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/InitParams"
                                             FileName="InitParams_Demo.xaml.vb" />
-                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/InitParams"
+                    <shared:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/InitParams"
                                             FileName="InitParams_Demo.xaml.fs" />
-                    <local:ViewSourceButtonInfo RelativePath="OpenSilver.Showcase.Browser/wwwroot"
+                    <shared:ViewSourceButtonInfo RelativePath="OpenSilver.Showcase.Browser/wwwroot"
                          FileName="index.html" />
-                    <local:ViewSourceButtonInfo RelativePath="OpenSilver.Showcase.Simulator"
+                    <shared:ViewSourceButtonInfo RelativePath="OpenSilver.Showcase.Simulator"
      FileName="Startup.cs" />
-                </local:ViewSourceButton.Sources>
-            </local:ViewSourceButton>
+                </shared:ViewSourceButton.Sources>
+            </shared:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

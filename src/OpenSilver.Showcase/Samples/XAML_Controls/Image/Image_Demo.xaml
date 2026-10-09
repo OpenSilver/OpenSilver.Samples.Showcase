@@ -1,7 +1,7 @@
 ﻿<UserControl x:Class="OpenSilver.Showcase.Image_Demo"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:OpenSilver.Showcase">
+             xmlns:shared="clr-namespace:OpenSilver.Showcase;assembly=OpenSilver.Showcase.Shared">
 
     <ContentControl Width="210" Style="{StaticResource Card_Style}">
         <Grid>
@@ -32,14 +32,14 @@
                 <ComboBox ItemsSource="{Binding Converter={StaticResource EnumToListConverter}, ConverterParameter={x:Static Image.StretchProperty}}" SelectedItem="{Binding ElementName=image, Path=Stretch, Mode=TwoWay}"/>
             </StackPanel>
 
-            <local:ViewSourceButton Grid.Row="3" Background="#FF8D73FF">
-                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo FileName="Image_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/Image"/>
-                    <local:ViewSourceButtonInfo FileName="Image_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/Image"/>
-                    <local:ViewSourceButtonInfo FileName="Image_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/Image"/>
-                    <local:ViewSourceButtonInfo FileName="Image_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/Image"/>
-                </local:ViewSourceButton.Sources>
-            </local:ViewSourceButton>
+            <shared:ViewSourceButton Grid.Row="3" Background="#FF8D73FF">
+                <shared:ViewSourceButton.Sources>
+                    <shared:ViewSourceButtonInfo FileName="Image_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/Image"/>
+                    <shared:ViewSourceButtonInfo FileName="Image_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/Image"/>
+                    <shared:ViewSourceButtonInfo FileName="Image_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/Image"/>
+                    <shared:ViewSourceButtonInfo FileName="Image_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/Image"/>
+                </shared:ViewSourceButton.Sources>
+            </shared:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

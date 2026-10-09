@@ -1,7 +1,8 @@
 ﻿<UserControl x:Class="OpenSilver.Showcase.Drag_And_Drop_Demo"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:OpenSilver.Showcase">
+             xmlns:local="clr-namespace:OpenSilver.Showcase"
+             xmlns:shared="clr-namespace:OpenSilver.Showcase;assembly=OpenSilver.Showcase.Shared">
 
     <ContentControl Width="245" Style="{StaticResource Card_Style}">
         <Grid>
@@ -86,14 +87,14 @@
                 </Border>
             </Grid>
 
-            <local:ViewSourceButton Grid.Row="3" Background="#FFC7C228">
-                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo FileName="Drag_And_Drop_Demo_Silverlight.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Drag_And_Drop"/>
-                    <local:ViewSourceButtonInfo FileName="Drag_And_Drop_Demo_Silverlight.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Drag_And_Drop"/>
-                    <local:ViewSourceButtonInfo FileName="Drag_And_Drop_Demo_Silverlight.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Drag_And_Drop"/>
-                    <local:ViewSourceButtonInfo FileName="Drag_And_Drop_Demo_Silverlight.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Drag_And_Drop"/>
-                </local:ViewSourceButton.Sources>
-            </local:ViewSourceButton>
+            <shared:ViewSourceButton Grid.Row="3" Background="#FFC7C228">
+                <shared:ViewSourceButton.Sources>
+                    <shared:ViewSourceButtonInfo FileName="Drag_And_Drop_Demo_Silverlight.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Drag_And_Drop"/>
+                    <shared:ViewSourceButtonInfo FileName="Drag_And_Drop_Demo_Silverlight.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Drag_And_Drop"/>
+                    <shared:ViewSourceButtonInfo FileName="Drag_And_Drop_Demo_Silverlight.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Drag_And_Drop"/>
+                    <shared:ViewSourceButtonInfo FileName="Drag_And_Drop_Demo_Silverlight.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Drag_And_Drop"/>
+                </shared:ViewSourceButton.Sources>
+            </shared:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

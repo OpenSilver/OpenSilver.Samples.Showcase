@@ -1,7 +1,7 @@
 ﻿<UserControl x:Class="OpenSilver.Showcase.RichTextBlock_Demo"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:OpenSilver.Showcase">
+             xmlns:shared="clr-namespace:OpenSilver.Showcase;assembly=OpenSilver.Showcase.Shared">
 
     <ContentControl Width="200" Style="{StaticResource Card_Style}">
         <Grid>
@@ -40,14 +40,14 @@
                 </Paragraph>
             </RichTextBlock>
 
-            <local:ViewSourceButton Grid.Row="2" Background="#FFCF673E">
-                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo FileName="RichTextBlock_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/RichTextBlock"/>
-                    <local:ViewSourceButtonInfo FileName="RichTextBlock_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/RichTextBlock"/>
-                    <local:ViewSourceButtonInfo FileName="RichTextBlock_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/RichTextBlock"/>
-                    <local:ViewSourceButtonInfo FileName="RichTextBlock_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/RichTextBlock"/>
-                </local:ViewSourceButton.Sources>
-            </local:ViewSourceButton>
+            <shared:ViewSourceButton Grid.Row="2" Background="#FFCF673E">
+                <shared:ViewSourceButton.Sources>
+                    <shared:ViewSourceButtonInfo FileName="RichTextBlock_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/RichTextBlock"/>
+                    <shared:ViewSourceButtonInfo FileName="RichTextBlock_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/RichTextBlock"/>
+                    <shared:ViewSourceButtonInfo FileName="RichTextBlock_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/RichTextBlock"/>
+                    <shared:ViewSourceButtonInfo FileName="RichTextBlock_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/RichTextBlock"/>
+                </shared:ViewSourceButton.Sources>
+            </shared:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

@@ -1,7 +1,7 @@
 ﻿<UserControl x:Class="OpenSilver.Showcase.Popup_Demo"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:OpenSilver.Showcase">
+             xmlns:shared="clr-namespace:OpenSilver.Showcase;assembly=OpenSilver.Showcase.Shared">
 
     <ContentControl Width="210" Style="{StaticResource Card_Style}">
         <Grid>
@@ -95,14 +95,14 @@
                 </Popup>
             </StackPanel>
 
-            <local:ViewSourceButton Grid.Row="2" Background="#FF3393FF">
-                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo FileName="Popup_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/Popup"/>
-                    <local:ViewSourceButtonInfo FileName="Popup_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/Popup"/>
-                    <local:ViewSourceButtonInfo FileName="Popup_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/Popup"/>
-                    <local:ViewSourceButtonInfo FileName="Popup_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/Popup"/>
-                </local:ViewSourceButton.Sources>
-            </local:ViewSourceButton>
+            <shared:ViewSourceButton Grid.Row="2" Background="#FF3393FF">
+                <shared:ViewSourceButton.Sources>
+                    <shared:ViewSourceButtonInfo FileName="Popup_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/Popup"/>
+                    <shared:ViewSourceButtonInfo FileName="Popup_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/Popup"/>
+                    <shared:ViewSourceButtonInfo FileName="Popup_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/Popup"/>
+                    <shared:ViewSourceButtonInfo FileName="Popup_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/Popup"/>
+                </shared:ViewSourceButton.Sources>
+            </shared:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

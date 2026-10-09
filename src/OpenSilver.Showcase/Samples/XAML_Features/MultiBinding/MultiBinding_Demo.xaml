@@ -1,7 +1,8 @@
 <UserControl x:Class="OpenSilver.Showcase.MultiBinding_Demo"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:OpenSilver.Showcase">
+             xmlns:local="clr-namespace:OpenSilver.Showcase"
+             xmlns:shared="clr-namespace:OpenSilver.Showcase;assembly=OpenSilver.Showcase.Shared">
 
     <UserControl.Resources>
         <local:RgbToBrushConverter x:Key="RgbToBrushConverter"/>
@@ -51,17 +52,17 @@
                 </Border>
             </StackPanel>
 
-            <local:ViewSourceButton Grid.Row="2" Background="#FFF78069">
-                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo FileName="MultiBinding_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/MultiBinding"/>
-                    <local:ViewSourceButtonInfo FileName="MultiBinding_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/MultiBinding"/>
-                    <local:ViewSourceButtonInfo FileName="MultiBinding_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/MultiBinding"/>
-                    <local:ViewSourceButtonInfo FileName="MultiBinding_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/MultiBinding"/>
-                    <local:ViewSourceButtonInfo FileName="RgbToBrushConverter.cs" RelativePath="src/OpenSilver.Showcase/Other/Converters"/>
-                    <local:ViewSourceButtonInfo FileName="RgbToBrushConverter.vb" RelativePath="src/OpenSilver.Showcase/Other/Converters"/>
-                    <local:ViewSourceButtonInfo FileName="RgbToBrushConverter.fs" RelativePath="src/OpenSilver.Showcase/Other/Converters"/>
-                </local:ViewSourceButton.Sources>
-            </local:ViewSourceButton>
+            <shared:ViewSourceButton Grid.Row="2" Background="#FFF78069">
+                <shared:ViewSourceButton.Sources>
+                    <shared:ViewSourceButtonInfo FileName="MultiBinding_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/MultiBinding"/>
+                    <shared:ViewSourceButtonInfo FileName="MultiBinding_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/MultiBinding"/>
+                    <shared:ViewSourceButtonInfo FileName="MultiBinding_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/MultiBinding"/>
+                    <shared:ViewSourceButtonInfo FileName="MultiBinding_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/MultiBinding"/>
+                    <shared:ViewSourceButtonInfo FileName="RgbToBrushConverter.cs" RelativePath="src/OpenSilver.Showcase/Other/Converters"/>
+                    <shared:ViewSourceButtonInfo FileName="RgbToBrushConverter.vb" RelativePath="src/OpenSilver.Showcase/Other/Converters"/>
+                    <shared:ViewSourceButtonInfo FileName="RgbToBrushConverter.fs" RelativePath="src/OpenSilver.Showcase/Other/Converters"/>
+                </shared:ViewSourceButton.Sources>
+            </shared:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

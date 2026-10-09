@@ -1,7 +1,7 @@
 ﻿<UserControl x:Class="OpenSilver.Showcase.Frame_Demo"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:OpenSilver.Showcase">
+             xmlns:shared="clr-namespace:OpenSilver.Showcase;assembly=OpenSilver.Showcase.Shared">
 
     <ContentControl Width="200" Style="{StaticResource Card_Style}">
         <Grid>
@@ -32,21 +32,21 @@
                 </StackPanel>
             </StackPanel>
             
-            <local:ViewSourceButton Grid.Row="2" Background="#FF13D7E3">                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo FileName="Frame_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/Frame"/>
-                    <local:ViewSourceButtonInfo FileName="Frame_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/Frame"/>
-                    <local:ViewSourceButtonInfo FileName="Frame_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/Frame"/>
-                    <local:ViewSourceButtonInfo FileName="Frame_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/Frame"/>
-                    <local:ViewSourceButtonInfo FileName="MainPage.xaml" RelativePath="src\OpenSilver.Showcase"/>
-                    <local:ViewSourceButtonInfo FileName="MainPage.xaml.cs" RelativePath="src\OpenSilver.Showcase"/>
-                    <local:ViewSourceButtonInfo FileName="MainPage.xaml.vb" RelativePath="src\OpenSilver.Showcase"/>
-                    <local:ViewSourceButtonInfo FileName="MainPage.xaml.fs" RelativePath="src\OpenSilver.Showcase"/>
-                    <local:ViewSourceButtonInfo FileName="SearchPage.xaml" RelativePath="src/OpenSilver.Showcase/Samples"/>
-                    <local:ViewSourceButtonInfo FileName="SearchPage.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples"/>
-                    <local:ViewSourceButtonInfo FileName="SearchPage.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples"/>
-                    <local:ViewSourceButtonInfo FileName="SearchPage.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples"/>
-                </local:ViewSourceButton.Sources>
-            </local:ViewSourceButton>
+            <shared:ViewSourceButton Grid.Row="2" Background="#FF13D7E3">                <shared:ViewSourceButton.Sources>
+                    <shared:ViewSourceButtonInfo FileName="Frame_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/Frame"/>
+                    <shared:ViewSourceButtonInfo FileName="Frame_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/Frame"/>
+                    <shared:ViewSourceButtonInfo FileName="Frame_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/Frame"/>
+                    <shared:ViewSourceButtonInfo FileName="Frame_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/Frame"/>
+                    <shared:ViewSourceButtonInfo FileName="MainPage.xaml" RelativePath="src\OpenSilver.Showcase"/>
+                    <shared:ViewSourceButtonInfo FileName="MainPage.xaml.cs" RelativePath="src\OpenSilver.Showcase"/>
+                    <shared:ViewSourceButtonInfo FileName="MainPage.xaml.vb" RelativePath="src\OpenSilver.Showcase"/>
+                    <shared:ViewSourceButtonInfo FileName="MainPage.xaml.fs" RelativePath="src\OpenSilver.Showcase"/>
+                    <shared:ViewSourceButtonInfo FileName="SearchPage.xaml" RelativePath="src/OpenSilver.Showcase/Samples"/>
+                    <shared:ViewSourceButtonInfo FileName="SearchPage.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples"/>
+                    <shared:ViewSourceButtonInfo FileName="SearchPage.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples"/>
+                    <shared:ViewSourceButtonInfo FileName="SearchPage.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples"/>
+                </shared:ViewSourceButton.Sources>
+            </shared:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

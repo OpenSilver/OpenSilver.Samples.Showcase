@@ -1,7 +1,7 @@
 <UserControl x:Class="OpenSilver.Showcase.AnimationTool_Demo"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:OpenSilver.Showcase">
+             xmlns:shared="clr-namespace:OpenSilver.Showcase;assembly=OpenSilver.Showcase.Shared">
 
     <UserControl.Resources>
         <!--  Translation Animation  -->
@@ -372,14 +372,14 @@
                 </Grid>
             </Grid>
 
-            <local:ViewSourceButton Grid.Row="2" Background="#FF4A9EF5">
-                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo FileName="AnimationTool_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/AnimationTool"/>
-                    <local:ViewSourceButtonInfo FileName="AnimationTool_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/AnimationTool"/>
-                    <local:ViewSourceButtonInfo FileName="AnimationTool_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/AnimationTool"/>
-                    <local:ViewSourceButtonInfo FileName="AnimationTool_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/AnimationTool"/>
-                </local:ViewSourceButton.Sources>
-            </local:ViewSourceButton>
+            <shared:ViewSourceButton Grid.Row="2" Background="#FF4A9EF5">
+                <shared:ViewSourceButton.Sources>
+                    <shared:ViewSourceButtonInfo FileName="AnimationTool_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/AnimationTool"/>
+                    <shared:ViewSourceButtonInfo FileName="AnimationTool_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/AnimationTool"/>
+                    <shared:ViewSourceButtonInfo FileName="AnimationTool_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/AnimationTool"/>
+                    <shared:ViewSourceButtonInfo FileName="AnimationTool_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/AnimationTool"/>
+                </shared:ViewSourceButton.Sources>
+            </shared:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

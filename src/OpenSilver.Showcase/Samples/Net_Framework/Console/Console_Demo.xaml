@@ -1,7 +1,7 @@
 ﻿<UserControl x:Class="OpenSilver.Showcase.Console_Demo"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:OpenSilver.Showcase">
+             xmlns:shared="clr-namespace:OpenSilver.Showcase;assembly=OpenSilver.Showcase.Shared">
 
     <ContentControl Width="245" Style="{StaticResource Card_Style}">
         <Grid>
@@ -29,14 +29,14 @@
                     Click="OnWriteToDebugButtonClick"
                     Content="Write to Debug"/>
 
-            <local:ViewSourceButton Grid.Row="3" Background="#FCAB54">
-                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo FileName="Console_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/Console"/>
-                    <local:ViewSourceButtonInfo FileName="Console_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/Console"/>
-                    <local:ViewSourceButtonInfo FileName="Console_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/Console"/>
-                    <local:ViewSourceButtonInfo FileName="Console_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/Console"/>
-                </local:ViewSourceButton.Sources>
-            </local:ViewSourceButton>
+            <shared:ViewSourceButton Grid.Row="3" Background="#FCAB54">
+                <shared:ViewSourceButton.Sources>
+                    <shared:ViewSourceButtonInfo FileName="Console_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/Console"/>
+                    <shared:ViewSourceButtonInfo FileName="Console_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/Console"/>
+                    <shared:ViewSourceButtonInfo FileName="Console_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/Console"/>
+                    <shared:ViewSourceButtonInfo FileName="Console_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/Net_Framework/Console"/>
+                </shared:ViewSourceButton.Sources>
+            </shared:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

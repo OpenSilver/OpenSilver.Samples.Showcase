@@ -2,7 +2,7 @@
     x:Class="OpenSilver.Showcase.ContextMenu_MenuItem_Demo"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:OpenSilver.Showcase">
+    xmlns:shared="clr-namespace:OpenSilver.Showcase;assembly=OpenSilver.Showcase.Shared">
     <ContentControl Style="{StaticResource Card_Style}" Width="200">
         <Grid>
             <Grid.RowDefinitions>
@@ -34,20 +34,20 @@
                 <TextBlock Text="Right-click to display menu with icons" TextWrapping="Wrap" TextAlignment="Center"/>
             </Border>
             <ContentControl Content="MenuItem" Foreground="#FFEF75C3" Background="#FFCD93B8" Style="{StaticResource HeaderControl_Style}"/>
-            <local:ViewSourceButton Grid.Row="2" Background="#FFEF75C3">
-                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ContextMenu_MenuItem"
+            <shared:ViewSourceButton Grid.Row="2" Background="#FFEF75C3">
+                <shared:ViewSourceButton.Sources>
+                    <shared:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ContextMenu_MenuItem"
                                                 FileName="ContextMenu_MenuItem_Demo.xaml" />
-                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ContextMenu_MenuItem"
+                    <shared:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ContextMenu_MenuItem"
                                                 FileName="ContextMenu_MenuItem_Demo.xaml.cs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ContextMenu_MenuItem"
+                    <shared:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ContextMenu_MenuItem"
                                                 FileName="ContextMenu_MenuItem_Demo.xaml.vb" />
-                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ContextMenu_MenuItem"
+                    <shared:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Controls/ContextMenu_MenuItem"
                                                 FileName="ContextMenu_MenuItem_Demo.xaml.fs" />
-                    <local:ViewStyleSourceInfo TabHeader="Default MenuItem Style" Fragment="#L4117-L4230" />
-                    <local:ViewModernStyleSourceInfo TabHeader="Modern MenuItem Style" Fragment="#L3377-L3465" />
-                </local:ViewSourceButton.Sources>
-            </local:ViewSourceButton>
+                    <shared:ViewStyleSourceInfo TabHeader="Default MenuItem Style" Fragment="#L4117-L4230" />
+                    <shared:ViewModernStyleSourceInfo TabHeader="Modern MenuItem Style" Fragment="#L3377-L3465" />
+                </shared:ViewSourceButton.Sources>
+            </shared:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

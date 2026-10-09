@@ -1,7 +1,7 @@
 ﻿<UserControl x:Class="OpenSilver.Showcase.Command_Demo"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:OpenSilver.Showcase">
+             xmlns:shared="clr-namespace:OpenSilver.Showcase;assembly=OpenSilver.Showcase.Shared">
 
     <ContentControl Width="245" Style="{StaticResource Card_Style}">
         <Grid>
@@ -20,7 +20,7 @@
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center">
                 <StackPanel.DataContext>
-                    <local:CommandDemoViewModel/>
+                    <local:CommandDemoViewModel xmlns:local="clr-namespace:OpenSilver.Showcase"/>
                 </StackPanel.DataContext>
 
                 <Button Command="{Binding ShowMessageCommand}"
@@ -29,14 +29,14 @@
                 <TextBox Margin="0,10,0,0" Text="{Binding Message, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
 
-            <local:ViewSourceButton Grid.Row="2" Background="#FFF78069">
-                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo FileName="Command_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Command"/>
-                    <local:ViewSourceButtonInfo FileName="CommandDemoViewModel.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Command"/>
-                    <local:ViewSourceButtonInfo FileName="CommandDemoViewModel.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Command"/>
-                    <local:ViewSourceButtonInfo FileName="CommandDemoViewModel.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Command"/>
-                </local:ViewSourceButton.Sources>
-            </local:ViewSourceButton>
+            <shared:ViewSourceButton Grid.Row="2" Background="#FFF78069">
+                <shared:ViewSourceButton.Sources>
+                    <shared:ViewSourceButtonInfo FileName="Command_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Command"/>
+                    <shared:ViewSourceButtonInfo FileName="CommandDemoViewModel.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Command"/>
+                    <shared:ViewSourceButtonInfo FileName="CommandDemoViewModel.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Command"/>
+                    <shared:ViewSourceButtonInfo FileName="CommandDemoViewModel.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Command"/>
+                </shared:ViewSourceButton.Sources>
+            </shared:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

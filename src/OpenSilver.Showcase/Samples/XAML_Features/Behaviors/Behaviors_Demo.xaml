@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
-             xmlns:local="clr-namespace:OpenSilver.Showcase">
+             xmlns:shared="clr-namespace:OpenSilver.Showcase;assembly=OpenSilver.Showcase.Shared">
 
     <ContentControl Width="255" Style="{StaticResource Card_Style}">
         <Grid>
@@ -148,14 +148,14 @@
                 </Border>
             </StackPanel>
 
-            <local:ViewSourceButton Grid.Row="2" Background="#FF5F9EA0">
-                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo FileName="Behaviors_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Behaviors"/>
-                    <local:ViewSourceButtonInfo FileName="Behaviors_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Behaviors"/>
-                    <local:ViewSourceButtonInfo FileName="Behaviors_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Behaviors"/>
-                    <local:ViewSourceButtonInfo FileName="Behaviors_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Behaviors"/>
-                </local:ViewSourceButton.Sources>
-            </local:ViewSourceButton>
+            <shared:ViewSourceButton Grid.Row="2" Background="#FF5F9EA0">
+                <shared:ViewSourceButton.Sources>
+                    <shared:ViewSourceButtonInfo FileName="Behaviors_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Behaviors"/>
+                    <shared:ViewSourceButtonInfo FileName="Behaviors_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Behaviors"/>
+                    <shared:ViewSourceButtonInfo FileName="Behaviors_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Behaviors"/>
+                    <shared:ViewSourceButtonInfo FileName="Behaviors_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Features/Behaviors"/>
+                </shared:ViewSourceButton.Sources>
+            </shared:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

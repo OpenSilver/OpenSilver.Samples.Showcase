@@ -2,7 +2,7 @@
     x:Class="OpenSilver.Showcase.GridSplitter_Demo"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:OpenSilver.Showcase">
+    xmlns:shared="clr-namespace:OpenSilver.Showcase;assembly=OpenSilver.Showcase.Shared">
     <ContentControl Style="{StaticResource Card_Style}" Width="200">
         <Grid>
             <Grid.RowDefinitions>
@@ -27,18 +27,18 @@
                 </Border>
             </Grid>
             <CheckBox Grid.Row="2" Content="ShowsPreview" IsChecked="{Binding ShowsPreview, ElementName=gridSplitter, Mode=TwoWay}" FontSize="12" Margin="18,0,0,0"/>
-            <local:ViewSourceButton Grid.Row="3" Background="#BF6CEE">                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/GridSplitter"
+            <shared:ViewSourceButton Grid.Row="3" Background="#BF6CEE">                <shared:ViewSourceButton.Sources>
+                    <shared:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/GridSplitter"
                                                 FileName="GridSplitter_Demo.xaml" />
-                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/GridSplitter"
+                    <shared:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/GridSplitter"
                                                 FileName="GridSplitter_Demo.xaml.cs" />
-                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/GridSplitter"
+                    <shared:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/GridSplitter"
                                                 FileName="GridSplitter_Demo.xaml.vb" />
-                    <local:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/GridSplitter"
+                    <shared:ViewSourceButtonInfo RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/GridSplitter"
                                                 FileName="GridSplitter_Demo.xaml.fs" />
-                    <local:ViewStyleSourceInfo TabHeader="GridSplitter Style" RelativePath="src/Runtime/Controls/Themes" Fragment="#L474-L604" />
-                </local:ViewSourceButton.Sources>
-            </local:ViewSourceButton>
+                    <shared:ViewStyleSourceInfo TabHeader="GridSplitter Style" RelativePath="src/Runtime/Controls/Themes" Fragment="#L474-L604" />
+                </shared:ViewSourceButton.Sources>
+            </shared:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

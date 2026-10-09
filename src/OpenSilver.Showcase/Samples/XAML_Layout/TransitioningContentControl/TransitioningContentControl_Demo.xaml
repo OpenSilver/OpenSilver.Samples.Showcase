@@ -1,7 +1,7 @@
 ﻿<UserControl x:Class="OpenSilver.Showcase.TransitioningContentControl_Demo"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:OpenSilver.Showcase"
+             xmlns:shared="clr-namespace:OpenSilver.Showcase;assembly=OpenSilver.Showcase.Shared"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              Width="245">
 
@@ -42,13 +42,13 @@
                         Content="Down"/>
             </StackPanel>
 
-            <local:ViewSourceButton Grid.Row="3" Background="#FFD972AA">                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo FileName="TransitioningContentControl_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/TransitioningContentControl"/>
-                    <local:ViewSourceButtonInfo FileName="TransitioningContentControl_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/TransitioningContentControl"/>
-                    <local:ViewSourceButtonInfo FileName="TransitioningContentControl_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/TransitioningContentControl"/>
-                    <local:ViewSourceButtonInfo FileName="TransitioningContentControl_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/TransitioningContentControl"/>
-                </local:ViewSourceButton.Sources>
-            </local:ViewSourceButton>
+            <shared:ViewSourceButton Grid.Row="3" Background="#FFD972AA">                <shared:ViewSourceButton.Sources>
+                    <shared:ViewSourceButtonInfo FileName="TransitioningContentControl_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/TransitioningContentControl"/>
+                    <shared:ViewSourceButtonInfo FileName="TransitioningContentControl_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/TransitioningContentControl"/>
+                    <shared:ViewSourceButtonInfo FileName="TransitioningContentControl_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/TransitioningContentControl"/>
+                    <shared:ViewSourceButtonInfo FileName="TransitioningContentControl_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/TransitioningContentControl"/>
+                </shared:ViewSourceButton.Sources>
+            </shared:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>

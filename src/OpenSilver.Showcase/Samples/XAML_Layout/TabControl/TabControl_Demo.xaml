@@ -1,7 +1,7 @@
 ﻿<UserControl x:Class="OpenSilver.Showcase.TabControl_Demo"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:OpenSilver.Showcase">
+             xmlns:shared="clr-namespace:OpenSilver.Showcase;assembly=OpenSilver.Showcase.Shared">
 
     <ContentControl Width="230" Style="{StaticResource Card_Style}">
         <Grid>
@@ -53,16 +53,16 @@
                 <ComboBox ItemsSource="{Binding Converter={StaticResource EnumToListConverter}, ConverterParameter={x:Type Dock}}" SelectedItem="{Binding TabStripPlacement, ElementName=MyTabControl, Mode=TwoWay}"/>
             </StackPanel>
             
-            <local:ViewSourceButton Grid.Row="3" Background="#FF3ED4B2">
-                <local:ViewSourceButton.Sources>
-                    <local:ViewSourceButtonInfo FileName="TabControl_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/TabControl"/>
-                    <local:ViewSourceButtonInfo FileName="TabControl_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/TabControl"/>
-                    <local:ViewSourceButtonInfo FileName="TabControl_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/TabControl"/>
-                    <local:ViewSourceButtonInfo FileName="TabControl_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/TabControl"/>
-                    <local:ViewStyleSourceInfo TabHeader="Default TabControl Styles" RelativePath="src/Runtime/Controls/Themes" Fragment="#L606-L1495"/>
-                    <local:ViewModernStyleSourceInfo TabHeader="Modern TabControl Styles" FileName="OpenSilver.Controls.xaml" Fragment="#L804-L1108"/>
-                </local:ViewSourceButton.Sources>
-            </local:ViewSourceButton>
+            <shared:ViewSourceButton Grid.Row="3" Background="#FF3ED4B2">
+                <shared:ViewSourceButton.Sources>
+                    <shared:ViewSourceButtonInfo FileName="TabControl_Demo.xaml" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/TabControl"/>
+                    <shared:ViewSourceButtonInfo FileName="TabControl_Demo.xaml.cs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/TabControl"/>
+                    <shared:ViewSourceButtonInfo FileName="TabControl_Demo.xaml.vb" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/TabControl"/>
+                    <shared:ViewSourceButtonInfo FileName="TabControl_Demo.xaml.fs" RelativePath="src/OpenSilver.Showcase/Samples/XAML_Layout/TabControl"/>
+                    <shared:ViewStyleSourceInfo TabHeader="Default TabControl Styles" RelativePath="src/Runtime/Controls/Themes" Fragment="#L606-L1495"/>
+                    <shared:ViewModernStyleSourceInfo TabHeader="Modern TabControl Styles" FileName="OpenSilver.Controls.xaml" Fragment="#L804-L1108"/>
+                </shared:ViewSourceButton.Sources>
+            </shared:ViewSourceButton>
         </Grid>
     </ContentControl>
 </UserControl>
