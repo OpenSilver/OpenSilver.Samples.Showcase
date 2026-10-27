@@ -40,7 +40,7 @@ namespace OpenSilver.Showcase
                 null
             );
 
-        public static void ShowLoadingPopup(this ItemsControl itemsControl, IAnimationType animation = null)
+        public static void ShowLoadingPopup(this ItemsControl itemsControl, Transition animation = null)
         {
             // create & show
             var popup = new Popup
@@ -116,7 +116,7 @@ namespace OpenSilver.Showcase
 
             if (status == GeneratorStatus.GeneratingContainers)
             {
-                ShowLoadingPopup(itemsControl, new FadeAndScale { Bounciness = 0.3, Delay = 1000 });
+                ShowLoadingPopup(itemsControl, new Zoom { From = 0.5, Easing = Easings.Overshoot, Bounciness = 0.3, StartAfter = AnimationTime.FromSeconds(1) });
             }
             else
             {

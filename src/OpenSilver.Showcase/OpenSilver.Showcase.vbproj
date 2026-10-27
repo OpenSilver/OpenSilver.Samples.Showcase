@@ -25,6 +25,7 @@
     <PackageReference Include="System.ServiceModel.NetTcp" Version="4.10.0" />
     <PackageReference Include="System.ServiceModel.Security" Version="4.10.0" />
     <PackageReference Include="OpenSilver" Version="[$(OpenSilverVersion)]" />
+    <PackageReference Include="OpenSilver.Animations" Version="[$(OpenSilverAnimationsVersion)]" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
   </ItemGroup>
   
@@ -903,8 +904,5 @@
   <ItemGroup>
     <None Include="Samples\\XAML_Layout\\MeasureArrange\\RadialPanel.cs" />
     <None Include="Samples\\XAML_Layout\\MeasureArrange\\RadialPanel.fs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Libraries\OpenSilver.Animations\OpenSilver.Animations.csproj" />
   </ItemGroup>
 </Project>

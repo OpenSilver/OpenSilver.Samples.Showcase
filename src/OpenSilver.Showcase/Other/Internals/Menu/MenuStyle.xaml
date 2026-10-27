@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:animations="clr-namespace:OpenSilver.Animations;assembly=OpenSilver.Animations"
+    xmlns:anim="http://opensilver.net/animations"
     xmlns:local="clr-namespace:OpenSilver.Showcase">
 
     <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
@@ -293,7 +293,7 @@
                                 ContentTemplate="{TemplateBinding HeaderTemplate}"
                                 Padding="8,3,8,3"
                                 UseLayoutRounding="False"
-                                animations:SpringEffect.IsEnabled="True">
+                                anim:Animate.Hover="Nudge">
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
                                     <Grid Background="{TemplateBinding Background}">

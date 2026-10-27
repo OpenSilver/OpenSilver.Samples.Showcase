@@ -1,7 +1,6 @@
 ﻿namespace TestNumericTextBox
 
 open System
-open CSHTML5.Internal
 open CSHTML5.Native.Html.Controls
 open OpenSilver
 
@@ -18,8 +17,8 @@ type NumericTextBox() as this =
     member this.Value
         with get() =
             if not (isNull domElement) then
-                let id = (domElement :?> INTERNAL_HtmlDomElementReference).UniqueIdentifier
-                let valueStr = Interop.ExecuteJavaScriptGetResult<string>($"{id}.firstChild.firstChild.value")
+                let id = (domElement :?> HtmlElementReference).Uid
+                let valueStr = Interop.ExecuteJavaScriptGetResult<string>($"document.getElementById('{id}').firstChild.firstChild.value")
                 match Int32.TryParse(valueStr) with
                 | (true, parsedValue) -> value <- parsedValue
                 | _ -> ()

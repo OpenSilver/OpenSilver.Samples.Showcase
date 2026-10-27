@@ -3,7 +3,6 @@ Imports System.Windows.Browser
 Imports System.Windows.Controls
 Imports System.Windows.Input
 Imports System.Windows.Media
-Imports System.Windows.Media.Animation
 Imports System.Windows.Navigation
 Imports OpenSilver.Animations
 Imports OpenSilver.Themes.Modern
@@ -20,14 +19,17 @@ Namespace OpenSilver.Showcase
             AddHandler SizeChanged, AddressOf MainPage_SizeChanged
             MenuTreeView.ItemsSource = Pages.AllPagesAndCategories
             UpdateThemeToggleFillColor()
-            'Animations.Animation.SlowDownAnimationsForDebugging = 10.0
+            'AnimationSettings.Current.Speed = 0.1 ' ten times slower
         End Sub
 
         Public Shared Property Current As MainPage
 
-        Private Async Sub MainPage_Loaded(sender As Object, e As RoutedEventArgs)
+        Private Sub MainPage_Loaded(sender As Object, e As RoutedEventArgs)
+            ' Navigate to the "Welcome" page by default. The menu selects it when it appears: until
+            ' then, it is out of the layout (see "OnPageOpen=PushOthers" in the XAML), so its items
+            ' don't exist yet.
             If Not HtmlPage.Document.DocumentUri.OriginalString.Contains("#") Then
-                Await TreeViewHelpers.SelectItemInTreeViewAsync(MenuTreeView, Pages.LandingPageInfo)
+                NavigateToPage(Pages.LandingPageInfo.Path)
             End If
         End Sub
 
@@ -80,91 +82,29 @@ Namespace OpenSilver.Showcase
 #Region "Source Code View"
 
         Public Sub ViewSourceCode(control As UIElement)
+            ' Open the Source Code Pane.
+            ' It slides up from the bottom while the page makes room for it (see "Animate.Appear" in the XAML):
             If SourceCodePane.Visibility = Visibility.Collapsed Then
-                ' Make the pane and grid splitter visible
+                RowThatContainsTheGridSplitter.Height = New GridLength(5.0, GridUnitType.Pixel)
+                RowThatContainsTheSourceCodePane.Height = New GridLength(1.0, GridUnitType.Star)
                 GridSplitter1.Visibility = Visibility.Visible
                 SourceCodePane.Visibility = Visibility.Visible
-
-                ' Animate the appearance of the Source Code Pane and the Grid Splitter:
-                Dim easing As New CubicEase With {
-                    .EasingMode = EasingMode.EaseOut
-                }
-
-                Dim animatorForGridSplitter As New PropertyAnimator(
-                    RowThatContainsTheGridSplitter,
-                    RowDefinition.HeightProperty,
-                    Function(progress) New GridLength(progress * 5.0, GridUnitType.Pixel)
-                ) With {
-                    .Duration = TimeSpan.FromMilliseconds(500),
-                    .EasingFunction = easing
-                }
-                animatorForGridSplitter.Begin()
-
-                Dim animatorForSourceCodePane As New PropertyAnimator(
-                    RowThatContainsTheSourceCodePane,
-                    RowDefinition.HeightProperty,
-                    Function(progress) New GridLength(progress * 1.0, GridUnitType.Star)
-                ) With {
-                    .Duration = TimeSpan.FromMilliseconds(500),
-                    .EasingFunction = easing
-                }
-                animatorForSourceCodePane.Begin()
             End If
 
             PlaceWhereSourceCodeWillBeDisplayed.Child = control
         End Sub
 
         Private Sub ButtonToCloseSourceCode_Click(sender As Object, e As RoutedEventArgs)
-            ' Close the Source Code Pane
-            Dim initialStarHeightForRowThatContainsTheSourceCodePane As Double = 0.5
-            If RowThatContainsTheSourceCodePane.Height.GridUnitType = GridUnitType.Star Then
-                initialStarHeightForRowThatContainsTheSourceCodePane = RowThatContainsTheSourceCodePane.Height.Value
-            End If
+            ' Close the Source Code Pane.
+            ' It slides down while the page fills its place (see "Animate.Disappear" in the XAML):
+            GridSplitter1.Visibility = Visibility.Collapsed
+            SourceCodePane.Visibility = Visibility.Collapsed
+            PlaceWhereSourceCodeWillBeDisplayed.Child = Nothing
 
-            ' Create animations with easing
-            Dim easing As New CubicEase With {
-                .EasingMode = EasingMode.EaseIn
-            }
-
-            Dim animatorForGridSplitter As New PropertyAnimator(
-                RowThatContainsTheGridSplitter,
-                RowDefinition.HeightProperty,
-                Function(progress) New GridLength((1.0 - progress) * 5.0, GridUnitType.Pixel)
-            ) With {
-                .Duration = TimeSpan.FromMilliseconds(300),
-                .EasingFunction = easing
-            }
-            animatorForGridSplitter.Begin()
-
-            Dim animatorForSourceCodePane As New PropertyAnimator(
-                RowThatContainsTheSourceCodePane,
-                RowDefinition.HeightProperty,
-                Function(progress) New GridLength(initialStarHeightForRowThatContainsTheSourceCodePane - (progress * initialStarHeightForRowThatContainsTheSourceCodePane), GridUnitType.Star)
-            ) With {
-                .Duration = TimeSpan.FromMilliseconds(500),
-                .EasingFunction = easing
-            }
-            animatorForSourceCodePane.Begin()
-
-            ' Set up completion handler
-            AddHandler animatorForSourceCodePane.Completed, Async Sub(s As Object, args As EventArgs)
-                                                                Await Task.Delay(300)
-
-                                                                ' Clean up when animation completes
-                                                                PlaceWhereSourceCodeWillBeDisplayed.Child = Nothing
-                                                                GridSplitter1.Visibility = Visibility.Collapsed
-                                                                SourceCodePane.Visibility = Visibility.Collapsed
-
-                                                                ' Reset the row heights
-                                                                RowThatContainsThePage.Height = New GridLength(1.0, GridUnitType.Star)
-                                                                RowThatContainsTheGridSplitter.Height = New GridLength(0.0, GridUnitType.Pixel)
-                                                                RowThatContainsTheSourceCodePane.Height = New GridLength(0.0, GridUnitType.Star)
-
-                                                                ' Dispose
-                                                                animatorForGridSplitter.Dispose()
-                                                                animatorForSourceCodePane.Dispose()
-                                                            End Sub
-
+            ' Reset the row heights (the user may have dragged the splitter)
+            RowThatContainsThePage.Height = New GridLength(1.0, GridUnitType.Star)
+            RowThatContainsTheGridSplitter.Height = New GridLength(0.0, GridUnitType.Pixel)
+            RowThatContainsTheSourceCodePane.Height = New GridLength(0.0, GridUnitType.Star)
         End Sub
 
 #End Region
@@ -247,6 +187,12 @@ Namespace OpenSilver.Showcase
         Private darkColor As Color = Color.FromRgb(60, 60, 60)
 
         Private Sub ThemeToggle_RadioButton_Checked(sender As Object, e As RoutedEventArgs)
+            ' Raised while the page loads, for the IsChecked of the light theme, before
+            ' DarkThemeRadioButton exists: the page already starts with the light theme.
+            If DarkThemeRadioButton Is Nothing Then
+                Return
+            End If
+
             Dim isDark = (DarkThemeRadioButton.IsChecked = True)
             Dim theme = TryCast(Application.Current.Theme, ModernTheme)
             If theme IsNot Nothing Then

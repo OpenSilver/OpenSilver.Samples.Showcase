@@ -6,8 +6,6 @@ open System.Windows
 open System.Windows.Controls
 open System.Windows.Media
 open System.Windows.Navigation
-open System.Windows.Media.Animation
-open OpenSilver.Animations
 
 type CurrentState =
     | Unset                                 // Initial value
@@ -44,11 +42,11 @@ type MainPage() as this =
         this.PageScrollViewer.ScrollToVerticalOffset(0.0)
         
         member private this.MainPage_Loaded() =
-            async {
-                // Navigate to the "Welcome" page by default:
-                if not (HtmlPage.Document.DocumentUri.OriginalString.Contains("#")) then
-                    do! TreeViewHelpers.SelectItemInTreeViewAsync(this.MenuTreeView, Pages.LandingPageInfo) |> Async.AwaitTask |> Async.Ignore
-            } |> Async.StartAsTask
+            // Navigate to the "Welcome" page by default. The menu selects it when it appears: until
+            // then, it is out of the layout (see "OnPageOpen=PushOthers" in the XAML), so its items
+            // don't exist yet.
+            if not (HtmlPage.Document.DocumentUri.OriginalString.Contains("#")) then
+                this.NavigateToPage(Pages.LandingPageInfo.Path)
 
         member private this.PageContainer_Navigated (sender: obj) (e: NavigationEventArgs) =
             async {
@@ -86,85 +84,28 @@ type MainPage() as this =
 //#region Show/hide source code
 
     member public this.ViewSourceCode(controlThatDisplaysTheSourceCode: UIElement) =
-        // Open the Source Code Pane, which is the place where the source code will be displayed:
+        // Open the Source Code Pane, which is the place where the source code will be displayed.
+        // It slides up from the bottom while the page makes room for it (see "Animate.Appear" in the XAML):
         if this.SourceCodePane.Visibility = Visibility.Collapsed then
-            // Make the pane and grid splitter visible
+            this.RowThatContainsTheGridSplitter.Height <- GridLength(5.0, GridUnitType.Pixel)
+            this.RowThatContainsTheSourceCodePane.Height <- GridLength(1.0, GridUnitType.Star)
             this.GridSplitter1.Visibility <- Visibility.Visible
             this.SourceCodePane.Visibility <- Visibility.Visible
-
-            // Animate the appearance of the Source Code Pane and the Grid Splitter:
-            let easing = CubicEase(EasingMode = EasingMode.EaseOut)
-
-            let animatorForGridSplitter = 
-                new PropertyAnimator(
-                    this.RowThatContainsTheGridSplitter,
-                    RowDefinition.HeightProperty,
-                    fun progress -> GridLength(progress * 5.0, GridUnitType.Pixel)
-                )
-            animatorForGridSplitter.Duration <- TimeSpan.FromMilliseconds(500.0)
-            animatorForGridSplitter.EasingFunction <- easing
-            animatorForGridSplitter.Begin()
-
-            let animatorForSourceCodePane = 
-                new PropertyAnimator(
-                    this.RowThatContainsTheSourceCodePane,
-                    RowDefinition.HeightProperty,
-                    fun progress -> GridLength(progress * 1.0, GridUnitType.Star)
-                )
-            animatorForSourceCodePane.Duration <- TimeSpan.FromMilliseconds(500.0)
-            animatorForSourceCodePane.EasingFunction <- easing
-            animatorForSourceCodePane.Begin()
 
         // Display the source code:
         this.PlaceWhereSourceCodeWillBeDisplayed.Child <- controlThatDisplaysTheSourceCode
 
     member private this.ButtonToCloseSourceCode_Click(sender: obj, e: RoutedEventArgs) =
-        // Close the Source Code Pane
-        let mutable initialStarHeightForRowThatContainsTheSourceCodePane = 0.5
-        if this.RowThatContainsTheSourceCodePane.Height.GridUnitType = GridUnitType.Star then
-            initialStarHeightForRowThatContainsTheSourceCodePane <- this.RowThatContainsTheSourceCodePane.Height.Value
+        // Close the Source Code Pane.
+        // It slides down while the page fills its place (see "Animate.Disappear" in the XAML):
+        this.GridSplitter1.Visibility <- Visibility.Collapsed
+        this.SourceCodePane.Visibility <- Visibility.Collapsed
+        this.PlaceWhereSourceCodeWillBeDisplayed.Child <- null
 
-        // Create animations with easing
-        let easing = CubicEase(EasingMode = EasingMode.EaseIn)
-
-        let animatorForGridSplitter = 
-            new PropertyAnimator(
-                this.RowThatContainsTheGridSplitter,
-                RowDefinition.HeightProperty,
-                fun progress -> GridLength((1.0 - progress) * 5.0, GridUnitType.Pixel)
-            )
-        animatorForGridSplitter.Duration <- TimeSpan.FromMilliseconds(300.0)
-        animatorForGridSplitter.EasingFunction <- easing
-        animatorForGridSplitter.Begin()
-
-        let animatorForSourceCodePane = 
-            new PropertyAnimator(
-                this.RowThatContainsTheSourceCodePane,
-                RowDefinition.HeightProperty,
-                fun progress -> GridLength(initialStarHeightForRowThatContainsTheSourceCodePane - (progress * initialStarHeightForRowThatContainsTheSourceCodePane), GridUnitType.Star)
-            )
-        animatorForSourceCodePane.Duration <- TimeSpan.FromMilliseconds(500.0)
-        animatorForSourceCodePane.EasingFunction <- easing
-        animatorForSourceCodePane.Begin()
-
-        // Completion handler
-        animatorForSourceCodePane.Completed.Add (fun _ ->
-            async {
-                do! Async.Sleep 300
-
-                // Clean up
-                this.PlaceWhereSourceCodeWillBeDisplayed.Child <- null
-                this.GridSplitter1.Visibility <- Visibility.Collapsed
-                this.SourceCodePane.Visibility <- Visibility.Collapsed
-
-                this.RowThatContainsThePage.Height <- GridLength(1.0, GridUnitType.Star)
-                this.RowThatContainsTheGridSplitter.Height <- GridLength(0.0, GridUnitType.Pixel)
-                this.RowThatContainsTheSourceCodePane.Height <- GridLength(0.0, GridUnitType.Star)
-
-                animatorForGridSplitter.Dispose()
-                animatorForSourceCodePane.Dispose()
-            } |> Async.Start
-        )
+        // Reset the row heights to their original values (the user may have dragged the splitter):
+        this.RowThatContainsThePage.Height <- GridLength(1.0, GridUnitType.Star)
+        this.RowThatContainsTheGridSplitter.Height <- GridLength(0.0, GridUnitType.Pixel)
+        this.RowThatContainsTheSourceCodePane.Height <- GridLength(0.0, GridUnitType.Star)
 
 //#endregion
 
@@ -266,48 +207,51 @@ type MainPage() as this =
 
 
     member private this.ThemeToggle_RadioButton_Checked(sender: obj, _e: RoutedEventArgs) =
-        let isDark = (this.DarkThemeRadioButton.IsChecked = Nullable(true))
+        // Raised while the page loads, for the IsChecked of the light theme, before
+        // DarkThemeRadioButton exists: the page already starts with the light theme.
+        if not (isNull this.DarkThemeRadioButton) then
+            let isDark = (this.DarkThemeRadioButton.IsChecked = Nullable(true))
 
-        match Application.Current.Theme with
-        | :? OpenSilver.Themes.Modern.ModernTheme as theme ->
-            let nativeBrush = this.NativeApiButtonBackgroundBrush
-            if isDark then
-                nativeBrush.Color <- Color.FromRgb(60uy, 60uy, 60uy)
-                theme.CurrentPalette <- OpenSilver.Themes.Modern.ModernTheme.Palettes.Dark
-                this.LogoOpenSilverDark.Opacity <- 1
-                this.LogoOpenSilverLight.Opacity <- 0
-                this.LogoShowcaseDark.Opacity <- 1
-                this.LogoShowcaseLight.Opacity <- 0
-                this.BackgroundImageDark.Opacity <- 1
-                this.BackgroundImageLight.Opacity <- 0
-                this.LogoGitHubDark.Opacity <- 1
-                this.LogoGitHubLight.Opacity <- 0
-            else
-                nativeBrush.Color <- Color.FromRgb(221uy, 221uy, 221uy)
-                theme.CurrentPalette <- OpenSilver.Themes.Modern.ModernTheme.Palettes.Light
-                this.LogoOpenSilverLight.Opacity <- 1
-                this.LogoOpenSilverDark.Opacity <- 0
-                this.LogoShowcaseLight.Opacity <- 1
-                this.LogoShowcaseDark.Opacity <- 0
-                this.BackgroundImageLight.Opacity <- 1
-                this.BackgroundImageDark.Opacity <- 0
-                this.LogoGitHubLight.Opacity <- 1
-                this.LogoGitHubDark.Opacity <- 0
+            match Application.Current.Theme with
+            | :? OpenSilver.Themes.Modern.ModernTheme as theme ->
+                let nativeBrush = this.NativeApiButtonBackgroundBrush
+                if isDark then
+                    nativeBrush.Color <- Color.FromRgb(60uy, 60uy, 60uy)
+                    theme.CurrentPalette <- OpenSilver.Themes.Modern.ModernTheme.Palettes.Dark
+                    this.LogoOpenSilverDark.Opacity <- 1
+                    this.LogoOpenSilverLight.Opacity <- 0
+                    this.LogoShowcaseDark.Opacity <- 1
+                    this.LogoShowcaseLight.Opacity <- 0
+                    this.BackgroundImageDark.Opacity <- 1
+                    this.BackgroundImageLight.Opacity <- 0
+                    this.LogoGitHubDark.Opacity <- 1
+                    this.LogoGitHubLight.Opacity <- 0
+                else
+                    nativeBrush.Color <- Color.FromRgb(221uy, 221uy, 221uy)
+                    theme.CurrentPalette <- OpenSilver.Themes.Modern.ModernTheme.Palettes.Light
+                    this.LogoOpenSilverLight.Opacity <- 1
+                    this.LogoOpenSilverDark.Opacity <- 0
+                    this.LogoShowcaseLight.Opacity <- 1
+                    this.LogoShowcaseDark.Opacity <- 0
+                    this.BackgroundImageLight.Opacity <- 1
+                    this.BackgroundImageDark.Opacity <- 0
+                    this.LogoGitHubLight.Opacity <- 1
+                    this.LogoGitHubDark.Opacity <- 0
 
-            this.UpdateThemeToggleFillColor()
+                this.UpdateThemeToggleFillColor()
 
-            if this.SourceCodePane.Visibility = Visibility.Visible then
-                match this.PlaceWhereSourceCodeWillBeDisplayed.Child with
-                | :? TabControl as tabControl ->
-                    match tabControl.SelectedItem with
-                    | :? TabItem as tabItem ->
-                        match tabItem.Content with
-                        | :? ControlToDisplayCodeHostedOnGitHub as githubControl ->
-                            githubControl.Refresh()
+                if this.SourceCodePane.Visibility = Visibility.Visible then
+                    match this.PlaceWhereSourceCodeWillBeDisplayed.Child with
+                    | :? TabControl as tabControl ->
+                        match tabControl.SelectedItem with
+                        | :? TabItem as tabItem ->
+                            match tabItem.Content with
+                            | :? ControlToDisplayCodeHostedOnGitHub as githubControl ->
+                                githubControl.Refresh()
+                            | _ -> ()
                         | _ -> ()
                     | _ -> ()
-                | _ -> ()
-        | _ -> ()
+            | _ -> ()
 
     member this.UpdateThemeToggleFillColor() =
         let brush = this.DarkThemeRadioButton.Foreground :?> SolidColorBrush

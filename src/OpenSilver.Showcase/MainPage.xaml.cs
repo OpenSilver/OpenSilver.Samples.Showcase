@@ -9,7 +9,6 @@ using System.Windows.Browser;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Animation;
 using System.Windows.Navigation;
 
 namespace OpenSilver.Showcase
@@ -51,8 +50,8 @@ namespace OpenSilver.Showcase
             AddHandler(ViewSourceButton.ViewSourceEvent, new RoutedEventHandler(OnViewSource), true);
 
             // Uncomment the following lines to debug the animations:
-            //Animations.Animation.SlowDownAnimationsForDebugging = 10.0; // slow down factor
-            //Animations.Animation.LogAnimationsForDebugging = true;
+            //AnimationSettings.Current.Speed = 0.1; // ten times slower
+            //AnimationSettings.Current.LogForDebugging = true;
 
 #if !FULLBLAZOR
             PrepareBlazorSamples();
@@ -76,7 +75,7 @@ namespace OpenSilver.Showcase
 
         public static MainPage Current { get; private set; }
 
-        async void MainPage_Loaded(object sender, RoutedEventArgs e)
+        void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
             var docUri = System.Windows.Browser.HtmlPage.Document.DocumentUri.OriginalString;
             _isMenuHidden = docUri.Contains("menu=hidden");
@@ -87,10 +86,12 @@ namespace OpenSilver.Showcase
                 ForkOnGitHubButton.Visibility = Visibility.Collapsed;
                 SuggestSamplesButton.Visibility = Visibility.Collapsed;
             }
-            // Navigate to the "Welcome" page by default:
+            // Navigate to the "Welcome" page by default. The menu selects it when it appears: until
+            // then, it is out of the layout (see "OnPageOpen=PushOthers" in the XAML), so its items
+            // don't exist yet.
             if (!HtmlPage.Document.DocumentUri.OriginalString.Contains("#"))
             {
-                await TreeViewHelpers.SelectItemInTreeViewAsync(MenuTreeView, Pages.LandingPageInfo);
+                NavigateToPage(Pages.LandingPageInfo.Path);
             }
         }
 
@@ -194,33 +195,14 @@ namespace OpenSilver.Showcase
 
         private void ViewSourceCode(UIElement controlThatDisplaysTheSourceCode)
         {
-            // Open the Source Code Pane, which is the place where the source code will be displayed:
+            // Open the Source Code Pane, which is the place where the source code will be displayed.
+            // It slides up from the bottom while the page makes room for it (see "Animate.Appear" in the XAML):
             if (SourceCodePane.Visibility == Visibility.Collapsed)
             {
-                // Make the pane and grid splitter visible
+                RowThatContainsTheGridSplitter.Height = new GridLength(5d, GridUnitType.Pixel);
+                RowThatContainsTheSourceCodePane.Height = new GridLength(1d, GridUnitType.Star);
                 GridSplitter1.Visibility = Visibility.Visible;
                 SourceCodePane.Visibility = Visibility.Visible;
-
-                // Animate the appearance of the Source Code Pane and the Grid Splitter:
-                var easing = new CubicEase { EasingMode = EasingMode.EaseOut };
-                var animatorForGridSplitter = new PropertyAnimator(
-                                    RowThatContainsTheGridSplitter,
-                                    RowDefinition.HeightProperty,
-                                    progress => new GridLength(progress * 5d, GridUnitType.Pixel))
-                {
-                    Duration = TimeSpan.FromMilliseconds(500),
-                    EasingFunction = easing
-                };
-                animatorForGridSplitter.Begin();
-                var animatorForSourceCodePane = new PropertyAnimator(
-                                    RowThatContainsTheSourceCodePane,
-                                    RowDefinition.HeightProperty,
-                                    progress => new GridLength(progress * 1d, GridUnitType.Star))
-                {
-                    Duration = TimeSpan.FromMilliseconds(500),
-                    EasingFunction = easing
-                };
-                animatorForSourceCodePane.Begin();
             }
 
             // Display the source code:
@@ -230,57 +212,15 @@ namespace OpenSilver.Showcase
         private void ButtonToCloseSourceCode_Click(object sender, RoutedEventArgs e)
         {
             // Close the Source Code Pane, which is the place where the source code is displayed.
+            // It slides down while the page fills its place (see "Animate.Disappear" in the XAML):
+            GridSplitter1.Visibility = Visibility.Collapsed;
+            SourceCodePane.Visibility = Visibility.Collapsed;
+            PlaceWhereSourceCodeWillBeDisplayed.Child = null;
 
-            // Note: we animate only the source code pane to 0, not the page, so that, if the user drags the splitter, it will not be reset to 0.5*:
-            double initialStarHeightForRowThatContainsTheSourceCodePane = 0.5d;
-            if (RowThatContainsTheSourceCodePane.Height.GridUnitType == GridUnitType.Star)
-            {
-                initialStarHeightForRowThatContainsTheSourceCodePane = RowThatContainsTheSourceCodePane.Height.Value;
-            }
-
-            // Create animations with easing
-            var easing = new CubicEase { EasingMode = EasingMode.EaseIn };
-
-            var animatorForGridSplitter = new PropertyAnimator(
-                                RowThatContainsTheGridSplitter,
-                                RowDefinition.HeightProperty,
-                                progress => new GridLength((1d - progress) * 5d, GridUnitType.Pixel))
-            {
-                Duration = TimeSpan.FromMilliseconds(300), // Note: This animation is faster than the one for the source code pane, so that the "Completed" event of the the one for the source code pane is executed after this one completes.
-                EasingFunction = easing
-            };
-            animatorForGridSplitter.Begin();
-
-            var animatorForSourceCodePane = new PropertyAnimator(
-                                RowThatContainsTheSourceCodePane,
-                                RowDefinition.HeightProperty,
-                                progress => new GridLength(initialStarHeightForRowThatContainsTheSourceCodePane - (progress * initialStarHeightForRowThatContainsTheSourceCodePane), GridUnitType.Star))
-            {
-                Duration = TimeSpan.FromMilliseconds(500),
-                EasingFunction = easing
-            };
-            animatorForSourceCodePane.Begin();
-
-            // Set up completion handler
-            animatorForSourceCodePane.Completed += async (s, args) =>
-            {
-                await Task.Delay(300); // Let's wait a bit to make that the other animation is completed too.
-
-                // Clean up when animation completes
-                PlaceWhereSourceCodeWillBeDisplayed.Child = null;
-                GridSplitter1.Visibility = Visibility.Collapsed;
-                SourceCodePane.Visibility = Visibility.Collapsed;
-
-                // Reset the row heights to their original values
-                RowThatContainsThePage.Height = new GridLength(1d, GridUnitType.Star);
-                RowThatContainsTheGridSplitter.Height = new GridLength(0d, GridUnitType.Pixel);
-                RowThatContainsTheSourceCodePane.Height = new GridLength(0d, GridUnitType.Star);
-
-                // Dispose of the animators to be extra safe
-                //animator1.Dispose();
-                animatorForGridSplitter.Dispose();
-                animatorForSourceCodePane.Dispose();
-            };
+            // Reset the row heights to their original values (the user may have dragged the splitter):
+            RowThatContainsThePage.Height = new GridLength(1d, GridUnitType.Star);
+            RowThatContainsTheGridSplitter.Height = new GridLength(0d, GridUnitType.Pixel);
+            RowThatContainsTheSourceCodePane.Height = new GridLength(0d, GridUnitType.Star);
         }
 
         #endregion
@@ -345,7 +285,7 @@ namespace OpenSilver.Showcase
                     Grid.SetColumnSpan(PageScrollViewer, 2);
 
                     // Adjust the menu animation:
-                    Animation.SetOnAppear(MenuContainer, (IAnimationType)this.Resources["MenuAnimation_OnAppear_Faster"]);
+                    Animate.SetAppear(MenuContainer, (Transition)this.Resources["MenuAnimation_OnAppear_Faster"]);
 
                     if (newState == CurrentState.SmallResolution_ShowMenu)
                     {
@@ -444,6 +384,13 @@ namespace OpenSilver.Showcase
 
         private void ThemeToggle_RadioButton_Checked(object sender, RoutedEventArgs e)
         {
+            // Raised while the page loads, for the IsChecked of the light theme, before
+            // DarkThemeRadioButton exists: the page already starts with the light theme.
+            if (DarkThemeRadioButton == null)
+            {
+                return;
+            }
+
             bool isDark = (DarkThemeRadioButton.IsChecked == true);
             if (Application.Current.Theme is ModernTheme theme)
             {

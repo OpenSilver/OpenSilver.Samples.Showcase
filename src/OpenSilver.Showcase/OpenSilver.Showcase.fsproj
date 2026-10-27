@@ -19,6 +19,7 @@
     <PackageReference Include="System.ServiceModel.NetTcp" Version="4.10.0" />
     <PackageReference Include="System.ServiceModel.Security" Version="4.10.0" />
     <PackageReference Include="OpenSilver" Version="[$(OpenSilverVersion)]" />
+    <PackageReference Include="OpenSilver.Animations" Version="[$(OpenSilverAnimationsVersion)]" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
   </ItemGroup>
 
@@ -1304,10 +1305,6 @@
   <ItemGroup>
     <Content Include="Other\Icons\DarkTheme.svg" />
     <Content Include="Other\Icons\LightTheme.svg" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Libraries\OpenSilver.Animations\OpenSilver.Animations.csproj" />
   </ItemGroup>
 
 </Project>

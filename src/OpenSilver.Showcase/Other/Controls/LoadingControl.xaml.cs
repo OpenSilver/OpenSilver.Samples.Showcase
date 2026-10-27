@@ -5,9 +5,9 @@ namespace OpenSilver.Showcase;
 
 public partial class LoadingControl : UserControl
 {
-    public IAnimationType Animation { get; }
+    public Transition Animation { get; }
 
-    public LoadingControl(IAnimationType animation = null)
+    public LoadingControl(Transition animation = null)
     {
         InitializeComponent();
 

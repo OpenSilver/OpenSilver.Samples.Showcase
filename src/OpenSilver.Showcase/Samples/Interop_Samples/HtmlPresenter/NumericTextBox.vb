@@ -1,5 +1,4 @@
 ﻿Imports System.Windows
-Imports CSHTML5.Internal
 Imports CSHTML5.Native.Html.Controls
 Imports OpenSilver
 
@@ -19,8 +18,8 @@ Namespace TestNumericTextBox
         Public Property Value As Integer
             Get
                 If _domElement IsNot Nothing Then
-                    Dim id As String = TryCast(_domElement, INTERNAL_HtmlDomElementReference).UniqueIdentifier
-                    Dim valueString As String = Interop.ExecuteJavaScriptGetResult(Of String)($"{id}.firstChild.firstChild.value")
+                    Dim id As String = DirectCast(_domElement, HtmlElementReference).Uid
+                    Dim valueString As String = Interop.ExecuteJavaScriptGetResult(Of String)($"document.getElementById('{id}').firstChild.firstChild.value")
                     Dim valueInt As Integer
                     If Integer.TryParse(valueString, valueInt) Then
                         _value = valueInt
